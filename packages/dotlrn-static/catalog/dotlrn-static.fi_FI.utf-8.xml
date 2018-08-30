@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<message_catalog package_key="dotlrn-static" locale="fi_FI" charset="utf-8">
+
+  <msg key="class_info_portlet_pretty_name">Tietoja kurssista</msg>
+  <msg key="community_info_portlet_pretty_name">Tietoja ryhmästä</msg>
+  <msg key="Static_HTML_Data">Staattinen (HTML-) data</msg>
+  <msg key="subcommunity_info_portlet_pretty_name">Tietoa aliyhteisöstä</msg>
+</message_catalog>

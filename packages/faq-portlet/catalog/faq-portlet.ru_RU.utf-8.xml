@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<message_catalog package_key="faq-portlet" locale="ru_RU" charset="utf-8">
+
+  <msg key="admin_pretty_name">Администрирование ЧаВо</msg>
+  <msg key="Disable">Запретить</msg>
+  <msg key="Disabled">Запрещено</msg>
+  <msg key="Enable">Разрешить</msg>
+  <msg key="group">Группа</msg>
+  <msg key="name">Имя</msg>
+  <msg key="new_faq">Новое ЧаВо</msg>
+  <msg key="no_faqs">ЧаВо пусто</msg>
+  <msg key="one_admin_faq">Нужна всего одна виртуальная копия ЧаВо, для целей администрирования</msg>
+  <msg key="pretty_name">Часто задаваемые вопросы (ЧаВо)</msg>
+</message_catalog>

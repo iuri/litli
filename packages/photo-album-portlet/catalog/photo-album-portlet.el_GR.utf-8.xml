@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<message_catalog package_key="photo-album-portlet" locale="el_GR" charset="utf-8">
+
+  <msg key="Add_photos">Προσθήκη φωτογραφιών</msg>
+  <msg key="Admin">Δισχείριση φωτογραφιών</msg>
+  <msg key="Administration">Δισχείριση φωτογραφιών</msg>
+  <msg key="Photo_Album">Φωτογραφικό Album</msg>
+</message_catalog>

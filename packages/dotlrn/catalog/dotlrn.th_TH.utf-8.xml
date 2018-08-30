@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<message_catalog package_key="dotlrn" locale="th_TH" charset="utf-8">
+
+  <msg key="AddDrop_Memberships">สมัคร/ยกเลิก สมาชิก</msg>
+  <msg key="Ask_a_question">ถามคำถาม</msg>
+  <msg key="Change_Locale">เปลี่ยนภาษา</msg>
+  <msg key="clubs_pretty_name">ชุมชน</msg>
+  <msg key="clubs_pretty_plural">ชุมชน</msg>
+  <msg key="control_panel">แผงควบคุม</msg>
+  <msg key="Customize_Layout">แก้ไขรูปแบบ</msg>
+  <msg key="dotlrn_main_portlet_pretty_name">กลุ่ม</msg>
+  <msg key="email">อีเมล์</msg>
+  <msg key="help">ช่วยเหลือ</msg>
+  <msg key="Join">สมัคร</msg>
+  <msg key="Join_A_Group">สมัครเข้ากลุ่ม</msg>
+  <msg key="logout">ออกจากระบบ</msg>
+  <msg key="lt_JoinDrop_a_Class_or_C">สมัคร/ยกเลิก วิชาเรียน หรือ กลุ่มชุมชน</msg>
+  <msg key="Personal_home_page">หน้าโฮมเพจส่วนตัว:</msg>
+  <msg key="Term">เทอม</msg>
+  <msg key="user_portal_page_calendar_title">ปฏิทิน</msg>
+  <msg key="user_portal_page_file_storage_title">เอกสารของฉัน</msg>
+  <msg key="user_portal_page_home_title">MySpace</msg>
+</message_catalog>

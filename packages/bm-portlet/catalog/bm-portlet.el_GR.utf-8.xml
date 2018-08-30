@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<message_catalog package_key="bm-portlet" locale="el_GR" charset="utf-8">
+
+  <msg key="New_spam_name">Νέο %spam_name%</msg>
+  <msg key="pretty_name">Μαζικά mail</msg>
+  <msg key="spam_name_History">Ιστορικό %spam_name%</msg>
+</message_catalog>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<message_catalog package_key="dotlrn-static" locale="tr_TR" charset="utf-8">
+
+  <msg key="class_info_portlet_pretty_name">Sinif Bilgisi</msg>
+  <msg key="community_info_portlet_pretty_name">Birlik Bilgisi</msg>
+  <msg key="Static_HTML_Data">Statik (HTML) Verisi</msg>
+  <msg key="subcommunity_info_portlet_pretty_name">Altgrup Bilgisi</msg>
+</message_catalog>

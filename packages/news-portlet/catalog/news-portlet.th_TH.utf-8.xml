@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<message_catalog package_key="news-portlet" locale="th_TH" charset="utf-8">
+
+  <msg key="No_News">ไม่มีข่าว</msg>
+  <msg key="pretty_name">ข่าว</msg>
+</message_catalog>

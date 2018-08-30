@@ -1,0 +1,19 @@
+# -*- tcl-*-
+::xowiki::Form new \
+    -set name en:Workflow.form \
+    -title "Workflow Form" \
+    -set anon_instances f \
+    -set text {@_text@ @workflow_definition@ Form Constraints: @form_constraints@} \
+    -set form {{<form>@workflow_definition@ @_text@ @form_constraints@ @_nls_language@</form>} text/html} \
+    -set form_constraints {
+{_name:help_text=Name of the workflow (ends typically with .wf)}
+workflow_definition:workflow_definition
+form_constraints:form_constraints
+{_title:label=Workflow Title}
+{_description:omit}
+{_page_order:omit}
+{_text:label=Description}
+}
+
+
+

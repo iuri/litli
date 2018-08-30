@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<message_catalog package_key="static-portlet" locale="fi_FI" charset="utf-8">
+
+  <msg key="admin_portlet_element_pretty_name">Itsemuokattu portletti</msg>
+  <msg key="admin_portlet_pretty_name">Omatekoisten portlettien ylläpito</msg>
+  <msg key="Content">Sisältö</msg>
+  <msg key="Control_Panel">Ohjauspaneeli</msg>
+  <msg key="Edit_content_element">Muokkaa sisältöelementtiä</msg>
+  <msg key="lt_Delete_element_pretty">Poista elementti %pretty_name%</msg>
+  <msg key="lt_Editing_element_prett">Muokkaa elementtiä  %pretty_name%</msg>
+  <msg key="lt_strongNotestrong_You_">&lt;strong&gt;Huom&lt;/strong&gt;: Voit käyttää sisältöosassa sekä pelkkää tekstiä että HTML-merkkausta.</msg>
+  <msg key="lt_Use_this_form_to_crea">Tällä lomakkeella voit luoda uuden %element_pretty_name%-elementin. %element_pretty_name% luodaan ja sijoitetaan automaattisesti %portal_name%-portaalin etusivulle. Mene %control_panel_text%in ja valitse \&quot;Muokkaa sivun ulkoasua\&quot; siirtääksesi %element_pretty_name%n haluamaasi paikkaan.</msg>
+  <msg key="Name">Nimi</msg>
+  <msg key="New">Uusi</msg>
+  <msg key="new_static_admin_portlet">Luo uusi elementti</msg>
+</message_catalog>

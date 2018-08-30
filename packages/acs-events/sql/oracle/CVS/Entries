@@ -1,0 +1,9 @@
+/acs-events-create.sql/1.11/Tue May 15 20:14:14 2007//Topenacs-5-9-compat
+/acs-events-drop.sql/1.1/Fri Jul 13 02:00:30 2001//Topenacs-5-9-compat
+/activity-create.sql/1.6/Fri Mar 12 18:48:48 2004//Topenacs-5-9-compat
+/activity-drop.sql/1.1/Fri Jul 13 02:00:30 2001//Topenacs-5-9-compat
+/recurrence-create.sql/1.3/Tue Sep 30 12:10:02 2003//Topenacs-5-9-compat
+/recurrence-drop.sql/1.1/Fri Jul 13 02:00:30 2001//Topenacs-5-9-compat
+/timespan-create.sql/1.3/Tue Sep 30 12:10:02 2003//Topenacs-5-9-compat
+/timespan-drop.sql/1.1/Fri Jul 13 02:00:30 2001//Topenacs-5-9-compat
+D

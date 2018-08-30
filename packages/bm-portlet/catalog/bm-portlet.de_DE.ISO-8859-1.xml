@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<message_catalog package_key="bm-portlet" locale="de_DE" charset="ISO-8859-1">
+
+  <msg key="New_spam_name">Neue %spam_name% verfassen</msg>
+  <msg key="pretty_name">Gruppen-E-Mails</msg>
+  <msg key="spam_name_History">Verlauf der %spam_name%s anzeigen</msg>
+</message_catalog>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<message_catalog package_key="bm-portlet" locale="ch_zh" charset="utf-8">
+
+  <msg key="New_spam_name">新%spam_name</msg>
+  <msg key="pretty_name">群发邮件</msg>
+  <msg key="spam_name_History">%spam_name%历史记录</msg>
+</message_catalog>

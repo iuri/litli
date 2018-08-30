@@ -1,0 +1,28 @@
+# -*- Tcl -*- /packages/photo-album/www/images/index.vuh
+# @author Tom Baginski, bags@arsdigita.com
+# #cvs-id $Id: index.vuh,v 1.6 2016/09/12 06:07:39 gustafn Exp $
+#
+# serves images
+#
+# expecting a image_id as path_info
+
+# wtem@olywa.net, 2001-09-24
+# fully reworked
+
+regexp {^([0-9]+)} [ad_conn path_info] match image_id
+if {![info exists image_id] || ![string is integer -strict $image_id]} {
+    ad_page_contract_handle_datasource_error "image_id is not valid"
+    ad_script_abort
+}
+
+if {[parameter::get -parameter CheckPermissionOnImageServeP] == "t"} {
+    permission::require_permission -object_id $image_id -privilege "read"
+}
+
+if {[catch {cr_write_content -revision_id $image_id} errMsg]} {
+    if {$::errorCode eq "NOT_FOUND"} {
+        ns_returnnotfound
+        ad_script_abort
+    }
+    error $errMsg $::errorInfo $::errorCode
+}

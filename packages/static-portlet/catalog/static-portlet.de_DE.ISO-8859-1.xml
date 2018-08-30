@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<message_catalog package_key="static-portlet" locale="de_DE" charset="ISO-8859-1">
+
+  <msg key="admin_portlet_element_pretty_name">Benutzerdefiniertes Portlet</msg>
+  <msg key="admin_portlet_pretty_name">Benutzerdefinierte Portlets verwalten</msg>
+  <msg key="Back_to">Zurück zu</msg>
+  <msg key="Binary_file_uploaded">Die hochgeladene Datei %filename% ist binär, aber hier werden nur Textdateien akzeptiert.</msg>
+  <msg key="Content">Inhalt</msg>
+  <msg key="Control_Panel">Eigene Einstellungen</msg>
+  <msg key="Create_a_new">%element_pretty_name% neu erstellen</msg>
+  <msg key="Edit">Bearbeiten</msg>
+  <msg key="Edit_content_element">Inhalt bearbeiten</msg>
+  <msg key="False_0">Falsch</msg>
+  <msg key="File">Datei</msg>
+  <msg key="lt_Delete_element_pretty">%element_pretty_name% &quot;%pretty_name%&quot; löschen</msg>
+  <msg key="lt_Editing_element_prett">%element_pretty_name% &quot;%pretty_name%&quot; bearbeiten</msg>
+  <msg key="lt_Enforce_this_applet_t">Erzwingen dass diese Anwendung im Portal erscheint</msg>
+  <msg key="lt_Enforce_True_means_th">Erzwingen Wahr bedeutet, dass das statische Portlet \ sofort in die schon erstellten Ziel-Portale einbezogen wird; \ Falsch bedeutet, dass es zur Verfügung steht, wenn das Portal angepasst wird oder wenn die Aktion Zurücksetzen durchgeführt wird.
+</msg>
+  <msg key="lt_strongNotestrong_You_">&lt;strong&gt;Hinweis&lt;/strong&gt;: Sie können für den Inhalt einfaches Textformat oder HTML verwenden.</msg>
+  <msg key="lt_Use_this_form_to_crea">Mit diesem Formular kann ein neues %element_pretty_name% erstellt werden. Es wird automatisch auf der ersten Seite des Portals &quot;%portal_name%&quot; platziert. Um es zu verschieben, gehen Sie unter '%control_panel_text%' auf 'Layout des Gruppenportals anpassen'.</msg>
+  <msg key="Name">Name</msg>
+  <msg key="New">Neu</msg>
+  <msg key="new_static_admin_portlet">Neues %element_pretty_name% erstellen</msg>
+  <msg key="True">Wahr</msg>
+  <msg key="Use_this_form">Mit diesem Formular kann ein neues %element_pretty_name% erstellt werden. Es wird automatisch auf der ersten Seite des Portals &quot;%portal_name%&quot; platziert. Um es zu verschieben, gehen Sie auf der Verwaltungsseite auf 'Layout des Gruppenportals anpassen'</msg>
+  <msg key="You_may_upload">Alternativ können Sie auch eine &lt;strong&gt;Text&lt;/strong&gt;datei hier hochladen und damit den derzeitigen Inhalt des Portlets ersetzen.</msg>
+</message_catalog>

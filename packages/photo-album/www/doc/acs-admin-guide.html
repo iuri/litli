@@ -1,0 +1,187 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML
+><HEAD
+><TITLE
+>ACS Administration Guide</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="aD Hack of: Modular DocBook HTML Stylesheet Version 1.60"><LINK
+REL="HOME"
+TITLE="Photo Album"
+HREF="index.html"><LINK
+REL="PREVIOUS"
+TITLE="Release Notes for Photo Album 4.0.1 Final Release"
+HREF="release-notes.html"><LINK
+REL="NEXT"
+TITLE="Developer's guide"
+HREF="dev-guide.html"><LINK
+REL="STYLESHEET"
+TYPE="text/css"
+HREF="ad-doc.css"></HEAD
+><BODY
+CLASS="chapter"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Photo Album</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="release-notes.html"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+></TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="dev-guide.html"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+SIZE="1"
+NOSHADE="NOSHADE"
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="chapter"
+><H1
+><A
+NAME="acs-admin-guide"
+>Chapter 3. ACS Administration Guide</A
+></H1
+><P
+>Installation and Operation Notes
+      <UL
+><LI
+><P
+CLASS="listitem"
+><I
+CLASS="emphasis"
+>Imagemagick</I
+>  The convert and identify
+        binaries must be installed within the location specified by the parameter
+	ImageMagickPath.  The user that the webserver is running under must have
+	execute privileges for the files.  A link to a download page for ImageMagick
+	can be found in the design document.
+        </P
+></LI
+><LI
+><P
+CLASS="listitem"
+><I
+CLASS="emphasis"
+>Image Storage Directory</I
+>  The photo album
+        store image binaries in the file system.  The webserver user must have read,
+	write, and execute privileges for the directory specified in the parameter PhotoDir.
+	This directory must be in the acs root directory for the server.   The webserver
+	user must also have write privilege on any file created in this directory or it
+	will not be able to delete images.
+        </P
+></LI
+><LI
+><P
+CLASS="listitem"
+><I
+CLASS="emphasis"
+>Permission Checks for Serving Images</I
+>  The parameter
+        CheckPermissionOnImageServeP controls if images/index.vuh queries the database to
+	check if user has read permission on a photo prior to serving it.  Setting this to true
+	will slow server performance because it causes an extra trip to the database for every
+	image served.  Default album pages serve 12 thumbnails per page, which translates into 12
+	extra trips to the database.  Users should not be presented a link/img tag for an image
+	for which they do not have read privileges.  Unless you are really concerned about someone
+	url hacking to a private image (which they would need to know the full path), I suggest 
+	leaving this parameter set to false.    
+        </P
+></LI
+></UL
+>
+
+      </P
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+SIZE="1"
+NOSHADE="NOSHADE"
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="release-notes.html"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index.html"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="dev-guide.html"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Release Notes for Photo Album 4.0.1 Final Release</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+>&nbsp;</TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Developer's guide</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

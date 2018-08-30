@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<message_catalog package_key="faq-portlet" locale="es_CO" charset="ISO-8859-1">
+
+  <msg key="admin_pretty_name">Administración de Preguntas Frecuentes</msg>
+  <msg key="Disable">Desactivar</msg>
+  <msg key="Disabled">Desactivado</msg>
+  <msg key="Enable">Activar</msg>
+  <msg key="group">Grupo</msg>
+  <msg key="name">Nombre</msg>
+  <msg key="new_faq">Nueva Pregunta Frecuente</msg>
+  <msg key="no_faqs">Sin Preguntas Frecuentes</msg>
+  <msg key="one_admin_faq">Debe existir una sóla instancia de Preguntas Frecuentes para propósitos administrativos</msg>
+  <msg key="pretty_name">Preguntas Frecuentes (FAQs)</msg>
+</message_catalog>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<message_catalog package_key="dotlrn-portlet" locale="de_DE" charset="ISO-8859-1">
+
+  <msg key="admin_pretty_name">Gruppe verwalten</msg>
+  <msg key="Administer">Verwalten</msg>
+  <msg key="Administrator_FAQ">Administratoren FAQ</msg>
+  <msg key="All_members">Alle Teilnehmer</msg>
+  <msg key="Archive">Archivieren</msg>
+  <msg key="Archive_this_group">Diese Gruppe archivieren</msg>
+  <msg key="change_name_etc">Bezeichnung, Beschreibung etc. ändern</msg>
+  <msg key="Change_term">Semester ändern für %pretty_name% von %term_name%</msg>
+  <msg key="Closed">Geschlossen</msg>
+  <msg key="Copy_this_group">Diese Gruppe kopieren</msg>
+  <msg key="Disabled">Ausgeschaltet</msg>
+  <msg key="edit_gr_props">Eigenschaften der Gruppe bearbeiten</msg>
+  <msg key="Edit_Welcome_Message">Begrüßungsnachricht editieren</msg>
+  <msg key="Email_Members">E-Mail an Teilnehmer senden</msg>
+  <msg key="Enabled">Eingeschaltet</msg>
+  <msg key="goto_admin_pretty_name">Zur %admin_pretty_name% gehen</msg>
+  <msg key="goto_Administrator_FAQ">Zur Administratoren-FAQ gehen</msg>
+  <msg key="goto_Manage_Membership">Zur Teilnehmerverwaltung gehen</msg>
+  <msg key="lt_AddRemove_pretty_name">Bei &quot;%pretty_name%&quot; Teilnehmer hinzufügen/entfernen</msg>
+  <msg key="lt_can_send_bulk_mail_to">können Gruppen-E-Mails an diese Gruppe senden.</msg>
+  <msg key="lt_Change_Bulk_Mail_Poli">Gruppen-E-Mail-Optionen ändern</msg>
+  <msg key="lt_Change_Enrollment_Pol">Zugangsregelung ändern</msg>
+  <msg key="lt_Change_Name_Portlet">Den Namen des Portlet ändern</msg>
+  <msg key="lt_Create_a_new_Limited_">Neuen &quot;Benutzer mit beschränktem Zugriff&quot; anlegen</msg>
+  <msg key="lt_Create_a_new_Limited__1">Neuen &quot;Gastbenutzer mit beschränktem Zugriff&quot; anlegen</msg>
+  <msg key="lt_Create_Welcome_Messag">Eine Willkommensnachricht erstellen</msg>
+  <msg key="lt_Customize_Portal_Layo">Layout des Gruppenportals anpassen</msg>
+  <msg key="lt_Guests_Can_View_Membership_Info">Informationen über Teilnehmer der Gruppe für Gastbenutzer anzeigen?
+</msg>
+  <msg key="lt_No_community_was_spec">Es wurde keine Community spezifiziert</msg>
+  <msg key="lt_No_subcomm_pretty_plu">Keine %subcomm_pretty_plural% vorhanden</msg>
+  <msg key="lt_Only_use_this_to_crea">Nur für Benutzer, die nicht zentral bei dotLRN registriert werden sollen. Die Benutzeridentifikation ermöglicht nur den Zugang zu diesem Kurs.</msg>
+  <msg key="lt_Only_use_this_to_crea_1">Nur für Benutzer, die nicht zentral bei dotLRN registriert werden sollen. Die Benutzeridentifikation ermöglicht nur den Zugang zu diesem Kurs. Außerdem sind für den Benutzer keine Informationen über andere Teilnehmer der Gruppe sichtbar.</msg>
+  <msg key="lt_Sorry_this_functional">Diese Funktionalität ist für Gastbenutzer nicht verfügbar.</msg>
+  <msg key="lt_This_group_is_archive">Diese Gruppe ist archiviert.</msg>
+  <msg key="Manage_Applets">Anwendungen verwalten</msg>
+  <msg key="Manage_Membership">Teilnehmer verwalten</msg>
+  <msg key="Member_List">Teilnehmer</msg>
+  <msg key="members_portlet_pretty_name">Teilnehmer</msg>
+  <msg key="members_staff_portlet_pretty_name">Mitarbeiter</msg>
+  <msg key="Needs_Approval">Auf Antrag</msg>
+  <msg key="New_sub_pretty_name">Neue %sub_pretty_name% anlegen</msg>
+  <msg key="no_course_assistant_members">Keine %course_assistant_role_pretty_plural% vorhanden</msg>
+  <msg key="no_instructor_members">Keine %instructor_role_pretty_plural% vorhanden</msg>
+  <msg key="no_teaching_assistant_members">Keine %teaching_assistant_role_pretty_plural% vorhanden</msg>
+  <msg key="Only_admins">Nur Administratoren</msg>
+  <msg key="Open">Selbstregistrierung</msg>
+  <msg key="Size">Größe:</msg>
+  <msg key="Sort">Sortieren</msg>
+  <msg key="Sortmanage">Sortieren/Verwalten</msg>
+  <msg key="Toggle_privacy_policy_to_no">Verhindern, dass Gastnutzern Informationen zu Gruppenmitgliedschaften sehen.</msg>
+  <msg key="Toggle_privacy_policy_to_yes">Gastnutzern erlauben Information zu Gruppenmitgliedschaften zu sehen</msg>
+</message_catalog>

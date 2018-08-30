@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<message_catalog package_key="static-portlet" locale="ar_LB" charset="utf-8">
+
+  <msg key="admin_portlet_element_pretty_name">بورتليت حسب الطّلب</msg>
+  <msg key="admin_portlet_pretty_name">خصّصْ إدارة البورتليت</msg>
+  <msg key="Back_to">Back to</msg>
+  <msg key="Binary_file_uploaded">Binary file %filename% was uploaded, but we only support text files here.</msg>
+  <msg key="Content">المحتوى</msg>
+  <msg key="Control_Panel">لوحة التّحكّم</msg>
+  <msg key="Create_a_new">Create a new %element_pretty_name%</msg>
+  <msg key="Edit">Edit</msg>
+  <msg key="Edit_content_element">حررْ عنصرُ المحتوى</msg>
+  <msg key="False_0">False</msg>
+  <msg key="File">File</msg>
+  <msg key="lt_Delete_element_pretty">أحذف %pretty_name% %element_pretty_name%</msg>
+  <msg key="lt_Editing_element_prett">تعديل %element_pretty_name% %pretty_name%</msg>
+  <msg key="lt_Enforce_this_applet_t">Enforce this applet to be shown in the Portal</msg>
+  <msg key="lt_strongNotestrong_You_">&lt;strong&gt;لاحظ&lt;/strong&gt;: البسيط في منطقة المحتمويات إتش تي إم إل يمكن أن تستخدم النّصّ</msg>
+  <msg key="lt_Use_this_form_to_crea">إستعمل هذا الإستمارة لخلق %element_pretty_name% جديد. الـ %element_pretty_name% سيُخْلَق و تلقائيًّا يُوضَع على الصّفحة الأولى من بوابة الإنترنت %portal_name%. إذهب إلى الـ %control_panel_text% و إختار تخصيص التخطيط لتحريك هذا %element_pretty_name%.</msg>
+  <msg key="Name">إسم</msg>
+  <msg key="New">جديد</msg>
+  <msg key="new_static_admin_portlet">%element_pretty_name% جديد</msg>
+  <msg key="True">True</msg>
+</message_catalog>

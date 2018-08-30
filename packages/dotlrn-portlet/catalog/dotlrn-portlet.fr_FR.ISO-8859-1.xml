@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<message_catalog package_key="dotlrn-portlet" locale="fr_FR" charset="ISO-8859-1">
+
+  <msg key="admin_pretty_name">Administration du groupe</msg>
+  <msg key="Administer">Administrer</msg>
+  <msg key="Archive">Archiver</msg>
+  <msg key="Copy_this_group">Copier ce groupe</msg>
+  <msg key="lt_This_group_is_archive">Ce groupe est archivé</msg>
+  <msg key="Only_admins">Administrateurs seulement</msg>
+</message_catalog>

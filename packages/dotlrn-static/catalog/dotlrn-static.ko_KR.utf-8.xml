@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<message_catalog package_key="dotlrn-static" locale="ko_KR" charset="utf-8">
+
+  <msg key="class_info_portlet_pretty_name">강의 정보</msg>
+  <msg key="community_info_portlet_pretty_name">커뮤니티 정보</msg>
+  <msg key="Static_HTML_Data">정적 (HTML) 데이터</msg>
+  <msg key="subcommunity_info_portlet_pretty_name">서브 그룹 정보</msg>
+</message_catalog>

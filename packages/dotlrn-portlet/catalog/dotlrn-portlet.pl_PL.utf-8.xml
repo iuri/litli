@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<message_catalog package_key="dotlrn-portlet" locale="pl_PL" charset="utf-8">
+
+  <msg key="admin_pretty_name">Administracja Grupami</msg>
+  <msg key="Administer">Administruj</msg>
+  <msg key="Administrator_FAQ">Administrator CZaP</msg>
+  <msg key="All_members">Wszyscy członkowie</msg>
+  <msg key="Archive">Archiwizuj</msg>
+  <msg key="Archive_this_group">Archiwizuj tę grupę</msg>
+  <msg key="change_name_etc">Zmień nazwę, opis, etc.</msg>
+  <msg key="Change_term">Zmień termin %pretty_name% z %term_name%</msg>
+  <msg key="Closed">Zamknięte</msg>
+  <msg key="Copy_this_group">Kopiuj tę grupę</msg>
+  <msg key="Disabled">Wyłączony</msg>
+  <msg key="edit_gr_props">Edytuj Właściwości Grupy</msg>
+  <msg key="Edit_Welcome_Message">Edytuj Komunikat Powitalny</msg>
+  <msg key="Email_Members">Wyślij maila do Członków</msg>
+  <msg key="Enabled">Włączony</msg>
+  <msg key="lt_AddRemove_pretty_name">Dodaj/Usuń członków %pretty_name%</msg>
+  <msg key="lt_can_send_bulk_mail_to">możesz wysłać e-pocztę do tej społeczności</msg>
+  <msg key="lt_Change_Bulk_Mail_Poli">Zmień zasady Hurtowej Poczty</msg>
+  <msg key="lt_Change_Enrollment_Pol">Zmień Zasady Zapisów</msg>
+  <msg key="lt_Change_Name_Portlet">Zmień Nazwę Portletu</msg>
+  <msg key="lt_Create_a_new_Limited_">Utwórz nowego użytkownika o ograniczonym dostępie</msg>
+  <msg key="lt_Create_a_new_Limited__1">Utwórz nowego użytkownika o ograniczonym dostępie</msg>
+  <msg key="lt_Create_Welcome_Messag">Utwórz Komunikat Powitalny</msg>
+  <msg key="lt_Customize_Portal_Layo">Zmień Wygląd Portalu</msg>
+  <msg key="lt_Guests_Can_View_Membership_Info">Czy goście mogą oglądać informacje o członkowstwie?</msg>
+  <msg key="lt_No_community_was_spec">Nie podano żadnej społeczności</msg>
+  <msg key="lt_No_subcomm_pretty_plu">Brak %subcomm_pretty_plural%</msg>
+  <msg key="lt_Only_use_this_to_crea">Używaj tego TYLKO do zakładania kont dla studentów, którzy nie mają konta z poprzednich lat lub kursów.</msg>
+  <msg key="lt_Only_use_this_to_crea_1">Używaj tego TYLKO dla użytkowników nie związanych, którzy nie mają jeszcze konta. Informacja o innych członkach tej społeczności nie będzie dla nich dostępna. </msg>
+  <msg key="lt_Sorry_this_functional">Niestety ta funkcja nie jest dostępna dla gości
+
+
+
+
+</msg>
+  <msg key="lt_This_group_is_archive">Ta grupa jest zarchiwizowana</msg>
+  <msg key="Manage_Applets">Zarządzaj Apletami</msg>
+  <msg key="Manage_Membership">Zarządzaj Członkostwem</msg>
+  <msg key="Member_List">Lista Członków</msg>
+  <msg key="members_portlet_pretty_name">Członkowie</msg>
+  <msg key="members_staff_portlet_pretty_name">Kadra</msg>
+  <msg key="Needs_Approval">Wymaga Zatwierdzenia</msg>
+  <msg key="New_sub_pretty_name">Nowa %sub_pretty_name%</msg>
+  <msg key="no_course_assistant_members">%course_assistant_role_pretty_plural% - brak
+</msg>
+  <msg key="no_instructor_members">%instructor_role_pretty_plural% - brak </msg>
+  <msg key="no_teaching_assistant_members">%teaching_assistant_role_pretty_plural% - brak </msg>
+  <msg key="Only_admins">Tylko Adminowie</msg>
+  <msg key="Open">Otwarty</msg>
+  <msg key="Sort">Sortuj</msg>
+  <msg key="Sortmanage">Sortuj/zarządzaj
+</msg>
+</message_catalog>

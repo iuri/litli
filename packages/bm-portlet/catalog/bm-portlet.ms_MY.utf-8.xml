@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<message_catalog package_key="bm-portlet" locale="ms_MY" charset="utf-8">
+
+  <msg key="New_spam_name">%spam_name% Baru</msg>
+  <msg key="pretty_name">Mel Pukal</msg>
+  <msg key="spam_name_History">Sejarah %spam_name%</msg>
+</message_catalog>

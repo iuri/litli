@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<message_catalog package_key="ajax-filestorage-ui" package_version="1.0" locale="de_DE" charset="ISO-8859-1">
+
+  <msg key="Alert">Hinweis</msg>
+  <msg key="Browse">Ausw&auml;hlen</msg>
+  <msg key="Cancel">Abbrechen</msg>
+  <msg key="Cancelled">Abbruch, dieser Eintrag wird gel&ouml;scht...</msg>
+  <msg key="CanNotDeleteRoot">Der oberste Ordner kann nicht gel&ouml;scht werden.</msg>
+  <msg key="ChangesReverted">Ihre &Auml;nderungen wurden r&uuml;ckg&auml;ngig gemacht.</msg>
+  <msg key="Close">Schlie&szlig;en</msg>
+  <msg key="Complete">Fertigstellen.</msg>
+  <msg key="Confirm">Best&auml;tigen</msg>
+  <msg key="ConfirmDelete">Sind Sie sicher, dass Sie die &Auml;nderungen l&ouml;schen m&ouml;chten.</msg>
+  <msg key="CopyHighlight">Kopiere den markierten Text in die Zwischenablage.</msg>
+  <msg key="CopyLink">Link kopieren</msg>
+  <msg key="CreateFolderError">Leide gab es einen Fehler beim Erstellen des Ordners.</msg>
+  <msg key="CreateUrlFailed">Erstellen der URL nicht m&ouml;glich, bitte nochmals probieren.</msg>
+  <msg key="DeleteItemError">Leider gab es einen Fehler beim L&ouml;schen der Datei.</msg>
+  <msg key="Description">Beschreibung</msg>
+  <msg key="DownloadArchive">Herunterladen (Komprimiert)</msg>
+  <msg key="DuplicateName">Name duplizieren</msg>
+  <msg key="EnterDifferentName">Bitte einen anderen Namen w&auml;hlen, dieser wird bereits verwendet.</msg>
+  <msg key="Error">Fehler</msg>
+  <msg key="ErrorMove">Leider konnte die Datei/Ordner nicht verschoben werden. Eine Datei mit diesem Namen existiert im Zielordner bereits.</msg>
+  <msg key="ErrorOccured">Ein Fehler ist aufgetreten.</msg>
+  <msg key="ErrorRenderTreePanel">Leider konnte die Baumansicht der Ordner nicht erstellt werden.</msg>
+  <msg key="ErrorRevert">Ein Fehler ist aufgetreten, die &Auml;nderungen wurden r&uuml;ckg&auml;ngig gemacht.</msg>
+  <msg key="File">Datei</msg>
+  <msg key="FileList">Dateiliste</msg>
+  <msg key="FileToUpload">Hochzuladende Datei</msg>
+  <msg key="FolderContains">Dieser Ordner enth&auml;lt</msg>
+  <msg key="FolderNameRequired">Ein Ordnername ist notwendig</msg>
+  <msg key="for_upload_to">hochladen nach</msg>
+  <msg key="InvalidUrl">&lt;b&gt;URL&lt;/b&gt; ist keine g&uuml;ltige URL.</msg>
+  <msg key="Limit100">Es sind maximal 100 Zeichen erlaubt.</msg>
+  <msg key="MultipleFiles">Mehrere Dateien</msg>
+  <msg key="NoPermissionToRename">Leider haben Sie keine Berechtigung den Ordner umzubenennen.</msg>
+  <msg key="Ok">OK</msg>
+  <msg key="OneMomentUploading">Einen Moment. &lt;br&gt;Abh&auml;ngig von der Dateigr&ouml;&szlig;e kann der Upload l&auml;ngere Zeit dauern.</msg>
+  <msg key="PermissionDenied">Zurgriff verboten</msg>
+  <msg key="Properties">Eigenschaften</msg>
+  <msg key="SessionExpired">Ihre Sitzung ist abgelaufen. Bitte erneut einloggen. &lt;br&gt;Sie werden in K&uuml;rze zur Login-Seite umgeleitet.</msg>
+  <msg key="ThisIsAZip">Eine ZIP-Datei mit mehreren Dateien hochladen.</msg>
+  <msg key="Title">Titel</msg>
+  <msg key="TitleAndFileRequired">&lt;b&gt;Titel&lt;/b&gt; und &lt;b&gt;hochzuladende Datei&lt;/b&gt; wird ben&ouml;tigt.</msg>
+  <msg key="UploadFailed">Hochladen fehlgeschlagen, bitte sp&auml;ter erneut versuchen.</msg>
+  <msg key="UploadFileIntro">Klicken Sie auf &lt;b&gt;Ausw&auml;hlen&lt;/b&gt; um eine Datei in den gew&auml;hlten Ordner hochzuladen.</msg>
+  <msg key="Uploading">Uploading ...</msg>
+  <msg key="Zip_file">Zip-Datei (Wird am Server automatisch entpackt.)</msg>
+</message_catalog>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<message_catalog package_key="static-portlet" locale="no_NO" charset="ISO-8859-1">
+
+  <msg key="admin_portlet_element_pretty_name">Spesialtilpasset modul</msg>
+  <msg key="admin_portlet_pretty_name">Administrasjon av spesialtilpasset modul</msg>
+  <msg key="Back_to">Tilbake til</msg>
+  <msg key="Binary_file_uploaded">Binærfil %filename% ble lastet opp, men vi supporterer kun tekstfiler her.</msg>
+  <msg key="Content">Innhold</msg>
+  <msg key="Control_Panel">Kontrollpanel</msg>
+  <msg key="Create_a_new">Lag en ny %element_pretty_name%</msg>
+  <msg key="Edit">Rediger</msg>
+  <msg key="Edit_content_element">Rediger innholdselement</msg>
+  <msg key="False_0">Feil</msg>
+  <msg key="File">Fil</msg>
+  <msg key="lt_Delete_element_pretty">Slett %element_pretty_name% %pretty_name% </msg>
+  <msg key="lt_Editing_element_prett">Redigerer %element_pretty_name% %pretty_name%</msg>
+  <msg key="lt_Enforce_this_applet_t">Tving denne ruten til å vises i portalen</msg>
+  <msg key="lt_Enforce_True_means_th">Tving Ja betyr at den statiske ruten umiddelbart vil bli \ lagt inn i målportalene som allerede er laget. \ Nei betyr at den vil bli tilgjengelig for bruk når portalen blir tilpasset eller når man utfører tilbakestilling av portalen</msg>
+  <msg key="lt_strongNotestrong_You_">&lt;strong&gt;Obs&lt;/strong&gt;: Du kan benytte enkel tekst eller eller HTML i innholdsområdet.</msg>
+  <msg key="lt_Use_this_form_to_crea">Bruk dette skjemaet for å lage et nytt %element_pretty_name%. %element_pretty_name% vil bli lagt inn og automatisk plassert på første siden av %portal_name% portalen. Gå til %control_panel_text% og velg Skreddersy portalen for å flytte dette %element_pretty_name%.</msg>
+  <msg key="Name">Navn</msg>
+  <msg key="New">Ny</msg>
+  <msg key="new_static_admin_portlet">Ny %element_pretty_name% </msg>
+  <msg key="True">Ja</msg>
+  <msg key="Use_this_form">Bruk dette skjemaet for å lage en ny %element_pretty_name%. %element_pretty_name% wil opprettes og automatisk legges inn på første side av %portal_name% portalen. Gå til administrasjonssiden og velg Skreddersy portal for å flytte  %element_pretty_name%.</msg>
+  <msg key="You_may_upload">Eller, du kan laste opp en &lt;strong&gt;tekst&lt;/strong&gt;-fil her, innholdet av den vil erstatte det nåværende innholdet i ruten.</msg>
+</message_catalog>

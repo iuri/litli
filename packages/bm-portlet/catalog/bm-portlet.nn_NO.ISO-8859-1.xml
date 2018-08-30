@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<message_catalog package_key="bm-portlet" locale="nn_NO" charset="ISO-8859-1">
+
+  <msg key="New_spam_name">Ny %spam_name%</msg>
+  <msg key="pretty_name">Masse-epost</msg>
+  <msg key="spam_name_History">%spam_name% Historie</msg>
+</message_catalog>

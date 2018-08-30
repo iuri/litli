@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<message_catalog package_key="dotlrn-portlet" locale="ca_ES" charset="ISO-8859-1">
+
+  <msg key="admin_pretty_name">Administració del grup</msg>
+  <msg key="Administer">Administrar </msg>
+  <msg key="All_members">Tots els membres </msg>
+  <msg key="Archive">Arxivar </msg>
+  <msg key="Archive_this_group">Arxivar aquest grup </msg>
+  <msg key="change_name_etc">Canviar nom, descripció, etc. </msg>
+  <msg key="Closed">Tancat </msg>
+  <msg key="Copy_this_group">Copiar aquest grup </msg>
+  <msg key="edit_gr_props">Editar les propietats del grup </msg>
+  <msg key="Email_Members">Enviar correu als membres </msg>
+  <msg key="lt_AddRemove_pretty_name">Afegir/Eliminar membres %pretty_name% </msg>
+  <msg key="lt_can_send_bulk_mail_to">podeu enviar correus massius a aquesta comunitat. </msg>
+  <msg key="lt_Change_Bulk_Mail_Poli">Canviar la política de correu massiu </msg>
+  <msg key="lt_Change_Enrollment_Pol">Canviar la política de subscripció </msg>
+  <msg key="lt_Create_a_new_Limited_">Crear un usuari amb accés limitat </msg>
+  <msg key="lt_Create_a_new_Limited__1">Crear un usuari convidat amb accés limitat </msg>
+  <msg key="lt_Customize_Portal_Layo">Personalitzar aquest portal </msg>
+  <msg key="lt_Guests_Can_View_Membership_Info">Els usuaris convidats poden veure la informació dels membres del grup? </msg>
+  <msg key="lt_No_subcomm_pretty_plu">No hi ha %subcomm_pretty_plural% </msg>
+  <msg key="lt_Only_use_this_to_crea">Utilitzeu aquesta opció només per a crear un compte per a alumnes que no en tinguen un altre d'una classe anterior. </msg>
+  <msg key="lt_Only_use_this_to_crea_1">Utilitzeu aquesta opció només per a crear un compte per a usuaris no afiliats que no en tinguen encara. Aquests usuaris no tindran accés a les dades d'altres membres d'aquesta comunitat. </msg>
+  <msg key="lt_Sorry_this_functional">Ho sentim, aquesta opció no està disponible per a usuaris convidats </msg>
+  <msg key="lt_This_group_is_archive">Aquest grup s'ha arxivat </msg>
+  <msg key="Manage_Applets">Administrar miniaplicacions </msg>
+  <msg key="Manage_Membership">Administrar membres </msg>
+  <msg key="Member_List">Llista de membres </msg>
+  <msg key="members_portlet_pretty_name">Membres </msg>
+  <msg key="members_staff_portlet_pretty_name">Equip </msg>
+  <msg key="Needs_Approval">Necessita aprovació </msg>
+  <msg key="New_sub_pretty_name">%sub_pretty_name% nou </msg>
+  <msg key="no_course_assistant_members">No hi ha %course_assistant_role_pretty_plural% </msg>
+  <msg key="no_instructor_members">No hi ha %instructor_role_pretty_plural% </msg>
+  <msg key="no_teaching_assistant_members">No hi ha %teaching_assistant_role_pretty_plural% </msg>
+  <msg key="Only_admins">Només administradors </msg>
+  <msg key="Open">Obrir</msg>
+  <msg key="Sort">Ordenar </msg>
+  <msg key="Sortmanage">Ordenar/administrar </msg>
+</message_catalog>

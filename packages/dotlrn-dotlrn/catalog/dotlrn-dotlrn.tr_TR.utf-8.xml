@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<message_catalog package_key="dotlrn-dotlrn" locale="tr_TR" charset="utf-8">
+
+  <msg key="Core_DotLRN_Applets">DotLRN Cekirdek Eklentisi</msg>
+  <msg key="Group_Members_Info">Grup Uyeler Bilgisi</msg>
+  <msg key="lt_dotLRN_Staff_List_Inf">dotLRN Personel Listesi Bilgisi</msg>
+</message_catalog>

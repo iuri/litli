@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<message_catalog package_key="bm-portlet" locale="fr_FR" charset="ISO-8859-1">
+
+  <msg key="New_spam_name">Nouveau %spam_name%</msg>
+  <msg key="pretty_name">Envoi massif</msg>
+  <msg key="spam_name_History">Historique de %spam_name%</msg>
+</message_catalog>

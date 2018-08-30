@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<message_catalog package_key="static-portlet" locale="ast_ES" charset="ISO-8859-1">
+
+  <msg key="admin_portlet_element_pretty_name">Portlet Personalizáu</msg>
+  <msg key="admin_portlet_pretty_name">Alministración Personalizada del Portlet</msg>
+  <msg key="Content">Conteníu</msg>
+  <msg key="Control_Panel">Panel de Control</msg>
+  <msg key="Edit_content_element">Editar conteníu del elementu</msg>
+  <msg key="lt_Delete_element_pretty">Eliminar &quot;%element_pretty_name% %pretty_name%&quot;</msg>
+  <msg key="lt_Editing_element_prett">Editar &quot;%element_pretty_name% %pretty_name%&quot;</msg>
+  <msg key="lt_strongNotestrong_You_">&lt;strong&gt;Atención&lt;/strong&gt;:puedes editar l'área de Conteníu en textu planu o HTML.</msg>
+  <msg key="lt_Use_this_form_to_crea">Usar esti formulariu pa crear un nuevu &quot;%element_pretty_name%&quot;. El &quot;%element_pretty_name%&quot; va crease y asitiará automáticamente na primer páxina del &quot;%portal_name%&quot; portal. Vete al &quot;%control_panel_text%&quot; y escueye Personalizar Asitiamientu pa mover esti &quot;%element_pretty_name%&quot;.</msg>
+  <msg key="Name">Nome</msg>
+  <msg key="New">Nuevo</msg>
+  <msg key="new_static_admin_portlet">&quot;%element_pretty_name%&quot; Nuevu</msg>
+</message_catalog>

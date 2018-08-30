@@ -1,0 +1,9 @@
+/user-profile-create.sql/1.3/Fri Aug  9 20:56:32 2002//Topenacs-5-9-compat
+/user-profile-drop.sql/1.3/Fri Aug  9 20:56:32 2002//Topenacs-5-9-compat
+/user-profile-init.sql/1.3/Fri Aug  9 20:56:32 2002//Topenacs-5-9-compat
+/user-profile-package-create.sql/1.4/Tue Sep 30 13:11:42 2003//Topenacs-5-9-compat
+/user-profile-package-drop.sql/1.3/Fri Aug  9 20:56:32 2002//Topenacs-5-9-compat
+/user-profile-provider-create.sql/1.4/Tue Sep 30 13:11:42 2003//Topenacs-5-9-compat
+/user-profile-provider-drop.sql/1.4/Tue Sep 30 13:11:42 2003//Topenacs-5-9-compat
+/user-profile-sanitize.sql/1.4/Tue Sep 30 13:11:42 2003//Topenacs-5-9-compat
+D

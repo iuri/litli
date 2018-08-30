@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<message_catalog package_key="dotlrn-portlet" locale="nl_NL" charset="ISO-8859-1">
+
+  <msg key="admin_pretty_name">Groep administratie</msg>
+  <msg key="Administer">Beheren</msg>
+  <msg key="All_members">Alle Leden</msg>
+  <msg key="Archive">Archiveren</msg>
+  <msg key="Archive_this_group">Deze groep archiveren</msg>
+  <msg key="change_name_etc">Naam, beschrijving, etcetera veranderen.</msg>
+  <msg key="Closed">Besloten</msg>
+  <msg key="Copy_this_group">Deze groep kopiëren</msg>
+  <msg key="edit_gr_props">Groepseigenschappen bewerken</msg>
+  <msg key="Email_Members">Leden e-mailen </msg>
+  <msg key="lt_AddRemove_pretty_name">%pretty_name% leden toevoegen/verwijderen</msg>
+  <msg key="lt_can_send_bulk_mail_to">kan groepsgewijze e-mail verzenden aan deze gemeenschap</msg>
+  <msg key="lt_Change_Bulk_Mail_Poli">Beleid groepsgewijze e-mail wijzigen</msg>
+  <msg key="lt_Change_Enrollment_Pol">Toetredingsbeleid veranderen </msg>
+  <msg key="lt_Create_a_new_Limited_">Nieuwe gebruiker met beperkte toegang aanmaken</msg>
+  <msg key="lt_Create_a_new_Limited__1">Nieuwe gastgebruiker met beperkte toegang aanmaken</msg>
+  <msg key="lt_Customize_Portal_Layo">Portaal-indeling wijzigen</msg>
+  <msg key="lt_Guests_Can_View_Membership_Info">Mogen gastgebruikers informatie over groepsleden zien? </msg>
+  <msg key="lt_No_subcomm_pretty_plu">Geen %subcomm_pretty_plural% beschikbaar</msg>
+  <msg key="lt_Only_use_this_to_crea">Gebruik dit alleen om een 'cross-registered' leerling toe te voegen die nog niet is geregistreerd voor een ander vak</msg>
+  <msg key="lt_Only_use_this_to_crea_1">Gebruik dit alleen om externe gebruikers toe te voegen die nog niet geregistreerd staan in dit systeem. Informatie over andere groepsleden zullen niet beschkbaar zijn voor deze gebruiker.</msg>
+  <msg key="lt_Sorry_this_functional">Sorry, deze functie is niet beschikbaar voor gasten</msg>
+  <msg key="lt_This_group_is_archive">Deze groep is gearchiveerd</msg>
+  <msg key="Manage_Applets">Applets beheren</msg>
+  <msg key="Manage_Membership">Lidmaatschap beheren</msg>
+  <msg key="Member_List">Ledenlijst</msg>
+  <msg key="members_portlet_pretty_name">Leden</msg>
+  <msg key="members_staff_portlet_pretty_name">Stafleden</msg>
+  <msg key="Needs_Approval">Toestemming nodig</msg>
+  <msg key="New_sub_pretty_name">Nieuwe %sub_pretty_name%</msg>
+  <msg key="no_course_assistant_members">Geen %course_assistant_role_pretty_plural% beschikbaar</msg>
+  <msg key="no_instructor_members">Geen %instructor_role_pretty_plural% beschikbaar</msg>
+  <msg key="no_teaching_assistant_members">Geen %teaching_assistant_role_pretty_plural% beschikbaar</msg>
+  <msg key="Only_admins">Alleen beheerders</msg>
+  <msg key="Open">Openen</msg>
+  <msg key="Sort">Sorteren</msg>
+  <msg key="Sortmanage">Sorteren/beheren</msg>
+</message_catalog>

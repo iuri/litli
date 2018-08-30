@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<message_catalog package_key="evaluation-portlet" locale="pt_BR" charset="ISO-8859-1">
+
+  <msg key="Add_grade_name_">Adicionar %grade_name%</msg>
+  <msg key="Addedit_answer_">Adicionar/Editar resposta</msg>
+  <msg key="Addedit_solution_">Adicionar/Editar solução</msg>
+  <msg key="admin_help">Criar, alterar ou apagar um tipo de atribuição para o curso</msg>
+  <msg key="Assignments">Atribuições</msg>
+  <msg key="Assignments_">Livro de Notas</msg>
+  <msg key="class_total">&lt;center&gt;&lt;text class=&quot;blue&quot;&gt;Sua nota total nesta classe é: &lt;b&gt;%total_class_grade%/%max_possible_grade% &lt;/b&gt;&lt;/text&gt;&lt;/center&gt;</msg>
+  <msg key="Comments_">&lt;center&gt;COMENTÁRIOS&lt;/center&gt;</msg>
+  <msg key="delete">Deletar</msg>
+  <msg key="Delete_task_">Deletar tarefa</msg>
+  <msg key="Due_date_">&lt;center&gt;DATA LIMITE&lt;/center&gt;</msg>
+  <msg key="edit">Editar</msg>
+  <msg key="edit_grade_scale">Editar Escala de Notas</msg>
+  <msg key="Edit_task_">Editar tarefa</msg>
+  <msg key="email_notif">&lt;text class=&quot;blue&quot;&gt;Notificação por E-mail?&lt;/text&gt;</msg>
+  <msg key="evaluate">Avaliar</msg>
+  <msg key="Evaluations_">Avalções</msg>
+  <msg key="full_version">Versão Completa: Portlets das Atribuições e Avaliações</msg>
+  <msg key="grade">NOTA</msg>
+  <msg key="Grade_over_100_">&lt;center&gt;% NOTA &lt;br&gt;(DE 100%)&lt;/center&gt;</msg>
+  <msg key="Grades">Repoetar</msg>
+  <msg key="Groups_Admin_">Administração de Grupos</msg>
+  <msg key="lt_Admin_my_Assignment_T">Modificar Tipos de Atribuição</msg>
+  <msg key="lt_Administer_Evaluation">Administra Avaliações</msg>
+  <msg key="lt_Edit_grades_distribut">Editar distribuição de notas de %low_name%</msg>
+  <msg key="lt_Evaluation_Admin_Port">Portlet de Administração da Avaliação</msg>
+  <msg key="lt_Evaluation_Administra">Administração da Avaliação</msg>
+  <msg key="lt_Evaluation_Assignment">Portlet de Avaliação das Atribuições</msg>
+  <msg key="lt_Evaluation_Evaluation">Portlet de Avaliação das Avaliações</msg>
+  <msg key="lt_Groups_administration">Administração de Grupos</msg>
+  <msg key="lt_smallTotal_points_in_">&lt;small&gt;Pontuação total nesta categoria: %total_grade%/%max_grade%&lt;br /&gt; Esta categoria de notas representa %grade_weight%% de 100% da classe &lt;small&gt;</msg>
+  <msg key="lt_smallTotal_points_in__1">TOTAL &lt;text class=&quot;blue&quot;&gt;%grade_plural_name%:&lt;/text&gt;</msg>
+  <msg key="lt_smallWeight_used_in_g">TOTAIS &lt;text class=&quot;blue&quot;&gt;%grade_plural_name%:&lt;/text&gt;</msg>
+  <msg key="lt_submit_answer_style_f">enviar resposta &lt;style color:red&gt;late&lt;/style&gt;</msg>
+  <msg key="lt_submit_answer_style_f_1">Enviar resposta &lt;style color:red&gt;atrasada&lt;/style&gt; de novo</msg>
+  <msg key="lt_There_are_no_tasks_fo">Não há tarefas para este pacote.</msg>
+  <msg key="lt_There_are_no_tasks_to">Não há tarefas para avaliar para este pacote.</msg>
+  <msg key="lt_There_should_be_only_">Deve haver apenas uma instância para fins de administração</msg>
+  <msg key="lt_View_evaluation_comme">Ver comentários das avaliações</msg>
+  <msg key="lt_View_evaluation_detai">Ver comentários</msg>
+  <msg key="lt_Your_total_grade_in_t">Sua nota total nesta classe é:</msg>
+  <msg key="maximum">(máximo)</msg>
+  <msg key="Name_">NOME</msg>
+  <msg key="Net_Value_">Valor Líquido</msg>
+  <msg key="No_assignments_">Não há atribuições</msg>
+  <msg key="No_group_for_task_">Não há grupo para a tarefa</msg>
+  <msg key="Not_available_">Não disponível</msg>
+  <msg key="Not_evaluated_">Não Avaliado</msg>
+  <msg key="notif_help">Texto para notificações</msg>
+  <msg key="point_value">VALOR DA PONTUAÇÃO</msg>
+  <msg key="Points">&lt;center&gt;PONTUAÇÃO ATINGIDA&lt;/center&gt;</msg>
+  <msg key="points_value">VALOR DAS PONTUAÇÕES</msg>
+  <msg key="select_version">Apresentação do Portlet</msg>
+  <msg key="simple_version">Versão Simples: Portlet de Avalições, baseado na característica de pontuação perfeita.</msg>
+  <msg key="solution">SOLUÇÃO</msg>
+  <msg key="submit_answer_">enviar resposta</msg>
+  <msg key="submit_answer_again_">enviar resposta novamente</msg>
+  <msg key="Submitted">ENVIADO</msg>
+  <msg key="task_name_No_data_">%task_name% (Sem dados)</msg>
+  <msg key="task_name_URL_">%task_name% (URL)</msg>
+  <msg key="total_grade">da Nota Total</msg>
+  <msg key="Total_Points">&lt;center&gt;Pontos Totais&lt;/center&gt;</msg>
+  <msg key="Upload_Solution_">Enviar Solução</msg>
+  <msg key="version_label">Escolha sua apresentação do Portlet:</msg>
+  <msg key="View_comments_">Ver comentários</msg>
+  <msg key="view_grades_help">Visualizar as notas dos estudantes em todas as atribuições e avaliações.</msg>
+  <msg key="View_my_answer_">Ver minhas respostas</msg>
+  <msg key="view_students_grades">Visualizar Notas dos Estudantes</msg>
+  <msg key="View_task_">Ver tarefas</msg>
+  <msg key="ViewEdit_Solution_">Visualizar/Editar Solução</msg>
+  <msg key="Weight_">PESO DO ITEM</msg>
+  <msg key="weight_possible_of_grade_">&lt;text class=&quot;blue&quot;&gt;(de possíveis 100% do &lt;/text&gt;</msg>
+  <msg key="weight_possible_of_grade_p">&lt;text class=&quot;blue&quot;&gt;(de possíveis 100% das %grade_plural_name%)</msg>
+</message_catalog>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<message_catalog package_key="evaluation-portlet" locale="el_GR" charset="utf-8">
+
+  <msg key="Add_grade_name_">Προσθήκη %grade_name% </msg>
+  <msg key="Addedit_answer_">Προσθήκη/Επεξεργασία απάντησης</msg>
+  <msg key="Addedit_solution_">Προσθήκη/Επεξεργασία λύσης</msg>
+  <msg key="admin_help">Δημιουργία, αλλαγλη ή διαγραφή ενός τύπου εργασίας μαθήματος.</msg>
+  <msg key="Assignments">Εργασίες</msg>
+  <msg key="Assignments_">Βαθμολόγιο</msg>
+  <msg key="Audit_Info_">Πληροφορίες εξέτασης.</msg>
+  <msg key="Audit_info_">Πληροφορίες εξέτασης</msg>
+  <msg key="class_total">&lt;center&gt;&lt;text class=&quot;blue&quot;&gt;Ο συνολικός βαθμός σας για αυτή τη τάξη είναι:&lt;b&gt;%total_class_grade%/%max_possible_grade% &lt;/b&gt;&lt;/text&gt;&lt;/center&gt;</msg>
+  <msg key="Comments_">&lt;center&gt;ΣΧΟΛΙΑ&lt;/center&gt; </msg>
+  <msg key="delete">Διαγραφή</msg>
+  <msg key="Delete_task_">Διαγραφή αποστολής</msg>
+  <msg key="Due_date_">ΗΜΕΡΟΜΗΝΙΑ ΠΑΡΑΔΟΣΗΣ</msg>
+  <msg key="edit">Επεξεργασία</msg>
+  <msg key="edit_grade_scale">Επεξεργασία βαθμίδας βαθμολόγησης</msg>
+  <msg key="Edit_task_">Επεξεργασία αποστολής</msg>
+  <msg key="email_notif">&lt;text class=&quot;blue&quot;&gt;Ειδοποίηση με email;&lt;/text&gt;</msg>
+  <msg key="evaluate">Αξιολόγηση</msg>
+  <msg key="Evaluations_">Αξιολογήσεις</msg>
+  <msg key="full_version">Πλήρης έκδοση: Πύλη εργασιών και Αξιολογήσεων</msg>
+</message_catalog>

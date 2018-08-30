@@ -1,0 +1,14 @@
+# 
+#
+# Redirect to administration
+#
+# @author Dave Bauer (dave@thedesignexperience.org)
+# @creation-date 2004-02-16
+# @cvs-id $Id: index.vuh,v 1.1.1.1.18.1 2016/06/09 09:13:26 gustafn Exp $
+
+ad_returnredirect "admin/"
+# Local variables:
+#    mode: tcl
+#    tcl-indent-level: 4
+#    indent-tabs-mode: nil
+# End:

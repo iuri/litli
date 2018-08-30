@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<message_catalog package_key="survey" locale="ja_JP" charset="utf-8">
+
+  <msg key="Copy">コピー</msg>
+  <msg key="Copy_of">以下のコピー</msg>
+  <msg key="Delete">削除</msg>
+  <msg key="Delete_1">削除</msg>
+  <msg key="Description">説明</msg>
+  <msg key="Description_1">説明</msg>
+  <msg key="Edit">編集</msg>
+  <msg key="First_Name">名</msg>
+  <msg key="Last_Name">姓</msg>
+  <msg key="No">いいえ</msg>
+  <msg key="Preview">プレビュー</msg>
+  <msg key="Summary">要約</msg>
+  <msg key="View">表示</msg>
+  <msg key="Yes">はい</msg>
+</message_catalog>

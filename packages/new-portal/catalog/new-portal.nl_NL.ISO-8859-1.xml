@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<message_catalog package_key="new-portal" locale="nl_NL" charset="ISO-8859-1">
+
+  <msg key="Add_Page">Toevoegen Pagina</msg>
+  <msg key="Bad_direction">Onjuiste richting:</msg>
+  <msg key="Bad_direction_1">Onjuiste richting!</msg>
+  <msg key="Change_Page_Layout">Pagina-indeling veranderen</msg>
+  <msg key="Change_page_layout">Pagina-indeling veranderen</msg>
+  <msg key="Change_Theme">Thema veranderen:</msg>
+  <msg key="Change_Theme_1">Thema veranderen</msg>
+  <msg key="Create_a_new_page">Aanmaken nieuwe pagina</msg>
+  <msg key="Custom_Portlets">Portlet Op Maat</msg>
+  <msg key="deco_theme_description">Art Deco thema</msg>
+  <msg key="deco_theme_name">deco</msg>
+  <msg key="Go_back">Ga Terug</msg>
+  <msg key="Hide_in_main_navigation">Verberg deze pagina</msg>
+  <msg key="kelp_theme_description">Kennis-E-lerenportaal</msg>
+  <msg key="kelp_theme_name">KELP</msg>
+  <msg key="lt_-_Note_custom_portlet">- Bericht: Portlet Op Maat voor portaal sjablonen zijn enigzins fragiel en niet erg flexibel, maar op ieder moment kan een Portlet Op Maat aan een sjabloon worden toegevoegd, en deze zal worden toegevoegd aan alle daar aan gerelateerde portalen (gebruikers, klassen, etc.). Ze kunnen ook worden bewerkt en de wijzigingen zullen in alle portalen terug te vinden zijn. Een klasbeheerder kan met de hand een Portlet Op Maat aanpassen. Het bewerken van de hoofdsjablonen overschrijft de locaal gemaakte wijziging.</msg>
+  <msg key="lt_Add_This_Portlet_Here">Deze portlet hier toevoegen</msg>
+  <msg key="lt_Error_bad_params_n___">Fout, verkeerde parameters! \n
+Wilt u de systeembeheerder hiervan op de hoogte stellen?
+Bedankt.</msg>
+  <msg key="lt_Manage_Custom_Portlet">Portlet Op Maat beheren</msg>
+  <msg key="lt_No_Elements_on_this_p">Geen elementen op deze pagina</msg>
+  <msg key="lt_None_You_can_not_add_">Geen. Er kan geen andere portlet worden toegevoegd omdat ze allen al in gebruik zijn.</msg>
+  <msg key="lt_Revert_the_entire_por">Terugzetten van het gehele portaal naar de standaardinstelling</msg>
+  <msg key="lt_You_must_enter_new_na">Er moet een nieuwe naam voor de pagina worden ingevoerd</msg>
+  <msg key="Move_to_page">Verplaats naar Pagina</msg>
+  <msg key="nada_theme_description">Non thema. Geen grafische elementen.</msg>
+  <msg key="nada_theme_name">Niets</msg>
+  <msg key="Page">Pagina</msg>
+  <msg key="Page_1">Pagina:</msg>
+  <msg key="Remove_Empty_Page">Verwijder lege pagina</msg>
+  <msg key="Rename_Page">Hernoem Pagina</msg>
+  <msg key="Revert">Standaardinstelling</msg>
+  <msg key="Show_in_main_navigation">Toon deze pagina</msg>
+  <msg key="simple_1column_layout_description">Simpele indeling met 1 kolom</msg>
+  <msg key="simple_1column_layout_name">Simpel 1-Kolom</msg>
+  <msg key="simple_2column_layout_description">Simpele indeling met 2 kolommen</msg>
+  <msg key="simple_2column_layout_name">Simpel 2-Kolommen</msg>
+  <msg key="simple_3column_layout_description">Simpele indeling met 3 kolommen</msg>
+  <msg key="simple_3column_layout_name">Simpel 3-Kolommen</msg>
+  <msg key="simple_red_theme_description">Simpele thema met kleurvarianten </msg>
+  <msg key="simple_red_theme_name">simple</msg>
+  <msg key="sloan_theme_description">MIT Sloan Thema</msg>
+  <msg key="sloan_theme_name">Sloan</msg>
+  <msg key="transaction_failed">transactie mislukt</msg>
+  <msg key="Unused_Portlets">Ongebruikte Portlets</msg>
+</message_catalog>

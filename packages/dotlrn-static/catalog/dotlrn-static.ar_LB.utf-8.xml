@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<message_catalog package_key="dotlrn-static" locale="ar_LB" charset="utf-8">
+
+  <msg key="class_info_portlet_pretty_name">معلومات الصف</msg>
+  <msg key="community_info_portlet_pretty_name">معلومات الجمعية</msg>
+  <msg key="Static_HTML_Data">بيانات (إتش تي إم إل) المستقرة</msg>
+  <msg key="subcommunity_info_portlet_pretty_name">معلومات مجموعة فرعيّة</msg>
+</message_catalog>

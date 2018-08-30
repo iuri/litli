@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<message_catalog package_key="theme-zen" package_version="2.2.0" locale="nl_NL" charset="ISO-8859-1">
+
+  <msg key="accessibility_note">Let alstublieft op dat geen enkel stuk software uw website aan de toegankelijkheidsnormen kan toetsen.</msg>
+  <msg key="Communities">Gemeenschappen</msg>
+  <msg key="ControlPanel">Controlepaneel</msg>
+  <msg key="Courses">Cursussen</msg>
+  <msg key="dotlrn_Home">.LRN-hoofdpagina</msg>
+  <msg key="dotlrn_Project_Central">.LRN-projectcentrale</msg>
+  <msg key="Home">Hoofdpagina</msg>
+  <msg key="Logout">Uitloggen</msg>
+  <msg key="MySpace">Mijn ruimte</msg>
+  <msg key="online">online</msg>
+  <msg key="Preferences">Voorkeuren</msg>
+  <msg key="Tools">Hulpmiddelen</msg>
+  <msg key="You_are_here">U bent hier</msg>
+</message_catalog>

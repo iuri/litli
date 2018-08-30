@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<message_catalog package_key="dotlrn-static" locale="ro_RO" charset="utf-8">
+
+  <msg key="class_info_portlet_pretty_name">Informaţii despre Clasă</msg>
+  <msg key="community_info_portlet_pretty_name">Informaţie despre Comunitate</msg>
+  <msg key="Static_HTML_Data">Date Statice (HTML)</msg>
+  <msg key="subcommunity_info_portlet_pretty_name">Informaţie despre Subgrup</msg>
+</message_catalog>

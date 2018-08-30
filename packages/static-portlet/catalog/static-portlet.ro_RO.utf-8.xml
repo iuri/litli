@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<message_catalog package_key="static-portlet" locale="ro_RO" charset="utf-8">
+
+  <msg key="admin_portlet_element_pretty_name">Portlet Adaptat</msg>
+  <msg key="admin_portlet_pretty_name">Administrare pentru Portlet Adaptat</msg>
+  <msg key="Back_to">Înapoi la</msg>
+  <msg key="Binary_file_uploaded">Fişierul binar %filename% a fost încărcat, dar asistenţă este oferită numai pentru fişiere text.</msg>
+  <msg key="Content">Conţinut</msg>
+  <msg key="Control_Panel">Control Panel</msg>
+  <msg key="Create_a_new">Creează un nou %element_pretty_name%</msg>
+  <msg key="Edit">Modifică</msg>
+  <msg key="Edit_content_element">Modifică elementul din conţinut</msg>
+  <msg key="False_0">Fals</msg>
+  <msg key="File">Fişier</msg>
+  <msg key="lt_Delete_element_pretty">Şterge %element_pretty_name% %pretty_name%</msg>
+  <msg key="lt_Editing_element_prett">Modifică %element_pretty_name% %pretty_name%</msg>
+  <msg key="lt_Enforce_this_applet_t">Determină acest aplet să fie afişat in Portal</msg>
+  <msg key="lt_Enforce_True_means_th">Determină Adevărat - înseamnă ca acest portlet static va fi \ adăugat imediat în portalurile ţintă care au fost deja creeate, \Fals înseamnă că va putea fi folosit când portalul este adaptat sau când se efectuează acţiunea invers</msg>
+  <msg key="lt_strongNotestrong_You_"> &lt;strong&gt;Note&lt;/strong&gt;: Puteţi folosi text simplu sau HTM in zona de Conţinut</msg>
+  <msg key="lt_Use_this_form_to_crea">Folosiţi acest formular pentru a creea un nou %element_pretty_name%. %element_pretty_name%ul/a va fi creeat şi plasat automat pe prima pagină a portalului %portal_name%</msg>
+  <msg key="Name">Nume</msg>
+  <msg key="New">Nou</msg>
+  <msg key="new_static_admin_portlet">%element_pretty_name% nou</msg>
+  <msg key="True">Adevărat</msg>
+  <msg key="Use_this_form">Folosiţi acest formular pentru a creea un nou %element_pretty_name%. %element_pretty_name% va fi creeat si plasat în mod automat pe prima pagina a portalului %portal_name%.
+Mergi la pagina de administrare si selectează &quot;Adaptează Aşezarea în Pagină&quot; pentru a muta acest %element_pretty_name%.</msg>
+  <msg key="You_may_upload">Sau, Poţi încărca un fişier &lt;strong&gt;text&lt;/strong&gt;, al cărui conţinut va înlocui conţinutul curent al portletului </msg>
+</message_catalog>

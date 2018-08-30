@@ -1,0 +1,55 @@
+# /packages/photo-album/www/photo-add.tcl
+
+ad_page_contract {
+
+    Upload a photo to an existing album
+
+    @author Tom Baginski (bags@arsdigita.com)
+    @creation-date 12/10/2000
+    @cvs-id $Id: photo-add.tcl,v 1.9 2014/08/07 07:59:50 gustafn Exp $
+} {
+    album_id:naturalnum,notnull
+} -validate {
+    valid_album -requires {album_id:integer} {
+	if [string equal [pa_is_album_p $album_id] "f"] {
+	    ad_complain "[_ photo-album._The_4]"
+	}
+    }
+} -properties {
+    album_id:onevalue
+    context_list:onevalue
+}
+
+# check for read permission on folder
+permission::require_permission -object_id $album_id -privilege pa_create_photo
+
+set context_list [pa_context_bar_list -final "[_ photo-album._Upload]" $album_id]
+
+set photo_id [db_nextval "acs_object_id_seq"]
+
+form create photo_upload -action photo-add-2 -html {enctype multipart/form-data}
+
+element create photo_upload album_id  \
+  -label "album_id" -datatype integer -widget hidden
+
+element create photo_upload photo_id  \
+  -label "photo_id" -datatype integer -widget hidden
+
+element create photo_upload upload_file  \
+  -label "[_ photo-album._Choose_2]" -help_text "[_ photo-album._Use]" -datatype text -widget file 
+
+element create photo_upload caption -html { size 30 } \
+    -label "[_ photo-album.Caption]" -optional -help_text "[_ photo-album.lt_OPTIONAL_Displayed_on]" -datatype text 
+
+element create photo_upload description -html { size 50} \
+  -label "[_ photo-album._Photo]" -optional -help_text "[_ photo-album.lt_OPTIONAL_Displayed_wh]" -datatype text
+
+element create photo_upload story -html { cols 50 rows 4 } \
+  -label "[_ photo-album._Photo_1]" -optional -help_text "[_ photo-album.OPTIONAL]" -datatype text -widget textarea
+
+element set_properties photo_upload album_id -value $album_id
+element set_properties photo_upload photo_id -value $photo_id
+
+ad_return_template
+
+

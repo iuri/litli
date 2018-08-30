@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<message_catalog package_key="news-portlet" locale="nn_NO" charset="ISO-8859-1">
+
+  <msg key="Add_a_News_Item">Legg inn ei melding</msg>
+  <msg key="admin_pretty_name">Meldingsadministrasjon</msg>
+  <msg key="Manage_News">Organiser meldingar</msg>
+  <msg key="No_News">Ingen meldingar</msg>
+  <msg key="pretty_name">Meldingar</msg>
+  <msg key="Read_more">Les meir...</msg>
+</message_catalog>

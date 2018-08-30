@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<message_catalog package_key="faq-portlet" locale="sh_HR" charset="utf-8">
+
+  <msg key="no_faqs">Nema FAQ-ova</msg>
+  <msg key="pretty_name">Najcesce Postavljana Pitanja (FAQs)</msg>
+</message_catalog>

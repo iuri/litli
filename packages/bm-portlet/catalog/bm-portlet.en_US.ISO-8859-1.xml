@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<message_catalog package_key="bm-portlet" locale="en_US" charset="ISO-8859-1">
+
+  <msg key="New_spam_name">New %spam_name%</msg>
+  <description key="New_spam_name">The text in the link for creating a new bulk mailing.</description>
+
+  <msg key="pretty_name">Bulk Mail</msg>
+  <msg key="spam_name_History">%spam_name% History</msg>
+</message_catalog>

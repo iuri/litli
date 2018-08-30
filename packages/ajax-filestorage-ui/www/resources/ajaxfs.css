@@ -1,0 +1,78 @@
+.x-tree-node img.folder, .x-tree-node-collapsed img.folder {
+    background-image:url(/resources/ajaxhelper/ext/resources/images/default/tree/folder.gif);
+}
+.x-tree-node-expanded img.folder {
+    background: url(/resources/ajaxhelper/ext/resources/images/default/tree/folder-open.gif)
+}
+.x-tree-node img.sharedfolder, x-tree-node-collapsed img.sharedfolder {
+    background: url(/resources/ajaxhelper/icons/folder_go.png)
+}
+.x-tree-node img.symlink, x-tree-node-collapsed img.symlink {
+    background: url(/resources/ajaxhelper/icons/folder_link.png)
+}
+div.flash {
+    width: 80%;
+    margin: 10px 0px 10px 0px;
+    border-color: #D9E4FF;
+}
+.progressContainer {
+    margin:5px;
+}
+.progressName {
+    font-size: 8pt;
+    font-weight: bold;
+    color: #555555;
+    
+    width: 80%;
+    height: 14px;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.progressBarInProgress,
+.progressBarComplete,
+.progressBarError {
+    font-size: 0px;
+    width: 0%;
+    height: 2px;
+    background-color: blue;
+    margin-top: 2px;
+}
+.progressBarComplete {
+    width: 100%;
+    background-color: green;
+    visibility: hidden;
+}
+.progressBarError {
+    width: 100%;
+    background-color: red;
+    visibility: hidden;
+}
+.progressBarStatus {
+    margin-top: 2px;
+    width: 80%;
+    font-size: 7pt;
+    font-family: Verdana;
+    text-align: left;
+    white-space: nowrap;
+}
+a.progressCancel,
+a.progressCancel:link,
+a.progressCancel:active,
+a.progressCancel:visited {
+    font-size: 0px;
+    display: block;
+    height: 20px;
+    width: 20px;
+    background: transparent url(/resources/ajaxhelper/icons/delete.png) no-repeat;
+    float: right;
+}
+
+.yui-skin-sam .yui-ac-input {
+    position:absolute;
+    width:80%;
+}
+
+.x-combo-list-inner { text-align: left }
+.x-menu-list-item { text-align: left; font-weight:normal }
+.toolsmenu {background-image:url(/resources/ajaxhelper/icons/wrench_orange.png) !important;}

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<message_catalog package_key="static-portlet" locale="fr_FR" charset="ISO-8859-1">
+
+  <msg key="Content">Contenu</msg>
+  <msg key="Control_Panel">Panneau de controle</msg>
+  <msg key="lt_Delete_element_pretty">Effacer %element_pretty_name% %pretty_name%</msg>
+  <msg key="Name">Nom</msg>
+  <msg key="New">Nouveau</msg>
+  <msg key="new_static_admin_portlet">Créer %element_pretty_name%</msg>
+</message_catalog>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<message_catalog package_key="dotlrn" locale="tl_PH" charset="ISO-8859-1">
+
+  <msg key="help">Tulong</msg>
+  <msg key="user_portal_page_calendar_title">Kalendaryo</msg>
+  <msg key="user_portal_page_file_storage_title">Aking Mga Dokumento</msg>
+  <msg key="user_portal_page_home_title">Tambayan</msg>
+</message_catalog>

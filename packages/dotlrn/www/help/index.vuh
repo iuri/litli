@@ -1,0 +1,35 @@
+ad_page_contract {
+
+	return the page corresponding to the user language
+
+    @author Emmanuelle Raffenne (eraffenne@gmail.com)
+    @creation-date 2007-10-12
+    @cvs-id $Id: index.vuh,v 1.2.4.1 2016/06/09 09:13:25 gustafn Exp $
+
+} 
+
+# set default variables
+set default_language "en"
+set user_language [ad_conn language]
+
+# redirect if possible
+set path_info [ad_conn path_info]
+if {$path_info eq ""} {
+    set path_info "index"
+}
+
+if { ![file exists [acs_root_dir]/packages/dotlrn/www/help/$user_language] } {
+    set user_language $default_language
+}
+
+if { [file exists "[acs_root_dir]/packages/dotlrn/www/help/$user_language/${path_info}.adp"] || [file exists "[acs_root_dir]/packages/dotlrn/www/help/$user_language/${path_info}"]} {
+    rp_internal_redirect /packages/dotlrn/www/help/${user_language}/${path_info}
+} else {
+    ns_returnnotfound
+}
+
+# Local variables:
+#    mode: tcl
+#    tcl-indent-level: 4
+#    indent-tabs-mode: nil
+# End:

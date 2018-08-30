@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<message_catalog package_key="dotlrn-dotlrn" locale="zh_CN" charset="utf-8">
+
+  <msg key="Core_DotLRN_Applets">核心DotLRN Java程序</msg>
+  <msg key="Group_Members_Info">成员信息</msg>
+  <msg key="lt_dotLRN_Staff_List_Inf">dotLRN成员信息</msg>
+</message_catalog>

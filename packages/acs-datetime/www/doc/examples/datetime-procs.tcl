@@ -1,0 +1,55 @@
+# /packages/acs-datetime/www/doc/examples/datetime-procs.tcl
+
+ad_page_contract {
+
+    Examples of the basic dt_ procs
+
+    @author  ron@arsdigita.com
+    @creation-date 2000/12/01
+    @cvs-id  $Id: datetime-procs.tcl,v 1.3.2.1 2015/09/10 08:21:22 gustafn Exp $
+} -properties {
+    dt_examples:multirow
+}
+
+set title "Date and Time Functions"
+set context [list [list . "ACS DateTime Examples"] $title]
+
+set example_list {
+    "dt_systime"
+    "dt_systime -gmt t"
+    "dt_systime -format \"%Y-%m-%d %H:%M:%S %Z\""
+    "dt_sysdate"
+    "dt_sysdate -format \"%b %d, %Y\""
+    "dt_sysdate -format \"%b %e, %Y\""
+    "dt_ansi_to_pretty"
+    "dt_ansi_to_list"
+    "dt_julian_to_ansi 2451915"
+    "dt_month_names"
+    "dt_month_abbrev"
+    "dt_valid_time_p \"bad date\""
+    "dt_valid_time_p \"2001-01-05\""
+    "dt_valid_time_p \"2001-01-05 12:00 pm\""
+    "dt_interval_check \"2001-01-01\" \"2001-02-01\""
+    "dt_interval_check \"2001-02-01\" \"2001-02-01\""
+    "dt_interval_check \"2001-02-01\" \"2001-01-01\""
+}
+
+# Generate a multirow datasource to transmit the examples to the
+# template.  Then we just loop over the examples list to generate all
+# of the display information.
+
+multirow create dt_examples "procedure" "result"
+
+foreach example $example_list {
+    multirow append dt_examples $example [{*}$example]
+}
+
+ad_return_template
+
+
+
+# Local variables:
+#    mode: tcl
+#    tcl-indent-level: 4
+#    indent-tabs-mode: nil
+# End:

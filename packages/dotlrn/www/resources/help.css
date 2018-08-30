@@ -1,0 +1,19 @@
+/* help.css for help content */
+
+#help-button {
+  display: inline;
+  font-family: helvetica,arial,sans-serif;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  margin-left: 0.5em;
+  display: block;
+  float: right;
+  position: relative;
+  text-indent: 1em;
+}
+
+#help-content a.help-link {
+  background-color: #F3F1E9;
+  color: #133F6D;
+  font-style: italic;
+}

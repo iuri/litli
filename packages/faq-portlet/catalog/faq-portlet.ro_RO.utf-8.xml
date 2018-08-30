@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<message_catalog package_key="faq-portlet" locale="ro_RO" charset="utf-8">
+
+  <msg key="admin_pretty_name">Administrare FAQ</msg>
+  <msg key="Disable">Dezactivează</msg>
+  <msg key="Disabled">Dezactivat</msg>
+  <msg key="Enable">Activează</msg>
+  <msg key="group">Grup</msg>
+  <msg key="name">Nume</msg>
+  <msg key="new_faq">FAQ nou</msg>
+  <msg key="no_faqs">Nu sunt FAQ's</msg>
+  <msg key="one_admin_faq">Ar trebui sa fie un singur FAQ pentru scopuri administrative</msg>
+  <msg key="pretty_name">Intrebări Frecvente (FAQs)</msg>
+</message_catalog>

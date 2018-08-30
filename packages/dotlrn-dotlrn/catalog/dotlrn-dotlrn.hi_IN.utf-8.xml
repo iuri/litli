@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<message_catalog package_key="dotlrn-dotlrn" locale="hi_IN" charset="utf-8">
+
+  <msg key="Core_DotLRN_Applets">कोर डाटएलआरएन एपलेट</msg>
+  <msg key="Group_Members_Info">समुह के सदस्यो की जानकारी</msg>
+  <msg key="lt_dotLRN_Staff_List_Inf">डाटएलआरएन स्टाफ़ सूची की जानकरी</msg>
+</message_catalog>

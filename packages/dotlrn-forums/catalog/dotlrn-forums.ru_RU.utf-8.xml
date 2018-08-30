@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<message_catalog package_key="dotlrn-forums" locale="ru_RU" charset="utf-8">
+
+  <msg key="administer">админ.</msg>
+  <msg key="All_forums">Все доски объявлений</msg>
+  <msg key="Auto_subscribe_label">Автоматически подписать на рассылку членов группы</msg>
+  <msg key="by_Date">по Дате</msg>
+  <msg key="by_Forum">по Конференции</msg>
+  <msg key="Forum">Конференция</msg>
+  <msg key="forums_default_name_suffix">Форум</msg>
+  <msg key="lt_Forums_Posting_histor">Конференция: Хронология сообщений %user.full_name%</msg>
+  <msg key="lt_There_should_be_only_">Нужна всего одна виртуальная копия Форумов, для целей администрирования</msg>
+  <msg key="New_Forum">Новый форум</msg>
+  <msg key="No_Postings">Нет сообщений</msg>
+  <msg key="Posted">Послано</msg>
+  <msg key="Posting_History">Хронология</msg>
+  <msg key="Posting_history_for">Хронология</msg>
+  <msg key="Subject">Предмет</msg>
+  <msg key="View">Показать:</msg>
+</message_catalog>

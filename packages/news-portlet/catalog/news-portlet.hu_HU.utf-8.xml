@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<message_catalog package_key="news-portlet" locale="hu_HU" charset="utf-8">
+
+  <msg key="No_News">Nincs újdonság.</msg>
+  <msg key="pretty_name">Hírek</msg>
+</message_catalog>

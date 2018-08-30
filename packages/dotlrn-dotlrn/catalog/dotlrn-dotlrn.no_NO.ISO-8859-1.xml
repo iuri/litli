@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<message_catalog package_key="dotlrn-dotlrn" locale="no_NO" charset="ISO-8859-1">
+
+  <msg key="Core_DotLRN_Applets">Kjerne DotLRN Applets</msg>
+  <msg key="Group_Members_Info">Gruppemedlemsinformasjon</msg>
+  <msg key="lt_dotLRN_Staff_List_Inf">dotLRN Stabsinformasjon</msg>
+</message_catalog>

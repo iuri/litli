@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<message_catalog package_key="theme-zen" package_version="2.3.0d1" locale="de_DE" charset="ISO-8859-1">
+
+  <msg key="Communities">Mitgliedschaften</msg>
+  <msg key="ControlPanel">Eigene Einstellungen</msg>
+  <msg key="Courses">Kurse</msg>
+  <msg key="dotlrn_Home">www.dotlrn.org</msg>
+  <msg key="dotlrn_Project_Central">.LRN-Projekt</msg>
+  <msg key="Logout">Abmelden</msg>
+  <msg key="MySpace">Eigene Startseite</msg>
+  <msg key="online">angemeldet</msg>
+  <msg key="Preferences">Einstellungen</msg>
+  <msg key="You_are_here">Sie sind hier</msg>
+</message_catalog>

@@ -1,0 +1,13 @@
+/notifications-core-create.sql/1.16/Sat Jun  7 20:29:00 2008//Topenacs-5-9-compat
+/notifications-core-drop.sql/1.4/Sat Mar 30 18:50:28 2013//Topenacs-5-9-compat
+/notifications-create.sql/1.7/Thu Nov  6 16:44:49 2003//Topenacs-5-9-compat
+/notifications-drop.sql/1.4/Mon Mar  8 12:34:12 2004//Topenacs-5-9-compat
+/notifications-init.sql/1.5/Thu Aug 28 09:41:58 2003//Topenacs-5-9-compat
+/notifications-package-create.sql/1.17/Mon Oct 27 16:41:50 2014//Topenacs-5-9-compat
+/notifications-package-drop.sql/1.3/Sat May 17 10:53:27 2003//Topenacs-5-9-compat
+/notifications-replies-create.sql/1.4/Tue Aug  8 21:27:06 2006//Topenacs-5-9-compat
+/notifications-replies-drop.sql/1.2/Sat Mar 30 18:50:28 2013//Topenacs-5-9-compat
+/notifications-replies-extra-create.sql/1.4/Sat Jun  7 20:29:00 2008//Topenacs-5-9-compat
+/notifications-replies-extra-drop.sql/1.1/Thu Nov  6 14:28:03 2003//Topenacs-5-9-compat
+/notifications-replies-package-create.sql/1.7/Sat Mar 30 22:01:09 2013//Topenacs-5-9-compat
+D

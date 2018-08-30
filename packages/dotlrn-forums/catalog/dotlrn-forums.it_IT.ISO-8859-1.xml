@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<message_catalog package_key="dotlrn-forums" locale="it_IT" charset="ISO-8859-1">
+
+  <msg key="administer">amministra</msg>
+  <msg key="All_forums">Tutti i forums</msg>
+  <msg key="Auto_subscribe_label">Sottoscrizione automatica per i membri del gruppo</msg>
+  <msg key="by_Date">per Data</msg>
+  <msg key="by_Forum">per Forum</msg>
+  <msg key="Forum">Forum</msg>
+  <msg key="forums_default_name_suffix">Forum</msg>
+  <msg key="lt_Forums_Posting_histor">Forum: Elenco dei messggi per %user.full_name%</msg>
+  <msg key="lt_There_should_be_only_">Ci dovrebbe essere un'unica istanza di forum per scopi amministrativi</msg>
+  <msg key="New_Forum">Nuovo Forum</msg>
+  <msg key="No_Postings">Nessun invio.</msg>
+  <msg key="Posted">Invitato</msg>
+  <msg key="Posting_History">Storico dei messaggi</msg>
+  <msg key="Posting_history_for">Elenco dei messaggiper</msg>
+  <msg key="Subject">Oggetto</msg>
+  <msg key="View">Vedi</msg>
+</message_catalog>

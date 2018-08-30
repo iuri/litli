@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<message_catalog package_key="dotlrn-forums" locale="hi_IN" charset="utf-8">
+
+  <msg key="administer">वयवस्था</msg>
+  <msg key="All_forums">सभी फोर्मस</msg>
+  <msg key="Auto_subscribe_label">स्वत ग्राहक सदस्य समूह</msg>
+  <msg key="by_Date">दिनाक से </msg>
+  <msg key="by_Forum">फ़ोर्म से</msg>
+  <msg key="Forum">फ़ोर्म</msg>
+  <msg key="forums_default_name_suffix">फ़ोर्म </msg>
+  <msg key="lt_Forums_Posting_histor">फ़ोर्मस: इतिहास भेजने हेतु %user.full_name%</msg>
+  <msg key="lt_There_should_be_only_">प्रशासन हेतु केवल एक ही फ़ोर्मस का प्रयोग करे </msg>
+  <msg key="New_Forum">नवीन फ़ोर्म</msg>
+  <msg key="No_Postings">कोई नियुक्ति नही</msg>
+  <msg key="Posted">नियुक्ति कर दी</msg>
+  <msg key="Posting_History">भेजा हुआ इतिहास</msg>
+  <msg key="Posting_history_for">के लिये भेजा हुआ इतिहास</msg>
+  <msg key="Subject">विषय</msg>
+  <msg key="View">देखो:</msg>
+</message_catalog>

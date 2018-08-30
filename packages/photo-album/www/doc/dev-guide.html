@@ -1,0 +1,1234 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML
+><HEAD
+><TITLE
+>Developer's guide</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="aD Hack of: Modular DocBook HTML Stylesheet Version 1.60"><LINK
+REL="HOME"
+TITLE="Photo Album"
+HREF="index.html"><LINK
+REL="PREVIOUS"
+TITLE="ACS Administration Guide"
+HREF="acs-admin-guide.html"><LINK
+REL="NEXT"
+TITLE="ACS 4 Photo Album Package Design Documentation"
+HREF="design.html"><LINK
+REL="STYLESHEET"
+TYPE="text/css"
+HREF="ad-doc.css"></HEAD
+><BODY
+CLASS="chapter"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Photo Album</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="acs-admin-guide.html"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+></TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="design.html"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+SIZE="1"
+NOSHADE="NOSHADE"
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="chapter"
+><H1
+><A
+NAME="dev-guide"
+>Chapter 4. Developer's guide</A
+></H1
+><DIV
+CLASS="sect1"
+><H1
+CLASS="sect1"
+><A
+NAME="requirements"
+>4.1. ACS 4.0 Photo Album Application Requirements</A
+></H1
+><DIV
+CLASS="TOC"
+><DL
+><DT
+><B
+>Table of Contents</B
+></DT
+><DT
+>4.1.1. <A
+HREF="dev-guide.html#requirements-introduction"
+>Introduction</A
+></DT
+><DT
+>4.1.2. <A
+HREF="dev-guide.html#requirements-vision-statement"
+>Vision Statement</A
+></DT
+><DT
+>4.1.3. <A
+HREF="dev-guide.html#requirements-systemapplication-overview"
+>System/Application Overview</A
+></DT
+><DT
+>4.1.4. <A
+HREF="dev-guide.html#requirements-use-cases-and-user-scenarios"
+>Use-cases and User-scenarios</A
+></DT
+><DT
+>4.1.5. <A
+HREF="dev-guide.html#requirements-related-links"
+>Related Links</A
+></DT
+><DT
+>4.1.6. <A
+HREF="dev-guide.html#requirements-requirements"
+>Requirements</A
+></DT
+><DD
+><DL
+><DT
+>4.1.6.1. <A
+HREF="dev-guide.html#requirements-photo-requirements"
+>Photo Requirements</A
+></DT
+><DT
+>4.1.6.2. <A
+HREF="dev-guide.html#requirements-album-requirements"
+>Album Requirements</A
+></DT
+><DT
+>4.1.6.3. <A
+HREF="dev-guide.html#requirements-album-hierarchy"
+>Album Hierarchy</A
+></DT
+><DT
+>4.1.6.4. <A
+HREF="dev-guide.html#requirements--administrative-control"
+>Administrative Control</A
+></DT
+><DT
+>4.1.6.5. <A
+HREF="dev-guide.html#requirements--photo-upload"
+>Photo Upload</A
+></DT
+><DT
+>4.1.6.6. <A
+HREF="dev-guide.html#requirements--general-requirements"
+>General Requirements</A
+></DT
+><DT
+>4.1.6.7. <A
+HREF="dev-guide.html#requirements--requirements-delayed-until-future-version"
+>Requirements delayed until future version</A
+></DT
+></DL
+></DD
+><DT
+>4.1.7. <A
+HREF="dev-guide.html#requirements-implementation-notes"
+>Implementation Notes</A
+></DT
+><DT
+>4.1.8. <A
+HREF="dev-guide.html#requirements-revision-history"
+>Revision History</A
+></DT
+></DL
+></DIV
+><P
+>&#13;    by Tom Baginski, 
+    <A
+HREF="mailto:bags@arsdigta.com"
+TARGET="_top"
+>bags@arsdigita.com</A
+>
+  </P
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="requirements-introduction"
+>4.1.1. Introduction</A
+></H2
+><P
+>This document presents the requirements for the ACS 4.0 Photo
+      Album Package, which is a generalized application for storing and
+      displaying groups of photos on a web site. It is intended to build
+      on the experience gained from creating and maintaining a photo
+      album system for the IluvCamp client site.</P
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="requirements-vision-statement"
+>4.1.2. Vision Statement</A
+></H2
+><P
+>Many people want to display photos on the web. Building a simple
+      personal web page with vacation photos is easy and can be done by
+      hand with static html. Building 100 similar web pages for all your
+      friends and relatives would be tedious. More importantly it would
+      be difficult to maintain and scale such a system to support all the
+      users of a large site.</P
+><P
+>The photo album package provides a convenient and uniform system
+      for uploading, storing, and displaying groups of photos on a web
+      site. It removes the tedious part of building pages to display
+      photos, and allows users more flexibility to maintain and modify
+      their own photo albums. It also removes much of the burden from the
+      owners/maintainers of the site. All of these factors add up to a
+      system that allows community members to easily contribute and view
+      large amounts of compelling content on a site.</P
+><P
+>The initial version of the package will allow designated users
+      to upload photos into albums and to group albums into a folder
+      hierarchy that other users with appropriate permissions can view
+      and possibly edit.</P
+><P
+>Future improvement to the photo album package will incorporate
+      additional features developed on various customer sites that allow
+      users to upload photos in bulk through a client applet and to
+      purchase prints of photos presented on the site.</P
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="requirements-systemapplication-overview"
+>4.1.3. System/Application Overview</A
+></H2
+><P
+>The basic content element of the photo album system is a photo.
+      When a user uploads a photo, the system stores attribute  
+      data such as caption, story, and title as a
+      single content element. Each photo associated with several
+      (three to start) image elements that store the actual binary files.
+      The image elements, which are created by the server, are standard sized
+      versions of the original photo used for display. Photos and images
+      can have descriptive attributes associated with them. The attributes
+      and binary files can be revised and the system will retain past 
+      versions.</P
+><P
+>Photos are grouped together into albums which can contain 0 or
+      more photos. The albums can have descriptive attribute information
+      that can be revised with history tracking. The albums can be
+      displayed as a unit that allows user to browse through the photos
+      in the album.</P
+><P
+>Albums can be grouped together into folders that can contain 0
+      or more albums or other folders.</P
+><P
+>An instance of the package include pages to display the folders,
+      albums, and photos along with admin pages. Instances can be mounted
+      to different subsite and managed independently. The grouping is
+      included within the instance so that the albums maintain a
+      consistent url even if they are re-sorted to different folders
+      within the instance (as long as the subsite url isn't changed).</P
+><P
+>The display, grouping, and administration functionality of the
+      photo album package will be included in the initial release of the
+      package. This is intended to be one part of a larger system that
+      will allow bulk uploading and purchasing of photos. These two
+      feature have already been implemented on aD customer sites. ACS 4
+      versions of these features will be either incorporated into a
+      future version of the photo album package or added as individual
+      packages that depend on the photo album.</P
+><P
+>The basic tasks of the photo album revolve around storing and
+      displaying content and associated attributes. As such, this package
+      will take advantage of the exiting features of the content
+      repository service package. The content repository can store
+      multiple revisions of content items such as photos and images and
+      their associated attributes. The content repository also provides
+      grouping functions. The acs permission service will be used for
+      access control so view, edit, and administration privileges will be
+      highly customizable. Finally individual photo album instances can
+      be added to subsites to support multiple independent photo albums
+      on the same site.</P
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="requirements-use-cases-and-user-scenarios"
+>4.1.4. Use-cases and User-scenarios</A
+></H2
+><DIV
+CLASS="sect3"
+><H3
+CLASS="sect3"
+><A
+NAME="requirements-gernral-scenarios"
+>4.1.4.1. General Scenarios</A
+></H3
+><UL
+><LI
+><P
+>A young couple just got married. His family shot 20 rolls of
+	    film at the wedding and the photographer they hired shot an
+	    additional 15 rolls. Now that the wedding is over, this couple must
+	    organize their photos. In addition to creating traditional,
+	    physical photo albums, they want to publish their photos on the web
+	    to share with friends and family all over the world.</P
+><P
+>The couple scans the images they want to publish on the web.
+	    Most of the images were scanned from the negatives at processing
+	    time making it easy for the couple to obtain digital versions of
+	    their photographs. The couple creates a new photo album for their
+	    wedding, and then adds the following folders: "Engagement photo
+	    shoot," "Rehearsal dinner," "Ceremony," "Reception," and
+	    "Honeymoon." The honeymoon itself was spent in two different
+	    places. The couple creates subfolders for each of these places in
+	    their Honeymoon folder.</P
+><P
+>Now the folder hierarchy looks like:</P
+><PRE
+CLASS="programlisting"
+>    
+    - Wedding
+        - Engagement Photo Shoot
+        - Rehearsal Dinner
+        - Ceremony
+        - Reception
+        - Honeymoon
+            - Fiji - Big Island
+            - Fiji - Tokoriki
+    	  </PRE
+><P
+>The couple now opens a folder, and uploads images. With each
+	    image, the couple can specify optional attributes such as the
+	    caption for the photo, the story behind the photo, and an
+	    identifier to help them locate the physical negatives at a later
+	    date.</P
+><P
+>Once the images are uploaded, the couple decides to give their
+	    parents administrative access to a couple folders. Now their
+	    parents can upload additional photos to those folders or modify the
+	    attributes of any given photo.</P
+><P
+CLASS="listitem"
+> </P
+></LI
+><LI
+><P
+>The administrator of the "Dogs of the World" subsite on the
+	    "All Furry Creatures" web sites wants to provide a way to show
+	    pictures of various dog breads. Since the admin is a busy person
+	    she doesn't want to upload and manage all of the images herself.
+	    She does, however, want to specify the general layout of the
+	    various albums and control who can upload images. </P
+><P
+>She creates an instance of the photo album within her subsite.
+	    Then goes about creating a folder structure such as:</P
+><PRE
+CLASS="programlisting"
+>    
+    - Dogs of the World
+        -Hunting Dogs
+        -Show Dogs
+        -Lap Dogs
+        -Yappy Dogs
+        -Mutts(The coolest)
+    	  </PRE
+><P
+>She then designates certain users or groups of users that she
+	    trusts to manage a given folder and grants them permission to
+	    create albums within each folder. These users go about creating
+	    albums and uploading appropriate images as they see fit. They
+	    cannot create new subfolders, so the folder structure will not
+	    become fragmented and disorganized (the admin is both a control and
+	    neat freak).</P
+><P
+>The admin later realizes that Lap Dogs and Yappy Dogs are
+	    basically the same thing so she consolidates the two folders into
+	    one called Trouble Dogs.</P
+><P
+>Since the point of the dog album is to show off various dogs,
+	    she wants the world to be able to see them. She grants view access
+	    to all albums within her subsite to the general public.</P
+></LI
+></UL
+></DIV
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="requirements-related-links"
+>4.1.5. Related Links</A
+></H2
+><UL
+><LI
+><P
+CLASS="listitem"
+>System/Package "coversheet"</P
+></LI
+><LI
+><P
+CLASS="listitem"
+><A
+HREF="design.html"
+>ACS 4 Photo Album Package Design Documentation</A
+></P
+></LI
+><LI
+><P
+CLASS="listitem"
+><A
+HREF="dev-guide.html"
+>Photo Album Developer's Guide</A
+></P
+></LI
+><LI
+><P
+CLASS="listitem"
+>User's guide</P
+></LI
+><LI
+><P
+CLASS="listitem"
+>Test plan</P
+></LI
+><LI
+><P
+CLASS="listitem"
+><A
+HREF="http://camp-dev.arsdigita.com/camparent/campsunshine/album/"
+TARGET="_top"
+>IluvCamp
+	    photo albums</A
+> (Call or email me for log in information)</P
+></LI
+><LI
+><P
+CLASS="listitem"
+>Competitive system(s) 
+
+	  <UL
+><LI
+><P
+CLASS="listitem"
+><A
+HREF="http://www.ophoto.com"
+TARGET="_top"
+>Ophoto</A
+></P
+></LI
+><LI
+><P
+CLASS="listitem"
+><A
+HREF="http://www.photoaccess.com"
+TARGET="_top"
+>PhotoAccess</A
+></P
+></LI
+><LI
+><P
+CLASS="listitem"
+><A
+HREF="http://www.zing.com"
+TARGET="_top"
+>Zing, note zing's photo albums
+		  crashed my netscape browser on Linux</A
+></P
+></LI
+><LI
+><P
+CLASS="listitem"
+><A
+HREF="http://www.shutterfly.com"
+TARGET="_top"
+>ShutterFly</A
+></P
+></LI
+></UL
+>
+	</P
+></LI
+></UL
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="requirements-requirements"
+>4.1.6. Requirements</A
+></H2
+><DIV
+CLASS="sect3"
+><H3
+CLASS="sect3"
+><A
+NAME="requirements-photo-requirements"
+>4.1.6.1. Photo Requirements</A
+></H3
+><P
+>&#13;
+	A photo is a generic content item for user uploaded photos. Each
+	photo will have image content items associated with it that store
+	the actual binary files and any image specific attributes. Photo
+	and image content items can accommodate multiple revisions. 
+
+      </P
+><UL
+><LI
+><P
+CLASS="listitem"
+>VI.A.10 System will store three images associated with a photo:
+	    the original image, thumbnail image, and a view-sized image.</P
+></LI
+><LI
+><P
+CLASS="listitem"
+>VI.A.20 System will maintain a revision history for the photos
+	    and record which revision is current for given situation.</P
+></LI
+><LI
+><P
+CLASS="listitem"
+>VI.A.30 Images shall be stored so that they can be served
+	    efficiently. The system should allow for storing the binary files
+	    in either the file system or the database. This should be
+	    controlled by a parameter. The initial implementation may only
+	    support one storage type, but it should be open to either storage
+	    type.</P
+></LI
+><LI
+><P
+CLASS="listitem"
+>VI.A.40 Photos and any revisions have attribute data associated
+	    with them. The method and structure for storing these attributes
+	    will be decided as part of the design and implementation. 
+
+	    <UL
+><LI
+><P
+CLASS="listitem"
+>VI.A.40.10 System specified attributes. Certain attributes will
+		  be specified and maintained by the system. These attributes will
+		  include: uploading_user, user_filename, original_file_size,
+		  original_width, original_height, original_path, thumb_width,
+		  thumb_height, thumb_file_size, thumb_path, view_width, view_height,
+		  view_file_size, view_path, caption, upload_date. Other attributes will be
+		  determined during the design process.</P
+></LI
+><LI
+><P
+CLASS="listitem"
+>VI.A.40.20 Administrator specified attributes. The site
+		  administrator can specify custom attributes of photos and if these
+		  attributes are required/optional for uploaded photos. The initial
+		  system will not support admin customized attribute fields. However
+		  the system shall be designed so that it is open to adding this in
+		  the future.</P
+></LI
+><LI
+><P
+CLASS="listitem"
+>VI.A.40.30 User Specified Attributes. The initial system will
+		  not support user customized attribute fields. However the system
+		  shall be designed so that it is open to adding user customized
+		  fields in the future.</P
+></LI
+></UL
+>
+	  </P
+></LI
+><LI
+><P
+CLASS="listitem"
+>VI.A.50 System shall be open to adding server-backed image
+	    manipulation with a future version. This may include image
+	    rotation, cropping, and other simple editing. Since image
+	    manipulation can be a cpu-intensive process, many users
+	    manipulating many images at the same time could potentially slow a
+	    sites response time. Any implementation of these feature should
+	    support redirecting manipulation requests to an alternate server
+	    for processing images to alleviate the load on the main
+	    server.</P
+></LI
+></UL
+></DIV
+><DIV
+CLASS="sect3"
+><H3
+CLASS="sect3"
+><A
+NAME="requirements-album-requirements"
+>4.1.6.2. Album Requirements</A
+></H3
+><UL
+><LI
+><P
+CLASS="listitem"
+>VI.B.10 Album is a group of 0 or more photos. 
+
+	    <UL
+><LI
+><P
+CLASS="listitem"
+>VI.B.10.10 Photos have a distinct order within an album</P
+></LI
+><LI
+><P
+CLASS="listitem"
+>VI.B.10.20 User with edit privileges can modify/reorder photos
+		  within album.</P
+></LI
+></UL
+>
+	  </P
+></LI
+><LI
+><P
+CLASS="listitem"
+>VI.B.20 Album has page to display several thumbnail images in
+	    an album. 
+
+	    <UL
+><LI
+><P
+CLASS="listitem"
+>VI.B.20.10 Number of thumbnails per page is controlled in admin
+		  page. Display page must dynamically react to changes on the admin
+		  page.</P
+></LI
+><LI
+><P
+CLASS="listitem"
+>VI.B.20.20 Thumbnail display can scroll through next and
+		  previous pages, next / previous page group, or click on page
+		  number.</P
+></LI
+><LI
+><P
+CLASS="listitem"
+>VI.B.20.30 Clicking on thumbnail calls view-size display
+		  page.</P
+></LI
+><LI
+><P
+CLASS="listitem"
+>VI.B.20.40 Attributes can be displayed with thumbnails. Display
+		  controlled in admin page or in template page.</P
+></LI
+></UL
+>
+	  </P
+></LI
+><LI
+><P
+CLASS="listitem"
+>VI.B.30 Album has page to display single view-size image. 
+
+	    <UL
+><LI
+><P
+CLASS="listitem"
+>VI.B.30.10 When viewing one image user can navigate to next and
+		  previous photo or return to thumbnail page.</P
+></LI
+><LI
+><P
+CLASS="listitem"
+>VI.B.30.20 Viewer can display attributes of photo. Display
+		  controlled in admin page or in template page.</P
+></LI
+></UL
+>
+	  </P
+></LI
+><LI
+><P
+CLASS="listitem"
+>VI.B.40 The display pages should use templates for designating
+	    layout and formatting. The templates should be able to accommodate
+	    parameter changes made through the admin pages. So if the admin
+	    changes the albums from displaying 4 200x200 thumbnails at a time
+	    to 6 100x100 thumbnails, the display pages should reformat
+	    accordingly with minimal changes to the display templates</P
+></LI
+><LI
+><P
+CLASS="listitem"
+>VI.B.50 Potential page to display the original images. Such a
+	    page would allow the user to view and save the original size
+	    high-resolution version of the photo instead of the lower
+	    resolution and smaller sized viewer and thumbnail images. Since
+	    some sites and admins may not want users to have access to the
+	    high-resolution originals, the admin must be able to toggle the
+	    availability of such page.</P
+></LI
+><LI
+><P
+CLASS="listitem"
+>VI.B.60 User with edit privilege can do following: 
+
+	    <UL
+><LI
+><P
+CLASS="listitem"
+>VI.B.60.10 Upload new photos to an album and specify attributes
+		  during upload process.</P
+></LI
+><LI
+><P
+CLASS="listitem"
+>VI.B.60.20 Photos can be moved to different albums within same
+		  hierarchy.</P
+></LI
+><LI
+><P
+CLASS="listitem"
+>VI.B.60.30 Photos can be deleted from an album.</P
+></LI
+><LI
+><P
+CLASS="listitem"
+>VI.B.60.40 Edit photo attribute information</P
+></LI
+></UL
+>
+	  </P
+></LI
+></UL
+></DIV
+><DIV
+CLASS="sect3"
+><H3
+CLASS="sect3"
+><A
+NAME="requirements-album-hierarchy"
+>4.1.6.3. Album Hierarchy</A
+></H3
+><UL
+><LI
+><P
+CLASS="listitem"
+>VI.C.10 Albums can be grouped in a hierarchy of arbitrary
+	    depth.</P
+></LI
+><LI
+><P
+CLASS="listitem"
+>VI.C.20 Display/sorting of hierarchy controlled on the page
+	    level but order field included to support arbitrary sorting.</P
+></LI
+><LI
+><P
+CLASS="listitem"
+>VI.C.30 Admin (exact permission required, to be determined) can
+	    add/consolidate hierarchy levels.</P
+></LI
+><LI
+><P
+CLASS="listitem"
+>VI.C.40 Admin (exact permission required, to be determined) can
+	    move items around in hierarchy.</P
+></LI
+><LI
+><P
+CLASS="listitem"
+>VI.C.50 Admin (exact permission required, to be determined) can
+	    resrict the creation of new hierarchy levels.</P
+></LI
+></UL
+></DIV
+><DIV
+CLASS="sect3"
+><H3
+CLASS="sect3"
+><A
+NAME="requirements--administrative-control"
+>4.1.6.4. Administrative Control</A
+></H3
+><UL
+><LI
+><P
+CLASS="listitem"
+>VI.D.10 Number of thumbnail to be displayed at a time on the
+	    page described in VI.B.20 specified in by a sub-site admin. Number
+	    of thumbnails pre page can be changed by the admin at any time and
+	    display pages react accordingly.</P
+></LI
+><LI
+><P
+CLASS="listitem"
+>VI.D.20 Thumbnail and view-size specified by sub-site admin. 
+
+	    <UL
+><LI
+><P
+CLASS="listitem"
+>VI.D.20.10 Thumbnail and view-size can be changed by
+		  sub-site-admin. Two options are allowed for size changes, proactive
+		  and retroactive. 
+
+		  <UL
+><LI
+><P
+CLASS="listitem"
+>VI.D.20.10.10 Proactive change will only change new photo
+			uploads. Any changes will take affect immediately. Previously
+			uploaded photos will maintain original thumbnail and view-size
+			images until photo is revised.</P
+></LI
+><LI
+><P
+CLASS="listitem"
+>VI.D.20.10.20 Retroactive changes will change new photo uploads
+			and resize all previously uploaded photos. Since the time to
+			complete such revision will vary with the number of photos
+			uploaded, the system shall provides an estimate of how long it will
+			take and asks if admin wishes to continue. If yes it schedule
+			conversion process to run during low bandwidth times, and provides
+			daily email updates if process will take longer than a day. Also
+			checks for server crashes/restarts that would hinder conversion.
+			(This requirement will be delayed until a future version)</P
+></LI
+></UL
+>
+		</P
+></LI
+></UL
+>
+	  </P
+></LI
+><LI
+><P
+CLASS="listitem"
+>VI.D.30 Admin can edit other people's albums.</P
+></LI
+><LI
+><P
+CLASS="listitem"
+>VI.D.40 Admin designates default permissions for hierarchy
+	    levels. So various users can view, create, edit, and upload to
+	    different levels.</P
+></LI
+><LI
+><P
+CLASS="listitem"
+>VI.D.50 Admin can allow user to access the page displaying the
+	    original size high-resolution version of a photo described in
+	    VI.B.50</P
+></LI
+></UL
+></DIV
+><DIV
+CLASS="sect3"
+><H3
+CLASS="sect3"
+><A
+NAME="requirements--photo-upload"
+>4.1.6.5. Photo Upload</A
+></H3
+><UL
+><LI
+><P
+CLASS="listitem"
+>VI.E.10 Photos uploaded one at a time through an html form.
+	    Form shall provide ability to specify attribute information.</P
+></LI
+><LI
+><P
+CLASS="listitem"
+>VI.E.20 Upload system shall support uploading to separate
+	    dedicated server(s). Creating the thumbnail and viewer size images
+	    of a photo can be a cpu-intensive process. Many users uploading
+	    many photos simultaneously can potentially slow a sites response
+	    time. Redirecting upload requests to an alternate server for
+	    processing images can lessen the load on the main server.
+	    (Implementation of this will be delayed until a future release).</P
+></LI
+><LI
+><P
+CLASS="listitem"
+>VI.E.30 Future version to support bulk upload.</P
+></LI
+></UL
+></DIV
+><DIV
+CLASS="sect3"
+><H3
+CLASS="sect3"
+><A
+NAME="requirements--general-requirements"
+>4.1.6.6. General Requirements</A
+></H3
+><UL
+><LI
+><P
+CLASS="listitem"
+>VI.F.10 System to support sub-sites. Admin shall be able to add
+	    album implementation to multiple sub-sites on a web service.</P
+></LI
+><LI
+><P
+CLASS="listitem"
+>VI.F.20 System shall be able to scale to at least the service
+	    level experienced by IluvCamp during summer 2000.</P
+></LI
+><LI
+><P
+CLASS="listitem"
+>VI.F.30 Design to accommodate future integration of photo print
+	    and purchase capabilities as demonstrated on the IluvCamp Client
+	    sites.</P
+></LI
+></UL
+></DIV
+><DIV
+CLASS="sect3"
+><H3
+CLASS="sect3"
+><A
+NAME="requirements--requirements-delayed-until-future-version"
+>4.1.6.7. Requirements delayed until future version</A
+></H3
+><UL
+><LI
+><P
+CLASS="listitem"
+>VI.G.10 Purchase and printing of photo through ecommerce
+	    package and photo printing vendor.</P
+></LI
+><LI
+><P
+CLASS="listitem"
+>VI.G.20 Server backed image manipulation</P
+></LI
+><LI
+><P
+CLASS="listitem"
+>VI.G.30 Bulk upload tool</P
+></LI
+><LI
+><P
+CLASS="listitem"
+>VI.G.40 User specified attributes</P
+></LI
+><LI
+><P
+CLASS="listitem"
+>VI.G.50 Upload quotas</P
+></LI
+><LI
+><P
+CLASS="listitem"
+>VI.G.60 Admin notification of file space limitations.</P
+></LI
+><LI
+><P
+CLASS="listitem"
+>VI.G.70 Search and retrieval of photos and albums based on
+	    attributes or key words.</P
+></LI
+><LI
+><P
+CLASS="listitem"
+>VI.G.80 Admin specified attributes</P
+></LI
+><LI
+><P
+CLASS="listitem"
+>VI.G.90 Photo upload/manipulaion support for separate server.</P
+></LI
+></UL
+></DIV
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="requirements-implementation-notes"
+>4.1.7. Implementation Notes</A
+></H2
+><P
+>A photo album system was built for the IluvCamp Client site.
+      Much of the work on the ACS 4.0 Photo Album Package will be based
+      on the lessons learned building and maintaining this system. Some
+      of these lessons include:</P
+><UL
+><LI
+><P
+CLASS="listitem"
+>The ability (and necessity on high volume sites) to support
+	  dedicated image processing servers. As outlined in two of the
+	  requirements above, numerous simultaneous image manipulations can
+	  tie up resources on the main server. Low volume sites may be able
+	  to handle image manipulation on the main server, but high volume
+	  sites will need the ability to pass these operations off to
+	  dedicated servers.</P
+></LI
+><LI
+><P
+CLASS="listitem"
+>The ability to support a pool of multiple servers. The Iluvcamp
+	  site used a pool of multiple servers on several machines to support
+	  the high volumes of traffic. Additionally, many attributes of the
+	  album structure and hierarchy were cached to improve performance.
+	  When we made changes to these attributes that required cache
+	  flushes, we needed to make sure the caches were flushed on all the
+	  servers.</P
+></LI
+><LI
+><P
+CLASS="listitem"
+>The Iluvcamp data structure mapped a specific number of images
+	  to a page and then mapped the pages to albums. All of this mapping
+	  and ordering information was stored in the database. This
+	  essentially hard-coded the image on page ordering and the number of
+	  images per page. Unfortunately this made changing the display of
+	  albums from 9 images per page to 4 images per page (a mid-season
+	  client request) time consuming and difficult. Given that the
+	  requirements allow for easy changes to the number of thumbnails
+	  displayed per page, such hard-coding should be avoided at all cost
+	  in the photo album package. Photos should be mapped directly to
+	  albums and pages within the album should be rendered
+	  dynamically.</P
+></LI
+><LI
+><P
+CLASS="listitem"
+>The amount of time it takes to retroactively change thumbnail
+	  and view-size images. A client requested change of the thumbnail
+	  and viewer size images on IluvCamp took several weeks of processor
+	  time to modify ~ 240,000 previously uploaded images. Scheduling and
+	  monitoring the conversion process was a headache. We hope to figure
+	  out a easier way to make such a change.</P
+></LI
+></UL
+><P
+></P
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="requirements-revision-history"
+>4.1.8. Revision History</A
+></H2
+><DIV
+CLASS="informaltable"
+><A
+NAME="AEN283"
+></A
+><TABLE
+BORDER="1"
+CLASS="CALSTABLE"
+CELLPADDING="10"
+><THEAD
+><TR
+><TH
+ALIGN="CENTER"
+VALIGN="MIDDLE"
+>&#13;	      Document Revision #</TH
+><TH
+ALIGN="CENTER"
+VALIGN="MIDDLE"
+>&#13;	      Action Taken, Notes</TH
+><TH
+ALIGN="CENTER"
+VALIGN="MIDDLE"
+>When?</TH
+><TH
+ALIGN="CENTER"
+VALIGN="MIDDLE"
+>By Whom?</TH
+></TR
+></THEAD
+><TBODY
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="MIDDLE"
+>0.1</TD
+><TD
+ALIGN="LEFT"
+VALIGN="MIDDLE"
+>Creation, initial draft</TD
+><TD
+ALIGN="LEFT"
+VALIGN="MIDDLE"
+>11/15/2000</TD
+><TD
+ALIGN="LEFT"
+VALIGN="MIDDLE"
+>Tom Baginski</TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="MIDDLE"
+>0.2</TD
+><TD
+ALIGN="LEFT"
+VALIGN="MIDDLE"
+>Revisions in response to initial comments</TD
+><TD
+ALIGN="LEFT"
+VALIGN="MIDDLE"
+>12/05/2000</TD
+><TD
+ALIGN="LEFT"
+VALIGN="MIDDLE"
+>Tom Baginski</TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="MIDDLE"
+>0.3</TD
+><TD
+ALIGN="LEFT"
+VALIGN="MIDDLE"
+>Revisions in response to more comments</TD
+><TD
+ALIGN="LEFT"
+VALIGN="MIDDLE"
+>12/11/2000</TD
+><TD
+ALIGN="LEFT"
+VALIGN="MIDDLE"
+>Tom Baginski</TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="MIDDLE"
+>0.4</TD
+><TD
+ALIGN="LEFT"
+VALIGN="MIDDLE"
+>Minor revisions base on design experience</TD
+><TD
+ALIGN="LEFT"
+VALIGN="MIDDLE"
+>2/2/2000</TD
+><TD
+ALIGN="LEFT"
+VALIGN="MIDDLE"
+>Tom Baginski</TD
+></TR
+></TBODY
+></TABLE
+></DIV
+><P
+></P
+><P
+>&#13;      <A
+HREF="mailto:bags@arsdigita.com"
+TARGET="_top"
+>bags@arsdigita.com</A
+>
+    </P
+><P
+>Last Modified: $Date: 2017/05/26 18:05:37 $</P
+></DIV
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+SIZE="1"
+NOSHADE="NOSHADE"
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="acs-admin-guide.html"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index.html"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="design.html"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>ACS Administration Guide</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+>&nbsp;</TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>ACS 4 Photo Album Package Design Documentation</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

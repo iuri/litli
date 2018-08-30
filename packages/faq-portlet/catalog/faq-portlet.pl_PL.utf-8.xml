@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<message_catalog package_key="faq-portlet" locale="pl_PL" charset="utf-8">
+
+  <msg key="admin_pretty_name">Administracja CZaPami</msg>
+  <msg key="Disable">Wyłącz</msg>
+  <msg key="Disabled">Wyłączony</msg>
+  <msg key="Enable">Włącz
+</msg>
+  <msg key="group">Grupa</msg>
+  <msg key="name">Nazwa</msg>
+  <msg key="new_faq">Nowa CZaPa</msg>
+  <msg key="no_faqs">Brak CZaP</msg>
+  <msg key="one_admin_faq">Powinna być tylko jedna CZaPa dla celów administracyjnych</msg>
+  <msg key="pretty_name">Często Zadawane Pytania (CZaPy)</msg>
+</message_catalog>

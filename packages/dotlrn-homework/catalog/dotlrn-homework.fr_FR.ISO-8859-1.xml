@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<message_catalog package_key="dotlrn-homework" locale="fr_FR" charset="ISO-8859-1">
+
+  <msg key="Action">Action</msg>
+  <msg key="Alert">Alerte</msg>
+  <msg key="All_Versions_of_name">Toutes Versions de &quot;%name%&quot;</msg>
+  <msg key="Author">Auteur</msg>
+  <msg key="bytes">octets</msg>
+  <msg key="Comments">Commentaires</msg>
+  <msg key="Copy">Copier</msg>
+  <msg key="Delete">Effacer</msg>
+  <msg key="delete">effacer</msg>
+  <msg key="Delete_folder_name">Effacer %folder_name%</msg>
+  <msg key="Delete_title">Effacer %title%</msg>
+  <msg key="Delete_version_name">Effacer %version_name%</msg>
+  <msg key="Description">Description</msg>
+  <msg key="Folder_is_empty">Ce dossier est vide</msg>
+  <msg key="lt_a_file_named">Le fichier &quot;%decoded_name%&quot; a été téléchargé dans le dossier &quot;%folder_name%&quot; par &quot;%student_name%&quot;.</msg>
+  <msg key="lt_admin_has_uploaded">%admin_name% a téléchargé des commentaires sur votre devoir &quot;%decoded_name%&quot; dans le dossier de travail &quot;%folder_name%&quot;.</msg>
+  <msg key="lt_Are_you_sure_you_want_1">Etes-vous sur de vouloir supprimer le dossier &quot;%folder_name%&quot; ? Vous ne pourrez pas revenir en arrière.</msg>
+  <msg key="lt_create_folder">Créer un Dossier</msg>
+  <msg key="lt_create_new_folder">Créer un nouveau dossier</msg>
+  <msg key="lt_delete_folder">Supprimer un dossier</msg>
+  <msg key="lt_delete_version">Supprimer cette Version</msg>
+  <msg key="lt_upload_comm">Envoyer les Commentaires</msg>
+</message_catalog>

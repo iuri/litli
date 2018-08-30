@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<message_catalog package_key="evaluation-portlet" locale="es_GT" charset="ISO-8859-1">
+
+  <msg key="Add_grade_name_">Agregar %grade_name%</msg>
+  <msg key="Addedit_answer_">Agregar/Editar respuesta</msg>
+  <msg key="Addedit_solution_">Agregar/Editar solución</msg>
+  <msg key="Assignments_">Asignaciones</msg>
+  <msg key="Audit_Info_">Historial de Notas</msg>
+  <msg key="Audit_info_">Historial de Notas</msg>
+  <msg key="Comments_">Comentarios</msg>
+  <msg key="Delete_task_">Eliminar tarea</msg>
+  <msg key="Due_date_">Fecha de Entrega</msg>
+  <msg key="Edit_task_">Editar tarea</msg>
+  <msg key="Evaluations_">Evaluaciones</msg>
+  <msg key="Grade_over_100_">Nota sobre 100</msg>
+  <msg key="Groups_Admin_">Administración de Grupos</msg>
+  <msg key="lt_Admin_my_Assignment_T">Administrar mis Tipos de Asignación</msg>
+  <msg key="lt_Administer_Evaluation">Administrar Evaluación</msg>
+  <msg key="lt_Edit_grades_distribut">Editar distribución de notas de %grade_plural_name%</msg>
+  <msg key="lt_Evaluation_Admin_Port">Portlet de Administración de Evaluación</msg>
+  <msg key="lt_Evaluation_Administra">Administración de Evaluación</msg>
+  <msg key="lt_Evaluation_Assignment">Portlet de Evaluación de Asignaciones </msg>
+  <msg key="lt_Evaluation_Evaluation">Portlet de Evaluación de Evaluaciones</msg>
+  <msg key="lt_Groups_administration">Administración de Grupos</msg>
+  <msg key="lt_smallTotal_points_in_">&lt;small&gt;Total de puntos en esta categoría: %total_grade%/%max_grade%&lt;br /&gt;  Esta categoría representa el %grade_weight%% del 100% de la clase&lt;/small&gt;</msg>
+  <msg key="lt_smallTotal_points_in__1">&lt;small&gt;Total de puntos en esta categoría: ${total_grade}/${max_grade}&lt;br /&gt;  Esta categoría representa el ${grade_weight}% del 100% de la clase&lt;/small&gt;</msg>
+  <msg key="lt_submit_answer_style_f">enviar respuesta &lt;style color:red&gt;tarde&lt;/style&gt;</msg>
+  <msg key="lt_submit_answer_style_f_1">re-entregar &lt;style color:red&gt;tarde&lt;/style&gt;</msg>
+  <msg key="lt_There_are_no_tasks_fo">No hay tareas para este paquete.</msg>
+  <msg key="lt_There_are_no_tasks_to">No hay tareas que evaluar para este paquete.</msg>
+  <msg key="lt_There_should_be_only_">Solo debe de haber una instancia de evaluación para propósitos administrativos</msg>
+  <msg key="lt_View_evaluation_comme">Ver comentarios de evaluación </msg>
+  <msg key="lt_Your_total_grade_in_t">Su nota total en esta clase es:</msg>
+  <msg key="Name_">Nombre</msg>
+  <msg key="Net_Value_">Valor Neto</msg>
+  <msg key="No_group_for_task_">No hay grupo para esta tarea</msg>
+  <msg key="Not_available_">No disponible</msg>
+  <msg key="Not_evaluated_">Sin evaluar</msg>
+  <msg key="submit_answer_">enviar respuesta</msg>
+  <msg key="submit_answer_again_">enviar respuesta de nuevo</msg>
+  <msg key="task_name_No_data_">%task_name% (vacío)</msg>
+  <msg key="task_name_URL_">%task_name% (URL)</msg>
+  <msg key="Upload_Solution_">Subir Solución</msg>
+  <msg key="View_comments_">Ver comentarios</msg>
+  <msg key="View_my_answer_">Ver mi respuesta</msg>
+  <msg key="View_task_">Ver tarea</msg>
+  <msg key="ViewEdit_Solution_">Ver/Editar Solución</msg>
+  <msg key="Weight_">Ponderación:</msg>
+</message_catalog>

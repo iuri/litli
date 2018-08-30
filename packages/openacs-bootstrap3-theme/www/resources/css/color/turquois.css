@@ -1,0 +1,19 @@
+.main-nav,
+div.logo-wrapper {
+    background-color: #98a892;
+}
+span.invisible {
+    color:#98a892;
+}
+a:link,
+a:visited,
+a:hover {
+    color:#5A8F46;    
+}
+.main-nav .navbar-nav > li.active > a, 
+.main-nav .navbar-nav > .active > a, 
+.main-nav .navbar-nav > .active > a:hover, 
+.main-nav .navbar-nav > .active > a:focus {
+    color:#5A8F46;
+}
+

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<message_catalog package_key="dotlrn" locale="ar_EG" charset="utf-8">
+
+  <msg key="Actions">الأفعال</msg>
+  <msg key="add">أضف</msg>
+  <msg key="Add_A_Member">أضفْ عضواً</msg>
+  <msg key="Add_a_Professor">أضفْ برُوفِسُوراً</msg>
+  <msg key="Add_A_User">أضفْ مستعملاً</msg>
+  <msg key="Add_a_User">أضفْ مستعملاً</msg>
+  <msg key="AddDrop_Memberships">إنضَمَّ إلى/تخلىَّ عن العضوياتُ</msg>
+  <msg key="All">كلّ</msg>
+  <msg key="And">و</msg>
+  <msg key="Ask_a_question">:إسألْ سؤالاً</msg>
+  <msg key="Biography">:السيرة الذاتيةُ</msg>
+  <msg key="black">أسود</msg>
+  <msg key="class_instances_pretty_name">الفصل</msg>
+  <msg key="class_instances_pretty_plural">الفصول</msg>
+  <msg key="class_name_header">%class_instances_pretty_name% أسم</msg>
+  <msg key="class_page_calendar_title">المفكرة</msg>
+  <msg key="Closed">مغلق</msg>
+  <msg key="club_page_calendar_title">رزنامة</msg>
+  <msg key="clubs_name_header">%clubs_pretty_name% أسمُ</msg>
+  <msg key="clubs_pretty_name">المجموعة</msg>
+  <msg key="clubs_pretty_plural">مجموعات</msg>
+  <msg key="control_panel">لوحة التّحكّم</msg>
+  <msg key="course_assistant_role_pretty_name">مُساعدُ فصلِ</msg>
+  <msg key="course_assistant_role_pretty_plural">مُساعدو الفصلِ</msg>
+  <msg key="Create_a_Web_Log">(Web Log) أخلق سجلّ الشبكة</msg>
+  <msg key="departments_pretty_name">القسمُ</msg>
+  <msg key="dotlrn_main_portlet_pretty_name">المجموعات</msg>
+  <msg key="Drop_Membership">تخلى عن العضوية</msg>
+  <msg key="drop_membership_link">&lt;img src=graphics/drop.gif alt=&quot;تخّلى عن العضوية&quot; border=?&gt;</msg>
+  <msg key="Email">:البريد الإلكتروني</msg>
+  <msg key="email">البريد الإلكتروني</msg>
+  <msg key="First_Name">الإسم</msg>
+  <msg key="General_Site_Help">موقعِ المساعدةُ العامّةِ</msg>
+  <msg key="help">مساعدة</msg>
+  <msg key="instructor_role_pretty_name">أستاذ</msg>
+  <msg key="instructor_role_pretty_plural">الأساتذةُ</msg>
+  <msg key="Join_A_Group">إنضمّْ إلى مجموعةً</msg>
+  <msg key="join_link">&lt;img src=&quot;/graphics/join.gif&quot; alt=&quot;إنضّم&quot; border=&quot;?&quot;&gt; </msg>
+  <msg key="Last_Name">الشهرة</msg>
+  <msg key="logout">خروج</msg>
+  <msg key="lt_Help_and_Personal_Con">المساعدةُ والترتيبُ الشخصي</msg>
+  <msg key="lt_Join_a_class_instance">%class_instances_pretty_name% إنضمّْ إلى</msg>
+  <msg key="lt_Join_a_clubs_pretty_n">%clubs_pretty_name% إنضمّْ إلى </msg>
+  <msg key="lt_JoinDrop_a_Class_or_C">إنضَمَّ إلى/تخلىَّ عن صفًّ أو مجموعةً</msg>
+  <msg key="lt_JoinDrop_Classes_or_C">إنضمَّ إلى/ تخلىَّ عن فصولاً أو مجموعاتً</msg>
+  <msg key="lt_Your_Current_Membersh">عضوياتكَ الحالية</msg>
+  <msg key="members">أعضاء</msg>
+  <msg key="Members_of">الأعضاء من</msg>
+  <msg key="No">لا</msg>
+  <msg key="no">لا</msg>
+  <msg key="no_clubs">%clubs_pretty_plural% لا</msg>
+  <msg key="Pending_Approval">في انتظار الموافقة</msg>
+  <msg key="Personal_home_page">:الصفحة الرئيسيةُ الشخصيةُ</msg>
+  <msg key="Personal_Options">الخياراتُ الشخصيةُ</msg>
+  <msg key="Request_Membership">اطّلب عضويّة</msg>
+  <msg key="request_membership_link">&lt;img src=/resources/dotlrn/request.gif alt=&quot;%label%&quot; border=&quot;?&quot; title=&quot;Request Membership&quot;&gt;</msg>
+  <msg key="Role">دور</msg>
+  <msg key="Shared_Files">الملفاتُ المشتركةُ</msg>
+  <msg key="student_role_pretty_name">طالبُ</msg>
+  <msg key="subcommunities_pretty_plural">المجموعات الفرعيّة</msg>
+  <msg key="teaching_assistant_role_pretty_name">مساعدُ معلّم</msg>
+  <msg key="teaching_assistant_role_pretty_plural">المعلّمون المساعدون</msg>
+  <msg key="Term">فصل الدراسيّ</msg>
+  <msg key="user_has_been_a_member_since">%pretty_creation_date% منذ %system_name% عضواً في %first_names% %last_name%</msg>
+  <msg key="user_portal_page_calendar_title">رزنامتي</msg>
+  <msg key="user_portal_page_file_storage_title">ملفاتي</msg>
+  <msg key="user_portal_page_home_title">مساحتي</msg>
+  <msg key="View">شاهد</msg>
+  <msg key="Year">:السنة</msg>
+  <msg key="Yes">نعم</msg>
+  <msg key="yes">نعم</msg>
+  <msg key="Yes_delete">نعم،إمحي</msg>
+  <msg key="Yes_Im_sure">نعم،أنا متأكد</msg>
+</message_catalog>

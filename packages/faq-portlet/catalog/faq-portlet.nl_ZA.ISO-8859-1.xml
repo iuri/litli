@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<message_catalog package_key="faq-portlet" locale="nl_ZA" charset="ISO-8859-1">
+
+  <msg key="admin_pretty_name">Beheer veelgestelde vrae</msg>
+  <msg key="Disable">Skakel uit</msg>
+  <msg key="Disabled">Uigeskakel</msg>
+  <msg key="Enable">Skakel in</msg>
+  <msg key="group">Groep</msg>
+  <msg key="name">Naam</msg>
+  <msg key="new_faq">Nuwe veelgestelde vraag</msg>
+  <msg key="no_faqs">Gee veelgestelde vrae beskikbaar nie</msg>
+  <msg key="one_admin_faq">Vir beheersdoeleinde mag die module vir Veelgestelde Vrae (faq) nie op meerdere plaatsen in die werfkaart geïnstalleer wees nie.</msg>
+  <msg key="pretty_name">Veelgestelde vrae (faq)</msg>
+</message_catalog>

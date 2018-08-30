@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<message_catalog package_key="faq-portlet" locale="ja_JP" charset="utf-8">
+
+  <msg key="no_faqs">FAQはありません</msg>
+  <msg key="pretty_name">良く聞かれる質問 (FAQ)</msg>
+</message_catalog>

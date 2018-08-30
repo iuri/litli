@@ -1,0 +1,48 @@
+body {
+	font-family: "Times New Roman", serif;
+	font-size: 12pt;
+}
+
+h1 { 
+	font-size: 16pt; 
+	font-weight:bold;
+	color: #000000; 
+}
+	
+h2 { 
+	font-size: 15pt; 
+	font-weight:bold;
+	color: #000000; 
+}
+	
+h3 {
+	font-size: 14pt; 
+	font-weight:bold;
+	color: #000000; 
+}
+
+#header-navigation, #main-navigation, #sub-navigation, #skiptocontent, .block-marker, #alert-message, .portlet-controls, #footer, .button, .screen-reader-only {
+	display: none;
+}
+
+
+/* LISTS -----------------------------------------------------------*/
+
+ul.compact{
+	margin: 0px;
+	padding: 0px;
+}
+ul.compact li {
+	list-style:none;
+	display: inline;
+}
+
+/* END OF LISTS */
+
+
+table.standard {
+	border: 1pt solid black; padding: 5pt;
+}
+
+table.standard th { border: 1pt solid #222222; padding: 5pt; background-color: #aaaaaa }
+table.standard td { border: 1pt solid #222222; padding: 5pt; }

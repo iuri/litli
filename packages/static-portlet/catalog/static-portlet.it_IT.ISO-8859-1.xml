@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<message_catalog package_key="static-portlet" locale="it_IT" charset="ISO-8859-1">
+
+  <msg key="admin_portlet_element_pretty_name">Portlet personale</msg>
+  <msg key="admin_portlet_pretty_name">Amministrazione portlet personale</msg>
+  <msg key="Back_to">Indietro</msg>
+  <msg key="Binary_file_uploaded">File binario %filename% caricato, ma supportiamo solo testo qui.</msg>
+  <msg key="Content">Contenuto</msg>
+  <msg key="Control_Panel">Pannello di Controllo</msg>
+  <msg key="Create_a_new">Crea un nuovo %element_pretty_name% </msg>
+  <msg key="Edit">Edita</msg>
+  <msg key="Edit_content_element">Modifica il contenuto dell'elemento</msg>
+  <msg key="False_0">Falso</msg>
+  <msg key="File">File</msg>
+  <msg key="lt_Delete_element_pretty">Cancella %element_pretty_name% %pretty_name%</msg>
+  <msg key="lt_Editing_element_prett">Modifica %element_pretty_name% %pretty_name% </msg>
+  <msg key="lt_Enforce_this_applet_t">Obbliga questo applet a essere mostrato nel Portale</msg>
+  <msg key="lt_Enforce_True_means_th">Obbliga 'Vero' significa che il portlet static sarà aggiunto subito nei portali già creati, 'Falso' che saranno disponibili quando sarà personalizzato il portale</msg>
+  <msg key="lt_strongNotestrong_You_">&lt;strong&gt;Nota&lt;/strong&gt;: Puoi usare testo semplice o HTML nella textarea.</msg>
+  <msg key="lt_Use_this_form_to_crea">Usa questa form per creare un nuovo %element_pretty_name%.
+Il nuovo %element_pretty_name% sarà creato e posto automaticamente sulla prima pagina del protale %portal_name%. Vai al %control_panel_text% e seleziona &amp;quot;Personalizza l'Impaginazione&amp;quot; per disporre questo %element_pretty_name%. </msg>
+  <msg key="Name">Nome</msg>
+  <msg key="New">Nuovo</msg>
+  <msg key="new_static_admin_portlet">Nuovo %element_pretty_name%</msg>
+  <msg key="True">Vero</msg>
+  <msg key="Use_this_form">Usa questa form per creare un nuovo %element_pretty_name%. Il %element_pretty_name% sarà creato e posto automaticamente sulla prima pagina del portale %portal_name%. Vai alla pagina di amministrazione e seleziona &amp;quot;Personalizza l'Impaginazione&amp;quot; per disporre questo %element_pretty_name%.</msg>
+  <msg key="You_may_upload">Oppure, puoi caricare un file di &lt;strong&gt;testo&lt;/strong&gt;, il contenuto del quale sostituirà il contenuto attuale del portlet.</msg>
+</message_catalog>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<message_catalog package_key="faq-portlet" locale="nn_NO" charset="ISO-8859-1">
+
+  <msg key="admin_pretty_name">FAQ Administrasjon</msg>
+  <msg key="Disable">Slå av</msg>
+  <msg key="Disabled">Avslått</msg>
+  <msg key="Enable">Slå på</msg>
+  <msg key="group">Gruppe</msg>
+  <msg key="name">Navn</msg>
+  <msg key="new_faq">Ny FAQ</msg>
+  <msg key="no_faqs">Ingen FAQ</msg>
+  <msg key="one_admin_faq">Det burde berre vere ein FAQ for administrasjonsformål</msg>
+  <msg key="pretty_name">Vanlege spørsmål (FAQ)</msg>
+</message_catalog>

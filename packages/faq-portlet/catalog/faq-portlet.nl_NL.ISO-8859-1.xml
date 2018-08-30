@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<message_catalog package_key="faq-portlet" locale="nl_NL" charset="ISO-8859-1">
+
+  <msg key="admin_pretty_name">Veelgestelde vragen beheren</msg>
+  <msg key="Disable">Uitschakelen</msg>
+  <msg key="Disabled">Uitgeschakeld</msg>
+  <msg key="Enable">Ingeschakeld</msg>
+  <msg key="group">Groep</msg>
+  <msg key="name">Naam</msg>
+  <msg key="new_faq">Nieuwe veelgestelde vraag</msg>
+  <msg key="no_faqs">Geen veelgestelde vragen (faq) beschikbaar</msg>
+  <msg key="one_admin_faq">Voor administratiedoeleinden mag de Veelgestelde Vragen module (faq) niet op meerdere plaatsen in de Sitemap zijn geïnstalleerd.</msg>
+  <msg key="pretty_name">Veelgestelde vragen (faq)</msg>
+</message_catalog>

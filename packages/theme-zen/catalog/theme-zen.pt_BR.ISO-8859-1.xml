@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<message_catalog package_key="theme-zen" package_version="2.2.0" locale="pt_BR" charset="ISO-8859-1">
+
+  <msg key="Communities">Comunidades</msg>
+  <msg key="ControlPanel">Painel de Controle</msg>
+  <msg key="Courses">Cursos</msg>
+  <msg key="dotlrn_Home">Página do .LRN</msg>
+  <msg key="dotlrn_Project_Central">Central do Projeto .LRN</msg>
+  <msg key="Home">Início</msg>
+  <msg key="Logout">Sair</msg>
+  <msg key="MySpace">Meu Espaço</msg>
+  <msg key="online">conectados</msg>
+  <msg key="Preferences">Preferências</msg>
+  <msg key="Tools">Ferramentas</msg>
+  <msg key="You_are_here">Você está aqui</msg>
+</message_catalog>

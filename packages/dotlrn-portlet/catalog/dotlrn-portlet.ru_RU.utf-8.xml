@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<message_catalog package_key="dotlrn-portlet" locale="ru_RU" charset="utf-8">
+
+  <msg key="admin_pretty_name">Администрирование Групп</msg>
+  <msg key="Administer">Администрировать</msg>
+  <msg key="Archive">Зархивировать</msg>
+  <msg key="Archive_this_group">Зархивировать эту группу</msg>
+  <msg key="Closed">Закрыт</msg>
+  <msg key="Copy_this_group">Скопировать эту группу</msg>
+  <msg key="lt_Change_Enrollment_Pol">Изменить Политику Доступаа Сообщества</msg>
+  <msg key="lt_No_subcomm_pretty_plu">Нет %subcomm_pretty_plural%</msg>
+  <msg key="lt_This_group_is_archive">Эта группа заархивирована</msg>
+  <msg key="Manage_Applets">Конфигурация Апплетов</msg>
+  <msg key="Manage_Membership">Конфигурация Членства</msg>
+  <msg key="members_portlet_pretty_name">Члены</msg>
+  <msg key="members_staff_portlet_pretty_name">Список Сотрудников</msg>
+  <msg key="Needs_Approval">Требуется Разрешение</msg>
+  <msg key="New_sub_pretty_name">Новая %sub_pretty_name%</msg>
+  <msg key="Open">Открыть</msg>
+</message_catalog>

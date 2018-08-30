@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<message_catalog package_key="dotlrn-portlet" locale="gl_ES" charset="ISO-8859-1">
+
+  <msg key="admin_pretty_name">Administración do Grupo</msg>
+  <msg key="Administer">Administrar</msg>
+  <msg key="All_members">Todos os membros</msg>
+  <msg key="Archive">Arquivar</msg>
+  <msg key="Archive_this_group">Arquivar este grupo</msg>
+  <msg key="Closed">Pechado</msg>
+  <msg key="Copy_this_group">Copiar este grupo</msg>
+  <msg key="Email_Members">Enviar mensaxe para os membros</msg>
+  <msg key="lt_AddRemove_pretty_name">Engadir/Eliminar membros de %pretty_name%</msg>
+  <msg key="lt_can_send_bulk_mail_to">pode enviar correo en masa para esta comunidade.</msg>
+  <msg key="lt_Change_Bulk_Mail_Poli">Mudar política de correo en masa</msg>
+  <msg key="lt_Change_Enrollment_Pol">Mudar política de rexistro</msg>
+  <msg key="lt_Create_a_new_Limited_">Criar un novo usuario con acceso limitado</msg>
+  <msg key="lt_Create_a_new_Limited__1">Criar un novo usuario convidado con acceso limitado</msg>
+  <msg key="lt_Customize_Portal_Layo">Personalizar a Disposición do Portal</msg>
+  <msg key="lt_No_subcomm_pretty_plu">Non hai %subcomm_pretty_plural%</msg>
+  <msg key="lt_Only_use_this_to_crea">Utiliza isto apenas para criares unha conta para estudantes con rexistros cruzados que non teñan unha conta de unha disciplina anterior.</msg>
+  <msg key="lt_Only_use_this_to_crea_1">Utiliza isto apenas para criares contas para usuarios non filiados que non teñan xa unha conta. Non estará disponíbel información acerca dos outros membros desta comunidade para este usuario.</msg>
+  <msg key="lt_Sorry_this_functional">Desculpa, esta funcionalidade non está disponíbel para convidados</msg>
+  <msg key="lt_This_group_is_archive">Este grupo está activado</msg>
+  <msg key="Manage_Applets">Xerenciar applets</msg>
+  <msg key="Manage_Membership">Xerenciar asociación</msg>
+  <msg key="Member_List">Lista de membros</msg>
+  <msg key="members_portlet_pretty_name">Membros</msg>
+  <msg key="members_staff_portlet_pretty_name">Lista de funcionários</msg>
+  <msg key="Needs_Approval">Necesita aprovación</msg>
+  <msg key="New_sub_pretty_name">Nova %sub_pretty_name%</msg>
+  <msg key="no_course_assistant_members">Non hai %course_assistant_role_pretty_plural%</msg>
+  <msg key="no_instructor_members">Non hai %instructor_role_pretty_plural%</msg>
+  <msg key="no_teaching_assistant_members">Non hai %teaching_assistant_role_pretty_plural%</msg>
+  <msg key="Only_admins">Só administradores</msg>
+  <msg key="Open">Aberto</msg>
+  <msg key="Sort">Ordenar</msg>
+  <msg key="Sortmanage">Ordenar/xerenciar</msg>
+</message_catalog>

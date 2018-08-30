@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<message_catalog package_key="dotlrn-forums" locale="sv_SE" charset="ISO-8859-1">
+
+  <msg key="Auto_subscribe_label">Autoprenumerera gruppmedlemmar</msg>
+  <msg key="by_Date">datumvis</msg>
+  <msg key="by_Forum">forumvis</msg>
+  <msg key="Forum">Forum</msg>
+  <msg key="forums_default_name_suffix">Forum</msg>
+  <msg key="lt_Forums_Posting_histor">Forum: Inläggshistorik för %user.full_name%</msg>
+  <msg key="lt_There_should_be_only_">Det bör endast finnas en foruminstans för administrativa ändamål</msg>
+  <msg key="New_Forum">Nytt forum</msg>
+  <msg key="No_Postings">Inga inlägg.</msg>
+  <msg key="Posted">Skickad</msg>
+  <msg key="Posting_History">Inläggshistorik</msg>
+  <msg key="Posting_history_for">Inläggshistorik för</msg>
+  <msg key="Subject">Ämne</msg>
+  <msg key="View">Visa:</msg>
+</message_catalog>

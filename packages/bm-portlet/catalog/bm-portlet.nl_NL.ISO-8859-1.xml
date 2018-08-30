@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<message_catalog package_key="bm-portlet" locale="nl_NL" charset="ISO-8859-1">
+
+  <msg key="New_spam_name">Nieuwe %spam_name% </msg>
+  <msg key="pretty_name">Groepsgewijze E-mail</msg>
+  <msg key="spam_name_History">%spam_name% geschiedenis</msg>
+</message_catalog>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<message_catalog package_key="photo-album-portlet" locale="en_US" charset="ISO-8859-1">
+
+  <msg key="Add_photos">Add Photos</msg>
+  <msg key="Admin">Photos Administration</msg>
+  <msg key="Administration">Photos Administration</msg>
+  <msg key="Photo_Album">Photo Album</msg>
+</message_catalog>

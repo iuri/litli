@@ -1,0 +1,215 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML
+><HEAD
+><TITLE
+>Release Notes for Photo Album 4.0.1 Final Release</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="aD Hack of: Modular DocBook HTML Stylesheet Version 1.60"><LINK
+REL="HOME"
+TITLE="Photo Album"
+HREF="index.html"><LINK
+REL="PREVIOUS"
+TITLE="Introduction"
+HREF="for-everyone.html"><LINK
+REL="NEXT"
+TITLE="ACS Administration Guide"
+HREF="acs-admin-guide.html"><LINK
+REL="STYLESHEET"
+TYPE="text/css"
+HREF="ad-doc.css"></HEAD
+><BODY
+CLASS="chapter"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Photo Album</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="for-everyone.html"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+></TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="acs-admin-guide.html"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+SIZE="1"
+NOSHADE="NOSHADE"
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="chapter"
+><H1
+><A
+NAME="release-notes"
+>Chapter 2. Release Notes for Photo Album 4.0.1 Final Release</A
+></H1
+><P
+>Changes from 4.0.1 beta to 4.0.1 final.</P
+><UL
+><LI
+><P
+CLASS="listitem"
+>Removed photo level permission checks.  Load testing showed
+       that allowing different photos within the same album to have different 
+       permissions made the queries to get the photos in a large album very slow.  
+       I changed the application logic so that all photos in album have same permission
+       and permission check is done at the album level.
+       </P
+></LI
+><LI
+><P
+CLASS="listitem"
+>Tunned numerous queries base on load testing results 
+       against a database filed with 10,000 photos.
+       </P
+></LI
+><LI
+><P
+CLASS="listitem"
+>Made compatible with acs-kernal 4.1.1 and acs-templating 4.1.
+       </P
+></LI
+><LI
+><P
+CLASS="listitem"
+>Added caching of primary keys of photos in an album and package root folder_id.
+       </P
+></LI
+><LI
+><P
+CLASS="listitem"
+>Added optional permission check when serving images.
+       </P
+></LI
+><LI
+><P
+CLASS="listitem"
+>Added separate optional page to display the base sized photo.
+       </P
+></LI
+><LI
+><P
+CLASS="listitem"
+>When uploading a photo, the thumbnail is now created from the 
+       viewer sized image rather from the base sized image.  Creating a small image 
+       from a medium-sized image is much faster than creating a small image from a 
+       large image and does not noticeably change the image quality.
+       </P
+></LI
+><LI
+><P
+CLASS="listitem"
+>Minor revisions to plsql packages to improve compatibility with acs-content-repository.
+       </P
+></LI
+><LI
+><P
+CLASS="listitem"
+>Added more detailed documentation in both html and docbook format.
+       </P
+></LI
+><LI
+><P
+CLASS="listitem"
+>Fixed name conflicts with photo album lite.
+       </P
+></LI
+></UL
+><P
+>Besides upgrading the rest of your acs intall to 4.1.1, you will need to mannually run 
+      <TT
+CLASS="computeroutput"
+>photo-album/sql/plsql-packages.sql</TT
+> through sqlplus to update
+      the packages inside oracle when upgrading from the beta to final version of the photo-album.</P
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+SIZE="1"
+NOSHADE="NOSHADE"
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="for-everyone.html"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index.html"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="acs-admin-guide.html"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Introduction</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+>&nbsp;</TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>ACS Administration Guide</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

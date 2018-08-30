@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<message_catalog package_key="dotlrn-forums" locale="ast_ES" charset="ISO-8859-1">
+
+  <msg key="by_Date">por Fecha</msg>
+  <msg key="by_Forum">por Tableru</msg>
+  <msg key="Forum">Tableru</msg>
+  <msg key="forums_default_name_suffix">Tableru</msg>
+  <msg key="lt_Forums_Posting_histor">Tableros: historial de Mensaxes pa &quot;%user.full_name%&quot;</msg>
+  <msg key="lt_There_should_be_only_">Solo tien qu'haber una instancia de tableros pa propósitos alministrativos</msg>
+  <msg key="New_Forum">Tableru Nuevu</msg>
+  <msg key="No_Postings">Nun hai Mensaxes</msg>
+  <msg key="Posted">Mandao</msg>
+  <msg key="Posting_History">Históricu de Mensaxes</msg>
+  <msg key="Posting_history_for">Históricu de Mensaxes pa</msg>
+  <msg key="Subject">Asuntu</msg>
+  <msg key="View">Ver:</msg>
+</message_catalog>

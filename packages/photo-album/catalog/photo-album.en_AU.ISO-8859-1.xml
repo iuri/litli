@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<message_catalog package_key="photo-album" package_version="5.2.3" locale="en_AU" charset="ISO-8859-1">
+
+  <msg key="_Album">Album Description</msg>
+  <msg key="_Album_1">Album Story</msg>
+  <msg key="_Album_2">Album Name</msg>
+  <msg key="_An">An error occurred while processing your input. Please let the system owner know about this.
+	  &lt;pre&gt;%errmsg%&lt;/pre&gt;</msg>
+  <msg key="_An_1">An error occurred while processing your input. Please let the system owner know about this.</msg>
+  <msg key="_Choose">Choose New Folder for Album</msg>
+  <msg key="_Choose_1">Choose New Folder for Folder</msg>
+  <msg key="_Choose_2">Choose a Photo to Upload </msg>
+  <msg key="_Choose_3">Choose a tar or zip file to upload</msg>
+  <msg key="_Clipboard">Clipboard name</msg>
+  <msg key="_Create">Create a New Album</msg>
+  <msg key="_Create_1">Create New Folder</msg>
+  <msg key="_Delete">Delete Folder</msg>
+  <msg key="_Delete_1">Delete Photo</msg>
+  <msg key="_Edit">Edit Album Attributes</msg>
+  <msg key="_Edit_1">Edit Folder Attributes</msg>
+  <msg key="_Edit_2">Edit Photo Attributes</msg>
+  <msg key="_Edit_3">Edit page %page% </msg>
+  <msg key="_Edit_4">Edit page %page%</msg>
+  <msg key="_Either">Either there is already an album with the name &quot;%name%&quot; 
+	          or you clicked on the button more than once. You can &lt;a href=&quot;index?parent_id=%parent_id%&quot;&gt;
+	          return to the directory listing&lt;/a&gt; to see if your album is there.</msg>
+  <msg key="_Either_1">Either there is already an album in the specified folder with the name &quot;%folder_name%&quot; or you clicked on the button more than once.  You can &lt;a href=&quot;?folder_id=%new_folder_id%&quot;&gt;return to the new folder&lt;/a&gt; to see if your album is there.</msg>
+  <msg key="_Either_2">Either there is already a folder with the name &quot;%name%&quot; 
+	          or you clicked on the button more than once. You can &lt;a href=&quot;index?parent_id=%parent_id%&quot;&gt;
+	          return to the directory listing&lt;/a&gt; to see if your folder is there.</msg>
+  <msg key="_Either_3">Either there is already an folder in the specified folder with the name &quot;%folder_name%&quot; or you clicked on the button more than once.  You can &lt;a href=&quot;?folder_id=%new_folder_id%&quot;&gt;return to the new folder&lt;/a&gt; to see if your folder is there.</msg>
+  <msg key="_Either_4">Either there is already a photo in the specified album with the name &quot;%filename%&quot; or you clicked on the button more than once.  You can &lt;a href=&quot;album?album_id=%new_album_id%&quot;&gt;return to the new album&lt;/a&gt; to see if your photo is there. </msg>
+  <msg key="_Folder">Folder Name</msg>
+  <msg key="_Folder_1">Folder Description</msg>
+  <msg key="_For">For show this photo &lt;a href=photo-edit?photo_id=%photo_id%&gt;edit the attributes&lt;/a&gt; an uncheck the option hide</msg>
+  <msg key="_Full">Full Size Image</msg>
+  <msg key="_Hide">Hide the image html source</msg>
+  <msg key="_Modify">Modify this package's parameters</msg>
+  <msg key="_Move">Move Album</msg>
+  <msg key="_Move_1">Move Folder</msg>
+  <msg key="_Move_photo_to_album">Move photo to album: </msg>
+  <msg key="_No">No Access. The Administrator of this sub-site has restricted access base photos.</msg>
+  <msg key="_Or">Or choose a server directory to upload</msg>
+  <msg key="_Photo">Photo Description</msg>
+  <msg key="_photo">photo not found</msg>
+  <msg key="_Photo_1">Photo Story</msg>
+  <msg key="_Photo_2">Photo not found or photo is hidden </msg>
+  <msg key="_Please">Please select album</msg>
+  <msg key="_Save">Save </msg>
+  <msg key="_Show">Show the image html source for copy&amp;amp;paste</msg>
+  <msg key="_The">The specified parent folder is not valid.</msg>
+  <msg key="_the">the directory must exist on server and be readable by the server process</msg>
+  <msg key="_The_1">The specified album is not valid.</msg>
+  <msg key="_The_2">The specified photo is not valid.</msg>
+  <msg key="_The_3">The specified folder is not valid.</msg>
+  <msg key="_The_4">The specified album is not valid. </msg>
+  <msg key="_The_5">The parameter AcceptableUploadMIMETypes is not satisfied </msg>
+  <msg key="_The_6">The parameter ConverttoJpgorPng is not in automatic mode </msg>
+  <msg key="_This">This photo couldn't be showed because : </msg>
+  <msg key="_Upload">Upload photos</msg>
+  <msg key="_Use">Use the &quot;Browse...&quot; button find a file</msg>
+  <msg key="_Use_1">Use the &quot;Browse...&quot; button to locate your file, then click &quot;Open&quot;</msg>
+  <msg key="_We">We got an error that we couldn't readily identify.  Please let the system owner know about this.
+
+	    &lt;pre&gt;%errmsg%&lt;/pre&gt;</msg>
+  <msg key="_We_1">We got an error that we couldn't readily identify.  Please let the system owner know about this. </msg>
+  <msg key="_Yes_Delete">Yes, Delete It</msg>
+  <msg key="_You">You must provide a non-empty name for the clipboard</msg>
+  <msg key="_You_1">You may not delete the root folder.</msg>
+  <msg key="_You_2">You may not move the root folder.</msg>
+  <msg key="_Your">You can click &lt;a href=album?album_id=%old_album_id%&gt; here &lt;/a&gt; to view all photos of the album </msg>
+  <msg key="Add_a_new_album">Add a new album</msg>
+  <msg key="Add_a_new_folder">Add a new folder</msg>
+  <msg key="Album_Name">Album Name</msg>
+  <msg key="Caption">Caption</msg>
+  <msg key="Caption_1">Caption:</msg>
+  <msg key="Clipboard">Clipboard:</msg>
+  <msg key="clipboard">clipboard</msg>
+  <msg key="Clipboard_addedit">&quot;Clipboard add/edit&quot;</msg>
+  <msg key="Clipboards">Clipboards</msg>
+  <msg key="Create_a_New_Album">Create a New Album</msg>
+  <msg key="Create_a_New_Folder">Create a New Folder</msg>
+  <msg key="delete_clipboard">delete clipboard</msg>
+  <msg key="Delete_this_album">Delete this album</msg>
+  <msg key="Delete_this_folder">Delete this folder</msg>
+  <msg key="Delete_this_photo">Delete this photo</msg>
+  <msg key="Descriptio">Description</msg>
+  <msg key="Description">Description</msg>
+  <msg key="Description_1">Description:</msg>
+  <msg key="Edit_page">Edit page</msg>
+  <msg key="Edit_the_Album">Edit the Album:</msg>
+  <msg key="Edit_the_Folder">Edit the Folder:</msg>
+  <msg key="Edit_these_photos">Edit these photos</msg>
+  <msg key="Flash">Flash</msg>
+  <msg key="Hide">Hide</msg>
+  <msg key="Hide_1">Hide:</msg>
+  <msg key="log_in">log in</msg>
+  <msg key="lt_Add_a_collection_of_p">Add a collection of photos to this album</msg>
+  <msg key="lt_Add_a_single_photo_to">Add a single photo to this album</msg>
+  <msg key="lt_and_add_them_to_a_cli">and add them to a clipboard to use 
+        this part of the site.</msg>
+  <msg key="lt_Are_you_sure_you_want">Are you sure you want to delete the album &quot;%title%&quot;?  This action cannot be reversed.</msg>
+  <msg key="lt_Are_you_sure_you_want_1">Are you sure you want to delete the folder &quot;%title%&quot;?  This action cannot be reversed.</msg>
+  <msg key="lt_Are_you_sure_you_want_2">Are you sure you want to delete the photo &quot;%title%&quot;?  This action cannot be undone.</msg>
+  <msg key="lt_Click_on_the_small_ph">Click on the small photos to see a bigger
+version, the numbers to see different pages, or the Next or Previous
+page links to move back and forth.  You can also pick photos for
+printing or emailing on the individual photo display page.</msg>
+  <msg key="lt_clipboardsphotos_phot">(%clipboards.photos% photos) 
+              [</msg>
+  <msg key="lt_Description_descripti">Description: %description%</msg>
+  <msg key="lt_edit________________n">edit
+                name</msg>
+  <msg key="lt_Edit_album_attributes">Edit album attributes</msg>
+  <msg key="lt_Edit_folder_informati">Edit folder information</msg>
+  <msg key="lt_Edit_photo_attributes">Edit photo attributes</msg>
+  <msg key="lt_for______printing_fro">for
+      printing from a</msg>
+  <msg key="lt_Image_removed_from_cl">Image removed from clipboard.</msg>
+  <msg key="lt_Image_saved_to_clipbo">Image saved to clipboard.</msg>
+  <msg key="lt_Image_thumbnail_index">Image thumbnail index</msg>
+  <msg key="lt_Imagenbspthumbnailnbs">Image&amp;nbsp;thumbnail&amp;nbsp;index</msg>
+  <msg key="lt_in_order_to_manage_cl">in order to manage clipboards.</msg>
+  <msg key="lt_Make_this_photo_the_i">Make this photo the cover photo for this album</msg>
+  <msg key="lt_Modify_album_permissi">Modify album permissions</msg>
+  <msg key="lt_Modify_this_albums_pe">Modify this album's permissions</msg>
+  <msg key="lt_Modify_this_folders_p">Modify this folder's permissions</msg>
+  <msg key="lt_Move_album_to_another">Move album to another folder</msg>
+  <msg key="lt_Move_Album_to_new_fol">Move Album to new folder:</msg>
+  <msg key="lt_Move_folder_to_new_fo">Move folder to new folder:</msg>
+  <msg key="lt_Move_this_album_to_an">Move this album to another folder</msg>
+  <msg key="lt_Move_this_folder_to_a">Move this folder to another folder</msg>
+  <msg key="lt_No_photos_in_the_clip">No photos in the clipboard.</msg>
+  <msg key="lt_OPTIONAL_Displayed_on">OPTIONAL, Displayed on the thumbnail page</msg>
+  <msg key="lt_OPTIONAL_Displayed_wh">OPTIONAL, Displayed when viewing the photo</msg>
+  <msg key="lt_Photo_Album_System__t">Photo Album System : %title%</msg>
+  <msg key="lt_Save_this_photo_to_pr">Save this photo to print or view later</msg>
+  <msg key="lt_Save_this_photo_to_pr_1">Save this photo to print or view later.  Place in folder</msg>
+  <msg key="lt_Taken_child_photodate">Taken: %child_photo.datetaken% %child_photo.camera_model% %child_photo.focal_length%mm %child_photo.aperture%</msg>
+  <msg key="lt_There_are_no_items_in">There are no items in this folder.</msg>
+  <msg key="lt_This_album_does_not_c">This album does not contain anything.</msg>
+  <msg key="lt_This_photo_clipped_to">This photo clipped to:</msg>
+  <msg key="lt_To_order_prints_of_th">To order prints of these photos you will first need to add them
+      to a clipboard (you can do this when viewing an individual
+      photo).  Once they are in a clipboard you can send them off to</msg>
+  <msg key="lt_Upload_a_Photo_collec">Upload a Photo collection</msg>
+  <msg key="lt_View_all_of_your_clip">View all of your clipboards</msg>
+  <msg key="lt_View_all_your_clipboa">View all your clipboards</msg>
+  <msg key="lt_You_do_not_currently_">You do not currently have any clipboards defined.  You will
+        need to browse the</msg>
+  <msg key="lt_Your_text_updates_hav">Your text updates have been made and any rotations are
+currently being processed...</msg>
+  <msg key="Modify_this_pack">Modify this package's parameters</msg>
+  <msg key="Move">Move</msg>
+  <msg key="Name">Name</msg>
+  <msg key="Name_title">Name: %title%</msg>
+  <msg key="Netx">Next</msg>
+  <msg key="OPTIONAL">OPTIONAL</msg>
+  <msg key="or">or</msg>
+  <msg key="Photo_clipboard">Photo clipboard</msg>
+  <msg key="Photographer">Photographer</msg>
+  <msg key="Photographer_">Photographer </msg>
+  <msg key="photos">photos</msg>
+  <msg key="Prev">Prev</msg>
+  <msg key="register">register</msg>
+  <msg key="remove">remove</msg>
+  <msg key="screen">screen.</msg>
+  <msg key="Sequence">Sequence:</msg>
+  <msg key="shutterflycom">shutterfly.com</msg>
+  <msg key="Smallernbspimage">Smaller&amp;nbsp;image</msg>
+  <msg key="Story">Story</msg>
+  <msg key="Story_1">Story:</msg>
+  <msg key="Story_story">Story: %story%</msg>
+  <msg key="Submit">Submit</msg>
+  <msg key="Title">Title</msg>
+  <msg key="Title_1">Title:</msg>
+  <msg key="Upload_a_Photo">Upload a Photo</msg>
+  <msg key="You_will_have_to">You will have to</msg>
+  <msg key="Your_clipboards">Your clipboards</msg>
+</message_catalog>

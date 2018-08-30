@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<message_catalog package_key="openacs-bootstrap3-theme" locale="de_DE" charset="ISO-8859-1">
+
+  <msg key="plain">OpenACS Bootstrap 3 Thema</msg>
+  <msg key="tabbed">OpenACS Bootstrap 3 Thema tabelliert (blau)
+</msg>
+  <msg key="tabbed-turquois">OpenACS Bootstrap 3 Thema tabelliert (türkis)
+</msg>
+</message_catalog>

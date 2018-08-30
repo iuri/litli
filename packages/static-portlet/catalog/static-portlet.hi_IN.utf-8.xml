@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<message_catalog package_key="static-portlet" locale="hi_IN" charset="utf-8">
+
+  <msg key="admin_portlet_element_pretty_name">प्रथा </msg>
+  <msg key="admin_portlet_pretty_name">कुस्तोम पोर्तलेत का प्रबन्धन </msg>
+  <msg key="Back_to">पीछे को </msg>
+  <msg key="Binary_file_uploaded">द्विआधारी फ़ाइल %filename% का अपलोड पूरा हूआ, परन्तु  हम सिर्फ़ टेक्ष्ट फ़ाइल का अव्ल्म्ब करते है </msg>
+  <msg key="Content">विषयवस्तु </msg>
+  <msg key="Control_Panel">नियन्त्रण कक्ष </msg>
+  <msg key="Create_a_new">एक नया %element_pretty_name% बनाओ </msg>
+  <msg key="Edit">बदलना </msg>
+  <msg key="Edit_content_element">विषयवस्तु को बदलना </msg>
+  <msg key="False_0">गलत </msg>
+  <msg key="File">फ़ाइल </msg>
+  <msg key="lt_Delete_element_pretty">मिटाना %element_pretty_name% %pretty_name%</msg>
+  <msg key="lt_Editing_element_prett">बदलना  %element_pretty_name% %pretty_name%
+</msg>
+  <msg key="lt_Enforce_this_applet_t">इस अप्पलेत को पोर्तल मे दिखने के लिये बाध्य करना </msg>
+  <msg key="lt_Enforce_True_means_th">Enforce True means that the static portlet will be \added right away in the target portals that are already created, \ False means that will be available to use when customizing the portal or when performing revert action
+
+सही को लागू करने का मतलब है की स्थैतिक पोर्तलेत का सही तरीके से लक्ष्य पोर्तल जो पेहले से है को जोडना और गलत का मतलब की </msg>
+  <msg key="lt_strongNotestrong_You_">&lt;strong&gt;टिप्पणी&lt;/strong&gt; आप साधारण या HTML का प्रयोग विषय क्षेत्र मे कर सकते है|</msg>
+  <msg key="lt_Use_this_form_to_crea">इस प्रपत्र को नया %element_pretty_name% बनाने के लिये प्रयोग करे। %element_pretty_name% बनकर स्वत: प्रथम प्रष्ठ %portal_name% पोर्टल पर आ जायेगा। %control_panel_text% पर जाये और कसटोमइज प्रारुप को %element_pretty_name% पर ले जाने के लिये चुने</msg>
+  <msg key="Name">नाम </msg>
+  <msg key="New">नया </msg>
+  <msg key="new_static_admin_portlet">नया %element_pretty_name%
+
+</msg>
+  <msg key="True">सच </msg>
+  <msg key="Use_this_form">इस प्रपत्र को नया %element_pretty_name% बनाने के लिये प्रयोग करे %element_pretty_name% बनकर स्वत: प्रथम प्रष्ठ 
+%portal_name% पोर्टल पर आ जायेगा। सन्चालन प्रष्ठ पर जाये और कसटोमाइज प्रारुप को %element_pretty_name% पर ले जाने के लिये चुने.</msg>
+  <msg key="You_may_upload">या आप &amp;lt;strong&amp;gt;text&amp;lt;/strong&amp;gt; को अपलोड करे जिससे कि वर्तमान पोर्टल की विषय की सूची बदली जा सके। </msg>
+</message_catalog>

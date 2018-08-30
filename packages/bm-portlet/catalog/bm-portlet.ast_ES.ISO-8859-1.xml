@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<message_catalog package_key="bm-portlet" locale="ast_ES" charset="ISO-8859-1">
+
+  <msg key="New_spam_name">Nuevu &quot;%spam_name%&quot;</msg>
+  <msg key="pretty_name">Corréu Masivu</msg>
+  <msg key="spam_name_History">Historial de &quot;%spam_name&quot; </msg>
+</message_catalog>

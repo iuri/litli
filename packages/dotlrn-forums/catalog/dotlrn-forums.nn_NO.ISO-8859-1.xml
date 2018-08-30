@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<message_catalog package_key="dotlrn-forums" locale="nn_NO" charset="ISO-8859-1">
+
+  <msg key="administer">administrer</msg>
+  <msg key="All_forums">Alle fora</msg>
+  <msg key="Auto_subscribe_label">Legg medlemene i gruppa automatisk inn som medlemer av diskusjonsgruppa</msg>
+  <msg key="by_Date">etter dato</msg>
+  <msg key="by_Forum">etter forum</msg>
+  <msg key="Forum">Forum</msg>
+  <msg key="forums_default_name_suffix">Forum</msg>
+  <msg key="lt_Forums_Posting_histor">Forum: Logg for %user.full_name%</msg>
+  <msg key="lt_There_should_be_only_">Det burde berre vere eit forum for administrasjonsformål</msg>
+  <msg key="New_Forum">Nytt forum</msg>
+  <msg key="No_Postings">Ingen innlegg</msg>
+  <msg key="Posted">Lagt inn</msg>
+  <msg key="Posting_History">Innleggingslogg</msg>
+  <msg key="Posting_history_for">Innleggingslogg for</msg>
+  <msg key="Subject">Emne</msg>
+  <msg key="View">Utval:</msg>
+</message_catalog>

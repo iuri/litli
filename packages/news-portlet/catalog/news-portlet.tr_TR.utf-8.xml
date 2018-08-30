@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<message_catalog package_key="news-portlet" locale="tr_TR" charset="utf-8">
+
+  <msg key="No_News">Haber Yok</msg>
+  <msg key="pretty_name">Haberler</msg>
+</message_catalog>

@@ -1,0 +1,2 @@
+drop index if exists static_portal_content_package_id_idx;
+create index static_portal_content_package_id_idx on static_portal_content(package_id);

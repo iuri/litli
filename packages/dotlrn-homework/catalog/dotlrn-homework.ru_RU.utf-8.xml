@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<message_catalog package_key="dotlrn-homework" locale="ru_RU" charset="utf-8">
+
+  <msg key="Author">Автор</msg>
+  <msg key="Delete">Удалить</msg>
+  <msg key="delete">удалить</msg>
+  <msg key="Description">Описание</msg>
+</message_catalog>

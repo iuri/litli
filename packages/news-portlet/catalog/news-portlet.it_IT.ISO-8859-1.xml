@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<message_catalog package_key="news-portlet" locale="it_IT" charset="ISO-8859-1">
+
+  <msg key="Add_a_News_Item">Aggiungi una news</msg>
+  <msg key="admin_pretty_name">Amministrazione news</msg>
+  <msg key="Manage_News">Amministra le news</msg>
+  <msg key="No_News">Nessuna News</msg>
+  <msg key="pretty_name">News</msg>
+  <msg key="Read_more">Leggi di più...</msg>
+</message_catalog>

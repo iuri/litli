@@ -1,0 +1,1 @@
+insert into cr_type_relations (content_type,target_type,relation_tag) select 'file_storage_object','file_storage_object','homework_correction' from dual  where not exists (select 1 from cr_type_relations where relation_tag = 'homework_correction');

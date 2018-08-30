@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<message_catalog package_key="dotlrn-portlet" locale="hi_IN" charset="utf-8">
+
+  <msg key="admin_pretty_name">समूह प्रशासन </msg>
+  <msg key="Administer">प्रशासक </msg>
+  <msg key="All_members">सभी सदस्य </msg>
+  <msg key="Archive">अभिलेखागार </msg>
+  <msg key="Archive_this_group">समूह अभीलेखागार </msg>
+  <msg key="change_name_etc">नाम वर्णन आदि बदले </msg>
+  <msg key="Closed">बन्द </msg>
+  <msg key="Copy_this_group">इस समूह की नकल करे </msg>
+  <msg key="edit_gr_props">समूह विशेषताओ का सम्पादन करे </msg>
+  <msg key="Email_Members">सदस्यो को ईमेल करे</msg>
+  <msg key="lt_AddRemove_pretty_name">जोडे/हटाये %pretty_name% सदस्य</msg>
+  <msg key="lt_can_send_bulk_mail_to">इस समुदाय को बल्क मेल भेज सकते है। </msg>
+  <msg key="lt_Change_Bulk_Mail_Poli">बल्द मेल की नीति बदले</msg>
+  <msg key="lt_Change_Enrollment_Pol">नामान्कन नीति बदले </msg>
+  <msg key="lt_Create_a_new_Limited_">नये सीमित अभिगम प्रयोक्ता बनाये </msg>
+  <msg key="lt_Create_a_new_Limited__1">नये सीमित अभिगम मेहमान प्रयोक्ता बनाये</msg>
+  <msg key="lt_Customize_Portal_Layo">पोर्टल लेआउट को कस्टोमाइज करे </msg>
+  <msg key="lt_Guests_Can_View_Membership_Info">मेहमान प्रयोकता समूह सदस्यता की जानकारी देख सकते है?</msg>
+  <msg key="lt_No_subcomm_pretty_plu">नही %subcomm_pretty_plural%</msg>
+  <msg key="lt_Only_use_this_to_crea">इसे सिर्फ़ क्रोस रजिस्टर्ड विधार्थी के खाता बनाने के लिये प्रयोग करे, जिनका कि पिछली कक्षा से कोई खाता नही है </msg>
+  <msg key="lt_Only_use_this_to_crea_1">इसका प्रयोग केवल उन खातो को बनाने के लिये करे जिन असम्बध्ता प्रयोक्ता का पहले से कोई खाता नही है। इस समुदाय के अन्य सदस्यो की जानकारी इस प्रयोक्ता के पास उपलबध नही रहेगी</msg>
+  <msg key="lt_Sorry_this_functional">माफ़ कीजिये यह सुविधा महमानो के लिये उपलब्ध नही है। </msg>
+  <msg key="lt_This_group_is_archive">यह समूह अभिलेखागार हो चुका है।</msg>
+  <msg key="Manage_Applets">एपलेट्स को व्यावस्थित करे </msg>
+  <msg key="Manage_Membership">सदस्यता को व्यावस्थित करे </msg>
+  <msg key="Member_List">सदस्य सूची </msg>
+  <msg key="members_portlet_pretty_name">सदस्य </msg>
+  <msg key="members_staff_portlet_pretty_name">स्टाफ़ सूची </msg>
+  <msg key="Needs_Approval">मन्जूरी चाहिए</msg>
+  <msg key="New_sub_pretty_name">नया %sub_pretty_name%</msg>
+  <msg key="no_course_assistant_members">नही %course_assistant_role_pretty_plural%</msg>
+  <msg key="no_instructor_members">नही %instructor_role_pretty_plural%</msg>
+  <msg key="no_teaching_assistant_members">नही %teaching_assistant_role_pretty_plural%</msg>
+  <msg key="Only_admins">सिर्फ़ प्रशासक </msg>
+  <msg key="Open">खोले </msg>
+  <msg key="Sort">छटाई </msg>
+  <msg key="Sortmanage">छटाई/व्यावसथित </msg>
+</message_catalog>

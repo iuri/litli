@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<message_catalog package_key="dotlrn-portlet" locale="no_NO" charset="ISO-8859-1">
+
+  <msg key="admin_pretty_name">Gruppeadministrasjon</msg>
+  <msg key="Administer">Administrer</msg>
+  <msg key="All_members">Alle medlemmer</msg>
+  <msg key="Archive">Arkiv</msg>
+  <msg key="Archive_this_group">Arkiver denne gruppen</msg>
+  <msg key="change_name_etc">Endre navn, beskrivelser, o.l.</msg>
+  <msg key="Closed">Stengt</msg>
+  <msg key="Copy_this_group">Kopier denne gruppen</msg>
+  <msg key="edit_gr_props">Redigere gruppeegenskaper</msg>
+  <msg key="Email_Members">E-postmedlemmer</msg>
+  <msg key="lt_AddRemove_pretty_name">Legg til/fjern %pretty_name% medlemmer</msg>
+  <msg key="lt_can_send_bulk_mail_to">kan sende massepost til denne gruppen</msg>
+  <msg key="lt_Change_Bulk_Mail_Poli">Endre massepost policy</msg>
+  <msg key="lt_Change_Enrollment_Pol">Endre innleggingspolicy</msg>
+  <msg key="lt_Create_a_new_Limited_">Legg inn en ny bruker med begrenset tilgang</msg>
+  <msg key="lt_Create_a_new_Limited__1">Legg inn en ny gjestebruker med begrenset tilgang</msg>
+  <msg key="lt_Customize_Portal_Layo">Skreddersy portalutseende</msg>
+  <msg key="lt_Guests_Can_View_Membership_Info">Gjestebrukere kan se informasjon om gruppemedlemskap?</msg>
+  <msg key="lt_No_subcomm_pretty_plu">Ingen %subcomm_pretty_plural% </msg>
+  <msg key="lt_Only_use_this_to_crea">Bare bruk dette til å opprette en konto for kryss-registrerte studenter som ikke har konto fra et tidligere semester</msg>
+  <msg key="lt_Only_use_this_to_crea_1">Bare bruk dette for å opprette konto for brukere som ikke er tilknyttet institusjonen og som ikke allerede har en konto. Informasjon om andre medlemmer av denne gruppen vil ikke være tilgjengelig for denne brukeren.</msg>
+  <msg key="lt_Sorry_this_functional">Beklager, denne tjenesten er ikke tilgjengelig for gjester.</msg>
+  <msg key="lt_This_group_is_archive">Denne gruppen er arkivert</msg>
+  <msg key="Manage_Applets">Behanlde modular (ruter)</msg>
+  <msg key="Manage_Membership">Behandle medlemsskap</msg>
+  <msg key="Member_List">Medlemsliste</msg>
+  <msg key="members_portlet_pretty_name">medlemmer</msg>
+  <msg key="members_staff_portlet_pretty_name">Stab</msg>
+  <msg key="Needs_Approval">Venter på godkjenning</msg>
+  <msg key="New_sub_pretty_name">Ny %sub_pretty_name% </msg>
+  <msg key="no_course_assistant_members">Ingen %course_assistant_role_pretty_plural% </msg>
+  <msg key="no_instructor_members">Ingen %instructor_role_pretty_plural% </msg>
+  <msg key="no_teaching_assistant_members">Ingen %teaching_assistant_role_pretty_plural% </msg>
+  <msg key="Only_admins">Bare administratorer</msg>
+  <msg key="Open">Åpen</msg>
+  <msg key="Sort">Sorter</msg>
+  <msg key="Sortmanage">Sorter/administrer</msg>
+</message_catalog>

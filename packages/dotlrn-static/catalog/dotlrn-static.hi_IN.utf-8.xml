@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<message_catalog package_key="dotlrn-static" locale="hi_IN" charset="utf-8">
+
+  <msg key="class_info_portlet_pretty_name">वगीक्र्त की खबर </msg>
+  <msg key="community_info_portlet_pretty_name">समाज  की खबर</msg>
+  <msg key="Static_HTML_Data">आर्कडे की गतिहीन (ह.ती.म.ल.)  </msg>
+  <msg key="subcommunity_info_portlet_pretty_name">अध-समूह की खबर </msg>
+</message_catalog>

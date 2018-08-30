@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<message_catalog package_key="static-portlet" locale="ca_ES" charset="ISO-8859-1">
+
+  <msg key="admin_portlet_element_pretty_name">Portlet personalitzat </msg>
+  <msg key="admin_portlet_pretty_name">Administració del portlet personalitzat </msg>
+  <msg key="Back_to">Tornar a</msg>
+  <msg key="Binary_file_uploaded">L'arxiu binari %filename% s'ha pujat, però ací només se suporten arxius de text. </msg>
+  <msg key="Content">Contingut </msg>
+  <msg key="Control_Panel">Panell de control </msg>
+  <msg key="Create_a_new">Crear un nou %element_pretty_name%</msg>
+  <msg key="Edit">Editar</msg>
+  <msg key="Edit_content_element">Editar element de contingut </msg>
+  <msg key="False_0">Fals</msg>
+  <msg key="File">Arxiu</msg>
+  <msg key="lt_Delete_element_pretty">Eliminar %element_pretty_name% %pretty_name%</msg>
+  <msg key="lt_Editing_element_prett">Editant %element_pretty_name% %pretty_name% </msg>
+  <msg key="lt_Enforce_this_applet_t">Fer que aquest applet es mostre en el portal </msg>
+  <msg key="lt_Enforce_True_means_th">Forçar Vertader significa que el portlet estàtic serà \ afegit de seguida en els portals de destí ja creats, \ Fals significa que estaran disponibles en modificar el portal o en desfer l'acció</msg>
+  <msg key="lt_strongNotestrong_You_">&lt;strong&gt;Nota&lt;/strong&gt;: Podeu emprar text pla o HTML en aquest quadre de contingut. </msg>
+  <msg key="lt_Use_this_form_to_crea">Empreu aquest formulari per a crear un %element_pretty_name% nou. El %element_pretty_name% es crearà i automàticament es col·locarà en la primera pàgina del portal %portal_name%. Aneu al %control_panel_text% i seleccioneu Personalitzar el format per a moure aquest %element_pretty_name%. </msg>
+  <msg key="Name">Nom </msg>
+  <msg key="New">Nou </msg>
+  <msg key="new_static_admin_portlet">Nou %element_pretty_name%</msg>
+  <msg key="True">Vertader</msg>
+  <msg key="Use_this_form">Empreu aquest formulari per a crear un %element_pretty_name% nou. El %element_pretty_name% es crearà i automàticament es col·locarà en la primera pàgina del portal %portal_name%. Aneu a la pàgina d'administració i seleccioneu Personalitzar el format per a moure aquest %element_pretty_name%. </msg>
+  <msg key="You_may_upload">O bé podeu pujar aquí un arxiu de &lt; strong&gt;text&lt;/strong &gt;, el contingut del qual substituirà el contingut actual del portlet. </msg>
+</message_catalog>

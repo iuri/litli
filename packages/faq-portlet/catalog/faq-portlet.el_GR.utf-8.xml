@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<message_catalog package_key="faq-portlet" locale="el_GR" charset="utf-8">
+
+  <msg key="admin_pretty_name">Διαχείριση FAQ</msg>
+  <msg key="create_new_faq">Δημιουργία νέου FAQ</msg>
+  <msg key="Disable">Απενεργοποίηση</msg>
+  <msg key="disable_faqs_faq_name">Απενεργοποίηση %faqs.faq_name%</msg>
+  <msg key="Disabled">Απενεργοποιημένο</msg>
+  <msg key="display_q_and_a">Προβολή ερώτησης και απάντησης </msg>
+  <msg key="Enable">Ενεργοποίηση</msg>
+  <msg key="enable_faqs_faq_name">Ενεργοποίηση %faqs.faq_name%</msg>
+  <msg key="goto_faq_name">Μετάβαση στο FAQ %faq_name%</msg>
+  <msg key="goto_faqs_faq_name">Μετάβαση στο FAQ %faqs.faq_name% </msg>
+  <msg key="goto_faqs_faq_name_admin">Μετάβαση στη διαχείριση του %faqs.faq_name%</msg>
+  <msg key="group">Ομάδα</msg>
+  <msg key="name">Όνομα</msg>
+  <msg key="new_faq">Νέο FAQ</msg>
+  <msg key="no_faqs">Καμία καταχώρηση</msg>
+  <msg key="one_admin_faq">Θα πρέπει να υπάρχει μόνο ένα στιγμιότυπο του FAQ για σκοπούς διαχείρισης</msg>
+  <msg key="pretty_name">Συχνές Ερωτήσεις (FAQs)</msg>
+</message_catalog>

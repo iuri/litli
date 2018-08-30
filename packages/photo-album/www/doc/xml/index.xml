@@ -1,0 +1,133 @@
+<?xml version='1.0' ?>
+<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" 
+               "http://www.oasis-open.org/docbook/xml/4.0/docbookx.dtd"
+[
+    <!ENTITY design SYSTEM "design.xml">
+    <!ENTITY requirements SYSTEM "requirements.xml">
+]>
+
+<book>
+  <title>Photo Album</title>
+  <bookinfo>
+    <authorgroup>
+      <author>
+	<firstname>Tom</firstname>
+	<surname>Baginski</surname>
+	<affiliation>
+	  <address><email>bags@arsdigita.com</email></address>
+	</affiliation>
+      </author>
+    </authorgroup>
+  </bookinfo>
+  
+  <chapter id="for-everyone" xreflabel="Photo Album Introduction">
+    <title>Introduction</title>
+    <para>The Photo Album Package is a generalized application for storing and
+      displaying groups of photos on a web site.  It provides a convenient and uniform system
+      for uploading, storing, and displaying groups of photos on a web
+      site. It removes the tedious part of building pages to display
+      photos, and allows users more flexibility to maintain and modify
+      their own photo albums. It also removes much of the burden from the
+      owners/maintainers of the site. All of these factors add up to a
+      system that allows community members to easily contribute and view
+      large amounts of compelling content on a site.</para>
+
+  </chapter>
+
+  <chapter id="release-notes" xreflabel="Photo Album Release Notes">
+    <title>Release Notes for Photo Album 4.0.1 Final Release</title>
+    <para>Changes from 4.0.1 beta to 4.0.1 final.</para>
+    <itemizedlist>
+
+    <listitem><para>Removed photo level permission checks.  Load testing showed
+       that allowing different photos within the same album to have different 
+       permissions made the queries to get the photos in a large album very slow.  
+       I changed the application logic so that all photos in album have same permission
+       and permission check is done at the album level.
+       </para></listitem>
+
+    <listitem><para>Tunned numerous queries base on load testing results 
+       against a database filed with 10,000 photos.
+       </para></listitem>
+
+    <listitem><para>Made compatible with acs-kernal 4.1.1 and acs-templating 4.1.
+       </para></listitem>
+
+    <listitem><para>Added caching of primary keys of photos in an album and package root folder_id.
+       </para></listitem>
+
+    <listitem><para>Added optional permission check when serving images.
+       </para></listitem>
+
+    <listitem><para>Added separate optional page to display the base sized photo.
+       </para></listitem>
+
+    <listitem><para>When uploading a photo, the thumbnail is now created from the 
+       viewer sized image rather from the base sized image.  Creating a small image 
+       from a medium-sized image is much faster than creating a small image from a 
+       large image and does not noticeably change the image quality.
+       </para></listitem>
+
+    <listitem><para>Minor revisions to plsql packages to improve compatibility with acs-content-repository.
+       </para></listitem>
+
+    <listitem><para>Added more detailed documentation in both html and docbook format.
+       </para></listitem>
+
+    <listitem><para>Fixed name conflicts with photo album lite.
+       </para></listitem>
+       
+    </itemizedlist>
+
+    <para>Besides upgrading the rest of your acs intall to 4.1.1, you will need to mannually run 
+      <computeroutput>photo-album/sql/plsql-packages.sql</computeroutput> through sqlplus to update
+      the packages inside oracle when upgrading from the beta to final version of the photo-album.</para>
+   
+  </chapter>
+
+
+  <chapter id="acs-admin-guide" xreflabel="Photo Album ACS Admin Guide">
+    <title>ACS Administration Guide</title>
+    <para>Installation and Operation Notes
+      <itemizedlist>
+      
+      <listitem><para><emphasis>Imagemagick</emphasis>  The convert and identify
+        binaries must be installed within the location specified by the parameter
+	ImageMagickPath.  The user that the webserver is running under must have
+	execute privileges for the files.  A link to a download page for ImageMagick
+	can be found in the design document.
+        </para></listitem>      
+
+      <listitem><para><emphasis>Image Storage Directory</emphasis>  The photo album
+        store image binaries in the file system.  The webserver user must have read,
+	write, and execute privileges for the directory specified in the parameter PhotoDir.
+	This directory must be in the acs root directory for the server.   The webserver
+	user must also have write privilege on any file created in this directory or it
+	will not be able to delete images.
+        </para></listitem>
+
+      <listitem><para><emphasis>Permission Checks for Serving Images</emphasis>  The parameter
+        CheckPermissionOnImageServeP controls if images/index.vuh queries the database to
+	check if user has read permission on a photo prior to serving it.  Setting this to true
+	will slow server performance because it causes an extra trip to the database for every
+	image served.  Default album pages serve 12 thumbnails per page, which translates into 12
+	extra trips to the database.  Users should not be presented a link/img tag for an image
+	for which they do not have read privileges.  Unless you are really concerned about someone
+	url hacking to a private image (which they would need to know the full path), I suggest 
+	leaving this parameter set to false.    
+        </para></listitem>
+
+      </itemizedlist>
+
+      </para>
+  </chapter>
+
+
+  <chapter id="dev-guide" xreflabel="Photo Album Developer's Guide">
+    <title>Developer's guide</title>
+    &requirements;
+    &design;
+  </chapter>
+  
+  
+</book>

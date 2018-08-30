@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<message_catalog package_key="static-portlet" locale="es_GT" charset="ISO-8859-1">
+
+  <msg key="admin_portlet_element_pretty_name">Portlet personalizado</msg>
+  <msg key="admin_portlet_pretty_name">Administración del Portlet</msg>
+  <msg key="Content">Contenido</msg>
+  <msg key="Control_Panel">Panel de Control</msg>
+  <msg key="Edit_content_element">Editar el contenido del elemento</msg>
+  <msg key="lt_Delete_element_pretty">Borrar %element_pretty_name% %pretty_name%</msg>
+  <msg key="lt_Editing_element_prett">Editando %element_pretty_name% %pretty_name%</msg>
+  <msg key="lt_strongNotestrong_You_">&lt;strong&gt;Nota&lt;/strong&gt;: Puede usar texto o HTML en este cuadro de contenido</msg>
+  <msg key="lt_Use_this_form_to_crea">Use este formulario para crear un nuevo %element_pretty_name%. El %element_pretty_name% va a ser creado automáticamente y puesto en la primera página del portal  %portal_name%. Vaya al %control_panel_text% y seleccione personalizar para mover este %element_pretty_name%.</msg>
+  <msg key="Name">Nombre</msg>
+  <msg key="New">Nuevo</msg>
+  <msg key="new_static_admin_portlet">Nuevo %element_pretty_name%</msg>
+</message_catalog>

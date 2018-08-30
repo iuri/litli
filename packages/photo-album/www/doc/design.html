@@ -1,0 +1,1377 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML
+><HEAD
+><TITLE
+>ACS 4 Photo Album Package Design Documentation</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="aD Hack of: Modular DocBook HTML Stylesheet Version 1.60"><LINK
+REL="HOME"
+TITLE="Photo Album"
+HREF="index.html"><LINK
+REL="UP"
+TITLE="Developer's guide"
+HREF="dev-guide.html"><LINK
+REL="PREVIOUS"
+TITLE="Developer's guide"
+HREF="dev-guide.html"><LINK
+REL="STYLESHEET"
+TYPE="text/css"
+HREF="ad-doc.css"></HEAD
+><BODY
+CLASS="sect1"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Photo Album</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="dev-guide.html"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 4. Developer's guide</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+>&nbsp;</TD
+></TR
+></TABLE
+><HR
+SIZE="1"
+NOSHADE="NOSHADE"
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="sect1"
+><H1
+CLASS="sect1"
+><A
+NAME="design"
+>4.2. ACS 4 Photo Album Package Design Documentation</A
+></H1
+><DIV
+CLASS="TOC"
+><DL
+><DT
+><B
+>Table of Contents</B
+></DT
+><DT
+>4.2.1. <A
+HREF="design.html#design-essentials"
+>Essentials</A
+></DT
+><DT
+>4.2.2. <A
+HREF="design.html#design-introduction"
+>Introduction</A
+></DT
+><DT
+>4.2.3. <A
+HREF="design.html#design-historical-considerations"
+>Historical Considerations</A
+></DT
+><DT
+>4.2.4. <A
+HREF="design.html#design-competitive-analysis"
+>Competitive Analysis</A
+></DT
+><DT
+>4.2.5. <A
+HREF="design.html#design-design-tradeoffs"
+>Design Tradeoffs</A
+></DT
+><DT
+>4.2.6. <A
+HREF="design.html#design-api"
+>API</A
+></DT
+><DD
+><DL
+><DT
+>4.2.6.1. <A
+HREF="design.html#design-plsql-api"
+>PL/SQL API</A
+></DT
+><DT
+>4.2.6.2. <A
+HREF="design.html#design-procedure-api"
+>Procedural API</A
+></DT
+></DL
+></DD
+><DT
+>4.2.7. <A
+HREF="design.html#design-data-model-discussion"
+>Data Model Discussion</A
+></DT
+><DT
+>4.2.8. <A
+HREF="design.html#design-user-interface"
+>User Interface</A
+></DT
+><DT
+>4.2.9. <A
+HREF="design.html#design-configurationparameters"
+>Configuration/Parameters</A
+></DT
+><DT
+>4.2.10. <A
+HREF="design.html#design-future-improvementsareas-of-likely-change"
+>Future Improvements/Areas of Likely Change</A
+></DT
+><DT
+>4.2.11. <A
+HREF="design.html#design-authors"
+>Authors</A
+></DT
+><DT
+>4.2.12. <A
+HREF="design.html#design-revision-history"
+>Revision History</A
+></DT
+></DL
+></DIV
+><P
+>by Tom Baginski, 
+    <A
+HREF="mailto:bags@arsdigta.com"
+TARGET="_top"
+>bags@arsdigita.com</A
+>
+  </P
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="design-essentials"
+>4.2.1. Essentials</A
+></H2
+><UL
+><LI
+><P
+CLASS="listitem"
+>&#13;	  User accessible directory depends on where package is mounted
+	  in site.
+	</P
+></LI
+><LI
+><P
+CLASS="listitem"
+>No separate administration directories</P
+></LI
+><LI
+><P
+CLASS="listitem"
+>Tcl procedures: packages/photo-album/tcl/photo-album-procs.tcl
+	  (link to proc depends on install)</P
+></LI
+><LI
+><P
+CLASS="listitem"
+>Data model: packages/photo-album/sql/photo-album-create.sql
+	  (link to data model depends on install)</P
+><P
+></P
+></LI
+><LI
+><P
+CLASS="listitem"
+>&#13;	  <A
+HREF="dev-guide.html#requirements"
+>ACS 4.0 Photo Album Application Requirements</A
+>
+	</P
+></LI
+></UL
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="design-introduction"
+>4.2.2. Introduction</A
+></H2
+><P
+>The basic content element of the photo album system is a photo.
+      When a user uploads a photo, the system stores attribute  
+      data such as caption, story, and title as a
+      single content element. Each photo associated with several
+      (three to start) image elements that store the actual binary files.
+      The image elements, which are created by the server, are standard sized
+      versions of the original photo used for display. Photos and images
+      can have descriptive attributes associated with them. The attributes
+      and binary files can be revised and the system will retain past 
+      versions.</P
+><P
+>Photos are grouped together into albums which can contain 0 or
+      more photos. The albums can have descriptive attribute information
+      that can be revised with history tracking. The albums can be
+      displayed as a unit that allows user to browse through the photos
+      in the album.</P
+><P
+>Albums can be grouped together into folders that can contain 0
+      or more albums or other folders.</P
+><P
+>An instance of the package include pages to display the folders,
+      albums, and photos along with admin pages. Instances can be mounted
+      to different subsite and managed independently. The grouping is
+      included within the instance so that the albums maintain a
+      consistent url even if they are re-sorted to different folders
+      within the instance (as long as the subsite url isn't changed).</P
+><P
+>The display, grouping, and administration functionality of the
+      photo album package will be included in the initial release of the
+      package. This is intended to be one part of a larger system that
+      will allow bulk uploading and purchasing of photos. These two
+      feature have already been implemented on aD customer sites. ACS 4
+      versions of these features will be either incorporated into a
+      future version of the photo album package or added as individual
+      packages that depend on the photo album.</P
+><P
+>The basic tasks of the photo album revolve around storing and
+      displaying content and associated attributes. As such, this package
+      will take advantage of the exiting features of the content
+      repository service package. The content repository can store
+      multiple revisions of content items such as photos and images and
+      their associated attributes. The content repository also provides
+      grouping functions. The acs permission service will be used for
+      access control so view, edit, and administration privileges will be
+      highly customizable. Finally individual photo album instances can
+      be added to subsites to support multiple independent photo albums
+      on the same site.</P
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="design-historical-considerations"
+>4.2.3. Historical Considerations</A
+></H2
+><P
+>The the development of photo album package was base largely on
+      the experience of building a custom photo album application for the
+      Iluvcamp client site. The Iluvcamp photo album was built using an
+      early version of the content repository. The photo album package
+      uses the current version of the ACS content repository and takes
+      advantage of several key features of the ACS4 structure such as
+      permissions, templating, the content repository. The photo album
+      package avoid several of the limitation of the Iluvcamp Photo Album
+      that were made clear after supporting a summer of use and uploading
+      over 70GB of original photos.</P
+><P
+>A photodb application was developed for ACS 3.x. The option of
+      porting the photodb application to ACS4 was not followed due to the
+      customized nature of the photodb application. It was primarily
+      designed for storing and displaying information about photos for
+      photographers. In contrast, the photo album application provides a
+      general system for storing and displaying user uploaded photos,
+      which can be customized to any particular client application.</P
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="design-competitive-analysis"
+>4.2.4. Competitive Analysis</A
+></H2
+><P
+>Not done.  A google search for "photo album web application"
+    returns links for several shareware photo album applications.
+    I did not install or test any of these.</P
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="design-design-tradeoffs"
+>4.2.5. Design Tradeoffs</A
+></H2
+><P
+>The package uses/requires the convert and identify 
+      <A
+HREF="http://www.simplesystems.org/ImageMagick/"
+TARGET="_top"
+>ImageMagick</A
+>
+      binaries to be installed on the host computer at the location
+      specified in the ImageMagickPath parameter. ImageMagick is readily
+      available and easy to use from within server pages. ImageMagick is
+      copyrighted by ImageMagick Studio, a nonprofit organization.
+      ImageMagick is available for free, may be used to support both open
+      and proprietary applications, and may be redistributed without fee.
+      The previous ImageMagick Homepage has some mention of LZW patent
+      issues and redirects to a new location. If these patent issues
+      become a problem, the package will need to be re-coded to use
+      different image manipulation software.</P
+><P
+>By default the package stores the image binary files in the file
+      system. This decision was made for ease of use and development.
+      This was also based on the assumption that file system storage is
+      more appropriate for large systems with many giga-bytes of photos.
+      The content repository also provides support for database storage
+      of binaries in blobs. Future version of the photo album will also
+      support database storage of photos. Load testing will be used to
+      determine the most appropriate storage method for small and large
+      volumes of photos.</P
+><P
+>The default photo storage directory is outside of the page root
+      and images are served using a .vuh file. This was done to prevent
+      potential execution of user uploaded files. Although the package
+      checks that the user only uploads image files, in theory a rouge
+      user could upload a code file. If that file was directly accessible
+      from the page root, the rouge user could execute arbitrary code
+      with all the authority of the web server user. Serving the image
+      through a .vuh file also allows for checking access permissions to
+      a file before it is served to the user. The benefits of serving
+      image files with a .vuh file comes at a cost of some additional
+      server resources. Again, load testing will be used to determine the
+      true cost of using a .vuh file.</P
+><P
+>The photo attribute information and binary files are stored in
+      two different content types (pa_photos and pa_images).  The linkage
+      between the binaries and the attribute info is maintained as a 
+      relationship between the two content_items.  This decision was made
+      so the the number of image sizes per photo could be changed with minor
+      code revision and no datamodel changes.  This flexibility comes at a
+      cost, the queries to retrieve and serve the appropriate version of
+      a photo need to join in several tables to do so.  There also is not
+      an easy way to store the relation between different versions of the 
+      photo-attribute info such as caption and the versions of the binaries.</P
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="design-api"
+>4.2.6. API</A
+></H2
+><DIV
+CLASS="sect3"
+><H3
+CLASS="sect3"
+><A
+NAME="design-plsql-api"
+>4.2.6.1. PL/SQL API</A
+></H3
+><P
+>The PL/SQL database api is incorporated into four packages: pa_image, 
+	pa_photo, pa_album, and photo_album.  The first three correspond to the 
+	3 new object types created for the photo album application.  The last
+	contains general database functions for the application.</P
+><UL
+><LI
+><P
+CLASS="listitem"
+>pa_image package
+
+          <UL
+><LI
+><P
+CLASS="listitem"
+><TT
+CLASS="computeroutput"
+>pa_image.new</TT
+> creates a new pa_image object type and returns the
+	      cr_item.item_id of the newly created object.  It also create the first revision
+	      of that object.  It accepts an item_id and revision_id as arguments but both
+	      will be created if not provided.  Although relation tag defaults to null it 
+	      should be in (thumb, viewer, base).  Path is the path to the image binary relative
+	      to the upload base (a parameterized directory).</P
+><PRE
+CLASS="programlisting"
+>    
+      function new (
+        name		in cr_items.name%TYPE,
+        parent_id		in cr_items.parent_id%TYPE default null,
+        item_id		in acs_objects.object_id%TYPE default null,
+        revision_id		in acs_objects.object_id%TYPE default null,
+        content_type	in acs_object_types.object_type%TYPE default 'pa_image',
+        creation_date	in acs_objects.creation_date%TYPE default sysdate, 
+        creation_user	in acs_objects.creation_user%TYPE default null, 
+        creation_ip		in acs_objects.creation_ip%TYPE default null, 
+        locale		in cr_items.locale%TYPE default null,
+        context_id		in acs_objects.context_id%TYPE default null,
+        title		in cr_revisions.title%TYPE default null,
+        description		in cr_revisions.description%TYPE default null,
+        mime_type		in cr_revisions.mime_type%TYPE default null,
+        nls_language	in cr_revisions.nls_language%TYPE default null,
+        relation_tag	in cr_child_rels.relation_tag%TYPE default null,
+        is_live		in char default 'f',
+        publish_date	in cr_revisions.publish_date%TYPE default sysdate,
+        path		in pa_images.path%TYPE,
+        height		in pa_images.height%TYPE default null,
+        width		in pa_images.width%TYPE default null,
+        file_size		in pa_images.file_size%TYPE default null
+      ) return cr_items.item_id%TYPE;
+     
+                  </PRE
+></LI
+><LI
+><P
+CLASS="listitem"
+><TT
+CLASS="computeroutput"
+>pa_image.delte_revision</TT
+> deletes a specified revision 
+              of a pa_image and schedules the binary for deleation from the file-system by a sweep procedure
+	      </P
+><PRE
+CLASS="programlisting"
+>    
+      procedure delete_revision (
+        revision_id		in cr_revisions.revision_id%TYPE
+      );
+                  </PRE
+></LI
+><LI
+><P
+CLASS="listitem"
+><TT
+CLASS="computeroutput"
+>pa_image.delete</TT
+> deletes a pa_image and all revisions
+              Also schedules the binary files for deletion from the file-system.</P
+><PRE
+CLASS="programlisting"
+>    
+      procedure delete (
+        item_id		in cr_items.item_id%TYPE
+      );
+                  </PRE
+></LI
+></UL
+>
+	</P
+></LI
+><LI
+><P
+CLASS="listitem"
+>pa_photo package
+	  
+	  <UL
+><LI
+><P
+CLASS="listitem"
+><TT
+CLASS="computeroutput"
+>pa_photo.new</TT
+> create a new pa_photo object
+              and returns the cr_item.item_id of the new object.  Also creates first revision of object</P
+><PRE
+CLASS="programlisting"
+>    
+      function new (
+        name		in cr_items.name%TYPE,
+        parent_id		in cr_items.parent_id%TYPE default null,
+        item_id		in acs_objects.object_id%TYPE default null,
+        revision_id		in acs_objects.object_id%TYPE default null,
+        content_type	in acs_object_types.object_type%TYPE default 'pa_photo',
+        creation_date	in acs_objects.creation_date%TYPE default sysdate, 
+        creation_user	in acs_objects.creation_user%TYPE default null, 
+        creation_ip		in acs_objects.creation_ip%TYPE default null, 
+        locale		in cr_items.locale%TYPE default null,
+        context_id		in acs_objects.context_id%TYPE default null,
+        title		in cr_revisions.title%TYPE default null,
+        description		in cr_revisions.description%TYPE default null,
+        relation_tag	in cr_child_rels.relation_tag%TYPE default null,
+        is_live		in char default 'f',
+        publish_date	in cr_revisions.publish_date%TYPE default sysdate,
+        mime_type		in cr_revisions.mime_type%TYPE default null,
+        nls_language	in cr_revisions.nls_language%TYPE default null,
+        caption		in pa_photos.caption%TYPE default null,
+        story		in pa_photos.story%TYPE default null,
+        user_filename	in pa_photos.user_filename%TYPE default null
+      ) return cr_items.item_id%TYPE;
+                  </PRE
+></LI
+><LI
+><P
+CLASS="listitem"
+><TT
+CLASS="computeroutput"
+>pa_photo.delete_revision</TT
+> deletes a specified 
+	      revision of a pa_photo</P
+><PRE
+CLASS="programlisting"
+>    
+      procedure delete_revision (
+        revision_id		in acs_objects.object_id%TYPE
+      );
+                  </PRE
+></LI
+><LI
+><P
+CLASS="listitem"
+><TT
+CLASS="computeroutput"
+>pa_photo.delete</TT
+> deletes a pa_photo object, 
+	      all revision of a pa_photo, and all associated pa_images (including binaries).  Basically nukes
+	      a photo, so be careful using this one, because it can't be undone.</P
+><PRE
+CLASS="programlisting"
+>    
+      procedure delete (
+        item_id             in acs_objects.object_id%TYPE
+      );
+                  </PRE
+></LI
+></UL
+></P
+></LI
+><LI
+><P
+CLASS="listitem"
+>pa_album package
+
+          <UL
+><LI
+><P
+CLASS="listitem"
+><TT
+CLASS="computeroutput"
+>pa_album.new</TT
+> creates a new pa_album object type and returns the
+	      cr_item.item_id of the newly created object.  It also create the first revision
+	      of that object.  It accepts an item_id and revision_id as arguments but both
+	      will be created if not provided.</P
+><PRE
+CLASS="programlisting"
+>    
+      function new (
+         name           in cr_items.name%TYPE,
+         album_id       in cr_items.item_id%TYPE default null,
+         parent_id	    in cr_items.parent_id%TYPE default null,
+         revision_id    in cr_revisions.revision_id%TYPE default null,
+         content_type   in acs_object_types.object_type%TYPE default 'pa_album',
+         is_live	    in char default 'f',
+         creation_date  in acs_objects.creation_date%TYPE default sysdate, 
+         creation_user  in acs_objects.creation_user%TYPE default null, 
+         creation_ip    in acs_objects.creation_ip%TYPE default null, 
+         locale	    in cr_items.locale%TYPE default null,
+         context_id	    in acs_objects.context_id%TYPE default null,
+         relation_tag   in cr_child_rels.relation_tag%TYPE default null,
+         publish_date   in cr_revisions.publish_date%TYPE default sysdate,
+         mime_type      in cr_revisions.mime_type%TYPE default null,
+         nls_language   in cr_revisions.nls_language%TYPE default null,
+         title	    in cr_revisions.title%TYPE default null,
+         description    in cr_revisions.description%TYPE default null,
+         story	    in pa_albums.story%TYPE default null
+      ) return cr_items.item_id%TYPE;
+                  </PRE
+></LI
+><LI
+><P
+CLASS="listitem"
+><TT
+CLASS="computeroutput"
+>pa_album.delte_revision</TT
+> deletes a specified revision 
+              of a pa_album</P
+><PRE
+CLASS="programlisting"
+>    
+      procedure delete_revision (
+        revision_id		in cr_revisions.revision_id%TYPE
+      );
+                  </PRE
+></LI
+><LI
+><P
+CLASS="listitem"
+><TT
+CLASS="computeroutput"
+>pa_album.delete</TT
+> deletes a pa_album and all revisions
+	      of that album.  The album must not have any child pa_phots or the delete throws an error.  So
+	      there is nothing equilent to <TT
+CLASS="computeroutput"
+>rm -r *</TT
+>.  You separately delete the
+	      photos in an album (or move them to a different album) then delete the album.</P
+><PRE
+CLASS="programlisting"
+>    
+      procedure delete (
+        album_id		in cr_items.item_id%TYPE
+      );
+                  </PRE
+></LI
+></UL
+>
+	</P
+></LI
+><LI
+><P
+CLASS="listitem"
+>photo_album package
+
+          <UL
+><LI
+><P
+CLASS="listitem"
+><TT
+CLASS="computeroutput"
+>photo_album.get_root_folder</TT
+> returns the root folder 
+	      for a given package_id (package instance).  The root folder for a package is actually cached by the
+	      web server.  So it is probably faster to call the server proc pa_get_root_folder and pass the value
+	      in as a bind variable any place you need the root_folder in a query.</P
+><PRE
+CLASS="programlisting"
+>    
+      function get_root_folder (
+          package_id in apm_packages.package_id%TYPE
+      ) return pa_package_root_folder_map.folder_id%TYPE;
+                  </PRE
+></LI
+></UL
+>
+	</P
+></LI
+></UL
+></DIV
+><DIV
+CLASS="sect3"
+><H3
+CLASS="sect3"
+><A
+NAME="design-procedure-api"
+>4.2.6.2. Procedural API</A
+></H3
+><P
+>The public procedural API available from the webserver is currently 
+        implemented as tcl procedures.</P
+><UL
+><LI
+><P
+CLASS="listitem"
+><TT
+CLASS="computeroutput"
+>pa_get_root_folder {package_id ""}</TT
+>
+	  Returns the folder_id of the root folder for an instance of the photo album system.
+	  If no root folder exists, as when a new package instance is accessed for the first time,
+	  a new root folder is created automatically with appropriate permissions
+	  If value has be previously requested, value pulled from cache.  If pakage_id is not specified,
+	  procedure uses value from <TT
+CLASS="computeroutput"
+>[ad_conn package_id]</TT
+>
+	  </P
+></LI
+><LI
+><P
+CLASS="listitem"
+><TT
+CLASS="computeroutput"
+>pa_context_bar_list {-final ""} item_id </TT
+>
+	  Constructs the list to be fed to ad_context_bar appropriate for
+	  item_id.  If -final is specified, that string will be the last 
+	  item in the context bar.  Otherwise, the name corresponding to 
+	  item_id will be used.
+	  </P
+></LI
+><LI
+><P
+CLASS="listitem"
+><TT
+CLASS="computeroutput"
+>pa_make_file_name {-assert:boolean} {-ext ""} id </TT
+>
+	  Constructs a filename for an image based on id and extension.
+          Files are created into a 3 tier directory structure: year/xx/zz/ for a photo_id 1234xxzz.jpg
+	  Same file would return year/xx/zz/1234xxzz.jpg.
+	  If -assert specified, proc creates directory and any parent directories if necessary
+	  </P
+></LI
+><LI
+><P
+CLASS="listitem"
+><TT
+CLASS="computeroutput"
+>pa_is_folder_p folder_id {package_id ""} </TT
+>
+	  Returns "t" if folder_id is a folder that is a child of the root folder for the package,
+	  else "f".  If package_id is not given procedure uses value from <TT
+CLASS="computeroutput"
+>&#13;	  [ad_conn package_id]</TT
+>.
+	  </P
+></LI
+><LI
+><P
+CLASS="listitem"
+><TT
+CLASS="computeroutput"
+>pa_is_album_p album_id {package_id ""} </TT
+>
+	  Returns "t" if album_id is a album that is a child of the root folder for the package,
+	  else "f"  If package_id is not given procedure uses value from <TT
+CLASS="computeroutput"
+>&#13;	  [ad_conn package_id]</TT
+>.
+	  </P
+></LI
+><LI
+><P
+CLASS="listitem"
+><TT
+CLASS="computeroutput"
+>pa_is_photo_p photo_id {package_id ""} </TT
+>
+	  Returns "t" if photo_id is a photo that is a child of the root folder for the package,
+	  else "f"  If package_id is not given procedure uses value from <TT
+CLASS="computeroutput"
+>&#13;	  [ad_conn package_id]</TT
+>.
+	  </P
+></LI
+><LI
+><P
+CLASS="listitem"
+><TT
+CLASS="computeroutput"
+>pa_grant_privilege_to_creator object_id {user_id ""}</TT
+>
+	  Grants a set of default privileges stored in parameter PrivilegeForCreator
+	  on object id to user_id.  If user_id is not specified, uses current user.
+	  </P
+></LI
+><LI
+><P
+CLASS="listitem"
+><TT
+CLASS="computeroutput"
+>pa_image_width_height filename width_var height_var</TT
+>
+	  Uses ImageMagick program to get the width and height in pixels of filename.
+	  Sets height to the variable named in height_var in the calling level.
+	  Sets width_var to the variable named in width_var in the calling level.
+
+	  I Use ImageMagick instead of aolsever funcition because it can handle more than
+	  just gifs and jpegs.  
+	  </P
+></LI
+><LI
+><P
+CLASS="listitem"
+><TT
+CLASS="computeroutput"
+>pa_make_new_image base_image new_image max_width {max_height ""}</TT
+>
+	  Uses ImageMagick program to create a file named new_image from base_image that 
+	  fits within a box defined by max_width by max_height (in pixels).
+	  ImageMagick will retain the aspect ratio of the base_image when creating the new_image
+	  If max_height is not specified, max_width is used for max_height.
+	  </P
+></LI
+><LI
+><P
+CLASS="listitem"
+><TT
+CLASS="computeroutput"
+>pa_all_photos_in_album album_id</TT
+>
+	  Returns a list of all the photo_ids in an album sorted in ascending order.
+	  Pulls value from cache if already there, caches result and returns result if not
+	  </P
+></LI
+><LI
+><P
+CLASS="listitem"
+><TT
+CLASS="computeroutput"
+>pa_count_photos_in_album album_id</TT
+>
+	  Returns count of number of photos in album_id
+	  </P
+></LI
+><LI
+><P
+CLASS="listitem"
+><TT
+CLASS="computeroutput"
+>pa_all_photos_on_page album_id page</TT
+>
+	  Returns a list of the photo_ids on page page of album_id.
+	  List is in ascending order
+	  </P
+></LI
+><LI
+><P
+CLASS="listitem"
+><TT
+CLASS="computeroutput"
+>pa_count_pages_in_album album_id</TT
+>
+	  Returns the number of pages in album_id
+	  </P
+></LI
+><LI
+><P
+CLASS="listitem"
+><TT
+CLASS="computeroutput"
+>pa_page_of_photo_in_album photo_id album_id</TT
+>
+	  Returns the page number of a photo in an album. If photo is not in the album returns -1
+	  </P
+></LI
+><LI
+><P
+CLASS="listitem"
+><TT
+CLASS="computeroutput"
+>pa_flush_photo_in_album_cache album_id</TT
+>
+	  Clears the cacheed value set by pa_all_photos_in_album for a single album
+	  Call proc on any page that alters the number or order of photos in an album.
+	  </P
+></LI
+><LI
+><P
+CLASS="listitem"
+><TT
+CLASS="computeroutput"
+>pa_pagination_page_number_links page total_pages</TT
+>
+	  Returns html table fragament for navigating pages of an album.
+	  </P
+></LI
+><LI
+><P
+CLASS="listitem"
+><TT
+CLASS="computeroutput"
+>pa_photo_number_links cur_id all_ids</TT
+>
+	  Given a current photo_id and and an ordered list of all the photo_id in an album,
+	  creates an html fragment that allows user to navigate to any photo by number,
+	  or next/previous.  Pulls url from connection so should work on page showing a single photo 
+	  based on photo_id (such as viewer size display page or base size display page).
+	  </P
+></LI
+></UL
+></DIV
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="design-data-model-discussion"
+>4.2.7. Data Model Discussion</A
+></H2
+><P
+>The data model defines 3 new content types within the content
+      repository. These are pa_album, pa_photo, and pa_image. It uses the
+      exiting content_folder for grouping pa_albums. Pa_albums store
+      attribute information about a group of photos and serves as a
+      container for 0 or more photos. Pa_photos store attributes of user uploaded
+      photo. Pa_images are used as a helper type to store the base (original), 
+      thumbnail and viewer display images associated
+      with a pa_photo. Each pa_photo has one child pa_image for its
+      base photo, one for its thumbnail image, and one child pa_image for its viewer image. The
+      pa_images are created by the server whenever a pa_photo is added
+      or edited.</P
+><P
+>The root folder for each package instance is stored in pa_root_folder_package_map.  
+      All folders, albums, photos, and images within a package instance are 
+      descendants of the root folder for that package. </P
+><P
+>Image files scheduled for deletion are stored in pa_files_to_delete.  A 
+      nightly web-server process deletes the files in this table and then removes
+      them from the table.  This table allows images to be deleted transactionally from
+      both the database and the file-system.  All photo/image delete operations should
+      add the binary file-name to pa_files_to_delete and then delete the attribute information
+      in the database within a transaction.  This way the file system delete will not
+      happen unless the database delete succeeds.</P
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="design-user-interface"
+>4.2.8. User Interface</A
+></H2
+><P
+>The user accessible pages contain a set of pages for displaying,
+      adding, and editing folders, albums, and photos. The folder page
+      which serves as the index page allows a user to navigate to
+      sub-folders and albums within the folder. The album page displays
+      the photos (or a sub-set of photos) within an album. The photo page
+      displays a single photo.</P
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="design-configurationparameters"
+>4.2.9. Configuration/Parameters</A
+></H2
+><P
+>Parameters are set by default through the apm and can be
+      edited by a user with admin privileges for a sub-site through the
+      current sub-site admin pages.  Depending on which version of the
+      apm is installed, the server may need to be restarted for 
+      the parameters of a new package instance are available.</P
+><P
+>The defined parameters are as follows:</P
+><DIV
+CLASS="variablelist"
+><DL
+><DT
+CLASS="listitem"
+><TT
+CLASS="varname"
+>ImageMagickPath</TT
+></DT
+><DD
+><P
+CLASS="listitem"
+>&#13;	    Description: Absolute path from computer root to directory
+	    containing ImageMagick executables convert and identify.</P
+><P
+CLASS="listitem"
+>Default: /usr/local/bin</P
+></DD
+><DT
+CLASS="listitem"
+><TT
+CLASS="varname"
+>PhotoDir</TT
+></DT
+><DD
+><P
+CLASS="listitem"
+>&#13;	    Description: Relative path from acs_root_dir to directory for
+	    storing uploaded images. (do not include leading or trailing
+	    forward slash)</P
+><P
+CLASS="listitem"
+>Default: uploaded-photos</P
+></DD
+><DT
+CLASS="listitem"
+><TT
+CLASS="varname"
+>FullTempDir</TT
+></DT
+><DD
+><P
+CLASS="listitem"
+>&#13;	    Description: Absolute path from computer root to path for
+	    temporary photos.</P
+><P
+CLASS="listitem"
+>Default: /tmp/photo-album</P
+></DD
+><DT
+CLASS="listitem"
+><TT
+CLASS="varname"
+>PhotoStorageMethod</TT
+></DT
+><DD
+><P
+CLASS="listitem"
+>&#13;	    Description: Default method for storing photos, file-system or
+	    database. (Package currently only supports file-system)</P
+><P
+CLASS="listitem"
+>Default: file-system</P
+></DD
+><DT
+CLASS="listitem"
+><TT
+CLASS="varname"
+>ThumbnailSize</TT
+></DT
+><DD
+><P
+CLASS="listitem"
+>&#13;	    Description: Max Dimension for thumbnail image</P
+><P
+CLASS="listitem"
+>Default: 100</P
+></DD
+><DT
+CLASS="listitem"
+><TT
+CLASS="varname"
+>ViewerSize</TT
+></DT
+><DD
+><P
+CLASS="listitem"
+>&#13;	    Description: Max Dimension for viewer images</P
+><P
+CLASS="listitem"
+>Default: 400</P
+></DD
+><DT
+CLASS="listitem"
+><TT
+CLASS="varname"
+>ThumbnailsPerPage</TT
+></DT
+><DD
+><P
+CLASS="listitem"
+>&#13;	    Description: Number of thumbnail images to be displayed per album
+	    page</P
+><P
+CLASS="listitem"
+>Default: 12</P
+></DD
+><DT
+CLASS="listitem"
+><TT
+CLASS="varname"
+>PrivilegeForCreator</TT
+></DT
+><DD
+><P
+CLASS="listitem"
+>&#13;	    Description: CSV of privileges to grant to creators of new objects
+	    within photo album</P
+><P
+CLASS="listitem"
+>Default: admin</P
+></DD
+><DT
+CLASS="listitem"
+><TT
+CLASS="varname"
+>AcceptableUploadMIMETypes</TT
+></DT
+><DD
+><P
+CLASS="listitem"
+>&#13;	    Description: CSV of acceptable MIME Types for Photo Upload</P
+><P
+CLASS="listitem"
+>Default: image/jpeg,image/gif</P
+></DD
+><DT
+CLASS="listitem"
+><TT
+CLASS="varname"
+>DefaultRootFolderPrivileges</TT
+></DT
+><DD
+><P
+CLASS="listitem"
+>&#13;	    Description: List of grantee privilege pairs for new root folders.
+	    Grantee is an integer or function that returns a party_id. Format
+	    as a space separated list</P
+><P
+CLASS="listitem"
+>Default: acs.magic_object_id('the_public') read
+	    acs.magic_object_id('registered_users') pa_create_album
+	    acs.magic_object_id('registered_users') pa_create_folder</P
+></DD
+><DT
+CLASS="listitem"
+><TT
+CLASS="varname"
+>AllowBasePhotoAccessP</TT
+></DT
+><DD
+><P
+CLASS="listitem"
+>&#13;	    Description: If set to "t", users are presented a link to
+            display the full sized base image from photo page.</P
+><P
+CLASS="listitem"
+>Default: t</P
+></DD
+><DT
+CLASS="listitem"
+><TT
+CLASS="varname"
+>CheckPermissionOnImageServeP</TT
+></DT
+><DD
+><P
+CLASS="listitem"
+>&#13;	    If set to "t", the images/index.vuh file runs a query to check
+	    if user has read access to photo prior to serving it. Note, setting to
+            "t" can impact performance on high volume sites.  The urls for images
+	    also change depending on this parameter.  If "t" url contains the 
+	    pa_image_id, else contains the path to the pa_image in file-system.</P
+><P
+CLASS="listitem"
+>Default: f</P
+></DD
+></DL
+></DIV
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="design-future-improvementsareas-of-likely-change"
+>4.2.10. Future Improvements/Areas of Likely Change</A
+></H2
+><UL
+><LI
+><P
+CLASS="listitem"
+>Server backed image manipulation</P
+></LI
+><LI
+><P
+CLASS="listitem"
+>Purchase and printing of photo through ecommerce package and
+	  photo printing vendor.</P
+></LI
+><LI
+><P
+CLASS="listitem"
+>Bulk upload tool</P
+></LI
+><LI
+><P
+CLASS="listitem"
+>User specified attributes</P
+></LI
+><LI
+><P
+CLASS="listitem"
+>Upload quotas</P
+></LI
+><LI
+><P
+CLASS="listitem"
+>Admin notification of file space limitations.</P
+></LI
+><LI
+><P
+CLASS="listitem"
+>Search and retrieval of photos and albums based on attributes
+	  or key words.</P
+></LI
+><LI
+><P
+CLASS="listitem"
+>Admin specified attributes</P
+></LI
+></UL
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="design-authors"
+>4.2.11. Authors</A
+></H2
+><UL
+><LI
+><P
+CLASS="listitem"
+>System creator, System owner, and Documentation author: Tom
+	  Baginski, bags@arsdigita.com</P
+></LI
+></UL
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="design-revision-history"
+>4.2.12. Revision History</A
+></H2
+><DIV
+CLASS="informaltable"
+><A
+NAME="AEN586"
+></A
+><TABLE
+BORDER="1"
+CLASS="CALSTABLE"
+CELLPADDING="10"
+><THEAD
+><TR
+><TH
+ALIGN="CENTER"
+VALIGN="MIDDLE"
+>&#13;	      Document Revision #</TH
+><TH
+ALIGN="CENTER"
+VALIGN="MIDDLE"
+>&#13;	      Action Taken, Notes</TH
+><TH
+ALIGN="CENTER"
+VALIGN="MIDDLE"
+>When?</TH
+><TH
+ALIGN="CENTER"
+VALIGN="MIDDLE"
+>By Whom?</TH
+></TR
+></THEAD
+><TBODY
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="MIDDLE"
+>0.1</TD
+><TD
+ALIGN="LEFT"
+VALIGN="MIDDLE"
+>Creation</TD
+><TD
+ALIGN="LEFT"
+VALIGN="MIDDLE"
+>12/17/2000</TD
+><TD
+ALIGN="LEFT"
+VALIGN="MIDDLE"
+>Tom Baginski</TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="MIDDLE"
+>0.2</TD
+><TD
+ALIGN="LEFT"
+VALIGN="MIDDLE"
+>Editing</TD
+><TD
+ALIGN="LEFT"
+VALIGN="MIDDLE"
+>1/9/2001</TD
+><TD
+ALIGN="LEFT"
+VALIGN="MIDDLE"
+>Tom Baginski</TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="MIDDLE"
+>0.3</TD
+><TD
+ALIGN="LEFT"
+VALIGN="MIDDLE"
+>Editing and additions to API and Data Model sections.</TD
+><TD
+ALIGN="LEFT"
+VALIGN="MIDDLE"
+>2/5/2001</TD
+><TD
+ALIGN="LEFT"
+VALIGN="MIDDLE"
+>Tom Baginski</TD
+></TR
+></TBODY
+></TABLE
+></DIV
+><P
+>&#13;      <A
+HREF="mailto:bags@arsdigita.com"
+TARGET="_top"
+>bags@arsdigita.com</A
+>
+    </P
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+SIZE="1"
+NOSHADE="NOSHADE"
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="dev-guide.html"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index.html"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>&nbsp;</TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Developer's guide</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="dev-guide.html"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>&nbsp;</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

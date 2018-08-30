@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<message_catalog package_key="dotlrn-static" locale="pl_PL" charset="utf-8">
+
+  <msg key="class_info_portlet_pretty_name">Klasa - Info </msg>
+  <msg key="community_info_portlet_pretty_name">Wspólnota - Info</msg>
+  <msg key="Static_HTML_Data">Dane Statyczne {HTML}</msg>
+  <msg key="subcommunity_info_portlet_pretty_name">Podgrupa - Info
+</msg>
+</message_catalog>

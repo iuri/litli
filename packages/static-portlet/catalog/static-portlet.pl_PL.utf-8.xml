@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<message_catalog package_key="static-portlet" locale="pl_PL" charset="utf-8">
+
+  <msg key="admin_portlet_element_pretty_name">Własny Portalik</msg>
+  <msg key="admin_portlet_pretty_name">Administracja Portalem Użytkownika /???/</msg>
+  <msg key="Back_to">Powróć do</msg>
+  <msg key="Content">Zawartość</msg>
+  <msg key="Control_Panel">Ustawienia</msg>
+  <msg key="Create_a_new">Utwórz nowy %element_pretty_name%</msg>
+  <msg key="Edit">Edytuj</msg>
+  <msg key="Edit_content_element">Edytuj element zawartości</msg>
+  <msg key="False_0">Fałsz</msg>
+  <msg key="File">Plik</msg>
+  <msg key="lt_Delete_element_pretty">Usuń %element_pretty_name% %pretty_name%</msg>
+  <msg key="lt_Editing_element_prett">Edycja %element_pretty_name% %pretty_name%</msg>
+  <msg key="lt_Enforce_this_applet_t">Wymuś wyświetlanie apletu w Portalu</msg>
+  <msg key="lt_strongNotestrong_You_">&lt;strong&gt;Uwaga&lt;/strong&gt;: Możesz użyć zwykłego tekstu lub HTML w obszarze zawartości</msg>
+  <msg key="lt_Use_this_form_to_crea">Utwórz nowy %element_pretty_name% za pomocą tego formularza. %element_pretty_name% zostanie utworzony i automatycznie umieszczony na pierwszej stronie portalu %portal_name%. Przejdź do %control_panel_text% i wybierz &quot;Zmień Wygląd&quot; by przesunąć ten %element_pretty_name%.</msg>
+  <msg key="Name">Nazwa</msg>
+  <msg key="New">Nowy</msg>
+  <msg key="new_static_admin_portlet">Nowy %element_pretty_name% 
+</msg>
+  <msg key="True">Prawda</msg>
+</message_catalog>

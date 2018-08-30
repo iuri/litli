@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<message_catalog package_key="dotlrn-portlet" locale="ast_ES" charset="ISO-8859-1">
+
+  <msg key="admin_pretty_name">Alministración del Grupu</msg>
+  <msg key="Administer">Alministrar</msg>
+  <msg key="All_members">Tolos miembros</msg>
+  <msg key="Archive">Guardar</msg>
+  <msg key="Archive_this_group">Guardar esti Grupu</msg>
+  <msg key="Closed">Zarráu</msg>
+  <msg key="Copy_this_group">Copiar esti grupu</msg>
+  <msg key="Email_Members">Mandar corréu lletrónicu a los Miembros</msg>
+  <msg key="lt_AddRemove_pretty_name">Axuntar/Borrar &quot;%pretty_name%&quot; miembros</msg>
+  <msg key="lt_can_send_bulk_mail_to">puedes mandar corréu masivu a esta comunidá</msg>
+  <msg key="lt_Change_Bulk_Mail_Poli">Cambiar Política de Correos Masivos</msg>
+  <msg key="lt_Change_Enrollment_Pol">Cambiar política de Rexistru</msg>
+  <msg key="lt_Create_a_new_Limited_">Crear un usuariu nuevu con accesu restrinxíu</msg>
+  <msg key="lt_Create_a_new_Limited__1">Crear un usuariu nuevu convidáu con accesu restrinxíu</msg>
+  <msg key="lt_Customize_Portal_Layo">Personalizar el Portal</msg>
+  <msg key="lt_No_subcomm_pretty_plu">Nun hai &quot;%subcomm_pretty_plural%&quot;</msg>
+  <msg key="lt_Only_use_this_to_crea">Utiliza esta opción pa facer una cuenta nueva a los usuarios que nunca nun tuvieren rexistraos en cursos anteriores.</msg>
+  <msg key="lt_Only_use_this_to_crea_1">Utiliza esta opción pa rexistar usuarios qu'inda nun tengan cuenta. Estos usuarios nun tendrán accesu a los datos de los miembros d'esta comunidá.</msg>
+  <msg key="lt_Sorry_this_functional">Sentímoslo, esta opción nun ta disponible pa usuarios convidaos</msg>
+  <msg key="lt_This_group_is_archive">El Grupu ta guardáu</msg>
+  <msg key="Manage_Applets">Xestionar Applets</msg>
+  <msg key="Manage_Membership">Xestionar Miembros</msg>
+  <msg key="Member_List">Llistáu de Miembros</msg>
+  <msg key="members_portlet_pretty_name">Miembros</msg>
+  <msg key="members_staff_portlet_pretty_name">Equipu Docente</msg>
+  <msg key="Needs_Approval">Necesita aprovación</msg>
+  <msg key="New_sub_pretty_name">Nuevu &quot;%sub_pretty_name%&quot;</msg>
+  <msg key="no_course_assistant_members">Nun hai &quot;%course_assistant_role_pretty_plural%&quot;</msg>
+  <msg key="no_instructor_members">Nun hai &quot;%instructor_role_pretty_plural%&quot;</msg>
+  <msg key="no_teaching_assistant_members">Nun hai &quot;%teaching_assistant_role_pretty_plural%&quot;</msg>
+  <msg key="Only_admins">Sólo alministradores</msg>
+  <msg key="Open">Abierto</msg>
+  <msg key="Sort">Ordenar</msg>
+  <msg key="Sortmanage">Ordenar/xestionar</msg>
+</message_catalog>

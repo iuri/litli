@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<message_catalog package_key="dotlrn" locale="fa_IR" charset="utf-8">
+
+  <msg key="help">کمک</msg>
+  <msg key="logout">خروج</msg>
+</message_catalog>

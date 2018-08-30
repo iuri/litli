@@ -1,0 +1,16 @@
+/upgrade-0.1d-0.2d.sql/1.1/Fri Oct  3 19:38:15 2003//Topenacs-5-9-compat
+/upgrade-0.2d-0.3d.sql/1.1/Fri Oct  3 19:38:15 2003//Topenacs-5-9-compat
+/upgrade-0.3d-0.4d.sql/1.1/Fri Oct  3 19:38:15 2003//Topenacs-5-9-compat
+/upgrade-1.0.6-1.0.7d.sql/1.3/Tue Aug  8 21:26:51 2006//Topenacs-5-9-compat
+/upgrade-1.0d2-1.0d3.sql/1.1/Fri Oct  3 19:38:15 2003//Topenacs-5-9-compat
+/upgrade-1.0d3-1.0d4.sql/1.1/Wed Oct  8 16:59:22 2003//Topenacs-5-9-compat
+/upgrade-1.0d4-1.0.1d2.sql/1.2/Tue Jun 29 10:18:28 2004//Topenacs-5-9-compat
+/upgrade-1.1.1-1.1.2d1.sql/1.3/Tue Aug  8 21:26:51 2006//Topenacs-5-9-compat
+/upgrade-1.1.2d4-1.1.2d5.sql/1.2/Tue Aug  8 21:26:51 2006//Topenacs-5-9-compat
+/upgrade-1.1d1-1.1d2.sql/1.2/Tue Mar 30 21:00:29 2004//Topenacs-5-9-compat
+/upgrade-1.2.0d3-1.2.0d4.sql/1.2/Tue Aug  8 21:26:51 2006//Topenacs-5-9-compat
+/upgrade-1.2.0d4-1.3d1.sql/1.2/Tue Aug  8 21:26:51 2006//Topenacs-5-9-compat
+/upgrade-1.2d1-1.2d2.sql/1.2/Tue Aug  8 21:26:51 2006//Topenacs-5-9-compat
+/upgrade-1.3d3-1.3d4.sql/1.2/Tue May 15 20:14:40 2007//Topenacs-5-9-compat
+/upgrade-1.3d5-1.3d6.sql/1.2/Fri Jun 15 10:42:21 2007//Topenacs-5-9-compat
+D

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<message_catalog package_key="dotlrn-forums" locale="tr_TR" charset="utf-8">
+
+  <msg key="administer">yonetici</msg>
+  <msg key="by_Date">Tarihten</msg>
+  <msg key="by_Forum">Tartisma Grubundan</msg>
+  <msg key="Forum">Tartisma Grubu</msg>
+  <msg key="forums_default_name_suffix">Tartisma Grubu</msg>
+  <msg key="New_Forum">Yeni Tartisma Grubu</msg>
+  <msg key="Subject">Konu</msg>
+  <msg key="View">Gorunum:</msg>
+</message_catalog>

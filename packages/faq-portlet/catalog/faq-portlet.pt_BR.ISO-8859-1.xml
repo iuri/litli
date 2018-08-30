@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<message_catalog package_key="faq-portlet" locale="pt_BR" charset="ISO-8859-1">
+
+  <msg key="admin_pretty_name">Administração de FAQ</msg>
+  <msg key="Disable">Desativar</msg>
+  <msg key="Disabled">Desativado</msg>
+  <msg key="Enable">Ativar</msg>
+  <msg key="group">Grupo</msg>
+  <msg key="name">Nome</msg>
+  <msg key="new_faq">Nova FAQ</msg>
+  <msg key="no_faqs">Nenhuma FAQ</msg>
+  <msg key="one_admin_faq">Deve haver somente uma instância de FAQ para propósitos administrativos</msg>
+  <msg key="pretty_name">Perguntas Freqüentes (FAQs)</msg>
+</message_catalog>

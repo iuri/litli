@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<message_catalog package_key="chat-portlet" locale="el_GR" charset="utf-8">
+
+  <msg key="Add_a_Chat_Item">Προσθήκη δωματίου συζήτησης</msg>
+  <msg key="admin_pretty_name">Διαχείριση συζήτησης</msg>
+  <msg key="html_mode">Λειτουργία HTML</msg>
+  <msg key="Manage_Chat">Διαχείριση συζήτησης</msg>
+  <msg key="pretty_name">Συζήτηση</msg>
+  <msg key="Rooms_admin">Διαχείριση δωματίων</msg>
+</message_catalog>

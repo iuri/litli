@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<message_catalog package_key="bm-portlet" locale="ru_RU" charset="utf-8">
+
+  <msg key="New_spam_name">Новые %spam_name%</msg>
+  <msg key="pretty_name">Массовая Рассылка</msg>
+  <msg key="spam_name_History">Хронология %spam_name%</msg>
+</message_catalog>

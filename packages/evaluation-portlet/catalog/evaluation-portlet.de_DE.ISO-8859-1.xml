@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<message_catalog package_key="evaluation-portlet" locale="de_DE" charset="ISO-8859-1">
+
+  <msg key="Add_grade_name_">Hinzufügen %grade_name%</msg>
+  <msg key="Addedit_answer_">Antwort hinzufügen/verändern</msg>
+  <msg key="Addedit_solution_">Lösung hinzufügen/bearbeiten</msg>
+  <msg key="Assignments_">Aufgaben</msg>
+  <msg key="Audit_Info_">Audit Infomationen überprüfen</msg>
+  <msg key="Audit_info_">Audit Informationen überprüfen</msg>
+  <msg key="Comments_">Kommentare</msg>
+  <msg key="Delete_task_">Aufgabe löschen</msg>
+  <msg key="Due_date_">Fälligkeitsdatum</msg>
+  <msg key="Edit_task_">Aufgabe bearbeiten</msg>
+  <msg key="Evaluations_">Bewertung</msg>
+  <msg key="Grade_over_100_">Bewertung von 100%</msg>
+  <msg key="Grades">Leistungsübersicht</msg>
+  <msg key="Groups_Admin_">Gruppen administrieren</msg>
+  <msg key="lt_Admin_my_Assignment_T">Aufgabentypen administrieren</msg>
+  <msg key="lt_Administer_Evaluation">Evaluierung administrieren</msg>
+  <msg key="lt_Edit_grades_distribut">Gewichtungsverteilung von &quot;%grade_plural_name%&quot; verändern</msg>
+  <msg key="lt_Evaluation_Admin_Port">Admin Portlet für Bewertungen </msg>
+  <msg key="lt_Evaluation_Administra">Evaluierung administrieren</msg>
+  <msg key="lt_Evaluation_Assignment">Admin Portlet für Aufgabenzuweisungen</msg>
+  <msg key="lt_Groups_administration">Gruppen administrieren</msg>
+  <msg key="lt_smallTotal_points_in_">&lt;small&gt;Gesamtpunkte in dieser Kategorie: %total_grade%/%max_grade%&lt;br /&gt; Diese Bewertungskategorie macht %grade_weight%% von 100% der Gesamtklassenleistung aus&lt;/small&gt;  </msg>
+  <msg key="lt_submit_answer_style_f">Antwort abschicken &lt;style color:red&gt;late&lt;/style&gt;  </msg>
+  <msg key="lt_submit_answer_style_f_1">Antwort nochmal abschicken &lt;style color:red&gt;late&lt;/style&gt;</msg>
+  <msg key="lt_There_are_no_tasks_fo">Für diese Paket liegen keine Aufgaben vor.</msg>
+  <msg key="lt_There_are_no_tasks_to">Für diese Paket liegen keine zu bewertenden Aufgaben vor.</msg>
+  <msg key="lt_There_should_be_only_">Aus Admininstrationsgründen sollte nur eine Instanz des Moduls &quot;Evaluations&quot; genutzt werden.</msg>
+  <msg key="lt_View_evaluation_comme">Bewertungskommentar ansehen</msg>
+  <msg key="lt_Your_total_grade_in_t">Der Stand Ihrer Gesamtbewertung in der Klasse ist:</msg>
+  <msg key="Name_">Bezeichnung</msg>
+  <msg key="Net_Value_">Nettowert</msg>
+  <msg key="No_assignments_">Keine Aufgaben zugewiesen</msg>
+  <msg key="No_group_for_task_">Keine Gruppe für diese Aufgabe</msg>
+  <msg key="Not_available_">nicht vorhanden</msg>
+  <msg key="Not_evaluated_">nicht bewertet</msg>
+  <msg key="select_version">Portlet-Darstellung</msg>
+  <msg key="submit_answer_">Anwort abschicken</msg>
+  <msg key="submit_answer_again_">Antwort nochmal abschicken</msg>
+  <msg key="task_name_No_data_">%task_name% (keine Daten)  </msg>
+  <msg key="task_name_URL_">%task_name% (URL)  </msg>
+  <msg key="Upload_Solution_">Lösung uploaden</msg>
+  <msg key="View_comments_">Kommetare ansehen</msg>
+  <msg key="View_my_answer_">Meine Antwort ansehen</msg>
+  <msg key="View_task_">Aufgabe ansehen</msg>
+  <msg key="ViewEdit_Solution_">Lösung ansehen/verändern</msg>
+  <msg key="Weight_">Gewichtung</msg>
+</message_catalog>

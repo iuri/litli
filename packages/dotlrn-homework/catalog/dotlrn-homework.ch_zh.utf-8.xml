@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<message_catalog package_key="dotlrn-homework" locale="ch_zh" charset="utf-8">
+
+  <msg key="Copy">拷贝</msg>
+  <msg key="Do_not_alert">不警示</msg>
+  <msg key="lt_Contents_of_folder_na">%folder_name%内容</msg>
+  <msg key="lt_folder_name">文件夹名</msg>
+  <msg key="lt_internal_error">错误</msg>
+  <msg key="lt_interval_or_del">作业通知的间隔或传输方法出错</msg>
+  <msg key="lt_me_when_homework_file">上传作业文件时的我</msg>
+  <msg key="lt_one_folder">文件夹</msg>
+  <msg key="lt_TAs_and_professors_ca">助教和教授从西画网页上传不同版本的评论，可以使用版本注释信息框区分不同评论文件。</msg>
+  <msg key="lt_There_are_two_ways_to">有两种对学生作业文件评注的方法：1）上传一个分立的文件或一个新文件2）在学生作业文件上直接加评注。第一种情况，从此网页上传文件；第二种情况，先下载或打开并保存文件。完成后，返回到Homework文件夹，上传评论。</msg>
+  <msg key="lt_your_file_is">你的文件超过系统设定的最大大小</msg>
+  <msg key="pretty_name">作业</msg>
+  <msg key="Student">学生</msg>
+  <msg key="Title">题目</msg>
+</message_catalog>

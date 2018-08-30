@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<message_catalog package_key="news-portlet" locale="pa_IN" charset="utf-8">
+
+  <msg key="No_News">ਕੋਈ ਖ਼ਬਰ ਨਹੀਂ</msg>
+  <msg key="pretty_name">ਖ਼ਬਰਾਂ</msg>
+</message_catalog>

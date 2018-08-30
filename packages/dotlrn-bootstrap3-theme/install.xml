@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+
+<application name="dotlrn-bootstrap3-theme" pretty-name="dotLRN Bootstrap 3 Theme" home="http://openacs.org/repository/download/apm/dotlrn-bootstrap3-theme-2.9.0.apm" min_stack_size="512">
+
+  <actions>
+
+    <set-parameter package-key="dotlrn" name="class_instance_pages_csv" value="#dotlrn.class_page_home_title#,#dotlrn-bootstrap3-theme.bootstrap-2column#,#dotlrn.class_page_home_accesskey#;#dotlrn.class_page_calendar_title#,#dotlrn-bootstrap3-theme.bootstrap-1column#,#dotlrn.class_page_calendar_accesskey#;#dotlrn.class_page_file_storage_title#,#dotlrn-bootstrap3-theme.bootstrap-1column#,#dotlrn.class_page_file_storage_accesskey#"/>
+
+    <set-parameter package-key="dotlrn" name="club_pages_csv" value="#dotlrn.club_page_home_title#,#dotlrn-bootstrap3-theme.bootstrap-2column#,#dotlrn.club_page_home_accesskey#;#dotlrn.club_page_calendar_title#,#dotlrn-bootstrap3-theme.bootstrap-1column#,#dotlrn.club_page_calendar_accesskey#;#dotlrn.club_page_file_storage_title#,#dotlrn-bootstrap3-theme.bootstrap-1column#,#dotlrn.club_page_file_storage_accesskey#;#dotlrn.club_page_people_title#,#dotlrn-bootstrap3-theme.bootstrap-1column#,#dotlrn.club_page_people_accesskey#"/>
+
+    <set-parameter package-key="dotlrn" name="subcomm_pages_csv" value="#dotlrn.subcomm_page_home_title#,#dotlrn-bootstrap3-theme.bootstrap-2column#,#dotlrn.subcomm_page_home_accesskey#;#dotlrn.subcomm_page_info_title#,#dotlrn-bootstrap3-theme.bootstrap-1column#,#dotlrn.subcomm_page_info_accesskey#;#dotlrn.subcomm_page_calendar_title#,#dotlrn-bootstrap3-theme.bootstrap-1column#,#dotlrn.subcomm_page_calendar_accesskey#;#dotlrn.subcomm_page_file_storage_title#,#dotlrn-bootstrap3-theme.bootstrap-1column#,#dotlrn.subcomm_page_file_storage_accesskey#"/>
+
+    <set-parameter package-key="dotlrn" name="user_portal_pages_csv" value="#dotlrn.user_portal_page_home_title#,#dotlrn-bootstrap3-theme.bootstrap-2column#,#dotlrn.user_portal_page_home_accesskey#;#dotlrn.user_portal_page_calendar_title#,#dotlrn-bootstrap3-theme.bootstrap-1column#,#dotlrn.user_portal_page_calendar_accesskey#;#dotlrn.user_portal_page_file_storage_title#,#dotlrn-bootstrap3-theme.bootstrap-1column#,#dotlrn.user_portal_page_file_storage_accesskey#"/>
+
+    <set-parameter package-key="dotlrn" name="admin_layout_name" value="#dotlrn-bootstrap3-theme.bootstrap-2column#"/>
+    <set-parameter package-key="dotlrn" name="non_member_layout_name" value="#dotlrn-bootstrap3-theme.bootstrap-2column#"/>
+    <set-parameter package-key="dotlrn" name="DefaultMaster_p" value="/packages/dotlrn-bootstrap3-theme/resources/masters/dotlrn-master"/>
+
+    <set-parameter package-key="dotlrn" name="DefaultSiteTemplate" value="#dotlrn-bootstrap3-theme.bootstrap3-theme#"/>
+    <set-parameter-default package-key="dotlrn" name="DefaultSiteTemplate" value="#dotlrn-bootstrap3-theme.bootstrap3-theme#"/>
+
+    <set-parameter package-key="new-portal" name="default_theme_name" value="#dotlrn-bootstrap3-theme.bootstrap3-theme#"/>
+    <set-parameter package-key="new-portal" name="default_layout" value="#dotlrn-bootstrap3-theme.bootstrap-2column#"/>
+
+  </actions>
+
+</application>

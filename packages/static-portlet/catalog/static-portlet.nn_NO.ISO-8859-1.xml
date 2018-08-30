@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<message_catalog package_key="static-portlet" locale="nn_NO" charset="ISO-8859-1">
+
+  <msg key="admin_portlet_element_pretty_name">Spesialtilpassa modul</msg>
+  <msg key="admin_portlet_pretty_name">Administrasjon for spesialtilpassa modul</msg>
+  <msg key="Back_to">Attende til</msg>
+  <msg key="Binary_file_uploaded">Binærfil %filename% vart lasta opp, men vi støttar berre tekstfiler her.</msg>
+  <msg key="Content">Innhald</msg>
+  <msg key="Control_Panel">Kontrollpanel</msg>
+  <msg key="Create_a_new">Lag ein ny %element_pretty_name%</msg>
+  <msg key="Edit">Rediger</msg>
+  <msg key="Edit_content_element">Rediger innhaldselement</msg>
+  <msg key="False_0">Ja</msg>
+  <msg key="File">Fil</msg>
+  <msg key="lt_Delete_element_pretty">Slett %element_pretty_name% %pretty_name% </msg>
+  <msg key="lt_Editing_element_prett">Slettar %element_pretty_name% %pretty_name% </msg>
+  <msg key="lt_Enforce_this_applet_t">Tving denne ruta til å visast i portalen</msg>
+  <msg key="lt_Enforce_True_means_th">Tvang Ja tyder at den statiske ruta vil bli \ lagt inn med ein gong i målprotalane som alt er oppretta, \ Nei tyder at ruta vil verte tilgjengeleg for bruk nå portalen vert tilpassa eller når ein utfører ei tilbakestilling.</msg>
+  <msg key="lt_strongNotestrong_You_">&lt;strong&gt;Merk&lt;/strong&gt;: Du kan bruke enkel tekst eller HTML i innhaldsruta.</msg>
+  <msg key="lt_Use_this_form_to_crea">Bruk dette skjemaet for å lage eit nytt %element_pretty_name%. %element_pretty_name% vil bli lagt inn og automatisk plassert på første sida av %portal_name% portalen. Gå til %control_panel_text% og velg Skredddarsy portalen for å flytte denne %element_pretty_name%. </msg>
+  <msg key="Name">Navn</msg>
+  <msg key="New">Ny</msg>
+  <msg key="new_static_admin_portlet">Ny %element_pretty_name%</msg>
+  <msg key="True">Nei</msg>
+  <msg key="Use_this_form">Bruk dette skjemaet for å lage ein ny %element_pretty_name%. %element_pretty_name% vil bli oppretta og auromatisk lagt inn på første sida av %portal_name% portaleb. Gå til administrasjonssida og velg &quot;Skreddarsy portal&quot; for å flytte denne %element_pretty_name%.</msg>
+  <msg key="You_may_upload">Eller, du kan laste opp ei &lt;strong&gt;tekst&lt;/strong&gt;-fil her. Innhaldet vil då erstatte det noverande innhaldet i ruta.</msg>
+</message_catalog>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<message_catalog package_key="static-portlet" locale="el_GR" charset="utf-8">
+
+  <msg key="admin_portlet_element_pretty_name">Προσωπικό portlet</msg>
+  <msg key="admin_portlet_pretty_name">Διαχείριση προσωπικού portlet</msg>
+  <msg key="Back_to">Επιστροφή στο</msg>
+  <msg key="Binary_file_uploaded">Το binary αρχείο %filename% έχει ανεβεί, αλλά υποστηρίζονται μόνο αρχεία κειμένου.</msg>
+  <msg key="Content">Περιεχόμενο</msg>
+  <msg key="Control_Panel">Πίνακας ελέγχου</msg>
+  <msg key="Create_a_new">Δημιουργία ενός νέου %element_pretty_name%</msg>
+  <msg key="create_new_element_pretty_name">Δημιουργία ενός νέου %element_pretty_name% </msg>
+  <msg key="Edit">Επεξεργασία</msg>
+  <msg key="Edit_content_element">Επεξεργασία στοιχείου περιεχομένου</msg>
+  <msg key="edit_content_pretty_name">Επεξεργασία %content.pretty_name% 
+</msg>
+  <msg key="False_0">Ψευδές</msg>
+  <msg key="File">Αρχείο</msg>
+  <msg key="lt_Delete_element_pretty">Διαγραφή %element_pretty_name% %pretty_name% </msg>
+  <msg key="lt_Editing_element_prett">Επεξεργασία %element_pretty_name% %pretty_name%</msg>
+  <msg key="lt_Enforce_this_applet_t">Δυναμική εμφάνιση της εφαρμογής στο portal</msg>
+  <msg key="lt_Enforce_True_means_th">Δυναμική εμφάνιση Αληθής σημαίνει ότι το στατικό Portal θα \ προστεθεί άμεσα στα portals στόχους που έχουν ήδη δημιουργηθεί, \ Ψευδές σημαίνει ότι θα είναι διαθέσιμο για χρήση όταν διμορφώνετε το Portal η όταν εφαρμόζετε μια πράξη επαναφοράς</msg>
+  <msg key="lt_strongNotestrong_You_">&lt;strong&gt;Σημείωση&lt;/strong&gt;: Μπορείτε να χρησιμοποιήσετε απλό κείμενο ή HTML στην περιοχή περιεχομένου.</msg>
+  <msg key="lt_Use_this_form_to_crea">Χρησιμοποιήστε αυτή τη φόρμα για να δημιουργήσετε ένα νέο %element_pretty_name%. Το %element_pretty_name%.θα δημιουργηθεί και αυτόματα θα τοποθετηθείστην πρώτη σελίδα του %portal_name% portal. Μεταβείτε στο %control_panel_text% και επιλέξτε προσωπική μορφοποίηση για να μετακινήσετε το %element_pretty_name%. </msg>
+  <msg key="Name">Όνομα</msg>
+  <msg key="New">Νέο</msg>
+  <msg key="new_static_admin_portlet">Νέο %element_pretty_name%</msg>
+  <msg key="True">Αληθές</msg>
+  <msg key="Use_this_form">Χρησιμοποιήστε αυτή τη φόρμα για να δημιουργήσετε ένα νέο %element_pretty_name%. Το %element_pretty_name% θα δημιουργηθεί και θα τοποθετηθεί αυτόματα στην πρώτη σελίδα του %portal_name% portal.</msg>
+  <msg key="You_may_upload">Ή μπορείτε να ανεβάσετε ένα &lt;strong&gt;αρχείο κειμένου&lt;/strong&gt; εδώ, τα περιεχόμενα του οποίου θα αντικαταστήσουν τα τρέχοντα περιεχόμενα του portlet. </msg>
+</message_catalog>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<message_catalog package_key="theme-zen" package_version="2.3.1" locale="el_GR" charset="utf-8">
+
+  <msg key="acc">508</msg>
+  <msg key="accessibility_note">Σημειώστε οτι κανένα λογισμικό δεν μπορεί να ελέγξει πλήρως την προσβασιμότητα του ιστοχώρου σας.</msg>
+  <msg key="admin">Διαχείριση Τάξης</msg>
+  <msg key="begin_footer">Αρχή υποσέλιδου</msg>
+  <msg key="begin_main_content">Κυρίως περιεχόμενο</msg>
+  <msg key="begin_main_navigation">Αρχή μενού</msg>
+  <msg key="begin_sub_navigation">Αρχή υπομενού</msg>
+  <msg key="Communities">Κοινότητες</msg>
+  <msg key="ControlPanel">Πίνακας ελέγχου</msg>
+  <msg key="Courses">Τάξεις</msg>
+  <msg key="dotlrn_Home">Αρχική σελίδα .LRN </msg>
+  <msg key="dotlrn_Project_Central">Κεντρικά του .LRN Project </msg>
+  <msg key="goto_admin_page">Μετάβαση στη σελίδα διαχείρησης</msg>
+  <msg key="goto_admin_page_accesskey">Α</msg>
+  <msg key="goto_portal_page_pretty_name">Μετάβαση στην σελίδα %pretty_name%</msg>
+  <msg key="goto_tab_name">Μετάβαση σε %name%</msg>
+  <msg key="hc">ΑΝΤ</msg>
+  <msg key="Logout">Αποσύνδεση</msg>
+  <msg key="MySpace">Ο χώρος μου</msg>
+  <msg key="online">σε σύνδεση</msg>
+  <msg key="Preferences">Προτιμίσεις</msg>
+  <msg key="skip_to_main_content">Μετάβαση στο κυρίως περιεχόμενο</msg>
+  <msg key="std">ΤΥΠ</msg>
+  <msg key="Tools">Εργαλεία</msg>
+  <msg key="upgrade">Αναβάθμιση</msg>
+  <msg key="upgrade_finished">Η αναβάθμιση στο θέμα Zen ολοκληρώθηκε με επιτυχία.</msg>
+  <msg key="upgrade_intro">Πατώντας το κουμπί παρακάτω θα αναβαθμίσετε τη .LRN εγκατάσταση σας στο θέμα Zen </msg>
+  <msg key="website_logo">Λογότυπο Ιστοχώρου</msg>
+  <msg key="You_are_here">Βρίσκεστε εδώ</msg>
+  <msg key="Zen_1_column">Zen μία στήλη</msg>
+  <msg key="Zen_2_column">Zen δύο στήλες</msg>
+  <msg key="Zen_3_column">Zen τρείς στήλες</msg>
+  <msg key="Zen_Theme">Θέμα Zen</msg>
+  <msg key="Zen_thin_thick">Zen Λεπτό-Παχύ</msg>
+  <msg key="Zen_thin_thick_thin">Zen Λεπτό-Παχύ-Λεπτό</msg>
+</message_catalog>

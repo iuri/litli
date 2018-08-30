@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<message_catalog package_key="dotlrn-portlet" locale="fi_FI" charset="utf-8">
+
+  <msg key="admin_pretty_name">Ryhmän ylläpito</msg>
+  <msg key="Administer">Hallinnoi</msg>
+  <msg key="All_members">Kaikki jäsenet</msg>
+  <msg key="Archive">Tee arkisto</msg>
+  <msg key="Archive_this_group">Arkistoi ryhmä</msg>
+  <msg key="Closed">Suljettu</msg>
+  <msg key="Copy_this_group">Kopioi ryhmä</msg>
+  <msg key="Email_Members">Lähetä sähköpostia ryhmän jäsenille</msg>
+  <msg key="lt_AddRemove_pretty_name">Lisää tai poista yhteisön %pretty_name% jäseniä</msg>
+  <msg key="lt_can_send_bulk_mail_to">voivat lähettää ryhmäpostia tähän ryhmään.</msg>
+  <msg key="lt_Change_Bulk_Mail_Poli">Ryhmäpostiasetukset:</msg>
+  <msg key="lt_Change_Enrollment_Pol">Muuta rekisteröitymisoikeuskäytäntöä</msg>
+  <msg key="lt_Create_a_new_Limited_">Lisää ryhmään käyttäjä rajoitetuilla oikeuksilla</msg>
+  <msg key="lt_Create_a_new_Limited__1">Lisää ryhmään vieras rajoitetuilla oikeuksilla</msg>
+  <msg key="lt_Customize_Portal_Layo">Muokkaa portaalisivun asettelua</msg>
+  <msg key="lt_No_subcomm_pretty_plu">Yhtään alayhteisöä ei ole olemassa</msg>
+  <msg key="lt_Only_use_this_to_crea">Käytä tätä vaihtoehtoa vain antaaksesi oikeuden opiskelijalle, jolla ei ole tunnusta aikaisemmalta opintojaksolta.</msg>
+  <msg key="lt_Only_use_this_to_crea_1">Käytä tätä vain luodaksesi käyttäjiä joilla ei ole &lt;em&gt;lainkaan&lt;/em&gt; aikaisempaa käyttäjätunnusta. Tiedot muista ryhmän jäsenistä eivät välity tälle käyttäjälle.</msg>
+  <msg key="lt_Sorry_this_functional">Valitettavasti tämä toiminto ei ole vieraiden käytettävissä</msg>
+  <msg key="lt_This_group_is_archive">Tämä ryhmä on arkistoitu</msg>
+  <msg key="Manage_Applets">Hallinnoi appletteja</msg>
+  <msg key="Manage_Membership">Hallinnoi jäseniä</msg>
+  <msg key="Member_List">Luettelo ilmoittautuneista</msg>
+  <msg key="members_portlet_pretty_name">Jäsenet</msg>
+  <msg key="members_staff_portlet_pretty_name">Vastuuhenkilöt</msg>
+  <msg key="Needs_Approval">Vaatii hyväksynnän</msg>
+  <msg key="New_sub_pretty_name">Uusi alaryhmä</msg>
+  <msg key="no_course_assistant_members">Ei kurssiassistentteja</msg>
+  <msg key="no_instructor_members">Ei luennoitsijaa</msg>
+  <msg key="no_teaching_assistant_members">Ei assistentteja</msg>
+  <msg key="Only_admins">Vain ylläpitäjät</msg>
+  <msg key="Open">Avoin</msg>
+  <msg key="Sort">Lajittele</msg>
+  <msg key="Sortmanage">Jäsenten hallinta</msg>
+</message_catalog>

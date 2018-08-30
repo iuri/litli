@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<message_catalog package_key="faq-portlet" locale="pt_PT" charset="ISO-8859-1">
+
+  <msg key="admin_pretty_name">Administração de PMF</msg>
+  <msg key="Disable">Desactivar</msg>
+  <msg key="Disabled">Desactivado</msg>
+  <msg key="Enable">Activar</msg>
+  <msg key="group">Grupo</msg>
+  <msg key="name">Nome</msg>
+  <msg key="new_faq">Nova PMF</msg>
+  <msg key="no_faqs">Não há PMFs</msg>
+  <msg key="one_admin_faq">Deve haver apenas uma instância das PMF para propósitos de administração</msg>
+  <msg key="pretty_name">Perguntas Mais Frequentes (PMFs)</msg>
+</message_catalog>

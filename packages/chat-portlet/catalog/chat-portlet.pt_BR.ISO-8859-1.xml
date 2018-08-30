@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<message_catalog package_key="chat-portlet" locale="pt_BR" charset="ISO-8859-1">
+
+  <msg key="Add_a_Chat_Item">Adicionar uma sala de chat</msg>
+  <msg key="admin_pretty_name">Administração do chat</msg>
+  <msg key="html_mode">Modo HTML</msg>
+  <msg key="Manage_Chat">Gerenciar chat</msg>
+  <msg key="pretty_name">Chat</msg>
+  <msg key="Rooms_admin">Administração das Salas</msg>
+</message_catalog>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<message_catalog package_key="dotlrn-forums" locale="ro_RO" charset="utf-8">
+
+  <msg key="administer">administrează</msg>
+  <msg key="All_forums">Toate forumurile</msg>
+  <msg key="Auto_subscribe_label">Auto-înscrie membrii grupului</msg>
+  <msg key="by_Date">după Dată</msg>
+  <msg key="by_Forum">după Forum</msg>
+  <msg key="Forum">Forum</msg>
+  <msg key="forums_default_name_suffix">Forum</msg>
+  <msg key="lt_Forums_Posting_histor">Forumuri: Istoricul postărilor pentru %user.full_name%</msg>
+  <msg key="lt_There_should_be_only_">Ar trebui să fie un singur instalare a forumurilor pentru scopuri administrative</msg>
+  <msg key="New_Forum">Forum Nou</msg>
+  <msg key="No_Postings">Nu sunt Postări</msg>
+  <msg key="Posted">Postat</msg>
+  <msg key="Posting_History">Istoria Postărilor</msg>
+  <msg key="Posting_history_for">Istoria postărilor pentru</msg>
+  <msg key="Subject">Subiect</msg>
+  <msg key="View">Vezi:</msg>
+</message_catalog>

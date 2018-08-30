@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<message_catalog package_key="faq-portlet" locale="ms_MY" charset="utf-8">
+
+  <msg key="admin_pretty_name">Pentadbiran Senarai Soalan Kerap Ditanya </msg>
+  <msg key="Disable">Lumpuh</msg>
+  <msg key="Disabled">Dilumpuhkan</msg>
+  <msg key="Enable">Pulih</msg>
+  <msg key="group">Kumpulan</msg>
+  <msg key="name">Nama </msg>
+  <msg key="new_faq">Senarai Soalan Kerap Ditanya Baru</msg>
+  <msg key="no_faqs">Tiada FAQs</msg>
+  <msg key="one_admin_faq">Sepatutnya terdapat hanya satu keadan Senarai Soalan Kerap Ditanya untuk kegunaan pentadbir</msg>
+  <msg key="pretty_name">Senarai Soalan Kerap Ditanya (FAQs)</msg>
+</message_catalog>

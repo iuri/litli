@@ -1,0 +1,531 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="GENERATOR" content="Mozilla/4.75 [en] (Windows NT 5.0; U) [Netscape]">
+   <title>Chat Design Document</title>
+</head>
+<body text="#000000" bgcolor="#FFFFFF">
+
+<h2>
+Chat Design Document
+</h2>
+by <a href="mailto:ddao@arsdigita.com">David Dao</a>
+<hr>
+<h3>
+I. Essentials</h3>
+
+<ul>
+<li>
+User directory: <a href="/chat/">/chat/</a></li>
+
+<li>
+TCL procedures: <a href="/api-doc/procs-file-view?path=packages/chat/tcl/chat-procs.tcl">/tcl/chat-procs.tcl</a></li>
+
+<li>
+Requirements document: <a href="/doc/chat/requirements.html">/doc/chat/requirements.html</a></li>
+
+<li>
+Data model: <a href="/doc/sql/display-sql?url=chat-create.sql&amp;package_key=chat">chat-create.sql</a></li>
+</ul>
+
+<h3>
+II. Introduction</h3>
+We have our own chat server because:
+<ul>
+<li>
+We want to allow our users to participate in instant message communications
+with other community members.</li>
+
+<li>
+We want our system to be integrated.</li>
+
+<li>
+We want to use our own internal permissioning system to more securely determine
+who can enter, create or delete rooms that would be possible using an external
+security system.</li>
+
+<li>
+We want something that can be extended and maintained by any ArsDigita
+programmer, <em>i.e.</em>, something that requires only AOLserver, Tcl, Oracle,
+and Java skills.</li>
+
+<li>
+Commercial chat servers tend to be expensive to maintain and will require
+a separate community data model.</li>
+</ul>
+
+<h3>
+III. Historical Considerations</h3>
+Chat applications allow inexpensive and efficient social interactions between
+community members spread across the globe.&nbsp; A community can use the
+Chat application&nbsp; to allow its members to have an interactive session
+with a special guest or a community member through the means of a moderated
+chat. A customer support site can use the Chat application to offer instant
+responses to its customers regarding its products.
+<h3>
+IV. Competitive Analysis</h3>
+
+<h4>
+<a href="http://www.aim.aol.com/">AOL Instant Messenger (AIM)</a></h4>
+So why can't companies that want to do 1:1 conversations just use AIM?&nbsp;
+AOL Instant Messenger works best with some additional software to be installed
+on the user's machine. This is free software, is shipped with Netscape
+4.x, and is certainly available to AOL service customers. But it is not
+universal and you can't be guaranteed that when someone is connecting to
+your Web site they have the AIM client.&nbsp; Furthermore, AIM doesn't
+has a logging option, thus there is no way for a site to offer a chat transcript
+to its members.
+<h4>
+<a href="http://chat.yahoo.com/">Yahoo Chat</a></h4>
+Yahoo offers its members a wide range of services including chat. Their
+chat supports both HTML and Java applet clients. Unfortunately, their chat
+software is proprietary, so companies cannot incorporate their community
+model with Yahoo's chat software.
+<h4>
+<a href="http://www.digichat.com/">DigiChat</a></h4>
+DigiChat is a standalone Java chat application. It offers a well thought
+out chat client interface and also supports moderated chats. However like
+most third party applications, there are no easy means by which Digichat
+can be integrated with a site's preexisting user data model.&nbsp; DigiChat
+also comes with a heavy price tag, and as such it might not be suitable
+for a small communities that need to support chat sessions.
+<p>The ArsDigita Java Chat application does not have a pretty client interface,
+nor does it support text formating like Yahoo and Digichat.&nbsp; However,
+our Chat application is open source.&nbsp; As such, any competent Java
+developer will be able to improve the interface based upon their or their
+employer's preferences. Using the ArsDigita Chat application allows site
+developers access to a rich community data model which is compatible with
+a variety of existing open-source applications.
+<h3>
+V. Design Tradeoffs</h3>
+
+<h4>
+Archive or not?</h4>
+We have to drive the entire system design from a publishing decision: are
+we interested in seeing archives of chat sessions? If we are, then archiving
+into a single table makes a lot of sense.&nbsp;&nbsp; We can perform a
+single SQL query to see everything that a user has contributed. We can
+perform a single SQL query to see how a customer service person is doing.
+And so on.
+<p>A disadvantage of archiving is that it chews up disk space.&nbsp; Imagine
+for a moment that your service is the size of America Online, wherein one
+million subscribers chat or use AIM every day.&nbsp; Imagine also that
+each person types 50 rows of chat/AIM content each of which requires 100
+bytes of storage.&nbsp;&nbsp; Such a scenario would require our table to
+grow by 50 million rows and 5 GB each day. After 20 days, we would begin
+to bump up against the billion-row table size that data warehouse experts
+suggest as a practical limit.
+<p>So it seems that on popular public sites we won't be able to store everything
+that users type. At the same time, a customer's interaction with a customer
+service person, or a special guest chat should be archived.&nbsp; Also,
+many sites engage considerably less traffic than does AOL, and these sites
+may benefit from being able to log all chat/AIM communications.
+<p>The solution we came up with was to provide an option that allows the
+creator of a room to decide whether or not to archive the messages.
+<h4>
+HTML vs. Applet</h4>
+An advantage to using an HTML client as opposed to an applet-based client
+is the ability to have rich graphical representations as a part of the
+chat, such as color formating, in-line images rendered by the browser in
+use, et cetera.&nbsp; Furthermore, users who are still using older non-Java
+enabled browsers will be able to participate in the chat.&nbsp; A limitation
+of the HTML client is that users cannot see messages in real time, as HTML
+provides no auto-update functionality.
+<p>By using a Java applet-based client, users can see messages updated
+in real time. This is important in, e.g., a customer service setting.&nbsp;&nbsp;
+Since SUN JDK 1.1 doesn't provides a text rendering API, applet-based clients
+are limited in the format of the text that they can display. There are
+also limitations on the server as to how many TCP sockets can be open at
+the same time.&nbsp; Since each user using an applet-based chat client
+will use one TCP socket, there could be a limit on how many user can use
+the applet. This problem could be solved by employing customized hardware
+more suitable for the task.&nbsp;
+<p>Our system provides both a HTML and a Java applet-based chat client.&nbsp;
+By providing each of these, we open up our Chat application to a broader
+pool of users by offering users the chat method which will work best for
+them.
+<h4>
+Java Servlet vs. Pure AOL server</h4>
+Use of a Java servlet provides us with
+<ul>
+<li>
+reduced development time,</li>
+
+<li>
+a large number of API provided by SUN, and</li>
+
+<li>
+portability,</li>
+</ul>
+however using a servlet requires a somewhat nonstandard (for ACS, that
+is) installation method for the chat package, since the application
+requires <a href="http://jakarta.apache.org/">Jakarta-tomcat</a> and
+nstomcat to be preinstalled and configure properly. These extra steps
+are dificult and different on each platform.
+
+<p>Using the AOL server socket API, there could be a performance
+improvement and will not require installation of Jakarta-tomcat.&nbsp;
+Unfortunately, AOL does not provide much by way of documentation
+regarding AOL socket.  As of the current time, there are still major
+features missing from the AOL socket API which would be required to
+completely replace the Java/servlet method.
+
+<p>Initially, I chose using a Java servlet as my development platform
+due to time constraints. As development progressed, I analyzed the use
+of the servlet in the current chat application.  Since the servlets
+sole purpose is to provide communication between the HTML and the Java
+applet clients, I concluded that this would be adequate for the present
+purposes, and that the extra efforts required to set up Jakarta-tomcat
+with AOL server would be unjustified.  After some experimentation, I
+was able to rebuild the bridge between the HTML and the Java applet
+clients using only AOL Server and the Java chat server.  As a resul,t the Chat
+application may now be downloaded and installed just as any other ACS 4
+applications may be.
+
+<h4>Chat message protocol: Text base vs. Java serialize object</h4>
+<p>In the earlier chat version, chat messages were broadcast to the
+applet client Java serialize objects. The advantage of serialize
+objects is that they make it easy to retrieve information.  The 
+disadvantage of this method is the messages are limited to Java only.  
+
+<p>To support clients from different programming language and not
+limit our application to Java, I choose an XML text base for the chat
+message protocol.
+
+<h4>
+Chat messages are stored in cache</h4>
+Since we do not allow a user to view messages prior to his entrance into
+the chat room, there is no need for time-consuming Oracle queries to retrieve
+messages.&nbsp; Storing messages in the server cache keeps us from being
+able to archive all of the messages from the time the server started.&nbsp;
+I decided that I would limit the number of messages cached per room.
+<h3>
+VI. API</h3>
+
+<h4>Chat message XML definition</h4>
+<pre><code>
+&lt;login&gt
+
+   &lt;user_id&gt;&lt;/user_id&gt
+
+   &lt;user_name&gt;&lt;/user_name&gt
+
+   &lt;pw&gt;&lt;/pw&gt
+
+   &lt;room_id&gt;&lt;/room_id&gt
+
+&lt;/login&gt
+
+</code></pre> After connection to the chat server, each client must
+identify itself via a login message.  The chat server will disconnect
+the client if the first message is not a proper login message or if the user
+doesn't have proper permissions for the chat room.
+
+<pre><code>
+&lt;message&gt
+
+   &lt;message_id&gt;&lt;/message_id&gt
+
+   &lt;from_user_id&gt;&lt;/from_user_id&gt
+
+   &lt;from&gt;&lt;/from&gt
+
+   &lt;to_user_id&gt;&lt;/to_user_id&gt
+
+   &lt;to&gt;&lt;/to&gt
+
+   &lt;room_id&gt;&lt;/room_id&gt
+
+   &lt;status&gt;approved | pending&lt;/status&gt
+
+   &lt;body&gt;&lt;/body&gt
+
+&lt;/message&gt
+
+</code></pre>
+
+To construct a public message that will broadcast to everyone in the
+chat room, the <em><strong>to_user_id</strong></em> and <em><strong>to</strong></em> fields
+need to be excluded from the message. When these two fields are present in
+the message then the message will only send to a specific
+user. Sending private messages to HTML users is not yet supported.
+
+<pre><code>
+&lt;system&gt
+
+   &lt;user_enter&gt
+
+      &lt;user_id&gt;&lt;/user_id&gt
+
+      &lt;user_name&gt;&lt;/user_name&gt
+
+   &lt;/user_enter&gt
+
+&lt;/system&gt
+
+
+&lt;system&gt
+
+   &lt;user_leave&gt
+
+      &lt;user_id&gt;&lt;/user_id&gt
+
+      &lt;user_name&gt;&lt;/user_name&gt
+
+   &lt;/user_leave&gt
+
+&lt;/system&gt
+
+</code></pre>
+
+Each time a client enters or exits the room, an appropriate message
+will be broadcast to all clients in the chat room notifying them of a
+change in the chat user list.
+
+<pre><code>
+&lt;system&gt
+
+   &lt;userlist&gt
+
+      &lt;user&gt
+
+         &lt;user_id&gt;&lt;/user_id&gt
+
+         &lt;user_name&gt;&lt;/user_name&gt
+
+      &lt;/user&gt
+
+      &lt;user&gt
+
+         &lt;user_id&gt;&lt;/user_id&gt
+
+         &lt;user_name&gt;&lt;/user_name&gt
+
+      &lt;/user&gt
+
+      ...
+      ...
+   &lt;/userlist&gt
+
+&lt;/system&gt
+
+</code></pre> After the Java applet client has successfully logged
+into the chat room, a list of users currently in the room will be sent
+our from the server.
+
+<h4>API</h4>
+
+<p>All chat functionalities accessible from the browser are available
+as an API. Providing these API allows different applications to modify
+chat without an application-specific user interface.&nbsp;&nbsp; These
+API will throw errors if their corresponding PL/SQL statement fail, so
+all applications employing them need to 'catch error' to display a
+nice error message to the user.  <p><strong><a
+href="/api-doc/proc-view?proc=chat%5fmessage%5fpost">chat_message_post</a></strong>
+- This API inserts chat message to the database depend whether a chat
+room archive mode.  It is also broadcast the message to all Java
+clients in the room.
+
+<p><strong><a href="/api-doc/proc-view?proc=chat%5fmessage%5fretrieve">chat_message_retrieve</a></strong>
+- This API is only used by the HTML client, and is used each time the HTML
+client refreshes. The API does not require database call, messages will be retrieve
+from AOL Server cache.
+<h3>
+VII. Data Model Discussion</h3>
+
+<h4>
+Should chat messages constitute a subtype of acs-object?</h4>
+We are not implementing individual permissioning on each chat message.
+As a result we can avoid unnecessary complexity of subtyping the chat message
+type. Chat messages will have their own table.
+<h3>
+VIII. User Interface</h3>
+
+<h4>
+Types of chat we need to support</h4>
+
+<ul>
+<li>
+<strong>Public chat rooms</strong>. These are open to everyone in the
+<kbd>users_active</kbd>
+view.</li>
+
+<li>
+<strong>Private chat rooms</strong>. These are open to people in particular user
+parties. We check permissions using permissioning for each room.</li>
+</ul>
+For either kind of chat room, we should support moderated chat. That is,
+in such a scenario a posting doesn't go live until it has been approved
+by someone who has the 'chat_room_moderate' privilege in the room.&nbsp;
+<p>We want to support one-to-one messages for customer support, so we need
+one layer on top of the Chat application to make sure that users can find
+an appropriate chat partner. For example, if Bill User says that he needs
+support for his Acme widget, the system has to find the least busy authorized
+Acme widget support person and start a one-to-one chat session between
+Bill and that person.
+<p>For public community sites where nothing is being sold or supported,
+a publisher might wish to limit the load on the server from all of this
+one-to-one chatting.
+<h4>
+Options for the publisher</h4>
+Some options are configurable per-room, e.g.,
+<ul>
+<li>
+Is a room private?</li>
+
+<li>
+If so, grant permission to a particular party to enter the room?</li>
+
+<li>
+Is a room moderated?</li>
+
+<li>
+If so, by whom?</li>
+
+<li>
+Should we archive all chat messages in this room?</li>
+
+<li>
+Is this room active?</li>
+</ul>
+
+<h4>
+Options for room administrator</h4>
+
+<ul>
+<li>
+If this room archives all of its messages, then give a 'create transcript'
+option.</li>
+
+<li>
+View available transcripts.</li>
+
+<li>
+Edit/delete existing transcripts.</li>
+</ul>
+
+<h4>
+Why the HTML version can't autorefresh</h4>
+The HTML page cannot have a Refresh header to force a redraw of the page;
+if it did, the user would be at risk of losing what he or she was typing
+into the post form.
+<h3>
+IX. Configuration/Parameters</h3>
+
+<ul>
+<li>
+<strong>AppletHeight</strong> - Height of display Java applet.</li>
+
+<li>
+<strong>AppletWidth</strong> - Width of display Java applet.</li>
+
+<li>
+<strong>ServerPort</strong> - Port will be listen for Java client connection.</li>
+</ul>
+
+<h3>
+X. Future Improvements/Areas of Likely Change</h3>
+A much more stable Applet client interface would be in order. It would
+also be nice if we allowed more concurrent applet connections to the server.
+<h3>
+XI. Authors</h3>
+
+<ul>
+<li>
+System creator:</li>
+
+<ul>
+<li>
+3.x:<a href="mailto:aure@aure.com">Aurelius Prochazka</a></li>
+<li>
+3.4:<a href="mailto:stefan@arsdigita.com">Stefan Deusch</a></li>
+<li>
+4.x:<a href="mailto:ddao@arsdigita.com">David Dao</a></li>
+</ul>
+
+<li>
+System owner:</li>
+
+<ul>
+<li>
+<a href="mailto:ddao@arsdigita.com">David Dao</a></li>
+</ul>
+
+<li>
+Documentation authors:</li>
+
+<ul>
+<li>
+3.x:<a href="http://photo.net/philg/">Philip Greenspun</a></li>
+
+<li>
+4.x:<a href="mailto:ddao@arsdigita.com">David Dao</a> and
+<a href="mailto:jfinkler@arsdigita.com">Joshua
+Finkler</a></li>
+</ul>
+</ul>
+
+<h3>
+XII. Revision History</h3>
+
+<table CELLSPACING=2 CELLPADDING=2 WIDTH="90%" BGCOLOR="#EFEFEF" >
+<tr BGCOLOR="#E0E0E0">
+<th WIDTH="10%">Document Revision #</th>
+
+<th WIDTH="50%">Action Taken, Notes</th>
+
+<th>When?</th>
+
+<th>By Whom?</th>
+</tr>
+
+<tr>
+<td>0.1</td>
+
+<td>Revision from chat 3.4 design document</td>
+
+<td>11/17/2000</td>
+
+<td>David Dao</td>
+</tr>
+
+<tr>
+<td>0.2</td>
+
+<td>Editing and augmentation</td>
+
+
+<td>11/18/2000</td>
+
+<td>David Dao and Josh Finkler</td>
+</tr>
+
+<tr>
+<td>0.3</td>
+
+<td>Editing</td>
+
+<td>12/04/2000</td>
+
+<td>David Dao</td>
+</tr>
+<tr>
+<td>0.4</td>
+<td>Editing</td>
+
+<td>12/05/2000</td>
+<td>Josh Finkler</td>
+</tr>
+<tr>
+<td>0.5</td>
+<td>Revision for beta version</td>
+<td>01/11/2001</td>
+<td>David Dao</td>
+</tr>
+</table>
+
+<p>
+<hr><a href="mailto:ddao@arsdigita.com">ddao@arsdigita.com</a>
+</body>
+</html>

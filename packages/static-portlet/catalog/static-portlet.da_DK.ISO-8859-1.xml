@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<message_catalog package_key="static-portlet" locale="da_DK" charset="ISO-8859-1">
+
+  <msg key="admin_portlet_element_pretty_name">Speciel Portlet</msg>
+  <msg key="admin_portlet_pretty_name">Administration af Tilpasset Portlet</msg>
+  <msg key="Back_to">Tilbage til</msg>
+  <msg key="Binary_file_uploaded">Binær fil %filename% blev uploadet, men vi supporterer kun tekst-filer hér.</msg>
+  <msg key="Content">Indhold</msg>
+  <msg key="Control_Panel">Kontrolpanel</msg>
+  <msg key="Create_a_new">Opret en ny %element_pretty_name%</msg>
+  <msg key="Edit">Rediger</msg>
+  <msg key="Edit_content_element">Redigér indholdselement</msg>
+  <msg key="False_0">Falsk</msg>
+  <msg key="File">Fil</msg>
+  <msg key="lt_Delete_element_pretty">Slet %element_pretty_name% %pretty_name%</msg>
+  <msg key="lt_Editing_element_prett">Redigerer %element_pretty_name% %pretty_name%</msg>
+  <msg key="lt_Enforce_this_applet_t">Tving denne applet til at blive vist i Portalen</msg>
+  <msg key="lt_strongNotestrong_You_">&lt;strong&gt;Bemærk&lt;/strong&gt;: Du kan brugere ren tekst eller HTML i Indholdsområdet.</msg>
+  <msg key="lt_Use_this_form_to_crea">Brug denne formular til at oprette en ny %element_pretty_name%. %element_pretty_name% vil bluve oprettet og blive placeret automatisk på den første side af %portal_name%-portalen. Gå til %control_panel_text% og vælg Tilpas Layout for at flytte %element_pretty_name%. </msg>
+  <msg key="Name">Navn</msg>
+  <msg key="New">Ny</msg>
+  <msg key="new_static_admin_portlet">Myt %element_pretty_name% </msg>
+  <msg key="True">Sand</msg>
+  <msg key="Use_this_form">Brug denne formular til at oprette en ny %element_pretty_name%. %element_pretty_name% vil blive oprettet og placeret automatisk på den første side af %portal_name% portalen. Gå til administrationsiden og vælg Tilpas Layout for at flytte %element_pretty_name%. </msg>
+</message_catalog>

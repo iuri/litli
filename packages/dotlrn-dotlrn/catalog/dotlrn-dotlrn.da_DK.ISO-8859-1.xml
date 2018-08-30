@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<message_catalog package_key="dotlrn-dotlrn" locale="da_DK" charset="ISO-8859-1">
+
+  <msg key="Core_DotLRN_Applets">DotLRN Kerneprogrammer</msg>
+  <msg key="Group_Members_Info">Oplysninger om Brugergruppernes Medlemmer</msg>
+  <msg key="lt_dotLRN_Staff_List_Inf">Oplysninger om dotLRN Personaleliste</msg>
+</message_catalog>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<message_catalog package_key="dotlrn" locale="zh_TW" charset="utf-8">
+
+  <msg key="admin_page_name">控制台</msg>
+  <msg key="Ask_a_question">問問題</msg>
+  <msg key="Change_Locale">變更地區設定</msg>
+  <msg key="Configure_name">設定 %name%</msg>
+  <msg key="control_panel">控制台</msg>
+  <msg key="Customize_Layout">自訂畫面配置</msg>
+  <msg key="dotlrn_main_portlet_pretty_name">群組</msg>
+  <msg key="General_Site_Help">一般輔助</msg>
+  <msg key="help">輔助</msg>
+  <msg key="logout">登出 / 離開</msg>
+  <msg key="lt_Help_and_Personal_Con">輔助與個人化設定</msg>
+  <msg key="lt_JoinDrop_a_Class_or_C">加入/取消加入類別或社群</msg>
+  <msg key="lt_JoinDrop_Classes_or_C">加入/取消加入類別或社群</msg>
+  <msg key="Personal_Options">個人化選項</msg>
+  <msg key="user_portal_page_calendar_title">我的行事曆</msg>
+  <msg key="user_portal_page_file_storage_title">我的檔案</msg>
+  <msg key="user_portal_page_home_title">我的空間</msg>
+</message_catalog>

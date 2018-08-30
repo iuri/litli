@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<message_catalog package_key="faq-portlet" locale="ko_KR" charset="utf-8">
+
+  <msg key="admin_pretty_name">FAQ 관리</msg>
+  <msg key="Disable">불능케하다</msg>
+  <msg key="Disabled">쓸모없게 된</msg>
+  <msg key="Enable">가능케하다</msg>
+  <msg key="group">그룹</msg>
+  <msg key="name">이름</msg>
+  <msg key="new_faq">새로운 FAQ</msg>
+  <msg key="no_faqs">등록된 FAQ가 없습니다.</msg>
+  <msg key="one_admin_faq">FAQ의 오직 한개의 인스턴스만이 관리를 목적으로 있습니다.</msg>
+  <msg key="pretty_name">자주하는 질문(FAQs)</msg>
+</message_catalog>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<message_catalog package_key="dotlrn-forums" locale="ar_LB" charset="utf-8">
+
+  <msg key="administer">administer</msg>
+  <msg key="All_forums">All forums</msg>
+  <msg key="Auto_subscribe_label">تسجيل الاعضاء بشكل اوتوماتيكي</msg>
+  <msg key="by_Date">بالتّاريخ</msg>
+  <msg key="by_Forum">بالمنتدى</msg>
+  <msg key="Forum">مُنتدى</msg>
+  <msg key="forums_default_name_suffix">مُنتدى</msg>
+  <msg key="lt_Forums_Posting_histor">المنتديات: إرسال التأريخِ لـِ %user.full_name%</msg>
+  <msg key="lt_There_should_be_only_">يجب أن يكون هناك مثال واحد فقط من المنتديات لأغراض الإدارة</msg>
+  <msg key="New_Forum">مُنتدى جديد</msg>
+  <msg key="No_Postings">لا بَرِيد.</msg>
+  <msg key="Posted">مُرسَل</msg>
+  <msg key="Posting_History">تاريخ الإرسالات</msg>
+  <msg key="Posting_history_for">تاريخ الإرسالات لـِ</msg>
+  <msg key="Subject">موضوع</msg>
+  <msg key="View">شاهد:</msg>
+</message_catalog>

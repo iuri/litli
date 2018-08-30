@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<message_catalog package_key="dotlrn-forums" locale="ca_ES" charset="ISO-8859-1">
+
+  <msg key="administer">gestionar</msg>
+  <msg key="All_forums">Tots els fòrums</msg>
+  <msg key="Auto_subscribe_label">Autoinscripció dels membres del grup</msg>
+  <msg key="by_Date">per data</msg>
+  <msg key="by_Forum">per fòrum</msg>
+  <msg key="Forum">Fòrum</msg>
+  <msg key="forums_default_name_suffix">Fòrum </msg>
+  <msg key="lt_Forums_Posting_histor">Fòrums: Missatges enviats a %user.full_name%</msg>
+  <msg key="lt_There_should_be_only_">Ha d'haver només un fòrum per als administradors </msg>
+  <msg key="New_Forum">Fòrum nou</msg>
+  <msg key="No_Postings">No hi ha missatges enviats.</msg>
+  <msg key="Posted">Enviat</msg>
+  <msg key="Posting_History">Enviant missatges</msg>
+  <msg key="Posting_history_for">Enviant missatges a</msg>
+  <msg key="Subject">Tema</msg>
+  <msg key="View">Veure:</msg>
+</message_catalog>

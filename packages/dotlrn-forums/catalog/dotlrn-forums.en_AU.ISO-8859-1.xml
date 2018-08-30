@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<message_catalog package_key="dotlrn-forums" locale="en_AU" charset="ISO-8859-1">
+
+  <msg key="administer">administer</msg>
+  <msg key="All_forums">All forums</msg>
+  <msg key="Auto_subscribe_label">Autosubscribe group members</msg>
+  <msg key="by_Date">by Date</msg>
+  <msg key="by_Forum">by Forum</msg>
+  <msg key="Forum">Forum</msg>
+  <msg key="forums_default_name_suffix">Forum</msg>
+  <msg key="lt_Forums_Posting_histor">Forums: Posting history for %user.full_name%</msg>
+  <msg key="lt_There_should_be_only_">There should be only one instance of forums for admin purposes</msg>
+  <msg key="New_Forum">New Forum</msg>
+  <msg key="No_Postings">No Postings.</msg>
+  <msg key="Posted">Posted</msg>
+  <msg key="Posting_History">Posting History</msg>
+  <msg key="Posting_history_for">Posting history for</msg>
+  <msg key="Subject">Subject</msg>
+  <msg key="View">View:</msg>
+</message_catalog>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<message_catalog package_key="dotlrn-forums" locale="nl_NL" charset="ISO-8859-1">
+
+  <msg key="administer">Beheren</msg>
+  <msg key="All_forums">Alle forums</msg>
+  <msg key="Auto_subscribe_label">Groepsleden automatisch inschrijven</msg>
+  <msg key="by_Date">op datum</msg>
+  <msg key="by_Forum">op forum</msg>
+  <msg key="Forum">Forum</msg>
+  <msg key="forums_default_name_suffix">Forum</msg>
+  <msg key="lt_Forums_Posting_histor">Forums: geschiedenis van %user.full_name%</msg>
+  <msg key="lt_There_should_be_only_">Er behoort slechts één instance van forums te zijn voor beheerdoeleinden </msg>
+  <msg key="New_Forum">Nieuw forum</msg>
+  <msg key="No_Postings">Geen plaatsingen.</msg>
+  <msg key="Posted">Geplaatst</msg>
+  <msg key="Posting_History">Plaatsingen in het verleden</msg>
+  <msg key="Posting_history_for">Plaatsingen in het verleden door</msg>
+  <msg key="Subject">Onderwerp</msg>
+  <msg key="View">Bekijk:</msg>
+</message_catalog>

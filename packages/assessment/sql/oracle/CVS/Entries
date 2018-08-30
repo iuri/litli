@@ -1,0 +1,13 @@
+/assessment-actions-create.sql/1.4/Tue Feb 15 17:09:06 2005//Topenacs-5-9-compat
+/assessment-actions-insert.sql/1.5/Mon Oct 27 16:40:55 2014//Topenacs-5-9-compat
+/assessment-actions-package-create.sql/1.9/Mon Oct 27 16:40:55 2014//Topenacs-5-9-compat
+/assessment-checks-create.sql/1.2/Sun Jan 30 14:16:14 2005//Topenacs-5-9-compat
+/assessment-checks-package-create.sql/1.2/Mon Jun 12 02:49:50 2006//Topenacs-5-9-compat
+/assessment-collected-data-create.sql/1.13/Mon Apr 27 15:28:18 2015//Topenacs-5-9-compat
+/assessment-create.sql/1.6/Tue Feb 15 17:09:06 2005//Topenacs-5-9-compat
+/assessment-drop.sql/1.4/Sun Jan 30 14:16:14 2005//Topenacs-5-9-compat
+/assessment-item-create.sql/1.7/Mon Apr 27 15:28:19 2015//Topenacs-5-9-compat
+/assessment-item-type-create.sql/1.6/Tue May 15 20:14:16 2007//Topenacs-5-9-compat
+/assessment-section-create.sql/1.9/Tue Sep  9 17:28:22 2008//Topenacs-5-9-compat
+/assessment-types-create.sql/1.5/Mon Apr 27 15:28:19 2015//Topenacs-5-9-compat
+D

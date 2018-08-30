@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<message_catalog package_key="dotlrn-portlet" locale="sh_HR" charset="utf-8">
+
+  <msg key="lt_No_subcomm_pretty_plu">Bez %subcomm_pretty_plural%</msg>
+  <msg key="members_staff_portlet_pretty_name">Lista osoblja</msg>
+</message_catalog>

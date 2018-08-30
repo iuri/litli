@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<message_catalog package_key="dotlrn-forums" locale="zh_CN" charset="utf-8">
+
+  <msg key="administer">管理</msg>
+  <msg key="All_forums">全部论坛</msg>
+  <msg key="Auto_subscribe_label">自动订阅组成员</msg>
+  <msg key="by_Date">按日期</msg>
+  <msg key="by_Forum">按论坛</msg>
+  <msg key="Forum">论坛</msg>
+  <msg key="forums_default_name_suffix">论坛</msg>
+  <msg key="lt_Forums_Posting_histor">论坛：%user.full_name%的发布历史记录</msg>
+  <msg key="lt_There_should_be_only_">只有一个管理论坛。</msg>
+  <msg key="New_Forum">新论坛</msg>
+  <msg key="No_Postings">没有帖子</msg>
+  <msg key="Posted">已发布</msg>
+  <msg key="Posting_History">发布帖子历史记录</msg>
+  <msg key="Posting_history_for">发布帖子历史记录</msg>
+  <msg key="Subject">主题</msg>
+  <msg key="View">查看：</msg>
+</message_catalog>

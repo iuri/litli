@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<message_catalog package_key="dotlrn" locale="ind_ID" charset="utf-8">
+
+  <msg key="A_copy_of">salinan dari</msg>
+  <msg key="Access">Akses</msg>
+  <msg key="Access_Level">Tingkat Akses</msg>
+  <msg key="Access_level">Tingkat Akses:</msg>
+  <msg key="Action">Aksi</msg>
+  <msg key="actions">Aksi-Aksi</msg>
+</message_catalog>

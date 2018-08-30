@@ -1,0 +1,11 @@
+/acs-events-create.sql/1.20/Mon Oct 27 16:39:34 2014//Topenacs-5-9-compat
+/acs-events-drop.sql/1.2/Mon Nov  8 13:10:35 2010//Topenacs-5-9-compat
+/activity-create.sql/1.7/Sat Mar 30 13:00:29 2013//Topenacs-5-9-compat
+/activity-drop.sql/1.1/Fri Jul 13 02:45:01 2001//Topenacs-5-9-compat
+/oracle-compat-create.sql/1.5.4.1/Fri Apr 21 15:50:24 2017//Topenacs-5-9-compat
+/oracle-compat-drop.sql/1.2/Sat May 17 09:46:57 2003//Topenacs-5-9-compat
+/recurrence-create.sql/1.4/Sat Mar 30 13:00:29 2013//Topenacs-5-9-compat
+/recurrence-drop.sql/1.2/Mon Nov  8 13:10:35 2010//Topenacs-5-9-compat
+/timespan-create.sql/1.6.4.1/Fri Apr 21 15:50:24 2017//Topenacs-5-9-compat
+/timespan-drop.sql/1.2/Mon Nov  8 13:10:35 2010//Topenacs-5-9-compat
+D

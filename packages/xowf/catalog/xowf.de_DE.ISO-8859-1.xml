@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<message_catalog package_key="xowf" locale="de_DE" charset="ISO-8859-1">
+
+  <msg key="Exercise">Beispiel</msg>
+  <msg key="Grading-Schema">Bewertungsverfahren</msg>
+  <msg key="Minutes">Minuten</msg>
+  <msg key="alternative">Alternative</msg>
+  <msg key="answer_correct">Richtig!</msg>
+  <msg key="answer_incorrect">Falsch.</msg>
+  <msg key="columns">Spalten</msg>
+  <msg key="correct">Richtig?</msg>
+  <msg key="exercise-text">Angabetext</msg>
+  <msg key="exercise_mc">Multiple-Choice-Übung</msg>
+  <msg key="exercise_ot">Übung mit offenem Text</msg>
+  <msg key="exercise_sc">Single-Choice-Übung</msg>
+  <msg key="feedback">Feedback</msg>
+  <msg key="feedback_correct">Feedback richtig</msg>
+  <msg key="feedback_incorrect">Feedback falsch</msg>
+  <msg key="lines">Zeilen</msg>
+  <msg key="menu-New-Extra-Workflow">Neuer Workflow</msg>
+</message_catalog>

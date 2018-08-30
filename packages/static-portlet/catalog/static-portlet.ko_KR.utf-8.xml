@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<message_catalog package_key="static-portlet" locale="ko_KR" charset="utf-8">
+
+  <msg key="admin_portlet_element_pretty_name">주문 포틀릿</msg>
+  <msg key="admin_portlet_pretty_name">주문 포틀릿 관리</msg>
+  <msg key="Content">내용</msg>
+  <msg key="Control_Panel">제어판</msg>
+  <msg key="Edit_content_element">내용 요소 수정</msg>
+  <msg key="lt_Delete_element_pretty">%element_pretty_name% %pretty_name% 삭제</msg>
+  <msg key="lt_Editing_element_prett">%element_pretty_name% %pretty_name% 수정하기</msg>
+  <msg key="lt_strongNotestrong_You_">&lt;strong&gt;주&lt;/strong&gt;: 내용영역(Content area)에서 텍스트나 HTML을 사용할 수 있습니다.</msg>
+  <msg key="lt_Use_this_form_to_crea">새로운 %element_pretty_name%을 생성하기 위해 이 폼을 사용하세요. %element_pretty_name%는 생성되고 %portal_name% 포탈의 처음 페이지에 자동적으로 위치하게 될 것입니다. %element_pretty_name%를 이동하기 위해서는 %control_panel_text%으로 가서 레이아웃 개별화를 선택하시오.</msg>
+  <msg key="Name">이름</msg>
+  <msg key="New">새로운</msg>
+  <msg key="new_static_admin_portlet">새로운 %element_pretty_name% </msg>
+</message_catalog>

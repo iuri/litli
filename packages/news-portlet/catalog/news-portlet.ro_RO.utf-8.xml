@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<message_catalog package_key="news-portlet" locale="ro_RO" charset="utf-8">
+
+  <msg key="Add_a_News_Item">Adaugă o ştire</msg>
+  <msg key="admin_pretty_name">Administrare Ştiri</msg>
+  <msg key="Manage_News">Administrează Ştiri</msg>
+  <msg key="No_News">Nu sunt ştiri</msg>
+  <msg key="pretty_name">Ştiri</msg>
+  <msg key="Read_more">Citeşte...</msg>
+</message_catalog>

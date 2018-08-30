@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<message_catalog package_key="static-portlet" locale="ch_zh" charset="utf-8">
+
+  <msg key="admin_portlet_element_pretty_name">用户入口</msg>
+  <msg key="admin_portlet_pretty_name">用户入口管理</msg>
+  <msg key="Content">内容</msg>
+  <msg key="Control_Panel">控制面板</msg>
+  <msg key="Edit_content_element">编辑内容项</msg>
+  <msg key="lt_Delete_element_pretty">删除%element_pretty_name% %pretty_name%</msg>
+  <msg key="lt_Editing_element_prett">编辑%element_pretty_name% %pretty_name%</msg>
+  <msg key="lt_strongNotestrong_You_">&lt;strong&gt;注意&lt;/strong&gt;：在内容区域可使用普通文本格式或HTML格式。</msg>
+  <msg key="lt_Use_this_form_to_crea">用此表格可创建新的%element_pretty_name%。%element_pretty_name%将创建并自动放入到%portal_name%入口的第一页。进入%control_panel_text%并选择“定制设计”可移动%element_pretty_name%。</msg>
+  <msg key="Name">名称</msg>
+  <msg key="New">新的</msg>
+  <msg key="new_static_admin_portlet">新%element_pretty_name%</msg>
+</message_catalog>

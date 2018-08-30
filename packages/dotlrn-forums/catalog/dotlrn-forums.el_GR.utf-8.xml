@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<message_catalog package_key="dotlrn-forums" locale="el_GR" charset="utf-8">
+
+  <msg key="administer">διαχειρίζομαι</msg>
+  <msg key="All_forums">Όλα τα forum</msg>
+  <msg key="all_Forums">Όλα τα forum</msg>
+  <msg key="Auto_subscribe_label">Αυτόματη εγγραφή μελών ομάδας</msg>
+  <msg key="autosubscribe_members">Αυτόματη εγγραφή μελών στο %forums.name%</msg>
+  <msg key="by_Date">κατά ημερομηνία</msg>
+  <msg key="by_Forum">κατά forum</msg>
+  <msg key="Create_New_Forum">Δημιουργία νέου forum</msg>
+  <msg key="display_all_forums">Προβολή όλων των forums</msg>
+  <msg key="do_not_autosubscribe_members">Να μην εγγράφονται αυτόματα μέλη στο %forums.name%</msg>
+  <msg key="Forum">Forum</msg>
+  <msg key="forums_default_name_suffix">Forum</msg>
+  <msg key="goto_forums_admin">Μετάβαση στη δαχείριση forums</msg>
+  <msg key="goto_forums_name">Μετάβαση στο %forums.name%</msg>
+  <msg key="lt_Forums_Posting_histor">Forums: Αποστολή ιστορικού για τον %user.full_name% </msg>
+  <msg key="lt_There_should_be_only_">Θα πρέπει να υπάρχει μόνο ένα στιγμιότυπο των forums για σκοπούς διαχείρισης</msg>
+  <msg key="New_Forum">Νέο forum</msg>
+  <msg key="No_Postings">Καμία αποστολή.</msg>
+  <msg key="Posted">Απεσταλμένο</msg>
+  <msg key="Posting_History">Ιστορικό αποστολών</msg>
+  <msg key="Posting_history_for">Ιστορικό αποστολών για </msg>
+  <msg key="Subject">Θέμα</msg>
+  <msg key="View">Προβολή:</msg>
+</message_catalog>

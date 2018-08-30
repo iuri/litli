@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<message_catalog package_key="dotlrn-static" locale="ch_zh" charset="utf-8">
+
+  <msg key="class_info_portlet_pretty_name">班级信息 </msg>
+  <msg key="community_info_portlet_pretty_name">团体信息</msg>
+  <msg key="Static_HTML_Data">静态(HTML)数据</msg>
+  <msg key="subcommunity_info_portlet_pretty_name">小组信息</msg>
+</message_catalog>

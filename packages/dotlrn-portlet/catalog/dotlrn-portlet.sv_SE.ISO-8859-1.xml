@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<message_catalog package_key="dotlrn-portlet" locale="sv_SE" charset="ISO-8859-1">
+
+  <msg key="admin_pretty_name">Gruppadministration</msg>
+  <msg key="Administer">Administrera</msg>
+  <msg key="All_members">Alla medlemmar</msg>
+  <msg key="Archive">Arkivera</msg>
+  <msg key="Archive_this_group">Arkivera denna grupp</msg>
+  <msg key="change_name_etc">Ändra namn, beskrivning, etc.</msg>
+  <msg key="Closed">Stängd</msg>
+  <msg key="Copy_this_group">Kopiera denna grupp</msg>
+  <msg key="edit_gr_props">Redigera gruppens egenskaper</msg>
+  <msg key="Email_Members">E-posta medlemmar</msg>
+  <msg key="lt_AddRemove_pretty_name">Lägg till/ta bort medlemmar av %pretty_name%</msg>
+  <msg key="lt_can_send_bulk_mail_to">kan massutskicka e-post till denna grupp</msg>
+  <msg key="lt_Change_Bulk_Mail_Poli">Ändra policyn för massutskick</msg>
+  <msg key="lt_Change_Enrollment_Pol">Ändra policyn för inskrivning</msg>
+  <msg key="lt_Create_a_new_Limited_">Skapa en ny användare med begränsad åtkomst</msg>
+  <msg key="lt_Create_a_new_Limited__1">Skapa en ny användare med begränsad åtkomst</msg>
+  <msg key="lt_Customize_Portal_Layo">Skräddarsy portalens layout</msg>
+  <msg key="lt_Guests_Can_View_Membership_Info">Ska gästanvändare kunna se information om gruppmedlemskap?</msg>
+  <msg key="lt_No_subcomm_pretty_plu">Inga %subcomm_pretty_plural%</msg>
+  <msg key="lt_Only_use_this_to_crea">Använd detta endast för att skapa ett konto för korsregistrerade studenter som inte har konton från tidigare kurser.</msg>
+  <msg key="lt_Only_use_this_to_crea_1">Använd detta endast för att skapa ett konto för icke-affilierade studenter som inte har konton från tidigare kurser. Information om andra medlemmar i gruppen kommer inte att vara tillgängliga för användaren.</msg>
+  <msg key="lt_Sorry_this_functional">Tyvärr, denna funktionalitet är ej tillgänglig för gäster</msg>
+  <msg key="lt_This_group_is_archive">Denna grupp är arkiverad</msg>
+  <msg key="Manage_Applets">Hantera applets</msg>
+  <msg key="Manage_Membership">Hantera medlemsskap</msg>
+  <msg key="Member_List">Medlemsförteckning</msg>
+  <msg key="members_portlet_pretty_name">Medlemmar</msg>
+  <msg key="members_staff_portlet_pretty_name">Personalförteckning</msg>
+  <msg key="Needs_Approval">Behöver godkännande</msg>
+  <msg key="New_sub_pretty_name">Ny %sub_pretty_name%</msg>
+  <msg key="no_course_assistant_members">Inga %course_assistant_role_pretty_plural% </msg>
+  <msg key="no_instructor_members">Inga %instructor_role_pretty_plural%</msg>
+  <msg key="no_teaching_assistant_members">Inga %teaching_assistant_role_pretty_plural%</msg>
+  <msg key="Only_admins">Endast administratörer</msg>
+  <msg key="Open">Öppna</msg>
+  <msg key="Sort">Sortera</msg>
+  <msg key="Sortmanage">Sortera/hantera</msg>
+</message_catalog>

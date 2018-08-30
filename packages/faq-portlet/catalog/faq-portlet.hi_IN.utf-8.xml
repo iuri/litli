@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<message_catalog package_key="faq-portlet" locale="hi_IN" charset="utf-8">
+
+  <msg key="admin_pretty_name">एफ़ ए क्यु प्रबन्ध</msg>
+  <msg key="Disable">अशकतता </msg>
+  <msg key="Disabled">अशकतता </msg>
+  <msg key="Enable">समर्थ करना</msg>
+  <msg key="group">समूह </msg>
+  <msg key="name">नाम </msg>
+  <msg key="new_faq">नया FAQ</msg>
+  <msg key="no_faqs">FAQs नही </msg>
+  <msg key="one_admin_faq">प्रशासन हेतु केवल एक ही एफ़ ए कयु का प्रयोग करे</msg>
+  <msg key="pretty_name">फ़्रिक्वेन्टली आक्स्ड क्वेसचनस (एफ़ ए क्यु'स)</msg>
+</message_catalog>

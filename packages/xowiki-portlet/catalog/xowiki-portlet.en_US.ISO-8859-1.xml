@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<message_catalog package_key="xowiki-portlet" package_version="2.0" locale="en_US" charset="ISO-8859-1">
+
+  <msg key="admin_portlet_element_pretty_name">Xowiki Portlet</msg>
+  <msg key="admin_portlet_pretty_name">Xowiki Portlet Administration</msg>
+  <msg key="all-pages-used">All pages are used, no unused pages available</msg>
+  <msg key="community-wiki">Community Wiki
+</msg>
+  <msg key="manage-pages">Manage Pages of</msg>
+  <msg key="Name">Name</msg>
+  <msg key="New">New</msg>
+  <msg key="new_xowiki_admin_portlet">New %element_pretty_name%</msg>
+  <msg key="remove-portlet">Remove Portlet</msg>
+</message_catalog>

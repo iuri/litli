@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<message_catalog package_key="dotlrn-portlet" locale="pt_BR" charset="ISO-8859-1">
+
+  <msg key="admin_pretty_name">Administração do Grupo</msg>
+  <msg key="Administer">Administrar</msg>
+  <msg key="Administrator_FAQ">FAQ do Administrador</msg>
+  <msg key="All_members">Todos os membros</msg>
+  <msg key="Archive">Arquivo</msg>
+  <msg key="Archive_this_group">Arquivar este grupo</msg>
+  <msg key="change_name_etc">Alterar nome, descrição, etc.</msg>
+  <msg key="Change_term">Mude o termo de %term_name% para %pretty_name%</msg>
+  <msg key="Closed">Fechado</msg>
+  <msg key="Copy_this_group">Copiar este grupo</msg>
+  <msg key="Disabled">Desativado</msg>
+  <msg key="edit_gr_props">Editar Propriedades do Grupo</msg>
+  <msg key="Edit_Welcome_Message">Editar Mensagem de Boas-vindas</msg>
+  <msg key="Email_Members">Enviar Correio para Membros</msg>
+  <msg key="Enabled">Ativado</msg>
+  <msg key="lt_AddRemove_pretty_name">Adicionar/Remover membros de %pretty_name%</msg>
+  <msg key="lt_can_send_bulk_mail_to">pode enviar correio massivo para esta comunidade</msg>
+  <msg key="lt_Change_Bulk_Mail_Poli">Modificar Política de Correio Massivo</msg>
+  <msg key="lt_Change_Enrollment_Pol">Modificar Política de Registro</msg>
+  <msg key="lt_Change_Name_Portlet">Mudar o Nome do Portlet</msg>
+  <msg key="lt_Create_a_new_Limited_">Criar um novo usuário de Acesso Limitado</msg>
+  <msg key="lt_Create_a_new_Limited__1">Criar um novo usuário Convidado de Acesso Limitado</msg>
+  <msg key="lt_Create_Welcome_Messag">Criar Mensagem de Boas-vindas</msg>
+  <msg key="lt_Customize_Portal_Layo">Personalizar Disposição</msg>
+  <msg key="lt_Guests_Can_View_Membership_Info">Exibir informações de adesão para convidados?</msg>
+  <msg key="lt_No_community_was_spec">Nenhuma comunidade foi especificada</msg>
+  <msg key="lt_No_subcomm_pretty_plu">Não há %subcomm_pretty_plural%</msg>
+  <msg key="lt_Only_use_this_to_crea">Use isto só para criar uma conta para estudantes com registro cruzado que não tenham conta de uma aula prévia.</msg>
+  <msg key="lt_Only_use_this_to_crea_1">Use isto só para criar uma conta para estudantes não-filiados que não tenham ainda conta. Este usuário não disporá de informação sobre o resto de membros desta comunidade.</msg>
+  <msg key="lt_Sorry_this_functional">Lamentamos imenso, esta funcionalidade não está disponível para convidados</msg>
+  <msg key="lt_This_group_is_archive">Este grupo está arquivado</msg>
+  <msg key="Manage_Applets">Gerenciar Aplicativos (Applets)</msg>
+  <msg key="Manage_Membership">Gerenciar Associados</msg>
+  <msg key="Member_List">Lista de Membros</msg>
+  <msg key="members_portlet_pretty_name">Membros</msg>
+  <msg key="members_staff_portlet_pretty_name">Membros da Equipe</msg>
+  <msg key="Needs_Approval">Necessita Aprovação</msg>
+  <msg key="New_sub_pretty_name">Novo(a) %sub_pretty_name%</msg>
+  <msg key="no_course_assistant_members">Não há %course_assistant_role_pretty_plural%</msg>
+  <msg key="no_instructor_members">Não há %instructor_role_pretty_plural%</msg>
+  <msg key="no_teaching_assistant_members">Não há %teaching_assistant_role_pretty_plural%</msg>
+  <msg key="Only_admins">Só para admins</msg>
+  <msg key="Open">Aberto</msg>
+  <msg key="Sort">Ordenar</msg>
+  <msg key="Sortmanage">Ordenar/gerenciar</msg>
+</message_catalog>

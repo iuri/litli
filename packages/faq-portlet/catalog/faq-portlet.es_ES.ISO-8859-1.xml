@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<message_catalog package_key="faq-portlet" locale="es_ES" charset="ISO-8859-1">
+
+  <msg key="admin_pretty_name">Administración de FAQ</msg>
+  <msg key="create_new_faq">Crear una nueva FAQ</msg>
+  <msg key="Disable">Desactivar</msg>
+  <msg key="disable_faqs_faq_name">Desactivar %faqs.faq_name%</msg>
+  <msg key="Disabled">Desactivado</msg>
+  <msg key="display_q_and_a">Mostrar preguntas y respuestas</msg>
+  <msg key="Enable">Activar</msg>
+  <msg key="enable_faqs_faq_name">Activar %faqs.faq_name%</msg>
+  <msg key="goto_faq_name">Ir a la FAQ %faq_name%</msg>
+  <msg key="goto_faqs_faq_name">Ir a la FAQ %faqs.faq_name%</msg>
+  <msg key="goto_faqs_faq_name_admin">Ir a la administración de %faqs.faq_name%</msg>
+  <msg key="group">Grupo</msg>
+  <msg key="name">Nombre</msg>
+  <msg key="new_faq">FAQ nueva</msg>
+  <msg key="no_faqs">Sin FAQs</msg>
+  <msg key="one_admin_faq">Debe existir una sóla instancia de FAQ en cuanto a administración</msg>
+  <msg key="pretty_name">Preguntas más frecuentes (FAQ)</msg>
+</message_catalog>

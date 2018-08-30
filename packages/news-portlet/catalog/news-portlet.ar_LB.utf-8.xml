@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<message_catalog package_key="news-portlet" locale="ar_LB" charset="utf-8">
+
+  <msg key="Add_a_News_Item">أضفْ خبراً</msg>
+  <msg key="admin_pretty_name">إدارة الأخبار</msg>
+  <msg key="Manage_News">أدرْ الأخبارَ</msg>
+  <msg key="No_News">لا أخبار</msg>
+  <msg key="pretty_name">الأخبار</msg>
+  <msg key="Read_more">إقرأ أكثر</msg>
+</message_catalog>

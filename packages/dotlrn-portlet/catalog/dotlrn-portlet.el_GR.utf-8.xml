@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<message_catalog package_key="dotlrn-portlet" locale="el_GR" charset="utf-8">
+
+  <msg key="admin_pretty_name">Διαχείριση ομάδας</msg>
+  <msg key="Administer">Διαχείριση</msg>
+  <msg key="Administrator_FAQ">Συχνές ερωτήσεις και απαντήσεις διαχειριστή</msg>
+  <msg key="All_members">Όλα τα μέλη</msg>
+  <msg key="Archive">Δημιουργία αρχείου</msg>
+  <msg key="Archive_this_group">Δημιουργία αρχείου ομάδας</msg>
+  <msg key="change_bm_policy_to_all_members">Αλλαγή πολιτικής μαζικών mail για δυνατότητα από όλα τα μέλη </msg>
+  <msg key="change_bm_policy_to_only_admins">Αλλαγή πολιτικής μαζικών mail για δυνατότητα μόνο για τους διαχειριστές </msg>
+  <msg key="change_name_etc">Αλλαγή ονόματος, περιγραφής, κλπ.</msg>
+  <msg key="Change_term">Αλλαγή ορισμού για %pretty_name% από %term_name% 
+</msg>
+  <msg key="Closed">Κλειστή</msg>
+  <msg key="Copy_this_group">Αντιγραφή ομάδας</msg>
+  <msg key="disable_welcome_message">Απενεργοποίηση μηνύματος υποδοχής</msg>
+  <msg key="Disabled">Απενεργοποιημένο</msg>
+  <msg key="edit_gr_props">Επεξεργασία ιδιοτήτων ομάδας</msg>
+  <msg key="Edit_Welcome_Message">Επεξεργασία μηνύματος υποδοχής</msg>
+  <msg key="Email_Members">Αποστολή email στα μέλη</msg>
+  <msg key="enable_welcome_message">Ενεργοποίηση μηνύματος υποδοχής</msg>
+  <msg key="Enabled">Ενεργοποιημένο</msg>
+  <msg key="goto_admin_pretty_name">Μετάβαση στο %admin_pretty_name%</msg>
+  <msg key="goto_Administrator_FAQ">Μετάβαση στις συχνές ερωτήσεις και απαντήσεις διαχείρισης</msg>
+  <msg key="goto_Manage_Membership">Μετάβαση στη σελίδα διαχείρισης μελών</msg>
+  <msg key="goto_subgroups_pretty_name">Μετάβαση στην υποομάδα %subgroups.pretty_name%</msg>
+  <msg key="lt_AddRemove_pretty_name">Προσθήκη/Διαγραφή %pretty_name% μελών</msg>
+  <msg key="lt_can_send_bulk_mail_to">δυνατότητα αποστολής μαζικών email σε αυτή την κοινότητα.</msg>
+  <msg key="lt_Change_Bulk_Mail_Poli">Αλλαγή πολιτικής μαζικών email</msg>
+  <msg key="lt_Change_Enrollment_Pol">Αλλαγή πολιτικής εγγραφών</msg>
+  <msg key="lt_Change_Name_Portlet">Αλλαγή ονόματος πύλης</msg>
+  <msg key="lt_Create_a_new_Limited_">Δημιουργία νέου χρήστη περιορισμένης πρόσβασης </msg>
+  <msg key="lt_Create_a_new_Limited__1">Δημιουργία νέου φιλοξενούμενου χρήστη περιορισμένης πρόσβασης </msg>
+  <msg key="lt_Create_Welcome_Messag">Δημιουργία μηνύματος υποδοχής</msg>
+  <msg key="lt_Customize_Portal_Layo">Προσωπιή επιλογή εμφάνισης πύλης</msg>
+  <msg key="lt_Guests_Can_View_Membership_Info">Να μπορούν οι φιλοξενούμενοι χρήστες να βλέπουν πληροφορίες ομάδων μελών;</msg>
+  <msg key="lt_No_community_was_spec">Δεν έχει οριστεί κάποια κοινότητα</msg>
+  <msg key="lt_No_subcomm_pretty_plu">Δεν υπάρχει %subcomm_pretty_plural%</msg>
+  <msg key="lt_Only_use_this_to_crea">Χρησιμοποιήστε αυτό μόνο για τη δημιουργία ενός λογαριασμού για πολλαπλά εγγεγραμένους εκπαιδευόμενους που δεν διαθέτουν λογαρισμούς από μια προηγούμενη τάξη. </msg>
+  <msg key="lt_Only_use_this_to_crea_1">Χρησιμοποιήστε αυτό μόνο για τη δημιουργία λογαριασμών για χρήστες μη μέλη, οι οποίοι δεν διαθέτουν ήδη κάποιο λογαριασμό. Πληροφορίες για τα υπόλοιπα μέλη της κοινότητας δεν θα είναι διαθέσιμες για αυτούς τους χρήστες. </msg>
+  <msg key="lt_Sorry_this_functional">Μας συγχωρείτε, η λειτουργία αυτή δεν είναι διαθέσιμη σε φιλοξενούμενους χρήστες</msg>
+  <msg key="lt_This_group_is_archive">Έχει δημιουργηθεί αρείο για αυτή την ομάδα</msg>
+  <msg key="Manage_Applets">Διαχείριση εφαρμογών</msg>
+  <msg key="Manage_Membership">Διαχείριση μελών</msg>
+  <msg key="Member_List">Λίστα μελών</msg>
+  <msg key="members_portlet_pretty_name">Μέλη</msg>
+  <msg key="members_staff_portlet_pretty_name">Λίστα προσωπικού</msg>
+  <msg key="Needs_Approval">Απαιτείται έγκριση</msg>
+  <msg key="New_sub_pretty_name">Νέο %sub_pretty_name%</msg>
+  <msg key="no_course_assistant_members">Δεν υπάρχει %course_assistant_role_pretty_plural%</msg>
+  <msg key="no_instructor_members">Δεν υπάρχει %instructor_role_pretty_plural%</msg>
+  <msg key="no_teaching_assistant_members">Δεν υπάρχει %teaching_assistant_role_pretty_plural%</msg>
+  <msg key="Only_admins">Μόνο διαχειριστές</msg>
+  <msg key="Open">Ανοιχτή</msg>
+  <msg key="set_policy_approval">Αλλαγή της πολιτικής εγγραφών σε απαιτείται έγκριση</msg>
+  <msg key="set_policy_closed">Αλλαγή της πολιτικής εγγραφών σε κλειστή</msg>
+  <msg key="set_policy_open">Αλλαγή της πολιτικής εγγραφών σε ανοιχτή</msg>
+  <msg key="Size">Μέγεθος:</msg>
+  <msg key="Sort">Ταξινόμιση</msg>
+  <msg key="Sortmanage">Ταξινόμιση/διχείριση</msg>
+  <msg key="Toggle_privacy_policy_to_no">Αλλαγή της πολιτικής ασφάλειας πληροφοριών έτσι ώστε οι φιλοξενούμενοι χρήστες να μην έχουν πρόσβαση στις πληροφορίες μελών.</msg>
+  <msg key="Toggle_privacy_policy_to_yes">Αλλαγή της πολιτικής ασφάλειας πληροφοριών έτσι ώστε οι φιλοξενούμενοι χρήστες να έχουν πρόσβαση στις πληροφορίες μελών.</msg>
+</message_catalog>

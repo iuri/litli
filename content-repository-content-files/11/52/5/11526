@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>Entertainment </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.1.2 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript">$exe_i18n={previous:"Previous",next:"Next",show:"Show",hide:"Hide",showFeedback:"Show Feedback",hideFeedback:"Hide Feedback",correct:"Correct",incorrect:"Incorrect",menu:"Menu",print:"Print"}</script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Skip navigation</a></p>
+<section id="emptyHeader"></section>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Community Partners</a></li>
+   <li class="current-page-parent"><a href="ministers_alliance.html" class="current-page-parent daddy">Ministers Alliance</a>
+   <ul>
+      <li><a href="community_services.html" class="no-ch">Community Services</a></li>
+      <li><a href="disabilities.html" class="no-ch">Disabilities</a></li>
+      <li><a href="drug_and_alcohol.html" class="no-ch">Drug and Alcohol</a></li>
+      <li><a href="health__human_resources.html" class="no-ch">Health &amp; Human Resources</a></li>
+      <li><a href="education_information_communication_technology.html" class="no-ch">Education Information Communication Technology</a></li>
+      <li><a href="seniors.html" class="no-ch">Seniors</a></li>
+      <li class="current-page-parent"><a href="social.html" class="current-page-parent daddy">Social</a>
+      <ul>
+         <li><a href="justice.html" class="no-ch">Justice</a></li>
+         <li id="active"><a href="entertainment.html" class="active no-ch">Entertainment</a></li>
+      </ul>
+      </li>
+      <li><a href="youth.html" class="no-ch">Youth</a></li>
+      <li><a href="childrens_services.html" class="no-ch">Childrens Services</a></li>
+      <li><a href="departments.html" class="daddy">Departments</a>
+      <ul class="other-section">
+         <li><a href="education.html" class="no-ch">Education</a></li>
+         <li><a href="parks__recreation.html" class="no-ch">Parks &amp; Recreation</a></li>
+         <li><a href="probation.html" class="no-ch">Probation</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="justice.html" class="prev"><span><span>&laquo; </span>Previous</span></a> <span class="sep">| </span><a href="youth.html" class="next"><span>Next<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">Entertainment</h1></header>
+<article class="iDevice_wrapper FreeTextIdevice" id="id15">
+<div class="iDevice emphasis0">
+<div id="ta15_85" class="block iDevice_content">
+<p style="background-attachment: scroll; background-clip: border-box; background-color: transparent; background-image: none; background-origin: padding-box; background-position-x: 0%; background-position-y: 0%; background-repeat: repeat; background-size: auto; color: #333333; font-family: Arial,Verdana,Helvetica,sans-serif; font-size: 13.13px; font-size-adjust: none; font-stretch: 100%; font-style: normal; font-variant: normal; font-weight: 400; letter-spacing: normal; line-height: 19.69px; orphans: 2; text-align: left; text-decoration: none; text-indent: 0px; text-transform: none; -webkit-text-stroke-width: 0px; white-space: normal; word-spacing: 0px; padding: 0px; margin: 13.13px 0px 13.13px 0px;">Social-Entertainment</p>
+<ol style="background-attachment: scroll; background-clip: border-box; background-color: transparent; background-image: none; background-origin: padding-box; background-position-x: 0%; background-position-y: 0%; background-repeat: repeat; background-size: auto; color: #333333; font-family: Arial,Verdana,Helvetica,sans-serif; font-size: 13.13px; font-size-adjust: none; font-stretch: 100%; font-style: normal; font-variant: normal; font-weight: 400; letter-spacing: normal; line-height: 19.69px; orphans: 2; text-align: left; text-decoration: none; text-indent: 0px; text-transform: none; -webkit-text-stroke-width: 0px; white-space: normal; word-spacing: 0px; padding: 0px 0px 0px 40px; margin: 13.13px 0px 13.13px 0px;">
+<li style="list-style-position: outside;">Music Associations, Agencies and Programs</li>
+<li style="list-style-position: outside;">Community Programs for the Arts</li>
+<li style="list-style-position: outside;">Music Cafe's</li>
+<li style="list-style-position: outside;">Social Clubs- community meeting places</li>
+<li style="list-style-position: outside;">Bike Clubs</li>
+</ol>
+</div>
+</div>
+</article>
+<div id="packageLicense" class="cc cc-by-sa">
+<p><span>Licensed under the</span> <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution Share Alike License 4.0</a></p>
+</div>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="justice.html" class="prev"><span><span>&laquo; </span>Previous</span></a> <span class="sep">| </span><a href="youth.html" class="next"><span>Next<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="my_js.js"></script></body></html>

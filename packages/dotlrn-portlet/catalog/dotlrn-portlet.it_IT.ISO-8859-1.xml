@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<message_catalog package_key="dotlrn-portlet" locale="it_IT" charset="ISO-8859-1">
+
+  <msg key="admin_pretty_name">Amministrazione del gruppo</msg>
+  <msg key="Administer">Amministra</msg>
+  <msg key="All_members">Tutti i membri</msg>
+  <msg key="Archive">Archivio</msg>
+  <msg key="Archive_this_group">Archivia questo gruppo</msg>
+  <msg key="change_name_etc">Cambia nome, descrizione, ecc.</msg>
+  <msg key="Closed">Chiuso</msg>
+  <msg key="Copy_this_group">Copia questo gruppo</msg>
+  <msg key="edit_gr_props">Modifica le Proprietà del Gruppo</msg>
+  <msg key="Email_Members">Invia un email ai membri</msg>
+  <msg key="lt_AddRemove_pretty_name">Aggiungi/Rimuovi membri di %pretty_name%</msg>
+  <msg key="lt_can_send_bulk_mail_to">può inviare email di massa a questa comunità</msg>
+  <msg key="lt_Change_Bulk_Mail_Poli">Cambia la politica di invio di massa</msg>
+  <msg key="lt_Change_Enrollment_Pol">Cambia la politica di arruolamento</msg>
+  <msg key="lt_Create_a_new_Limited_">Crea un nuovo utente con accesso limitato</msg>
+  <msg key="lt_Create_a_new_Limited__1">Crea un nuovo utente ospite con accesso limitato</msg>
+  <msg key="lt_Customize_Portal_Layo">Personalizza l'impaginazione degli elementi del portale</msg>
+  <msg key="lt_Guests_Can_View_Membership_Info">Può un utente vedere informazione sulla appartenenza ai gruppi ?</msg>
+  <msg key="lt_No_subcomm_pretty_plu">Nessun sottogruppo</msg>
+  <msg key="lt_Only_use_this_to_crea">Usa questa opzione solo per creare un'account per studenti registrati altrove che non hanno account in classi precedenti.</msg>
+  <msg key="lt_Only_use_this_to_crea_1">Usa questa opzione solo per creare account per utenti non affiliati che non sono ancora registrati. Le informazioni riguardo i membri di questa comunità non saranno disponibili agli altri utenti.</msg>
+  <msg key="lt_Sorry_this_functional">Spiacente, questa funzionalità non è disponibile per gli ospiti.</msg>
+  <msg key="lt_This_group_is_archive">Questo gruppo è archiviato</msg>
+  <msg key="Manage_Applets">Amministra le applet</msg>
+  <msg key="Manage_Membership">Amministra l'associazione</msg>
+  <msg key="Member_List">Elenco dei membri</msg>
+  <msg key="members_portlet_pretty_name">Membri</msg>
+  <msg key="members_staff_portlet_pretty_name">Elenco dei docenti</msg>
+  <msg key="Needs_Approval">Richiede Approvazione</msg>
+  <msg key="New_sub_pretty_name">Nuovo %sub_pretty_name%</msg>
+  <msg key="no_course_assistant_members">Nessun assistente</msg>
+  <msg key="no_instructor_members">Nessun professore</msg>
+  <msg key="no_teaching_assistant_members">Nessun professore associato</msg>
+  <msg key="Only_admins">Sono Amministratori</msg>
+  <msg key="Open">Aperto</msg>
+  <msg key="Sort">Ordina</msg>
+  <msg key="Sortmanage">Ordina/Controlla</msg>
+</message_catalog>

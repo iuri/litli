@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<message_catalog package_key="survey" locale="fa_IR" charset="utf-8">
+
+  <msg key="First_Name">نام</msg>
+  <msg key="No_data_found">داده يافت نشد</msg>
+  <msg key="Not_Found">یافت نشد</msg>
+  <msg key="Question">سوال</msg>
+  <msg key="Questions">سوالات</msg>
+  <msg key="Responses">پاسخها</msg>
+  <msg key="responses">پاسخها</msg>
+  <msg key="Return">برگشت</msg>
+  <msg key="Send_Mail">ارسال نامه</msg>
+  <msg key="Send_mail_to">ارسال نامه به</msg>
+  <msg key="Short_Text">متن کوتاه</msg>
+  <msg key="Size">اندازه</msg>
+  <msg key="Small">کوچک</msg>
+  <msg key="Standard_Dev">انحراف استاندارد</msg>
+  <msg key="Summary">خلاصه</msg>
+  <msg key="Survey_Description">شرح نظرسنجی</msg>
+  <msg key="Survey_Name">نام نظرسنجی:</msg>
+  <msg key="Survey_Name_1">نام نظرسنجی</msg>
+  <msg key="Text">متن</msg>
+  <msg key="True_or_False">درست يا نادرست</msg>
+  <msg key="TrueFalse">درست/نادرست</msg>
+  <msg key="Type_of_Response">نوع پاسخ</msg>
+  <msg key="Warning_1">هشدار:</msg>
+  <msg key="Yes">بلی</msg>
+  <msg key="YesNo">بلی/خير</msg>
+</message_catalog>

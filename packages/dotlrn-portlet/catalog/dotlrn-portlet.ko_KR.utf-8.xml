@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<message_catalog package_key="dotlrn-portlet" locale="ko_KR" charset="utf-8">
+
+  <msg key="admin_pretty_name">그룹 관리</msg>
+  <msg key="Administer">관리자</msg>
+  <msg key="All_members">모든 회원</msg>
+  <msg key="Archive">기록</msg>
+  <msg key="Archive_this_group">이 그룹 기록</msg>
+  <msg key="change_name_etc">이름, 설명등을 변경하시오</msg>
+  <msg key="Closed">폐쇄</msg>
+  <msg key="Copy_this_group">이 그룹 복사</msg>
+  <msg key="edit_gr_props">그룹의 속성을 수정하시오</msg>
+  <msg key="Email_Members">전자우편 회원들</msg>
+  <msg key="lt_AddRemove_pretty_name">추가/삭제 %pretty_name% 회원</msg>
+  <msg key="lt_can_send_bulk_mail_to">이 커뮤니티에 대해 벌크 메일 전송할 수 있습니다.</msg>
+  <msg key="lt_Change_Bulk_Mail_Poli">벌크 메일 정책 변경</msg>
+  <msg key="lt_Change_Enrollment_Pol">등록 정책 변경</msg>
+  <msg key="lt_Create_a_new_Limited_">제한된 접속권한을 갖는 새로운 사용자 생성</msg>
+  <msg key="lt_Create_a_new_Limited__1">제한된 접속권한을 갖는 새로운 손님 사용자 생성</msg>
+  <msg key="lt_Customize_Portal_Layo">포탈 레이아웃 개별화</msg>
+  <msg key="lt_Guests_Can_View_Membership_Info">방문 사용자가 그룹 회원에 관한 정보를 볼 수 있습니까?</msg>
+  <msg key="lt_No_subcomm_pretty_plu">%subcomm_pretty_plural%이 없습니다.</msg>
+  <msg key="lt_Only_use_this_to_crea">단지 이것은 이전의 강의로 부터 계정을 가지지 못한 상호등록 학생을 위한 계정을 생성하는데에만 사용할 수 있습니다.</msg>
+  <msg key="lt_Only_use_this_to_crea_1">단지 이것은 이미 계정을 가지고 있지 않은 미가입 사용자를 위한 계정을 생성하는데에만 사용할 수 있습니다. 이 커뮤니티의 다른 회원에 대한 정보는 이 사용자에게 유효하지 않습니다.</msg>
+  <msg key="lt_Sorry_this_functional">미안합니다. 이 기능은 손님에게는 유효하지 않습니다.</msg>
+  <msg key="lt_This_group_is_archive">이 그룹은 기록되었습니다.</msg>
+  <msg key="Manage_Applets">에플릿 관리</msg>
+  <msg key="Manage_Membership">회원자격 관리</msg>
+  <msg key="Member_List">회원 명단</msg>
+  <msg key="members_portlet_pretty_name">회원</msg>
+  <msg key="members_staff_portlet_pretty_name">스탭 명단</msg>
+  <msg key="Needs_Approval">승인이 필요합니다.</msg>
+  <msg key="New_sub_pretty_name">새로운 %sub_pretty_name% </msg>
+  <msg key="no_course_assistant_members">%course_assistant_role_pretty_plural%가 없습니다.</msg>
+  <msg key="no_instructor_members">%instructor_role_pretty_plural% (이)가 없습니다.</msg>
+  <msg key="no_teaching_assistant_members">%teaching_assistant_role_pretty_plural% (이)가 없습니다.</msg>
+  <msg key="Only_admins">단지 관리</msg>
+  <msg key="Open">열기</msg>
+  <msg key="Sort">정렬</msg>
+  <msg key="Sortmanage">정렬/관리</msg>
+</message_catalog>

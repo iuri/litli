@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<message_catalog package_key="faq-portlet" locale="hu_HU" charset="utf-8">
+
+  <msg key="admin_pretty_name">FGyK Adminisztráció</msg>
+  <msg key="Disable">Letilt</msg>
+  <msg key="Disabled">Letiltott</msg>
+  <msg key="Enable">Engedélyez</msg>
+  <msg key="group">Csoport</msg>
+  <msg key="name">Név</msg>
+  <msg key="new_faq">Új GyFK</msg>
+  <msg key="no_faqs">Nincsenek GyFK-k.</msg>
+  <msg key="one_admin_faq">Adminisztrációs célokra csak egy GyFK példány kellene, hogy legyen</msg>
+  <msg key="pretty_name">Gyakran Feltett Kérdések (GyFK)</msg>
+</message_catalog>

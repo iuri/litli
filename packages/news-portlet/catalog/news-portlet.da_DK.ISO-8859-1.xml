@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<message_catalog package_key="news-portlet" locale="da_DK" charset="ISO-8859-1">
+
+  <msg key="Add_a_News_Item">Tilføj et Nyhedsemne</msg>
+  <msg key="admin_pretty_name">Adminstration af Nyheder</msg>
+  <msg key="Manage_News">Administrér Nyheder</msg>
+  <msg key="No_News">Ingen Nyheder</msg>
+  <msg key="pretty_name">Nyheder</msg>
+  <msg key="Read_more">Læs mere...</msg>
+</message_catalog>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<message_catalog package_key="dotlrn-forums" locale="pl_PL" charset="utf-8">
+
+  <msg key="administer">administruj</msg>
+  <msg key="All_forums">Wszystkie fora</msg>
+  <msg key="all_Forums">Wszystkie Fora</msg>
+  <msg key="Auto_subscribe_label">Zapisz automatycznie członków grupy</msg>
+  <msg key="by_Date">wg. Daty</msg>
+  <msg key="by_Forum">wg. Forum</msg>
+  <msg key="Forum">Forum</msg>
+  <msg key="forums_default_name_suffix">Forum</msg>
+  <msg key="lt_Forums_Posting_histor">Forum: Głosy użytkownika %user.full_name%</msg>
+  <msg key="lt_There_should_be_only_">Powinno być tylko jedno forum do celów administracyjnych.</msg>
+  <msg key="New_Forum">Nowe Forum</msg>
+  <msg key="No_Postings">Brak głosów</msg>
+  <msg key="Posted">Wysłany</msg>
+  <msg key="Posting_History">Historia Dyskusji</msg>
+  <msg key="Posting_history_for">Głosy </msg>
+  <msg key="Subject">Temat</msg>
+  <msg key="View">Widok:</msg>
+</message_catalog>

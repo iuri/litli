@@ -1,0 +1,213 @@
+/*********************************************/
+/*                basic styles               */
+/*********************************************/
+
+body {
+    font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+    voice-family: "\"}\""; voice-family:inherit;
+}
+a:link {
+    text-decoration:none;
+}
+a:visited {
+    text-decoration:none;
+}
+a:hover {
+    text-decoration:underline;
+    background-color: #f3f1e9;
+}
+h1 {
+    color:#cf8a00;
+}
+h2, h3, h4, h5, h6 {
+    color: #222222;
+}
+td, th {
+    padding:2px;
+}
+.bold {
+  font-weight:bold;
+}
+
+/* Main Site Grid */
+div.header {
+    margin-bottom:0.5em;
+}
+div.header .navbar {
+  border:none;
+}
+div.main-content {
+  padding: 0;
+}
+.main-content:after { /*keep div height with floating children*/
+   content: " ";
+   display: block; 
+   height: 0; 
+   clear: both;
+}
+div.footer {
+    text-align:center;
+    font-size: 90%;
+    margin-top: 2em; 
+    clear:both;
+}
+/****** Developer Support *********/
+
+#developer-toolbar input {
+    color:#000;
+}
+
+/****** Navigation *********/
+
+.table-auto {
+    width:auto;
+}
+.main-nav {
+    font-weight: normal;
+    color: #fff;
+    margin-bottom:2px;
+}
+.navbar {
+    border-radius:0;
+}
+.main-nav .navbar-nav > li > a:hover,
+.main-nav .navbar-nav > li > a:focus,
+.main-nav .navbar-nav > li > a:visited {
+    color: #fff;
+}
+.main-nav .navbar-nav > li > a { 
+    color:#fff;
+    padding:15px 13px;
+}
+
+.main-nav .navbar-nav > li.active > a,
+.main-nav .navbar-nav > .active > a, 
+.main-nav .navbar-nav > .active > a:hover, 
+.main-nav .navbar-nav > .active > a:focus {
+    background-color: #fff;
+}
+.main-nav .navbar-toggle:hover, .main-nav .navbar-toggle:focus {
+    background-color:#0495DE;
+}
+.main-nav .navbar-default .navbar-nav > .open > a, 
+.main-nav .navbar-default .navbar-nav > .open > a:hover, 
+.main-nav .navbar-default .navbar-nav > .open > a:focus,
+.main-nav .navbar-default .navbar-nav > .open > a:visited,
+.main-nav .nav .open > a, 
+.main-nav .nav .open > a:hover, 
+.main-nav .nav .open > a:focus,
+.main-nav .nav .open > a:visited {
+    background-color:#fff;
+}
+.main-nav .navbar-nav .open .dropdown-menu {
+    background-color:#fff;
+}
+
+div.searchfield .search {
+    text-align:right;
+    margin-right:5px;
+}
+
+/****** Dimensional List Bootstrap Styling *********/
+
+div.dimensional-list, div.list-inline-filters {
+    border-bottom:1px solid #000;
+    padding:5px;
+    margin-bottom:10px;
+}
+div.dimensional-list ul, div.list-inline-filters ul {
+    margin-bottom:0;
+}
+div.dimensional-list, div.dimensional-list a, div.dimensional-list span,
+div.list-inline-filters, div.list-inline-filters a, div.list-inline-filters span{
+    font-size:small;
+}
+div.dimensional-list .btn-primary,
+div.dimensional-list .btn-primary:hover,
+div.dimensional-list .btn-primary:focus,
+div.dimensional-list .btn-primary:active,
+div.list-inline-filters .btn-primary,
+div.list-inline-filters .btn-primary:hover,
+div.list-inline-filters .btn-primary:focus,
+div.list-inline-filters .btn-primary:active {
+    background-color: #7CA1C2;
+    border-color: #6895BD;
+    color: #fff;
+    cursor:default;
+}
+
+/********** Forms **************/
+div.form-required-mark, strong.form-required-mark {
+    font-size: 0;
+    color:transparent;
+    display:inline;
+}
+div.form-required-mark:after, strong.form-required-mark:after {
+      color:red;
+      content: "*";
+      font-size:13px;
+      font-weight:bold;
+}
+/****** Bootstrap Style Table *********/
+table.table-striped tr.even {
+    background-color:transparent;
+}
+
+/****** Styling of Buttons in Bootstrap Style without injecting css classes *********/
+a.button, a.button:link {
+    border-radius:4px;
+    -moz-user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857;
+    margin-bottom: 0;
+    padding: 6px 12px;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+    background-color: #fff;
+    border-color: #ccc;
+    color: #333;
+}
+a.button:visited {
+    color:#333;
+}
+a.button:hover,
+a.button:active,
+a.button:focus {
+    background-color:#ebebeb;
+    border-color:#adadad;
+    color:#333;    
+}
+a.button:active {
+    -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+    box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+}
+
+/*********************************************/
+/*                additional stuff           */
+/*********************************************/
+
+/****** Calendar portlet in xowiki *********/
+#at-a-glance tr.days td {
+  border:1px solid #b8b8b8 !important;
+}
+
+/********** ApiDoc **************/
+div.api-doc {
+    padding:5px;
+}
+
+/****** treat first line in forums post like a paragraph *********/
+div#forum-thread div.dynexpanded p {
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+h2.forum-heading {
+    margin:0;
+}

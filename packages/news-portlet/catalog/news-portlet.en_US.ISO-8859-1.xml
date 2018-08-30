@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<message_catalog package_key="news-portlet" locale="en_US" charset="ISO-8859-1">
+
+  <msg key="Add_a_News_Item">Add a News Item</msg>
+  <msg key="admin_pretty_name">News Administration</msg>
+  <msg key="Contributed_by">Contributed by</msg>
+  <msg key="goto_item_creator_commpage">Go to %item_creator% community page</msg>
+  <msg key="Manage_News">Manage News</msg>
+  <msg key="No_News">No News</msg>
+  <msg key="pretty_name">News</msg>
+  <msg key="Read_more">Read more...</msg>
+</message_catalog>

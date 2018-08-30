@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<message_catalog package_key="news-portlet" locale="hi_IN" charset="utf-8">
+
+  <msg key="Add_a_News_Item">समाचार मद को मिलाना </msg>
+  <msg key="admin_pretty_name">प्रशासन का समाचार </msg>
+  <msg key="Manage_News">समाचार का प्रबन्ध </msg>
+  <msg key="No_News">कोई समाचार नही </msg>
+  <msg key="pretty_name">समाचार</msg>
+  <msg key="Read_more">और पर्हिय...</msg>
+</message_catalog>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<message_catalog package_key="static-portlet" locale="ar_EG" charset="utf-8">
+
+  <msg key="admin_portlet_element_pretty_name">بورتليت حسب الطّلب</msg>
+  <msg key="Content">المحتوى</msg>
+  <msg key="Control_Panel">لوحة التّحكّم</msg>
+  <msg key="lt_Delete_element_pretty">%pretty_name% %element_pretty_name%  أحذف  </msg>
+  <msg key="lt_Editing_element_prett">%pretty_name% %element_pretty_name% تعديل</msg>
+  <msg key="lt_strongNotestrong_You_">البسيط في منطقة المحتمويات HTML يمكن أن تستخدم النّصّ  :&lt;strong&gt;لاحظ&lt;/strong&gt;</msg>
+  <msg key="Name">اسم</msg>
+  <msg key="New">جديد</msg>
+  <msg key="new_static_admin_portlet">جديد %element_pretty_name%</msg>
+</message_catalog>

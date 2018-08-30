@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<message_catalog package_key="dotlrn-dotlrn" locale="ar_EG" charset="utf-8">
+
+  <msg key="Core_DotLRN_Applets">صميمُ برامج دوتلرن المحدودةَ</msg>
+  <msg key="Group_Members_Info">معلوماتُ أعضاء المجموعةِ</msg>
+  <msg key="lt_dotLRN_Staff_List_Inf">قائمة معلومات موظّفي دوتلرن</msg>
+</message_catalog>

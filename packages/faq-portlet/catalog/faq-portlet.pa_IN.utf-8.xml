@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<message_catalog package_key="faq-portlet" locale="pa_IN" charset="utf-8">
+
+  <msg key="no_faqs">ਕੋਈ ਸਵਾਲ ਜਵਾਬ ਨਹੀਂ</msg>
+  <msg key="pretty_name">ਅਕਸਰ ਪੁੱਛੇ ਜਾਦੇ ਸਵਾਲ</msg>
+</message_catalog>

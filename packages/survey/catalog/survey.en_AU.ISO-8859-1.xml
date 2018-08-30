@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<message_catalog package_key="survey" package_version="5.0.1" locale="en_AU" charset="ISO-8859-1">
+
+  <msg key="-__Created_by">-  Created by</msg>
+  <msg key="_on_creation_date">, on %creation_date%</msg>
+  <msg key="Actions">Actions</msg>
+  <msg key="Active">Active?</msg>
+  <msg key="Add_A_Question">Add A Question</msg>
+  <msg key="Add_New">Add New</msg>
+  <msg key="add_new_question">add new question</msg>
+  <msg key="Admin_This_Survey">Admin This Survey</msg>
+  <msg key="allow_multiple">allow multiple</msg>
+  <msg key="Answer_Survey">Answer Survey</msg>
+  <msg key="Answer_Text">Answer Text</msg>
+  <msg key="are">are</msg>
+  <msg key="Below_the_question">Below the question</msg>
+  <msg key="Beside_the_question">Beside the question</msg>
+  <msg key="Boolean">Boolean</msg>
+  <msg key="By_user">By user</msg>
+  <msg key="Choose_a_Survey_Type">Choose a Survey Type</msg>
+  <msg key="Choose_Survey_Type">Choose Survey Type</msg>
+  <msg key="Choose_Type">Choose Type</msg>
+  <msg key="Continue_with_Delete">Continue with Delete</msg>
+  <msg key="Copy">Copy</msg>
+  <msg key="Copy_of">Copy of</msg>
+  <msg key="Copy_this_survey">Copy this survey</msg>
+  <msg key="Copy_title_name">Copy: %title_name%</msg>
+  <msg key="Could_not_find_user">Could not find user</msg>
+  <msg key="Create_Survey">Create Survey</msg>
+  <msg key="CSV_Export">CSV Export</msg>
+  <msg key="CSV_file">CSV file</msg>
+  <msg key="Database_Error">Database Error</msg>
+  <msg key="Database_error">Database error</msg>
+  <msg key="Date">Date</msg>
+  <msg key="Delete">Delete</msg>
+  <msg key="Delete_1">Delete:</msg>
+  <msg key="DELETE_Question">DELETE: Question</msg>
+  <msg key="Delete_Question">Delete Question</msg>
+  <msg key="Delete_Response">Delete Response</msg>
+  <msg key="Delete_Survey">Delete Survey</msg>
+  <msg key="Delete_this_survey">Delete this survey</msg>
+  <msg key="Description">Description:</msg>
+  <msg key="Description_1">Description</msg>
+  <msg key="disable">disable</msg>
+  <msg key="disabled">(disabled)</msg>
+  <msg key="Display_Options">Display Options:</msg>
+  <msg key="Edit">Edit</msg>
+  <msg key="Edit_Description">Edit Description</msg>
+  <msg key="Edit_Name">Edit Name</msg>
+  <msg key="Edit_Response">Edit Response</msg>
+  <msg key="edit_this_response">edit this response</msg>
+  <msg key="editable">editable</msg>
+  <msg key="Edited">Edited</msg>
+  <msg key="Email_Address">Email Address</msg>
+  <msg key="Email_Options">Email Options:</msg>
+  <msg key="enable">enable</msg>
+  <msg key="Enter_Message">Enter Message</msg>
+  <msg key="Extreme_Actions">Extreme Actions:</msg>
+  <msg key="File_Attachment">File Attachment</msg>
+  <msg key="First_Name">First Name</msg>
+  <msg key="From">From:</msg>
+  <msg key="From_1">From</msg>
+  <msg key="General_Survey">General Survey</msg>
+  <msg key="Here_is_what">Here is what</msg>
+  <msg key="inactive">[inactive]</msg>
+  <msg key="Integer">Integer</msg>
+  <msg key="is">is</msg>
+  <msg key="Large">Large</msg>
+  <msg key="Last_Name">Last Name</msg>
+  <msg key="limit_to_one">limit to one</msg>
+  <msg key="list">list</msg>
+  <msg key="lt_-_Lets_you_use_this_s">- Lets you use this survey as a template to create a new survey.</msg>
+  <msg key="lt_-_Removes_all_questio">- Removes all questions and responses</msg>
+  <msg key="lt_A_database_error_occu">A database error occured while trying
+to swap your questions. Here's the error:</msg>
+  <msg key="lt_Already_Responsed_email">Email these users</msg>
+  <msg key="lt_Already_Responsed_n_r">Already Responsed: %n_responses% users
+
+View these users. &lt;%community_url%/survey/admin/respondents?response_type=responded&gt;
+
+Spam these users. &lt;%community_url%/survey/admin/send-mail?survey_id=%survey_id%&amp;to=responded&gt;</msg>
+  <msg key="lt_Already_Responsed_n_r_1">Already Responsed: %n_responses% users</msg>
+  <msg key="lt_Already_Responsed_view">View these users</msg>
+  <msg key="lt_Answers_to_survey_nam">Answers to %survey_name%</msg>
+  <msg key="lt_Awaiting_a_response_n">Awaiting a response: %n_awaiting% users
+
+View these users. &lt;%community_url%/survey/admin/respondents?response_type=not_responded&gt;
+
+Spam these users. &lt;%community_url%/survey/admin/send-mail?survey_id=%survey_id%&amp;to=not_responded&gt;
+
+The whole group: %n_members%
+
+View these users. &lt;%community_url%/survey/admin/respondents?response_type=all&gt;
+
+Spam these users. &lt;%community_url%/survey/admin/send-mail?survey_id=%survey_id%&amp;to=all&gt;
+
+Responses:</msg>
+  <msg key="lt_Cancel_and_return_to_">Cancel and return to survey responses</msg>
+  <msg key="lt_Cancel_and_return_to__1">Cancel and return to survey administration</msg>
+  <msg key="lt_Completely_delete">Completely delete %user_name_var%'s response from %response_date_var%? (Note: This can not be undone.)</msg>
+  <msg key="lt_Confirm_Survey_Detail">Confirm Survey Details</msg>
+  <msg key="lt_Copying_a_survey_will">Copying a survey will create a new survey with copies of all the questions.&lt;br&gt; None of the response data will be duplicated.</msg>
+  <msg key="lt_Could_not_find_a_surv">Could not find a survey question</msg>
+  <msg key="lt_Could_not_find_the_re">Could not find the response</msg>
+  <msg key="lt_Couldnt_find_attachment">Couldn't find attachment. Couldn't find an attachment matching the response_id %response_id%, question_id %question_id% given.</msg>
+  <msg key="lt_DELETE_survey_infonam">DELETE: %survey_info.name%</msg>
+  <msg key="lt_DELETE_Survey_Respons">DELETE: Survey Response</msg>
+  <msg key="lt_Deleting_this_surve">Deleting this survey will delete all %questions_count% questions and all %responses_count% responses associated with this survey!</msg>
+  <msg key="lt_denotes_a_required_qu">denotes a required question</msg>
+  <msg key="lt_Description_must_be_l">Description must be less than 4000 characters</msg>
+  <msg key="lt_Edit_and_submit_to_ch">Edit and submit to change the name for this survey:</msg>
+  <msg key="lt_Essay_Answer_Text_Are">Essay Answer (Text Area)</msg>
+  <msg key="lt_Everyone_eligible_to_">Everyone eligible to take this survey</msg>
+  <msg key="lt_Everyone_who_has_alre">Everyone who has already taken this survey</msg>
+  <msg key="lt_Everyone_who_has_not_">Everyone who has not yet taken this survey</msg>
+  <msg key="lt_For_Multiple_Choicebr">For Multiple Choice&lt;br&gt;Enter a List of Valid Responses&lt;br&gt; (enter one choice per line)</msg>
+  <msg key="lt_had_to_say_in_respons">had to say in response to %survey_name%:</msg>
+  <msg key="lt_Here_is_how_your_surv">Here is how your survey description will appear:</msg>
+  <msg key="lt_img_srcgraphicsadming">&lt;img src=&quot;graphics/admin.gif&quot; border=&quot;0&quot; alt=&quot;Administer Surveys&quot;&gt;</msg>
+  <msg key="lt_img_srcgraphicsadming_1">&lt;img src=&quot;graphics/admin.gif&quot; border=&quot;0&quot; alt=&quot;Admin&quot;&gt;</msg>
+  <msg key="lt_Main_Survey_Administr">Main Survey Administration</msg>
+  <msg key="lt_Modify_a_Questions_Te">Modify a Question's Text</msg>
+  <msg key="lt_Modify_previous_respo">Modify previous response</msg>
+  <msg key="lt_Modify_Question_Respo">Modify Question Responses</msg>
+  <msg key="lt_Multiple_Choice_Check">Multiple Choice (Checkbox, multiple answers allowed)</msg>
+  <msg key="lt_Multiple_Choice_Drop_">Multiple Choice (Drop Down, single answer allowed)</msg>
+  <msg key="lt_Multiple_Choice_Radio">Multiple Choice (Radio Buttons, single answer allowed)</msg>
+  <msg key="lt_No_Responses_for_surv">No Responses for: %survey_info.name%</msg>
+  <msg key="lt_No_Responses_for_surv_1">No Responses for %survey_info.name%</msg>
+  <msg key="lt_on_responsessubmissio">on %responses.submission_date% | %responses.response%</msg>
+  <msg key="lt_One_Line_Answer_Text_">One Line Answer (Text Field)</msg>
+  <msg key="lt_One_Respondent_first_">One Respondent: %first_names% %last_name%</msg>
+  <msg key="lt_One_Survey_survey_inf">One Survey: %survey_info.name%</msg>
+  <msg key="lt_People_who_answered_r">People who answered %response_text%</msg>
+  <msg key="lt_Please_go_back_using_">Please go back using your browser.</msg>
+  <msg key="lt_Please_make_sure_your">Please make sure your dates are valid.</msg>
+  <msg key="lt_Presentation_Alignmen">Presentation Alignment</msg>
+  <msg key="lt_Preview_One_Survey_na">Preview One Survey: %name%</msg>
+  <msg key="lt_Previous_response_on_">Previous response on: %surveys.creation_date%</msg>
+  <msg key="lt_Previous_response_on__1">Previous response on: %survey_details.creation_date%</msg>
+  <msg key="lt_regarding_this_survey">regarding this survey</msg>
+  <msg key="lt_Requested_survey_does">Requested survey does not exist</msg>
+  <msg key="lt_Response_on_response_">Response on %response_date%</msg>
+  <msg key="lt_Response_on_responses">Response on %responses.creation_date%]</msg>
+  <msg key="lt_Response_Submitted_for">Response Submitted for %survey_name%</msg>
+  <msg key="lt_Response_submitted_Th">Response submitted. Thank you.</msg>
+  <msg key="lt_Responses_to_Question">Responses to Question</msg>
+  <msg key="lt_Return_to_survey_admi">Return to survey administration</msg>
+  <msg key="lt_Section_section_id_do">Section %section_id% does not exist</msg>
+  <msg key="lt_Send_Mail_Re_survey_n">Send Mail Re: %survey_name%</msg>
+  <msg key="lt_Survey_Administration">Survey Administration</msg>
+  <msg key="lt_Survey_Administration_1">Survey Administration: Add a Question (cont.)</msg>
+  <msg key="lt_Survey_Administration_2">Survey Administration: Create New Survey</msg>
+  <msg key="lt_survey_infoname_New_Q">%survey_info.name%: New Question</msg>
+  <msg key="lt_survey_name_Edit_Desc">%survey_name%: Edit Description</msg>
+  <msg key="lt_survey_name_Edit_Name">%survey_name%: Edit Name</msg>
+  <msg key="lt_survey_name_Modify_Qu">%survey_name%: Modify Question Text</msg>
+  <msg key="lt_Survey_Name_must_be_4">Survey Name must be 4000 characters or less</msg>
+  <msg key="lt_Survey_Name_must_be_l">Survey Name must be less than 4000 characters</msg>
+  <msg key="lt_survey_name_Responden">%survey_name%: Respondents</msg>
+  <msg key="lt_survey_name_responder">%survey_name% responders who answered %response_text%
+when asked %question_text%:</msg>
+  <msg key="lt_survey_name_Responses">%survey_name%: Responses</msg>
+  <msg key="lt_survey_name_Responses_1">%survey_name%: Responses to Question</msg>
+  <msg key="lt_Survey_Question_Not_F">Survey Question Not Found</msg>
+  <msg key="lt_Survey_section_id_does">Survey %section_id% does not exist</msg>
+  <msg key="lt_Survey_survey_id_do_no">Survey %survey_id% does not exist</msg>
+  <msg key="lt_Survey_survey_id_does">Survey %survey_id% does not exist</msg>
+  <msg key="lt_Survey_survey_name">Survey: %survey_name%</msg>
+  <msg key="lt_Survey_survey_notif_intro">Here is what %user_name% had to say in response to %survey_name%:</msg>
+  <msg key="lt_Survey_survey_Res">Respondent: %user_name% </msg>
+  <msg key="lt_The_Above_Description">The Above Description is</msg>
+  <msg key="lt_The_response_to_ques_i">The response to %question_text% must be an integer. Your answer was %response_value%.</msg>
+  <msg key="lt_The_response_to_ques_n">The response to %question_text% must be a number. Your answer was %response_value%.</msg>
+  <msg key="lt_There_has_been_1_resp">There has been 1 response.</msg>
+  <msg key="lt_There_have_been_n">There have been %n_responses% responses.</msg>
+  <msg key="lt_There_isare_n_resp">There %isare% %n_responses% %resp% to this question.  Editing a question with responses is not recommnded. No record of the original question will remain.  Proceed with caution.</msg>
+  <msg key="lt_There_was_an_error_wh">There was an error while trying to delete the question:</msg>
+  <msg key="lt_This_is_a_multiple_ch">This is a multiple choice survey where each answer can be scored on one
+or more variables. This survey also allows you to execute arbitrary
+code (e.g. for redirects) conditional on the user's score at the end
+of the survey.</msg>
+  <msg key="lt_This_question_has_n">This question has %n_responses% %response_text% that will be deleted if you continue. (Note: This can not be undone.)</msg>
+  <msg key="lt_This_survey_allows_yo">This survey allows you to specify the type of response
+required. Use this survey if you want to allow users to enter their
+own answers rather than choose from a list. You should also use this
+survey if you wish to mix question types, e.g. have multiple choice
+and free text answer questions in the same survey.</msg>
+  <msg key="lt_This_survey_is_not_ed">This survey is not editable</msg>
+  <msg key="lt_This_will_remove_respo">This will remove %response_count% responses</msg>
+  <msg key="lt_to_the_survey_index_p">to the survey index page.</msg>
+  <msg key="lt_Users_may_edit_their_">Users may edit their responses</msg>
+  <msg key="lt_Users_may_not_edit_th">Users may not edit their responses</msg>
+  <msg key="lt_Valid_Resposnes_enter">Valid Responses (enter one choice per line)</msg>
+  <msg key="lt_You_did_not_enter_a_l">You did not enter a list of valid responses/choices.</msg>
+  <msg key="lt_You_did_not_enter_a_q">You did not enter a question.</msg>
+  <msg key="lt_You_didnt_respond_to_">You didn't respond to all required sections. You skipped:</msg>
+  <msg key="lt_You_have_already_comp">You have already completed this survey</msg>
+  <msg key="lt_Your_file_is_zero-len">Your file is zero-length. Either you attempted to upload a zero length file, a file which does not exist, or something went wrong during the transfer.</msg>
+  <msg key="lt_Your_response________">Your response
+            on %responses.pretty_submission_date%</msg>
+  <msg key="make">make</msg>
+  <msg key="Mean">Mean:</msg>
+  <msg key="Medium">Medium</msg>
+  <msg key="Message_Subject">Message Subject</msg>
+  <msg key="Modify_Question">Modify Question</msg>
+  <msg key="Modify_Responses">Modify Responses</msg>
+  <msg key="Move_Down">Move Down</msg>
+  <msg key="Move_Up">Move Up</msg>
+  <msg key="Multiple_Choice">Multiple Choice</msg>
+  <msg key="multiple_responses">multiple responses</msg>
+  <msg key="Name_copy">Name</msg>
+  <msg key="New_Survey">New Survey</msg>
+  <msg key="No">No</msg>
+  <msg key="No_data_found">No data found</msg>
+  <msg key="No_Responses">No Responses</msg>
+  <msg key="No_surveys_active">No surveys active</msg>
+  <msg key="non-">non-</msg>
+  <msg key="Not_Found">Not Found</msg>
+  <msg key="Number">Number</msg>
+  <msg key="One_Respondent">One Respondent</msg>
+  <msg key="One_Response">One Response</msg>
+  <msg key="One_Survey_name">One Survey: %name%</msg>
+  <msg key="oops">oops</msg>
+  <msg key="Original">Original</msg>
+  <msg key="paragraph">paragraph</msg>
+  <msg key="Plain_Text">Plain Text</msg>
+  <msg key="Preformatted_Text">Preformatted Text</msg>
+  <msg key="Presentation_Type">Presentation Type</msg>
+  <msg key="Preview">Preview</msg>
+  <msg key="Question">Question</msg>
+  <msg key="Question_Text">Question Text</msg>
+  <msg key="Questions">Questions</msg>
+  <msg key="Required">Required?</msg>
+  <msg key="Respondents">Respondents</msg>
+  <msg key="response">response</msg>
+  <msg key="Response_Not_Found">Response Not Found</msg>
+  <msg key="Response_Options">Response Options:</msg>
+  <msg key="Response_Submitted">Response Submitted</msg>
+  <msg key="Response_to">Response to</msg>
+  <msg key="Responses">Responses</msg>
+  <msg key="responses">responses</msg>
+  <msg key="Return">Return</msg>
+  <msg key="Score">Score</msg>
+  <msg key="Scored_Survey">Scored Survey</msg>
+  <msg key="Send_bulkmail">Send bulk
+	mail</msg>
+  <msg key="Send_Mail">Send Mail</msg>
+  <msg key="Send_mail_to">Send mail to</msg>
+  <msg key="Short_Text">Short Text</msg>
+  <msg key="Size">Size</msg>
+  <msg key="Small">Small</msg>
+  <msg key="Standard_Dev">Standard Dev</msg>
+  <msg key="Submit">Submit</msg>
+  <msg key="Submit_response">Submit response</msg>
+  <msg key="Summary">Summary</msg>
+  <msg key="Survey_Description">Survey Description</msg>
+  <msg key="Survey_Name">Survey Name:</msg>
+  <msg key="Survey_Name_1">Survey Name</msg>
+  <msg key="Survey_Name_name">Survey Name: %name%</msg>
+  <msg key="Surveys">Surveys</msg>
+  <msg key="table">table</msg>
+  <msg key="Text">Text</msg>
+  <msg key="This_survey_is">This survey is</msg>
+  <msg key="True_or_False">True or False</msg>
+  <msg key="TrueFalse">True/False</msg>
+  <msg key="Type_of_Response">Type of Response</msg>
+  <msg key="Uploaded_file">Uploaded file:</msg>
+  <msg key="View">View</msg>
+  <msg key="View_Response">View Response</msg>
+  <msg key="View_Responses">View Responses:</msg>
+  <msg key="View_responses">View responses</msg>
+  <msg key="View_responses_1">View responses.</msg>
+  <msg key="Warning">Warning!</msg>
+  <msg key="Warning_1">Warning:</msg>
+  <msg key="Yes">Yes</msg>
+  <msg key="Yes_or_No">Yes or No</msg>
+  <msg key="YesNo">Yes/No</msg>
+</message_catalog>

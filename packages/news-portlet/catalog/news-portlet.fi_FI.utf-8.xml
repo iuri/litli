@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<message_catalog package_key="news-portlet" locale="fi_FI" charset="utf-8">
+
+  <msg key="Add_a_News_Item">Lisää uutinen</msg>
+  <msg key="admin_pretty_name">Uutisten ylläpito</msg>
+  <msg key="Manage_News">Hallinnoi uutisia</msg>
+  <msg key="No_News">Ei uutisia</msg>
+  <msg key="pretty_name">Uutiset</msg>
+</message_catalog>

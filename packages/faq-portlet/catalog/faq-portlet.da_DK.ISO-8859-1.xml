@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<message_catalog package_key="faq-portlet" locale="da_DK" charset="ISO-8859-1">
+
+  <msg key="admin_pretty_name">FAQ Administration</msg>
+  <msg key="Disable">Deaktivér</msg>
+  <msg key="Disabled">Deaktiveret</msg>
+  <msg key="Enable">Aktivér</msg>
+  <msg key="group">Gruppe</msg>
+  <msg key="name">Navn</msg>
+  <msg key="new_faq">Ny FAQ</msg>
+  <msg key="no_faqs">Ingen FAQ'er</msg>
+  <msg key="one_admin_faq">Af administrationsgrunde bør der kun være en instans af FAQ</msg>
+  <msg key="pretty_name">Ofte Stillede Spørgsmål (FAQ)</msg>
+</message_catalog>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<message_catalog package_key="dotlrn-static" locale="ca_ES" charset="ISO-8859-1">
+
+  <msg key="class_info_portlet_pretty_name">Informació del curs</msg>
+  <msg key="community_info_portlet_pretty_name">Informació de la comunitat</msg>
+  <msg key="Static_HTML_Data">Dades estàtiques (HTML)</msg>
+  <msg key="subcommunity_info_portlet_pretty_name">Informació del subgrup</msg>
+</message_catalog>

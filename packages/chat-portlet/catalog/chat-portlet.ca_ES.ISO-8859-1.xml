@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<message_catalog package_key="chat-portlet" locale="ca_ES" charset="ISO-8859-1">
+
+  <msg key="Add_a_Chat_Item">Afegeix una sala de xat</msg>
+  <msg key="admin_pretty_name">Administració de xat</msg>
+  <msg key="Manage_Chat">Administra xat</msg>
+  <msg key="pretty_name">Xat</msg>
+</message_catalog>

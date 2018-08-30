@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<message_catalog package_key="dotlrn-forums" locale="ms_MY" charset="utf-8">
+
+  <msg key="Auto_subscribe_label">Melanggan secara automatik ahli-ahli kumpulan</msg>
+  <msg key="by_Date">melalui Tarikh</msg>
+  <msg key="by_Forum">melalui Forum</msg>
+  <msg key="Forum">Forum
+</msg>
+  <msg key="forums_default_name_suffix">Forum</msg>
+  <msg key="lt_Forums_Posting_histor">Forum-forum: Paparkan sejarah untuk %user.full_name% </msg>
+  <msg key="lt_There_should_be_only_">Sepatutnya terdapat hanya suatu keadaan forum-forum untuk penggunaan pentadbiran</msg>
+  <msg key="New_Forum">Forum Baru</msg>
+  <msg key="No_Postings">Tiada Pos</msg>
+  <msg key="Posted">Telah Dipos</msg>
+  <msg key="Posting_History">Paparkan Sejarah</msg>
+  <msg key="Posting_history_for">Paparkan sejarah untuk</msg>
+  <msg key="Subject">Subjek</msg>
+  <msg key="View">Lihat</msg>
+</message_catalog>

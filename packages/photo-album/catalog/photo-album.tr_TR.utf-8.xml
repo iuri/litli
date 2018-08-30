@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<message_catalog package_key="photo-album" locale="tr_TR" charset="utf-8">
+
+  <msg key="_Album">Album aciklamasi</msg>
+  <msg key="_Album_1">Album hikayesi</msg>
+  <msg key="_Album_2">Album adi</msg>
+  <msg key="_An_1">Giris islemi yapilirken bir hata olustu. Lutfen sistem sahibini bununla ilgili bilgilendirin.</msg>
+  <msg key="Add_a_new_album">Yeni bir album ekle</msg>
+  <msg key="Add_a_new_folder">Yeni bir klasor ekle</msg>
+  <msg key="Album_Name">Album adi</msg>
+  <msg key="Caption">Baslik</msg>
+  <msg key="Caption_1">Baslik:</msg>
+</message_catalog>

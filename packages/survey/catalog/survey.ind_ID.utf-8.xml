@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<message_catalog package_key="survey" locale="ind_ID" charset="utf-8">
+
+  <msg key="-__Created_by">- dibuat oleh</msg>
+  <msg key="Actions">Aksi</msg>
+  <msg key="Active">Aktif?</msg>
+  <msg key="Add_A_Question">Tambahkan sebuah pertanyaan</msg>
+  <msg key="Add_New">Tambah baru</msg>
+  <msg key="add_new_question">Tambah pertanyaan baru</msg>
+  <msg key="Admin_This_Survey">Admin survey ini</msg>
+  <msg key="allow_multiple">Ijinkan berganda</msg>
+  <msg key="Answer_Survey">Survey Jawaban</msg>
+  <msg key="Answer_Text">Teks Jawaban</msg>
+  <msg key="are">adalah</msg>
+  <msg key="Below_the_question">Dibawah pertanyaan</msg>
+  <msg key="Beside_the_question">Disamping pertanyaan</msg>
+  <msg key="Boolean">Boolean</msg>
+  <msg key="By_user">Oleh pengguna</msg>
+  <msg key="Choose_a_Survey_Type">Pilih sebuah tipe survey</msg>
+  <msg key="Choose_Survey_Type">Pilih tipe survey</msg>
+  <msg key="Choose_Type">pilih tipe</msg>
+  <msg key="Continue_with_Delete">Lanjutkan dengan menghapus</msg>
+  <msg key="Copy">kopi</msg>
+  <msg key="Copy_of">kopi dari</msg>
+  <msg key="Copy_this_survey">kopi survey ini</msg>
+  <msg key="Copy_title_name">Kopi: %title_name%</msg>
+  <msg key="Could_not_find_user">Tidak bisa menemukan pengguna</msg>
+  <msg key="Create_Survey">buat survey</msg>
+  <msg key="CSV_Export">Ekspor CSV</msg>
+  <msg key="CSV_file">file CSV</msg>
+  <msg key="Database_Error">database error</msg>
+  <msg key="Database_error">database error</msg>
+  <msg key="Date">Tanggal</msg>
+</message_catalog>

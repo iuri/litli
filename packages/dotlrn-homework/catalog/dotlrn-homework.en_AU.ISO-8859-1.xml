@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<message_catalog package_key="dotlrn-homework" locale="en_AU" charset="ISO-8859-1">
+
+  <msg key="Action">Action</msg>
+  <msg key="Alert">Alert</msg>
+  <msg key="All_Versions_of_name">All Versions of &quot;%name%&quot;</msg>
+  <msg key="Author">Author</msg>
+  <msg key="bytes">bytes</msg>
+  <msg key="Comments">Comments</msg>
+  <msg key="Copy">Copy</msg>
+  <msg key="Delete">Delete</msg>
+  <msg key="delete">delete</msg>
+  <msg key="Delete_folder_name">Delete %folder_name%</msg>
+  <msg key="Delete_title">Delete %title%</msg>
+  <msg key="Delete_version_name">Delete %version_name%</msg>
+  <msg key="Description">Description</msg>
+  <msg key="Do_not_alert">Do not alert</msg>
+  <msg key="edit_upload_size_limit">Edit Upload Size Limit</msg>
+  <msg key="Folder_is_empty">Folder is empty</msg>
+  <msg key="homework_pretty_admin">Homework Administration</msg>
+  <msg key="Live_version_of_name">Live version of &quot;%name%&quot;</msg>
+  <msg key="lt_a_file_named">A file named &quot;%decoded_name%&quot; has been uploaded to the folder &quot;%folder_name%&quot; by
+&quot;%student_name%&quot;.</msg>
+  <msg key="lt_a_file_named_1">A file named &quot;%decoded_name%&quot; has been uploaded to the folder &quot;%folder_name%&quot; by                 
+&quot;%student_name%&quot;.</msg>
+  <msg key="lt_admin_has_uploaded">%admin_name% has uploaded comments to your homework file named &quot;%decoded_name%&quot; in the
+homework folder &quot;%folder_name%&quot;.</msg>
+  <msg key="lt_Are_you_sure_that_you">Are you sure that you want to delete this version &quot;%version_name%&quot; of &quot;%title%&quot;?
+This action cannot be reversed.</msg>
+  <msg key="lt_Are_you_sure_you_want">Are you sure you want to delete the file &quot;%title%&quot; and all of
+its versions?  This action cannot be reversed.</msg>
+  <msg key="lt_Are_you_sure_you_want_1">Are you sure you want to delete the folder &quot;%folder_name%&quot;?  This action cannot be reversed.</msg>
+  <msg key="lt_Contents_of_folder_na">Contents of %folder_name%</msg>
+  <msg key="lt_correction_file_alert">Correction file alert</msg>
+  <msg key="lt_create_folder">Create Folder</msg>
+  <msg key="lt_create_new_folder">Create new folder</msg>
+  <msg key="lt_create_subfolder">Create Subfolder</msg>
+  <msg key="lt_delete_folder">Delete folder</msg>
+  <msg key="lt_Delete_this_file_incl">Delete this file (including all versions)</msg>
+  <msg key="lt_delete_version">Delete Version</msg>
+  <msg key="lt_file_named">A file named &quot;%title%&quot; already exists in this folder</msg>
+  <msg key="lt_folder_already_contains">The &lt;a href=&quot;index?folder_id=%parent_id%&quot;&gt;folder&lt;/a&gt; you selected already contains a file with the same name.</msg>
+  <msg key="lt_folder_name">Folder Name</msg>
+  <msg key="lt_For_more_information_">For more information, read the Admin FAQ on the class Control Panel page or refer
+      to the Handbook.</msg>
+  <msg key="lt_homework_folder">%community_name%'s Homework Folder</msg>
+  <msg key="lt_homework_upload">Homework upload alert</msg>
+  <msg key="lt_internal_error">Internal Error</msg>
+  <msg key="lt_interval_or_del">Interval or delivery method for homework notifications broken</msg>
+  <msg key="lt_me_when_homework_file">me when homework files are updated</msg>
+  <msg key="lt_new_values">%new_value%'s Homework Folder</msg>
+  <msg key="lt_one_assignment">One Assignment</msg>
+  <msg key="lt_one_folder">One Folder</msg>
+  <msg key="lt_or_edit">/Edit</msg>
+  <msg key="lt_Select_the_folder_tha">Select the folder that you would like to copy &quot;%file_name%&quot; to</msg>
+  <msg key="lt_Select_the_folder_tha_1">Select the folder that you would like to move &quot;%name%&quot; under</msg>
+  <msg key="lt_Show_only_live_versio">Show only live version</msg>
+  <msg key="lt_spec_folder">The specified folder is not valid.</msg>
+  <msg key="lt_spec_parent">The specified parent folder is not valid.</msg>
+  <msg key="lt_spec_version">The specified version is not valid.</msg>
+  <msg key="lt_specified_file">The specified file is not valid.</msg>
+  <msg key="lt_submit_comm">Submit Comments</msg>
+  <msg key="lt_submit_new_assign">Submit a new Assignment</msg>
+  <msg key="lt_Submit_New_Assignment">Submit New Assignment File</msg>
+  <msg key="lt_submit_new_file">Submit New Assignment File</msg>
+  <msg key="lt_TAs_and_professors_ca">TAs and professors can upload different versions of comments from the Details page
+      and can use the Version notes text box to differentiate between comments files.</msg>
+  <msg key="lt_There_are_two_ways_to">There are two ways to comment on students' files: 1) upload a separate/new file or
+      2) make comments directly in the student's file.  For #1, upload your file from this page.
+      For #2, first download/open and save the file to your computer.  When finished, save the
+      file and then return to the Homework folder and upload your comments.</msg>
+  <msg key="lt_This_file_has_version">This file has versions that you do not have permission to delete,
+so you cannot delete the file.</msg>
+  <msg key="lt_upload_comm">Upload Comments</msg>
+  <msg key="lt_upload_new_as">Upload New Assignment</msg>
+  <msg key="lt_upload_new_ass_version">Upload New Assignment Version</msg>
+  <msg key="lt_Upload_New_Version_of">Upload New Version of %name%</msg>
+  <msg key="lt_upload_new_version_of">Upload New Version of %name%</msg>
+  <msg key="lt_use_browse">Use the &quot;Browse...&quot; button to locate your file, then click &quot;Open&quot;</msg>
+  <msg key="lt_version_filename">Version filename</msg>
+  <msg key="lt_version_notes">Version notes</msg>
+  <msg key="lt_were_sorry">We're sorry, but at the moment you cannot delete folders unless they are already empty.</msg>
+  <msg key="lt_Yes_delete_it">Yes, Delete It</msg>
+  <msg key="lt_yes_delete_it">Yes, Delete It</msg>
+  <msg key="lt_your_file_is">Your file is larger than the maximum file size allowed on this system</msg>
+  <msg key="Modified">Modified</msg>
+  <msg key="Move">Move</msg>
+  <msg key="New_Comments">Details</msg>
+  <msg key="pretty_name">Homework</msg>
+  <msg key="Show_all_versions">Show all versions</msg>
+  <msg key="Size_bytes">Size (bytes)</msg>
+  <msg key="Student">Student</msg>
+  <msg key="Title">Title</msg>
+  <msg key="Type">Type</msg>
+  <msg key="Upload_a_new_version">Upload a new version</msg>
+  <msg key="Version_filename">Version filename</msg>
+  <msg key="Version_Notes">Version Notes</msg>
+  <msg key="View">New Comments</msg>
+  <msg key="View_1">View</msg>
+</message_catalog>

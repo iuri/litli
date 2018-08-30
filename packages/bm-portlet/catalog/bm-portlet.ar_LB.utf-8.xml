@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<message_catalog package_key="bm-portlet" locale="ar_LB" charset="utf-8">
+
+  <msg key="New_spam_name">%spam_name% جديد</msg>
+  <msg key="pretty_name">بريدُ الدعايات</msg>
+  <msg key="spam_name_History">تاريخ %spam_name%</msg>
+</message_catalog>

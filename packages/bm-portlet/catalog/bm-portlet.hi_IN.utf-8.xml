@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<message_catalog package_key="bm-portlet" locale="hi_IN" charset="utf-8">
+
+  <msg key="New_spam_name">नया %स्पाम_नाम% </msg>
+  <msg key="pretty_name">बडी डाक              </msg>
+  <msg key="spam_name_History">%स्पाम_नाम% इतिहास  </msg>
+</message_catalog>

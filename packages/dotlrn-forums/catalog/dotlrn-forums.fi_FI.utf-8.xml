@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<message_catalog package_key="dotlrn-forums" locale="fi_FI" charset="utf-8">
+
+  <msg key="by_Date">päiväyksen perusteella</msg>
+  <msg key="by_Forum">keskusteluryhmän perusteella</msg>
+  <msg key="Forum">Keskusteluryhmä</msg>
+  <msg key="forums_default_name_suffix">Keskusteluryhmä</msg>
+  <msg key="lt_Forums_Posting_histor">Keskusteluryhmät: Käyttäjän %user.full_name% lähetyshistoria</msg>
+  <msg key="lt_There_should_be_only_">Hallintointitarpeita varten pitäisi olla vain yksi keskusteluryhmä</msg>
+  <msg key="New_Forum">Lisää uusi keskusteluryhmä</msg>
+  <msg key="No_Postings">Ei viestejä.</msg>
+  <msg key="Posted">Lähetetty</msg>
+  <msg key="Posting_History">Lähetyshistoria</msg>
+  <msg key="Posting_history_for">Lähetyshistoria käyttäjälle</msg>
+  <msg key="Subject">Otsikko</msg>
+  <msg key="View">Näytä:</msg>
+</message_catalog>

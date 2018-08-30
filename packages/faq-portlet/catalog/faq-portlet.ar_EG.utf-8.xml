@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<message_catalog package_key="faq-portlet" locale="ar_EG" charset="utf-8">
+
+  <msg key="admin_pretty_name">إدارةُ أسئلة مكرَّرةِ</msg>
+  <msg key="Disable">عَطّلْ</msg>
+  <msg key="Disabled">عُطّلَ</msg>
+  <msg key="Enable">مَكّنْ</msg>
+  <msg key="group">مجموعة</msg>
+  <msg key="name">إسم</msg>
+  <msg key="new_faq">أسئلة متكررة جديدة</msg>
+  <msg key="no_faqs">لا أسئلة مكرَّرةَ</msg>
+  <msg key="one_admin_faq">هناك يَجِبُ أَنْ يَكُونَ هناكَ حالةٍ واحدةٍ مِنْ الأسئلة المكرَّرةِ لأغراضِ الإدارةِ </msg>
+  <msg key="pretty_name">(أسئلة يتكرّر طرحها (أسئلة مكرَّرةُ</msg>
+</message_catalog>

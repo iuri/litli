@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<message_catalog package_key="dotlrn-forums" locale="de_DE" charset="ISO-8859-1">
+
+  <msg key="administer">verwalten</msg>
+  <msg key="All_forums">Alle Foren</msg>
+  <msg key="all_Forums">All Forums</msg>
+  <msg key="Auto_subscribe_label">Für die Teilnehmer der Gruppe die Benachrichtigungsfunktion standardmäßig aktivieren</msg>
+  <msg key="by_Date">nach Datum</msg>
+  <msg key="by_Forum">nach Forum</msg>
+  <msg key="Forum">Forum</msg>
+  <msg key="forums_default_name_suffix">Forum</msg>
+  <msg key="lt_Forums_Posting_histor">Foren: Verlauf der Forumsbeiträge für Benutzer %user.full_name%</msg>
+  <msg key="lt_There_should_be_only_">Aus verwaltungstechnischen Gründen sollten die Diskussionsforen innerhalb einer Gruppe nur einmal eingesetzt werden.</msg>
+  <msg key="New_Forum">Neues Forum erstellen</msg>
+  <msg key="No_Postings">Keine Forumsbeiträge vorhanden</msg>
+  <msg key="Posted">Gesendet</msg>
+  <msg key="Posting_History">Verlauf der Forumsbeiträge</msg>
+  <msg key="Posting_history_for">Verlauf der Forumsbeiträge für</msg>
+  <msg key="Subject">Betreff</msg>
+  <msg key="View">Anzeigen:</msg>
+</message_catalog>

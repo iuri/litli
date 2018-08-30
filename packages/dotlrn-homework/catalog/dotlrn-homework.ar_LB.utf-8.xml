@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<message_catalog package_key="dotlrn-homework" locale="ar_LB" charset="utf-8">
+
+  <msg key="Action">عمل</msg>
+  <msg key="Alert">إنذار</msg>
+  <msg key="All_Versions_of_name">كل النسخ ل &quot;%name%&quot;</msg>
+  <msg key="Author">مؤلف</msg>
+  <msg key="bytes">بايت</msg>
+  <msg key="Comments">تعليقات</msg>
+  <msg key="Copy">نسخ</msg>
+  <msg key="Delete">خذف</msg>
+  <msg key="delete">خذف</msg>
+  <msg key="Delete_folder_name">خذف %folder_name%</msg>
+  <msg key="Delete_title">خذف  %title% </msg>
+  <msg key="Delete_version_name">خذف%version_name%</msg>
+  <msg key="Description">وصف</msg>
+  <msg key="Do_not_alert">لا تنبه</msg>
+  <msg key="edit_upload_size_limit">Edit Upload Size Limit</msg>
+  <msg key="Folder_is_empty">حافظة الملفات فارغة</msg>
+  <msg key="homework_pretty_admin">إدارة الواجبات المنزلية</msg>
+  <msg key="Live_version_of_name">نسخة حية من &quot;%name%&quot;</msg>
+  <msg key="lt_a_file_named">الملف الذي يحمل إسم  &quot;%decoded_name%&quot; قد تم تحميله إلى الحافظة &quot;%folder_name%&quot; بواسطة &quot;%student_name%&quot;.</msg>
+  <msg key="lt_a_file_named_1">الملف الذي يحمل إسم  &quot;%decoded_name%&quot; قد تم تحميله إلى الحافظة &quot;%folder_name%&quot; بواسطة &quot;%student_name%&quot;.</msg>
+  <msg key="lt_admin_has_uploaded">%admin_name% حمل التعليقات لملف واجبك  المنزلي و اسمه&quot;%decoded_name%&quot; في ال حافظة &quot;%folder_name%&quot;</msg>
+  <msg key="lt_Are_you_sure_that_you">هل انت متاكد من رغبتك بحذف هذه النسخة&quot;%version_name%&quot;  &quot;%title%&quot;? لا يمكنك استرجاعه بعد القيام بالحذف</msg>
+  <msg key="lt_Are_you_sure_you_want">هل انت متاكد من رغبتك بحذف  هذ ا الملف&quot;%title%&quot; وجميع نسخة  لا يمكنك استرجاعه بعد القيام بالحذف</msg>
+  <msg key="lt_Are_you_sure_you_want_1">هل انت متاكد من رغبتك بحذف  هذه   الحافظة&quot;%folder_name%&quot;?         لا يمكنك استرجاعه بعد القيام بالحذف</msg>
+  <msg key="lt_Contents_of_folder_na">هذه   الحافظة  %folder_name%</msg>
+  <msg key="lt_correction_file_alert">تعديل ملف التنبيهات</msg>
+  <msg key="lt_create_folder">إنشاء  حافظة</msg>
+  <msg key="lt_create_new_folder">إنشاء  حافظة جديدة</msg>
+  <msg key="lt_create_subfolder">إنشاء  حافظة  فرعية</msg>
+  <msg key="lt_delete_folder">حذف حافظة</msg>
+  <msg key="lt_Delete_this_file_incl">حذف هذا الملف - مع كل نسخه</msg>
+  <msg key="lt_delete_version">حذف جميع النسخ</msg>
+  <msg key="lt_file_named">الملف الذي يحمل إسم &quot;%title%&quot;  موجود حاليا في الحافظة
+
+</msg>
+  <msg key="lt_folder_already_contains">ال &lt;a href=&quot;index?folder_id=%parent_id%&quot;&gt; الحافظة &lt;/a&gt; التي إخترتها تحتوي على ملف له نفس الاسم</msg>
+  <msg key="lt_folder_name">اسم حافظة الملفات</msg>
+  <msg key="lt_For_more_information_">للمزيد من المعلومات إطلع على الكتيب المتعلق بأسئلة المديرالموجود في 
+شريط التحكم للصف</msg>
+  <msg key="lt_homework_folder">%community_name%' حافظة الوجبات المنزلية </msg>
+  <msg key="lt_homework_upload">التنبيه لعملية تحميل الواجب المنزلي</msg>
+  <msg key="lt_internal_error">الخطأ الدّاخلي</msg>
+  <msg key="lt_interval_or_del">المدة أو الطريقة لتوصيل الواجب المنزلي قد كسرت</msg>
+  <msg key="lt_me_when_homework_file">أعلمني عندما يتم تحميل ملفات الواجب المنزلي</msg>
+  <msg key="lt_new_values">%new_value%'لحافظة الواجب المنزلي  </msg>
+  <msg key="lt_one_assignment">واجب واحد</msg>
+  <msg key="lt_one_folder">حافظة واحدة</msg>
+  <msg key="lt_or_edit">تحرير/</msg>
+  <msg key="lt_Select_the_folder_tha">إختار الحافظة التي تود نسخ &quot;%file_name%&quot;   اليها</msg>
+  <msg key="lt_Select_the_folder_tha_1">إختار الحافظة التي تود نقل&quot;%name%&quot; اليها</msg>
+  <msg key="lt_Show_only_live_versio">اظهر فقط النسخة الحية</msg>
+  <msg key="lt_spec_folder">الحافظة المختارة غير مقبولة</msg>
+  <msg key="lt_spec_parent">حافظة الام المختارة غير مقبولة</msg>
+  <msg key="lt_spec_version">النسخة المختارة غير مقبولة
+</msg>
+  <msg key="lt_specified_file">الملف المختار غير مقبول</msg>
+  <msg key="lt_submit_comm">ارسال التعليقات</msg>
+  <msg key="lt_submit_new_assign">ارسال واجب جديد</msg>
+  <msg key="lt_Submit_New_Assignment">ارسال ملف  واجب جديد</msg>
+  <msg key="lt_submit_new_file">ارسال ملف  واجب جديد</msg>
+  <msg key="lt_TAs_and_professors_ca">الاساتذة و الدكاترة  يستطيعون تحميل نسخ مختلفة من التعليقات من 
+خلال صفحة التفصيل و بإمكانهم استعمال الحقل الخاص بملاحظات النسخة للتفريق ما بين الملاحظات</msg>
+  <msg key="lt_There_are_two_ways_to">هناك وسيلتين لاضافة تعليقات  على ملف الطلاب 1- تحميل ملف  منغصل 
+جديد من هذه الصفحة  2- كتابة التعليقات مباشرة في ملف الطلاب  وذلك بأن تنزل و تفتح الملف  على جهازك الخاص وعند الانتهاء احفظ الملف و 
+إرجع الى حافظة الواجبات المنزلية و حمل التعليقات</msg>
+  <msg key="lt_This_file_has_version">هناك نسخ معدلة من هذا الملف لا تملك صلاحية حذفه لذا لا يمكنك إجراء عملية الحذف</msg>
+  <msg key="lt_upload_comm">تحميل التعليقات</msg>
+  <msg key="lt_upload_new_as">تحميل واجبات جديدة</msg>
+  <msg key="lt_upload_new_ass_version">تحميل نسخة واجبات جديدة</msg>
+  <msg key="lt_Upload_New_Version_of">تحميل نسخة جديدة من %name% </msg>
+  <msg key="lt_upload_new_version_of">تحميل نسخة جديدة من %name% </msg>
+  <msg key="lt_use_browse">استعمل كبسة البحث لايجاد ملفك ومن ثم إضغط على كبسة فتح</msg>
+  <msg key="lt_version_filename">اسم ملف النسخة</msg>
+  <msg key="lt_version_notes">ملاحظات النسخة</msg>
+  <msg key="lt_were_sorry">نأسف لا نستطيع حذف الحافظة لانها غير  فارغة</msg>
+  <msg key="lt_Yes_delete_it">نعم إمسحه</msg>
+  <msg key="lt_yes_delete_it">نعم إمسحه</msg>
+  <msg key="lt_your_file_is">حجم الملف أكبر مما هو مسموح به على هذا النظام</msg>
+  <msg key="Modified">تم تعديله</msg>
+  <msg key="Move">تحريك</msg>
+  <msg key="New_Comments">تفاصيل</msg>
+  <msg key="pretty_name">الواجبات المنزلية</msg>
+  <msg key="Show_all_versions">إظهار جميع النسخ المعدلة</msg>
+  <msg key="Size_bytes">الحجم بالبايت</msg>
+  <msg key="Student">طالب</msg>
+  <msg key="Title">عنوان</msg>
+  <msg key="Type">نوع</msg>
+  <msg key="Upload_a_new_version">تحميل نسخة معدلة جديدة</msg>
+  <msg key="Version_filename">إسم الملف للنسخة المعدلة</msg>
+  <msg key="Version_Notes">ملاحظات النسخة المعدلة</msg>
+  <msg key="View">تعليقات جديدة</msg>
+  <msg key="View_1">إظهار</msg>
+</message_catalog>

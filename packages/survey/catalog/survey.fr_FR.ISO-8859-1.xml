@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<message_catalog package_key="survey" locale="fr_FR" charset="ISO-8859-1">
+
+  <msg key="-__Created_by">Créé par</msg>
+  <msg key="Actions">Actions</msg>
+  <msg key="Active">Actif ?</msg>
+  <msg key="Add_A_Question">Ajouter une question</msg>
+  <msg key="Add_New">Ajouter un nouveau</msg>
+  <msg key="add_new_question">Ajouter une nouvelle question</msg>
+  <msg key="Admin_This_Survey">Administrer Ce Questionnaire</msg>
+  <msg key="allow_multiple">Autoriser de multiples</msg>
+  <msg key="Answer_Survey">Répondre au Questionnaire</msg>
+  <msg key="Answer_Text">Répondre au Texte</msg>
+  <msg key="are">sont</msg>
+  <msg key="Below_the_question">Sous la question</msg>
+  <msg key="Beside_the_question">A coté de la question</msg>
+  <msg key="Boolean">Booléen</msg>
+  <msg key="By_user">Par utilisateur</msg>
+  <msg key="Choose_a_Survey_Type">Choisir un Type de Questionnaire</msg>
+  <msg key="Choose_Survey_Type">Choisir le Type de Questionnaire</msg>
+  <msg key="Choose_Type">Choisir le Type</msg>
+  <msg key="Continue_with_Delete">Continuer la Suppression</msg>
+  <msg key="Copy">Copier</msg>
+  <msg key="Copy_of">Copier depuis</msg>
+  <msg key="Copy_this_survey">Copier ce questionnaire</msg>
+  <msg key="Copy_title_name">Copier: %title_name%</msg>
+  <msg key="Could_not_find_user">N'a pas pu trouver l'utilisateur</msg>
+  <msg key="Create_Survey">Créer un questionnaire</msg>
+  <msg key="CSV_Export">Exporter en CSV</msg>
+  <msg key="CSV_file">fichier CSV</msg>
+  <msg key="Database_Error">Erreur de la base de données</msg>
+  <msg key="Database_error">Erreur de la base de données</msg>
+  <msg key="Date">Date</msg>
+  <msg key="Delete">Supprimer</msg>
+  <msg key="Delete_1">Supprimer :</msg>
+  <msg key="DELETE_Question">Supprimer : Question</msg>
+  <msg key="Delete_Question">Supprimer cette Question</msg>
+  <msg key="Delete_Response">Supprimer la Réponse</msg>
+  <msg key="Delete_Survey">Supprimer le Questionnaire</msg>
+  <msg key="Delete_this_survey">Supprimer ce questionnaire</msg>
+  <msg key="Description">Description:</msg>
+  <msg key="Description_1">Description</msg>
+  <msg key="disable">désactiver</msg>
+  <msg key="disabled">(désactivé)</msg>
+  <msg key="Display_Options">Options d'Affichage :</msg>
+</message_catalog>

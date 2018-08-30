@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<message_catalog package_key="static-portlet" locale="ms_MY" charset="utf-8">
+
+  <msg key="admin_portlet_element_pretty_name">Portlet Adat</msg>
+  <msg key="admin_portlet_pretty_name">Pentadbiran Portlet Adat</msg>
+  <msg key="Binary_file_uploaded">Fail binari %filename% telah dimuat atas, tetapi kami hanya boleh menyokong fail teks di sini.</msg>
+  <msg key="Content">Perisian</msg>
+  <msg key="Control_Panel">Kawal Paparan</msg>
+  <msg key="Create_a_new">Membuat satu %element_pretty_name% baru</msg>
+  <msg key="Edit">Ubah</msg>
+  <msg key="Edit_content_element">Edit elemen perisian</msg>
+  <msg key="File">Fail</msg>
+  <msg key="lt_Delete_element_pretty">Buang %element_pretty_name% %pretty_name%</msg>
+  <msg key="lt_Editing_element_prett">Mengedit %element_pretty_name% %pretty_name%</msg>
+  <msg key="lt_strongNotestrong_You_">&lt;strong&gt;Nota&lt;/strong&gt;: Anda boleh menggunakan abjad biasa atau HTML di ruangan Perisian.</msg>
+  <msg key="lt_Use_this_form_to_crea">Gunakan boran ini untuk menambah %element_pretty_name% baru. %element_pretty_name% ini akan ditambah dan secara automatik akan di letakkan pada halaman yang pertama %portal_name% portal. Pergi ke %control_panel_text% dan pilih Ubahsuai Bentangan untuk memindahkan %element_pretty_name%. </msg>
+  <msg key="Name">Nama</msg>
+  <msg key="New">Baru</msg>
+  <msg key="new_static_admin_portlet">%element_pretty_name% baru</msg>
+  <msg key="Use_this_form">Guna borang ini untuk membuat satu %element_pretty_name% baru. %element_pretty_name% akan dibuat dan secara automatik diletakkan pada halaman pertama portal %portal_name% Pergi ke halaman pentadbiran dan pilih Pengawal Paparan untuk memindah %element_pretty_name% ini.</msg>
+  <msg key="You_may_upload">Atau, anda boleh memuat naik &lt;strong&gt;teks&lt;/strong&gt; fail di sini, dimana kandungannya akan menggantikan kandunagan asas portlet.</msg>
+</message_catalog>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<message_catalog package_key="static-portlet" locale="nl_NL" charset="ISO-8859-1">
+
+  <msg key="admin_portlet_element_pretty_name">Portlet op maat</msg>
+  <msg key="admin_portlet_pretty_name">Portlet Op Maat administratie</msg>
+  <msg key="Back_to">Terug naar</msg>
+  <msg key="Binary_file_uploaded">Binair-bestand %filename% werd aangeboden, maar er worden hier alleen tekstbestanden geaccepteerd.</msg>
+  <msg key="Content">Inhoud</msg>
+  <msg key="Control_Panel">Mijn instellingen</msg>
+  <msg key="Create_a_new">Een nieuw %element_pretty_name% aanmaken</msg>
+  <msg key="Edit">Bewerken</msg>
+  <msg key="Edit_content_element">Inhoud bewerken</msg>
+  <msg key="False_0">Onjuist</msg>
+  <msg key="File">Bestand</msg>
+  <msg key="lt_Delete_element_pretty">%element_pretty_name% %pretty_name% verwijderen</msg>
+  <msg key="lt_Editing_element_prett">%element_pretty_name% %pretty_name% bewerken</msg>
+  <msg key="lt_Enforce_this_applet_t">Deze applet in het Portaal tonen</msg>
+  <msg key="lt_Enforce_True_means_th">Juist afdwingen betekent dat de statische portlet \ direct toegevoegd zal worden in het portaal dat al is gecreëerd, \Onjuist betekent dat het beschikbaar is bij het aanpassen van een portaal.</msg>
+  <msg key="lt_strongNotestrong_You_">&lt;strong&gt;Bericht&lt;/strong&gt;: U kunt platte tekst of HTML gebruiken bij het schrijven van uw tekst.</msg>
+  <msg key="lt_Use_this_form_to_crea">Gebruik dit formulier om een nieuw %element_pretty_name% aan te maken. %element_pretty_name% zal automatisch worden toegevoegd aan de eerste pagina van het %portal_name% portaal. Ga naar %control_panel_text% en selecteer Paginaindeling wijzigen om %element_pretty_name% te verplaatsen.</msg>
+  <msg key="Name">Naam</msg>
+  <msg key="New">Nieuw</msg>
+  <msg key="new_static_admin_portlet">Nieuw %element_pretty_name% </msg>
+  <msg key="True">Juist</msg>
+  <msg key="Use_this_form">Formulier om een nieuw %element_pretty_name% aan te maken. De %element_pretty_name% wordt aangemaakt en automatisch getoond op de eerste pagina van de %portal_name% portaal.</msg>
+  <msg key="You_may_upload">Of, biedt hier een &lt;strong&gt;tekst&lt;/strong&gt; bestand aan. De tekst van dat bestand zal de huidige tekstinhoud van de portlet vervangen.</msg>
+</message_catalog>

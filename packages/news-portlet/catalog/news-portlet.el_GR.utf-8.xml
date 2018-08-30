@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<message_catalog package_key="news-portlet" locale="el_GR" charset="utf-8">
+
+  <msg key="Add_a_News_Item">Προσθήκη Νέων</msg>
+  <msg key="admin_pretty_name">Διαχείριση νέων</msg>
+  <msg key="Contributed_by">Προσφέρεται από</msg>
+  <msg key="goto_item_creator_commpage">Μετάβαση στη %item_creator% σελίδα κοινότητας</msg>
+  <msg key="Manage_News">Διαχείριση νέων</msg>
+  <msg key="news_syndication_feed">Τροφοδότηση νέων </msg>
+  <msg key="No_News">Δεν υπάρχουν διαθέσιμα νέα</msg>
+  <msg key="pretty_name">Νέα</msg>
+  <msg key="Read_more">Διαβάστε περισσότερα...</msg>
+  <msg key="show_content_news_items_publish_title">Προβολή περιεχομένου του %news_items.publish_title%</msg>
+</message_catalog>

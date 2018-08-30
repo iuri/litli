@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<message_catalog package_key="static-portlet" locale="sv_SE" charset="ISO-8859-1">
+
+  <msg key="admin_portlet_element_pretty_name">Skräddarsydd Portlet</msg>
+  <msg key="admin_portlet_pretty_name">Administration av Skräddarsydd Portlet</msg>
+  <msg key="Content">Innehåll</msg>
+  <msg key="Control_Panel">Kontrollpanel</msg>
+  <msg key="Edit_content_element">Redigera innehållselement</msg>
+  <msg key="lt_Delete_element_pretty">Ta bort %element_pretty_name% %pretty_name%</msg>
+  <msg key="lt_Editing_element_prett">Redigera %element_pretty_name% %pretty_name%</msg>
+  <msg key="lt_strongNotestrong_You_">&lt;strong&gt;Notera&lt;/strong&gt;: Du kan använda vanlig text eller HTML i innehållsarean.</msg>
+  <msg key="lt_Use_this_form_to_crea">Använd detta formulär för att skapa nytt %element_pretty_name%. %element_pretty_name%et kommer att skapas och automatiskt placeras på den första sidan för %portal_name%portalen. Gå till %control_panel_text% och välj layout för att flytta detta %element_pretty_name%.</msg>
+  <msg key="Name">Namn</msg>
+  <msg key="New">Nya</msg>
+  <msg key="new_static_admin_portlet">Nytt innehållselement</msg>
+</message_catalog>

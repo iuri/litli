@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<message_catalog package_key="dotlrn-static" locale="ru_RU" charset="utf-8">
+
+  <msg key="class_info_portlet_pretty_name">Информация про Класс</msg>
+  <msg key="community_info_portlet_pretty_name">Информация про Сообщество</msg>
+  <msg key="Static_HTML_Data">Статические (HTML) данные</msg>
+  <msg key="subcommunity_info_portlet_pretty_name">Информация про Под-группа</msg>
+</message_catalog>

@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+
+<package key="b-responsive-theme" url="http://openacs.org/repository/apm/packages/b-responsive-theme" type="apm_service">
+    <package-name>B Responsive Theme</package-name>
+    <pretty-plural>B Responsive Themes</pretty-plural>
+    <initial-install-p>f</initial-install-p>
+    <singleton-p>t</singleton-p>
+    
+    <version name="5.8.1" url="http://openacs.org/repository/download/apm/b-responsive-theme-5.8.1.apm">
+        <owner url="mailto:tekbasse@yahoo.com">Benjamin Brink</owner>
+        <summary>Provides a css responsive styled theme for OpenACS Subsites.</summary>
+        <release-date>2015-03-25</release-date>
+        <description format="text/plain">Provides a css responsive styled theme for OpenACS subsites.
+</description>
+        <license>GPL version 3</license>
+        <maturity>3</maturity>
+
+        <provides url="b-responsive-theme" version="5.8.1"/>
+        <requires url="acs-subsite" version="5.8.1"/>
+
+        <callbacks>
+<!-- No callbacks. default has callback type="after-install"  proc="openacs_default_theme::install::after_install" -->
+        </callbacks>
+        <parameters>
+        <!-- No version parameters -->
+        </parameters>
+
+    </version>
+</package>

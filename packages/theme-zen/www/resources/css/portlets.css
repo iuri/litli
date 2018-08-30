@@ -1,0 +1,71 @@
+/* PORTLETS -----------------------------------------------------------*/
+/* contains: all general portlet styles like title, frame, font etc. */
+/* Note: additional styles for specific packages (ie. calendar, survey) 
+are located in the css for that package (eg. Selva_calendar.css)  */
+
+.portlet-wrapper {
+	margin-bottom: 10px;
+}
+
+
+.portlet-header {
+	padding: 3px 5px 3px 5px;
+	border-top: 1px solid #fff;
+	background: #334f82 url(/resources/theme-zen/images/portlets/header-bg.gif) repeat-x top left;
+    height: 1.4em;	
+}
+
+.portlet-title {
+	float: left; /* comment out if portlet-controls display:none */
+	display: inline;
+	font-weight:bold;
+	color: #fff;
+}
+
+.portlet-title-no-controls {
+	display: inline;
+	font-weight:bold;
+	color: #fff;
+}
+
+.portlet-title h1, .portlet-title-no-controls h1 {
+	color: #fff;
+	margin: 0px;
+	font-size: 1em;
+}
+	
+.portlet-controls {
+	display: block; /* future development */
+	padding-top: 2px;
+	text-align: right;
+}
+
+.portlet-controls img {
+	border: 0px;
+}
+
+.portlet-controls a:link {
+	color: #ffffff;
+}
+
+.portlet-controls a:hover {
+	color: #000000;
+}
+
+.portlet {
+	background: #FFFFFF; 
+	border: 1px solid #c8c8c8; /* color */
+	padding: 10px;
+	background: url(/resources/theme-zen/images/global/page_background.gif) repeat-x top left;
+}
+	
+.portlet ul {  
+	padding-top:0px;
+	list-style-type:disc; }
+
+.portlet ul li{
+	margin-left: 0px;
+	padding-left: 0px;
+	padding-top:0px;}
+
+/* END OF PORTLETS*/

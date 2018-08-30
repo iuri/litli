@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<message_catalog package_key="dotlrn" locale="hu_HU" charset="utf-8">
+
+  <msg key="Actions">Lehetőségek</msg>
+  <msg key="AddDrop_Memberships">Fel- és leiratkozás</msg>
+  <msg key="admin_page_name">Beállítások</msg>
+  <msg key="Ask_a_question">Kérdezhetsz:</msg>
+  <msg key="Change_Locale">Helyszín és nyelv</msg>
+  <msg key="class_instances_pretty_name">osztály</msg>
+  <msg key="class_instances_pretty_plural">Osztályok</msg>
+  <msg key="class_name_header">%class_instances_pretty_name% neve</msg>
+  <msg key="class_page_calendar_title">Naptár</msg>
+  <msg key="class_page_file_storage_title">Dokumentumok</msg>
+  <msg key="class_page_home_title">Osztály kezdőlapja</msg>
+  <msg key="club_page_calendar_title">Naptár</msg>
+  <msg key="club_page_file_storage_title">Dokumentumok</msg>
+  <msg key="club_page_home_title">Közösségi ház</msg>
+  <msg key="club_page_people_title">Emberek</msg>
+  <msg key="clubs_name_header">%clubs_pretty_name% neve</msg>
+  <msg key="clubs_pretty_name">klub</msg>
+  <msg key="clubs_pretty_plural">közösségek</msg>
+  <msg key="control_panel">Beállítások</msg>
+  <msg key="Customize_Layout">Elrendezés testreszabása</msg>
+  <msg key="Department">Tanszék</msg>
+  <msg key="departments_pretty_name">Tanszék</msg>
+  <msg key="dotlrn_admin_pretty_name">.LRN adminisztráció</msg>
+  <msg key="dotlrn_main_portlet_pretty_name">Csoportok</msg>
+  <msg key="General_Site_Help">Általános segítség</msg>
+  <msg key="help">Segítség</msg>
+  <msg key="instructor_role_pretty_plural">Professzorok</msg>
+  <msg key="Join_A_Group">Csatlakozz egy csoporthoz</msg>
+  <msg key="logout">Kijelentkezés</msg>
+  <msg key="lt_Current_clubs_pretty_">Jelenlegi %clubs_pretty_plural%</msg>
+  <msg key="lt_Help_and_Personal_Con">Segítség és személyes beállítások</msg>
+  <msg key="lt_Join_a_class_instance">Csatlakozás egy %class_instances_pretty_name%hoz</msg>
+  <msg key="lt_Join_a_clubs_pretty_n">Csatlakozás egy %clubs_pretty_name%hoz</msg>
+  <msg key="lt_JoinDrop_a_Class_or_C">Fel- vagy leiratkozás egy osztályhoz vagy csoporthoz</msg>
+  <msg key="lt_JoinDrop_Classes_or_C">Fel- és leiratkozás</msg>
+  <msg key="lt_Your_Current_Membersh">Jelenlegi tagság</msg>
+  <msg key="Manage_Memberships">Tagságok intézése</msg>
+  <msg key="no_clubs">Nincsenek %clubs_pretty_plural%</msg>
+  <msg key="Personal_Options">Személyes beállítások</msg>
+  <msg key="Request_Membership">Tagság igénylése</msg>
+  <msg key="Role">Szerep</msg>
+  <msg key="student_role_pretty_name">Hallgató</msg>
+  <msg key="subcommunities_pretty_plural">alcsoportok</msg>
+  <msg key="teaching_assistant_role_pretty_plural">Tanársegédek</msg>
+  <msg key="Term">Szemeszter</msg>
+  <msg key="user_portal_page_calendar_title">A naptáram</msg>
+  <msg key="user_portal_page_file_storage_title">A dokumentumaim</msg>
+  <msg key="user_portal_page_home_title">A dolgaim</msg>
+</message_catalog>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<message_catalog package_key="news-portlet" locale="de_DE" charset="ISO-8859-1">
+
+  <msg key="Add_a_News_Item">Neue Ankündigung erstellen</msg>
+  <msg key="admin_pretty_name">Ankündigungen verwalten</msg>
+  <msg key="Contributed_by">Von</msg>
+  <msg key="Manage_News">Ankündigungen verwalten</msg>
+  <msg key="No_News">Keine Ankündigungen vorhanden</msg>
+  <msg key="pretty_name">Ankündigungen</msg>
+  <msg key="Read_more">Mehr Informationen...</msg>
+</message_catalog>

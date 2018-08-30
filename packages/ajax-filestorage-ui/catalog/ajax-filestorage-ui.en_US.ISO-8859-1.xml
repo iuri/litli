@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<message_catalog package_key="ajax-filestorage-ui" package_version="1.01" locale="en_US" charset="ISO-8859-1">
+
+  <msg key="Alert">Alert</msg>
+  <msg key="Browse">Browse</msg>
+  <msg key="Cancel">Cancel</msg>
+  <msg key="Cancelled">Cancelled (This item will be removed shortly)</msg>
+  <msg key="CanNotDeleteRoot">The root folder can not be deleted.</msg>
+  <msg key="ChangesReverted">Your changes have been reverted</msg>
+  <msg key="Close">Close</msg>
+  <msg key="Complete">Complete.</msg>
+  <msg key="Confirm">Confirm</msg>
+  <msg key="ConfirmDelete">Are you sure you want to delete</msg>
+  <msg key="CopyHighlight">Copy the highlighted text to your clipboard.</msg>
+  <msg key="CopyLink">Copy Link</msg>
+  <msg key="CreateFolderError">Sorry, there was an error trying to create your new folder.</msg>
+  <msg key="CreateUrlFailed">Create URL failed, please try again later.</msg>
+  <msg key="DeleteItemError">Sorry, there was an error trying to delete this item.</msg>
+  <msg key="Description">Description</msg>
+  <msg key="DownloadArchive">Download Archive</msg>
+  <msg key="DuplicateName">Duplicate Name</msg>
+  <msg key="EnterDifferentName">Please enter a different name. The name you entered is already being used.</msg>
+  <msg key="Error">Error</msg>
+  <msg key="ErrorMove">Sorry, an error occurred moving this item. A file with the same name may already exist in the target folder.</msg>
+  <msg key="ErrorOccured">An error occurred</msg>
+  <msg key="ErrorRenderTreePanel">Sorry, we encountered an error rendering the tree panel</msg>
+  <msg key="ErrorRevert">An error occurred. Your changes have been reverted</msg>
+  <msg key="File">File</msg>
+  <msg key="FileList">File List</msg>
+  <msg key="FileToUpload">File to upload</msg>
+  <msg key="FolderContains">This folder </msg>
+  <msg key="FolderNameRequired">A folder name is required</msg>
+  <msg key="for_upload_to">for upload to</msg>
+  <msg key="InvalidUrl">&lt;b&gt;URL&lt;/b&gt; is not a valid url.</msg>
+  <msg key="Limit100">Please limit your name to 100 characters or less.</msg>
+  <msg key="MultipleFiles">Multiple Files</msg>
+  <msg key="NoPermissionToRename">Sorry, you do not have permission to rename this folder</msg>
+  <msg key="Ok">OK</msg>
+  <msg key="OneMomentUploading">One moment. &lt;br&gt;This may take a while depending on how large your upload is.</msg>
+  <msg key="PermissionDenied">Permission Denied</msg>
+  <msg key="Properties">Properties</msg>
+  <msg key="SessionExpired">Your session has expired. You need to login again. &lt;br&gt;You will be redirected to a login page shortly</msg>
+  <msg key="Tag">Tag</msg>
+  <msg key="ThisIsAZip">This is a ZIP file containing multiple files.</msg>
+  <msg key="Title">Title</msg>
+  <msg key="TitleAndFileRequired">&lt;b&gt;Title&lt;/b&gt; and &lt;b&gt;File to upload&lt;/b&gt; are required.</msg>
+  <msg key="Tools">Tools</msg>
+  <msg key="UploadFailed">Upload failed, please try again later.</msg>
+  <msg key="UploadFileIntro">Click &lt;b&gt;Browse&lt;/b&gt; to select a file to upload to the selected folder.</msg>
+  <msg key="Uploading">Uploading ...</msg>
+  <msg key="Views">Views</msg>
+  <msg key="Zip_file">Zip File (Will be extracted after upload)</msg>
+  <msg key="Folders">Folders</msg>
+</message_catalog>

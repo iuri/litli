@@ -1,0 +1,109 @@
+<html>
+<!--AD_DND-->
+<head>
+<title>Survey</title>
+</head>
+
+<body bgcolor=#ffffff text=#000000>
+<h2>Survey</h2>
+
+A package for <a href="index">OpenACS 4.6</a>
+
+<hr>
+
+<h3>The Big Idea</h3>
+
+We want to be able to survey users.  We want a non-technical person to
+be able to design surveys from HTML forms.  We want someone who is not
+a site-admin to be able to review answers (we just give them admin
+	over the survey package.)
+
+<h3>Survey Question Possibilities</h3>
+
+Each survey question specifies an abstract data type for responses:
+
+<ul>
+
+<li>boolean
+<li>number
+<li>integer
+<li>shorttext (less than 4000 characters)
+<li>text
+<li>choice 
+
+</ul>
+
+Each survey also specifies a presentation type:
+
+<ul>
+<li>textbox
+<li>textarea (size can be specified in
+<code>presentation_options</code>)
+<li>select (from a fixed set of options in <code>survsimp_question_choices</code>)
+<li>radio (from a fixed set of options in <code>survsimp_question_choices</code>)
+<li>checkbox (from a fixed set of options in <code>survsimp_question_choices</code>)
+
+</ul>
+
+<h3>The data model</h3>
+
+We use the following tables:
+
+<ul>
+<li><code>survey_questions</code> -- questions for each survey
+<li><code>surveys</code> -- specs for one survey form (except the
+	      questions)
+<li><code>survey-sections</code> allows for future development of
+		branched or multi-part surveys	      
+<li><code>survey_responses</code> -- user responses to surveys 
+<li><code>survey_question_responses</code> -- user responses to
+individual questions within a survey
+
+</ul>
+
+The philosophy about storing the users responses is to use one single table to store all responses, i.e., we do not create a new table
+when we create a new survey.  In order to make it possible to store all
+kinds of data in one table, we give the
+<code>survey_question_responses</code> table five columns.
+
+<blockquote>
+<pre><code>
+	-- if the user picked a canned response
+	choice_id		references survey_question_choices,
+	boolean_answer		char(1) check(boolean_answer in ('t','f')),
+	clob_answer		clob,
+	number_answer		number,
+	attachment_answer       integer references cr_revisions(revision_id) 
+	varchar_answer		varchar(4000),
+</code></pre>
+</blockquote>
+
+Only one of the columns will be not-null.
+
+<p>
+
+Why the CLOB in addition to the varchar?  The CLOB is necessary when
+people are using this system for proposal solicitation (people might
+type more than 4000 characters).</p>
+<p>NOTE: Postgresql uses a text column in place of CLOB.</p>
+	<p>Attachment_answer allows for uploaded files to be stored in
+	  the content-repository</p>.
+<h3>User Interface</h3>
+
+The user interface for creating a survey is as follows:
+<ol>
+<li>User creates a survey, giving it a name and a description.
+<li>User adds questions one by one, and is given the opportunity to reorder questions.
+
+<li>To add a question, user first types in the question and selects
+its presentation type (radio buttons, checkbox, text field, etc.).
+<li>Then the user is given the opportunity to specify further
+attributes for the question depending upon the presentation type that
+was chosen. For instance, any "choice" presentation (radio buttons,
+checkboxes, and select lists) require a list of choices. A text field
+requires the user to specify an abstract data type and the size of the
+input field.
+</ol>
+
+
+	

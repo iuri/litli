@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<message_catalog package_key="dotlrn-portlet" locale="ar_EG" charset="utf-8">
+
+  <msg key="Closed">مُغلق</msg>
+  <msg key="Member_List">قائمةُ الأعضاء</msg>
+  <msg key="members_portlet_pretty_name">الأعضاء</msg>
+  <msg key="members_staff_portlet_pretty_name">قائمةُ الموظّفين</msg>
+  <msg key="Sort">رتّب</msg>
+</message_catalog>

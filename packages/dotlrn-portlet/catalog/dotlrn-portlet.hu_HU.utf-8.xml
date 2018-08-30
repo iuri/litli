@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<message_catalog package_key="dotlrn-portlet" locale="hu_HU" charset="utf-8">
+
+  <msg key="lt_No_subcomm_pretty_plu">Nincsenek %subcomm_pretty_plural%</msg>
+  <msg key="Member_List">Tagok listája</msg>
+  <msg key="members_staff_portlet_pretty_name">Munkatársak</msg>
+  <msg key="no_instructor_members">Nincsenek %instructor_role_pretty_plural%</msg>
+  <msg key="no_teaching_assistant_members">Nincsenek tanársegédek</msg>
+</message_catalog>

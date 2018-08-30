@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<message_catalog package_key="dotlrn-forums" locale="es_ES" charset="ISO-8859-1">
+
+  <msg key="administer">administrar</msg>
+  <msg key="All_forums">Todos los foros</msg>
+  <msg key="all_Forums">Todos los foros</msg>
+  <msg key="Auto_subscribe_label">Autosuscribir miembros del grupo</msg>
+  <msg key="autosubscribe_members">Suscribir automáticamente los miembros del grupo al foro %forums.name%</msg>
+  <msg key="by_Date">por Fecha</msg>
+  <msg key="by_Forum">por Foro</msg>
+  <msg key="Create_New_Forum">Crear un nuevo foro</msg>
+  <msg key="display_all_forums">Mostrar todos los foros</msg>
+  <msg key="do_not_autosubscribe_members">No suscribir automáticamente los miembros del grupo al foro %forums.name%</msg>
+  <msg key="Forum">Foro</msg>
+  <msg key="forums_default_name_suffix">Foro</msg>
+  <msg key="goto_forums_admin">Ir a la administración de foros</msg>
+  <msg key="goto_forums_name">Ir al foro %forums.name%</msg>
+  <msg key="lt_Forums_Posting_histor">Foros: Mensajes enviados a %user.full_name%</msg>
+  <msg key="lt_There_should_be_only_">Sólo debe haber un foro para los administradores</msg>
+  <msg key="New_Forum">Nuevo Foro</msg>
+  <msg key="No_Postings">No existen mensajes enviados.</msg>
+  <msg key="Posted">Enviados</msg>
+  <msg key="Posting_History">Mensajes Enviados</msg>
+  <msg key="Posting_history_for">Mensajes enviados a</msg>
+  <msg key="Subject">Tema</msg>
+  <msg key="View">Ver:</msg>
+</message_catalog>

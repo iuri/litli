@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<message_catalog package_key="static-portlet" locale="ru_RU" charset="utf-8">
+
+  <msg key="admin_portlet_pretty_name">Администрирование Персонализированного Портлета</msg>
+  <msg key="Content">Текст</msg>
+  <msg key="Control_Panel">Панель управления</msg>
+  <msg key="Edit_content_element">Редактировать элемент текста</msg>
+  <msg key="lt_Delete_element_pretty">Удалить %element_pretty_name% %pretty_name%</msg>
+  <msg key="lt_Editing_element_prett">Редактируем %element_pretty_name% %pretty_name%</msg>
+  <msg key="lt_Use_this_form_to_crea">Вы можете использовать эту формы для создания нового %element_pretty_name%. %element_pretty_name% будет создан и автоматически помещен на первой странице портала %portal_name%. С помощью %control_panel_text% вы можете позже, для того чтобы поменять расположение %element_pretty_name% (воспользуйтесь опцией &quot;Персонализация Структуры Страницы&quot;).</msg>
+  <msg key="Name">Название</msg>
+  <msg key="New">Новый</msg>
+  <msg key="new_static_admin_portlet">Новый %element_pretty_name%</msg>
+</message_catalog>

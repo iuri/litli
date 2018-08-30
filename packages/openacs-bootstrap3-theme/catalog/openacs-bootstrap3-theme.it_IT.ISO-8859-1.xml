@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<message_catalog package_key="openacs-bootstrap3-theme" locale="it_IT" charset="ISO-8859-1">
+
+  <msg key="plain">Tema Bootstrap 3 OpenACS</msg>
+  <msg key="tabbed">Tema Bootstrap 3 OpenACS a Schede (blu)</msg>
+  <msg key="tabbed-turquois">Tema Bootstrap 3 OpenACS a Schede (turchese)</msg>
+  <msg key="You_joined_group">Benvenuto!</msg>
+</message_catalog>

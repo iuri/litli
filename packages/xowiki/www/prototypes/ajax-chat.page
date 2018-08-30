@@ -1,0 +1,13 @@
+# -*- tcl-*-
+# $Id: ajax-chat.page,v 1.3 2012/09/13 16:05:36 victorg Exp $
+::xowiki::Object new -title "Ajax Chat" -text {
+
+  proc content {} {
+    #::xowiki::Chat login -chat_id 22 -mode polling
+    ::xowiki::Chat login -chat_id 22
+  }
+
+}
+
+
+

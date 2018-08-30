@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<message_catalog package_key="dotlrn-portlet" locale="ro_RO" charset="utf-8">
+
+  <msg key="admin_pretty_name">Administrare a Grupului</msg>
+  <msg key="Administer">Administrează</msg>
+  <msg key="All_members">Toţi membrii</msg>
+  <msg key="Archive">Arhivă</msg>
+  <msg key="Archive_this_group">Arhivează acest grup</msg>
+  <msg key="change_name_etc">Schimbă numele, descrierea, etc</msg>
+  <msg key="Closed">Închis</msg>
+  <msg key="Copy_this_group">Copiază acest grup</msg>
+  <msg key="edit_gr_props">Modifică Parametrii Grupului</msg>
+  <msg key="Email_Members">Trimite Email Membrilor</msg>
+  <msg key="lt_AddRemove_pretty_name">Adaugă/Scoate %pretty_name% membrii</msg>
+  <msg key="lt_can_send_bulk_mail_to">poţi trimite email în masă acestei comunităţi</msg>
+  <msg key="lt_Change_Bulk_Mail_Poli">schimbă politica de email în masă</msg>
+  <msg key="lt_Change_Enrollment_Pol">Schimbă Politica de Înregistrare</msg>
+  <msg key="lt_Create_a_new_Limited_">Creează un nou utilizator cu Acces Limitat</msg>
+  <msg key="lt_Create_a_new_Limited__1">Creează un nou utilizator Oaspete cu Access Limitat</msg>
+  <msg key="lt_Customize_Portal_Layo">Adaptează Aşezarea în pagină a Portalului</msg>
+  <msg key="lt_Guests_Can_View_Membership_Info">Utilizatorii oaspete pot vedea informaţii despre membrii grupului ?</msg>
+  <msg key="lt_No_subcomm_pretty_plu">Nu există %subcomm_pretty_plural%</msg>
+  <msg key="lt_Only_use_this_to_crea">Foloseşte asta numai pentru a creea un cont pentru studenţii înregistraţi deja care nu au un cont dintr-o altă clasă</msg>
+  <msg key="lt_Only_use_this_to_crea_1">Foloseşte asta numai pentru a creea conturi pentru utilizatori neafiliaţi care nu au un cont deja. Informaţii despre alţi membrii ai acestei comunităţi nu vor fi disponibile pentru acest utilizator</msg>
+  <msg key="lt_Sorry_this_functional">Ne cerem scuze, această funcţionalitate nu este disponibilă invitaţilor</msg>
+  <msg key="lt_This_group_is_archive">Acest grup este arhivat</msg>
+  <msg key="Manage_Applets">Administrează Apleturile</msg>
+  <msg key="Manage_Membership">Administrează Calităţile de Membru</msg>
+  <msg key="Member_List">Listă de Membrii</msg>
+  <msg key="members_portlet_pretty_name">Membrii</msg>
+  <msg key="members_staff_portlet_pretty_name">Lista de Personal</msg>
+  <msg key="Needs_Approval">Necesită Aprobare</msg>
+  <msg key="New_sub_pretty_name">%sub_pretty_name% nou</msg>
+  <msg key="no_course_assistant_members">Nu există %course_assistant_role_pretty_plural%</msg>
+  <msg key="no_instructor_members">Nu există %instructor_role_pretty_plural%</msg>
+  <msg key="no_teaching_assistant_members">Nu există %teaching_assistant_role_pretty_plural%</msg>
+  <msg key="Only_admins">Numai administratori</msg>
+  <msg key="Open">Deschis</msg>
+  <msg key="Sort">Sortează</msg>
+  <msg key="Sortmanage">Sortează/administrează</msg>
+</message_catalog>

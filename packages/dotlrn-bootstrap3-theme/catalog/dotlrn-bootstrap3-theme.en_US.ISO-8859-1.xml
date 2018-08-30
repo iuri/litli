@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<message_catalog package_key="dotlrn-bootstrap3-theme" locale="en_US" charset="ISO-8859-1">
+
+<msg key="bootstrap3-theme">.LRN Bootstrap3 Theme</msg>
+<msg key="bootstrap-1column">1-Column-Layout based on Bootstrap</msg>
+<msg key="bootstrap-2column">2-Column-Layout based on Bootstrap</msg>
+<msg key="bootstrap-3column">3-Column-Layout based on Bootstrap</msg>
+<msg key="maximize_portlet">Maximize portlet</msg>
+<msg key="minimize_portlet">Minimize portlet</msg>
+<msg key="begin_dotlrn_navigation">Begin .LRN Navigation</msg>
+<msg key="begin_dotlrn_sub_navigation">Begin .LRN sub navigation</msg>
+
+</message_catalog>

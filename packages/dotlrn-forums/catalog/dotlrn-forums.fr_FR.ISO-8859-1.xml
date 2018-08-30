@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<message_catalog package_key="dotlrn-forums" locale="fr_FR" charset="ISO-8859-1">
+
+  <msg key="by_Date">par date</msg>
+  <msg key="by_Forum">par forum</msg>
+  <msg key="Forum">Forum</msg>
+  <msg key="forums_default_name_suffix">Forum</msg>
+  <msg key="lt_Forums_Posting_histor">Forums: historique de messages de %user.full_name%</msg>
+  <msg key="lt_There_should_be_only_">Il ne peut y avoir qu'une seule instance de forum pour l'administration.</msg>
+  <msg key="New_Forum">Nouveau forum</msg>
+  <msg key="No_Postings">Aucun message.</msg>
+  <msg key="Posted">Envoyé</msg>
+  <msg key="Posting_History">Historique de messages</msg>
+  <msg key="Posting_history_for">Historique de messages de</msg>
+  <msg key="Subject">Objet</msg>
+  <msg key="View">Voir:</msg>
+</message_catalog>

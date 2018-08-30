@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<message_catalog package_key="faq-portlet" locale="ch_zh" charset="utf-8">
+
+  <msg key="admin_pretty_name">FAQ管理</msg>
+  <msg key="Disable">使不能</msg>
+  <msg key="Disabled">不能的</msg>
+  <msg key="Enable">使能</msg>
+  <msg key="group">组</msg>
+  <msg key="name">名称</msg>
+  <msg key="new_faq">新FAQ</msg>
+  <msg key="no_faqs">没有FAQ</msg>
+  <msg key="one_admin_faq">以管理为目的的FAQ只能有一个</msg>
+  <msg key="pretty_name">常见问题解答(FAQ)</msg>
+</message_catalog>

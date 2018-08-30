@@ -1,0 +1,12 @@
+/api-create.sql/1.44/Sun Oct  7 22:37:02 2007//Topenacs-5-9-compat
+/api-drop.sql/1.4/Fri Aug  9 20:56:27 2002//Topenacs-5-9-compat
+/datasource-sc-create.sql/1.8.24.1/Sat Apr 22 12:33:27 2017//Topenacs-5-9-compat
+/datasource-sc-drop.sql/1.10/Tue Sep 30 13:11:40 2003//Topenacs-5-9-compat
+/defaults.sql/1.24/Tue Aug  8 21:26:58 2006//Topenacs-5-9-compat
+/new-portal-create.sql/1.2/Mon Mar 10 20:59:03 2003//Topenacs-5-9-compat
+/new-portal-drop.sql/1.2/Mon Mar 10 20:59:03 2003//Topenacs-5-9-compat
+/objects-create.sql/1.8/Tue May 15 20:14:47 2007//Topenacs-5-9-compat
+/objects-drop.sql/1.4/Fri Aug  9 20:56:27 2002//Topenacs-5-9-compat
+/portal-core-create.sql/1.47.8.1/Fri Oct  2 12:53:44 2015//Topenacs-5-9-compat
+/portal-core-drop.sql/1.7/Fri Aug  9 20:56:28 2002//Topenacs-5-9-compat
+D

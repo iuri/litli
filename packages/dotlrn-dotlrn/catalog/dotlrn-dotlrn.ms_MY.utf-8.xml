@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<message_catalog package_key="dotlrn-dotlrn" locale="ms_MY" charset="utf-8">
+
+  <msg key="Core_DotLRN_Applets">Aplet-aplet DotLRN Teras</msg>
+  <msg key="Group_Members_Info">Informasi Ahli-ahli Kumpulan</msg>
+  <msg key="lt_dotLRN_Staff_List_Inf">Informasi Senarai Pekerja dotLRN</msg>
+</message_catalog>

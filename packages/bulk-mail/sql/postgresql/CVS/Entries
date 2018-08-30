@@ -1,0 +1,7 @@
+/bulk-mail-create.sql/1.5/Mon Oct 27 16:41:06 2014//Topenacs-5-9-compat
+/bulk-mail-drop.sql/1.3/Mon Oct 27 16:41:06 2014//Topenacs-5-9-compat
+/bulk-mail-package-create.sql/1.8/Mon Oct 27 16:41:06 2014//Topenacs-5-9-compat
+/bulk-mail-package-drop.sql/1.3/Sat May 17 10:19:23 2003//Topenacs-5-9-compat
+/bulk-mail-views-create.sql/1.2/Thu Aug 28 09:41:52 2003//Topenacs-5-9-compat
+/bulk-mail-views-drop.sql/1.1.1.1/Wed May 15 22:07:52 2002//Topenacs-5-9-compat
+D/upgrade////

@@ -1,0 +1,27 @@
+/index-oracle.xql/1.2/Sat Nov 23 05:18:14 2002//Topenacs-5-9-compat
+/index-postgresql.xql/1.2/Sat Nov 23 05:18:14 2002//Topenacs-5-9-compat
+/index.adp/1.9.6.1/Sat Jan 21 14:22:45 2017//Topenacs-5-9-compat
+/index.tcl/1.4/Wed Nov  6 07:33:54 2013//Topenacs-5-9-compat
+/one-respondent.adp/1.9.8.1/Sat Jan 21 14:22:45 2017//Topenacs-5-9-compat
+/one-respondent.tcl/1.9.2.1/Sat May 21 11:04:16 2016//Topenacs-5-9-compat
+/one-respondent.xql/1.2/Wed Mar 12 01:05:39 2003//Topenacs-5-9-compat
+/one-survey-oracle.xql/1.2/Sat Nov 23 05:18:14 2002//Topenacs-5-9-compat
+/one-survey-postgresql.xql/1.2/Sat Nov 23 05:18:14 2002//Topenacs-5-9-compat
+/one-survey.adp/1.7.2.1/Sat Jan 21 14:22:45 2017//Topenacs-5-9-compat
+/one-survey.tcl/1.5/Mon Oct 27 16:41:56 2014//Topenacs-5-9-compat
+/one_list.adp/1.3/Mon Jul  7 13:46:39 2003//Topenacs-5-9-compat
+/one_paragraph.adp/1.3/Mon Nov 10 22:54:45 2003//Topenacs-5-9-compat
+/one_table.adp/1.4/Wed Jun 17 07:43:56 2015//Topenacs-5-9-compat
+/process-response-oracle.xql/1.2/Wed Sep 25 00:43:42 2002//Topenacs-5-9-compat
+/process-response-postgresql.xql/1.2/Sat Nov 23 05:18:14 2002//Topenacs-5-9-compat
+/process-response.adp/1.6/Sun Nov  9 23:29:28 2008//Topenacs-5-9-compat
+/process-response.tcl/1.16.2.1/Sat May 21 11:04:16 2016//Topenacs-5-9-compat
+/process-response.xql/1.3/Thu Jan 16 14:04:18 2003//Topenacs-5-9-compat
+/respond-oracle.xql/1.3/Fri Oct 10 14:45:25 2003//Topenacs-5-9-compat
+/respond-postgresql.xql/1.4/Thu Nov  6 15:36:13 2003//Topenacs-5-9-compat
+/respond.adp/1.8/Wed Mar  5 21:20:39 2008//Topenacs-5-9-compat
+/respond.tcl/1.10.2.1/Sat May 21 11:04:16 2016//Topenacs-5-9-compat
+/respond.xql/1.2/Fri Oct 10 14:45:25 2003//Topenacs-5-9-compat
+/view-attachment.tcl/1.4/Mon Oct 27 16:41:56 2014//Topenacs-5-9-compat
+/view-attachment.xql/1.1/Mon Sep 16 00:00:23 2002//Topenacs-5-9-compat
+D

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<message_catalog package_key="news-portlet" locale="zh_TW" charset="utf-8">
+
+  <msg key="No_News">無新聞</msg>
+  <msg key="pretty_name">新聞</msg>
+</message_catalog>

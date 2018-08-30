@@ -1,0 +1,172 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Ajax File Storage User Interface</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <style>
+  body { font-family:arial; }
+  .style1 {color: #FF0000}
+  </style>
+</head>
+<body>
+<h1>Ajax File Storage User Interface </h1>
+<p>Hamilton G. Chua (ham@solutiongrove.com)<br>
+  January 2008 <br>
+  v1.0</p>
+<p><strong>What's New :</strong> </p>
+<p>v1.0 Final</p>
+<ul>
+    <li>updated to use ExtJS 2.0
+    <li>added a tools menu as an alternative to the file context menu
+    <li>fixed the url link to download archives
+    <li>support for dotlrn fs-portlet
+    <li>properties popup with ability to view and upload revisions
+    <li>built in support for sharing folders across file storage instances (turned off by default, file storage must support symlink feature c/o Dave Bauer)
+    <li>tooltips on file panel
+</ul>
+<p>v1.0 Beta</p>
+<ul>
+    <li>rewritten to use ExtJS 2.0rc1
+    <li>autocomplete when adding/editing tags
+    <li>accordion layout for left region 
+    <li>use famfam silk icons from <a href="http://www.famfamfam.com/lab/icons/silk/">http://www.famfamfam.com/lab/icons/silk/</a>
+</ul>
+<p>v0.81d</p>
+<ul>
+    <li>context menu adds links to file properties and permissions
+    <li>support for tagging files
+    <li>tagcloud panel
+    <li>download archive button on toolbar to download the entire file storage contents
+    <li>download archive menu item in folder context menu to download an archive of a folder
+</ul>
+<p>v0.8d</p>
+<ul>
+  <li>can be used on all file storage instances by following setup instructions below </li>
+  <li> degrades gracefully to old file storage interface if javascript is off</li>
+  <li>context menu via right click on the right panel </li>
+  <li>drag and drop moving of files and folders on the right panel to the tree panel </li>
+  <li>flash based upload component care of swfupload</li>
+  <li> toolbar menu</li>
+  <li>support for internationalization thru acs-lang</li>
+  <li>support for SHIFT and CTRL to select multiple files on the right panel</li>
+</ul>
+<p><strong>Set Up</strong></p>
+<p>Install ajax-filestorage-ui thru acs-admin/install. </p>
+<p>Before you can use ajaxfs-ui with your file storage instance, you need to make a few modifications to file-storage/www/index.adp. The code for index.adp is shown below and the changes that you must add are in <span class="style1">red</span> . </p>
+<pre style="border: 1px dashed rgb(153, 153, 153); padding: 5px; overflow: auto; font-family: Andale Mono,Lucida Console,Monaco,fixed,monospace; color: rgb(0, 0, 0); background-color: rgb(238, 238, 238); font-size: 12px; line-height: 14px; width: 100%;"><code>
+&lt;master&gt;<br>&lt;property name=&quot;title&quot;&gt;@folder_name@&lt;/property&gt;<br>&lt;property name=&quot;header&quot;&gt;@folder_name@&lt;/property&gt;<br>&lt;property name=&quot;context&quot;&gt;@context;noquote@&lt;/property&gt;<br>&lt;property name=&quot;displayed_object_id&quot;&gt;@folder_id;noquote@&lt;/property&gt;<br>
+<span class="style1">&lt;include src=&quot;/packages/ajax-filestorage-ui/lib/ajaxfs-include&quot; package_id=&quot;@package_id@&quot; folder_id=&quot;@folder_id@&quot; layoutdiv=&quot;fscontainer&quot;&gt;</span>
+
+<span class="style1">&lt;div id=&quot;fscontainer&quot;&gt;</span>
+&lt;table&gt;<br>&lt;tr&gt;<br>&lt;td&gt;<br>&lt;if @up_url@ not nil&gt;<br>    &lt;a href=&quot;@up_url@&quot; class=&quot;button&quot;&gt;#file-storage.index_page_navigate_up_folder#&lt;/a&gt;<br>&lt;/if&gt;<br>&lt;/td&gt;<br>&lt;td&gt;<br>&lt;if @project_url@ not nil&gt;<br>	&lt;a href=&quot;@project_url@&quot;&gt;#file-storage.back_to_project#: @project_name@&lt;/a&gt;<br>&lt;/if&gt;<br>&lt;/td&gt;<br>&lt;/tr&gt;<br>&lt;/table&gt;<br>&lt;include src=&quot;folder-chunk&quot; folder_id=&quot;@folder_id@&quot;<br>    n_past_days=&quot;@n_past_days@&quot; allow_bulk_actions=&quot;1&quot; return_url=&quot;@return_url@&quot;&gt;<br><span class="style1">&lt;/div&gt;</span>
+
+<span class="style1">&lt;div style=&quot;clear:both&quot;&gt;&lt;/div&gt;</span>
+&lt;p&gt;@notification_chunk;noquote@&lt;/p&gt;
+</code></pre>
+<p>These modifications are ideal if you want all your file storage instances to use AjaxFs. If you want more control on which file storage instance on your system uses AjaxFS, see below.
+<p><strong>Using a File Storage parameter</strong></p>
+<p>If you would like the ability to turn Ajaxfs on or off for different instances of file storage on your system. You can create a parameter <b>UseAjaxFs</b> in the file storage package.
+<ol>
+<li>In your OpenACS system, go to </b>/acs-admin/apm</b>
+<li>Click on the link to the <b>File Storage</b> package
+<li>Click the <b>Parameter</b> link
+<li>Click  <b>Add a new parameter</b>
+<li>Enter the following information
+    <br>
+    <br>Parameter Name : UseAjaxFs
+    <br>Description : Set this parameter to 1 if you want file storage to use the ajaxfs-ui interface
+    <br>Type: number
+    <br>Default: 0
+    <br><br>
+<li>Click <b>Add Parameter</b>
+</ol>
+<p>Then, make the following modifications in  <span class="style1">red</span> to the index.tcl file in packages/file-storage/www.
+<pre style="border: 1px dashed rgb(153, 153, 153); padding: 5px; overflow: auto; font-family: Andale Mono,Lucida Console,Monaco,fixed,monospace; color: rgb(0, 0, 0); background-color: rgb(238, 238, 238); font-size: 12px; line-height: 14px; width: 100%;"><code>
+<span class="style1">set use_ajaxfs_p [parameter::get -parameter UseAjaxFs -default 1]</span>
+ad_return_template
+</code></pre>
+<p>On the index.adp file, make the following changes
+<pre style="border: 1px dashed rgb(153, 153, 153); padding: 5px; overflow: auto; font-family: Andale Mono,Lucida Console,Monaco,fixed,monospace; color: rgb(0, 0, 0); background-color: rgb(238, 238, 238); font-size: 12px; line-height: 14px; width: 100%;"><code>
+&lt;master&gt;<br>&lt;property name=&quot;title&quot;&gt;@folder_name@&lt;/property&gt;<br>&lt;property name=&quot;header&quot;&gt;@folder_name@&lt;/property&gt;<br>&lt;property name=&quot;context&quot;&gt;@context;noquote@&lt;/property&gt;<br>&lt;property name=&quot;displayed_object_id&quot;&gt;@folder_id;noquote@&lt;/property&gt;<br>
+<span class="style1">
+&lt;if @use_ajax_fs_p@ eq 1 &gt;
+&lt;include src=&quot;/packages/ajax-filestorage-ui/lib/ajaxfs-include&quot; package_id=&quot;@package_id@&quot; folder_id=&quot;@folder_id@&quot; layoutdiv=&quot;fscontainer&quot;&gt;
+&lt;/if&gt;
+</span>
+
+<span class="style1">&lt;div id=&quot;fscontainer&quot;&gt;</span>
+&lt;table&gt;<br>&lt;tr&gt;<br>&lt;td&gt;<br>&lt;if @up_url@ not nil&gt;<br>    &lt;a href=&quot;@up_url@&quot; class=&quot;button&quot;&gt;#file-storage.index_page_navigate_up_folder#&lt;/a&gt;<br>&lt;/if&gt;<br>&lt;/td&gt;<br>&lt;td&gt;<br>&lt;if @project_url@ not nil&gt;<br>  &lt;a href=&quot;@project_url@&quot;&gt;#file-storage.back_to_project#: @project_name@&lt;/a&gt;<br>&lt;/if&gt;<br>&lt;/td&gt;<br>&lt;/tr&gt;<br>&lt;/table&gt;<br>&lt;include src=&quot;folder-chunk&quot; folder_id=&quot;@folder_id@&quot;<br>    n_past_days=&quot;@n_past_days@&quot; allow_bulk_actions=&quot;1&quot; return_url=&quot;@return_url@&quot;&gt;<br><span class="style1">&lt;/div&gt;</span>
+
+<span class="style1">&lt;div style=&quot;clear:both&quot;&gt;&lt;/div&gt;</span>
+&lt;p&gt;@notification_chunk;noquote@&lt;/p&gt;
+</code></pre>
+<p><strong>Embed in dotLRN Portlets</strong></p>
+<p>To embed ajaxfs in the dotlrn fs-portlet, you will need to make the following modifications to fs-portlet
+<p>packages/fs-portlet/www/fs-portlet.tcl
+<pre style="border: 1px dashed rgb(153, 153, 153); padding: 5px; overflow: auto; font-family: Andale Mono,Lucida Console,Monaco,fixed,monospace; color: rgb(0, 0, 0); background-color: rgb(238, 238, 238); font-size: 12px; line-height: 14px; width: 100%;"><code>
+if {![empty_string_p $user_root_folder] && [lsearch -exact $list_of_folder_ids $user_root_folder] != -1} {
+    set folder_id $user_root_folder
+    set user_root_folder_present_p 1
+    <span class="style1">set use_ajaxfs_p 0</span>
+} else {
+    set folder_id [lindex $list_of_folder_ids 0]
+    set file_storage_node_id [site_node::get_node_id_from_object_id \
+                             -object_id [ad_conn package_id]]
+    set file_storage_package_id [site_node::get_children \
+                                -package_key file-storage \
+                                -node_id $file_storage_node_id \
+                                -element package_id]
+    <span class="style1">set use_ajaxfs_p [parameter::get -package_id $file_storage_package_id -parameter UseAjaxFs -default 0]</span>
+
+}
+</code></pre>
+<p>packages/fs-portlet/www/fs-portlet.adp
+<pre style="border: 1px dashed rgb(153, 153, 153); padding: 5px; overflow: auto; font-family: Andale Mono,Lucida Console,Monaco,fixed,monospace; color: rgb(0, 0, 0); background-color: rgb(238, 238, 238); font-size: 12px; line-height: 14px; width: 100%;"><code>
+&lt;if @config.shaded_p@ false&gt;
+<span class="style1">&lt;if @use_ajaxfs_p@ eq 1&gt;
+&lt;include src="/packages/ajax-filestorage-ui/lib/ajaxfs-include" package_id="@file_storage_package_id@" folder_id="@folder_id@" layoutdiv="fscontainer"&gt;
+&lt;/if&gt;
+</span>
+
+<span class="style1">&lt;div id="fscontainer"&gt;</span>
+&lt;if @scoped_p@ eq 1&gt;
+&lt;include src=@scope_fs_url@ folder_id=@folder_id@ root_folder_id=@folder_id@ viewing_user_id=@user_id@ n_past_days=@n_past_days@ fs_url="@url@" page_num="@p
+age_num@"&gt;
+&lt;/if&gt;
+
+&lt;else&gt;
+
+&lt;if @write_p@ true&gt;
+        &lt;div class="list-button-bar-top"&gt;
+                &lt;a href="@url@folder-create?parent_id=@folder_id@" class="button" title="#fs-portlet.create_new_folder#"&gt;#fs-portlet.create_new_folder#&lt;/a&gt;
+                &lt;a href="@url@file-add?folder_id=@folder_id@" class="button" title="#fs-portlet.upload_file#"&gt;#fs-portlet.upload_file#&lt;/a&gt;
+                &lt;a href="@url@simple-add?folder_id=@folder_id@" class="button" title="#fs-portlet.create_url#"&gt;#fs-portlet.create_url#&lt;/a&gt;
+        &lt;/div&gt;
+
+&lt;/if&gt;
+  &lt;listtemplate name="folders"&gt;&lt;/listtemplate&gt;
+&lt;/else&gt;
+&lt;/if&gt;
+&lt;else&gt;
+&lt;small&gt;
+    #new-portal.when_portlet_shaded#
+  &lt;/small&gt;
+&lt;/else&gt;
+<span class="style1">&lt;/div&gt;</span>
+
+&lt;p&gt;@notification_chunk;noquote@&lt;/p&gt;
+</code></pre>
+
+<p><b>Notes</b></p>
+<p>If you are using the UseAjaxFs parameter :
+<ul>
+<li>you can set default value to 1 so that all newly created File Storage instances will use AjaxFs by default.
+<li>you can update the UseAjaxFs parameter of your existing file storage instances using the query below, turning AjaxFS on (1) or off (0) in one sql statement
+</ul>
+<pre style="border: 1px dashed rgb(153, 153, 153); padding: 5px; overflow: auto; font-family: Andale Mono,Lucida Console,Monaco,fixed,monospace; color: rgb(0, 0, 0); background-color: rgb(238, 238, 238); font-size: 12px; line-height: 14px; width: 100%;"><code>
+update apm_parameter_values set attr_value=1 where parameter_id=(select * from apm_parameters where parameter_name='UseAjaxFs')
+</code></pre>
+<br><br>
+</body>
+</html>

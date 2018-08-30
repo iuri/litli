@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<message_catalog package_key="dotlrn-forums" locale="ko_KR" charset="utf-8">
+
+  <msg key="Auto_subscribe_label">그룹 멤버 자동 가입</msg>
+  <msg key="by_Date">날짜에 의해</msg>
+  <msg key="by_Forum">포럼에 의해</msg>
+  <msg key="Forum">포럼</msg>
+  <msg key="forums_default_name_suffix">포럼</msg>
+  <msg key="lt_Forums_Posting_histor">포럼: %user.full_name%에 대한 게시 기록  </msg>
+  <msg key="lt_There_should_be_only_">관리를 위해 포럼의 인스턴스는 한개만 가능합니다.</msg>
+  <msg key="New_Forum">새로운 포럼</msg>
+  <msg key="No_Postings">게시물이 없습니다.</msg>
+  <msg key="Posted">게시된</msg>
+  <msg key="Posting_History">게시 기록</msg>
+  <msg key="Posting_history_for">에 대한 게시 기록</msg>
+  <msg key="Subject">제목</msg>
+  <msg key="View">보기:</msg>
+</message_catalog>

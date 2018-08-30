@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<message_catalog package_key="static-portlet" locale="en_US" charset="ISO-8859-1">
+
+  <msg key="admin_portlet_element_pretty_name">Custom Portlet</msg>
+  <msg key="admin_portlet_pretty_name">Custom Portlet Administration</msg>
+  <msg key="Back_to">Back to</msg>
+  <msg key="Binary_file_uploaded">Binary file %filename% was uploaded, but we only support text files here.</msg>
+  <msg key="Content">Content</msg>
+  <msg key="Control_Panel">Control Panel</msg>
+  <msg key="Create_a_new">Create a new %element_pretty_name%</msg>
+  <msg key="create_new_element_pretty_name">Create a new %element_pretty_name%</msg>
+  <msg key="Edit">Edit</msg>
+  <msg key="Edit_content_element">Edit content element</msg>
+  <msg key="edit_content_pretty_name">Edit %content.pretty_name%</msg>
+  <msg key="False_0">False</msg>
+  <msg key="File">File</msg>
+  <msg key="lt_Delete_element_pretty">Delete %element_pretty_name% %pretty_name%</msg>
+  <msg key="lt_Editing_element_prett">Editing %element_pretty_name% %pretty_name%</msg>
+  <msg key="lt_Enforce_this_applet_t">Enforce this applet to be shown in the Portal</msg>
+  <msg key="lt_Enforce_True_means_th">Enforce True means that the static portlet will be \
+								 added right away in the target portals that are already created, \
+								 False means that will be available to use when customizing the portal or when performing revert action</msg>
+  <msg key="lt_strongNotestrong_You_">&lt;strong&gt;Note&lt;/strong&gt;: You can use plain text or HTML in the Content area.</msg>
+  <msg key="lt_Use_this_form_to_crea">Use this form to create a new %element_pretty_name%.  The %element_pretty_name% will be created and automatically placed on the first page of %portal_name% portal. Goto the %control_panel_text% and select Customize Layout to move this %element_pretty_name%.</msg>
+  <msg key="must_specify">Must specify the file to upload</msg>
+  <msg key="Name">Name</msg>
+  <msg key="New">New</msg>
+  <msg key="new_static_admin_portlet">New %element_pretty_name%</msg>
+  <msg key="True">True</msg>
+  <msg key="Use_this_form">Use this form to create a new %element_pretty_name%.  The %element_pretty_name%
+will be created and automatically placed on the first page of %portal_name% portal. Go to the administration page and select Customize Layout to move this %element_pretty_name%.</msg>
+  <msg key="You_may_upload">Or, You may upload a &lt;strong&gt;text&lt;/strong&gt; file here, the contents of which will replace the current contents of the portlet.</msg>
+</message_catalog>

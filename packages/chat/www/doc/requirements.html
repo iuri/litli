@@ -1,0 +1,245 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="GENERATOR" content="Mozilla/4.75 [en] (Windows NT 5.0; U) [Netscape]">
+   <title>Chat Application Requirements</title>
+</head>
+<body bgcolor="#FFFFFF">
+
+<h2>
+Chat Application Requirements</h2>
+by <a href="mailto:jfinkler@arsdigita.com">Joshua Finkler</a> and <a href="mailto:ddao@arsdigita.com">David
+Dao</a>
+<hr>
+<h3>
+I. Introduction</h3>
+This document explains the requirements for the Chat application for the
+ArsDigita Community System.
+<h3>
+II. Vision Statement</h3>
+The chat application provides a mechanism for multiple users to post messages,
+associate user names with these messages, and display and update the last
+several messages so that chat visitors can follow the ongoing discussion.
+Such chat sessions need to be organized by topics so that users can find
+sessions relevant to their interests. The application should allow for
+multiple user as well as one-on-one sessions. Fine grain permissions customization
+should be available to keep information inaccessible to those users without
+appropriate authorization.
+<h3>
+III. System/Application Overview</h3>
+The chat application will consist of a user, group administrator and site-wide
+administrator interface. Chat sessions will be separated into rooms. Messages
+posted to each room will be archived and stored in a database. This archival
+method will integrate with the ACS so as to allow a comprehensive overview
+of a particular chat user's posting history. Chat rooms will be able to
+be created and dropped in conjunction with the creation or dropping of
+user groups or other database structures. The application must be reliable
+and scalable.
+<h3>
+IV. Use-cases and User-scenarios</h3>
+Saul Service-Employee wants to be able to interact with his customers over
+the Web while they are working on their computers, perhaps to help them
+diagnose their computer-related problems. He would like to be able to maintain
+several sessions simultaneously, so as to optimize his service efficacy.
+Saul would also like to be able to drop canned responses into a chat session
+when the customer asks a frequently asked question, thereby freeing up
+even more of his valuable time. By using the chat application to interact
+with his customers, Saul should be able to achieve each of these goals.
+<p>&nbsp;Bertha Bosslady wants to be able to keep tabs on the performance
+of service employees like Saul. By using the database backed chat application,
+Bertha should be able to ensure that has a complete record of Saul and
+his coworkers customer interactions. These records should also be able
+to be used to evaluate the legitimacy of future customer complaints or
+praises of Saul's performance. Aggregating the information found in these
+records should allow Bertha get a broad picture of the performance of her
+service team in general. Scraping these records should help Bertha identify
+frequently asked questions for which a canned response would be appropriate.
+<p>&nbsp;Chatty Cathy, a member of a role-playing fantasy community, wants
+to initiate a discussion with other gamers on the topic "Which is the better
+allegiance for cleric dwarves: chaotic good or lawful evil?" She should
+be able to search the site's chat rooms and find an appropriately entitled
+one, e.g., "Advanced Dungeons and Dragons". She should be able to join
+the chat discussion, post her question, get other interested nerds to respond,
+and have her desired discussion.
+<p>&nbsp;Edward Expatriate has moved far away from his homeland but still
+wishes to keep in touch with his friends and family. Long distance phone
+calls are out of the question due to their expense. Using the chat application,
+Ed should be able to set up scheduled chats or log on in the hope of an
+impromptu chat session with these people, thereby keeping in touch while
+keeping costs down.
+<p>The Conglomo Corporation has a scheduled guest chat with Dr. Erudite.
+The chat room is open to the public, however to prevent&nbsp; profanity
+and offensive question content,&nbsp; submitted questions do not go live
+immediately. Mark Moderator oversees the chat room and screens each question
+before approving them for inclusion in the chat.&nbsp;&nbsp; Since Dr.
+Erudite is the guest, all his answers and comments go live immediately.&nbsp;
+The day after the chat, Mark receives a request for a&nbsp; transcript
+of the chat from one of his site users who was unable to follow the chat
+live.&nbsp; Mark creates a transcript using a tool provided by the application
+which allows him to clean up some formatting issues and save it as a file.&nbsp;
+Now a nice properly formatted transcript of the chat with Dr. Erudite is
+available to each site member.
+<p>Carl Consumer could not find a product at Shop.com. Frustrated after
+spending the better part of an hour engaged in an unsuccessful search,
+Joe decides to leave the site and go to another competitive site. Just
+before doing so, he sees a link offering to allow him to chat with a customer
+service representative.&nbsp; He decides to give it one last try and so
+enters the chat and types "help!".&nbsp; The Shop.com representative is
+notified of the incoming message by an audio alert.&nbsp; Within the minute
+a Shop.com representative guides Joe to the product that he seeks.&nbsp;
+<h3>
+V. Related Links</h3>
+
+<ul>
+<li>
+<a href="cover.html">Chat application overview</a></li>
+
+<li>
+<a href="design.html">Chat application design document</a></li>
+</ul>
+
+<h3>
+VI.A. Requirements: The Data Model</h3>
+<strong>10 The Data Model</strong>
+<ul>
+<li><strong>10.10 Chat Rooms</strong></li>
+<p><strong>10.10.10</strong> Chat rooms have unique display names within each instance.
+<p><strong>10.10.20</strong> Chat rooms have option to archive all chat messages or not archive.
+<p><strong>10.10.30</strong> Chat rooms have active and deactivate status.
+<p><strong>10.10.40</strong> Chat rooms have auditing information (creation user, creation date).
+<p><strong>10.10.50</strong> Chat rooms should be associated with permissions levels
+for message posting. "Moderated mode" chat room will be such that each
+message posted shall require approval from the administrator for that room
+before being accessible to other chat users. "Unmoderated mode" chat rooms
+will be such that messages posted to that room are immediately accessible
+to other chat users.
+<p><strong>10.10.60</strong> Chat rooms could either be private or public.
+<ul>
+<li>All register users automatically grant permission to enter and participate in <strong>public</strong> chat room.
+<li>Users/groups must be explicitly grant permission to enter and particate in <strong>private</strong> chat room by a room admin.
+</ul>
+<p><strong>10.10.70</strong> Permissioning system to allow a group and/or single
+user to enter a chat room. This way will also implement banning certain
+user to a individual chat room.
+<p><strong>10.10.80</strong> Permissioning system to allow a group and/or single
+user to post a message to a chat room.
+<p>
+<li><strong>10.20 Chat messages</strong></li>
+
+<p><strong>10.20.10</strong> Each log message has auditing information.
+<p><strong>10.20.20</strong> The chat room to which a message belongs shall be identified.
+<p><strong>10.20.30</strong> A toggle value should be in place to indicate whether
+the message is in plain text or HTML format.
+<p><strong>10.20.40</strong> A toggle value should be in place to indicate whether
+the message has been approved by the moderator.
+<p><strong>10.20.50</strong> A private message never get log.
+<p><li>
+<strong>10.30 Chat transcripts</strong></li>
+
+<p><strong>10.30.10</strong> Each chat transcript has a display name.
+<p><strong>10.30.20</strong> Each chat transcript has a description.
+<p><strong>10.30.30</strong> Treat the whole transcript content as one big text file.
+<p><strong>10.30.40</strong> Permissioning system to allow who able to view the transcript.</ul>
+
+<h3>
+VI.B. Requirements: User Interface</h3>
+
+<ul>
+<li>
+<strong>20.10 Chat Administration Interface</strong></li>
+<p><strong>20.10.10</strong> Administrator should be able to create, edit, and
+delete a chat room.
+<p><strong>20.10.20</strong> Administrator should be able to delete all messages
+from a chat room.
+<p><strong>20.10.40</strong> Administrator should be able to add and remove moderators
+for a given room.
+<p><strong>20.10.40</strong> Administrator should be able to grant or revoke group/user
+privilege to a chat room.
+<p><strong>20.10.50</strong> Administrator should be able to active and deactivate
+a particular chat room.
+<p><strong>20.10.60</strong> Administrator should be able to create, edit and delete
+a chat transcript.
+<p>
+<li>
+<strong>20.20 Moderator Interface</strong></li>
+
+<p><strong>20.20.10</strong> Moderator should be able to post messages directly
+in a moderated chat room without the need for moderator (self-) approval.
+<p><strong>20.20.20</strong> Moderator should be able to accept or reject messages
+from other users in the moderate chat rooms.
+<p><strong>20.20.30</strong> Moderator should be able to suspend or revoke chat privileges
+from chat room users.
+<p>
+<li>
+<strong>20.30 Regular User HTML Interface</strong></li>
+<p><strong>20.30.10</strong> User should only be able to enter a public chat
+room accessible to this user's user group.
+<p><strong>20.30.20</strong> User should be able to automatically invite another
+user to join them in a chat room by supplying an email address.
+<p><strong>20.30.30</strong> User should be able to do a private chat with other user.
+<p><strong>20.30.40</strong> If a chat room is moderated, then the user's message
+will not go live immediately.
+<p><strong>20.30.50</strong> There is a refresh link to ensure they receive the latest messages.
+<p><strong>20.30.60</strong> The user should see all other users that post messages
+in the last specified number of minutes and all Java chatters.
+<p><strong>20.30.70</strong> Users should be able to chat privately with another
+user.
+<p>
+<li><strong>20.40 Regular User Java Interface</strong></li>
+<p><strong>20.40.10</strong> See a list of all Java chatters in the room and 
+HTML chatters who post message within a specified number of minutes.
+<p><strong>20.40.20</strong> See a list of all chat rooms accessible by this user.
+<p><strong>20.40.30</strong> A different pop up windows for each private conversation.
+<p><strong>20.40.40</strong> User A could not has a private conversation with user B, 
+if user B put user A on ignore list.
+<p><strong>20.40.50</strong> Optional audio alert for each new chat message.
+<p><strong>20.40.60</strong> Each user can have customize icon for his screen name.
+<p><strong>20.40.70</strong> Support smilie faces in chat area.
+<p><strong>20.40.80</strong> Able to ignore messages from a specific user.
+<p><strong>20.40.90</strong> Disallow duplicate screen name from Java chatter in the same chat room.
+
+
+<h3>
+VII. Revision History</h3>
+
+<table CELLSPACING=2 CELLPADDING=2 WIDTH="90%" BGCOLOR="#EFEFEF" >
+<tr BGCOLOR="#E0E0E0">
+<th WIDTH="10%">Document Revision #</th>
+
+<th WIDTH="50%">Action Taken, Notes</th>
+
+<th>When?</th>
+
+<th>By Whom?</th>
+</tr>
+
+<tr>
+<td>0.1</td>
+
+<td>Created</td>
+
+<td>2000-10-03</td>
+
+<td>Joshua Finkler</td>
+</tr>
+
+<tr BGCOLOR="#FFFFFF">
+<td>0.2</td>
+
+<td>Revision for chat ACS 4.0</td>
+
+<td>2000-11-08</td>
+
+<td>David Dao</td>
+</tr>
+</table>
+
+<p>
+<hr>
+<address>
+<a href="mailto:jfinkler@arsdigita.com">jfinkler@arsdigita.com</a></address>
+
+<br>Last modified: October 03 2000 12:00 PST 2000
+</body>
+</html>

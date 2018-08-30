@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<message_catalog package_key="photo-album" locale="ca_ES" charset="ISO-8859-1">
+
+  <msg key="_Album">Descripció de l'àlbum </msg>
+  <msg key="_Album_1">Història de l'àlbum</msg>
+  <msg key="_Album_2">Nom de l'àlbum </msg>
+  <msg key="_An">S'ha produït un error mentre es processava la informació. Per favor, feu-ho saber a l'administrador del sistema. &lt;pre&gt;%errmsg%&lt;/pre&gt; </msg>
+  <msg key="_An_1">S'ha produït un error mentre es processava la informació. Per favor, feu-ho saber a l'administrador del sistema. 
+
+
+
+
+
+
+</msg>
+  <msg key="_Choose">Trieu nova carpeta per a l'àlbum 
+</msg>
+  <msg key="_Choose_1">Trieu nova carpeta </msg>
+  <msg key="_Choose_2">Trieu la foto a carregar</msg>
+  <msg key="_Choose_3">Trieu un arxiu .zip o .tar per a carregar</msg>
+  <msg key="_Clipboard">Nom dels clips </msg>
+  <msg key="_Create">Crear un àlbum nou </msg>
+  <msg key="_Create_1">Crear carpeta nova</msg>
+  <msg key="_Delete">Eliminar la carpeta</msg>
+  <msg key="_Delete_1">Eliminar la foto</msg>
+  <msg key="_Edit">Editar els atributs de l'àlbum</msg>
+  <msg key="_Edit_1">Editar els atributs de la carpeta</msg>
+  <msg key="_Edit_2">Editar els atributs de les fotos</msg>
+  <msg key="_Edit_3">Editar la pàgina %page%</msg>
+  <msg key="_Edit_4">Editar la pàgina %page%</msg>
+  <msg key="_Either">Potser que ja hi haja un àlbum amb el nom \&quot;%name%\&quot; o potser hàgeu clicat en el botó més d'una vegada. Podeu &lt;a href=\&quot;index?parent_id=%parent_id%\&quot;&gt; tornar al directori principal&lt;/a&gt; per veure si el vostre àlbum s'hi troba.</msg>
+  <msg key="_Either_1">Potser que ja hi haja un àlbum en la carpeta especificada amb el nom \&quot;%folder_name%\&quot; o potser que hàgeu clicat en el botó més d'una vegada. Podeu &lt;a href=\&quot;?folder_id=%new_folder_id%\&quot;&gt; tornar a la nova carpeta&lt;/a&gt; per veure si hi és el vostre àlbum. </msg>
+  <msg key="_Either_2">Potser que ja hi haja una carpeta amb el nom \&quot;%name%\&quot; o potser hàgeu clicat en el botó més d'una vegada. Podeu &lt;a href=\&quot;index?parent_id=%parent_id%\&quot;&gt; tornar al directori principal&lt;/a&gt; per veure si hi és la carpeta. </msg>
+  <msg key="_Either_3">Potser que ja hi haja una carpeta en la carpeta especificada amb el nom \&quot;%folder_name%\&quot; o potser que hàgeu clicat en el botó més d'una vegada. Podeu &lt;a href=\&quot;?folder_id=%new_folder_id%\&quot;&gt; tornar a la nova carpeta&lt;/a&gt; per veure si hi és la carpeta.</msg>
+  <msg key="_Either_4">Potser que ja hi haja una foto en l'àlbum especificat amb el nom \&quot;%filename%\&quot; o potser hàgeu clicat en el botó més d'una vegada. Podeu &lt;a href=\&quot;album?album_id=%new_album_id%\&quot;&gt; tornar al nou àlbum&lt;/a&gt; per veure si hi és la foto. </msg>
+  <msg key="_Folder">Nom de la carpeta</msg>
+  <msg key="_Folder_1">Descripció de la carpeta</msg>
+  <msg key="_For">Per a mostrar esta foto &lt;a href=photo-edit?photo_id=%photo_id%&gt; edite els atributs&lt;/a&gt; i desmarcatge l'opció &quot;amagar&quot; </msg>
+  <msg key="_Full">Imatge en grandària real</msg>
+  <msg key="_Hide">Ocultar el codi html de la imatge </msg>
+  <msg key="_Modify">Modificar els paràmetres d'aquest paquet </msg>
+  <msg key="_Move">Moure l'àlbum</msg>
+  <msg key="_Move_1">Moure la carpeta</msg>
+  <msg key="_Move_photo_to_album">Moure la foto a l'àlbum </msg>
+  <msg key="_No">No hi ha accés. L'administrador d'aquest subsite ha restringit l'accés a la base de fotos. </msg>
+  <msg key="_Or">O busqueu un directori servidor per a pujar </msg>
+  <msg key="_Photo">Descripció de la foto </msg>
+  <msg key="_photo">no s'ha trobat la foto</msg>
+  <msg key="_Photo_1">Història de la foto </msg>
+  <msg key="_Photo_2">La foto no s'ha trobat o està amagada </msg>
+  <msg key="_Please">Per favor, seleccioneu un àlbum </msg>
+  <msg key="_Save">Guardar </msg>
+  <msg key="_Show">Mostrar el codi html de la imatge per a copiar&amp;amp;apegar </msg>
+  <msg key="_The">La carpeta pare especificada no és vàlida. </msg>
+  <msg key="_the">el directori ha d'existir en el servidor i ser llegible pels processos del mateix </msg>
+  <msg key="_The_1">L'àlbum especificat no és vàlid. </msg>
+  <msg key="_The_2">La foto especificada no és vàlida. </msg>
+  <msg key="_The_3">La carpeta  especificada no és vàlida. </msg>
+  <msg key="_The_4">L'àlbum especificat no és vàlid. </msg>
+  <msg key="_The_5">No se satisfà el paràmetre AcceptableUploadMIMETypes </msg>
+  <msg key="_The_6">El paràmetre ConverttoJpgorPng no està en mode automàtic </msg>
+  <msg key="_This">Aquesta foto no s'ha pogut mostrar perquè: </msg>
+  <msg key="_Upload">Pujar fotos </msg>
+  <msg key="_Use">Useu el botó \&quot;Browse..\&quot; per a buscar un arxiu </msg>
+  <msg key="_Use_1">Useu el botó \&quot;Browse...\&quot; per a buscar el vostre arxiu i després feu clic en \&quot;Open\&quot; </msg>
+  <msg key="_We">S'ha produït un error que no hem pogut identificar. Per favor, feu-ho saber a l'administrador del sistema. &lt;pre&gt;%errmsg%&lt;/pre&gt; </msg>
+  <msg key="_We_1">S'ha produït un error que no hem pogut identificar. Per favor, feu-ho saber a l'administrador del sistema. </msg>
+  <msg key="_Yes_Delete">Si, eliminar </msg>
+  <msg key="_You">Heu de proveir un nom no buit per al clips </msg>
+  <msg key="_You_1">No hauríeu d'eliminar la carpeta arrel. </msg>
+  <msg key="_You_2">No hauríeu de moure la carpeta arrel.</msg>
+  <msg key="_Your">Podeu fer clic &lt;a href=album?album_id=%old_album_id%&gt;aquí&lt;/a&gt; per a veure totes les fotos de l'àlbum</msg>
+  <msg key="Add_a_new_album">Agregar un nou àlbum </msg>
+  <msg key="Add_a_new_folder">Afegir una nova carpeta</msg>
+  <msg key="Album_Name">Nom de l'àlbum</msg>
+  <msg key="Caption">Títol</msg>
+  <msg key="Caption_1">Títol:</msg>
+  <msg key="Clipboard">clips:</msg>
+  <msg key="clipboard">clips </msg>
+  <msg key="Clipboard_addedit">&quot;Agregar/Editar clips&quot;</msg>
+  <msg key="Clipboards">clips</msg>
+  <msg key="Create_a_New_Album">Crear un àlbum nou</msg>
+  <msg key="Create_a_New_Folder">Crear una carpeta nova</msg>
+  <msg key="delete_clipboard">Eliminar clips</msg>
+  <msg key="Delete_this_album">Esborrar aquest àlbum </msg>
+  <msg key="Delete_this_folder">Esborrar aquesta carpeta</msg>
+  <msg key="Delete_this_photo">Esborrar aquesta foto </msg>
+  <msg key="Descriptio">Descripció</msg>
+  <msg key="Description">Descripció</msg>
+  <msg key="Description_1">Descripció:</msg>
+  <msg key="Edit_page">Editar la pàgina </msg>
+  <msg key="Edit_the_Album">Editar l'àlbum</msg>
+  <msg key="Edit_the_Folder">Editar la carpeta:</msg>
+  <msg key="Edit_these_photos">Editar aquestes fotos </msg>
+  <msg key="Flash">Flaix</msg>
+  <msg key="Hide">Amagar</msg>
+  <msg key="Hide_1">Amagar:</msg>
+  <msg key="log_in">log in </msg>
+  <msg key="lt_Add_a_collection_of_p">Agregar una col·lecció de fotos a aquest àlbum </msg>
+  <msg key="lt_Add_a_single_photo_to">Agregar una sola foto a aquest àlbum </msg>
+  <msg key="lt_and_add_them_to_a_cli">i agregar-les a un clips per a utilitzar aquesta part del lloc </msg>
+  <msg key="lt_Are_you_sure_you_want">Esteu segur que voleu esborrar l'àlbum &quot;%title%&quot;? Aquesta acció és irreversible. </msg>
+  <msg key="lt_Are_you_sure_you_want_1">Esteu segur que voleu esborrar la carpeta &quot;%title%&quot;? Aquesta acció és irreversible. </msg>
+  <msg key="lt_Are_you_sure_you_want_2">Esteu segur que voleu esborrar la foto &quot;%title%&quot;? Aquesta acció és irreversible. </msg>
+  <msg key="lt_Click_on_the_small_ph">Feu clic en les fotos menudes per veure'n una versió engrandida, en els números per a veure diferents pàgines, o en Següent o Anterior per a moure's endavant o enrere en l'àlbum. També podeu triar fotos per a imprimir o enviar-les per correu electrònic en la pàgina individual de la foto. </msg>
+  <msg key="lt_clipboardsphotos_phot">(%clipboards.photos% photos) [ </msg>
+  <msg key="lt_Description_descripti">Descripció:%description%</msg>
+  <msg key="lt_edit________________n">editar el nom</msg>
+  <msg key="lt_Edit_album_attributes">Editar els atributs de l'àlbum </msg>
+  <msg key="lt_Edit_folder_informati">Editar la informació de la carpeta </msg>
+  <msg key="lt_Edit_photo_attributes">Editar els atributs de la foto </msg>
+  <msg key="lt_for______printing_fro">per a imprimir des de </msg>
+  <msg key="lt_Image_removed_from_cl">Imatge llevada del clips. </msg>
+  <msg key="lt_Image_saved_to_clipbo">Imatge guardada en el clips.</msg>
+  <msg key="lt_Image_thumbnail_index">Índex d'imatges miniatura </msg>
+  <msg key="lt_Imagenbspthumbnailnbs">Índex d'imatges miniatura </msg>
+  <msg key="lt_in_order_to_manage_cl">per a manejar els clips. </msg>
+  <msg key="lt_Make_this_photo_the_i">Fer d'aquesta foto la coberta de l'àlbum </msg>
+  <msg key="lt_Modify_album_permissi">Modificar els permisos de l'àlbum </msg>
+  <msg key="lt_Modify_this_albums_pe">Modificar els permisos d'aquest àlbum </msg>
+  <msg key="lt_Modify_this_folders_p">Modificar els permisos d'aquesta carpeta </msg>
+  <msg key="lt_Move_album_to_another">Moure l'àlbum a una altra carpeta</msg>
+  <msg key="lt_Move_Album_to_new_fol">Moure l'àlbum a una nova carpeta:</msg>
+  <msg key="lt_Move_folder_to_new_fo">Moure la carpeta a una nova carpeta:</msg>
+  <msg key="lt_Move_this_album_to_an">Moure aquest àlbum a una altra carpeta </msg>
+  <msg key="lt_Move_this_folder_to_a">Moure aquesta carpeta a una altra carpeta</msg>
+  <msg key="lt_No_photos_in_the_clip">No hi ha fotos en el clips. </msg>
+  <msg key="lt_OPTIONAL_Displayed_on">OPCIONAL, Desplegat en la pàgina d'imatges miniatura </msg>
+  <msg key="lt_OPTIONAL_Displayed_wh">OPCIONAL, Desplegat en la visualització de la foto </msg>
+  <msg key="lt_Photo_Album_System__t">Sistema de l'àlbum de fotos: %title% </msg>
+  <msg key="lt_Save_this_photo_to_pr">Guardar aquesta foto per a imprimir-la o veure-la després </msg>
+  <msg key="lt_Save_this_photo_to_pr_1">Guardar aquesta foto per a imprimir-la o veure-la després. Col·locar-la en la carpeta</msg>
+  <msg key="lt_Taken_child_photodate">Preses: %child_photo.datetaken% %child_photo.camera_model% %child_photo.focal_length%mm %child_photo.aperture% </msg>
+  <msg key="lt_There_are_no_items_in">No hi ha elements en aquesta carpeta. </msg>
+  <msg key="lt_This_album_does_not_c">Aquest àlbum no conté res. </msg>
+  <msg key="lt_This_photo_clipped_to">Aquesta foto està subjectada a: </msg>
+  <msg key="lt_To_order_prints_of_th">Per a imprimir aquestes fotos, primer heu d'agregar-les a un clips (ho podeu fer quan visualitzeu una foto individual). Una vegada que estiguen en el clips les podeu enviar a</msg>
+  <msg key="lt_Upload_a_Photo_collec">Pujar una col·lecció de fotos </msg>
+  <msg key="lt_View_all_of_your_clip">Veure tots els vostres clips </msg>
+  <msg key="lt_View_all_your_clipboa">Veure tots els vostres clips </msg>
+  <msg key="lt_You_do_not_currently_">Actualment no teniu clips definits. Haureu de buscar les</msg>
+  <msg key="lt_Your_text_updates_hav">S'han dut a terme les vostres actualitzacions de text i qualsevol tipus de rotació s'està processant... </msg>
+  <msg key="Modify_this_pack">Modificar els paràmetres d'aquest paquet </msg>
+  <msg key="Move">Moure </msg>
+  <msg key="Name">Nom</msg>
+  <msg key="Name_title">Nom: %title%</msg>
+  <msg key="Netx">Següent</msg>
+  <msg key="OPTIONAL">OPCIONAL</msg>
+  <msg key="or">o</msg>
+  <msg key="Photo_clipboard">Clips de fotos </msg>
+  <msg key="Photographer">Fotògraf </msg>
+  <msg key="Photographer_">Fotògraf </msg>
+  <msg key="photos">fotos </msg>
+  <msg key="Prev">Prev </msg>
+  <msg key="register">registrar </msg>
+  <msg key="remove">eliminar </msg>
+  <msg key="screen">pantalla. </msg>
+  <msg key="Sequence">Seqüència:</msg>
+  <msg key="shutterflycom">shutterfly.com </msg>
+  <msg key="Smallernbspimage">Imatge més menuda</msg>
+  <msg key="Story">Història </msg>
+  <msg key="Story_1">Història:</msg>
+  <msg key="Story_story">Història: %story% </msg>
+  <msg key="Submit">Enviar</msg>
+  <msg key="Title">Títol</msg>
+  <msg key="Title_1">Títol:</msg>
+  <msg key="Upload_a_Photo">Pujar una foto </msg>
+  <msg key="You_will_have_to">Haureu de</msg>
+  <msg key="Your_clipboards">Els vostres clips </msg>
+</message_catalog>

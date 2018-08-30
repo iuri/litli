@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<message_catalog package_key="faq-portlet" locale="fi_FI" charset="utf-8">
+
+  <msg key="admin_pretty_name">FAQien ylläpito</msg>
+  <msg key="Disable">Poista käytöstä</msg>
+  <msg key="Disabled">Poissa käytöstä</msg>
+  <msg key="Enable">Ota käyttöön</msg>
+  <msg key="group">Ryhmä</msg>
+  <msg key="name">Nimi</msg>
+  <msg key="new_faq">Lisää uusi FAQ</msg>
+  <msg key="no_faqs">Ei FAQeja</msg>
+  <msg key="one_admin_faq">Ylläpitotarkoitusta varten pitäisi olla olemassa ainoastaan yksi FAQ</msg>
+  <msg key="pretty_name">Usein kysytyt kysymykset (FAQ)</msg>
+</message_catalog>
