@@ -25,7 +25,7 @@ permission::require_permission -object_id $album_id -privilege pa_create_photo
 
 set context [pa_context_bar_list -final "[_ photo-album._Upload]" $album_id]
 
-set photo_id [db_string get_next_object_id "select acs_object_id_seq.nextval from dual"]
+set photo_id [db_nextval "acs_object_id_seq"]
 
 ad_form -name photos_upload -action photos-add-2 -html {enctype multipart/form-data} \
     -export {album_id} -form {
