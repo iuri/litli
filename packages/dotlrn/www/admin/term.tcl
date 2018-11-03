@@ -31,6 +31,7 @@ ad_page_contract {
     classes:multirow
 }
 
+ns_log Notice "Running script term.tcl"
 #Pages in this directory are only runnable by dotlrn-wide admins.
 dotlrn::require_admin 
 
@@ -63,6 +64,9 @@ if {[form is_valid department_form]} {
     form get_values department_form department_key term_id
 }
 
+
+ns_log Notice "FLAG1"
+
 set terms [db_list_of_lists select_terms_for_select_widget {
     select dotlrn_terms.term_name || ' ' || dotlrn_terms.term_year,
            dotlrn_terms.term_id
@@ -71,6 +75,8 @@ set terms [db_list_of_lists select_terms_for_select_widget {
              dotlrn_terms.end_date
 }]
 set terms [linsert $terms 0 {All -1}]
+
+ns_log Notice "FLAG2"
 
 form create term_form -has_submit 1
 
@@ -99,6 +105,9 @@ if {[form is_valid term_form]} {
 
 template::add_event_listener -id "term_form-term_id" -event change -script {document.term_form.submit();}
 template::add_event_listener -id "department_form-department_key" -event change -script {document.department_form.submit();}
+
+
+ns_log Notice "FLAG3"
 
 set query "select_classes"
 set paginator_query "select_classes_paginator"
@@ -152,6 +161,8 @@ if { $term_id == -1 } {
 	     orderby_desc {term_name desc, pretty_name desc}]
 }
 
+ns_log Notice "FLAG4"
+
 lappend elements pretty_name \
     [list label "[parameter::get -localize -parameter class_instances_pretty_name]" \
 	 link_url_col url \
@@ -169,6 +180,10 @@ lappend elements action \
 	     </center>
 	 }]
 
+ns_log Notice "FLAG5"
+ns_log Notice "PQ \n$paginator_query"
+ns_log Notice "ELEM \n $elements"
+ns_log Notice "$query"
 
 template::list::create \
     -name classes \
@@ -181,6 +196,9 @@ template::list::create \
     -elements $elements
 
 db_multirow classes $query {}
+
+ns_log Notice "FLAG999"
+
 
 set term_edit_url [export_vars -base term-edit {term_id referer}]
 ad_return_template
