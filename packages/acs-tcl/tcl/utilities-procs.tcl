@@ -2750,11 +2750,19 @@ ad_proc -public util_current_location {} {
         set port  $default_port($proto)
     }
 
+    ns_log Notice "BEHIND PROXY [ad_conn behind_proxy_p]"
+       
     if { [ad_conn behind_proxy_p] } {
         #
         # We are running behind a proxy
         #
-        if {[ad_conn behind_secure_proxy_p]} {
+        ###### Iuri sampaio (iuri@iurix.com)
+        ###### creation-date 2018-09-15
+        ###### paliative fix to proxy mode
+        ns_log Notice "BEHIND SECURE PROXY [ad_conn behind_secure_proxy_p]"
+        #set behind_secure_proxy_p [ad_conn behind_secure_proxy_p]
+        set behind_secure_proxy_p 1
+        if {$behind_secure_proxy_p eq 1} {
             #
             # We know, the request was an https request
             #
