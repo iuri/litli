@@ -1,0 +1,220 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN//3.2">
+<html>
+<head>
+	<title>Member Passport</title>
+</head>
+<BODY bgcolor="#FFFFFF" text="#000000" bgcolor="#F4FCFF">
+<!-- this test lets us call from either --		1.  OneMembr.htm		2.  oneorg.htm			-->
+<!--webbot bot="HTMLMarkup" startspan -->
+[[SET:DefaultDbase:c\:\timed\tddemo.mdb]]
+<!--webbot bot="HTMLMarkup" endspan -->
+<center>
+<font size="+2">
+<b>Passbook</b>
+<font size="+0">
+for
+<!--webbot bot="HTMLMarkup" startspan -->
+[[EVAL:IF:[[GETDATA:MemOrgID:LENGTH]]>0
+	:
+		[[SET:VAR:Label=Organization]]
+		the [[DBASE:SELECT:[Member Table]:MemID=[[GETDATA:MemOrgID]]:{LastName}]]
+		Organization
+	:
+		[[SET:VAR:Label=Member]]
+<!--webbot bot="HTMLMarkup" endspan -->
+		Member
+<!--webbot bot="HTMLMarkup" startspan -->
+		[[DBASE:SELECT:[Member Table]:MemID=[[GETDATA:MemID]]:{FirstName} {LastName}]]
+]]
+<!--webbot bot="HTMLMarkup" endspan -->
+</center>
+</font>
+<form action="/cgi-bin/virtuflex.exe" method="get">
+<!--webbot bot="HTMLMarkup" startspan -->
+[[EVAL:IF:[[GETDATA::VAR=Label]]=Member
+	:
+		<input type="hidden" name="template" value="/td/OneMembr.htm">
+		<input type="hidden" name="MemID" value="[[GETDATA:MemID]]">
+	:
+		<input type="hidden" name="template" value="/td/Oneorg.htm">
+		<input type="hidden" name="MemOrgID" value="[[GETDATA:MemOrgID]]">
+]]
+<!--webbot bot="HTMLMarkup" endspan -->
+<!-- since these values do not "come off the page" they must		be passed the first time -->		    
+<input type="hidden" name="SiteID" value="[[GETDATA:SiteID]]">
+<img src="/td/blank.gif" width="480" height="1" border="0">
+<input type="submit" name="DoneButton" value="Done">
+<center>
+<font size="+1">
+[[GETDATA::VAR=Label]] &quot;Time Dollar&quot; Passbook
+<font size="-1">
+<img src="/td/blank.gif" width="15" height="1" border="0">
+<a HREF="/cgi-bin/virtuflex.exe?template=/td/MemPass.htm&amp;MemID=[[GETDATA:MemID]]&amp;SiteID=[[GETDATA:SiteID]]#third">Jump to &quot;Service Units&quot; Passbook</a>
+</font>
+</center>
+</form>
+<table border="1" width="554">
+  <tr>
+    <td width="61" height="15"> Recorded</td>
+    <td width="61" height="15">&nbsp;&nbsp; Date</td>
+    <td width="60" height="15">&nbsp; Credits</td>
+    <td width="58" height="15">&nbsp; Debits</td>
+    <td width="143" height="15">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Service</td>
+    <td width="134" height="15">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Name</td>
+  </tr>
+	<!-- easiest way is to make the first query result in zero records	  -- then I can tag the credits -->
+<!--webbot bot="HTMLMarkup" startspan -->
+	[[DBASE:SELECT:[Transaction Table],[Member Table] as X,[Member Table] as Y,[Services List]
+		:[Transaction Table].Provider = X.MemID
+		AND [Transaction Table].Provider = Y.MemID
+		AND [Transaction Table].Service = [Services List].ServiceID
+		AND 1=0
+		UNION
+		SELECT ALL [Transaction Table].Entered,Dateof,
+			[Transaction Table].Credits,
+			null,
+			[Services List].Service,
+			X.FirstName,X.LastName
+			FROM [Transaction Table],[Member Table] as X,[Member Table] as Y,[Services List]
+			WHERE [Transaction Table].Provider = Y.MemID
+			AND [Transaction Table].Recipient = X.MemID
+			AND [Transaction Table].Service = [Services List].ServiceID
+			AND Provider =[[GETDATA:MemID]]
+		UNION
+		SELECT ALL [Transaction Table].Entered,Dateof,
+			null,
+			[Transaction Table].Credits,
+			[Services List].Service,
+			X.FirstName,X.LastName
+			FROM [Transaction Table],[Member Table] as X,[Member Table] as Y,[Services List]
+			WHERE [Transaction Table].Recipient = Y.MemID
+			AND [Transaction Table].Provider = X.MemID
+			AND [Transaction Table].Service = [Services List].ServiceID
+			AND Recipient =[[GETDATA:MemID]]
+		ORDER BY Entered DESC
+			:
+<!--webbot bot="HTMLMarkup" endspan -->
+  <tr>
+    <td valign="top" width="67" bgcolor="#FFFFFF">
+			<font size="-1">
+			{ALL [Transaction Table].Entered|TRUNC=10}
+			</font>
+		</td>
+    <td valign="top" width="56" bgcolor="#FFFFFF">
+			<font size="-1">
+			{DateOf|TRUNC=10}
+			</font>
+		</td>
+    <td valign="top" width="60" bgcolor="#FFFFFF">
+			<center>
+			{[Transaction Table].Credits}
+			</center>
+		</td>
+    <td valign="top" width="58" bgcolor="#FFFFFF">
+			<center>
+			{[Transaction Table].Credits}
+			</center>
+		</td>
+    <td valign="top" width="143" bgcolor="#C0C0C0">
+			<center>
+			{[Services List].Service}
+			</center>
+		</td>
+    <td valign="top" width="134" bgcolor="#FFFFFF">
+			<center>
+			{Y.FirstName} {Y.LastName}
+			</center>
+<!--webbot bot="HTMLMarkup" startspan -->
+		]]
+<!--webbot bot="HTMLMarkup" endspan -->
+		</td>
+  </tr>
+</table>
+	[[GETDATA::VAR=Label]] &quot;Service Units&quot; Passbook
+<a NAME="third"></a>
+<center>
+	<font size="+1">
+	<font size="-1">
+	<img src="/td/blank.gif" width="15" height="1" border="0">
+    Jump back to &quot;Time Dollar&quot; Passbook
+	<a HREF="/cgi-bin/virtuflex.exe?template=/td/MemPass.htm&amp;MemID=[[GETDATA:MemID]]&amp;SiteID=[[GETDATA:SiteID]]"></a>
+	</font>
+	</center>
+	</form>
+
+	<table border="1" width="554">
+  <tr>
+    <td width="61" height="15">&nbsp;&nbsp; Date</td>
+    <td width="60" height="15">&nbsp; Credits</td>
+    <td width="58" height="15">&nbsp; Debits</td>
+    <td width="143" height="15">&nbsp;&nbsp;&nbsp;&nbsp; Service Unit</td>
+    <td width="134" height="15">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Name</td>
+  </tr>
+	<!-- easiest way is to make the first query result in zero records	  -- then I can tag the credits -->
+<!--webbot bot="HTMLMarkup" startspan -->
+	[[DBASE:SELECT:[ServiceUnit Table],[Member Table] as X,[Member Table] as Y,[Services List]
+		:[ServiceUnit Table].Provider = X.MemID
+		AND [ServiceUnit Table].Provider = Y.MemID
+		AND [ServiceUnit Table].SvUnitID = [Services List].ServiceID
+		AND 1=0
+		UNION
+		SELECT ALL Dateof,
+			[ServiceUnit Table].[Number],
+			null,
+			[Services List].Service,
+			X.FirstName,X.LastName
+			FROM [ServiceUnit Table],[Member Table] as X,[Member Table] as Y,[Services List]
+			WHERE [ServiceUnit Table].Provider = Y.MemID
+			AND [ServiceUnit Table].Recipient = X.MemID
+			AND [ServiceUnit Table].SvUnitID = [Services List].ServiceID
+			AND Provider =[[GETDATA:MemID]]
+		UNION
+		SELECT ALL Dateof,
+			null,
+			[ServiceUnit Table].[Number],
+			[Services List].Service,
+			X.FirstName,X.LastName
+			FROM [ServiceUnit Table],[Member Table] as X,[Member Table] as Y,[Services List]
+			WHERE [ServiceUnit Table].Recipient = Y.MemID
+			AND [ServiceUnit Table].Provider = X.MemID
+			AND [ServiceUnit Table].SvUnitID = [Services List].ServiceID
+			AND Recipient =[[GETDATA:MemID]]
+		ORDER BY Dateof DESC
+			:
+<!--webbot bot="HTMLMarkup" endspan -->
+  <tr>
+    <td valign="top" width="56" bgcolor="#FFFFFF">
+			<font size="-1">
+			{DateOf|TRUNC=10}
+			</font>
+		</td>
+    <td valign="top" width="60" bgcolor="#FFFFFF">
+			<center>
+			{[ServiceUnit Table].[Number]}
+			</center>
+		</td>
+    <td valign="top" width="58" bgcolor="#FFFFFF">
+			<center>
+			{[ServiceUnit Table].[Number]}
+			</center>
+		</td>
+    <td valign="top" width="143" bgcolor="#C0C0C0">
+			<center>
+			{[Services List].Service}
+			</center>
+		</td>
+    <td valign="top" width="134" bgcolor="#FFFFFF">
+			<center>
+			{Y.FirstName} {Y.LastName}
+			</center>
+<!--webbot bot="HTMLMarkup" startspan -->
+		]]
+<!--webbot bot="HTMLMarkup" endspan -->
+		</td>
+  </tr>
+</table>
+</BODY>
+</html>
+<!--webbot bot="HTMLMarkup" startspan --><!--webbot bot="HTMLMarkup" endspan --><strong>[FrontPage HTML Markup Component]</strong><!--webbot startspan --><strong>[FrontPage  Component]</strong><!--webbot endspan i-checksum="34180" -->

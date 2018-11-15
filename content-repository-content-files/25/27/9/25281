@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>Step 5: Install PostgreSQL 9.6+ | Steps to Install Odoo 10 on Ubuntu 16.04 LTS then Educat Module </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.1.2 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript">$exe_i18n={previous:"Previous",next:"Next",show:"Show",hide:"Hide",showFeedback:"Show Feedback",hideFeedback:"Hide Feedback",correct:"Correct",incorrect:"Incorrect",menu:"Menu",print:"Print"}</script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Skip navigation</a></p>
+<header id="header" ><div id="headerContent">Steps to Install Odoo 10 on Ubuntu 16.04 LTS then Educat Module</div></header>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Steps to Install Odoo 10 on Ubuntu 16.04 LTS then Educat Module</a></li>
+   <li><a href="step_1_update_apt_source_list__install_updates.html" class="no-ch">Step 1: Update apt source list - Install Updates</a></li>
+   <li><a href="step_3_install_python_dependencies_for_odoo_10.html" class="no-ch">Step 3: Install Python Dependencies for Odoo 10</a></li>
+   <li><a href="step_4_odoo_web_dependencies.html" class="no-ch">Step 4: Odoo Web Dependencies</a></li>
+   <li id="active"><a href="step_5_install_postgresql_96.html" class="active no-ch">Step 5: Install PostgreSQL 9.6+</a></li>
+   <li><a href="step_67_create_database_usergroup_for_odoo.html" class="no-ch">Step 6-7: Create Database User/Group for Odoo</a></li>
+   <li><a href="step_8_install_gdata.html" class="no-ch">Step 8: Install Gdata</a></li>
+   <li><a href="step_9_download_odoo_10.html" class="no-ch">Step 9: Download Odoo 10</a></li>
+   <li><a href="step_1011_create_log_file_edit_config.html" class="no-ch">Step 10-11: Create Log File Edit Config</a></li>
+   <li><a href="step_12_wkhtmltopdf__supported_version_0121__for_odoo.html" class="no-ch">Step 12: WKHTMLTOPDF ( Supported Version 0.12.1 ) for Odoo</a></li>
+   <li><a href="step_13_start_odoo_server_browse_to_access.html" class="no-ch">Step 13: Start Odoo Server Browse to Access</a></li>
+   <li><a href="step_14_educat_installation__optional.html" class="no-ch">Step 14: Educat Installation - Optional</a></li>
+   <li><a href="step_15_change_from_port_80_to_8069.html" class="no-ch">Step 15 Change from port 80 to 8069</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="step_4_odoo_web_dependencies.html" class="prev"><span><span>&laquo; </span>Previous</span></a> <span class="sep">| </span><a href="step_67_create_database_usergroup_for_odoo.html" class="next"><span>Next<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">Step 5: Install PostgreSQL 9.6+</h1></header>
+<article class="iDevice_wrapper FreeTextIdevice" id="id230">
+<div class="iDevice emphasis0">
+<div id="ta230_85" class="block iDevice_content">
+<h2><strong>Step 5: Install PostgreSQL 9.6+</strong></h2>
+<blockquote>
+<p><code>sudo apt-get install python-software-properties</code></p>
+<p><code></code><br /><code>sudo vim /etc/apt/sources.list.d/pgdg.list</code></p>
+</blockquote>
+<p> </p>
+<h4>add a line for the repository</h4>
+<p> </p>
+<blockquote>
+<p>deb http://apt.postgresql.org/pub/repos/apt/ xenial-pgdg main</p>
+</blockquote>
+<p> </p>
+<blockquote>
+<p>wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -</p>
+</blockquote>
+<p> </p>
+<blockquote>
+<p>sudo apt-get update</p>
+</blockquote>
+<p> </p>
+<blockquote>
+<p>sudo apt-get install postgresql-9.6</p>
+</blockquote>
+</div>
+</div>
+</article>
+<div id="packageLicense" class="cc cc-by-sa">
+<p><span>Licensed under the</span> <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution Share Alike License 4.0</a></p>
+</div>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="step_4_odoo_web_dependencies.html" class="prev"><span><span>&laquo; </span>Previous</span></a> <span class="sep">| </span><a href="step_67_create_database_usergroup_for_odoo.html" class="next"><span>Next<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="my_js.js"></script></body></html>

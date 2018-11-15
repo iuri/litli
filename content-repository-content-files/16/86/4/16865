@@ -1,0 +1,1181 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN//3.2">
+<!-- COMMENTS in OneAssin.TXT, 31.25K! -->
+<html>
+<head>
+	<title>One Assignment</title>
+</head>
+<BODY bgcolor="#FFFFFF" text="#000000">
+<!--webbot bot="HTMLMarkup" startspan -->
+[[ACTION:FILE:READ:/td/OneAssT1.htm]]
+<!--webbot bot="HTMLMarkup" endspan -->
+
+
+<!--webbot bot="HTMLMarkup" startspan -->
+[[EVAL:IF:[[GETDATA:CancelButton]]=Cancel
+	:
+	[[GETDATA:XYZZY:CHECK=/td/assign.htm]]
+	:
+]]
+[[EVAL:IF:[[GETDATA:ChangeUnitButton]]=Change Unit Categories
+:
+	[[GETDATA:XYZZY:CHECK=/td/AssiChg.htm]]
+:
+]]
+
+[[SET:DefaultDbase:c\:\timed\tddemo.mdb]]
+[[EVAL:IF:[[EVAL:BOOL:
+		[[EVAL:BOOL:[[GETDATA:Once]]=OK]] ||
+	  [[EVAL:BOOL:[[GETDATA:AssiNewButton]]=New]]
+					]]
+: 
+	[[EVAL:IF:[[GETDATA:AssiNewButton]]=New
+	:
+		[[EVAL:IF:[[EVAL:BOOL:
+			[[EVAL:BOOL:[[GETDATA:Provider:LENGTH]]=0]] ||
+			[[EVAL:BOOL:
+				[[EVAL:BOOL:[[GETDATA:Recipient:LENGTH]]=0]] ||
+			[[EVAL:BOOL:[[GETDATA:Service:LENGTH]]=0]]
+			]]
+						]]
+	:
+	[[GETDATA:XYZZY:CHECK=/td/AssiErr.htm]]
+	:
+		]]
+<!--webbot bot="HTMLMarkup" endspan -->
+		<font>
+		<center>
+		<b>
+		Please enter Information for the New Assignment
+		</b>
+		<font size="-1">
+		Items with default dates of 1/1/1900 should be changed
+		</center>
+		</font>
+<!--webbot bot="HTMLMarkup" startspan -->
+		[[SET:DefaultDbase:c\:\timed\tddemo.mdb]]
+		[[EVAL:IF:[[GETDATA::DATE=m]] = 12
+			:
+				[[SET:VAR:EndDate=1/[[GETDATA::DATE=d]]/[[EVAL:MATH:[[GETDATA::DATE=y]]+1]]]]
+			:
+				[[SET:VAR:EndDate=[[EVAL:MATH:[[GETDATA::DATE=m]]+1]]/[[GETDATA::DATE=d/y]]]]
+		]]
+		[[DBASE:ADD:[Assignment Table]:{Provider|[[GETDATA:Provider]]}
+			{Recipient|[[GETDATA:Recipient]]}{Service|[[GETDATA:Service]]}
+			{Entered|[[GETDATA::DATE=m/d/y]] [[GETDATA::TIME]]}
+			{Updated|[[GETDATA::DATE=m/d/y]] [[GETDATA::TIME]]}
+			{BeginDate|[[GETDATA::DATE=m/d/y 0\:0\:0]]}{EndDate|[[GETDATA::VAR=EndDate]]}
+			{ProAccDate|1/1/1900 0\:0\:0}{RecAccDate|1/1/1900 0\:0\:0}
+			{QcRating|1}{Credits|0}{Comments|Replace this with comments about the assignment.}
+		]]
+		[[SET:DefaultDbase:c\:\timed\tddemo.mdb]]
+		[[SET:VAR:AssignID=[[DBASE:SELECT:[Assignment Table]:
+			1=1:{MAX(AssignID)}]]]]
+	: 
+		[[SET:VAR:AssignID=[[GETDATA:AssignID]]]]
+		[[SET:VAR:N=[[DBASE:SELECT:[UnitNames List]:1=1:{COUNT(UnitID)}
+								]]]]
+		[[SET:VAR:CNT=1]]
+		[[SET:VAR:Ucredits=0]]
+		[[EVAL:WHILE:[[GETDATA::VAR=CNT]]<=[[GETDATA::VAR=N]]
+		:
+			[[EVAL:IF:[[EVAL:BOOL:
+					[[EVAL:BOOL:[[GETDATA:Unit[[GETDATA::VAR=CNT]]:LENGTH
+											]]=0
+					]]
+				||
+				[[EVAL:BOOL:[[GETDATA:Unit[[GETDATA::VAR=CNT]]]]=0
+					]]
+								]]
+			: 
+
+			: 
+				[[SET:VAR:Ucredits=[[EVAL:MATH:
+					[[GETDATA::VAR=UCredits]]+
+					[[GETDATA:Unit[[GETDATA::VAR=CNT]]]]]]]]
+	
+				[[SET:DefaultDbase:c\:\timed\tddemo.mdb]]
+			[[DBASE:ADD:[ServiceUnit Table]:
+					{DateOf|[[GETDATA::DATE=m/d/y]]}
+					{[Number]|[[GETDATA:Unit[[GETDATA::VAR=CNT]]]]}
+					{Provider|[[GETDATA:Provider]]}
+					{Recipient|[[GETDATA:Recipient]]}
+					{SvUnit|[[GETDATA::VAR=CNT]]}]]
+			]] <!-- end of test for Unit -->
+			[[SET:VAR:CNT=[[GETDATA::VAR=CNT|INCR]]]]
+		]]
+		[[SET:VAR:Credits=[[DBASE:SELECT:[Assignment Table]:
+			AssignID=[[GETDATA::VAR=AssignID]]:{Credits}
+											]]]]
+		[[SET:VAR:AssignmentCredits=[[EVAL:MATH:[[GETDATA::VAR=Credits]]+
+			[[GETDATA::VAR=UCredits|CONVERT= =|PAD=-1=0]]+
+			[[GETDATA:Credits:CONVERT= =|PAD=-1=0]]))]]]]
+		[[SET:VAR:Credits=[[EVAL:MATH:
+			[[GETDATA::VAR=UCredits|CONVERT= =|PAD=-1=0]]+
+			[[GETDATA:Credits:CONVERT= =|PAD=-1=0]]))]]]]
+
+		[[SET:VAR:BeginDate=[[GETDATA:OneBeginDateMMSelect]]/[[GETDATA:OneBeginDateDDSelect]]/[[GETDATA:OneBeginDateYYSelect]]]]
+		[[SET:VAR:EndDate=[[GETDATA:OneEndDateMMSelect]]/[[GETDATA:OneEndDateDDSelect]]/[[GETDATA:OneEndDateYYSelect]]]]
+		[[SET:VAR:ProAccDate=[[GETDATA:ProAccDateMMSelect]]/[[GETDATA:ProAccDateDDSelect]]/[[GETDATA:ProAccDateYYSelect]]]]
+		[[SET:VAR:RecAccDate=[[GETDATA:RecAccDateMMSelect]]/[[GETDATA:RecAccDateDDSelect]]/[[GETDATA:RecAccDateYYSelect]]]]
+		[[SET:DefaultDbase:c\:\timed\tddemo.mdb]]
+		[[DBASE:SQL:Update [Assignment Table] SET
+		Updated='[[GETDATA::DATE=m/d/y]] [[GETDATA::TIME]]',
+		BeginDate=[[GETDATA::VAR=BeginDate|CONVERT= = |CONVERT= 1/ 1/1900=null]],
+		EndDate=[[GETDATA::VAR=EndDate|CONVERT= = |CONVERT= 1/ 1/1900=null]],
+		ProAccDate=[[GETDATA::VAR=ProAccDate|CONVERT= = |CONVERT= 1/ 1/1900=null]],
+		RecAccDate=[[GETDATA::VAR=RecAccDate|CONVERT= = |CONVERT= 1/ 1/1900=null]],ProAccInitials=
+			[[EVAL:IF:[[GETDATA:ProvInitialsText:Length]]=0
+			:null
+			:'[[GETDATA:ProvInitialsText]]'
+		]],
+		RecAccInitials=
+			[[EVAL:IF:[[GETDATA:RecInitialsText:Length]]=0
+			:null
+			:'[[GETDATA:RecInitialsText]]'
+		]],
+		TimeCritical=
+			[[EVAL:IF:[[GETDATA:TimeCriticalCheck]]=on
+			: 
+				-1
+			:
+				0
+			]],
+		QcRating=[[GETDATA:QcRating:CONVERT=none=1|CONVERT=Low=2|CONVERT=Average=3|CONVERT=High=4]],
+		Credits=[[GETDATA::VAR=AssignmentCredits]],
+		Comments=
+			[[EVAL:IF:[[GETDATA:Comments:LENGTH]] != 0
+	:'[[GETDATA:Comments:CONVERT='='']]'
+	:' '
+			]]
+	 where AssignID=[[GETDATA::VAR=AssignID]]
+		]]
+	[[EVAL:IF:[[GETDATA::VAR=Credits]] > 0
+		:
+<!--webbot bot="HTMLMarkup" endspan -->
+			<form>
+			<center>
+			<font size="+2">CONFIRM THE TRANSFER</font>
+<!--webbot bot="HTMLMarkup" startspan -->
+			[[DBASE:SELECT:[Member Table]:MemID=[[GETDATA:Recipient]]
+				:
+<!--webbot bot="HTMLMarkup" endspan -->
+				<font size="-1">
+				<img src="/td/blank.gif" ALT height="1" width="15">
+				Number of Credits currently held by 
+				<img src="/td/blank.gif" ALT height="1" width="15">
+				{FirstName} {LastName} giving the credit is
+				</font>
+				<font color="{Balance|TRUNC=1|CONVERT=-=red}">
+				&nbsp;{Balance}
+				</font>
+<!--webbot bot="HTMLMarkup" startspan -->
+			]]
+<!--webbot bot="HTMLMarkup" endspan -->
+			<img src="/td/blank.gif" ALT height="1" width="50">
+			<a href="/cgi-bin/virtuflex.exe?template=/td/TransFin.htm&amp;Provider=[[GETDATA:Provider]]&amp;Recipient=[[GETDATA:Recipient]]&amp;Service=[[GETDATA:Service]]&amp;Credits=[[GETDATA::VAR=Credits]]&amp;ServiceDateMMSelect=[[GETDATA:ServiceDateMMSelect]]&amp;ServiceDateYYSelect=[[GETDATA:ServiceDateYYSelect]]&amp;ServiceDateDDSelect=[[GETDATA:ServiceDateDDSelect]]">Continue </a> <font color="red"><blink>(to make the transfer)</blink></font>
+					</center>
+					</form>
+<!--webbot bot="HTMLMarkup" startspan -->
+		: 
+	]] 
+	]] 
+:
+	
+	[[SET:VAR:AssignID=[[GETDATA:AssignID]]]]
+]]
+[[SET:VAR:Stuff=[[DBASE:SELECT:[Assignment Table]
+	:AssignID=[[GETDATA::VAR=AssignID]]
+	:${Service}^{TimeCritical}+
+								]]]]
+[[SET:VAR:ServiceID=[[GETDATA::VAR=Stuff|PARSE=$=^]]]]
+[[SET:VAR:TimeCritical=[[GETDATA::VAR=Stuff|PARSE=^=+]]]]
+
+[[SET:VAR:ProAccDateIsNotNull=[[DBASE:SELECT:[Assignment Table]
+	:AssignID=[[GETDATA::VAR=AssignID]]
+	AND ProAccDate is not null AND
+	ProAccDate <>  1/ 1/1900
+	:
+	{Count(AssignID)}]]]]
+[[SET:VAR:RecAccDateIsNotNull=[[DBASE:SELECT:[Assignment Table]
+	:AssignID=[[GETDATA::VAR=AssignID]]
+	AND RecAccDate is not null AND
+	RecAccDate <>  1/ 1/1900
+	:
+	{Count(AssignID)}]]]]
+[[EVAL:IF:[[EVAL:BOOL:
+	[[EVAL:BOOL:[[GETDATA:ProAcceptsCheck=on]] &&
+	  [[EVAL:BOOL:[[GETDATA::VAR=ProAccDateIsNotNull = 0]]
+				]]
+	]]
+		]]
+: [[SET:VAR:RecAccDateIsNotNull=1]]
+	[[DBASE:SQL:Update [Assignment Table] SET
+		ProAccDate=[[GETDATA::DATE=m/d/y]] [[GETDATA::TIME]]
+		where AssignID=[[GETDATA::VAR=AssignID]]
+	]]
+:
+]]
+[[EVAL:IF:[[EVAL:BOOL:
+	[[EVAL:BOOL:[[GETDATA:RecAcceptsCheck=on]] &&
+	  [[EVAL:BOOL:[[GETDATA::VAR=RecAccDateIsNotNull = 0]]
+				]]
+	]]
+		]]
+: [[SET:VAR:RecAccDateIsNotNull=1]]
+	[[DBASE:SQL:Update [Assignment Table] SET
+		RecAccDate=[[GETDATA::DATE=m/d/y]] [[GETDATA::TIME]]
+		where AssignID=[[GETDATA::VAR=AssignID]]
+	]]
+: 
+]]
+[[EVAL:IF:[[GETDATA:AssiNewButton]]=New
+	:<!-- New -- so already displayed -->
+	:
+<!--webbot bot="HTMLMarkup" endspan -->
+<center>
+<font size="+2">
+<b>Review (or Add to) an Existing
+Assignment for a Service</b>
+</font>
+</center>
+<!--webbot bot="HTMLMarkup" startspan -->
+]]
+<!--webbot bot="HTMLMarkup" endspan -->
+<form action="/cgi-bin/virtuflex.exe" method="get">
+<input type="hidden" name="template" value="/td/OneAssin.htm">
+<input type="hidden" name="AssignID" value="[[GETDATA::VAR=AssignID]]">
+<input type="hidden" name="Provider" value="[[GETDATA:Provider]]">
+<input type="hidden" name="Recipient" value="[[GETDATA:Recipient]]">
+<input type="hidden" name="Service" value="[[GETDATA:Service]]">
+<table width="818" border="0" height="255">
+	<tr>
+		<td bgcolor="#DDDDDD" width="212" height="255">
+			<table border="0" width="215" cellspacing="0" cellpadding="0">
+					<tr>
+						<td width="55">
+							<font size="+0">
+							<b>
+							Provider
+							</b>
+							</font>
+							<br>
+							<font size="-2">
+							<input type="checkbox" [[GETDATA::VAR="ProAccDateIsNotNull|CONVERT=1=CHECKED|CONVERT=0=]]" name="ProAcceptsCheck">
+							Accepts
+							</font>
+						</td>
+<!--webbot bot="HTMLMarkup" startspan -->
+			[[DBASE:SELECT:[Assignment Table]
+			:AssignID=[[GETDATA::VAR=AssignID]]
+			:
+			{AssignID|TRUNC=0}
+<!--webbot bot="HTMLMarkup" endspan -->
+						<td width="135">
+							<font size="-2">
+							Initials:
+							<input type="text" name="ProInitialsText" size="5">
+							<br>
+<!--webbot bot="HTMLMarkup" startspan -->
+							[[EVAL:IF:[[GETDATA::VAR=ProAccDateIsNotNull]]=1
+							:Date= {ProAccDate|TRUNC=11}
+							:
+<!--webbot bot="HTMLMarkup" endspan -->
+							No Date
+<!--webbot bot="HTMLMarkup" startspan -->
+							]]
+<!--webbot bot="HTMLMarkup" endspan -->
+							<br>
+							<select name="ProAccDateMMSelect">
+<!--webbot bot="HTMLMarkup" startspan -->
+								<option selected>
+				    [[EVAL:IF:[[GETDATA::VAR=ProAccDateIsNotNull]]=1
+				    :{ProAccDate|SUBSTR=1=2|CONVERT= =&nbsp;}
+				    :&nbsp;1]]
+<!--webbot bot="HTMLMarkup" endspan -->
+								<option>&nbsp;1
+								<option>&nbsp;2
+								<option>&nbsp;3
+								<option>&nbsp;4
+								<option>&nbsp;5
+								<option>&nbsp;6
+								<option>&nbsp;7
+								<option>&nbsp;8
+								<option>&nbsp;9
+								<option>10
+								<option>11
+								<option>12
+							</select>
+							<select name="ProAccDateDDSelect">
+<!--webbot bot="HTMLMarkup" startspan -->
+								<option selected>
+				    [[EVAL:IF:[[GETDATA::VAR=ProAccDateIsNotNull]]=1
+				    :{ProAccDate|SUBSTR=4=2|CONVERT= =&nbsp;}
+				    :&nbsp;1]]
+<!--webbot bot="HTMLMarkup" endspan -->
+								<option>&nbsp;1
+								<option>&nbsp;2
+								<option>&nbsp;3
+								<option>&nbsp;4
+								<option>&nbsp;5
+								<option>&nbsp;6
+								<option>&nbsp;7
+								<option>&nbsp;8
+								<option>&nbsp;9
+								<option>10
+								<option>11
+								<option>12
+								<option>13
+								<option>14
+								<option>15
+								<option>16
+								<option>17
+								<option>18
+								<option>19
+								<option>20
+								<option>21
+								<option>22
+								<option>23
+								<option>24
+								<option>25
+								<option>26
+								<option>27
+								<option>28
+								<option>29
+								<option>30
+								<option>31
+							</select>
+							<select name="ProAccDateYYSelect">
+<!--webbot bot="HTMLMarkup" startspan -->
+								<option selected>
+								[[EVAL:IF:[[GETDATA::VAR=ProAccDateIsNotNull]]=1
+								:{ProAccDate|SUBSTR=7=4}
+								:1900
+									]]
+<!--webbot bot="HTMLMarkup" endspan -->
+								<option>1980
+								<option>1981
+								<option>1982
+								<option>1983
+								<option>1984
+								<option>1985
+								<option>1986
+								<option>1987
+								<option>1988
+								<option>1989
+								<option>1990
+								<option>1991
+								<option>1992
+								<option>1993
+								<option>1994
+								<option>1995
+								<option>1996
+								<option>1997
+								<option>1998
+								<option>1999
+								<option>2000
+								<option>2001
+								<option>2002
+								<option>2003
+								<option>2004
+								<option>2005
+								<option>2006
+								<option>2007
+								<option>2008
+								<option>2009
+								<option>2010
+							</select>
+							</font>
+						</td>
+<!--webbot bot="HTMLMarkup" startspan -->
+						]]
+<!--webbot bot="HTMLMarkup" endspan -->
+					</tr>
+			</table>
+<!--webbot bot="HTMLMarkup" startspan -->
+			[[EVAL:IF:[[GETDATA:Provider:LENGTH]]>0
+			:
+<!--webbot bot="HTMLMarkup" endspan -->
+				<table border="0" cellpadding="0" cellspacing="0" bgcolor="F4FCFF" width="214">
+					<tr>
+						<td width="140">
+<!--webbot bot="HTMLMarkup" startspan -->
+							[[DBASE:SELECT:[Member Table]:MemID=
+								[[GETDATA:Provider]]
+								:
+<!--webbot bot="HTMLMarkup" endspan -->
+						</td>
+					</tr>
+					<tr>
+						<td width="140">
+							<font size="-3">{FirstName}</font>
+						</td>
+						<td width="70">
+							<font size="-3">{LastName}</font>
+						</td>
+					</tr>
+					<tr>
+						<td width="140">
+							<font size="-3">{Street}</font>
+						</td>
+						<td width="70">
+							&nbsp;
+						</td>
+					</tr>
+					<tr>
+						<td width="140">
+							<font size="-3">{City} </font>
+						</td>
+						<td width="70">
+							<font size="-3">{State} &nbsp;{Zipcode}</font>
+						</td>
+					</tr>
+					<tr>
+						<td width="140">
+                            &nbsp;
+						</td>
+					</tr>
+					<tr>
+						<td width="140">
+							<font size="-2">Org ID--
+							<font size="-3">{Identifier}
+							</font>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td width="140">
+                            &nbsp;
+						</td>
+					</tr>
+					<tr>
+						<td width="140">
+							<font size="-2">Home Phone--
+							<font size="-3">{HomePhone}
+							</font>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td width="140">
+							<font size="-2">Work Phone--
+							<font size="-3">{WorkPhone}
+							</font>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td width="140">
+<!--webbot bot="HTMLMarkup" startspan -->
+							]]
+<!--webbot bot="HTMLMarkup" endspan -->
+						</td>
+					</tr>
+				</table>
+				<p>
+			:
+				<table border="1" cellpadding="0" cellspacing="0" bgcolor="#F4FCFF" <tr width="216">
+						<td height="185" width="212">
+                           &nbsp;
+						</td>
+			</table>
+<!--webbot bot="HTMLMarkup" startspan -->
+		]]
+<!--webbot bot="HTMLMarkup" endspan -->
+		</td>
+		<td bgcolor="DDDDDD" width="236" height="255">
+			<table border="0" width="215">
+				<tr>
+					<td width="57">
+						<font size="+0">
+						<b>
+						Recipient
+						</b>
+						</font>
+						<br>
+						<font size="-2">
+						<input [[GETDATA::VAR="RecAccDateIsNotNull|CONVERT=1=CHECKED|CONVERT=0=]]" type="checkbox" name="RecAcceptsCheck">
+						Accepts
+						</font>
+					</td>
+					<td width="128">
+					<!-- 2nd, part II -->
+<!--webbot bot="HTMLMarkup" startspan -->
+					[[DBASE:SELECT:[Assignment Table]
+						:AssignID=[[GETDATA::VAR=AssignID]]
+						:
+						<!-- we need at least one "Interlace" -->
+						{AssignID|TRUNC=0}
+<!--webbot bot="HTMLMarkup" endspan --><font size="-2">
+						Initials:
+						<input type="text" name="RecInitialsText" size="5">
+						<br>
+<!--webbot bot="HTMLMarkup" startspan -->
+						[[EVAL:IF:[[GETDATA::VAR=RecAccDateIsNotNull]]=1
+						:Date= {RecAccDate|TRUNC=11}
+						:
+<!--webbot bot="HTMLMarkup" endspan -->
+						No Date
+<!--webbot bot="HTMLMarkup" startspan -->
+						]]
+<!--webbot bot="HTMLMarkup" endspan -->
+						<br>								    
+						<select name="RecAccDateMMSelect">
+<!--webbot bot="HTMLMarkup" startspan -->
+							<option  selected>												      
+			     [[EVAL:IF:[[GETDATA::VAR=RecAccDateIsNotNull]]=1
+			     :{RecAccDate|SUBSTR=1=2|CONVERT= =&nbsp;} :&nbsp;1
+			     ]]
+<!--webbot bot="HTMLMarkup" endspan -->
+							 <option>&nbsp;1
+							 <option>&nbsp;2
+							 <option>&nbsp;3
+							 <option>&nbsp;4
+							 <option>&nbsp;5
+							 <option>&nbsp;6
+							 <option>&nbsp;7
+							 <option>&nbsp;8
+							  <option>&nbsp;9
+							<option>10
+							<option>11
+							<option>12
+						</select>
+						<select name="RecAccDateDDSelect">
+<!--webbot bot="HTMLMarkup" startspan -->
+							<option selected>
+								[[EVAL:IF:[[GETDATA::VAR=RecAccDateIsNotNull]]=1
+								:{RecAccDate|SUBSTR=4=2|CONVERT= =&nbsp;}
+								:&nbsp;1
+								]]
+<!--webbot bot="HTMLMarkup" endspan -->
+							 <option>&nbsp;1
+							 <option>&nbsp;2
+							 <option>&nbsp;3
+							 <option>&nbsp;4
+							 <option>&nbsp;5
+							 <option>&nbsp;6
+							 <option>&nbsp;7
+							 <option>&nbsp;8
+							 <option>&nbsp;9
+							<option>10
+							<option>11
+							<option>12
+							<option>13
+							<option>14
+							<option>15
+							<option>16
+							<option>17
+							<option>18
+							<option>19
+							<option>20
+							<option>21
+							<option>22
+							<option>23
+							<option>24
+							<option>25
+							<option>26
+							<option>27
+							<option>28
+							<option>29
+							<option>30
+							<option>31
+						</select>
+							<select name="RecAccDateYYSelect">
+<!--webbot bot="HTMLMarkup" startspan -->
+							<option selected>
+				 [[EVAL:IF:[[GETDATA::VAR=RecAccDateIsNotNull]]=1
+				 :{RecAccDate|SUBSTR=7=4|CONVERT= =&nbsp;} :1900
+				 ]]
+<!--webbot bot="HTMLMarkup" endspan -->
+							 <option>1980
+							 <option>1981
+							 <option>1982
+							 <option>1983
+							 <option>1984
+							 <option>1985
+							 <option>1986
+							 <option>1987
+							 <option>1988
+							 <option>1989
+							 <option>1990
+							 <option>1991
+							 <option>1992
+							 <option>1993
+							 <option>1994
+							 <option>1995
+							 <option>1996
+							 <option>1997
+							 <option>1998
+							 <option>1999
+							 <option>2000
+							 <option>2001
+							 <option>2002
+							 <option>2003
+							 <option>2004
+							 <option>2005
+							 <option>2006
+							 <option>2007
+							 <option>2008
+							 <option>2009
+							 <option>2010
+						</select>
+<!--webbot bot="HTMLMarkup" startspan -->
+						]]
+<!--webbot bot="HTMLMarkup" endspan -->
+                    </font>
+					</td>
+				</tr>
+			</table>
+<!--webbot bot="HTMLMarkup" startspan -->
+			[[EVAL:IF:[[GETDATA:Recipient:LENGTH]]>0
+			:
+<!--webbot bot="HTMLMarkup" endspan -->
+			<table border="0" cellpadding="0" cellspacing="0" bgcolor="E0E6E0" width="227">
+					<tr>
+						<td width="140">
+<!--webbot bot="HTMLMarkup" startspan -->
+							[[DBASE:SELECT:[Member Table]:MemID=
+								[[GETDATA:Recipient]]
+							:
+<!--webbot bot="HTMLMarkup" endspan -->
+						</td>
+					</tr>
+					<tr>
+						<td width="140">
+							<font size="-3">{FirstName}</font>
+						</td>
+						<td width="83">
+							<font size="-3">{LastName}</font>
+						</td>
+					</tr>
+					<tr>
+						<td width="140">
+							<font size="-3">{Street}</font>
+						</td>
+						<td width="83">
+							&nbsp;
+						</td>
+					</tr>
+					<tr>
+						<td">
+							<font size="-3">
+                            <td width="140">{City} </font>
+						<td width="83">
+							<font size="-3">{State} &nbsp;{Zipcode}</font>
+						</td>
+					</tr>
+					<tr>
+						<td width="140">
+                            &nbsp;
+						</td>
+					</tr>
+					<tr>
+						<td width="140">
+							<font size="-2">Org ID--
+							<font size="-3">{Identifier}
+							</font>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td width="140">
+                            &nbsp;
+						</td>
+					</tr>
+					<tr>
+						<td width="140">
+							<font size="-2">Home Phone--
+							<font size="-3">{HomePhone}
+							</font>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td width="140">
+							<font size="-2">Work Phone--
+							<font size="-3">{WorkPhone}
+							</font>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td width="140">
+						&nbsp;
+						</td>
+					</tr>
+				</table>
+<!--webbot bot="HTMLMarkup" startspan -->
+							]]
+<!--webbot bot="HTMLMarkup" endspan -->
+
+				<p>
+<!--webbot bot="HTMLMarkup" startspan -->
+			:
+<!--webbot bot="HTMLMarkup" endspan -->
+				<table width="232" height="185" border="1" cellpadding="0" cellspacing="0" bgcolor="#E0E6E0" <tr>
+						<td width="228">
+							&nbsp;
+						</td>
+				</table>
+				<br>
+<!--webbot bot="HTMLMarkup" startspan -->
+			]]
+<!--webbot bot="HTMLMarkup" endspan -->
+		</td>		   
+		<td bgcolor="E0E6E0" width="362" height="255">
+			<table border="0" width="200">
+			<tr>
+				<td bgcolor="E0E6E0">
+						<img src="/td/blank.gif" width="70" height="1" border="0">
+						<input type="submit" name="Once" value="OK">
+						<img src="/td/blank.gif" width="20" height="1" border="0">
+						<input type="submit" name="CancelButton" value="Cancel">
+						<img src="/td/blank.gif" height="1" width="80">
+						<input [[GETDATA::VAR="TimeCritical|convert=1=checked|convert=0=]]" type="checkbox" name="TimeCriticalCheck">
+						<input type="hidden" name="TimeCritical" value="off">
+						<font size="-2">
+						Time
+						<img src="/td/blank.gif" height="1" width="105">
+						Critical
+						</font>
+						<font size="-6">
+						&nbsp;
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="E0E6E0">
+						<font size="+1">
+							<b>
+							Service
+							</b>
+						</font>
+					</td>
+				</tr>
+			</table>
+<!--webbot bot="HTMLMarkup" startspan -->
+			[[EVAL:IF:[[GETDATA::VAR=ServiceID|LENGTH]]>0
+				:
+				[[DBASE:SELECT:[Services List]:ServiceID=
+					[[GETDATA::VAR=ServiceID]]
+				:
+<!--webbot bot="HTMLMarkup" endspan -->
+				<table bgcolor="F4FCFF" width="180" border="0" cellpadding="0" cellspacing="0" bgcolor="#F4FCFF">
+					<tr>
+						<td>
+						{Service}
+						</td>
+					</tr>
+				</table>
+<!--webbot bot="HTMLMarkup" startspan -->
+				]]
+				:
+<!--webbot bot="HTMLMarkup" endspan -->
+				<table width="190" bgcolor="#F4FCFF" cellpadding="0" cellspacing="0" border="0">
+					<tr>
+						<td>
+						<img src="/td/blank.gif" height="25" width="0" border="0">
+						</td>
+					</tr>
+				</table>
+<!--webbot bot="HTMLMarkup" startspan -->
+			]]
+			[[DBASE:SELECT:[Assignment Table]
+			:AssignID=[[GETDATA::VAR=AssignID]]
+			:
+<!--webbot bot="HTMLMarkup" endspan -->
+				<table bgcolor="#CCCCCC" width="200" cellspacing="0" cellpadding="0" border="0">
+					<tr>
+					<td width="20">
+						<font size="-2">
+							Credits Accumulated
+							</font>
+					</td>
+					<td>
+						<font size="-2">
+						
+							{Credits}
+						</font>
+					<td>
+				</tr>
+				<tr>
+					<td width="20">
+						<font size="-2">
+						Begin Date
+						</font>
+					</td>
+					<td width="150">
+						<select name="OneBeginDateMMSelect">
+							<option selected>{BeginDate|SUBSTR=1=2|CONVERT=
+                            =&nbsp;}
+							<option>&nbsp;1
+							<option>&nbsp;2
+							<option>&nbsp;3
+							<option>&nbsp;4
+							<option>&nbsp;5
+							<option>&nbsp;6
+							<option>&nbsp;7
+							<option>&nbsp;8
+							<option>&nbsp;9
+							<option>10
+							<option>11
+							<option>12
+						</select>
+						<select name="OneBeginDateDDSelect">
+							<option selected>{BeginDate|SUBSTR=4=2|CONVERT=
+                            =&nbsp;}
+							<option>&nbsp;1
+							<option>&nbsp;2
+							<option>&nbsp;3
+							<option>&nbsp;4
+							<option>&nbsp;5
+							<option>&nbsp;6
+							<option>&nbsp;7
+							<option>&nbsp;8
+							<option>&nbsp;9
+							<option>10
+							<option>11
+							<option>12
+							<option>13
+							<option>14
+							<option>15
+							<option>16
+							<option>17
+							<option>18
+							<option>19
+							<option>20
+							<option>21
+							<option>22
+							<option>23
+							<option>24
+							<option>25
+							<option>26
+							<option>27
+							<option>28
+							<option>29
+							<option>30
+							<option>31
+						</select>
+						<select name="OneBeginDateYYSelect">
+							<option selected>{BeginDate|SUBSTR=7=4}
+								<option>1980
+								<option>1981
+								<option>1982
+								<option>1983
+								<option>1984
+								<option>1985
+								<option>1986
+								<option>1987
+								<option>1988
+								<option>1989
+								<option>1990
+								<option>1991
+								<option>1992
+								<option>1993
+								<option>1994
+								<option>1995
+								<option>1996
+								<option>1997
+								<option>1998
+								<option>1999
+								<option>2000
+								<option>2001
+								<option>2002
+								<option>2003
+								<option>2004
+								<option>2005
+								<option>2006
+								<option>2007
+								<option>2008
+								<option>2009
+								<option>2010
+							</select>
+					</td>
+				</tr>
+				<tr>
+					<td width="80">
+						<font size="-2">
+						End Date
+						</font>
+					</td>
+					<td width="120">
+						<select name="OneEndDateMMSelect">
+							<option selected>{EndDate|SUBSTR=1=2|CONVERT=
+                            =&nbsp;}
+							<option>&nbsp;1
+							<option>&nbsp;2
+							<option>&nbsp;3
+							<option>&nbsp;4
+							<option>&nbsp;5
+							<option>&nbsp;6
+							<option>&nbsp;7
+							<option>&nbsp;8
+							<option>&nbsp;9
+							<option>10
+							<option>12
+						</select>
+						<select name="OneEndDateDDSelect">
+							<option selected>{EndDate|SUBSTR=4=2|CONVERT=
+                            =&nbsp;}
+							<option>&nbsp;1
+							<option>&nbsp;2
+							<option>&nbsp;3
+							<option>&nbsp;4
+							<option>&nbsp;5
+							<option>&nbsp;6
+							<option>&nbsp;7
+							<option>&nbsp;8
+							<option>&nbsp;9
+							<option>10
+							<option>11
+							<option>12
+							<option>13
+							<option>14
+							<option>15
+							<option>16
+							<option>17
+							<option>18
+							<option>19
+							<option>20
+							<option>21
+							<option>22
+							<option>23
+							<option>24
+							<option>25
+							<option>26
+							<option>27
+							<option>28
+							<option>29
+							<option>30
+							<option>31
+						</select>
+						<select name="OneEndDateYYSelect">
+							<option selected>{EndDate|SUBSTR=7=4}
+								<option>1980
+								<option>1981
+								<option>1982
+								<option>1983
+								<option>1984
+								<option>1985
+								<option>1986
+								<option>1987
+								<option>1988
+								<option>1989
+								<option>1990
+								<option>1991
+								<option>1992
+								<option>1993
+								<option>1994
+								<option>1995
+								<option>1996
+								<option>1997
+								<option>1998
+								<option>1999
+								<option>2000
+								<option>2001
+								<option>2002
+								<option>2003
+								<option>2004
+								<option>2005
+								<option>2006
+								<option>2007
+								<option>2008
+								<option>2009
+								<option>2010
+						</select>
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+<div>
+<a NAME="second"></a>
+<br>
+<!-- this table contains the comments box and	optionally one or another tour messages -->
+<table width="600" border="0" cellspacing="0" cellpadding="0">
+<!--webbot bot="HTMLMarkup" startspan -->
+<th colspan="2">
+[[ACTION:FILE:READ:/td/OneAssT2.htm]]
+</th>
+<!--webbot bot="HTMLMarkup" endspan -->
+	<tr>
+		<td width="400">
+			<font size="+1">
+			<b>
+			Comments
+			</b>
+			</font>
+			<img src="/td/blank.gif" height="1" width="181">
+			<font size="-2">
+			QcRating
+			</font>
+			<select name="QcRating">
+			  <option selected>{QcRating|CONVERT=1=none|CONVERT=2=Low|CONVERT=3=Average|CONVERT=4=High}
+				<option>none
+				<option>Low
+				<option>Average
+				<option>High
+			</select>
+		</td>
+		<td width="200">
+			<img src="/td/blank.gif" height="1" width="120">
+			<input type="submit" name="ChangeUnitButton" value="Change Unit Categories">
+		</td>
+	</tr>
+	<tr>
+		<td width="400">
+			<textarea name="Comments" cols="47" rows="7" wrap="virtual">{Comments}</textarea>
+		</td>
+		<td width="200">
+			<table width="200">
+				<tr>
+					<td>
+						<table width="190" border="0" cellpadding="0" cellspacing="0" bgcolor="#E0E6E0">
+							<tr>
+								<td>
+									<font size="-6">&nbsp;
+									</font>
+								</td>
+							</tr>
+						</table>
+						<font size="+0">
+						<b>Credits &nbsp; Service units</b><br>
+						</font>
+<!--webbot bot="HTMLMarkup" startspan -->
+						[[EVAL:IF:[[DBASE:SELECT:[UnitNames List] LEFT JOIN [Asgn SvUnit Table]
+							ON [UnitNames List].UnitID = [Asgn SvUnit Table].SvUnit
+							:Assignment=[[GETDATA::VAR=AssignID]] AND UNITNAME <> 'null'
+							:{COUNT(UnitName)}]]=0
+						:
+<!--webbot bot="HTMLMarkup" endspan -->
+                        <font size="2">(<font color="#CC0066">No Categories currently in
+                        use</font>)</font><br>
+<!--webbot bot="HTMLMarkup" startspan -->						
+						:
+<!-- because of a FP2000 conflict with UPDATEing the table -- I cannot
+ 		currently test this here -->
+							[[DBASE:SELECT:[UnitNames List] LEFT JOIN [Asgn SvUnit Table]
+							ON [UnitNames List].UnitID = [Asgn SvUnit Table].SvUnit
+							:Assignment=[[GETDATA::VAR=AssignID]] AND UNITNAME <> 'null'
+							:
+<!--webbot bot="HTMLMarkup" endspan -->
+							<input type="text" name="Unit{UnitID}" Value size="4"> &nbsp; &nbsp; {UnitName}
+<!--webbot bot="HTMLMarkup" startspan -->
+							]]
+						]]
+<!--webbot bot="HTMLMarkup" endspan -->
+						<table width="190" border="0" cellpadding="0" cellspacing="0" bgcolor="#E0E6E0">
+							<tr>
+								<td>
+									<font size="-6">&nbsp;
+									</font>
+								</td>
+							</tr>
+						</table>
+						</td>
+				</tr>
+			</table>
+        <font size="2">
+			New Credits
+			<input type="text" name="Credits" Value size="10">
+			<br>
+			Date of Service<br>
+			<img src="/td/blank.gif" height="1" width="40">
+			<select name="ServiceDateMMSelect">
+				<option selected>{Updated|SUBSTR=1=2|CONVERT= =&nbsp;}
+				<option>&nbsp;1
+				<option>&nbsp;2
+				<option>&nbsp;3
+				<option>&nbsp;4
+				<option>&nbsp;5
+				<option>&nbsp;6
+				<option>&nbsp;7
+				<option>&nbsp;8
+				<option>&nbsp;9
+				<option>10
+				<option>11
+				<option>12
+			</select>
+			<select name="ServiceDateDDSelect">
+				<option selected>{Updated|SUBSTR=4=2|CONVERT= =&nbsp;}
+				<option>&nbsp;1
+				<option>&nbsp;2
+				<option>&nbsp;3
+				<option>&nbsp;4
+				<option>&nbsp;5
+				<option>&nbsp;6
+				<option>&nbsp;7
+				<option>&nbsp;8
+				<option>&nbsp;9
+				<option>10
+				<option>11
+				<option>12
+				<option>13
+				<option>14
+				<option>15
+				<option>16
+				<option>17
+				<option>18
+				<option>19
+				<option>20
+				<option>21
+				<option>22
+				<option>23
+				<option>24
+				<option>25
+				<option>26
+				<option>27
+				<option>28
+				<option>29
+				<option>30
+				<option>31
+			</select>
+			<select name="ServiceDateYYSelect">
+				<option selected>{Updated|SUBSTR=7=4}
+				<option>1980
+				<option>1981
+				<option>1982
+				<option>1983
+				<option>1984
+				<option>1985
+				<option>1986
+				<option>1987
+				<option>1988
+				<option>1989
+				<option>1990
+				<option>1991
+				<option>1992
+				<option>1993
+				<option>1994
+				<option>1995
+				<option>1996
+				<option>1997
+				<option>1998
+				<option>1999
+				<option>2000
+				<option>2001
+				<option>2002
+				<option>2003
+				<option>2004
+				<option>2005
+				<option>2006
+				<option>2007
+				<option>2008
+				<option>2009
+				<option>2010
+			</select>
+			<br>
+        </font>
+        <img src="/td/blank.gif" height="1" width="139">
+		 <input type="submit" name="Once" value="OK">
+<!--webbot bot="HTMLMarkup" startspan -->
+			]]
+<!--webbot bot="HTMLMarkup" endspan -->
+		</td>
+	</tr>
+		<td>
+		<b>
+</form>
+<p><a href="AssiChg.htm"></a></p>
+<p><a href="AssiErr.htm"></a></p>
+</BODY>

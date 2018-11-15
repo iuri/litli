@@ -1,0 +1,24 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<title></title>
+</head>
+
+<BODY bgcolor="#FFFFFF" text="#000000">
+<font size="3" color="#000000">
+This test page first does an SQL select on [Member Table]<br>
+and then does an SQL update on [ServiceUnit Table]<br>
+I wrote this when updates were failing and I needed to close and reopen the database
+in between the two SQL steps<br>
+<p><!--webbot bot="HTMLMarkup" startspan -->
+[[SET:DefaultDbase:c\:\timed\tddemo.mdb]]
+[[DBASE:SELECT:[Member Table]:LastName like 'Cahn':Last Name is {LastName}]]
+[[SET:DefaultDbase:c\:\timed\tddemo.mdb]]
+[[DBASE:SQL:UPDATE [ServiceUnit Table] SET Provider=12 WHERE SvUnitID=1]]
+<!--webbot bot="HTMLMarkup" endspan --></p>
+</font>
+</BODY>
+</html>

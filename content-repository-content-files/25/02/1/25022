@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>Toolkits </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.2 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-0"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Skip navigation</a></p>
+<section id="emptyHeader"></section>
+<nav id="siteNav">
+<ul>
+   <li id="active"><a href="index.html" class="active daddy main-node">Toolkits</a></li>
+   <li><a href="site_map_w_links.html" class="no-ch">Site Map w/ Links</a></li>
+   <li><a href="rebates__residential_rebates__commercial_rebates__landscape_irrigation_survey__program_information__new_landscape_transformation_program.html" class="daddy">Rebates  Residential Rebates  Commercial Rebates  Landscape Irrigation Survey  Program Information  New Landscape Transformation Program</a>
+   <ul class="other-section">
+      <li><a href="california_friendly_gardening_materials.html" class="no-ch">California Friendly® Gardening Materials</a></li>
+      <li><a href="metropolitan_program_statement.html" class="no-ch">Metropolitan Program Statement</a></li>
+      <li><a href="bewaterwoze_table_of_contents.html" class="no-ch">Bewaterwoze Table of Contents</a></li>
+      <li><a href="videos.html" class="no-ch">Videos</a></li>
+   </ul>
+   </li>
+   <li><a href="visit_bewaterwise_for_a_full_list_of_conservation_materials.html" class="no-ch">Visit BeWaterWise for a full list of conservation materials</a></li>
+   <li><a href="classes.html" class="daddy">Classes</a>
+   <ul class="other-section">
+      <li><a href="grant__programs.html" class="no-ch">Grant &amp; Programs</a></li>
+      <li><a href="gardening.html" class="no-ch">Gardening</a></li>
+      <li><a href="signage.html" class="no-ch">Signage</a></li>
+      <li><a href="paradise_parkways.html" class="no-ch">Paradise Parkways</a></li>
+   </ul>
+   </li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="site_map_w_links.html" class="next"><span>Next<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">Toolkits</h1></header>
+<article class="iDevice_wrapper FileAttachIdeviceInc em_iDevice" id="id28">
+<div class="iDevice emphasis1" >
+<header class="iDevice_header" style="background-image:url(icon_assignment.gif)"><h1 class="iDeviceTitle">File Attachments</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta28_82" class="block iDevice_content">
+<p><a href="http://www.bewaterwise.com/assets/toolkit.pdf">http://www.bewaterwise.com/assets/toolkit.pdf</a></p>
+</div>
+<ul class='exeFileList'><li><a href='bewaterwise0.elp' target='_blank'>bewaterwise.elp<span> (New Window)</span></a></li>
+</ul></div>
+</div>
+</div>
+</article>
+<div id="packageLicense" class="cc cc-by-sa">
+<p><span>Licensed under the</span> <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution Share Alike License 4.0</a></p>
+</div>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="site_map_w_links.html" class="next"><span>Next<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="my_js.js"></script></body></html>

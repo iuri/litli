@@ -1,0 +1,153 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN//3.2">
+
+<html>
+<head>
+	<title>Finishing Transfer</title>
+</head>
+<BODY bgcolor="#FFFFFF" text="#000000">
+<!--webbot bot="HTMLMarkup" startspan -->
+[[SET:DefaultDbase:c\:\timed\tddemo.mdb]]
+<!--webbot bot="HTMLMarkup" endspan -->
+<form action="/cgi-bin/virtuflex.exe" method="get">
+<!--webbot bot="HTMLMarkup" startspan -->
+[[EVAL:IF:[[GETDATA:Tour]]=top
+	:
+	<input type="hidden" name="template" value="/td/default.htm">
+	:
+	<input type="hidden" name="template" value="/td/main.htm">
+]]
+<!--webbot bot="HTMLMarkup" endspan -->
+<font size="+5" color="green">
+<center>
+<b>Transferred [[GETDATA:Credits]]
+<!--webbot bot="HTMLMarkup" startspan -->
+[[EVAL:IF:[[GETDATA:Credits]]=1:Credit:Credits]]
+<!--webbot bot="HTMLMarkup" endspan -->
+from
+<!--webbot bot="HTMLMarkup" startspan -->
+[[DBASE:SELECT:[Member Table]:MemID=[[GETDATA:Recipient]]:
+<!--webbot bot="HTMLMarkup" endspan -->
+{FirstName} {LastName}]]
+to
+<!--webbot bot="HTMLMarkup" startspan -->
+[[DBASE:SELECT:[Member Table]:MemID=[[GETDATA:Provider]]:
+<!--webbot bot="HTMLMarkup" endspan -->
+{FirstName} {LastName}]]
+</font>
+<font size="3" color="black">
+<!--webbot bot="HTMLMarkup" startspan -->
+[[SET:VAR:ServiceDate=[[GETDATA:ServiceDateMMSelect]]/[[GETDATA:ServiceDateDDSelect]]/[[GETDATA:ServiceDateYYSelect]] 0\:0\:0]]
+[[DBASE:ADD:[Transaction Table]:
+	{Provider|[[GETDATA:Provider]]}
+	{Recipient|[[GETDATA:Recipient]]}{Service|[[GETDATA:Service]]}
+	{Entered|[[GETDATA::DATE=m/d/y]] [[GETDATA::TIME]]}
+	{DateOf|[[GETDATA::VAR=ServiceDate|PREPEND='|CONVERT= = |POSTPEND='|CONVERT='// 0\:0\:0'=#null]]}
+	{Credits|[[GETDATA:Credits]]}
+]]
+<!-- major VirtuFlex bug, does not do negative math right -->
+<!-- if whole number, could do multiple decrements / increments -->
+<!-- six cases --
+		1.  Recipient balance remains positive
+		2.  Recipient balance goes negative
+		3.  Recipient balance remains negative
+		4.  Provider balance remains positive
+		5.  Provider balance goes positive
+		6.  Provider balance remains negative     -->
+[[SET:VAR:ProviderBalance=[[DBASE:SELECT:[Member Table]:MemID=[[GETDATA:Provider]]:{Balance}]]]]
+[[SET:VAR:RecipientBalance=[[DBASE:SELECT:[Member Table]:MemID=[[GETDATA:Recipient]]:{Balance}]]]]
+[[EVAL:IF:[[GETDATA::VAR=RecipientBalance|TRUNC=1]]=-
+	:
+		[[SET:VAR:RecipientIsNegative=-1]]
+	:
+		[[SET:VAR:RecipientIsNegative=0]]
+]]
+[[EVAL:IF:[[EVAL:BOOL:
+		[[EVAL:BOOL:[[GETDATA::VAR=RecipientIsNegative]]=0]] &&
+	  [[EVAL:BOOL:[[GETDATA::VAR=RecipientBalance]] < [[GETDATA:Credits]]]]
+					]]
+	:
+		[[SET:VAR:RecipientGoNegative=-1]]
+	:
+		[[SET:VAR:RecipientGoNegative=0]]
+]]
+[[EVAL:IF:[[GETDATA::VAR=ProviderBalance|TRUNC=1]]=-
+	:
+		[[SET:VAR:ProviderIsPositive=0]]
+	:
+		[[SET:VAR:ProviderIsPositive=-1]]
+]]
+[[EVAL:IF:[[EVAL:BOOL:
+		[[EVAL:BOOL:[[GETDATA::VAR=ProviderIsPositive]]=0]] &&
+	  [[EVAL:BOOL:[[GETDATA::VAR=ProviderBalance|CONVERT=-=]] < [[GETDATA:Credits]]]]
+					]]
+	:
+		[[SET:VAR:ProviderGoPositive=-1]]
+	:
+		[[SET:VAR:ProviderGoPositive=0]]
+]]
+<!-- TEST statements are in stub.htm -->
+<!-- Recipient of Service is payer of the credit -->
+[[EVAL:IF:[[GETDATA::VAR=RecipientGoNegative]]=-1
+	: <!-- Recipient going negative (the first minus sign is a literal -->
+		[[SET:VAR:RecipientBalance=-[[EVAL:MATH:[[GETDATA:Credits]]-[[GETDATA::VAR=RecipientBalance]]]]]]
+	: <!-- then staying positive or negative -->
+		[[EVAL:IF:[[GETDATA::VAR=RecipientIsNegative]]=-1
+			: <!-- Recipient staying negative -->
+				[[SET:VAR:RecipientBalance=-[[EVAL:MATH:[[GETDATA::VAR=RecipientBalance|CONVERT=-=]]+[[GETDATA:Credits]]]]]]
+			: <!-- Recipient staying positive -->
+				[[SET:VAR:RecipientBalance=[[EVAL:MATH:[[GETDATA::VAR=RecipientBalance]]-[[GETDATA:Credits]]]]]]
+		]]
+]]
+<!-- Provider of Service is receiver of the credit -->
+[[EVAL:IF:[[GETDATA::VAR=ProviderGoPositive]]=-1
+	: <!-- Provider going positive -->
+		[[SET:VAR:ProviderBalance=[[EVAL:MATH:[[GETDATA:Credits]]-[[GETDATA::VAR=ProviderBalance|CONVERT=-=]]]]]]
+	:  <!-- Provider staying positive or staying negative -->
+		[[EVAL:IF:[[GETDATA::VAR=ProviderIsPositive]]=-1
+			: <!-- Provider staying positive -->
+				[[SET:VAR:ProviderBalance=[[EVAL:MATH:[[GETDATA::VAR=ProviderBalance]]+[[GETDATA:Credits]]]]]]
+			: <!-- Provider staying negative (the first minus sign is a literal) -->
+				[[SET:VAR:ProviderBalance=-[[EVAL:MATH:[[GETDATA::VAR=ProviderBalance|CONVERT=-=]]-[[GETDATA:Credits]]]]]]
+		]]
+]]
+[[DBASE:SQL:Update [Member Table] SET
+	Balance=[[GETDATA::VAR=ProviderBalance]]
+	where MemID=[[GETDATA:Provider]]
+]]
+[[DBASE:SQL:Update [Member Table] SET
+	Balance=[[GETDATA::VAR=RecipientBalance]]
+	where MemID=[[GETDATA:Recipient]]
+]]
+<!--webbot bot="HTMLMarkup" endspan -->
+<!--webbot bot="HTMLMarkup" startspan -->
+[[EVAL:IF:[[GETDATA:Tour]]=top
+	:
+<!--webbot bot="HTMLMarkup" endspan -->
+<table bgcolor="#F0FFFF" width="700">
+	<th align="center">
+		You (as a Facilitator) have successfully credited
+		<!--webbot bot="HTMLMarkup" startspan -->
+		[[DBASE:SELECT:[Member Table]:MemID=[[GETDATA:Provider]]:
+<!--webbot bot="HTMLMarkup" endspan -->
+		{FirstName} {LastName}]] with credits
+        via the <font color="#0066FF">Tour</font><br>
+		To return to the tour please press the button<br>
+		<input type="submit" name="TourButton" value="Return to the Tour"></bf>
+    </th>
+  </table>
+<!--webbot bot="HTMLMarkup" startspan -->
+	:
+	<p>
+<input type="submit" name="HomeButton" value="Home"></bf>
+</p>
+<p>
+<b>Caution</b><font size=+2>&raquo; </font><font size="-2">Kindly refrain using "Reload" with this page</br>
+Any previously transferred Credits will be transferred</font><font size="+0"> again</font>
+</p>
+</center>
+</font>
+]]
+<!--webbot bot="HTMLMarkup" endspan -->
+
+</BODY>
+</html>

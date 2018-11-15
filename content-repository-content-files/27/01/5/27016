@@ -1,0 +1,1609 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>eLibrary Results</title>
+<script type="text/javascript">
+        //onerror=handleErr;
+        var txt="";
+        // if javaScriptDebug is false, no need to call the handleErr method.
+        //function handleErr(msg,url,line)
+        // {
+        //  return true;
+        // }
+        var glbl_debug = false;
+      </script><script type="text/javascript">
+        var glbl_tagging_enabled = true;
+      </script>
+<link type="text/css" rel="stylesheet" href="/elibweb/elib/images/css/lib/YahooUI/treeview/assets/skins/sam/treeview.css?version=1">
+<script type="text/javascript" src="/elibweb/elib/images/css/lib/YahooUI/yahoo-dom-event/yahoo-dom-event.js"></script><script type="text/javascript" src="/elibweb/elib/images/css/lib/YahooUI/animation/animation-min.js"></script><script type="text/javascript" src="/elibweb/elib/images/css/lib/YahooUI/connection/connection-min.js"></script><script type="text/javascript" src="/elibweb/elib/images/css/lib/YahooUI/autocomplete/autocomplete-min.js"></script><script type="text/javascript" src="/elibweb/elib/images/css/lib/YahooUI/yahoo/yahoo-min.js"></script><script type="text/javascript" src="/elibweb/elib/images/css/lib/YahooUI/treeview/treeview-min.js"></script><script type="text/javascript" language="JavaScript" src="/elibweb/elib/images/../js/ajax.js"></script><script type="text/javascript" src="http://yui.yahooapis.com/2.5.2/build/container/container-min.js"></script><script type="text/javascript" language="JavaScript" src="/elibweb/elib/images/css/elib.js"></script><script type="text/javascript" language="JavaScript" src="/elibweb/elib/images/../js/elib.js"></script><script type="text/javascript" language="JavaScript" src="/elibweb/elib/images/../js/overlay.js"></script><script type="text/javascript" language="JavaScript" src="/elibweb/elib/images/../js/jquery-1.3.1.min.js"></script>
+<link rel="stylesheet" href="/elibweb/elib/images/css/autocomplete.css" type="text/css">
+        <style type="text/css">
+	      #basicSearchContainer {width:40m; padding-bottom:2em;    }
+         
+       	  #cal1Container {display:none; position:absolute; left:650px; top:513px; z-index:1}
+	      #cal2Container {display:none; position:absolute; left:650px; top:550px; z-index:1} 
+        </style>
+        
+        <style type="text/css">
+	      #basicSearchContainerNew {width:40m; padding-bottom:2em; margin-left: 108px;;    }
+         
+       	  #cal1ContainerNew {display:none; position:absolute; left:650px; top:513px; z-index:1}
+	      #cal2ContainerNew {display:none; position:absolute; left:650px; top:550px; z-index:1} 
+        </style>
+      
+        <style type="text/css">
+	      #basicSearchContainerCurr {width: 296px;; padding-bottom:2em;  }
+         
+       	  #cal1ContainerCurr {display:none; position:absolute; left:650px; top:513px; z-index:1}
+	      #cal2ContainerCurr {display:none; position:absolute; left:650px; top:550px; z-index:1} 
+        </style>
+      
+        <style type="text/css">
+	      #advSearchContainerNew {width:40m; padding-bottom:2em; margin-left: 108px;;    }
+         
+       	  #cal1ContainerNew {display:none; position:absolute; left:650px; top:513px; z-index:1}
+	      #cal2ContainerNew {display:none; position:absolute; left:650px; top:550px; z-index:1} 
+        </style>
+      <link rel="stylesheet" href="/elibweb/elib/images/css/reset.css" type="text/css">
+<link rel="stylesheet" href="/elibweb/elib/images/css/screen.css" type="text/css"><!--[if lte IE 6]><link rel="stylesheet" href="/elibweb/elib/images/css/ie6.css" type="text/css"><![endif]--></head>
+<body id="search" onLoad="bannerInit('/elibweb/elib/images');switchMenu('mydetails');" class="">
+<h1 id="logo">
+<span><a href="/elibweb/elib/do/search?edition=&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701" title="Hi! Institute for International Multicultural and Ethics"></a></span>
+</h1>
+<div id="utilities">
+<ul>
+<li id="institution"></li>
+<li id="myeLibrary">
+<span id="myeLib-left">&nbsp;</span><span class="repeat"><a href="/elibweb/elib/do/myeliblogin?edition=&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701"><img width="14" height="15" src="/elibweb/elib/images/user_icon.gif"></a>&nbsp;<a href="/elibweb/elib/do/myeliblogin?edition=&amp;set=search&amp;lastset=search&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701">My eLibrary</a></span><span id="myeLib-right">&nbsp;</span>
+</li>
+<li>
+<a href="http://www.proquestk12.com/lsm/elibrary/help/elibrary.html" target="_blank"><img src="/elibweb/elib/images/help_icon.gif" width="16" height="17"></a>&nbsp;<a href="http://www.proquestk12.com/lsm/elibrary/help/elibrary.html" target="_blank">Help</a>
+</li>
+<li>
+<a href="http://www.proquestk12.com/contact.shtml" target="_blank"><img src="/elibweb/elib/images/contact_icon.gif" width="21" height="16"></a>&nbsp;<a href="http://www.proquestk12.com/contact.shtml" target="_blank">Contact us</a>
+</li>
+<li>
+<a href="/elibweb/elib/do/logoff?edition=&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701">Exit</a>
+</li>
+</ul>
+</div>
+<div id="green-line">&nbsp;</div>
+<div id="mainNavWrap">
+<div id="mainNav">
+<ul id="searchModes">
+<li id="search">
+<a href="/elibweb/elib/do/search?edition=&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701" onClick="grbForm_search.submit(); return false;" onMouseOver="txtgrb();"><span>Search</span></a>
+</li>
+<li id="topics">
+<a href="/elibweb/elib/do/hwctopicssearch?edition=&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701" onClick="grbForm_browsetopics.submit(); return false;" onMouseOver="txtgrb();"><span>Topics</span></a>
+</li>
+<li id="publications">
+<a href="/elibweb/elib/do/publicationbrowse?edition="><span>Publications</span></a>
+</li>
+<li id="reference">
+<a href="/elibweb/elib/do/refsearch?edition=&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701" onClick="grbForm_refsearch.submit(); return false;" onMouseOver="txtgrb();"><span>Reference</span></a>
+</li>
+</ul>
+<div id="userTools">
+<ul>
+<li id="mylist">
+<a href="/elibweb/elib/do/results?edition=&amp;start=1&amp;set=mylist&amp;dictionaryClick=&amp;lastset=search&amp;sortResultsBy=TopicRelevance&amp;groupResultsBy=&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;requestid=NaN">My List</a>
+</li>
+<li id="bookcarts">
+<a href="/elibweb/elib/do/bookcartlist?edition=&amp;start=1&amp;isactive=T&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701">Bookcarts</a>
+</li>
+<li id="slideshows">
+<a href="/elibweb/elib/do/slideshows?edition=&amp;start=1&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701">Slideshows</a>
+</li>
+<li id="timelines">
+<a href="/elibweb/elib/do/timelines?edition=&amp;start=1&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701">Timelines</a>
+</li>
+<li id="quizzes">
+<a href="/elibweb/elib/do/quiz?edition=&amp;isactive=T&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701">Quizzes</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<ul id="secondaryNav">
+<li> Basic Search </li>
+<li>
+<a href="#" onClick="searchOption(&quot;/elibweb/elib/do/search?clear=no&amp;edition=&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;secondaryNav=advance&quot;, &quot;&quot;)">Advanced Search</a>
+</li>
+<li>
+<a href="#" onClick="searchOption(&quot;/elibweb/elib/do/search?clear=no&amp;edition=&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;secondaryNav=tag&quot;, &quot;&quot;)">Tag Search</a>
+</li>
+<li id="popular-searches" style="z-index: 2;">
+<a href="" Onclick="return tagCloud(1);">Popular Searches</a>
+<div class="dimmer_overlayBG" id="dimmer_overlay" style="visibility : hidden"></div>
+<div id="tag-cloud" style="visibility : hidden">
+<div id="tag-cloud-top">&nbsp;</div>
+<div id="tag-cloud-body">
+<div style="padding:0.2em 2em">
+<div class="close-window">
+<a href="#" onClick="tagCloud(0); return false"><img src="/elibweb/elib/images/close.gif" alt="close layout options window"></a>
+</div>
+<h3>Popular Searches</h3>
+<a href="/elibweb/elib/do/search?clear=no&doasearch=true&reissuesearch=true&set=search&ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&keyword=time management" class="small">time management</a>&nbsp;							
+				 <a href="/elibweb/elib/do/search?clear=no&doasearch=true&reissuesearch=true&set=search&ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&keyword=abortion" class="medium">abortion</a>&nbsp;							
+				 <a href="/elibweb/elib/do/search?clear=no&doasearch=true&reissuesearch=true&set=search&ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&keyword=global warming" class="large">global warming</a>&nbsp;							
+				 <a href="/elibweb/elib/do/search?clear=no&doasearch=true&reissuesearch=true&set=search&ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&keyword=stress management" class="medium">stress management</a>&nbsp;							
+				 <a href="/elibweb/elib/do/search?clear=no&doasearch=true&reissuesearch=true&set=search&ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&keyword=obama" class="medium">obama</a>&nbsp;							
+				 <a href="/elibweb/elib/do/search?clear=no&doasearch=true&reissuesearch=true&set=search&ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&keyword=%22global warming%22" class="medium">"global warming"</a>&nbsp;							
+				 <a href="/elibweb/elib/do/search?clear=no&doasearch=true&reissuesearch=true&set=search&ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&keyword=careers" class="small">careers</a>&nbsp;							
+				 <a href="/elibweb/elib/do/search?clear=no&doasearch=true&reissuesearch=true&set=search&ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&keyword=child abuse" class="large">child abuse</a>&nbsp;							
+				 <a href="/elibweb/elib/do/search?clear=no&doasearch=true&reissuesearch=true&set=search&ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&keyword=gun control" class="medium">gun control</a>&nbsp;							
+				 <a href="/elibweb/elib/do/search?clear=no&doasearch=true&reissuesearch=true&set=search&ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&keyword=holocaust" class="small">holocaust</a>&nbsp;							
+				 </div>
+</div>
+<div id="tag-cloud-bottom">&nbsp;</div>
+</div>
+</li>
+</ul>
+<form method="post" name="grbForm_search" action="/elibweb/elib/do/search?edition=&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701">
+<input type="hidden" name="set" value="search"><input type="hidden" name="resource1" value="on"><input type="hidden" name="keyword"><input type="hidden" name="searchtype" value="natural"><input type="hidden" name="sourcetype1" value="checked"><input type="hidden" name="sourcetype2" value="checked"><input type="hidden" name="sourcetype3" value="checked"><input type="hidden" name="sourcetype4" value="checked"><input type="hidden" name="sourcetype5" value="checked"><input type="hidden" name="sourcetype6" value="checked"><input type="hidden" name="sourcetype7" value="checked"><input type="hidden" name="sourcetype8" value="checked"><input type="hidden" name="doASearch" value="false">
+</form>
+<form method="post" name="grbForm_browsetopics" action="/elibweb/elib/do/hwctopicssearch?edition=&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701">
+<input type="hidden" name="set" value="hwctopicssearch"><input type="hidden" name="resource1" value="on"><input type="hidden" name="searchtype" value="hwctopicssearch"><input type="hidden" name="maxresults" value="50"><input type="hidden" name="keyword"><input type="hidden" name="sourcetype1" value="checked"><input type="hidden" name="doASearch" value="false">
+</form>
+<form method="post" name="grbForm_refsearch" action="/elibweb/elib/do/refsearch?edition=&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701">
+<input type="hidden" name="set" value="refdesk"><input type="hidden" name="resource1" value="on"><input type="hidden" name="searchtype" value="reference"><input type="hidden" name="maxresults" value="50"><input type="hidden" name="keyword"><input type="hidden" name="sourcetype1" value="checked"><input type="hidden" name="sourcetype2" value="checked"><input type="hidden" name="sourcetype3" value="checked"><input type="hidden" name="sourcetype4" value="checked"><input type="hidden" name="sourcetype5" value="checked"><input type="hidden" name="sourcetype6" value="checked"><input type="hidden" name="doASearch" value="false">
+</form>
+  <script type="text/javascript"> 
+	  var site = "/elibweb/elib/do";
+  
+	  function TestObj(id) {  
+	     YAHOO.util.Event.onAvailable(id, this.handleOnAvailable, this);    
+	    }   
+	  
+	  TestObj.prototype.handleOnAvailable = function(me) { 
+	      renderPage('Search Results','','1','TopicRelevance','0','');
+	  }   
+	  
+	  var obj = new TestObj("specialpage");    
+	  
+  </script>
+<a name="main_content" xmlns:xinclude="http://www.w3.org/1999/XML/xinclude"></a>
+<div id="main" style="margin-bottom:0em">
+<div class="mainContent">
+<div id="results-header">
+<h2>Search Results</h2>
+<div id="echo">
+<div id="echo-top">
+<span class="tl">&nbsp;</span><span class="tr">&nbsp;</span>
+</div>
+<div id="echo-middle">
+<div id="search-term">
+<span><span style="b00000">swot</span>
+	        		    &nbsp;&nbsp;&nbsp;</span><span><a href="/elibweb/elib/do/search?clear=no&edition=&dictionaryClick=&secondaryNav=&ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701">Refine search</a></span>
+</div>
+<div id="change-layout">Showing <strong>1-25</strong> of <strong>400</strong> results (1182 in total)&nbsp;<a href="#" onClick="return URLoverlay(this, 'change-layer','bottomright')">Preferences</a>
+</div>
+<div class="clr">&nbsp;</div>
+<div id="change-layer">
+<div id="change-layout-top">&nbsp;</div>
+<div id="change-layout-body">
+<div style="padding:0.2em 2em 0.4em 2em;">
+<div class="close-window">
+<a href="#" onClick="URLoverlayclose('change-layer'); return false"><img src="/elibweb/elib/images/close.gif" alt="close layout options window"></a>
+</div>
+<h3>Preferences</h3>
+<div class="dotted" style="margin-top:0.8em;line-height:0.1em">&nbsp;</div>
+<form method="GET" name="resultsppform" action="/elibweb/elib/do/results?edition=&dictionaryClick=&secondaryNav=&ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701">
+<label for="rpp">&nbsp;Results per page:&nbsp;&nbsp;</label><input type="hidden" name="set" value="search"><input type="hidden" name="publicationId" value=""><input type="hidden" name="secondaryNav" value=""><input type="hidden" name="dictionaryClick" value=""><select name="maxresultsperpage" id="rpp"><option selected value="10"> 10<option  value="20"> 20<option  value="30"> 30</select><span><input value="Apply" name="submitButton" class="button" src="/elibweb/elib/images/apply-button.gif" type="image" title="Apply" onChange="javascript:void(document.resultsppform.submit())"></span>
+<br>
+</form>
+</div>
+</div>
+<div id="change-layout-bottom">&nbsp;</div>
+</div>
+</div>
+<div id="echo-bottom">
+<span class="bl">&nbsp;</span><span class="br">&nbsp;</span>
+</div>
+<div></div>
+</div>
+<br>
+<div id="ambiguity">
+<span>Did you mean : &nbsp;<a href="/elibweb/elib/do/search?clear=no&doasearch=true&reissuesearch=true&doaspellchecksearch=true&set=search&keyword=sot&ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&publicationId="><b><i>sot</i></b></a>&nbsp;?</span>
+<br>
+</div>
+</div>
+<div id="jump" align="left">
+<a href="#results-container">
+				   	 Jump to search results
+					</a>
+</div>
+<div id="special-page-wrapper">
+<div id="special-page-inner">
+<div id="top-left">&nbsp;</div>
+<div id="top-right">&nbsp;</div>
+<div id="special-page-functions">
+<span style="margin-top:1em;"></span><span>
+<div id="close" align="right">
+<a href="#" onClick="HideFrame()">
+							      Close
+							    </a>&nbsp;
+							    <a href="#" onClick="HideFrame()"><img src="/elibweb/elib/images/close.gif" alt="close special page" style="vertical-align:bottom; border:none"></a>
+</div>
+</span>
+</div>
+<div id="spshow">
+<div class="specialpg" id="specialpage">
+<iframe id="childframe" name="myiframechild" width="100%" scrolling="no"></iframe>
+</div>
+</div>
+<div id="expand">
+<div id="controls">
+<div id="show">
+<div id="mylist_item_1">
+<a href="#" onClick="expandFrame(document.getElementById('childframe'))" class="full">Expand this document</a>&nbsp;&nbsp;
+		                            <input type="checkbox" value="N" name="special" id="chkMyList" style="vertical-align:middle;*vertical-align:middle;margin-left:-2px" onclick="javascript:addDocumentToMyListNew('1','/elibweb/elib/do/mylist?mylist=add&amp;set=specialpages&amp;start=1&amp;mylisturn=&amp;groupid=1&amp;requestid=1&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;resultid=1&amp;edition=','mylist_item_1',this);updateMyListCheckBoxes('chkMyListExpand');"><label for="chkMyList" id="mylist_lbl_1">&nbsp;Add document to MyList</label>
+</div>
+</div>
+<div id="shrink">
+<div id="mylist_item_1">
+<a href="#" onClick="shrinkFrame()" class="less">Collapse this document</a>&nbsp;&nbsp;
+		                            <input type="checkbox" value="N" name="special" id="chkMyListExpand" style="vertical-align:middle;*vertical-align:middle;margin-left:-2px" onclick="javascript:addDocumentToMyListNew('1','/elibweb/elib/do/mylist?mylist=add&amp;set=specialpages&amp;start=1&amp;mylisturn=&amp;groupid=1&amp;requestid=1&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;resultid=1&amp;edition=','mylist_item_1',this);updateMyListCheckBoxes('chkMyList');"><label for="chkMyList" id="mylist_lbl_1">&nbsp;Add document to MyList</label>
+</div>
+</div>
+</div>
+</div>
+<div id="expand2">&nbsp;</div>
+<div id="bottom-left">&nbsp;</div>
+<div id="bottom-right">&nbsp;</div>
+</div>
+</div>
+<div id="sphide" align="right">
+<a href="#" onclick="ShowSpecialPage('spshow','specialpage')">Show Special Page</a>
+</div>
+<div id="results-container">
+<div id="result-options">
+<div id="sort-option">
+<fieldset>
+<label for="sortlist">Sort results by:</label>
+<br>
+<form method="GET" name="sortbyform" action="/elibweb/elib/do/results?edition=&dictionaryClick=&secondaryNav=&ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701">
+<input type="hidden" name="set" value="search"><input type="hidden" name="secondaryNav" value=""><input type="hidden" name="dictionaryClick" value=""><select name="sortResultsBy" id="sortlist"><option  value="SearchEngineOrder"> Keyword Score<option selected value="TopicRelevance"> Relevance<option  value="Date"> Date<option  value="Size"> Size<option  value="Level"> Reading Level<option  value="Title"> Document Title<option  value="Publication"> Publication Name</select><span><input value="Sort" name="submitButton" class="button" src="/elibweb/elib/images/resort-button.gif" type="image" title="Sort" onChange="javascript:void(document.sortbyform.submit())"></span>
+</form>
+</fieldset>
+</div>
+<div class="dotted">&nbsp;</div>
+<div>
+<strong>Bring results type to top:</strong>
+<div class="top-wrapper">
+<span class="tl">&nbsp;</span><span class="tr">&nbsp;</span>
+</div>
+<div class="content-wrapper">
+<div style="padding:0.4em 0em 0.6em 1em;">
+<ul>
+<li style="margin-top:0;">
+<a href="/elibweb/elib/do/results?set=search&lastset=search&dictionaryClick=&secondaryNav=&sortResultsBy=Source&groupResultsBy=newspapers&ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701" class="newspaper-icon">Newspapers</a>&nbsp;&nbsp;<span>(67&nbsp;results)</span>
+</li>
+<li>
+<a href="/elibweb/elib/do/results?set=search&lastset=search&dictionaryClick=&secondaryNav=&sortResultsBy=Source&groupResultsBy=pics&ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701" class="picture-icon">Pictures</a>&nbsp;&nbsp;<span>(2&nbsp;results)</span>
+</li>
+<li>
+<a href="/elibweb/elib/do/results?set=search&lastset=search&dictionaryClick=&secondaryNav=&sortResultsBy=Source&groupResultsBy=magazines&ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701" class="magazine-icon">Magazines</a>&nbsp;&nbsp;<span>(314&nbsp;results)</span>
+</li>
+<li>
+<span class="map-icon">Maps</span>&nbsp;&nbsp;<span>(0&nbsp;results)</span>
+</li>
+<li>
+<a href="/elibweb/elib/do/results?set=search&lastset=search&dictionaryClick=&secondaryNav=&sortResultsBy=Source&groupResultsBy=books&ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701" class="book-icon">Books</a>&nbsp;&nbsp;<span>(3&nbsp;results)</span>
+</li>
+<li>
+<span class="audio-icon">Audio/Video</span>&nbsp;&nbsp;<span>(0&nbsp;results)</span>
+</li>
+<li>
+<span class="website-icon">Websites</span>&nbsp;&nbsp;<span>(0&nbsp;results)</span>
+</li>
+<li>
+<a href="/elibweb/elib/do/results?set=search&lastset=search&dictionaryClick=&secondaryNav=&sortResultsBy=Source&groupResultsBy=tvradio&ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701" class="transcript-icon">Transcripts</a>&nbsp;&nbsp;<span>(14&nbsp;results)</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="bottom-wrapper">
+<span class="bl">&nbsp;</span><span class="br">&nbsp;</span>
+</div>
+</div>
+<div class="dotted">&nbsp;</div>
+<div>
+<strong>Refine results by topic:</strong>
+<div class="top-wrapper">
+<span class="tl">&nbsp;</span><span class="tr">&nbsp;</span>
+</div>
+<div class="content-wrapper">
+<div id="common-topics-cloud">
+<a href="/elibweb/elib/do/browsetopicsspecial?sectionid=21799&edition=&filter=cab" style="font-size: 12px;" title="High School&nbsp;
+                &nbsp;>&nbsp;Study Skills&nbsp;
+                &nbsp;>&nbsp;Learning Strategies &amp; Systems&nbsp;
+          		">Learning Strategies &amp; Systems</a>&nbsp;
+                  	 <a href="/elibweb/elib/do/browsetopicsspecial?sectionid=11824&edition=&filter=cab" style="font-size: 12px;" title="Social Sciences&nbsp;
+                &nbsp;>&nbsp;Business&nbsp;
+                &nbsp;>&nbsp;Management&nbsp;
+          		">Management</a>&nbsp;
+                  	 <a href="/elibweb/elib/do/browsetopicsspecial?sectionid=50764&edition=&filter=cab" style="font-size: 12px;" title="Physiological Psychology&nbsp;
+                &nbsp;>&nbsp;Psychopharmacology&nbsp;
+                &nbsp;>&nbsp;Psychopharmacological Agents&nbsp;
+          		">Psychopharmacological Agents</a>&nbsp;
+                  	 <a href="/elibweb/elib/do/browsetopicsspecial?sectionid=88420&edition=&filter=cab" style="font-size: 20px;" title="Business&nbsp;
+                &nbsp;>&nbsp;Sound Business Practices&nbsp;
+                &nbsp;>&nbsp;Resource Allocation&nbsp;
+          		">Resource Allocation</a>&nbsp;
+                  	 </div>
+</div>
+<div class="bottom-wrapper">
+<span class="bl">&nbsp;</span><span class="br">&nbsp;</span>
+</div>
+</div>
+<div class="dotted">&nbsp;</div>
+<div id="date-options">
+<strong>Date range:</strong>
+<br>
+<div>01 Feb 1992&nbsp;&nbsp;<strong>to</strong>&nbsp;&nbsp;15 Nov 2010</div>
+<ul>
+<li>
+<a href="/elibweb/elib/do/search?clear=no&edition=&ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&secondaryNav=advance&datetype=between">Search for documents from a specific time period</a>
+</li>
+<li>
+<a href="/elibweb/elib/do/search?clear=no&reissuesearch=true&backdata=1&edition=&set=search&ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&secondaryNav=advance&keyword=swot">Update results to include newspaper articles older than 90 days</a>
+</li>
+</ul>
+</div>
+<div class="dotted">&nbsp;</div>
+</div>
+<div id="results-column">
+<div class="result normal-document">
+<div class="result-icon">
+<a href="/elibweb/elib/do/document?set=search&dictionaryClick=&secondaryNav=&groupid=1&requestid=lib_standard&resultid=1&edition=&ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&start=1&publicationId=&urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B118871394"><img border="0" alt="Magazines" title="Magazines" src="/elibweb/elib/images/magazines.gif"></a>
+</div>
+<div class="actual-result">
+<div id="bestpart1">
+<a href="#" id="preview-doc" onMouseOver="docOverlay(this,'Assess the State of Your Strategic Plan','document-preview-title','document-preview','bottomright','/elibweb/elib/do/document?set=search&amp;groupid=1&amp;requestid=lib_standard&amp;resultid=1&amp;edition=&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;start=1&amp;publicationId=&amp;urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B118871394','/elibweb/elib/images','bestpart1');return false" onMouseOut="URLoverlayclose('document-preview'); return false" onClick="redirectToDoc('/elibweb/elib/do/document?set=search&amp;groupid=1&amp;requestid=lib_standard&amp;resultid=1&amp;edition=&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;start=1&amp;publicationId=&amp;urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B118871394');return false"><img border="0" src="/elibweb/elib/images/preview_icon.gif" class="preview-doc" alt="Document Preview" title="Document Preview"></a>
+</div>
+<div class="line1">
+<strong>1.</strong>&nbsp;
+                                            <a href="/elibweb/elib/do/document?set=search&dictionaryClick=&secondaryNav=&groupid=1&requestid=lib_standard&resultid=1&edition=&ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&start=1&publicationId=&urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B118871394">Assess the State of Your Strategic Plan</a>&nbsp;
+                                            Library Administration &amp; Management
+                                                &nbsp;Ladwig, J Parker<a id="1" href="/elibweb/elib/do/document?set=search&dictionaryClick=&secondaryNav=&groupid=1&requestid=lib_standard&resultid=1&edition=&ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&start=1&publicationId=&urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B118871394" title="Assess the State of Your Strategic Plan"></a><span style="display: none;" id="topicpin1">
+                                              &nbsp;&nbsp;
+			                                        <a href="#topicadminAssess the State of Your Strategic Plan" title="/elibweb/elib/do/document?set=search&amp;dictionaryClick=&amp;secondaryNav=&amp;groupid=1&amp;requestid=lib_standard&amp;resultid=1&amp;edition=&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;start=1&amp;publicationId=&amp;urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B118871394" alt="/elibweb/elib/do/document?set=search&amp;dictionaryClick=&amp;secondaryNav=&amp;groupid=1&amp;requestid=lib_standard&amp;resultid=1&amp;edition=&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;start=1&amp;publicationId=&amp;urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B118871394" id="link1" onclick="saveValueToParent(this);">[Copy To Topic Admin]</a>&nbsp;
+                                             </span>
+</div>
+<div class="line2">
+<span class="author">Date: 01 Apr 2005</span>&nbsp;&nbsp;|&nbsp;&nbsp;
+                                        <span class="author">Reading Level: 10</span>&nbsp;&nbsp;|&nbsp;&nbsp;
+                                                    <span class="author">Size: 16K</span>&nbsp;&nbsp;|&nbsp;&nbsp;
+
+                                        <span class="author">Keyword Score: 100</span>
+</div>
+<div class="line3">
+<ul><li id="liMyList" ><div id="mylist_item_1" class="notadded">
+<input type="checkbox" value="N" name="1" id="chkMyList" onclick="javascript:addDocumentToMyList('1','/elibweb/elib/do/mylist?mylist=add&amp;set=search&amp;dictionaryClick=&amp;secondaryNav=&amp;start=1&amp;groupid=1&amp;requestid=lib_standard&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;mylisturn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B118871394&amp;resultid=1&amp;edition=&amp;sortResultsBy=TopicRelevance&amp;groupResultsBy=','mylist_item_1',this);"><label for="chkMyList">Add to MyList</label>
+</div></li></ul>
+</div>
+</div>
+<div id="document-preview">
+<div id="document-preview-arrow">&nbsp;</div>
+<div id="document-preview-top">&nbsp;</div>
+<div id="document-preview-body">
+<div style="padding:0.2em 3.4em 0.2em 2em;">
+<h3>
+<div id="document-preview-title"></div>
+</h3>
+<div id="bestpart" style="text-align:left">
+<br>
+<p>Document preview loading...</p>
+<img src="/elibweb/elib/images/ajax-loader4.gif" alt=""><br>
+<br>
+<br>
+</div>
+</div>
+</div>
+<div id="document-preview-bottom">&nbsp;</div>
+</div>
+</div>
+<div class="dotted2">
+<div class="result normal-document">
+<div class="result-icon">
+<a href="/elibweb/elib/do/document?set=search&dictionaryClick=&secondaryNav=&groupid=1&requestid=lib_standard&resultid=2&edition=&ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&start=1&publicationId=&urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B116532125"><img border="0" alt="Magazines" title="Magazines" src="/elibweb/elib/images/magazines.gif"></a>
+</div>
+<div class="actual-result">
+<div id="bestpart2">
+<a href="#" id="preview-doc" onMouseOver="docOverlay(this,'Crisis Management in Today\'s Business Environment: HR\'s Strategic Role','document-preview-title','document-preview','bottomright','/elibweb/elib/do/document?set=search&amp;groupid=1&amp;requestid=lib_standard&amp;resultid=2&amp;edition=&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;start=1&amp;publicationId=&amp;urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B116532125','/elibweb/elib/images','bestpart2');return false" onMouseOut="URLoverlayclose('document-preview'); return false" onClick="redirectToDoc('/elibweb/elib/do/document?set=search&amp;groupid=1&amp;requestid=lib_standard&amp;resultid=2&amp;edition=&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;start=1&amp;publicationId=&amp;urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B116532125');return false"><img border="0" src="/elibweb/elib/images/preview_icon.gif" class="preview-doc" alt="Document Preview" title="Document Preview"></a>
+</div>
+<div class="line1">
+<strong>2.</strong>&nbsp;
+                                            <a href="/elibweb/elib/do/document?set=search&dictionaryClick=&secondaryNav=&groupid=1&requestid=lib_standard&resultid=2&edition=&ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&start=1&publicationId=&urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B116532125">Crisis Management in Today's Business Environment: HR's Strategic Role</a>&nbsp;
+                                            HR Magazine
+                                                &nbsp;Lockwood, Nancy R<a id="2" href="/elibweb/elib/do/document?set=search&dictionaryClick=&secondaryNav=&groupid=1&requestid=lib_standard&resultid=2&edition=&ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&start=1&publicationId=&urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B116532125" title="Crisis Management in Today's Business Environment: HR's Strategic Role"><img src="/elibweb/elib/images/scholarly_journals.gif" alt="" border="0" class="category"></a><span style="display: none;" id="topicpin2">
+                                              &nbsp;&nbsp;
+			                                        <a href="#topicadminCrisis Management in Today's Business Environment: HR's Strategic Role" title="/elibweb/elib/do/document?set=search&amp;dictionaryClick=&amp;secondaryNav=&amp;groupid=1&amp;requestid=lib_standard&amp;resultid=2&amp;edition=&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;start=1&amp;publicationId=&amp;urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B116532125" alt="/elibweb/elib/do/document?set=search&amp;dictionaryClick=&amp;secondaryNav=&amp;groupid=1&amp;requestid=lib_standard&amp;resultid=2&amp;edition=&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;start=1&amp;publicationId=&amp;urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B116532125" id="link2" onclick="saveValueToParent(this);">[Copy To Topic Admin]</a>&nbsp;
+	                                               </span>
+</div>
+<div class="line2">
+<span class="author">Date: 01 Dec 2005</span>&nbsp;&nbsp;|&nbsp;&nbsp;
+                                        <span class="author">Reading Level: 10</span>&nbsp;&nbsp;|&nbsp;&nbsp;
+                                                    <span class="author">Size: 39K</span>&nbsp;&nbsp;|&nbsp;&nbsp;
+
+                                        <span class="author">Keyword Score: 100</span>
+</div>
+<div class="line3">
+<ul><li id="liMyList" ><div id="mylist_item_2" class="notadded">
+<input type="checkbox" value="N" name="2" id="chkMyList" onclick="javascript:addDocumentToMyList('2','/elibweb/elib/do/mylist?mylist=add&amp;set=search&amp;dictionaryClick=&amp;secondaryNav=&amp;start=1&amp;groupid=1&amp;requestid=lib_standard&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;mylisturn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B116532125&amp;resultid=2&amp;edition=&amp;sortResultsBy=TopicRelevance&amp;groupResultsBy=','mylist_item_2',this);"><label for="chkMyList">Add to MyList</label>
+</div></li></ul>
+</div>
+</div>
+<div id="document-preview">
+<div id="document-preview-arrow">&nbsp;</div>
+<div id="document-preview-top">&nbsp;</div>
+<div id="document-preview-body">
+<div style="padding:0.2em 3.4em 0.2em 2em;">
+<h3>
+<div id="document-preview-title"></div>
+</h3>
+<div id="bestpart" style="text-align:left"></div>
+</div>
+</div>
+<div id="document-preview-bottom">&nbsp;</div>
+</div>
+</div>
+</div>
+<div class="dotted2">
+<div class="result normal-document">
+<div class="result-icon">
+<a href="/elibweb/elib/do/document?set=search&dictionaryClick=&secondaryNav=&groupid=1&requestid=lib_standard&resultid=3&edition=&ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&start=1&publicationId=&urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B70479902"><img border="0" alt="Magazines" title="Magazines" src="/elibweb/elib/images/magazines.gif"></a>
+</div>
+<div class="actual-result">
+<div id="bestpart3">
+<a href="#" id="preview-doc" onMouseOver="docOverlay(this,'The real-time toolbox','document-preview-title','document-preview','bottomright','/elibweb/elib/do/document?set=search&amp;groupid=1&amp;requestid=lib_standard&amp;resultid=3&amp;edition=&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;start=1&amp;publicationId=&amp;urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B70479902','/elibweb/elib/images','bestpart3');return false" onMouseOut="URLoverlayclose('document-preview'); return false" onClick="redirectToDoc('/elibweb/elib/do/document?set=search&amp;groupid=1&amp;requestid=lib_standard&amp;resultid=3&amp;edition=&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;start=1&amp;publicationId=&amp;urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B70479902');return false"><img border="0" src="/elibweb/elib/images/preview_icon.gif" class="preview-doc" alt="Document Preview" title="Document Preview"></a>
+</div>
+<div class="line1">
+<strong>3.</strong>&nbsp;
+                                            <a href="/elibweb/elib/do/document?set=search&dictionaryClick=&secondaryNav=&groupid=1&requestid=lib_standard&resultid=3&edition=&ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&start=1&publicationId=&urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B70479902">The real-time toolbox</a>&nbsp;
+                                            The Journal of Business Strategy
+                                                &nbsp;Oliver, Richard W<a id="3" href="/elibweb/elib/do/document?set=search&dictionaryClick=&secondaryNav=&groupid=1&requestid=lib_standard&resultid=3&edition=&ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&start=1&publicationId=&urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B70479902" title="The real-time toolbox"><img src="/elibweb/elib/images/scholarly_journals.gif" alt="" border="0" class="category"></a><span style="display: none;" id="topicpin3">
+                                              &nbsp;&nbsp;
+			                                        <a href="#topicadminThe real-time toolbox" title="/elibweb/elib/do/document?set=search&amp;dictionaryClick=&amp;secondaryNav=&amp;groupid=1&amp;requestid=lib_standard&amp;resultid=3&amp;edition=&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;start=1&amp;publicationId=&amp;urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B70479902" alt="/elibweb/elib/do/document?set=search&amp;dictionaryClick=&amp;secondaryNav=&amp;groupid=1&amp;requestid=lib_standard&amp;resultid=3&amp;edition=&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;start=1&amp;publicationId=&amp;urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B70479902" id="link3" onclick="saveValueToParent(this);">[Copy To Topic Admin]</a>&nbsp;
+	                                               </span>
+</div>
+<div class="line2">
+<span class="author">Date: 01 Mar 2000</span>&nbsp;&nbsp;|&nbsp;&nbsp;
+                                        <span class="author">Reading Level: 11</span>&nbsp;&nbsp;|&nbsp;&nbsp;
+                                                    <span class="author">Size: 12K</span>&nbsp;&nbsp;|&nbsp;&nbsp;
+
+                                        <span class="author">Keyword Score: 100</span>
+</div>
+<div class="line3">
+<ul><li id="liMyList" ><div id="mylist_item_3" class="notadded">
+<input type="checkbox" value="N" name="3" id="chkMyList" onclick="javascript:addDocumentToMyList('3','/elibweb/elib/do/mylist?mylist=add&amp;set=search&amp;dictionaryClick=&amp;secondaryNav=&amp;start=1&amp;groupid=1&amp;requestid=lib_standard&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;mylisturn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B70479902&amp;resultid=3&amp;edition=&amp;sortResultsBy=TopicRelevance&amp;groupResultsBy=','mylist_item_3',this);"><label for="chkMyList">Add to MyList</label>
+</div></li></ul>
+</div>
+</div>
+<div id="document-preview">
+<div id="document-preview-arrow">&nbsp;</div>
+<div id="document-preview-top">&nbsp;</div>
+<div id="document-preview-body">
+<div style="padding:0.2em 3.4em 0.2em 2em;">
+<h3>
+<div id="document-preview-title"></div>
+</h3>
+<div id="bestpart" style="text-align:left"></div>
+</div>
+</div>
+<div id="document-preview-bottom">&nbsp;</div>
+</div>
+</div>
+</div>
+<div class="dotted2">
+<div class="result normal-document">
+<div class="result-icon">
+<a href="/elibweb/elib/do/document?set=search&dictionaryClick=&secondaryNav=&groupid=1&requestid=lib_standard&resultid=4&edition=&ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&start=1&publicationId=&urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B87526189"><img border="0" alt="Magazines" title="Magazines" src="/elibweb/elib/images/magazines.gif"></a>
+</div>
+<div class="actual-result">
+<div id="bestpart4">
+<a href="#" id="preview-doc" onMouseOver="docOverlay(this,'Documenting your future:  How to write a business plan','document-preview-title','document-preview','bottomright','/elibweb/elib/do/document?set=search&amp;groupid=1&amp;requestid=lib_standard&amp;resultid=4&amp;edition=&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;start=1&amp;publicationId=&amp;urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B87526189','/elibweb/elib/images','bestpart4');return false" onMouseOut="URLoverlayclose('document-preview'); return false" onClick="redirectToDoc('/elibweb/elib/do/document?set=search&amp;groupid=1&amp;requestid=lib_standard&amp;resultid=4&amp;edition=&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;start=1&amp;publicationId=&amp;urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B87526189');return false"><img border="0" src="/elibweb/elib/images/preview_icon.gif" class="preview-doc" alt="Document Preview" title="Document Preview"></a>
+</div>
+<div class="line1">
+<strong>4.</strong>&nbsp;
+                                            <a href="/elibweb/elib/do/document?set=search&dictionaryClick=&secondaryNav=&groupid=1&requestid=lib_standard&resultid=4&edition=&ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&start=1&publicationId=&urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B87526189">Documenting your future:  How to write a business plan</a>&nbsp;
+                                            American Dietetic Association (Journal of the American Dietetic Association)
+                                                &nbsp;Betkoski, Diane; Ometer, Lynne<a id="4" href="/elibweb/elib/do/document?set=search&dictionaryClick=&secondaryNav=&groupid=1&requestid=lib_standard&resultid=4&edition=&ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&start=1&publicationId=&urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B87526189" title="Documenting your future:  How to write a business plan"><img src="/elibweb/elib/images/scholarly_journals.gif" alt="" border="0" class="category"></a><span style="display: none;" id="topicpin4">
+                                              &nbsp;&nbsp;
+			                                        <a href="#topicadminDocumenting your future:  How to write a business plan" title="/elibweb/elib/do/document?set=search&amp;dictionaryClick=&amp;secondaryNav=&amp;groupid=1&amp;requestid=lib_standard&amp;resultid=4&amp;edition=&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;start=1&amp;publicationId=&amp;urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B87526189" alt="/elibweb/elib/do/document?set=search&amp;dictionaryClick=&amp;secondaryNav=&amp;groupid=1&amp;requestid=lib_standard&amp;resultid=4&amp;edition=&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;start=1&amp;publicationId=&amp;urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B87526189" id="link4" onclick="saveValueToParent(this);">[Copy To Topic Admin]</a>&nbsp;
+	                                               </span>
+</div>
+<div class="line2">
+<span class="author">Date: 01 Mar 2000</span>&nbsp;&nbsp;|&nbsp;&nbsp;
+                                        <span class="author">Reading Level: 12</span>&nbsp;&nbsp;|&nbsp;&nbsp;
+                                                    <span class="author">Size: 10K</span>&nbsp;&nbsp;|&nbsp;&nbsp;
+
+                                        <span class="author">Keyword Score: 100</span>
+</div>
+<div class="line3">
+<ul><li id="liMyList" ><div id="mylist_item_4" class="notadded">
+<input type="checkbox" value="N" name="4" id="chkMyList" onclick="javascript:addDocumentToMyList('4','/elibweb/elib/do/mylist?mylist=add&amp;set=search&amp;dictionaryClick=&amp;secondaryNav=&amp;start=1&amp;groupid=1&amp;requestid=lib_standard&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;mylisturn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B87526189&amp;resultid=4&amp;edition=&amp;sortResultsBy=TopicRelevance&amp;groupResultsBy=','mylist_item_4',this);"><label for="chkMyList">Add to MyList</label>
+</div></li></ul>
+</div>
+</div>
+<div id="document-preview">
+<div id="document-preview-arrow">&nbsp;</div>
+<div id="document-preview-top">&nbsp;</div>
+<div id="document-preview-body">
+<div style="padding:0.2em 3.4em 0.2em 2em;">
+<h3>
+<div id="document-preview-title"></div>
+</h3>
+<div id="bestpart" style="text-align:left"></div>
+</div>
+</div>
+<div id="document-preview-bottom">&nbsp;</div>
+</div>
+</div>
+</div>
+<div class="dotted2">
+<div class="result normal-document">
+<div class="result-icon">
+<a href="/elibweb/elib/do/document?set=search&dictionaryClick=&secondaryNav=&groupid=1&requestid=lib_standard&resultid=5&edition=&ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&start=1&publicationId=&urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B178933236&pdfflag=y"><img border="0" alt="Magazines" title="Magazines" src="/elibweb/elib/images/magazines.gif"></a>
+</div>
+<div class="actual-result">
+<div id="bestpart5">
+<a href="#" id="preview-doc" onMouseOver="docOverlay(this,'Should Sector Policing Be in Your Organization\'s Future?','document-preview-title','document-preview','bottomright','/elibweb/elib/do/document?set=search&amp;groupid=1&amp;requestid=lib_standard&amp;resultid=5&amp;edition=&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;start=1&amp;publicationId=&amp;urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B178933236','/elibweb/elib/images','bestpart5');return false" onMouseOut="URLoverlayclose('document-preview'); return false" onClick="redirectToDoc('/elibweb/elib/do/document?set=search&amp;groupid=1&amp;requestid=lib_standard&amp;resultid=5&amp;edition=&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;start=1&amp;publicationId=&amp;urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B178933236');return false"><img border="0" src="/elibweb/elib/images/preview_icon.gif" class="preview-doc" alt="Document Preview" title="Document Preview"></a>
+</div>
+<div class="line1">
+<strong>5.</strong>&nbsp;
+                                            <a href="/elibweb/elib/do/document?set=search&dictionaryClick=&secondaryNav=&groupid=1&requestid=lib_standard&resultid=5&edition=&ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&start=1&publicationId=&urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B178933236&pdfflag=y">Should Sector Policing Be in Your Organization's Future?</a>&nbsp;
+                                            FBI Law Enforcement Bulletin
+                                                &nbsp;Phibbs, W Michael<a id="5" href="/elibweb/elib/do/document?set=search&dictionaryClick=&secondaryNav=&groupid=1&requestid=lib_standard&resultid=5&edition=&ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&start=1&publicationId=&urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B178933236&pdfflag=y" title="Should Sector Policing Be in Your Organization's Future?"></a><span style="display: none;" id="topicpin5">
+                                              &nbsp;&nbsp;
+			                                        <a href="#topicadminShould Sector Policing Be in Your Organization's Future?" title="/elibweb/elib/do/document?set=search&amp;dictionaryClick=&amp;secondaryNav=&amp;groupid=1&amp;requestid=lib_standard&amp;resultid=5&amp;edition=&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;start=1&amp;publicationId=&amp;urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B178933236" alt="/elibweb/elib/do/document?set=search&amp;dictionaryClick=&amp;secondaryNav=&amp;groupid=1&amp;requestid=lib_standard&amp;resultid=5&amp;edition=&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;start=1&amp;publicationId=&amp;urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B178933236" id="link5" onclick="saveValueToParent(this);">[Copy To Topic Admin]</a>&nbsp;
+	                                               </span>
+</div>
+<div class="line2"><a href="#" class="pdf" onclick="redirectForPDFFromResults(&quot;/elibweb/elib/do/document?set=search&amp;dictionaryClick=&amp;secondaryNav=&amp;groupid=1&amp;requestid=lib_standard&amp;resultid=5&amp;edition=&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;start=1&amp;publicationId=&amp;urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B178933236&pdf=/drsservice/servicemanager/do/service?serviceid=getcomponent&amp;docid=178933236&amp;mt=message%2Fexternal-body&amp;ts=3931393941354137393841393931&amp;doclocation=http%3A%2F%2Fgateway.proquest.com%2Fopenurl%3Fctx_ver%3DZ39.88-2003%26ctx_fmt%3Dori%3Aformat%3Apl%3Aebnf%3Acontext%26res_id%3Dxri%253Apqd%26res_dat%3Dxri%253Apqil%253Ares_ver%253D0.1%26rfr_id%3Dori%253Arfr%253Abigchalk.com%253AeLibrary%26rft_id%3Dxri%253Apqd%253ADID%253D2012809481%26au%3DPhibbs%252C%2BW%2BMichael%26issn%3D00145688%26jtitle%3DFBI%2BLaw%2BEnforcement%2BBulletin%26atitle%3DShould%2BSector%2BPolicing%2BBe%2Bin%2BYour%2BOrganization%2527s%2BFuture%253F%26volume%3D79%26issue%3D4%26pages%3D1%26date%3D2010-04-01%26rft_val_fmt%3Dori%3Aformat%3Apl%3Aebnf%3Ajarticle%26svc_dat%3Dxri%253Apqil%253Asession%253D0%253Afmt%253Dpdf&quot;); void 0">
+			                                    PDF
+			                                    </a> 
+			                                    &nbsp;&nbsp;|&nbsp;&nbsp;
+			                                <span class="author">Date: 01 Apr 2010</span>&nbsp;&nbsp;|&nbsp;&nbsp;
+                                        <span class="author">Reading Level: 14</span>&nbsp;&nbsp;|&nbsp;&nbsp;
+                                                    <span class="author">Size: 21K</span>&nbsp;&nbsp;|&nbsp;&nbsp;
+
+                                        <span class="author">Keyword Score: 100</span>
+</div>
+<div class="line3">
+<ul><li id="liMyList" ><div id="mylist_item_5" class="notadded">
+<input type="checkbox" value="N" name="5" id="chkMyList" onclick="javascript:addDocumentToMyList('5','/elibweb/elib/do/mylist?mylist=add&amp;set=search&amp;dictionaryClick=&amp;secondaryNav=&amp;start=1&amp;groupid=1&amp;requestid=lib_standard&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;mylisturn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B178933236&amp;resultid=5&amp;edition=&amp;sortResultsBy=TopicRelevance&amp;groupResultsBy=','mylist_item_5',this);"><label for="chkMyList">Add to MyList</label>
+</div></li></ul>
+</div>
+</div>
+<div id="document-preview">
+<div id="document-preview-arrow">&nbsp;</div>
+<div id="document-preview-top">&nbsp;</div>
+<div id="document-preview-body">
+<div style="padding:0.2em 3.4em 0.2em 2em;">
+<h3>
+<div id="document-preview-title"></div>
+</h3>
+<div id="bestpart" style="text-align:left"></div>
+</div>
+</div>
+<div id="document-preview-bottom">&nbsp;</div>
+</div>
+</div>
+</div>
+<div class="dotted2">
+<div class="result normal-document">
+<div class="result-icon">
+<a href="/elibweb/elib/do/document?set=search&dictionaryClick=&secondaryNav=&groupid=1&requestid=lib_standard&resultid=6&edition=&ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&start=1&publicationId=&urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B146167388"><img border="0" alt="Magazines" title="Magazines" src="/elibweb/elib/images/magazines.gif"></a>
+</div>
+<div class="actual-result">
+<div id="bestpart6">
+<a href="#" id="preview-doc" onMouseOver="docOverlay(this,'Product Launch and the Strategies, Processes, and Operations of Medical Affairs to Support Start-up Companies','document-preview-title','document-preview','bottomright','/elibweb/elib/do/document?set=search&amp;groupid=1&amp;requestid=lib_standard&amp;resultid=6&amp;edition=&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;start=1&amp;publicationId=&amp;urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B146167388','/elibweb/elib/images','bestpart6');return false" onMouseOut="URLoverlayclose('document-preview'); return false" onClick="redirectToDoc('/elibweb/elib/do/document?set=search&amp;groupid=1&amp;requestid=lib_standard&amp;resultid=6&amp;edition=&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;start=1&amp;publicationId=&amp;urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B146167388');return false"><img border="0" src="/elibweb/elib/images/preview_icon.gif" class="preview-doc" alt="Document Preview" title="Document Preview"></a>
+</div>
+<div class="line1">
+<strong>6.</strong>&nbsp;
+                                            <a href="/elibweb/elib/do/document?set=search&dictionaryClick=&secondaryNav=&groupid=1&requestid=lib_standard&resultid=6&edition=&ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&start=1&publicationId=&urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B146167388">Product Launch and the Strategies, Processes, and Operations of Medical Affairs to Support Start-up Companies</a>&nbsp;
+                                            Drug Information Journal
+                                                &nbsp;Evens, Ronald P; Sylvestri, Mario<a id="6" href="/elibweb/elib/do/document?set=search&dictionaryClick=&secondaryNav=&groupid=1&requestid=lib_standard&resultid=6&edition=&ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&start=1&publicationId=&urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B146167388" title="Product Launch and the Strategies, Processes, and Operations of Medical Affairs to Support Start-up Companies"><img src="/elibweb/elib/images/scholarly_journals.gif" alt="" border="0" class="category"></a><span style="display: none;" id="topicpin6">
+                                              &nbsp;&nbsp;
+			                                        <a href="#topicadminProduct Launch and the Strategies, Processes, and Operations of Medical Affairs to Support Start-up Companies" title="/elibweb/elib/do/document?set=search&amp;dictionaryClick=&amp;secondaryNav=&amp;groupid=1&amp;requestid=lib_standard&amp;resultid=6&amp;edition=&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;start=1&amp;publicationId=&amp;urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B146167388" alt="/elibweb/elib/do/document?set=search&amp;dictionaryClick=&amp;secondaryNav=&amp;groupid=1&amp;requestid=lib_standard&amp;resultid=6&amp;edition=&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;start=1&amp;publicationId=&amp;urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B146167388" id="link6" onclick="saveValueToParent(this);">[Copy To Topic Admin]</a>&nbsp;
+	                                               </span>
+</div>
+<div class="line2">
+<span class="author">Date: 01 Nov 2007</span>&nbsp;&nbsp;|&nbsp;&nbsp;
+                                        <span class="author">Reading Level: 11</span>&nbsp;&nbsp;|&nbsp;&nbsp;
+                                                    <span class="author">Size: 46K</span>&nbsp;&nbsp;|&nbsp;&nbsp;
+
+                                        <span class="author">Keyword Score: 100</span>
+</div>
+<div class="line3">
+<ul><li id="liMyList" ><div id="mylist_item_6" class="notadded">
+<input type="checkbox" value="N" name="6" id="chkMyList" onclick="javascript:addDocumentToMyList('6','/elibweb/elib/do/mylist?mylist=add&amp;set=search&amp;dictionaryClick=&amp;secondaryNav=&amp;start=1&amp;groupid=1&amp;requestid=lib_standard&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;mylisturn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B146167388&amp;resultid=6&amp;edition=&amp;sortResultsBy=TopicRelevance&amp;groupResultsBy=','mylist_item_6',this);"><label for="chkMyList">Add to MyList</label>
+</div></li></ul>
+</div>
+</div>
+<div id="document-preview">
+<div id="document-preview-arrow">&nbsp;</div>
+<div id="document-preview-top">&nbsp;</div>
+<div id="document-preview-body">
+<div style="padding:0.2em 3.4em 0.2em 2em;">
+<h3>
+<div id="document-preview-title"></div>
+</h3>
+<div id="bestpart" style="text-align:left"></div>
+</div>
+</div>
+<div id="document-preview-bottom">&nbsp;</div>
+</div>
+</div>
+</div>
+<div class="dotted2">
+<div class="result normal-document">
+<div class="result-icon">
+<a href="/elibweb/elib/do/document?set=search&dictionaryClick=&secondaryNav=&groupid=1&requestid=lib_standard&resultid=7&edition=&ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&start=1&publicationId=&urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B138118707"><img border="0" alt="Magazines" title="Magazines" src="/elibweb/elib/images/magazines.gif"></a>
+</div>
+<div class="actual-result">
+<div id="bestpart7">
+<a href="#" id="preview-doc" onMouseOver="docOverlay(this,'Quality Management: An Ongoing Practice in a Portuguese Government Library','document-preview-title','document-preview','bottomright','/elibweb/elib/do/document?set=search&amp;groupid=1&amp;requestid=lib_standard&amp;resultid=7&amp;edition=&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;start=1&amp;publicationId=&amp;urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B138118707','/elibweb/elib/images','bestpart7');return false" onMouseOut="URLoverlayclose('document-preview'); return false" onClick="redirectToDoc('/elibweb/elib/do/document?set=search&amp;groupid=1&amp;requestid=lib_standard&amp;resultid=7&amp;edition=&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;start=1&amp;publicationId=&amp;urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B138118707');return false"><img border="0" src="/elibweb/elib/images/preview_icon.gif" class="preview-doc" alt="Document Preview" title="Document Preview"></a>
+</div>
+<div class="line1">
+<strong>7.</strong>&nbsp;
+                                            <a href="/elibweb/elib/do/document?set=search&dictionaryClick=&secondaryNav=&groupid=1&requestid=lib_standard&resultid=7&edition=&ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&start=1&publicationId=&urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B138118707">Quality Management: An Ongoing Practice in a Portuguese Government Library</a>&nbsp;
+                                            Information Outlook
+                                                &nbsp;Och&ocirc;a, Paula; Pinto, Leonor Gaspar<a id="7" href="/elibweb/elib/do/document?set=search&dictionaryClick=&secondaryNav=&groupid=1&requestid=lib_standard&resultid=7&edition=&ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&start=1&publicationId=&urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B138118707" title="Quality Management: An Ongoing Practice in a Portuguese Government Library"></a><span style="display: none;" id="topicpin7">
+                                              &nbsp;&nbsp;
+			                                        <a href="#topicadminQuality Management: An Ongoing Practice in a Portuguese Government Library" title="/elibweb/elib/do/document?set=search&amp;dictionaryClick=&amp;secondaryNav=&amp;groupid=1&amp;requestid=lib_standard&amp;resultid=7&amp;edition=&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;start=1&amp;publicationId=&amp;urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B138118707" alt="/elibweb/elib/do/document?set=search&amp;dictionaryClick=&amp;secondaryNav=&amp;groupid=1&amp;requestid=lib_standard&amp;resultid=7&amp;edition=&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;start=1&amp;publicationId=&amp;urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B138118707" id="link7" onclick="saveValueToParent(this);">[Copy To Topic Admin]</a>&nbsp;
+	                                               </span>
+</div>
+<div class="line2">
+<span class="author">Date: 01 Apr 2007</span>&nbsp;&nbsp;|&nbsp;&nbsp;
+                                        <span class="author">Reading Level: 10</span>&nbsp;&nbsp;|&nbsp;&nbsp;
+                                                    <span class="author">Size: 46K</span>&nbsp;&nbsp;|&nbsp;&nbsp;
+
+                                        <span class="author">Keyword Score: 100</span>
+</div>
+<div class="line3">
+<ul><li id="liMyList" ><div id="mylist_item_7" class="notadded">
+<input type="checkbox" value="N" name="7" id="chkMyList" onclick="javascript:addDocumentToMyList('7','/elibweb/elib/do/mylist?mylist=add&amp;set=search&amp;dictionaryClick=&amp;secondaryNav=&amp;start=1&amp;groupid=1&amp;requestid=lib_standard&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;mylisturn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B138118707&amp;resultid=7&amp;edition=&amp;sortResultsBy=TopicRelevance&amp;groupResultsBy=','mylist_item_7',this);"><label for="chkMyList">Add to MyList</label>
+</div></li></ul>
+</div>
+</div>
+<div id="document-preview">
+<div id="document-preview-arrow">&nbsp;</div>
+<div id="document-preview-top">&nbsp;</div>
+<div id="document-preview-body">
+<div style="padding:0.2em 3.4em 0.2em 2em;">
+<h3>
+<div id="document-preview-title"></div>
+</h3>
+<div id="bestpart" style="text-align:left"></div>
+</div>
+</div>
+<div id="document-preview-bottom">&nbsp;</div>
+</div>
+</div>
+</div>
+<div class="dotted2">
+<div class="result normal-document">
+<div class="result-icon">
+<a href="/elibweb/elib/do/document?set=search&dictionaryClick=&secondaryNav=&groupid=1&requestid=lib_standard&resultid=8&edition=&ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&start=1&publicationId=&urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B106151249"><img border="0" alt="Magazines" title="Magazines" src="/elibweb/elib/images/magazines.gif"></a>
+</div>
+<div class="actual-result">
+<div id="bestpart8">
+<a href="#" id="preview-doc" onMouseOver="docOverlay(this,'LEARNING NEEDS ANALYSIS: PART 2: Linking Learning Needs Analysis to business needs','document-preview-title','document-preview','bottomright','/elibweb/elib/do/document?set=search&amp;groupid=1&amp;requestid=lib_standard&amp;resultid=8&amp;edition=&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;start=1&amp;publicationId=&amp;urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B106151249','/elibweb/elib/images','bestpart8');return false" onMouseOut="URLoverlayclose('document-preview'); return false" onClick="redirectToDoc('/elibweb/elib/do/document?set=search&amp;groupid=1&amp;requestid=lib_standard&amp;resultid=8&amp;edition=&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;start=1&amp;publicationId=&amp;urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B106151249');return false"><img border="0" src="/elibweb/elib/images/preview_icon.gif" class="preview-doc" alt="Document Preview" title="Document Preview"></a>
+</div>
+<div class="line1">
+<strong>8.</strong>&nbsp;
+                                            <a href="/elibweb/elib/do/document?set=search&dictionaryClick=&secondaryNav=&groupid=1&requestid=lib_standard&resultid=8&edition=&ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&start=1&publicationId=&urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B106151249">LEARNING NEEDS ANALYSIS: PART 2: Linking Learning Needs Analysis to business needs</a>&nbsp;
+                                            Training Journal
+                                                &nbsp;Cook, Sarah<a id="8" href="/elibweb/elib/do/document?set=search&dictionaryClick=&secondaryNav=&groupid=1&requestid=lib_standard&resultid=8&edition=&ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&start=1&publicationId=&urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B106151249" title="LEARNING NEEDS ANALYSIS: PART 2: Linking Learning Needs Analysis to business needs"><img src="/elibweb/elib/images/business.gif" alt="" border="0" class="category"></a><span style="display: none;" id="topicpin8">
+                                              &nbsp;&nbsp;
+			                                        <a href="#topicadminLEARNING NEEDS ANALYSIS: PART 2: Linking Learning Needs Analysis to business needs" title="/elibweb/elib/do/document?set=search&amp;dictionaryClick=&amp;secondaryNav=&amp;groupid=1&amp;requestid=lib_standard&amp;resultid=8&amp;edition=&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;start=1&amp;publicationId=&amp;urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B106151249" alt="/elibweb/elib/do/document?set=search&amp;dictionaryClick=&amp;secondaryNav=&amp;groupid=1&amp;requestid=lib_standard&amp;resultid=8&amp;edition=&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;start=1&amp;publicationId=&amp;urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B106151249" id="link8" onclick="saveValueToParent(this);">[Copy To Topic Admin]</a>&nbsp;
+	                                               </span>
+</div>
+<div class="line2">
+<span class="author">Date: 01 Feb 2005</span>&nbsp;&nbsp;|&nbsp;&nbsp;
+                                        <span class="author">Reading Level: 11</span>&nbsp;&nbsp;|&nbsp;&nbsp;
+                                                    <span class="author">Size: 16K</span>&nbsp;&nbsp;|&nbsp;&nbsp;
+
+                                        <span class="author">Keyword Score: 100</span>
+</div>
+<div class="line3">
+<ul><li id="liMyList" ><div id="mylist_item_8" class="notadded">
+<input type="checkbox" value="N" name="8" id="chkMyList" onclick="javascript:addDocumentToMyList('8','/elibweb/elib/do/mylist?mylist=add&amp;set=search&amp;dictionaryClick=&amp;secondaryNav=&amp;start=1&amp;groupid=1&amp;requestid=lib_standard&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;mylisturn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B106151249&amp;resultid=8&amp;edition=&amp;sortResultsBy=TopicRelevance&amp;groupResultsBy=','mylist_item_8',this);"><label for="chkMyList">Add to MyList</label>
+</div></li></ul>
+</div>
+</div>
+<div id="document-preview">
+<div id="document-preview-arrow">&nbsp;</div>
+<div id="document-preview-top">&nbsp;</div>
+<div id="document-preview-body">
+<div style="padding:0.2em 3.4em 0.2em 2em;">
+<h3>
+<div id="document-preview-title"></div>
+</h3>
+<div id="bestpart" style="text-align:left"></div>
+</div>
+</div>
+<div id="document-preview-bottom">&nbsp;</div>
+</div>
+</div>
+</div>
+<div class="dotted2">
+<div class="result normal-document">
+<div class="result-icon">
+<a href="/elibweb/elib/do/document?set=search&dictionaryClick=&secondaryNav=&groupid=1&requestid=lib_standard&resultid=9&edition=&ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&start=1&publicationId=&urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B119131458"><img border="0" alt="Magazines" title="Magazines" src="/elibweb/elib/images/magazines.gif"></a>
+</div>
+<div class="actual-result">
+<div id="bestpart9">
+<a href="#" id="preview-doc" onMouseOver="docOverlay(this,'LEARNING NEEDS ANALYSIS: PART 2: Linking Learning Needs Analysis to business needs','document-preview-title','document-preview','bottomright','/elibweb/elib/do/document?set=search&amp;groupid=1&amp;requestid=lib_standard&amp;resultid=9&amp;edition=&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;start=1&amp;publicationId=&amp;urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B119131458','/elibweb/elib/images','bestpart9');return false" onMouseOut="URLoverlayclose('document-preview'); return false" onClick="redirectToDoc('/elibweb/elib/do/document?set=search&amp;groupid=1&amp;requestid=lib_standard&amp;resultid=9&amp;edition=&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;start=1&amp;publicationId=&amp;urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B119131458');return false"><img border="0" src="/elibweb/elib/images/preview_icon.gif" class="preview-doc" alt="Document Preview" title="Document Preview"></a>
+</div>
+<div class="line1">
+<strong>9.</strong>&nbsp;
+                                            <a href="/elibweb/elib/do/document?set=search&dictionaryClick=&secondaryNav=&groupid=1&requestid=lib_standard&resultid=9&edition=&ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&start=1&publicationId=&urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B119131458">LEARNING NEEDS ANALYSIS: PART 2: Linking Learning Needs Analysis to business needs</a>&nbsp;
+                                            Training Journal
+                                                &nbsp;Cook, Sarah<a id="9" href="/elibweb/elib/do/document?set=search&dictionaryClick=&secondaryNav=&groupid=1&requestid=lib_standard&resultid=9&edition=&ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&start=1&publicationId=&urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B119131458" title="LEARNING NEEDS ANALYSIS: PART 2: Linking Learning Needs Analysis to business needs"><img src="/elibweb/elib/images/business.gif" alt="" border="0" class="category"></a><span style="display: none;" id="topicpin9">
+                                              &nbsp;&nbsp;
+			                                        <a href="#topicadminLEARNING NEEDS ANALYSIS: PART 2: Linking Learning Needs Analysis to business needs" title="/elibweb/elib/do/document?set=search&amp;dictionaryClick=&amp;secondaryNav=&amp;groupid=1&amp;requestid=lib_standard&amp;resultid=9&amp;edition=&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;start=1&amp;publicationId=&amp;urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B119131458" alt="/elibweb/elib/do/document?set=search&amp;dictionaryClick=&amp;secondaryNav=&amp;groupid=1&amp;requestid=lib_standard&amp;resultid=9&amp;edition=&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;start=1&amp;publicationId=&amp;urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B119131458" id="link9" onclick="saveValueToParent(this);">[Copy To Topic Admin]</a>&nbsp;
+	                                               </span>
+</div>
+<div class="line2">
+<span class="author">Date: 01 Feb 2005</span>&nbsp;&nbsp;|&nbsp;&nbsp;
+                                        <span class="author">Reading Level: 11</span>&nbsp;&nbsp;|&nbsp;&nbsp;
+                                                    <span class="author">Size: 16K</span>&nbsp;&nbsp;|&nbsp;&nbsp;
+
+                                        <span class="author">Keyword Score: 100</span>
+</div>
+<div class="line3">
+<ul><li id="liMyList" ><div id="mylist_item_9" class="notadded">
+<input type="checkbox" value="N" name="9" id="chkMyList" onclick="javascript:addDocumentToMyList('9','/elibweb/elib/do/mylist?mylist=add&amp;set=search&amp;dictionaryClick=&amp;secondaryNav=&amp;start=1&amp;groupid=1&amp;requestid=lib_standard&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;mylisturn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B119131458&amp;resultid=9&amp;edition=&amp;sortResultsBy=TopicRelevance&amp;groupResultsBy=','mylist_item_9',this);"><label for="chkMyList">Add to MyList</label>
+</div></li></ul>
+</div>
+</div>
+<div id="document-preview">
+<div id="document-preview-arrow">&nbsp;</div>
+<div id="document-preview-top">&nbsp;</div>
+<div id="document-preview-body">
+<div style="padding:0.2em 3.4em 0.2em 2em;">
+<h3>
+<div id="document-preview-title"></div>
+</h3>
+<div id="bestpart" style="text-align:left"></div>
+</div>
+</div>
+<div id="document-preview-bottom">&nbsp;</div>
+</div>
+</div>
+</div>
+<div class="dotted2">
+<div class="result normal-document">
+<div class="result-icon">
+<a href="/elibweb/elib/do/document?set=search&dictionaryClick=&secondaryNav=&groupid=1&requestid=lib_standard&resultid=10&edition=&ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&start=1&publicationId=&urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B120829111"><img border="0" alt="Magazines" title="Magazines" src="/elibweb/elib/images/magazines.gif"></a>
+</div>
+<div class="actual-result">
+<div id="bestpart10">
+<a href="#" id="preview-doc" onMouseOver="docOverlay(this,'The strategic trainer: developing strategy skills for the 21st century','document-preview-title','document-preview','bottomright','/elibweb/elib/do/document?set=search&amp;groupid=1&amp;requestid=lib_standard&amp;resultid=10&amp;edition=&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;start=1&amp;publicationId=&amp;urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B120829111','/elibweb/elib/images','bestpart10');return false" onMouseOut="URLoverlayclose('document-preview'); return false" onClick="redirectToDoc('/elibweb/elib/do/document?set=search&amp;groupid=1&amp;requestid=lib_standard&amp;resultid=10&amp;edition=&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;start=1&amp;publicationId=&amp;urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B120829111');return false"><img border="0" src="/elibweb/elib/images/preview_icon.gif" class="preview-doc" alt="Document Preview" title="Document Preview"></a>
+</div>
+<div class="line1">
+<strong>10.</strong>&nbsp;
+                                            <a href="/elibweb/elib/do/document?set=search&dictionaryClick=&secondaryNav=&groupid=1&requestid=lib_standard&resultid=10&edition=&ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&start=1&publicationId=&urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B120829111">The strategic trainer: developing strategy skills for the 21st century</a>&nbsp;
+                                            Training Journal
+                                                &nbsp;Cook, Sarah<a id="10" href="/elibweb/elib/do/document?set=search&dictionaryClick=&secondaryNav=&groupid=1&requestid=lib_standard&resultid=10&edition=&ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&start=1&publicationId=&urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B120829111" title="The strategic trainer: developing strategy skills for the 21st century"><img src="/elibweb/elib/images/business.gif" alt="" border="0" class="category"></a><span style="display: none;" id="topicpin10">
+                                              &nbsp;&nbsp;
+			                                        <a href="#topicadminThe strategic trainer: developing strategy skills for the 21st century" title="/elibweb/elib/do/document?set=search&amp;dictionaryClick=&amp;secondaryNav=&amp;groupid=1&amp;requestid=lib_standard&amp;resultid=10&amp;edition=&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;start=1&amp;publicationId=&amp;urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B120829111" alt="/elibweb/elib/do/document?set=search&amp;dictionaryClick=&amp;secondaryNav=&amp;groupid=1&amp;requestid=lib_standard&amp;resultid=10&amp;edition=&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;start=1&amp;publicationId=&amp;urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B120829111" id="link10" onclick="saveValueToParent(this);">[Copy To Topic Admin]</a>&nbsp;
+	                                               </span>
+</div>
+<div class="line2">
+<span class="author">Date: 01 Sep 2004</span>&nbsp;&nbsp;|&nbsp;&nbsp;
+                                        <span class="author">Reading Level: 11</span>&nbsp;&nbsp;|&nbsp;&nbsp;
+                                                    <span class="author">Size: 20K</span>&nbsp;&nbsp;|&nbsp;&nbsp;
+
+                                        <span class="author">Keyword Score: 100</span>
+</div>
+<div class="line3">
+<ul><li id="liMyList" ><div id="mylist_item_10" class="notadded">
+<input type="checkbox" value="N" name="10" id="chkMyList" onclick="javascript:addDocumentToMyList('10','/elibweb/elib/do/mylist?mylist=add&amp;set=search&amp;dictionaryClick=&amp;secondaryNav=&amp;start=1&amp;groupid=1&amp;requestid=lib_standard&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;mylisturn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B120829111&amp;resultid=10&amp;edition=&amp;sortResultsBy=TopicRelevance&amp;groupResultsBy=','mylist_item_10',this);"><label for="chkMyList">Add to MyList</label>
+</div></li></ul>
+</div>
+</div>
+<div id="document-preview">
+<div id="document-preview-arrow">&nbsp;</div>
+<div id="document-preview-top">&nbsp;</div>
+<div id="document-preview-body">
+<div style="padding:0.2em 3.4em 0.2em 2em;">
+<h3>
+<div id="document-preview-title"></div>
+</h3>
+<div id="bestpart" style="text-align:left"></div>
+</div>
+</div>
+<div id="document-preview-bottom">&nbsp;</div>
+</div>
+</div>
+</div>
+<div class="dotted2">
+<div class="result normal-document">
+<div class="result-icon">
+<a href="/elibweb/elib/do/document?set=search&dictionaryClick=&secondaryNav=&groupid=1&requestid=lib_standard&resultid=11&edition=&ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&start=1&publicationId=&urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B90842704"><img border="0" alt="Magazines" title="Magazines" src="/elibweb/elib/images/magazines.gif"></a>
+</div>
+<div class="actual-result">
+<div id="bestpart11">
+<a href="#" id="preview-doc" onMouseOver="docOverlay(this,'STRATEGIC PLANNING IN ILLINOIS: A STATE AT THE CROSSROADS','document-preview-title','document-preview','bottomright','/elibweb/elib/do/document?set=search&amp;groupid=1&amp;requestid=lib_standard&amp;resultid=11&amp;edition=&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;start=1&amp;publicationId=&amp;urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B90842704','/elibweb/elib/images','bestpart11');return false" onMouseOut="URLoverlayclose('document-preview'); return false" onClick="redirectToDoc('/elibweb/elib/do/document?set=search&amp;groupid=1&amp;requestid=lib_standard&amp;resultid=11&amp;edition=&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;start=1&amp;publicationId=&amp;urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B90842704');return false"><img border="0" src="/elibweb/elib/images/preview_icon.gif" class="preview-doc" alt="Document Preview" title="Document Preview"></a>
+</div>
+<div class="line1">
+<strong>11.</strong>&nbsp;
+                                            <a href="/elibweb/elib/do/document?set=search&dictionaryClick=&secondaryNav=&groupid=1&requestid=lib_standard&resultid=11&edition=&ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&start=1&publicationId=&urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B90842704">STRATEGIC PLANNING IN ILLINOIS: A STATE AT THE CROSSROADS</a>&nbsp;
+                                            International Journal of Organization Theory and Behavior
+                                                &nbsp;Eitel, Dean F<a id="11" href="/elibweb/elib/do/document?set=search&dictionaryClick=&secondaryNav=&groupid=1&requestid=lib_standard&resultid=11&edition=&ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&start=1&publicationId=&urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B90842704" title="STRATEGIC PLANNING IN ILLINOIS: A STATE AT THE CROSSROADS"></a><span style="display: none;" id="topicpin11">
+                                              &nbsp;&nbsp;
+			                                        <a href="#topicadminSTRATEGIC PLANNING IN ILLINOIS: A STATE AT THE CROSSROADS" title="/elibweb/elib/do/document?set=search&amp;dictionaryClick=&amp;secondaryNav=&amp;groupid=1&amp;requestid=lib_standard&amp;resultid=11&amp;edition=&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;start=1&amp;publicationId=&amp;urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B90842704" alt="/elibweb/elib/do/document?set=search&amp;dictionaryClick=&amp;secondaryNav=&amp;groupid=1&amp;requestid=lib_standard&amp;resultid=11&amp;edition=&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;start=1&amp;publicationId=&amp;urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B90842704" id="link11" onclick="saveValueToParent(this);">[Copy To Topic Admin]</a>&nbsp;
+	                                               </span>
+</div>
+<div class="line2">
+<span class="author">Date: 01 Jan 2003</span>&nbsp;&nbsp;|&nbsp;&nbsp;
+                                        <span class="author">Reading Level: 11</span>&nbsp;&nbsp;|&nbsp;&nbsp;
+                                                    <span class="author">Size: 61K</span>&nbsp;&nbsp;|&nbsp;&nbsp;
+
+                                        <span class="author">Keyword Score: 100</span>
+</div>
+<div class="line3">
+<ul><li id="liMyList" ><div id="mylist_item_11" class="notadded">
+<input type="checkbox" value="N" name="11" id="chkMyList" onclick="javascript:addDocumentToMyList('11','/elibweb/elib/do/mylist?mylist=add&amp;set=search&amp;dictionaryClick=&amp;secondaryNav=&amp;start=1&amp;groupid=1&amp;requestid=lib_standard&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;mylisturn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B90842704&amp;resultid=11&amp;edition=&amp;sortResultsBy=TopicRelevance&amp;groupResultsBy=','mylist_item_11',this);"><label for="chkMyList">Add to MyList</label>
+</div></li></ul>
+</div>
+</div>
+<div id="document-preview">
+<div id="document-preview-arrow">&nbsp;</div>
+<div id="document-preview-top">&nbsp;</div>
+<div id="document-preview-body">
+<div style="padding:0.2em 3.4em 0.2em 2em;">
+<h3>
+<div id="document-preview-title"></div>
+</h3>
+<div id="bestpart" style="text-align:left"></div>
+</div>
+</div>
+<div id="document-preview-bottom">&nbsp;</div>
+</div>
+</div>
+</div>
+<div class="dotted2">
+<div class="result normal-document">
+<div class="result-icon">
+<a href="/elibweb/elib/do/document?set=search&dictionaryClick=&secondaryNav=&groupid=1&requestid=lib_standard&resultid=12&edition=&ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&start=1&publicationId=&urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B87173308"><img border="0" alt="Magazines" title="Magazines" src="/elibweb/elib/images/magazines.gif"></a>
+</div>
+<div class="actual-result">
+<div id="bestpart12">
+<a href="#" id="preview-doc" onMouseOver="docOverlay(this,'Mapping out your firm\'s success','document-preview-title','document-preview','bottomright','/elibweb/elib/do/document?set=search&amp;groupid=1&amp;requestid=lib_standard&amp;resultid=12&amp;edition=&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;start=1&amp;publicationId=&amp;urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B87173308','/elibweb/elib/images','bestpart12');return false" onMouseOut="URLoverlayclose('document-preview'); return false" onClick="redirectToDoc('/elibweb/elib/do/document?set=search&amp;groupid=1&amp;requestid=lib_standard&amp;resultid=12&amp;edition=&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;start=1&amp;publicationId=&amp;urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B87173308');return false"><img border="0" src="/elibweb/elib/images/preview_icon.gif" class="preview-doc" alt="Document Preview" title="Document Preview"></a>
+</div>
+<div class="line1">
+<strong>12.</strong>&nbsp;
+                                            <a href="/elibweb/elib/do/document?set=search&dictionaryClick=&secondaryNav=&groupid=1&requestid=lib_standard&resultid=12&edition=&ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&start=1&publicationId=&urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B87173308">Mapping out your firm's success</a>&nbsp;
+                                            Black Enterprise
+                                                &nbsp;Moss, Mark Richard<a id="12" href="/elibweb/elib/do/document?set=search&dictionaryClick=&secondaryNav=&groupid=1&requestid=lib_standard&resultid=12&edition=&ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&start=1&publicationId=&urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B87173308" title="Mapping out your firm's success"><img src="/elibweb/elib/images/business.gif" alt="" border="0" class="category"></a><span style="display: none;" id="topicpin12">
+                                              &nbsp;&nbsp;
+			                                        <a href="#topicadminMapping out your firm's success" title="/elibweb/elib/do/document?set=search&amp;dictionaryClick=&amp;secondaryNav=&amp;groupid=1&amp;requestid=lib_standard&amp;resultid=12&amp;edition=&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;start=1&amp;publicationId=&amp;urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B87173308" alt="/elibweb/elib/do/document?set=search&amp;dictionaryClick=&amp;secondaryNav=&amp;groupid=1&amp;requestid=lib_standard&amp;resultid=12&amp;edition=&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;start=1&amp;publicationId=&amp;urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B87173308" id="link12" onclick="saveValueToParent(this);">[Copy To Topic Admin]</a>&nbsp;
+	                                               </span>
+</div>
+<div class="line2">
+<span class="author">Date: 01 Mar 2000</span>&nbsp;&nbsp;|&nbsp;&nbsp;
+                                        <span class="author">Reading Level: 9</span>&nbsp;&nbsp;|&nbsp;&nbsp;
+                                                    <span class="author">Size: 15K</span>&nbsp;&nbsp;|&nbsp;&nbsp;
+
+                                        <span class="author">Keyword Score: 100</span>
+</div>
+<div class="line3">
+<ul><li id="liMyList" ><div id="mylist_item_12" class="notadded">
+<input type="checkbox" value="N" name="12" id="chkMyList" onclick="javascript:addDocumentToMyList('12','/elibweb/elib/do/mylist?mylist=add&amp;set=search&amp;dictionaryClick=&amp;secondaryNav=&amp;start=1&amp;groupid=1&amp;requestid=lib_standard&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;mylisturn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B87173308&amp;resultid=12&amp;edition=&amp;sortResultsBy=TopicRelevance&amp;groupResultsBy=','mylist_item_12',this);"><label for="chkMyList">Add to MyList</label>
+</div></li></ul>
+</div>
+</div>
+<div id="document-preview">
+<div id="document-preview-arrow">&nbsp;</div>
+<div id="document-preview-top">&nbsp;</div>
+<div id="document-preview-body">
+<div style="padding:0.2em 3.4em 0.2em 2em;">
+<h3>
+<div id="document-preview-title"></div>
+</h3>
+<div id="bestpart" style="text-align:left"></div>
+</div>
+</div>
+<div id="document-preview-bottom">&nbsp;</div>
+</div>
+</div>
+</div>
+<div class="dotted2">
+<div class="result normal-document">
+<div class="result-icon">
+<a href="/elibweb/elib/do/document?set=search&dictionaryClick=&secondaryNav=&groupid=1&requestid=lib_standard&resultid=13&edition=&ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&start=1&publicationId=&urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B150634541"><img border="0" alt="Magazines" title="Magazines" src="/elibweb/elib/images/magazines.gif"></a>
+</div>
+<div class="actual-result">
+<div id="bestpart13">
+<a href="#" id="preview-doc" onMouseOver="docOverlay(this,'10 Survival Tips for this Economy','document-preview-title','document-preview','bottomright','/elibweb/elib/do/document?set=search&amp;groupid=1&amp;requestid=lib_standard&amp;resultid=13&amp;edition=&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;start=1&amp;publicationId=&amp;urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B150634541','/elibweb/elib/images','bestpart13');return false" onMouseOut="URLoverlayclose('document-preview'); return false" onClick="redirectToDoc('/elibweb/elib/do/document?set=search&amp;groupid=1&amp;requestid=lib_standard&amp;resultid=13&amp;edition=&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;start=1&amp;publicationId=&amp;urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B150634541');return false"><img border="0" src="/elibweb/elib/images/preview_icon.gif" class="preview-doc" alt="Document Preview" title="Document Preview"></a>
+</div>
+<div class="line1">
+<strong>13.</strong>&nbsp;
+                                            <a href="/elibweb/elib/do/document?set=search&dictionaryClick=&secondaryNav=&groupid=1&requestid=lib_standard&resultid=13&edition=&ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&start=1&publicationId=&urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B150634541">10 Survival Tips for this Economy</a>&nbsp;
+                                            Electrical Wholesaling
+                                                &nbsp;By Thomas J. O'Connor<a id="13" href="/elibweb/elib/do/document?set=search&dictionaryClick=&secondaryNav=&groupid=1&requestid=lib_standard&resultid=13&edition=&ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&start=1&publicationId=&urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B150634541" title="10 Survival Tips for this Economy"><img src="/elibweb/elib/images/business.gif" alt="" border="0" class="category"></a><span style="display: none;" id="topicpin13">
+                                              &nbsp;&nbsp;
+			                                        <a href="#topicadmin10 Survival Tips for this Economy" title="/elibweb/elib/do/document?set=search&amp;dictionaryClick=&amp;secondaryNav=&amp;groupid=1&amp;requestid=lib_standard&amp;resultid=13&amp;edition=&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;start=1&amp;publicationId=&amp;urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B150634541" alt="/elibweb/elib/do/document?set=search&amp;dictionaryClick=&amp;secondaryNav=&amp;groupid=1&amp;requestid=lib_standard&amp;resultid=13&amp;edition=&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;start=1&amp;publicationId=&amp;urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B150634541" id="link13" onclick="saveValueToParent(this);">[Copy To Topic Admin]</a>&nbsp;
+	                                               </span>
+</div>
+<div class="line2">
+<span class="author">Date: 01 Mar 2008</span>&nbsp;&nbsp;|&nbsp;&nbsp;
+                                        <span class="author">Reading Level: 12</span>&nbsp;&nbsp;|&nbsp;&nbsp;
+                                                    <span class="author">Size: 8K</span>&nbsp;&nbsp;|&nbsp;&nbsp;
+
+                                        <span class="author">Keyword Score: 100</span>
+</div>
+<div class="line3">
+<ul><li id="liMyList" ><div id="mylist_item_13" class="notadded">
+<input type="checkbox" value="N" name="13" id="chkMyList" onclick="javascript:addDocumentToMyList('13','/elibweb/elib/do/mylist?mylist=add&amp;set=search&amp;dictionaryClick=&amp;secondaryNav=&amp;start=1&amp;groupid=1&amp;requestid=lib_standard&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;mylisturn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B150634541&amp;resultid=13&amp;edition=&amp;sortResultsBy=TopicRelevance&amp;groupResultsBy=','mylist_item_13',this);"><label for="chkMyList">Add to MyList</label>
+</div></li></ul>
+</div>
+</div>
+<div id="document-preview">
+<div id="document-preview-arrow">&nbsp;</div>
+<div id="document-preview-top">&nbsp;</div>
+<div id="document-preview-body">
+<div style="padding:0.2em 3.4em 0.2em 2em;">
+<h3>
+<div id="document-preview-title"></div>
+</h3>
+<div id="bestpart" style="text-align:left"></div>
+</div>
+</div>
+<div id="document-preview-bottom">&nbsp;</div>
+</div>
+</div>
+</div>
+<div class="dotted2">
+<div class="result normal-document">
+<div class="result-icon">
+<a href="/elibweb/elib/do/document?set=search&dictionaryClick=&secondaryNav=&groupid=1&requestid=lib_standard&resultid=14&edition=&ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&start=1&publicationId=&urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B117501152"><img border="0" alt="Magazines" title="Magazines" src="/elibweb/elib/images/magazines.gif"></a>
+</div>
+<div class="actual-result">
+<div id="bestpart14">
+<a href="#" id="preview-doc" onMouseOver="docOverlay(this,'A new tool for strategy analysis: the opportunity model','document-preview-title','document-preview','bottomright','/elibweb/elib/do/document?set=search&amp;groupid=1&amp;requestid=lib_standard&amp;resultid=14&amp;edition=&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;start=1&amp;publicationId=&amp;urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B117501152','/elibweb/elib/images','bestpart14');return false" onMouseOut="URLoverlayclose('document-preview'); return false" onClick="redirectToDoc('/elibweb/elib/do/document?set=search&amp;groupid=1&amp;requestid=lib_standard&amp;resultid=14&amp;edition=&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;start=1&amp;publicationId=&amp;urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B117501152');return false"><img border="0" src="/elibweb/elib/images/preview_icon.gif" class="preview-doc" alt="Document Preview" title="Document Preview"></a>
+</div>
+<div class="line1">
+<strong>14.</strong>&nbsp;
+                                            <a href="/elibweb/elib/do/document?set=search&dictionaryClick=&secondaryNav=&groupid=1&requestid=lib_standard&resultid=14&edition=&ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&start=1&publicationId=&urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B117501152">A new tool for strategy analysis: the opportunity model</a>&nbsp;
+                                            The Journal of Business Strategy
+                                                &nbsp;Morris, Donald<a id="14" href="/elibweb/elib/do/document?set=search&dictionaryClick=&secondaryNav=&groupid=1&requestid=lib_standard&resultid=14&edition=&ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&start=1&publicationId=&urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B117501152" title="A new tool for strategy analysis: the opportunity model"><img src="/elibweb/elib/images/scholarly_journals.gif" alt="" border="0" class="category"></a><span style="display: none;" id="topicpin14">
+                                              &nbsp;&nbsp;
+			                                        <a href="#topicadminA new tool for strategy analysis: the opportunity model" title="/elibweb/elib/do/document?set=search&amp;dictionaryClick=&amp;secondaryNav=&amp;groupid=1&amp;requestid=lib_standard&amp;resultid=14&amp;edition=&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;start=1&amp;publicationId=&amp;urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B117501152" alt="/elibweb/elib/do/document?set=search&amp;dictionaryClick=&amp;secondaryNav=&amp;groupid=1&amp;requestid=lib_standard&amp;resultid=14&amp;edition=&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;start=1&amp;publicationId=&amp;urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B117501152" id="link14" onclick="saveValueToParent(this);">[Copy To Topic Admin]</a>&nbsp;
+	                                               </span>
+</div>
+<div class="line2">
+<span class="author">Date: 01 May 2005</span>&nbsp;&nbsp;|&nbsp;&nbsp;
+                                        <span class="author">Reading Level: 10</span>&nbsp;&nbsp;|&nbsp;&nbsp;
+                                                    <span class="author">Size: 27K</span>&nbsp;&nbsp;|&nbsp;&nbsp;
+
+                                        <span class="author">Keyword Score: 100</span>
+</div>
+<div class="line3">
+<ul><li id="liMyList" ><div id="mylist_item_14" class="notadded">
+<input type="checkbox" value="N" name="14" id="chkMyList" onclick="javascript:addDocumentToMyList('14','/elibweb/elib/do/mylist?mylist=add&amp;set=search&amp;dictionaryClick=&amp;secondaryNav=&amp;start=1&amp;groupid=1&amp;requestid=lib_standard&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;mylisturn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B117501152&amp;resultid=14&amp;edition=&amp;sortResultsBy=TopicRelevance&amp;groupResultsBy=','mylist_item_14',this);"><label for="chkMyList">Add to MyList</label>
+</div></li></ul>
+</div>
+</div>
+<div id="document-preview">
+<div id="document-preview-arrow">&nbsp;</div>
+<div id="document-preview-top">&nbsp;</div>
+<div id="document-preview-body">
+<div style="padding:0.2em 3.4em 0.2em 2em;">
+<h3>
+<div id="document-preview-title"></div>
+</h3>
+<div id="bestpart" style="text-align:left"></div>
+</div>
+</div>
+<div id="document-preview-bottom">&nbsp;</div>
+</div>
+</div>
+</div>
+<div class="dotted2">
+<div class="result normal-document">
+<div class="result-icon">
+<a href="/elibweb/elib/do/document?set=search&dictionaryClick=&secondaryNav=&groupid=1&requestid=lib_standard&resultid=15&edition=&ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&start=1&publicationId=&urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B32644957"><img border="0" alt="Magazines" title="Magazines" src="/elibweb/elib/images/magazines.gif"></a>
+</div>
+<div class="actual-result">
+<div id="bestpart15">
+<a href="#" id="preview-doc" onMouseOver="docOverlay(this,'Management Strategies: GIS Strategic Planning','document-preview-title','document-preview','bottomright','/elibweb/elib/do/document?set=search&amp;groupid=1&amp;requestid=lib_standard&amp;resultid=15&amp;edition=&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;start=1&amp;publicationId=&amp;urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B32644957','/elibweb/elib/images','bestpart15');return false" onMouseOut="URLoverlayclose('document-preview'); return false" onClick="redirectToDoc('/elibweb/elib/do/document?set=search&amp;groupid=1&amp;requestid=lib_standard&amp;resultid=15&amp;edition=&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;start=1&amp;publicationId=&amp;urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B32644957');return false"><img border="0" src="/elibweb/elib/images/preview_icon.gif" class="preview-doc" alt="Document Preview" title="Document Preview"></a>
+</div>
+<div class="line1">
+<strong>15.</strong>&nbsp;
+                                            <a href="/elibweb/elib/do/document?set=search&dictionaryClick=&secondaryNav=&groupid=1&requestid=lib_standard&resultid=15&edition=&ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&start=1&publicationId=&urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B32644957">Management Strategies: GIS Strategic Planning</a>&nbsp;
+                                            Geo Info Systems
+                                                &nbsp;Rebecca Somers<a id="15" href="/elibweb/elib/do/document?set=search&dictionaryClick=&secondaryNav=&groupid=1&requestid=lib_standard&resultid=15&edition=&ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&start=1&publicationId=&urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B32644957" title="Management Strategies: GIS Strategic Planning"><img src="/elibweb/elib/images/scholarly_journals.gif" alt="" border="0" class="category"></a><span style="display: none;" id="topicpin15">
+                                              &nbsp;&nbsp;
+			                                        <a href="#topicadminManagement Strategies: GIS Strategic Planning" title="/elibweb/elib/do/document?set=search&amp;dictionaryClick=&amp;secondaryNav=&amp;groupid=1&amp;requestid=lib_standard&amp;resultid=15&amp;edition=&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;start=1&amp;publicationId=&amp;urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B32644957" alt="/elibweb/elib/do/document?set=search&amp;dictionaryClick=&amp;secondaryNav=&amp;groupid=1&amp;requestid=lib_standard&amp;resultid=15&amp;edition=&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;start=1&amp;publicationId=&amp;urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B32644957" id="link15" onclick="saveValueToParent(this);">[Copy To Topic Admin]</a>&nbsp;
+	                                               </span>
+</div>
+<div class="line2">
+<span class="author">Date: 01 Feb 1999</span>&nbsp;&nbsp;|&nbsp;&nbsp;
+                                        <span class="author">Reading Level: 11</span>&nbsp;&nbsp;|&nbsp;&nbsp;
+                                                    <span class="author">Size: 15K</span>&nbsp;&nbsp;|&nbsp;&nbsp;
+
+                                        <span class="author">Keyword Score: 100</span>
+</div>
+<div class="line3">
+<ul><li id="liMyList" ><div id="mylist_item_15" class="notadded">
+<input type="checkbox" value="N" name="15" id="chkMyList" onclick="javascript:addDocumentToMyList('15','/elibweb/elib/do/mylist?mylist=add&amp;set=search&amp;dictionaryClick=&amp;secondaryNav=&amp;start=1&amp;groupid=1&amp;requestid=lib_standard&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;mylisturn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B32644957&amp;resultid=15&amp;edition=&amp;sortResultsBy=TopicRelevance&amp;groupResultsBy=','mylist_item_15',this);"><label for="chkMyList">Add to MyList</label>
+</div></li></ul>
+</div>
+</div>
+<div id="document-preview">
+<div id="document-preview-arrow">&nbsp;</div>
+<div id="document-preview-top">&nbsp;</div>
+<div id="document-preview-body">
+<div style="padding:0.2em 3.4em 0.2em 2em;">
+<h3>
+<div id="document-preview-title"></div>
+</h3>
+<div id="bestpart" style="text-align:left"></div>
+</div>
+</div>
+<div id="document-preview-bottom">&nbsp;</div>
+</div>
+</div>
+</div>
+<div class="dotted2">
+<div class="result normal-document">
+<div class="result-icon">
+<a href="/elibweb/elib/do/document?set=search&dictionaryClick=&secondaryNav=&groupid=1&requestid=lib_standard&resultid=16&edition=&ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&start=1&publicationId=&urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B127537864"><img border="0" alt="Magazines" title="Magazines" src="/elibweb/elib/images/magazines.gif"></a>
+</div>
+<div class="actual-result">
+<div id="bestpart16">
+<a href="#" id="preview-doc" onMouseOver="docOverlay(this,'CEMIG Establishes Outsourcing Strategy','document-preview-title','document-preview','bottomright','/elibweb/elib/do/document?set=search&amp;groupid=1&amp;requestid=lib_standard&amp;resultid=16&amp;edition=&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;start=1&amp;publicationId=&amp;urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B127537864','/elibweb/elib/images','bestpart16');return false" onMouseOut="URLoverlayclose('document-preview'); return false" onClick="redirectToDoc('/elibweb/elib/do/document?set=search&amp;groupid=1&amp;requestid=lib_standard&amp;resultid=16&amp;edition=&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;start=1&amp;publicationId=&amp;urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B127537864');return false"><img border="0" src="/elibweb/elib/images/preview_icon.gif" class="preview-doc" alt="Document Preview" title="Document Preview"></a>
+</div>
+<div class="line1">
+<strong>16.</strong>&nbsp;
+                                            <a href="/elibweb/elib/do/document?set=search&dictionaryClick=&secondaryNav=&groupid=1&requestid=lib_standard&resultid=16&edition=&ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&start=1&publicationId=&urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B127537864">CEMIG Establishes Outsourcing Strategy</a>&nbsp;
+                                            Transmission &amp; Distribution World
+                                                &nbsp;by Luiz Braz Francisquini, Companhia Energ&amp;#233;tica de Minas Gerais<a id="16" href="/elibweb/elib/do/document?set=search&dictionaryClick=&secondaryNav=&groupid=1&requestid=lib_standard&resultid=16&edition=&ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&start=1&publicationId=&urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B127537864" title="CEMIG Establishes Outsourcing Strategy"></a><span style="display: none;" id="topicpin16">
+                                              &nbsp;&nbsp;
+			                                        <a href="#topicadminCEMIG Establishes Outsourcing Strategy" title="/elibweb/elib/do/document?set=search&amp;dictionaryClick=&amp;secondaryNav=&amp;groupid=1&amp;requestid=lib_standard&amp;resultid=16&amp;edition=&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;start=1&amp;publicationId=&amp;urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B127537864" alt="/elibweb/elib/do/document?set=search&amp;dictionaryClick=&amp;secondaryNav=&amp;groupid=1&amp;requestid=lib_standard&amp;resultid=16&amp;edition=&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;start=1&amp;publicationId=&amp;urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B127537864" id="link16" onclick="saveValueToParent(this);">[Copy To Topic Admin]</a>&nbsp;
+	                                               </span>
+</div>
+<div class="line2">
+<span class="author">Date: 01 Aug 2006</span>&nbsp;&nbsp;|&nbsp;&nbsp;
+                                        <span class="author">Reading Level: 13</span>&nbsp;&nbsp;|&nbsp;&nbsp;
+                                                    <span class="author">Size: 17K</span>&nbsp;&nbsp;|&nbsp;&nbsp;
+
+                                        <span class="author">Keyword Score: 100</span>
+</div>
+<div class="line3">
+<ul><li id="liMyList" ><div id="mylist_item_16" class="notadded">
+<input type="checkbox" value="N" name="16" id="chkMyList" onclick="javascript:addDocumentToMyList('16','/elibweb/elib/do/mylist?mylist=add&amp;set=search&amp;dictionaryClick=&amp;secondaryNav=&amp;start=1&amp;groupid=1&amp;requestid=lib_standard&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;mylisturn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B127537864&amp;resultid=16&amp;edition=&amp;sortResultsBy=TopicRelevance&amp;groupResultsBy=','mylist_item_16',this);"><label for="chkMyList">Add to MyList</label>
+</div></li></ul>
+</div>
+</div>
+<div id="document-preview">
+<div id="document-preview-arrow">&nbsp;</div>
+<div id="document-preview-top">&nbsp;</div>
+<div id="document-preview-body">
+<div style="padding:0.2em 3.4em 0.2em 2em;">
+<h3>
+<div id="document-preview-title"></div>
+</h3>
+<div id="bestpart" style="text-align:left"></div>
+</div>
+</div>
+<div id="document-preview-bottom">&nbsp;</div>
+</div>
+</div>
+</div>
+<div class="dotted2">
+<div class="result normal-document">
+<div class="result-icon">
+<a href="/elibweb/elib/do/document?set=search&dictionaryClick=&secondaryNav=&groupid=1&requestid=lib_standard&resultid=17&edition=&ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&start=1&publicationId=&urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B116309177"><img border="0" alt="Magazines" title="Magazines" src="/elibweb/elib/images/magazines.gif"></a>
+</div>
+<div class="actual-result">
+<div id="bestpart17">
+<a href="#" id="preview-doc" onMouseOver="docOverlay(this,'&quot;SWOT&quot; Tactics: Basics for Strategic Planning','document-preview-title','document-preview','bottomright','/elibweb/elib/do/document?set=search&amp;groupid=1&amp;requestid=lib_standard&amp;resultid=17&amp;edition=&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;start=1&amp;publicationId=&amp;urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B116309177','/elibweb/elib/images','bestpart17');return false" onMouseOut="URLoverlayclose('document-preview'); return false" onClick="redirectToDoc('/elibweb/elib/do/document?set=search&amp;groupid=1&amp;requestid=lib_standard&amp;resultid=17&amp;edition=&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;start=1&amp;publicationId=&amp;urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B116309177');return false"><img border="0" src="/elibweb/elib/images/preview_icon.gif" class="preview-doc" alt="Document Preview" title="Document Preview"></a>
+</div>
+<div class="line1">
+<strong>17.</strong>&nbsp;
+                                            <a href="/elibweb/elib/do/document?set=search&dictionaryClick=&secondaryNav=&groupid=1&requestid=lib_standard&resultid=17&edition=&ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&start=1&publicationId=&urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B116309177">"SWOT" Tactics: Basics for Strategic Planning</a>&nbsp;
+                                            FBI Law Enforcement Bulletin
+                                                &nbsp;Garner, Randy<a id="17" href="/elibweb/elib/do/document?set=search&dictionaryClick=&secondaryNav=&groupid=1&requestid=lib_standard&resultid=17&edition=&ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&start=1&publicationId=&urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B116309177" title="&quot;SWOT&quot; Tactics: Basics for Strategic Planning"></a><span style="display: none;" id="topicpin17">
+                                              &nbsp;&nbsp;
+			                                        <a href="#topicadmin%22SWOT%22 Tactics: Basics for Strategic Planning" title="/elibweb/elib/do/document?set=search&amp;dictionaryClick=&amp;secondaryNav=&amp;groupid=1&amp;requestid=lib_standard&amp;resultid=17&amp;edition=&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;start=1&amp;publicationId=&amp;urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B116309177" alt="/elibweb/elib/do/document?set=search&amp;dictionaryClick=&amp;secondaryNav=&amp;groupid=1&amp;requestid=lib_standard&amp;resultid=17&amp;edition=&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;start=1&amp;publicationId=&amp;urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B116309177" id="link17" onclick="saveValueToParent(this);">[Copy To Topic Admin]</a>&nbsp;
+	                                               </span>
+</div>
+<div class="line2">
+<span class="author">Date: 01 Nov 2005</span>&nbsp;&nbsp;|&nbsp;&nbsp;
+                                        <span class="author">Reading Level: 12</span>&nbsp;&nbsp;|&nbsp;&nbsp;
+                                                    <span class="author">Size: 9K</span>&nbsp;&nbsp;|&nbsp;&nbsp;
+
+                                        <span class="author">Keyword Score: 100</span>
+</div>
+<div class="line3">
+<ul><li id="liMyList" ><div id="mylist_item_17" class="notadded">
+<input type="checkbox" value="N" name="17" id="chkMyList" onclick="javascript:addDocumentToMyList('17','/elibweb/elib/do/mylist?mylist=add&amp;set=search&amp;dictionaryClick=&amp;secondaryNav=&amp;start=1&amp;groupid=1&amp;requestid=lib_standard&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;mylisturn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B116309177&amp;resultid=17&amp;edition=&amp;sortResultsBy=TopicRelevance&amp;groupResultsBy=','mylist_item_17',this);"><label for="chkMyList">Add to MyList</label>
+</div></li></ul>
+</div>
+</div>
+<div id="document-preview">
+<div id="document-preview-arrow">&nbsp;</div>
+<div id="document-preview-top">&nbsp;</div>
+<div id="document-preview-body">
+<div style="padding:0.2em 3.4em 0.2em 2em;">
+<h3>
+<div id="document-preview-title"></div>
+</h3>
+<div id="bestpart" style="text-align:left"></div>
+</div>
+</div>
+<div id="document-preview-bottom">&nbsp;</div>
+</div>
+</div>
+</div>
+<div class="dotted2">
+<div class="result normal-document">
+<div class="result-icon">
+<a href="/elibweb/elib/do/document?set=search&dictionaryClick=&secondaryNav=&groupid=1&requestid=lib_standard&resultid=18&edition=&ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&start=1&publicationId=&urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B119103818"><img border="0" alt="Magazines" title="Magazines" src="/elibweb/elib/images/magazines.gif"></a>
+</div>
+<div class="actual-result">
+<div id="bestpart18">
+<a href="#" id="preview-doc" onMouseOver="docOverlay(this,'A Solid Marketing Plan Begins With SWOT','document-preview-title','document-preview','bottomright','/elibweb/elib/do/document?set=search&amp;groupid=1&amp;requestid=lib_standard&amp;resultid=18&amp;edition=&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;start=1&amp;publicationId=&amp;urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B119103818','/elibweb/elib/images','bestpart18');return false" onMouseOut="URLoverlayclose('document-preview'); return false" onClick="redirectToDoc('/elibweb/elib/do/document?set=search&amp;groupid=1&amp;requestid=lib_standard&amp;resultid=18&amp;edition=&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;start=1&amp;publicationId=&amp;urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B119103818');return false"><img border="0" src="/elibweb/elib/images/preview_icon.gif" class="preview-doc" alt="Document Preview" title="Document Preview"></a>
+</div>
+<div class="line1">
+<strong>18.</strong>&nbsp;
+                                            <a href="/elibweb/elib/do/document?set=search&dictionaryClick=&secondaryNav=&groupid=1&requestid=lib_standard&resultid=18&edition=&ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&start=1&publicationId=&urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B119103818">A Solid Marketing Plan Begins With SWOT</a>&nbsp;
+                                            Textile World
+                                                &nbsp;Vass, Kathy<a id="18" href="/elibweb/elib/do/document?set=search&dictionaryClick=&secondaryNav=&groupid=1&requestid=lib_standard&resultid=18&edition=&ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&start=1&publicationId=&urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B119103818" title="A Solid Marketing Plan Begins With SWOT"></a><span style="display: none;" id="topicpin18">
+                                              &nbsp;&nbsp;
+			                                        <a href="#topicadminA Solid Marketing Plan Begins With SWOT" title="/elibweb/elib/do/document?set=search&amp;dictionaryClick=&amp;secondaryNav=&amp;groupid=1&amp;requestid=lib_standard&amp;resultid=18&amp;edition=&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;start=1&amp;publicationId=&amp;urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B119103818" alt="/elibweb/elib/do/document?set=search&amp;dictionaryClick=&amp;secondaryNav=&amp;groupid=1&amp;requestid=lib_standard&amp;resultid=18&amp;edition=&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;start=1&amp;publicationId=&amp;urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B119103818" id="link18" onclick="saveValueToParent(this);">[Copy To Topic Admin]</a>&nbsp;
+	                                               </span>
+</div>
+<div class="line2">
+<span class="author">Date: 01 Apr 2005</span>&nbsp;&nbsp;|&nbsp;&nbsp;
+                                        <span class="author">Reading Level: 11</span>&nbsp;&nbsp;|&nbsp;&nbsp;
+                                                    <span class="author">Size: 5K</span>&nbsp;&nbsp;|&nbsp;&nbsp;
+
+                                        <span class="author">Keyword Score: 100</span>
+</div>
+<div class="line3">
+<ul><li id="liMyList" ><div id="mylist_item_18" class="notadded">
+<input type="checkbox" value="N" name="18" id="chkMyList" onclick="javascript:addDocumentToMyList('18','/elibweb/elib/do/mylist?mylist=add&amp;set=search&amp;dictionaryClick=&amp;secondaryNav=&amp;start=1&amp;groupid=1&amp;requestid=lib_standard&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;mylisturn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B119103818&amp;resultid=18&amp;edition=&amp;sortResultsBy=TopicRelevance&amp;groupResultsBy=','mylist_item_18',this);"><label for="chkMyList">Add to MyList</label>
+</div></li></ul>
+</div>
+</div>
+<div id="document-preview">
+<div id="document-preview-arrow">&nbsp;</div>
+<div id="document-preview-top">&nbsp;</div>
+<div id="document-preview-body">
+<div style="padding:0.2em 3.4em 0.2em 2em;">
+<h3>
+<div id="document-preview-title"></div>
+</h3>
+<div id="bestpart" style="text-align:left"></div>
+</div>
+</div>
+<div id="document-preview-bottom">&nbsp;</div>
+</div>
+</div>
+</div>
+<div class="dotted2">
+<div class="result normal-document">
+<div class="result-icon">
+<a href="/elibweb/elib/do/document?set=search&dictionaryClick=&secondaryNav=&groupid=1&requestid=lib_standard&resultid=19&edition=&ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&start=1&publicationId=&urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B83873850"><img border="0" alt="Magazines" title="Magazines" src="/elibweb/elib/images/magazines.gif"></a>
+</div>
+<div class="actual-result">
+<div id="bestpart19">
+<a href="#" id="preview-doc" onMouseOver="docOverlay(this,'Assessing your internal environment: Understanding constraints in enrollment planning','document-preview-title','document-preview','bottomright','/elibweb/elib/do/document?set=search&amp;groupid=1&amp;requestid=lib_standard&amp;resultid=19&amp;edition=&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;start=1&amp;publicationId=&amp;urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B83873850','/elibweb/elib/images','bestpart19');return false" onMouseOut="URLoverlayclose('document-preview'); return false" onClick="redirectToDoc('/elibweb/elib/do/document?set=search&amp;groupid=1&amp;requestid=lib_standard&amp;resultid=19&amp;edition=&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;start=1&amp;publicationId=&amp;urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B83873850');return false"><img border="0" src="/elibweb/elib/images/preview_icon.gif" class="preview-doc" alt="Document Preview" title="Document Preview"></a>
+</div>
+<div class="line1">
+<strong>19.</strong>&nbsp;
+                                            <a href="/elibweb/elib/do/document?set=search&dictionaryClick=&secondaryNav=&groupid=1&requestid=lib_standard&resultid=19&edition=&ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&start=1&publicationId=&urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B83873850">Assessing your internal environment: Understanding constraints in enrollment planning</a>&nbsp;
+                                            College and University
+                                                &nbsp;O'Malley, Barbara<a id="19" href="/elibweb/elib/do/document?set=search&dictionaryClick=&secondaryNav=&groupid=1&requestid=lib_standard&resultid=19&edition=&ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&start=1&publicationId=&urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B83873850" title="Assessing your internal environment: Understanding constraints in enrollment planning"></a><span style="display: none;" id="topicpin19">
+                                              &nbsp;&nbsp;
+			                                        <a href="#topicadminAssessing your internal environment: Understanding constraints in enrollment planning" title="/elibweb/elib/do/document?set=search&amp;dictionaryClick=&amp;secondaryNav=&amp;groupid=1&amp;requestid=lib_standard&amp;resultid=19&amp;edition=&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;start=1&amp;publicationId=&amp;urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B83873850" alt="/elibweb/elib/do/document?set=search&amp;dictionaryClick=&amp;secondaryNav=&amp;groupid=1&amp;requestid=lib_standard&amp;resultid=19&amp;edition=&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;start=1&amp;publicationId=&amp;urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B83873850" id="link19" onclick="saveValueToParent(this);">[Copy To Topic Admin]</a>&nbsp;
+	                                               </span>
+</div>
+<div class="line2">
+<span class="author">Date: 01 Oct 2003</span>&nbsp;&nbsp;|&nbsp;&nbsp;
+                                        <span class="author">Reading Level: 11</span>&nbsp;&nbsp;|&nbsp;&nbsp;
+                                                    <span class="author">Size: 7K</span>&nbsp;&nbsp;|&nbsp;&nbsp;
+
+                                        <span class="author">Keyword Score: 100</span>
+</div>
+<div class="line3">
+<ul><li id="liMyList" ><div id="mylist_item_19" class="notadded">
+<input type="checkbox" value="N" name="19" id="chkMyList" onclick="javascript:addDocumentToMyList('19','/elibweb/elib/do/mylist?mylist=add&amp;set=search&amp;dictionaryClick=&amp;secondaryNav=&amp;start=1&amp;groupid=1&amp;requestid=lib_standard&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;mylisturn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B83873850&amp;resultid=19&amp;edition=&amp;sortResultsBy=TopicRelevance&amp;groupResultsBy=','mylist_item_19',this);"><label for="chkMyList">Add to MyList</label>
+</div></li></ul>
+</div>
+</div>
+<div id="document-preview">
+<div id="document-preview-arrow">&nbsp;</div>
+<div id="document-preview-top">&nbsp;</div>
+<div id="document-preview-body">
+<div style="padding:0.2em 3.4em 0.2em 2em;">
+<h3>
+<div id="document-preview-title"></div>
+</h3>
+<div id="bestpart" style="text-align:left"></div>
+</div>
+</div>
+<div id="document-preview-bottom">&nbsp;</div>
+</div>
+</div>
+</div>
+<div class="dotted2">
+<div class="result normal-document">
+<div class="result-icon">
+<a href="/elibweb/elib/do/document?set=search&dictionaryClick=&secondaryNav=&groupid=1&requestid=lib_standard&resultid=20&edition=&ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&start=1&publicationId=&urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B72577748"><img border="0" alt="Magazines" title="Magazines" src="/elibweb/elib/images/magazines.gif"></a>
+</div>
+<div class="actual-result">
+<div id="bestpart20">
+<a href="#" id="preview-doc" onMouseOver="docOverlay(this,'ROADMAPPING YOUR BUSINESS','document-preview-title','document-preview','bottomright','/elibweb/elib/do/document?set=search&amp;groupid=1&amp;requestid=lib_standard&amp;resultid=20&amp;edition=&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;start=1&amp;publicationId=&amp;urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B72577748','/elibweb/elib/images','bestpart20');return false" onMouseOut="URLoverlayclose('document-preview'); return false" onClick="redirectToDoc('/elibweb/elib/do/document?set=search&amp;groupid=1&amp;requestid=lib_standard&amp;resultid=20&amp;edition=&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;start=1&amp;publicationId=&amp;urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B72577748');return false"><img border="0" src="/elibweb/elib/images/preview_icon.gif" class="preview-doc" alt="Document Preview" title="Document Preview"></a>
+</div>
+<div class="line1">
+<strong>20.</strong>&nbsp;
+                                            <a href="/elibweb/elib/do/document?set=search&dictionaryClick=&secondaryNav=&groupid=1&requestid=lib_standard&resultid=20&edition=&ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&start=1&publicationId=&urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B72577748">ROADMAPPING YOUR BUSINESS</a>&nbsp;
+                                            Sound &amp; Video Contractor
+                                                &nbsp;MARK MAYFIELD<a id="20" href="/elibweb/elib/do/document?set=search&dictionaryClick=&secondaryNav=&groupid=1&requestid=lib_standard&resultid=20&edition=&ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&start=1&publicationId=&urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B72577748" title="ROADMAPPING YOUR BUSINESS"></a><span style="display: none;" id="topicpin20">
+                                              &nbsp;&nbsp;
+			                                        <a href="#topicadminROADMAPPING YOUR BUSINESS" title="/elibweb/elib/do/document?set=search&amp;dictionaryClick=&amp;secondaryNav=&amp;groupid=1&amp;requestid=lib_standard&amp;resultid=20&amp;edition=&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;start=1&amp;publicationId=&amp;urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B72577748" alt="/elibweb/elib/do/document?set=search&amp;dictionaryClick=&amp;secondaryNav=&amp;groupid=1&amp;requestid=lib_standard&amp;resultid=20&amp;edition=&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;start=1&amp;publicationId=&amp;urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B72577748" id="link20" onclick="saveValueToParent(this);">[Copy To Topic Admin]</a>&nbsp;
+	                                               </span>
+</div>
+<div class="line2">
+<span class="author">Date: 01 Mar 2003</span>&nbsp;&nbsp;|&nbsp;&nbsp;
+                                        <span class="author">Reading Level: 11</span>&nbsp;&nbsp;|&nbsp;&nbsp;
+                                                    <span class="author">Size: 4K</span>&nbsp;&nbsp;|&nbsp;&nbsp;
+
+                                        <span class="author">Keyword Score: 100</span>
+</div>
+<div class="line3">
+<ul><li id="liMyList" ><div id="mylist_item_20" class="notadded">
+<input type="checkbox" value="N" name="20" id="chkMyList" onclick="javascript:addDocumentToMyList('20','/elibweb/elib/do/mylist?mylist=add&amp;set=search&amp;dictionaryClick=&amp;secondaryNav=&amp;start=1&amp;groupid=1&amp;requestid=lib_standard&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;mylisturn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B72577748&amp;resultid=20&amp;edition=&amp;sortResultsBy=TopicRelevance&amp;groupResultsBy=','mylist_item_20',this);"><label for="chkMyList">Add to MyList</label>
+</div></li></ul>
+</div>
+</div>
+<div id="document-preview">
+<div id="document-preview-arrow">&nbsp;</div>
+<div id="document-preview-top">&nbsp;</div>
+<div id="document-preview-body">
+<div style="padding:0.2em 3.4em 0.2em 2em;">
+<h3>
+<div id="document-preview-title"></div>
+</h3>
+<div id="bestpart" style="text-align:left"></div>
+</div>
+</div>
+<div id="document-preview-bottom">&nbsp;</div>
+</div>
+</div>
+</div>
+<div class="dotted2">
+<div class="result normal-document">
+<div class="result-icon">
+<a href="/elibweb/elib/do/document?set=search&dictionaryClick=&secondaryNav=&groupid=1&requestid=lib_standard&resultid=21&edition=&ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&start=1&publicationId=&urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B76333485"><img border="0" alt="Magazines" title="Magazines" src="/elibweb/elib/images/magazines.gif"></a>
+</div>
+<div class="actual-result">
+<div id="bestpart21">
+<a href="#" id="preview-doc" onMouseOver="docOverlay(this,'Only well thought out marketing strategies will drive niche success','document-preview-title','document-preview','bottomright','/elibweb/elib/do/document?set=search&amp;groupid=1&amp;requestid=lib_standard&amp;resultid=21&amp;edition=&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;start=1&amp;publicationId=&amp;urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B76333485','/elibweb/elib/images','bestpart21');return false" onMouseOut="URLoverlayclose('document-preview'); return false" onClick="redirectToDoc('/elibweb/elib/do/document?set=search&amp;groupid=1&amp;requestid=lib_standard&amp;resultid=21&amp;edition=&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;start=1&amp;publicationId=&amp;urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B76333485');return false"><img border="0" src="/elibweb/elib/images/preview_icon.gif" class="preview-doc" alt="Document Preview" title="Document Preview"></a>
+</div>
+<div class="line1">
+<strong>21.</strong>&nbsp;
+                                            <a href="/elibweb/elib/do/document?set=search&dictionaryClick=&secondaryNav=&groupid=1&requestid=lib_standard&resultid=21&edition=&ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&start=1&publicationId=&urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B76333485">Only well thought out marketing strategies will drive niche success</a>&nbsp;
+                                            Accounting Today
+                                                &nbsp;Wilson, Jennifer<a id="21" href="/elibweb/elib/do/document?set=search&dictionaryClick=&secondaryNav=&groupid=1&requestid=lib_standard&resultid=21&edition=&ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&start=1&publicationId=&urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B76333485" title="Only well thought out marketing strategies will drive niche success"><img src="/elibweb/elib/images/business.gif" alt="" border="0" class="category"></a><span style="display: none;" id="topicpin21">
+                                              &nbsp;&nbsp;
+			                                        <a href="#topicadminOnly well thought out marketing strategies will drive niche success" title="/elibweb/elib/do/document?set=search&amp;dictionaryClick=&amp;secondaryNav=&amp;groupid=1&amp;requestid=lib_standard&amp;resultid=21&amp;edition=&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;start=1&amp;publicationId=&amp;urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B76333485" alt="/elibweb/elib/do/document?set=search&amp;dictionaryClick=&amp;secondaryNav=&amp;groupid=1&amp;requestid=lib_standard&amp;resultid=21&amp;edition=&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;start=1&amp;publicationId=&amp;urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B76333485" id="link21" onclick="saveValueToParent(this);">[Copy To Topic Admin]</a>&nbsp;
+	                                               </span>
+</div>
+<div class="line2">
+<span class="author">Date: 02 Sep 2002</span>&nbsp;&nbsp;|&nbsp;&nbsp;
+                                        <span class="author">Reading Level: 14</span>&nbsp;&nbsp;|&nbsp;&nbsp;
+                                                    <span class="author">Size: 5K</span>&nbsp;&nbsp;|&nbsp;&nbsp;
+
+                                        <span class="author">Keyword Score: 100</span>
+</div>
+<div class="line3">
+<ul><li id="liMyList" ><div id="mylist_item_21" class="notadded">
+<input type="checkbox" value="N" name="21" id="chkMyList" onclick="javascript:addDocumentToMyList('21','/elibweb/elib/do/mylist?mylist=add&amp;set=search&amp;dictionaryClick=&amp;secondaryNav=&amp;start=1&amp;groupid=1&amp;requestid=lib_standard&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;mylisturn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B76333485&amp;resultid=21&amp;edition=&amp;sortResultsBy=TopicRelevance&amp;groupResultsBy=','mylist_item_21',this);"><label for="chkMyList">Add to MyList</label>
+</div></li></ul>
+</div>
+</div>
+<div id="document-preview">
+<div id="document-preview-arrow">&nbsp;</div>
+<div id="document-preview-top">&nbsp;</div>
+<div id="document-preview-body">
+<div style="padding:0.2em 3.4em 0.2em 2em;">
+<h3>
+<div id="document-preview-title"></div>
+</h3>
+<div id="bestpart" style="text-align:left"></div>
+</div>
+</div>
+<div id="document-preview-bottom">&nbsp;</div>
+</div>
+</div>
+</div>
+<div class="dotted2">
+<div class="result normal-document">
+<div class="result-icon">
+<a href="/elibweb/elib/do/document?set=search&dictionaryClick=&secondaryNav=&groupid=1&requestid=lib_standard&resultid=22&edition=&ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&start=1&publicationId=&urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B28942135"><img border="0" alt="Magazines" title="Magazines" src="/elibweb/elib/images/magazines.gif"></a>
+</div>
+<div class="actual-result">
+<div id="bestpart22">
+<a href="#" id="preview-doc" onMouseOver="docOverlay(this,'Maybe Your Downtown Needs a Report Card','document-preview-title','document-preview','bottomright','/elibweb/elib/do/document?set=search&amp;groupid=1&amp;requestid=lib_standard&amp;resultid=22&amp;edition=&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;start=1&amp;publicationId=&amp;urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B28942135','/elibweb/elib/images','bestpart22');return false" onMouseOut="URLoverlayclose('document-preview'); return false" onClick="redirectToDoc('/elibweb/elib/do/document?set=search&amp;groupid=1&amp;requestid=lib_standard&amp;resultid=22&amp;edition=&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;start=1&amp;publicationId=&amp;urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B28942135');return false"><img border="0" src="/elibweb/elib/images/preview_icon.gif" class="preview-doc" alt="Document Preview" title="Document Preview"></a>
+</div>
+<div class="line1">
+<strong>22.</strong>&nbsp;
+                                            <a href="/elibweb/elib/do/document?set=search&dictionaryClick=&secondaryNav=&groupid=1&requestid=lib_standard&resultid=22&edition=&ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&start=1&publicationId=&urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B28942135">Maybe Your Downtown Needs a Report Card</a>&nbsp;
+                                            Public Management
+                                                &nbsp;Bert Winterbottom<a id="22" href="/elibweb/elib/do/document?set=search&dictionaryClick=&secondaryNav=&groupid=1&requestid=lib_standard&resultid=22&edition=&ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&start=1&publicationId=&urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B28942135" title="Maybe Your Downtown Needs a Report Card"></a><span style="display: none;" id="topicpin22">
+                                              &nbsp;&nbsp;
+			                                        <a href="#topicadminMaybe Your Downtown Needs a Report Card" title="/elibweb/elib/do/document?set=search&amp;dictionaryClick=&amp;secondaryNav=&amp;groupid=1&amp;requestid=lib_standard&amp;resultid=22&amp;edition=&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;start=1&amp;publicationId=&amp;urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B28942135" alt="/elibweb/elib/do/document?set=search&amp;dictionaryClick=&amp;secondaryNav=&amp;groupid=1&amp;requestid=lib_standard&amp;resultid=22&amp;edition=&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;start=1&amp;publicationId=&amp;urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B28942135" id="link22" onclick="saveValueToParent(this);">[Copy To Topic Admin]</a>&nbsp;
+	                                               </span>
+</div>
+<div class="line2">
+<span class="author">Date: 01 Jun 1997</span>&nbsp;&nbsp;|&nbsp;&nbsp;
+                                        <span class="author">Reading Level: 12</span>&nbsp;&nbsp;|&nbsp;&nbsp;
+                                                    <span class="author">Size: 17K</span>&nbsp;&nbsp;|&nbsp;&nbsp;
+
+                                        <span class="author">Keyword Score: 100</span>
+</div>
+<div class="line3">
+<ul><li id="liMyList" ><div id="mylist_item_22" class="notadded">
+<input type="checkbox" value="N" name="22" id="chkMyList" onclick="javascript:addDocumentToMyList('22','/elibweb/elib/do/mylist?mylist=add&amp;set=search&amp;dictionaryClick=&amp;secondaryNav=&amp;start=1&amp;groupid=1&amp;requestid=lib_standard&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;mylisturn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B28942135&amp;resultid=22&amp;edition=&amp;sortResultsBy=TopicRelevance&amp;groupResultsBy=','mylist_item_22',this);"><label for="chkMyList">Add to MyList</label>
+</div></li></ul>
+</div>
+</div>
+<div id="document-preview">
+<div id="document-preview-arrow">&nbsp;</div>
+<div id="document-preview-top">&nbsp;</div>
+<div id="document-preview-body">
+<div style="padding:0.2em 3.4em 0.2em 2em;">
+<h3>
+<div id="document-preview-title"></div>
+</h3>
+<div id="bestpart" style="text-align:left"></div>
+</div>
+</div>
+<div id="document-preview-bottom">&nbsp;</div>
+</div>
+</div>
+</div>
+<div class="dotted2">
+<div class="result normal-document">
+<div class="result-icon">
+<a href="/elibweb/elib/do/document?set=search&dictionaryClick=&secondaryNav=&groupid=1&requestid=lib_standard&resultid=23&edition=&ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&start=1&publicationId=&urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B157508698"><img border="0" alt="Magazines" title="Magazines" src="/elibweb/elib/images/magazines.gif"></a>
+</div>
+<div class="actual-result">
+<div id="bestpart23">
+<a href="#" id="preview-doc" onMouseOver="docOverlay(this,'Student Perceptions of Hybrid Courses: Measuring and Interpreting Quality','document-preview-title','document-preview','bottomright','/elibweb/elib/do/document?set=search&amp;groupid=1&amp;requestid=lib_standard&amp;resultid=23&amp;edition=&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;start=1&amp;publicationId=&amp;urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B157508698','/elibweb/elib/images','bestpart23');return false" onMouseOut="URLoverlayclose('document-preview'); return false" onClick="redirectToDoc('/elibweb/elib/do/document?set=search&amp;groupid=1&amp;requestid=lib_standard&amp;resultid=23&amp;edition=&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;start=1&amp;publicationId=&amp;urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B157508698');return false"><img border="0" src="/elibweb/elib/images/preview_icon.gif" class="preview-doc" alt="Document Preview" title="Document Preview"></a>
+</div>
+<div class="line1">
+<strong>23.</strong>&nbsp;
+                                            <a href="/elibweb/elib/do/document?set=search&dictionaryClick=&secondaryNav=&groupid=1&requestid=lib_standard&resultid=23&edition=&ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&start=1&publicationId=&urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B157508698">Student Perceptions of Hybrid Courses: Measuring and Interpreting Quality</a>&nbsp;
+                                            Journal of Education for Business
+                                                &nbsp;Jackson, Mary Jo; Helms, Marilyn M<a id="23" href="/elibweb/elib/do/document?set=search&dictionaryClick=&secondaryNav=&groupid=1&requestid=lib_standard&resultid=23&edition=&ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&start=1&publicationId=&urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B157508698" title="Student Perceptions of Hybrid Courses: Measuring and Interpreting Quality"><img src="/elibweb/elib/images/scholarly_journals.gif" alt="" border="0" class="category"></a><span style="display: none;" id="topicpin23">
+                                              &nbsp;&nbsp;
+			                                        <a href="#topicadminStudent Perceptions of Hybrid Courses: Measuring and Interpreting Quality" title="/elibweb/elib/do/document?set=search&amp;dictionaryClick=&amp;secondaryNav=&amp;groupid=1&amp;requestid=lib_standard&amp;resultid=23&amp;edition=&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;start=1&amp;publicationId=&amp;urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B157508698" alt="/elibweb/elib/do/document?set=search&amp;dictionaryClick=&amp;secondaryNav=&amp;groupid=1&amp;requestid=lib_standard&amp;resultid=23&amp;edition=&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;start=1&amp;publicationId=&amp;urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B157508698" id="link23" onclick="saveValueToParent(this);">[Copy To Topic Admin]</a>&nbsp;
+	                                               </span>
+</div>
+<div class="line2">
+<span class="author">Date: 01 Sep 2008</span>&nbsp;&nbsp;|&nbsp;&nbsp;
+                                        <span class="author">Reading Level: 10</span>&nbsp;&nbsp;|&nbsp;&nbsp;
+                                                    <span class="author">Size: 33K</span>&nbsp;&nbsp;|&nbsp;&nbsp;
+
+                                        <span class="author">Keyword Score: 100</span>
+</div>
+<div class="line3">
+<ul><li id="liMyList" ><div id="mylist_item_23" class="notadded">
+<input type="checkbox" value="N" name="23" id="chkMyList" onclick="javascript:addDocumentToMyList('23','/elibweb/elib/do/mylist?mylist=add&amp;set=search&amp;dictionaryClick=&amp;secondaryNav=&amp;start=1&amp;groupid=1&amp;requestid=lib_standard&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;mylisturn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B157508698&amp;resultid=23&amp;edition=&amp;sortResultsBy=TopicRelevance&amp;groupResultsBy=','mylist_item_23',this);"><label for="chkMyList">Add to MyList</label>
+</div></li></ul>
+</div>
+</div>
+<div id="document-preview">
+<div id="document-preview-arrow">&nbsp;</div>
+<div id="document-preview-top">&nbsp;</div>
+<div id="document-preview-body">
+<div style="padding:0.2em 3.4em 0.2em 2em;">
+<h3>
+<div id="document-preview-title"></div>
+</h3>
+<div id="bestpart" style="text-align:left"></div>
+</div>
+</div>
+<div id="document-preview-bottom">&nbsp;</div>
+</div>
+</div>
+</div>
+<div class="dotted2">
+<div class="result normal-document">
+<div class="result-icon">
+<a href="/elibweb/elib/do/document?set=search&dictionaryClick=&secondaryNav=&groupid=1&requestid=lib_standard&resultid=24&edition=&ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&start=1&publicationId=&urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B149241808"><img border="0" alt="TV/Radio Transcripts" title="TV/Radio Transcripts" src="/elibweb/elib/images/tvradio.gif"></a>
+</div>
+<div class="actual-result">
+<div id="bestpart24">
+<a href="#" id="preview-doc" onMouseOver="docOverlay(this,'IMPROVING PUBLIC SCHOOL FACILITIES:MARY CULLINANE','document-preview-title','document-preview','bottomright','/elibweb/elib/do/document?set=search&amp;groupid=1&amp;requestid=lib_standard&amp;resultid=24&amp;edition=&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;start=1&amp;publicationId=&amp;urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B149241808','/elibweb/elib/images','bestpart24');return false" onMouseOut="URLoverlayclose('document-preview'); return false" onClick="redirectToDoc('/elibweb/elib/do/document?set=search&amp;groupid=1&amp;requestid=lib_standard&amp;resultid=24&amp;edition=&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;start=1&amp;publicationId=&amp;urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B149241808');return false"><img border="0" src="/elibweb/elib/images/preview_icon.gif" class="preview-doc" alt="Document Preview" title="Document Preview"></a>
+</div>
+<div class="line1">
+<strong>24.</strong>&nbsp;
+                                            <a href="/elibweb/elib/do/document?set=search&dictionaryClick=&secondaryNav=&groupid=1&requestid=lib_standard&resultid=24&edition=&ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&start=1&publicationId=&urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B149241808">IMPROVING PUBLIC SCHOOL FACILITIES:MARY CULLINANE</a>&nbsp;
+                                            Congressional Testimony<a id="24" href="/elibweb/elib/do/document?set=search&dictionaryClick=&secondaryNav=&groupid=1&requestid=lib_standard&resultid=24&edition=&ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&start=1&publicationId=&urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B149241808" title="IMPROVING PUBLIC SCHOOL FACILITIES:MARY CULLINANE"></a><span style="display: none;" id="topicpin24">
+                                              &nbsp;&nbsp;
+			                                        <a href="#topicadminIMPROVING PUBLIC SCHOOL FACILITIES:MARY CULLINANE" title="/elibweb/elib/do/document?set=search&amp;dictionaryClick=&amp;secondaryNav=&amp;groupid=1&amp;requestid=lib_standard&amp;resultid=24&amp;edition=&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;start=1&amp;publicationId=&amp;urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B149241808" alt="/elibweb/elib/do/document?set=search&amp;dictionaryClick=&amp;secondaryNav=&amp;groupid=1&amp;requestid=lib_standard&amp;resultid=24&amp;edition=&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;start=1&amp;publicationId=&amp;urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B149241808" id="link24" onclick="saveValueToParent(this);">[Copy To Topic Admin]</a>&nbsp;
+	                                               </span>
+</div>
+<div class="line2">
+<span class="author">Date: 13 Feb 2008</span>&nbsp;&nbsp;|&nbsp;&nbsp;
+                                        <span class="author">Reading Level: 13</span>&nbsp;&nbsp;|&nbsp;&nbsp;
+                                                    <span class="author">Size: 33K</span>&nbsp;&nbsp;|&nbsp;&nbsp;
+
+                                        <span class="author">Keyword Score: 100</span>
+</div>
+<div class="line3">
+<ul><li id="liMyList" ><div id="mylist_item_24" class="notadded">
+<input type="checkbox" value="N" name="24" id="chkMyList" onclick="javascript:addDocumentToMyList('24','/elibweb/elib/do/mylist?mylist=add&amp;set=search&amp;dictionaryClick=&amp;secondaryNav=&amp;start=1&amp;groupid=1&amp;requestid=lib_standard&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;mylisturn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B149241808&amp;resultid=24&amp;edition=&amp;sortResultsBy=TopicRelevance&amp;groupResultsBy=','mylist_item_24',this);"><label for="chkMyList">Add to MyList</label>
+</div></li></ul>
+</div>
+</div>
+<div id="document-preview">
+<div id="document-preview-arrow">&nbsp;</div>
+<div id="document-preview-top">&nbsp;</div>
+<div id="document-preview-body">
+<div style="padding:0.2em 3.4em 0.2em 2em;">
+<h3>
+<div id="document-preview-title"></div>
+</h3>
+<div id="bestpart" style="text-align:left"></div>
+</div>
+</div>
+<div id="document-preview-bottom">&nbsp;</div>
+</div>
+</div>
+</div>
+<div class="dotted2">
+<div class="result normal-document">
+<div class="result-icon">
+<a href="/elibweb/elib/do/document?set=search&dictionaryClick=&secondaryNav=&groupid=1&requestid=lib_standard&resultid=25&edition=&ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&start=1&publicationId=&urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B115906874"><img border="0" alt="Magazines" title="Magazines" src="/elibweb/elib/images/magazines.gif"></a>
+</div>
+<div class="actual-result">
+<div id="bestpart25">
+<a href="#" id="preview-doc" onMouseOver="docOverlay(this,'Think you\'re a leader? Take our test to find out the truth','document-preview-title','document-preview','bottomright','/elibweb/elib/do/document?set=search&amp;groupid=1&amp;requestid=lib_standard&amp;resultid=25&amp;edition=&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;start=1&amp;publicationId=&amp;urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B115906874','/elibweb/elib/images','bestpart25');return false" onMouseOut="URLoverlayclose('document-preview'); return false" onClick="redirectToDoc('/elibweb/elib/do/document?set=search&amp;groupid=1&amp;requestid=lib_standard&amp;resultid=25&amp;edition=&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;start=1&amp;publicationId=&amp;urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B115906874');return false"><img border="0" src="/elibweb/elib/images/preview_icon.gif" class="preview-doc" alt="Document Preview" title="Document Preview"></a>
+</div>
+<div class="line1">
+<strong>25.</strong>&nbsp;
+                                            <a href="/elibweb/elib/do/document?set=search&dictionaryClick=&secondaryNav=&groupid=1&requestid=lib_standard&resultid=25&edition=&ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&start=1&publicationId=&urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B115906874">Think you're a leader? Take our test to find out the truth</a>&nbsp;
+                                            Healthcare Purchasing News
+                                                &nbsp;Anonymous<a id="25" href="/elibweb/elib/do/document?set=search&dictionaryClick=&secondaryNav=&groupid=1&requestid=lib_standard&resultid=25&edition=&ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&start=1&publicationId=&urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B115906874" title="Think you're a leader? Take our test to find out the truth"></a><span style="display: none;" id="topicpin25">
+                                              &nbsp;&nbsp;
+			                                        <a href="#topicadminThink you're a leader? Take our test to find out the truth" title="/elibweb/elib/do/document?set=search&amp;dictionaryClick=&amp;secondaryNav=&amp;groupid=1&amp;requestid=lib_standard&amp;resultid=25&amp;edition=&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;start=1&amp;publicationId=&amp;urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B115906874" alt="/elibweb/elib/do/document?set=search&amp;dictionaryClick=&amp;secondaryNav=&amp;groupid=1&amp;requestid=lib_standard&amp;resultid=25&amp;edition=&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;start=1&amp;publicationId=&amp;urn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B115906874" id="link25" onclick="saveValueToParent(this);">[Copy To Topic Admin]</a>&nbsp;
+	                                               </span>
+</div>
+<div class="line2">
+<span class="author">Date: 01 Jul 2005</span>&nbsp;&nbsp;|&nbsp;&nbsp;
+                                        <span class="author">Reading Level: 9</span>&nbsp;&nbsp;|&nbsp;&nbsp;
+                                                    <span class="author">Size: 6K</span>&nbsp;&nbsp;|&nbsp;&nbsp;
+
+                                        <span class="author">Keyword Score: 100</span>
+</div>
+<div class="line3">
+<ul><li id="liMyList" ><div id="mylist_item_25" class="notadded">
+<input type="checkbox" value="N" name="25" id="chkMyList" onclick="javascript:addDocumentToMyList('25','/elibweb/elib/do/mylist?mylist=add&amp;set=search&amp;dictionaryClick=&amp;secondaryNav=&amp;start=1&amp;groupid=1&amp;requestid=lib_standard&amp;ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&amp;mylisturn=urn%3Abigchalk%3AUS%3BBCLib%3Bdocument%3B115906874&amp;resultid=25&amp;edition=&amp;sortResultsBy=TopicRelevance&amp;groupResultsBy=','mylist_item_25',this);"><label for="chkMyList">Add to MyList</label>
+</div></li></ul>
+</div>
+</div>
+<div id="document-preview">
+<div id="document-preview-arrow">&nbsp;</div>
+<div id="document-preview-top">&nbsp;</div>
+<div id="document-preview-body">
+<div style="padding:0.2em 3.4em 0.2em 2em;">
+<h3>
+<div id="document-preview-title"></div>
+</h3>
+<div id="bestpart" style="text-align:left"></div>
+</div>
+</div>
+<div id="document-preview-bottom">&nbsp;</div>
+</div>
+</div>
+</div>
+<hr>
+<div id="pagination">
+<span></span>
+<ul>
+<li>
+<span align="bottom"><b>1</b></span>
+</li>
+<li>
+<a href="/elibweb/elib/do/results?set=search&dictionaryClick=&secondaryNav=&maxresultsperpage=0&edition=&ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&sortResultsBy=TopicRelevance&groupResultsBy=&rel=1&tagtosort=&start=26">2</a>
+</li>
+<li>
+<a href="/elibweb/elib/do/results?set=search&dictionaryClick=&secondaryNav=&maxresultsperpage=0&edition=&ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&sortResultsBy=TopicRelevance&groupResultsBy=&rel=1&tagtosort=&start=51">3</a>
+</li>
+<li>
+<a href="/elibweb/elib/do/results?set=search&dictionaryClick=&secondaryNav=&maxresultsperpage=0&edition=&ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&sortResultsBy=TopicRelevance&groupResultsBy=&rel=1&tagtosort=&start=76">4</a>
+</li>
+<li>
+<a href="/elibweb/elib/do/results?set=search&dictionaryClick=&secondaryNav=&maxresultsperpage=0&edition=&ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&sortResultsBy=TopicRelevance&groupResultsBy=&rel=1&tagtosort=&start=101">5</a>
+</li>
+<li>
+<a href="/elibweb/elib/do/results?set=search&dictionaryClick=&secondaryNav=&maxresultsperpage=0&edition=&ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&sortResultsBy=TopicRelevance&groupResultsBy=&rel=1&tagtosort=&start=126">6</a>
+</li>
+<li>
+<a href="/elibweb/elib/do/results?set=search&dictionaryClick=&secondaryNav=&maxresultsperpage=0&edition=&ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&sortResultsBy=TopicRelevance&groupResultsBy=&rel=1&tagtosort=&start=151">7</a>
+</li>
+<li>
+<a href="/elibweb/elib/do/results?set=search&dictionaryClick=&secondaryNav=&maxresultsperpage=0&edition=&ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&sortResultsBy=TopicRelevance&groupResultsBy=&rel=1&tagtosort=&start=176">8</a>
+</li>
+<li>
+<a href="/elibweb/elib/do/results?set=search&dictionaryClick=&secondaryNav=&maxresultsperpage=0&edition=&ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&sortResultsBy=TopicRelevance&groupResultsBy=&rel=1&tagtosort=&start=201">9</a>
+</li>
+<li>
+<a href="/elibweb/elib/do/results?set=search&dictionaryClick=&secondaryNav=&maxresultsperpage=0&edition=&ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&sortResultsBy=TopicRelevance&groupResultsBy=&rel=1&tagtosort=&start=226">10</a>
+</li>
+</ul>
+<span><a href="/elibweb/elib/do/results?set=search&dictionaryClick=&secondaryNav=&maxresultsperpage=0&edition=&ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&sortResultsBy=TopicRelevance&groupResultsBy=&rel=1&tagtosort=&start=26">Next »</a><a href="/elibweb/elib/do/results?set=search&dictionaryClick=&secondaryNav=&maxresultsperpage=0&edition=&ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701&sortResultsBy=TopicRelevance&groupResultsBy=&rel=1&tagtosort=&start=376">Last</a></span>
+</div>
+<script type="text/javascript">
+					function handleError()
+					{
+					  return true;
+					}
+
+					function startsWith(theString, startsWith) {
+					  //NOTE! -> This call is to hide errors in case they happen
+					  //when a non topic training administrator is is using this
+					  //page.  Comment this out if you are debugging
+					  //an issue.
+					  window.onerror = handleError;
+					  var startsWithLenght = startsWith.length;
+					  var subString = theString.substring(startsWithLenght, 0);
+					  if (subString.toLowerCase()==startsWith.toLowerCase()) {
+					    return true;
+					  } else {
+					    return false;
+					  }
+					}
+
+					var glblShowTopicAdminLink = 'false';
+
+					//alert(opener.name);
+					if (opener) {
+            //NOTE! -> This call is to hide errors in case they happen
+            //when a non topic training administrator is using this
+            //page.  Comment this out if you are debugging
+            //an issue.
+            window.onerror = handleError;
+					  var topicadminFlag = startsWith(opener.name,'topicadmin');
+					  if (topicadminFlag) {
+					    glblShowTopicAdminLink = 'true';
+					  } else {
+					    glblShowTopicAdminLink = 'false';
+					  }
+					} else {
+					  glblShowTopicAdminLink = 'false';
+					}
+
+					showObjects();
+				</script>
+</div>
+</div>
+</div>
+</div><!-- Build Version : elib_release_16_00_010 --><div class="section">
+<div id="footerWrap">
+<div id="footer">
+<p>Copyright &copy; 2010&nbsp;<a href="http://www.proquest.com">ProQuest LLC</a>&nbsp; All rights reserved. - <a href="http://www.il.proquest.com/proquest/terms.shtml">Terms and Conditions</a>&nbsp;&nbsp;v16.00 
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+						<a href="/elibweb/elib/do/educatorstool?ts=C13EB8FA16DDFCB3F89ECDCED46E9BD9_1289936672701"><span>Educator's Tool</span></a>
+</p>
+<a href="http://www.proquest.com"><img src="/elibweb/elib/images/pq_logo_gray.gif" width="119" height="45" alt="ProQuest" title="ProQuest"></a>
+</div>
+</div>
+</div>
+</body>
+</html>

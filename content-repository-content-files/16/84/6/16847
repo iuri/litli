@@ -1,0 +1,177 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN//3.2">
+
+<html>
+<head>
+	<title>About Volunteer Service Credits</title>
+</head>
+<BODY bgcolor="#FFFFFF" text="#000000">
+<!--webbot bot="HTMLMarkup" startspan -->
+[[EVAL:IF:[[GETDATA:HomeButton:Length]]>0
+	:
+	[[GETDATA:XYZZY:CHECK=/td/default.htm]]
+	:       <!-- not going home, do nothing -->
+]]
+[[EVAL:IF:[[GETDATA:TourButton:Length]]>0
+	:
+	[[GETDATA:XYZZY:CHECK=/td/default.htm]]
+	:       <!-- not going home, do nothing -->
+]]
+[[EVAL:IF:[[GETDATA:TechButton:Length]]>0
+	:
+	[[GETDATA:XYZZY:CHECK=/td/td-table.htm]]
+	:       <!-- not going home, do nothing -->
+]]
+<!--webbot bot="HTMLMarkup" endspan -->
+<table border="0" width="674" cellspacing="0" cellpadding="2">
+  <tr>
+  	<form action="/cgi-bin/virtuflex.exe" method="get">
+			<input type="hidden" name="template" value="/td/About.htm">
+    <td width="553" bgcolor="#DDDDDD" align="left"><font size="2">
+			<input type="submit" name="TechButton" value="Technical Intro and Software Download" style="position: relative; width: 300; height: 25; float: left; font-size: 8pt; font-weight: bold"><input type="submit" name="TourButton" value="Back to Tour" style="position: relative; float: left; height: 25"></font></td>
+    <td width="109" bgcolor="#FFFFFF" align="left">
+      <p align="right">&nbsp;</td>
+   <form>
+  </tr>
+  <tr>
+    <td width="553" align="left">
+      <p align="left">&nbsp;
+      <table border="0" width="100%">
+        <tr>
+          <td width="50%"><font size="2"><img border="0" src="/td/images/what_are_timedollars.gif" width="325" height="55"></font></td>
+          <td width="50%"><img border="0" src="/td/images/your_reward.gif" align="right" width="117" height="96"></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table border="0" cellspacing="0" cellpadding="2" height="1063" width="560">
+  <tr>
+    <td height="37"><font size="2"><img border="0" src="/td/images/redefining_work.gif" width="161" height="35"></font></td>
+    <td height="37"></td>
+    <td height="37">
+      <p align="right"></td>
+  </tr>
+  <tr>
+    <td colspan="3" height="78">
+
+<p><font size="2">How can we redefine work that all who are willing to help others
+can earn sufficient purchasing power and secure a decent standard
+of living?</font></p>
+
+<p><font size="2">That is the question that drives Time Dollars.</font></p>
+
+    </td>
+  </tr>
+  <tr>
+    <td height="37"><font size="2"><img border="0" src="/td/images/the_global_marktet_economy.gif" width="250" height="35"></font></td>
+    <td height="37"></td>
+    <td height="37"></td>
+  </tr>
+  <tr>
+    <td colspan="3" height="135"><font size="2">Right now, global market economy
+      defines what work is, who works, how much one earns and what standard of
+      living one can enjoy. Events beyond our control determine the worth of the
+      dollar and the worth of our labor. Under this market economy, millions of
+      people -- senior citizens, teens, single heads of household, the disabled,
+      the unemployed -- have been designated as 'takers' and consigned to the
+      scrap heap for using society's resources without giving back. We believe
+      that these 'takers' are productive human beings who have been desempowered
+      by institutional barriers.</font></td>
+  </tr>
+  <tr>
+    <td colspan="3" height="37"><font size="2"><img border="0" src="/td/images/rewarding_labor.gif" width="400" height="35"></font></td>
+  </tr>
+  <tr>
+    <td colspan="3" height="154">
+
+<p><font size="2">We also believe that our society has to value and reward labor
+that the market economy does not pay for: reaching out to families
+at risk caring for latchkey children learning making democracy
+work keeping neighborhoods safe and clean dealing with AIDS taking
+care of our elderly</font></p>
+
+<p><font size="2">Much of this work used to be done in the home, by families,
+by neighbors, by extended family and by the elderly. Much of this
+work was and is exacted unjustly by the subordination of women
+and minorities.</font></p>
+
+    </td>
+  </tr>
+  <tr>
+    <td height="37"><font size="2"><img border="0" src="/td/images/the_time_Dollarsmobil.gif" width="269" height="35"></font></td>
+    <td height="37"></td>
+    <td height="37"></td>
+  </tr>
+  <tr>
+    <td colspan="3" height="78"><font size="2">Time Dollars is mobilizing the
+      vast reservoir of human talent untapped by the market economy to rebuild
+      the infrastructure of caring and trust that holds us together. Through a
+      new tax-exempt currency called Time Dollars, decency can now be rewarded
+      as automatically as self-interest already is.</font></td>
+  </tr>
+  <tr>
+    <td height="37"><font size="2"><img border="0" src="/td/images/how_youcanhelp.gif" width="177" height="35"></font></td>
+    <td height="37"></td>
+    <td height="37"></td>
+  </tr>
+  <tr>
+    <td colspan="3" height="59"><font size="2">And you can be part of this exciting new concept by starting
+a Time Dollar project in your community, or by making it possible
+for others to implement their own innovative programs.</font></td>
+  </tr>
+  <tr>
+    <td colspan="3" height="40"><font size="2"><a HREF="mailto:kkomoski@epie.org">Contact the LINCT Coalition now</a>
+and we'll send you all the information you'll need to start the
+ball rolling!</font></td>
+  </tr>
+  <tr>
+    <td colspan="3" height="138">
+
+<p><font size="2">Founding Members of the LINCT Coalition -- visit LINCT <a HREF="http://www.linct.org">here</a>
+</font>
+<i>
+<ul>
+<li><font size="2">EPIE Institute (631-728-9100)</font>
+<li><font size="2">The Time Dollar Institute (202-686-5200)</font>
+<li><font size="2">The Center for Information, Technology &amp; Society (781-662-4044)</font>
+</ul>
+</i>
+
+      <p>&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="3" height="100">
+
+<p>&nbsp; <hr ALIGN="LEFT">
+
+      <font size="2">
+
+*Adapted from <i>What Are Time Dollars</i> by Dr. Edgar Cahn, founder of the Time Dollar Institute.  Please visit the <a HREF="http://www.timedollar.org/">Time Dollar Home Page</a> or send mail to the <a HREF="mailto:info@timedollar.org">Time Dollar Institute</a>
+      </font></td>
+  </tr>
+  <tr>
+    <td height="12"></td>
+    <td height="12"></td>
+    <td height="12">
+      <p align="right"><font size="2"><input type="submit" name="TourButton" value="Back to Tour">
+      </font></td>
+  </tr>
+  <tr>
+    <td colspan="3" height="24"></td>
+  </tr>
+</table>
+
+<h2 align="center">&nbsp;</h2>
+
+<p>&nbsp;</p>
+
+<h2>&nbsp;</h2>
+
+<h2>&nbsp;</h2>
+
+<p>&nbsp;</p>
+
+<h2>&nbsp;</h2>
+
+<p><a href="td-table.htm"><font size="2"></font></a></p>
+</html>

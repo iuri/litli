@@ -1,0 +1,909 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>One Member</title>
+</head>
+<BODY bgcolor="#FFFFFF" text="#000000">
+<!-- Come here with either MemID, or NewButton=New 			(&MemOrgID is not used on this page)			Uses VirtuFlex MemID and SiteID because of New -->
+
+<!--webbot bot="HTMLMarkup" startspan -->
+[[SET:DefaultDbase:c\:\timed\tddemo.mdb]]
+<!--If pushed Cancel button, force move back to organiza.htm -->
+[[EVAL:IF:[[GETDATA:Cancel]]=Cancel
+:
+	[[GETDATA:XYZZY:CHECK=/td/members.htm]]
+: <!-- no cancel -->
+]]
+<!--If pushed Passbook button, display Passbook -->
+[[EVAL:IF:[[GETDATA:PassbookButton]]=Passbook
+:
+	[[GETDATA:XYZZY:CHECK=/td/mempass.htm]]
+: <!-- no Passbook -->
+]]
+[[EVAL:IF:[[GETDATA:ChgAttributes:LENGTH]]> 0
+:
+	[[GETDATA:XYZZY:CHECK=/td/AttrChg.htm]]
+: <!-- not going to Change Attributes, do nothing -->
+]]
+[[EVAL:IF:[[GETDATA:ChgServices:LENGTH]]> 0
+:
+	[[GETDATA:XYZZY:CHECK=/td/ServChg.htm]]
+: <!-- not going to Change Services, do nothing -->
+]]
+<div>
+<!--webbot bot="HTMLMarkup" startspan -->
+[[EVAL:IF:[[GETDATA:Tour]]=top-s
+	:
+<!--webbot bot="HTMLMarkup" endspan -->
+<center>
+<table bgcolor="#F0FFFF">
+	<th align="center">
+You (as someone seeking services) have reached &quot;Member's Profile&quot; via the <font color="#0066FF">Tour</font><br>
+To normally arrive here do&#58<br>
+<font color="#0066FF">Home/Tour Page==&gt;Main Buttons==&gt;Members==&gt;Search==&gt;Show<br></font>
+Please use the browser's 'Back' to return to the Tour<br>
+    </th></table>
+<!--webbot bot="HTMLMarkup" startspan -->
+	:
+]]
+<!--webbot bot="HTMLMarkup" endspan -->
+</center>
+</div>
+<!-- check for either New or Updating -->
+[[EVAL:IF:[[EVAL:BOOL:
+	[[EVAL:BOOL:[[GETDATA:Once]]=Record
+	]] ||
+	[[EVAL:BOOL:[[GETDATA:NewButton]]=New
+	]]
+				  ]]
+		:<!-- New or Once  -->
+			[[EVAL:IF:[[GETDATA:NewButton]]=New
+				:<!-- if new, "starters" -->
+<!--webbot bot="HTMLMarkup" endspan -->			 
+					<center>
+					<font size="+2">
+						<b>Enter Information about the New Member</b>
+					</font>
+					</center>
+					<!-- remove any partial records -->
+					<!-- must explicitly specify Site because that field is						keyed and ODBC won't delete otherwise -->
+<!--webbot bot="HTMLMarkup" startspan -->					       
+					[[DBASE:DEL:[Member Table]:Site=1 and Updated is null]]
+					<!-- add the new record -->
+					[[SET:VAR:Identifier=[[DBASE:SELECT:[System Information]:
+						1=1:{MAX(SystemCode)}{MAX(NextToAssign)}]]]]
+					[[DBASE:ADD:[Member Table]:
+						{Site|1}
+						{Balance|0}
+						{Identifier|[[GETDATA::VAR=Identifier]]}
+						{Availability|0}
+						{Entered|[[GETDATA::DATE=m/d/y]] [[GETDATA::TIME]]}
+						{Comments|Replace this with comments about the Member.}
+					]]
+					[[SET:VAR:Identifier=[[EVAL:MATH:[[GETDATA::VAR=Identifier|SUBSTR=5=8]]+1]]]]
+					[[DBASE:SQL:Update [System Information] SET
+						NextToAssign=[[GETDATA::VAR=Identifier]]
+					]]
+					<!-- this was returning prior record unless I close and reopen -->
+					[[SET:DefaultDbase:c\:\timed\tddemo.mdb]]
+					[[SET:VAR:MemID=[[DBASE:SELECT:[Member Table]:
+						1=1:{MAX(MemID)}]]]]
+					<!-- this is an empty site ID -->
+					[[SET:VAR:SiteID=1]]
+				: <!-- not New then must be Once, do update here -->
+					<!-- (1.)  If 'Once' is Record, then if (2.) all data is present, then update-->
+					<!-- AssignID will have been passed to the page -->
+					[[SET:VAR:MemID=[[GETDATA:MemID]]]]
+					[[SET:VAR:SiteID=[[GETDATA:SiteID]]]]
+					[[EVAL:IF:[[EVAL:BOOL:
+						[[EVAL:BOOL:[[EVAL:BOOL:[[GETDATA:FirstName:LENGTH]] != 0]] &&
+							[[EVAL:BOOL:[[EVAL:BOOL:[[GETDATA:LastName:LENGTH]] != 0]] &&
+								[[EVAL:BOOL:[[EVAL:BOOL:[[GETDATA:Street:LENGTH]] != 0]] &&
+									[[EVAL:BOOL:[[EVAL:BOOL:[[GETDATA:HomePhone:LENGTH]] != 0]] &&
+										[[EVAL:BOOL:[[EVAL:BOOL:[[GETDATA:WorkPhone:LENGTH]] != 0]] &&
+											[[EVAL:BOOL:[[EVAL:BOOL:[[GETDATA:City:LENGTH]] != 0]] &&
+												[[EVAL:BOOL:[[EVAL:BOOL:[[GETDATA:State:LENGTH]] != 0]] &&
+													[[EVAL:BOOL:[[EVAL:BOOL:[[GETDATA:Zipcode:LENGTH]] != 0]] &&
+														[[EVAL:BOOL:[[EVAL:BOOL:[[GETDATA:Identifier:LENGTH]] != 0]] &&
+															[[EVAL:BOOL:[[EVAL:BOOL:[[GETDATA:Balance:LENGTH]] != 0]] &&
+																[[EVAL:BOOL:[[EVAL:BOOL:[[GETDATA:CoordAlfa:LENGTH]] != 0]] &&
+																	[[EVAL:BOOL:[[GETDATA:CoordNum:LENGTH]] != 0]]
+																]]
+															]]
+														]]
+													]]
+												]]
+											]]
+										]]
+									]]
+								]]
+							]]
+						]]
+								]]
+					: <!-- TRUE -- all data good -->
+						<!-- if this was in BASIC it would look like --
+						DIM VAR(21)
+						X=0
+						VAR(0)=1
+						VAR(20)=1
+						FOR I=20 to 1 STEP -1
+						X=X+(2*VAR(I))^I
+						NEXT
+						X=X+VAR(0)
+						PRINT "Availability=";X
+						where X=1048575 when these 2 cells == 1,
+						Sunday morning, and Saturday evening -->
+						[[SET:VAR:I=20]]
+						[[SET:VAR:AVAILABILITY=0]]
+						[[EVAL:WHILE:[[GETDATA::VAR=I]] >0
+							: <!-- body of within loop -->
+								[[SET:VAR:Availability=[[EVAL:MATH:
+									[[GETDATA::VAR=Availability]] +
+									[[EVAL:MATH:
+										[[EVAL:MATH:
+											2*[[GETDATA:[[GETDATA::VAR=I]]Check:CONVERT=on=1|CONVERT=off=0]]
+										]]
+										^[[GETDATA::VAR=I]]
+									]]
+								]]]]
+								[[SET:VAR:I=[[GETDATA::VAR=I|DECR]]]]
+						]]<!-- end of update loop (EVAL WHILE) -->
+						<!-- when VirtuFlex numbers exceed a million, they have
+						 a decimal and 6 trailing zeros, remove .000000 -->
+						[[SET:VAR:Availability=[[GETDATA::VAR=Availability|PREPEND=`|PARSE=`=.]]]]
+						[[SET:VAR:MemSince=[[GETDATA:MemSinceMMSelect]]/[[GETDATA:MemSinceDDSelect]]/[[GETDATA:MemSinceYYSelect]] 0\:0\:0]]
+						[[DBASE:SQL:Update [Member Table] SET
+							FirstName='[[GETDATA:FirstName]]',
+							LastName='[[GETDATA:LastName]]',
+							HomePhone='[[GETDATA:HomePhone]]',
+							WorkPhone='[[GETDATA:WorkPhone]]',
+							Street='[[GETDATA:Street]]',
+							City='[[GETDATA:City]]',
+							State='[[GETDATA:State]]',
+							Zipcode='[[GETDATA:Zipcode]]',
+							Identifier='[[GETDATA:Identifier]]',
+							Balance=[[GETDATA:Balance]],
+							CoordAlfa='[[GETDATA:CoordAlfa]]',
+							CoordNum='[[GETDATA:CoordNum]]',
+							Availability=[[GETDATA::VAR=Availability]],
+							UserNum=
+								[[EVAL:IF:[[GETDATA:UserNum:LENGTH]] != 0
+					:'[[GETDATA:UserNum:CONVERT='='']]'
+					:' '
+								]],
+							SignedForms=
+							[[EVAL:IF:[[GETDATA:SignedForms]]=on
+								:
+								   -1
+							  :
+								   0
+							]],
+							Inactive=
+							[[EVAL:IF:[[GETDATA:Inactive]]=on
+								:
+								  -1
+								:
+								   0
+							]],
+							MemSince=[[GETDATA::VAR=MemSince|PREPEND='|CONVERT= = |POSTPEND='|CONVERT=' 1/ 1/1900 0\:0\:0'=null]],
+							Comments=
+							[[EVAL:IF:[[GETDATA:Comments:LENGTH]] != 0
+				:
+									'[[GETDATA:Comments:CONVERT='='']]'
+					:
+									' '
+							]],
+							Emergency=
+							[[EVAL:IF:[[GETDATA:Emergency:LENGTH]] != 0
+				:
+									'[[GETDATA:Emergency:CONVERT='='']]'
+					:
+									' '
+							]],
+							Doctor=
+							[[EVAL:IF:[[GETDATA:Doctor:LENGTH]] != 0
+					:
+									'[[GETDATA:Doctor:CONVERT='='']]'
+					:
+									' '
+							]],
+							Updated='[[GETDATA::DATE=m/d/y]] [[GETDATA::TIME]]'
+							where MemID=[[GETDATA::VAR=MemID]]
+						]] <!-- DBASE update -->
+					  <!-- double quote ok in SQL, but single quote(apostrophe) needs to be doubled-->
+					<!-- update database each time user submits current page (with data)-->
+					:
+						<!-- missing data-->
+					[[GETDATA:XYZZY:CHECK=/td/OneEer.htm]]
+				]] <!-- end data check -->
+<!--webbot bot="HTMLMarkup" endspan -->	
+				<font size="+2">
+				<center>
+				<b>
+                Updated Volunteer Member
+				<img src="/td/blank.gif" alt width="50" height="1">
+				</b>
+				</center>
+<!--webbot bot="HTMLMarkup" startspan -->	
+			]] <!-- end not New, was Once -->
+		: <!-- not New or Once -->
+	<!-- no code at this indent level -->
+<!--webbot bot="HTMLMarkup" endspan -->	
+	<font size="+2">
+	<center>
+	<b>
+	Volunteer Member
+	</font>
+	</b>
+	</center>
+<!--webbot bot="HTMLMarkup" startspan -->	
+		[[SET:VAR:MemID=[[GETDATA:MemID]]]]
+		[[SET:VAR:SiteID=[[GETDATA:SiteID]]]]
+]]
+<!-- Eli made this qualifier 'Sender'
+      tried to send from members.htm, etc. -->
+[[SET:VAR:MemSinceIsNotNull=[[DBASE:SELECT:[Member Table]
+	:MemID=[[GETDATA::VAR=MemID]]
+	AND MemSince is not null AND
+	MemSince <>  1/ 1/1900
+	:
+	{Count(MemID)}]]]]
+[[SET:VAR:Availability=[[DBASE:SELECT:[Member Table]
+	:MemID=[[GETDATA::VAR=MemID]]
+	:
+	{Availability}]]]]
+<!-- true VirtuFlex bug -- all math results in >= 0, never negative -->
+<!-- next operation if written in Basic (X being Availability)
+	FOR I=20 TO 0 STEP -1
+	IF 2^I-X > 0 THEN ELSE PRINT I (colon) X=X-2^I
+	NEXT
+	-->
+[[SET:VAR:I=20]]
+[[EVAL:WHILE:[[GETDATA::VAR=I]]>=0
+	: <!-- body of within loop -->
+		[[EVAL:IF:[[EVAL:MATH:
+				[[EVAL:MATH:
+					2^[[GETDATA::VAR=I]]-[[GETDATA::VAR=Availability]]
+																			]]
+							]] > 0
+			:<!-- true -->
+				[[SET:VAR:[[GETDATA::VAR=I]]Check=]]
+			: <!-- false -->
+				[[SET:VAR:[[GETDATA::VAR=I]]Check=CHECKED]]
+				[[SET:VAR:Availability=[[EVAL:MATH:
+					[[GETDATA::VAR=Availability]]-2^[[GETDATA::VAR=I]]
+															 ]]]]
+		]] <!-- end EVAL IF -->
+		[[SET:VAR:I=[[GETDATA::VAR=I|DECR]]]]
+]]<!-- end of update loop (EVAL WHILE) -->
+<form action="/cgi-bin/virtuflex.exe" method="get">
+	<input type="hidden" name="template" value="/td/OneMembr.htm">
+	<input type="hidden" name="MemID" value="[[GETDATA::VAR=MemID]]">
+	<input type="hidden" name="SiteID" value="[[GETDATA::VAR=SiteID]]">
+	<input type="hidden" name="Label" value="Member">
+[[DBASE:SELECT:[Member Table]:MemID=[[GETDATA::VAR=MemID]]
+:
+<!--webbot bot="HTMLMarkup" endspan -->
+	<table bgcolor="#F5F5F5" border="0" cellpadding="0" cellspacing="0" width="776" height="40">
+    <tr>
+      <td width="129" border="0" height="40">
+            <p align="right"><font size="3">
+				First Name
+			</font>
+		</td>
+		<center>
+      <td width="276" border="0" height="40">
+            <font size="3"><input type="text" name="FirstName" size="20" MAXLENGTH="20" value="{FirstName}">
+			</font>
+		</td>
+      </center>
+      <td width="371" border="0" height="40">
+            <p align="right">
+            <font size="+2"><b><font size="-1">
+				<a href="/cgi-bin/virtuflex.exe?template=/td/OneMembr.htm&amp;Label=Member&amp;MemID=[[GETDATA:MemID]]&amp;SiteID=[[GETDATA:SiteID]]#third"><font color="#0066FF">Jump to Member Attributes and Services</font></a>
+				</font>
+				</b>
+            </font>
+       </td>
+    <tr>
+      <td width="129" border="0" height="40">
+            <p align="right"><font size="3">
+				Last Name&nbsp;
+			</font>
+		</td>
+		<center>
+      <td width="276" border="0" height="40">
+            <font size="3"><input type="text" name="LastName" size="20" MAXLENGTH="30" value="{LastName}">
+			</font>
+		</td>
+		</center>
+      <td border="0" height="40">
+      <p align="right">
+			<font size="+2">
+				<input type="submit" name="Cancel" value="Cancel">
+				<input type="submit" name="Once" value="Record">
+			</font>
+      </p>&nbsp;
+    <tr>
+      <td width="129" border="0" height="40">
+            <p align="right"><font size="3">
+				HomePhone
+			</font>
+		</td>
+		<center>
+      <td width="276" border="0" height="40">
+            <font size="3">&nbsp;<input type="text" name="HomePhone" size="20" MAXLENGTH="20" value="{HomePhone}">
+			</font>
+		</td>
+      <td width="371" border="0" height="40">
+			<font size="3&gt;
+				&lt;img src=" /td/blank.gif" alt width="20" height="1"><img src="/td/blank.gif" alt width="3" height="1" alt>
+				Identifier <input type="text" name="Identifier" size="12" value="{Identifier}">
+			</font>
+		</td>
+		</center>
+    <tr>
+      <td width="129" border="0" height="40">
+			<p align="right"><font size="3">
+				WorkPhone
+			</p>
+			</font>
+		</td>
+		<center>
+      <td width="276" border="0" height="40">
+            <font size="3"><input type="text" name="WorkPhone" size="20" MAXLENGTH="20" value="{WorkPhone}">
+			</font>
+		</td>
+		<td width="371" border="0" height="40">
+			<font size="3&gt;
+				&lt;img src=" alt width="20" height="1" /td/blank.gif"><img src="/td/blank.gif" alt width="10" height="1" alt>
+				Balance <input type="text" name="Balance" size="9" value="{Balance}">
+			</font>
+		</td>
+		</center>
+    <tr>
+      <td width="129" border="0" height="40">
+			<p align="right"><font size="3">
+				Street&nbsp;
+			</p>
+			</font>
+		</td>
+		<center>
+      <td width="276" border="0" height="40">
+            <font size="3">&nbsp;<input type="text" name="Street" size="20" MAXLENGTH="40" value="{Street}">
+			</font>
+		</td>
+      <td width="371" border="0" height="40">
+			<font size="3&gt;
+				&lt;img src=" /td/blank.gif" alt width="20" height="1">Map
+				Location
+			</font>
+		</td>
+      </center>
+    <tr>
+      <td width="129" border="0" height="40">
+			<p align="right">
+				<font size="3">
+					City
+				</font>
+			</p>
+		</td>
+			<center>
+      <td width="276" border="0" height="40">
+            <font size="3">
+            	<input type="text" name="City" size="20" MAXLENGTH="20" value="{City}">
+				State&nbsp;
+				<input type="text" name="State" size="2" MAXLENGTH="2" value="{State}">
+			</font>
+		</td>
+      <td width="371" border="0" height="40">
+            <font size="3&gt;&lt;img src=" /td/blank.gif" alt width="20" height="1"> Coordinates
+				<img src="/td/blank.gif" alt width="52" height="11" alt> <select name="CoordAlfa" size="1">
+      <option selected>{CoordAlfa} </option>
+	<option>NA</option>
+	<option>A</option>
+	<option>B</option>
+	<option>C</option>
+	<option>D</option>
+	<option>E</option>
+	<option>F</option>
+	<option>G</option>
+	<option>H</option>
+	<option>I</option>
+	<option>J</option>
+	<option>K</option>
+	<option>L</option>
+	<option>M</option>
+	<option>N</option>
+	<option>O</option>
+      </select>
+			<select name="CoordNum" size="1">
+	<option selected>{CoordNum}</option>
+	<option>NA</option>
+	<option>1</option>
+	<option>2</option>
+	<option>3</option>
+	<option>4</option>
+	<option>5</option>
+	<option>6</option>
+	<option>7</option>
+	<option>8</option>
+	<option>9</option>
+	<option>10</option>
+	<option>11</option>
+	<option>12</option>
+	<option>13</option>
+	<option>14</option>
+	<option>15</option>
+      </select> </font>
+      </center>
+     </td>
+    <tr>
+      <td width="129" border="0" height="40">
+            <p align="right"><font size="3">
+				Zipcode
+			</font>
+		</td>
+<center>
+      <td width="276" border="0" height="40">
+            <font size="3"><input type="text" name="Zipcode" size="10" MAXLENGTH="10" value="{Zipcode}">
+            &nbsp;
+			</font>
+		</td>
+      <td width="371" border="0" height="40">
+            &nbsp;</center>
+		</td>
+    <tr>
+      <td width="129" border="0" height="82">
+            <p align="right">
+            <font size="3">
+				Insurance</font>
+		</td>
+<center>
+      <td width="276" border="0" height="82">
+            <font size="1">&nbsp; <textarea rows="2" name="Insurance" cols="20" MAXLENGTH="50">{Insurance}</textarea>
+			</font>
+		</td>
+      <td width="371" border="0" height="82">
+			<font size="3&gt;
+				&lt;img src=" /td/blank.gif" alt width="20" height="1">
+				&nbsp; 
+			</font>
+    </center>
+    <tr>
+      <td width="129" border="0" height="1">
+            <p align="right">
+            <font size="3">
+                &nbsp;Drivers License
+			</font>
+            </p>
+		</td>
+	<center>
+      <td width="276" border="0" height="1">
+            <font size="3"><input type="text" name="DriversLicense1" size="20" MAXLENGTH="20" value="{DriversLicense}">
+			</font>
+		</td>
+	</center>
+		<td width="369">
+			&nbsp;
+		</td>
+    </tr>
+  </table>
+<a NAME="second"></a>
+<!-- COULD NOT GET THESE NEXT TWO TO BE ONE OVER THE OTHER WITHOUT A TABLE-->
+<table>
+<!--webbot bot="HTMLMarkup" startspan -->
+[[EVAL:IF:[[GETDATA:Tour]]=second
+	:
+<!--webbot bot="HTMLMarkup" endspan -->
+	<tr><td>
+<table align="left" bgcolor="#F0FFFF" width="700">
+	<th align="center" width="289">
+		<br>
+		You (as a Facilitator) have reached &quot;Record Comments About
+        Members&quot; via the <font color="#0066FF">Tour</font><br>
+		To normally arrive here do&#58;<br>
+		<font color="#0066FF">Home/Tour Page==&gt;Main Buttons==&gt;Members==&gt;Criteria/Search==&gt;Scroll Down==&gt;View==&gt;Show==&gt;Scroll Down to here<br>
+		<font color="000000">
+		Please use the browser's 'Back' to return to the Tour</font>
+    </th>
+	<th align="center" width="188">
+		<br>
+    </th>
+</table>
+</td>
+</tr>
+<!--webbot bot="HTMLMarkup" startspan -->
+	:
+]]
+<!--webbot bot="HTMLMarkup" endspan -->
+<tr><td>
+  <table width="776" bgcolor="#F5F5F5" cellspacing="0" cellpadding="0">
+  	<tr valign="top">
+  		<td width="450">
+  		<font size="5">
+ 			Comments
+ 		</font>
+ 		<font size="3">
+ 			(auto-wrap, only use &quot;Enter&quot; for new paragraph)
+		</font>
+		<p>
+			<textarea rows="10" name="Comments" cols="46" wrap="virtual">{Comments}
+			</textarea>
+		</p>
+  		</td>
+  		<td width="996">
+            <font size="3">
+					<img src="/td/blank.gif" alt width="20" height="1">
+					<p>
+						<img src="/td/blank.gif" ALT width="30" height="1" alt>
+						<input type="checkbox" name="Inactive" {Inactive|CONVERT="1=CHECKED|CONVERT=0=}">
+<!--webbot bot="HTMLMarkup" startspan -->
+		]]<!-- end DBASE -->
+<!--webbot bot="HTMLMarkup" endspan -->
+						Inactive
+					</p>
+					<input type="hidden" name="Inactive" value="off">
+      <p><font size="5">Site</font></p>
+      <p>
+      <!-- essentially copied from organiza.htm -- but site info-->
+<!--webbot bot="HTMLMarkup" startspan -->
+[[DBASE:SELECT:[Site Table]:SiteID=[[GETDATA::VAR=SiteID]]:
+<!--webbot bot="HTMLMarkup" endspan -->
+			</p>
+      <table bgcolor="#F4FCFF" border="0" cellspacing="0" cellpadding="0">
+	<tr>
+	  <td width="140"><font size="-3">{Name}</font></td>
+	</tr>
+	<tr>
+	  <td><font size="-3">{Street}</font></td>
+	  <td>&nbsp;</td>
+	</tr>
+	<tr>
+	  <td><font size="-3">{City} </font></td>
+	  <td width="60"><font size="-3">{State} &nbsp;{Zipcode}</font></td>
+	</tr>
+<!-- blank row -->
+	<tr>
+	  <td>&nbsp;</td>
+	</tr>
+	<tr>
+	  <td><font size="-2">Org ID-- </font><font size="-3">{Identifier}]]</font></td>
+	</tr>
+				<tr>
+					<td></td>
+				</tr>
+				<tr>
+					<td>
+						<input type="submit" name="PassbookButton" value="Passbook">
+					</td>
+				</tr>
+      </table>
+            </font>
+      <p align="left">&nbsp;
+			</p>
+            &nbsp;
+  		</td>
+  	</tr>
+  </table>
+ </td></tr></table>
+<div align="left">
+	<hr color="#F5F5F5" size="10">
+	<a NAME="third"></a><br>
+	<font size="4">
+	<p><img src="/td/blank.gif" alt width="7" height="1">
+	<input type="submit" value="Change Attributes" name="ChgAttributes">
+	<img src="/td/blank.gif" alt width="48" height="1">
+	<input type="submit" value="Change Services" name="ChgServices">
+	<img src="/td/blank.gif" alt width="104" height="1">
+	<input type="submit" name="B1" value="Cancel">
+	<input type="submit" name="Once" value="Record"></p>
+	</font>
+<table border="0" width="653" height="246" bgcolor="#F5F5F5">
+		<font size="-2">
+		<tr valign="top">
+			<td width="220" height="246">
+				<table bgcolor="#F4FCFF" border="0" cellspacing="0" cellpadding="0">
+					<tr>
+						<td width="220" ALIGN="center">
+							Member Attributes
+						</td>
+					</tr>
+					<tr>
+						<td width="220" ALIGN="center">
+                            &nbsp;
+						</td>
+					</tr>
+					<tr>
+						<td>
+<!--webbot bot="HTMLMarkup" startspan -->
+							[[DBASE:SELECT:[Attributes List] LEFT JOIN
+								[Mem Attribute Table]
+									ON [Mem Attribute Table].Attribute =
+									[Attributes List].AttrID:
+									Member=[[GETDATA::VAR=MemID]]
+							:
+								<li>
+<!-- if li tag is outside, FP2000 wants to end the table prematurely ! -->
+<!--webbot bot="HTMLMarkup" endspan -->
+								{[Attributes List].AttrName}
+<!--webbot bot="HTMLMarkup" startspan -->
+								</li>
+<!don't need br-->
+							]] <!-- end DBASE-->
+<!--webbot bot="HTMLMarkup" endspan -->
+						</td>
+					</tr>
+				</table>
+			</td>
+			<td width="220" height="246">
+				<table bgcolor="#E0E6E0" border="0" cellspacing="0" cellpadding="0">
+					<tr>
+						<td width="220" ALIGN="Center">
+							Member Services
+						</td>
+					</tr>
+					<tr>
+						<td align="center" bgcolor="#F5F5F5">
+                            <font color="#008066">Provides</font>/<font color="#CC0066">Needs</font>
+						</td>
+					</tr>
+					<tr>
+						<td>
+<!--webbot bot="HTMLMarkup" startspan -->
+							[[DBASE:SELECT:[Services List] LEFT JOIN
+								[Mem Service Table]
+									ON [Mem Service Table].Service =
+									[Services List].ServiceID:
+									Member=[[GETDATA::VAR=MemID]]
+							:
+								<li>
+								<font color="{[Mem Service Table].Needs|CONVERT=0=#CC0066|CONVERT=1=#008066}"
+<!-- if li tag is outside, FP2000 wants to end the table prematurely ! -->
+<!--webbot bot="HTMLMarkup" endspan -->
+								{[Services List].Service}
+<!--webbot bot="HTMLMarkup" startspan -->
+								</font>
+								</li>
+<!-- don't need br -->
+							]]
+<!--webbot bot="HTMLMarkup" endspan -->
+							</font>
+						</td>
+					</tr>
+				</table>
+			</td>
+    		<td width="273" height="246">
+				<p>Emergency</p>
+
+        <p align="center">&nbsp;
+				<textarea rows="2" name="Emergency" cols="18"></textarea>
+    			<p align="left">Doctor</p>
+<center>
+      		<p align="center">
+                &nbsp;
+				<textarea rows="2" name="S2" cols="18"></textarea>
+			</p>
+			<p align="center">
+                &nbsp;User Num&nbsp;&nbsp;<input type="text" MAXLENGTH="9" name="UserNum" size="9">
+			</p>
+        </center>
+    		</td>
+    </tr>
+</table>
+<!-- DBASE for MemSince and Updated -->
+<!--webbot bot="HTMLMarkup" startspan -->
+[[DBASE:SELECT:[Member Table]:MemID=[[GETDATA::VAR=MemID]]
+:
+<!--webbot bot="HTMLMarkup" endspan -->
+<p>
+<font size="-1">
+Member Since&nbsp;&nbsp;<select name="MemSinceMMSelect" size="-1">
+<!--webbot bot="HTMLMarkup" startspan -->
+  <option selected> [[EVAL:IF:[[GETDATA::VAR=MemSinceIsNotNull]]=1:
+										{MemSince|SUBSTR=1=2|CONVERT= =&nbsp;} :
+										&nbsp;1
+										]]
+<!--webbot bot="HTMLMarkup" endspan -->
+								<option>&nbsp;1
+								<option>&nbsp;2
+								<option>&nbsp;3
+								<option>&nbsp;4
+								<option>&nbsp;5
+								<option>&nbsp;6
+								<option>&nbsp;7
+								<option>&nbsp;8
+								<option>&nbsp;9
+								<option>10
+								<option>11
+								<option>12
+</select>
+<select name="MemSinceDDSelect" size="-1">
+<!--webbot bot="HTMLMarkup" startspan -->
+  <option selected> [[EVAL:IF:[[GETDATA::VAR=MemSinceIsNotNull]]=1 :
+		{MemSince|SUBSTR=4=2|CONVERT= =&nbsp;}:
+		&nbsp;1
+		]]
+<!--webbot bot="HTMLMarkup" endspan -->
+								<option>&nbsp;1
+								<option>&nbsp;2
+								<option>&nbsp;3
+								<option>&nbsp;4
+								<option>&nbsp;5
+								<option>&nbsp;6
+								<option>&nbsp;7
+								<option>&nbsp;8
+								<option>&nbsp;9
+								<option>10
+								<option>11
+								<option>12
+								<option>13
+								<option>14
+								<option>15
+								<option>16
+								<option>17
+								<option>18
+								<option>19
+								<option>20
+								<option>21
+								<option>22
+								<option>23
+								<option>24
+								<option>25
+								<option>26
+								<option>27
+								<option>28
+								<option>29
+								<option>30
+								<option>31
+</select>
+	<select name="MemSinceYYSelect" size="-1">
+<!--webbot bot="HTMLMarkup" startspan -->
+  <option selected>[[EVAL:IF:[[GETDATA::VAR=MemSinceIsNotNull]]=1
+								:{MemSince|SUBSTR=7=4}
+								:1900
+									]]
+<!--webbot bot="HTMLMarkup" endspan -->
+								<option>1980
+								<option>1981
+								<option>1982
+								<option>1983
+								<option>1984
+								<option>1985
+								<option>1986
+								<option>1987
+								<option>1988
+								<option>1989
+								<option>1990
+								<option>1991
+								<option>1992
+								<option>1993
+								<option>1994
+								<option>1995
+								<option>1996
+								<option>1997
+								<option>1998
+								<option>1999
+								<option>2000
+								<option>2001
+								<option>2002
+								<option>2003
+								<option>2004
+								<option>2005
+								<option>2006
+								<option>2007
+								<option>2008
+								<option>2009
+								<option>2010
+
+</select>
+<!--webbot bot="HTMLMarkup" startspan -->
+[[EVAL:IF:[[GETDATA::VAR=MemSinceIsNotNull]]=1
+							:{MemSince|TRUNC=11}
+								<img src="/td/blank.gif" alt="" width="35" height="1">
+							:
+<!--webbot bot="HTMLMarkup" endspan -->
+								<font size="-2">
+								(No Date)
+								</font>
+<!--webbot bot="HTMLMarkup" startspan -->
+							]]
+<!--webbot bot="HTMLMarkup" endspan -->
+<img src="/td/blank.gif" alt width="35" height="1">Updated&nbsp;
+<!--webbot bot="HTMLMarkup" startspan -->
+																		{Updated|SUBSTR=1=10|CONVERT= =0|CONVERT=00/00/0000=Never}&nbsp;&nbsp;{Updated|SUBSTR=12=10|CONVERT= =0|CONVERT=00\:00\:00=}
+<!--webbot bot="HTMLMarkup" endspan -->
+<img src="/td/blank.gif" ALT width="29" height="1" alt> <input type="checkbox" name="SignedForms" {SignedForms|convert="1=checked}"> Signed Forms
+<img src="/td/blank.gif" ALT width="17" height="1" alt> <input type="checkbox" name="Inactive" {inactive|convert="1=checked}"> Inactive
+</font>
+</p>
+<!--webbot bot="HTMLMarkup" startspan -->
+]]
+<!--webbot bot="HTMLMarkup" endspan -->
+<!-- end of DBASE for MemSince and Updated -->
+<table width="600">
+  <tr>
+    <td><table bgcolor="#F5F5F5" width="386">
+			<tr>
+				<center>
+                    <td bgcolor="#FFFFFF" width="184">Enter times of
+                      Availability
+				</center>
+			</tr>
+      <tr>
+	<td width="184" bgcolor="#FFFFFF"><img src="/td/blank.gif" alt width="171" height="1"></td>
+	<td width="20"><font size="-1">Sun </font></td>
+	<td width="26"><font size="-1">Mon </font></td>
+	<td width="21"><font size="-1">Tue </font></td>
+	<td width="26"><font size="-1">Wed </font></td>
+	<td width="22"><font size="-1">Thu </font></td>
+	<td width="18"><font size="-1">Fri </font></td>
+	<td width="18"><font size="-1">Sat </font></td>
+      </tr>
+      <tr>
+	<td bgcolor="#FFFFFF" width="184"><img src="/td/blank.gif" alt width="131" height="1"><font size="-1">Morning </font></td>
+				<!-- the progression is Sunday(morning,afternoon,evening, etc-->
+				<!-- and these here are all mornings -->
+	<td width="20"><input [[GETDATA::VAR="0Check]]" type="checkbox" name="0Check"> </td>
+				<input type="hidden" name="0Check" value="off">
+	<td width="26"><input [[GETDATA::VAR="3Check]]" type="checkbox" name="3Check"> </td>
+				<input type="hidden" name="3Check" value="off">
+	<td width="21"><input [[GETDATA::VAR="6Check]]" type="checkbox" name="6Check"> </td>
+				<input type="hidden" name="6Check" value="off">
+	<td width="26"><input [[GETDATA::VAR="9Check]]" type="checkbox" name="9Check"> </td>
+				<input type="hidden" name="9Check" value="off">
+	<td width="22"><input [[GETDATA::VAR="12Check]]" type="checkbox" name="12Check"> </td>
+				<input type="hidden" name="12Check" value="off">
+	<td width="18"><input [[GETDATA::VAR="15Check]]" type="checkbox" name="15Check"> </td>
+				<input type="hidden" name="15Check" value="off">
+	<td width="18"><input [[GETDATA::VAR="18Check]]" type="checkbox" name="18Check"> </td>
+				<input type="hidden" name="18Check" value="off">
+      </tr>
+      <tr>
+	<td bgcolor="#FFFFFF" width="184"><img src="/td/blank.gif" alt width="124" height="1"><font size="-1">Afternoon </font></td>
+	<td width="20"><input [[GETDATA::VAR="1Check]]" type="checkbox" name="1Check"> </td>
+				<input type="hidden" name="1Check" value="off">
+				<td width="26"><input [[GETDATA::VAR="4Check]]" type="checkbox" name="4Check"> </td>
+				<input type="hidden" name="4Check" value="off">
+	<td width="21"><input [[GETDATA::VAR="7Check]]" type="checkbox" name="7Check"> </td>
+				<input type="hidden" name="7Check" value="off">
+	<td width="26"><input [[GETDATA::VAR="10Check]]" type="checkbox" name="10Check"> </td>
+				<input type="hidden" name="10Check" value="off">
+	<td width="22"><input [[GETDATA::VAR="13Check]]" type="checkbox" name="13Check"> </td>
+				<input type="hidden" name="13Check" value="off">
+	<td width="18"><input [[GETDATA::VAR="16Check]]" type="checkbox" name="16Check"> </td>
+				<input type="hidden" name="16Check" value="off">
+	<td width="18"><input [[GETDATA::VAR="19Check]]" type="checkbox" name="19Check"> </td>
+				<input type="hidden" name="19Check" value="off">
+
+      </tr>
+      <tr>
+	<td bgcolor="#FFFFFF" width="184"><img src="/td/blank.gif" alt width="135" height="1"><font size="-1">Evening </font></td>
+	<td width="20"><input [[GETDATA::VAR="2Check]]" type="checkbox" name="2Check"> </td>
+				<input type="hidden" name="2Check" value="off">
+	<td width="26"><input [[GETDATA::VAR="5Check]]" type="checkbox" name="5Check"> </td>
+				<input type="hidden" name="5Check" value="off">
+	<td width="21"><input [[GETDATA::VAR="8Check]]" type="checkbox" name="8Check"> </td>
+				<input type="hidden" name="8Check" value="off">
+	<td width="26"><input [[GETDATA::VAR="11Check]]" type="checkbox" name="11Check"> </td>
+				<input type="hidden" name="11Check" value="off">
+	<td width="22"><input [[GETDATA::VAR="14Check]]" type="checkbox" name="14Check"> </td>
+				<input type="hidden" name="14Check" value="off">
+	<td width="18"><input [[GETDATA::VAR="17Check]]" type="checkbox" name="17Check"> </td>
+				<input type="hidden" name="17Check" value="off">
+	<td width="18"><input [[GETDATA::VAR="20Check]]" type="checkbox" name="20Check"> </td>
+				<input type="hidden" name="20Check" value="off">
+      </tr>
+    </table>
+    </td>
+  </tr>
+</table>
+</form>
+<p><a href="AttrChg.htm"></a></p>
+<p><a href="mempass.htm"></a></p>
+<p><a href="ServChg.htm"></a></p>
+<p><a href="OneEer.htm"></a></p>
+
+</BODY>
+

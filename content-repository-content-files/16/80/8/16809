@@ -1,0 +1,909 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN//3.2">
+
+<html>
+<head>
+	<title>Match Provider</title>
+</head>
+<BODY bgcolor="#FFFFFF" text="#000000">
+<a NAME="top"></a>
+<!--webbot bot="HTMLMarkup" startspan -->
+[[EVAL:IF:[[GETDATA:Tour:LENGTH]]=top
+	:
+<!--webbot bot="HTMLMarkup" endspan -->
+<table bgcolor="#F0FFFF" width="608" cellspacing="0" cellpadding="0">
+	<th align="center" width="600">
+You have reached &quot;Match Provider&quot; via the <font color="#0066FF">Tour</font><br>
+To normally arrive here do&#58;<br>
+<font color="#0066FF">Home/Tour Home Page==&gt;Main Buttons==&gt;Match</font>
+<font color="green"><br></font>
+Please use the browser's 'Back' to return to the Tour<br>
+    </th></table>
+<!--webbot bot="HTMLMarkup" startspan -->
+	:
+]]
+<!--webbot bot="HTMLMarkup" endspan -->
+
+
+<!--webbot bot="HTMLMarkup" startspan -->
+[[EVAL:IF:[[GETDATA:Tour]]=top
+	:
+<center>You have reached "Match Provider" via the <font color="green">Tour</font><br>
+To normally arrive here do&#58<br>
+<font color="green">Home Page==&gt;Main Buttons==&gt;Match<br></font>
+Please use 'Back' to return to the Tour<br>
+</center>
+	:
+]]	
+
+[[SET:DefaultDbase:c\:\timed\tddemo.mdb]]
+
+<!-- this next line will always create a New entry, as we have
+     passed AssiNewButton=New for that eventuality -->
+[[EVAL:IF:[[GETDATA:NewButton]]=New
+	:
+		[[GETDATA:XYZZY:CHECK=/td/OneAssin.htm]]
+	:
+]]
+[[EVAL:IF:[[GETDATA:TransferButton]]=Transfer
+	:
+	[[DBASE:SELECT:[Member Table]:MemID=Provider:
+	[[SET:VAR:ProBalance={Balance}]]
+	]]
+	[[GETDATA::VAR=ProBalance]]
+	:
+]]
+
+[[EVAL:IF:[[GETDATA:MembersButton]]=Members
+	:
+	[[GETDATA:XYZZY:CHECK=/td/members.htm]]
+	:
+]]
+
+[[EVAL:IF:[[GETDATA:HomeButton]]=Home
+	:
+	[[GETDATA:XYZZY:CHECK=/td/Main.htm]]
+	:
+]]
+
+[[EVAL:IF:[[GETDATA:ProFindButton]]=Find
+	:
+	[[GETDATA:XYZZY:CHECK=/td/ProMFind.htm]]
+	:
+]]
+
+[[EVAL:IF:[[GETDATA:RecFindButton]]=Find
+	:
+	[[GETDATA:XYZZY:CHECK=/td/RecMFind.htm]]
+	:
+]]
+
+[[EVAL:IF:[[GETDATA:ServFindButton]]=Find
+	:
+	[[GETDATA:XYZZY:CHECK=/td/ServFind.htm]]
+	:
+]]
+[[EVAL:IF:
+	[[EVAL:BOOL:[[EVAL:BOOL:[[GETDATA:SearchButton]]=Search]] &&
+	  [[EVAL:BOOL:[[EVAL:BOOL:[[GETDATA:Service:LENGTH]]=0]] ||
+			[[EVAL:BOOL:[[EVAL:BOOL:[[GETDATA:Provider:LENGTH]]=0]] &&
+				[[EVAL:BOOL:[[GETDATA:Recipient:LENGTH]]=0]]
+		]]
+		]]
+	]]
+	:
+	[[GETDATA:XYZZY:CHECK=/td/MatchErr.htm]]
+	:
+]]
+[[EVAL:IF:[[GETDATA:Once]]=OK
+	:
+	<!-- this comes either directly, or indirectly via a Find, either is fine -->
+	[[SET:VAR:SameLanguageCheck=[[GETDATA:SameLanguageCheck:CONVERT=on=CHECKED]]]]
+				<!-- if this was in BASIC it would look like --
+			DIM VAR(21)
+			X=0
+			VAR(0)=1
+			VAR(20)=1
+			FOR I=20 to 1 STEP -1
+			X=X+(2*VAR(I))^I
+			NEXT
+			X=X+VAR(0)
+			PRINT "Availability=";X
+			where X=1048575 when these 2 cells == 1,
+			Sunday morning, and Saturday evening
+			and all CHECKed is 2097151  -->
+			[[SET:VAR:I=20]]
+			[[SET:VAR:AVAILABILITY=0]]
+			[[EVAL:WHILE:[[GETDATA::VAR=I]] >0
+			: <!-- body of within loop -->
+				[[SET:VAR:Availability=[[EVAL:MATH:
+					[[GETDATA::VAR=Availability]] +
+					[[EVAL:MATH:
+						[[EVAL:MATH:
+							2*[[GETDATA:[[GETDATA::VAR=I]]Check:CONVERT=on=1|CONVERT=off=0]]
+						]]
+						^[[GETDATA::VAR=I]]
+					]]
+															]]]]
+				[[SET:VAR:I=[[GETDATA::VAR=I|DECR]]]]
+			]]<!-- end of update loop (EVAL WHILE) -->
+			[[SET:VAR:Availability=[[EVAL:MATH:[[GETDATA::VAR=AVAILABILITY]]+[[GETDATA:0Check:CONVERT=on=1|CONVERT=off=0]]]]]]
+						<!-- when VirtuFlex numbers exceed a million, they have
+			    a decimal and 6 trailing zeros, remove .000000 -->
+			[[SET:VAR:Availability=[[GETDATA::VAR=Availability|PREPEND=`|PARSE=`=.]]]]
+<!-- did we find and set Service, Provider or Recipient ? then restore Availability -->
+[[EVAL:IF:[[GETDATA:Find]]=yes
+	:
+		[[SET:VAR:Availability=[[GETDATA:Availability]]]]
+	:
+]]
+
+	<!-- Because we can go to "FIND" we need to recompute Availability and this
+	maintains parallel to use in OneMembr.htm -->
+			<!-- true VirtuFlex bug -- all math results in >= 0, never negative -->
+	<!-- next operation if written in Basic (X being Availability)
+		FOR I=20 TO 0 STEP -1
+		IF 2^I-X > 0 THEN ELSE PRINT I (colon) X=X-2^I
+		NEXT
+		-->
+	[[SET:VAR:AvailabilitySav=[[GETDATA::VAR=Availability]]]]
+	[[SET:VAR:I=20]]
+	[[EVAL:WHILE:[[GETDATA::VAR=I]]>=0
+		: <!-- body of within loop -->
+			[[EVAL:IF:[[EVAL:MATH:
+					[[EVAL:MATH:
+						2^[[GETDATA::VAR=I]]-[[GETDATA::VAR=Availability]]
+																				]]
+								]] > 0
+				:<!-- true -->
+					[[SET:VAR:[[GETDATA::VAR=I]]Check=]]
+				: <!-- false -->
+					[[SET:VAR:[[GETDATA::VAR=I]]Check=CHECKED]]
+					[[SET:VAR:Availability=[[EVAL:MATH:
+						[[GETDATA::VAR=Availability]]-2^[[GETDATA::VAR=I]]
+																 ]]]]
+			]] <!-- end EVAL IF -->
+			[[SET:VAR:I=[[GETDATA::VAR=I|DECR]]]]
+	]]<!-- end of update loop (EVAL WHILE) -->
+	<!-- restore for use below -->
+	[[SET:VAR:Availability=[[GETDATA::VAR=AvailabilitySav]]]]
+	: <!-- no Once -->
+	[[SET:VAR:SameLanguageCheck=CHECKED]]
+]] <!-- end test of Once -->
+<!--webbot bot="HTMLMarkup" endspan -->
+<form action="/cgi-bin/virtuflex.exe" method="get">
+<input type="hidden" name="template" value="/td/match.htm">
+<input type="hidden" name="Recipient" value="[[GETDATA:Recipient]]">
+<input type="hidden" name="Provider" value="[[GETDATA:Provider]]">
+<input type="hidden" name="Service" value="[[GETDATA:Service]]">
+<input type="hidden" name="Once" value="OK">
+<!-- if we get to OneAssin.htm -- the only reason is to insert a new assignment -->
+<input type="hidden" name="AssiNewButton" value="New"><center><font size="+2"><b>Search for a Matching Member</b>
+</font>
+</center>
+<table width="602" bgcolor="#F5F5F5">
+	<tr>
+		<td width="200">
+			<font size="+1">
+			<b>
+			Provider
+			</b>
+			</font>
+<!--webbot bot="HTMLMarkup" startspan -->		       
+			[[EVAL:IF:[[GETDATA:Provider:LENGTH]] >0
+            :
+<!--webbot bot="HTMLMarkup" endspan -->
+				<table border="0" cellpadding="0" cellspacing="0" bgcolor="#F4FCFF">
+					<tr>
+						<td>
+							<!--webbot bot="HTMLMarkup" startspan -->
+							[[DBASE:SELECT:[Member Table]:MemID=[[GETDATA:Provider]]
+							: <!-- Start Interlace for DBASE -->
+							<!--webbot bot="HTMLMarkup" endspan -->
+						</td>
+					</tr>
+					<tr>
+						<td width="140">
+							<font size="-3">{FirstName}</font>
+						</td>
+						<td>
+							<font size="-3">{LastName}</font>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<font size="-3">{Street}</font>
+						</td>
+						<td>
+							&nbsp;
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<font size="-3">{City} </font>
+						</td>
+						<td width="60">
+							<font size="-3">{State} &nbsp;{Zipcode}</font>
+						</td>
+					</tr>
+					<!-- blank row -->
+					<tr>
+						<td>
+							<font size="-2">Org ID--
+							<font size="-3">{Identifier}
+							</font>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<font size="-2">Home Phone--
+							<font size="-3">{HomePhone}
+							</font>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<font size="-2">Work Phone--
+							<font size="-3">{WorkPhone}
+							</font>
+							</font>
+						</td>
+					</tr>
+<!--webbot bot="HTMLMarkup" startspan -->       
+							]] <!-- end DBASE-->
+<!--webbot bot="HTMLMarkup" endspan -->
+				</table>
+				<p>
+				: <!-- If eval if is false -->
+				<!-- not "View"ing -->
+				<!-- use transparent gif to force width -->
+				<table border="0" cellpadding="0" cellspacing="0" bgcolor="#F4FCFF" <tr width="180" height="240">
+						<tr><td>
+                            &nbsp;
+						</tr>
+				</table>
+				<br>
+<!--webbot bot="HTMLMarkup" startspan -->       
+			]]<!--End of eval if -->
+<!--webbot bot="HTMLMarkup" endspan --> 
+			<input type="submit" name="ProFindButton" value="Find">
+			<font size="-2">Select Provider and a Service, or</font>
+		</td>
+		<td width="200">
+<!--webbot bot="HTMLMarkup" startspan -->
+			[[EVAL:IF:[[EVAL:BOOL:
+				[[EVAL:BOOL:[[GETDATA:Search:LENGTH]]>0]] &&
+				[[EVAL:BOOL:[[GETDATA:Provider:LENGTH]]>0]]
+							]]
+					:
+						[[SET:VAR:Needs=-1]]
+					:
+						[[SET:VAR:Needs=0]]
+				]]
+<!--webbot bot="HTMLMarkup" endspan -->
+			<font size="+1">
+			<b>Recipient</b>
+			</font>
+<!--webbot bot="HTMLMarkup" startspan -->
+			<font size="-1" color="[[GETDATA::VAR=Needs|CONVERT=-1=red" \>Needs|CONVERT=0=green"\>]]</font>	 
+				[[EVAL:IF:[[GETDATA:Recipient:LENGTH]]>0
+				:
+<!--webbot bot="HTMLMarkup" endspan --> 
+				<table border="0" cellpadding="0" cellspacing="0" bgcolor="#E0E6E0">
+					<tr>
+						<td bgcolor="#E0E6E0">
+							<!--webbot bot="HTMLMarkup" startspan -->
+							[[DBASE:SELECT:[Member Table]:MemID=[[GETDATA:Recipient]]
+							: <!-- Start Interlace for DBASE -->
+							<!--webbot bot="HTMLMarkup" endspan -->
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<font size="-3">{FirstName}</font>
+						</td>
+						<td>
+							<font size="-3">{LastName}</font>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<font size="-3">{Street}</font>
+						</td>
+						<td>
+							&nbsp;
+						</td>
+					</tr>
+					<tr>
+						<td height="28">
+							<font size="-3">{City} </font>
+						</td>
+						<td>
+							<font size="-3">{State} &nbsp;{Zipcode}</font>
+						</td>
+					</tr>
+					&nbsp;
+					<!-- blank row -->
+					<tr>
+						<td>
+							<font size="-2">Org ID--
+							<font size="-3">{Identifier}
+							</font>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<font size="-2">Home Phone--
+							<font size="-3">{HomePhone}
+							</font>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<font size="-2">Work Phone--
+							<font size="-3">{WorkPhone}
+							</font>
+							</font>
+						</td>
+					</tr>
+<!--webbot bot="HTMLMarkup" startspan -->       
+							]] <!-- end DBASE-->
+<!--webbot bot="HTMLMarkup" endspan --> 
+				</table>
+				<p>
+				: <!-- If eval if is false -->
+				<!-- not "View"ing -->
+				<!-- use transparent gif to force width -->
+				<table border="0" cellpadding="0" cellspacing="0" bgcolor="#E0E6E0" <tr width="180" height="240">
+						<td>
+                            &nbsp;
+						</td>
+				</table>
+				<br>
+<!--webbot bot="HTMLMarkup" startspan -->       
+			]]<!--End of eval if -->
+<!--webbot bot="HTMLMarkup" endspan --> 
+			<input type="submit" name="RecFindButton" value="Find">
+			<font size="-2">... select a Recipient and a Service</font>
+		</td>
+		<td width="204">
+		  <div align="right" style="width: 193; height: 173">
+            <table border="0" width="100%" cellpadding="0" cellspacing="0" height="163">
+              
+              <tr>
+                <td width="45%" height="103">
+                  <p align="right">
+                </td>
+                <td width="55%" height="103">
+                  <p align="right">
+			<input type="submit" name="MembersButton" value="Members"><input type="submit" name="HomeButton" value="Home">
+                </td>
+              </tr>
+              <tr>
+                <td width="45%" height="37"><font size="+1"><b>
+			Service
+			</b>
+			</font>
+                </td>
+                <td width="55%" height="37"><input type="checkbox" [[GETDATA:TimeCriticalCheck:CONVERT=on=CHECKED]] name="TimeCriticalCheck">
+			<font size="-1">
+            Time Critical
+			</font>
+                </td>
+              </tr>
+            </table>
+			</div>
+<!--webbot bot="HTMLMarkup" startspan -->       
+			[[EVAL:IF:[[GETDATA:Service:LENGTH]]>0
+				:
+				[[DBASE:SELECT:[Services List]:ServiceID=[[GETDATA:Service]]
+				:<!-- DBASE:SELECT interlace field begin -->
+<!--webbot bot="HTMLMarkup" endspan --> 
+			<table width="170" border="1" cellpadding="0" cellspacing="0" border="0" bgcolor="#F4FCFF">
+					<tr>
+						<td>
+						{Service}
+						</td>
+					</tr>
+				</table>
+<!--webbot bot="HTMLMarkup" startspan -->       
+				]] <!-- End DBASE SELECT -->
+				: <!-- Eval if false -->
+<!--webbot bot="HTMLMarkup" endspan --> 
+				<table width="170" bgcolor="#F4FCFF" cellpadding="0" cellspacing="0" border="0">
+					<tr>
+						<td height="25">
+						&nbsp;
+						</td>
+					</tr>
+				</table>
+<!--webbot bot="HTMLMarkup" startspan -->       
+			]]
+<!--webbot bot="HTMLMarkup" endspan --> 
+			<input type="submit" name="ServFindButton" value="Find">
+			<br>
+			<img src="/td/blank.gif" ALT height="1" width="100">
+			<input type="submit" name="SearchButton" value="Search">
+			<br>
+			<font size="-3">
+				If both a Recipient and Provider are showing, the search is only by Recipient
+			</font>
+		</td>
+	</tr>
+</table>
+<!-- this anchor doesn't work in IE5 -->
+<a NAME="second"></a>
+<!--webbot bot="HTMLMarkup" startspan -->
+[[EVAL:IF:[[GETDATA:Tour]]=second-v
+	:
+<!--webbot bot="HTMLMarkup" endspan -->
+<br>
+<table bgcolor="#F0FFFF" width="483">
+	<th align="center" width="475">
+	<br>
+You have reached &quot;Match by Available Date&quot; via the
+<font color="#0066FF">Tour</font><br>
+<font size="-2" color="#CC0066">Notice the check marks</font><br>
+To normally arrive here do&#58;<br>
+<font color="#0066FF">Home/Tour Page==&gt;Main Buttons==&gt;Match==&gt;scroll down to
+here</font>
+<font color="green"><br></font>
+Please use the browser's 'Back' to return to the Tour<br>
+    </th></table>
+<!--webbot bot="HTMLMarkup" startspan -->
+	:
+]]
+[[EVAL:IF:[[GETDATA:Tour]]=second-f
+	:
+<!--webbot bot="HTMLMarkup" endspan -->
+<br>
+<table bgcolor="#F0FFFF" width="483">
+	<th align="center" width="475">
+	<br>
+You (as a Facilitator) have reached &quot;Match by Date Available&quot; via the
+<font color="#0066FF">Tour</font><br>
+<font size="-2" color="#CC0066">Notice the check marks</font><br>
+To normally arrive here do&#58;<br>
+<font color="#0066FF">Home/Tour Page==&gt;Main Buttons==&gt;Match==&gt;scroll down to
+here</font>
+<font color="green"><br></font>
+Please use the browser's 'Back' to return to the Tour<br>
+    </th></table>
+<!--webbot bot="HTMLMarkup" startspan -->
+	:
+]]
+
+<!--webbot bot="HTMLMarkup" endspan -->
+<table width="600">
+	<tr>
+		<td>
+			<table bgcolor="#F4FCFF">
+				<tr>
+					<td>
+					</td>
+					<td>
+						<font size="-1">
+						Sun
+						</font>
+					</td>
+					<td>
+						<font size="-1">
+						Mon
+						</font>
+					</td>
+					<td>
+						<font size="-1">
+						Tue
+						</font>
+					</td>
+					<td>
+						<font size="-1">
+						Wed
+						</font>
+					</td>
+					<td>
+						<font size="-1">
+						Thu
+						</font>
+					</td>
+					<td>
+						<font size="-1">
+						Fri
+						</font>
+					</td>
+					<td>
+						<font size="-1">
+						Sat
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td><img src="/td/blank.gif" alt width="31" height="1"><font size="-1">Morning </font></td>
+				<!-- the progression is Sunday(morning,afternoon,evening, etc-->
+				<!-- and these here are all mornings -->
+	<td><input [[GETDATA::VAR=0Check]] type="checkbox" name="0Check"> </td>
+				<input type="hidden" name="0Check" value="off">
+	<td><input [[GETDATA::VAR=3Check]] type="checkbox" name="3Check"> </td>
+				<input type="hidden" name="3Check" value="off">
+	<td><input [[GETDATA::VAR=6Check]] type="checkbox" name="6Check"> </td>
+				<input type="hidden" name="6Check" value="off">
+	<td><input [[GETDATA::VAR=9Check]] type="checkbox" name="9Check"> </td>
+				<input type="hidden" name="9Check" value="off">
+	<td><input [[GETDATA::VAR=12Check]] type="checkbox" name="12Check"> </td>
+				<input type="hidden" name="12Check" value="off">
+	<td><input [[GETDATA::VAR=15Check]] type="checkbox" name="15Check"> </td>
+				<input type="hidden" name="15Check" value="off">
+	<td><input [[GETDATA::VAR=18Check]] type="checkbox" name="18Check"> </td>
+				<input type="hidden" name="18Check" value="off">
+	</td>
+      </tr>
+      <tr>
+	<td><img src="/td/blank.gif" alt width="24" height="1"><font size="-1">Afternoon </font></td>
+	<td><input [[GETDATA::VAR=1Check]] type="checkbox" name="1Check"> </td>
+				<input type="hidden" name="1Check" value="off">
+				<td><input [[GETDATA::VAR=4Check]] type="checkbox" name="4Check"> </td>
+				<input type="hidden" name="4Check" value="off">
+	<td><input [[GETDATA::VAR=7Check]] type="checkbox" name="7Check"> </td>
+				<input type="hidden" name="7Check" value="off">
+	<td><input [[GETDATA::VAR=10Check]] type="checkbox" name="10Check"> </td>
+				<input type="hidden" name="10Check" value="off">
+	<td><input [[GETDATA::VAR=13Check]] type="checkbox" name="13Check"> </td>
+				<input type="hidden" name="13Check" value="off">
+	<td><input [[GETDATA::VAR=16Check]] type="checkbox" name="16Check"> </td>
+				<input type="hidden" name="16Check" value="off">
+	<td><input [[GETDATA::VAR=19Check]] type="checkbox" name="19Check"> </td>
+				<input type="hidden" name="19Check" value="off">
+      </tr>
+      <tr>
+	<td><img src="/td/blank.gif" alt width="35" height="1"><font size="-1">Evening </font></td>
+	<td><input [[GETDATA::VAR=2Check]] type="checkbox" name="2Check"> </td>
+				<input type="hidden" name="2Check" value="off">
+	<td><input [[GETDATA::VAR=5Check]] type="checkbox" name="5Check"> </td>
+				<input type="hidden" name="5Check" value="off">
+	<td><input [[GETDATA::VAR=8Check]] type="checkbox" name="8Check"> </td>
+				<input type="hidden" name="8Check" value="off">
+	<td><input [[GETDATA::VAR=11Check]] type="checkbox" name="11Check"> </td>
+				<input type="hidden" name="11Check" value="off">
+	<td><input [[GETDATA::VAR=14Check]] type="checkbox" name="14Check"> </td>
+				<input type="hidden" name="14Check" value="off">
+	<td><input [[GETDATA::VAR=17Check]] type="checkbox" name="17Check"> </td>
+				<input type="hidden" name="17Check" value="off">
+	<td><input [[GETDATA::VAR=20Check]] type="checkbox" name="20Check"> </td>
+				<input type="hidden" name="20Check" value="off">
+			</tr>
+		</table>
+	</td>
+	<td>
+			<!-- this should only appear when New is possible -->
+<!--webbot bot="HTMLMarkup" startspan -->       
+	    [[EVAL:IF:[[EVAL:BOOL:
+				[[EVAL:BOOL:[[GETDATA:Recipient:LENGTH]]>0]] &&
+					[[EVAL:BOOL:
+						[[EVAL:BOOL:[[GETDATA:Provider:LENGTH]]>0]] &&
+						[[EVAL:BOOL:[[GETDATA:Service:LENGTH]]>0]]
+				]]
+							]]
+			:
+<!--webbot bot="HTMLMarkup" endspan --> 
+				<center>
+				<font size="-1">
+				<b>
+				Assignment for this Provider, Recipient and Service?
+				</b>
+				</font>
+				<br>
+				<center>
+				<input type="submit" name="NewButton" value="New">
+				</center>
+<!--webbot bot="HTMLMarkup" startspan -->
+			:
+<!--webbot bot="HTMLMarkup" endspan -->
+				<center>
+				<input type="reset" name="NewButton" value="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;">
+				</center>
+<!--webbot bot="HTMLMarkup" startspan -->       
+			]]
+<!--webbot bot="HTMLMarkup" endspan --> 
+			</center>
+		</td>
+	</tr>
+</table>
+
+<font size="-1">
+	Using no check marks will match with any time availability<br>
+</font>
+<a NAME="third"></a>
+<!--webbot bot="HTMLMarkup" startspan -->
+[[EVAL:IF:[[GETDATA:Tour]]=third
+	:
+<!--webbot bot="HTMLMarkup" endspan -->
+<right>
+<table width="603" border="0" bgcolor="#F0FFFF" cellspacing="0" cellpadding="0">
+	<th align="center" width="262" bgcolor="#FFFFFF" bordercolor="#FFFFFF">
+&nbsp;
+    </th>
+	<th align="center" width="327">
+	<!-- don't ask me why so many breaks are needed to get this to appear -->
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+You have reached &quot;Match by Gender, by Language has Car (etc.)&quot; via the <font color="#0066FF">Tour</font><br>
+<font size="-2" color="#CC0066">Notice the check marks</font><br>
+To normally arrive here do&#58;<br>
+<font color="#0066FF">Home/Tour Page==&gt;Main Buttons==&gt;Match==&gt;scroll down to
+here<br></font>
+Please use the browser's 'Back' to return to the Tour<br>
+    </th></table></right>
+<!--webbot bot="HTMLMarkup" startspan -->
+	:
+]]
+<!--webbot bot="HTMLMarkup" endspan -->
+
+<table width="600" height="220">
+	<tr valign="top">
+		<td>
+			<table width="435" bgcolor="#F5F5F5">
+				<th>
+					<tr>
+						<td>
+							<center>
+                                <font color="#003300">
+								Name</font>
+							</center>
+						</td>
+						<td>
+							<center>
+                                <font color="#003300">
+								Street</font>
+							</center>
+						</td>
+						<td>
+							<center>
+                                <font color="#003300">
+								City</font>
+							</center>
+						</td>
+						<td>
+							<center>
+                                <font color="#CC0066">
+								Click</font>
+						</center>
+						</td>
+					</tr>
+
+<!--webbot bot="HTMLMarkup" startspan -->
+<!-- WARNING  Closing brackets to SET VAR may NOT be on own line -->
+<!-- WARNING  and brackets must be with Interlace field, too -->
+<!-- DBASE queries without SET can have comments inside, but not DBASE
+	UPDATE or SET VARs -->    
+		[[EVAL:IF:[[GETDATA:SearchButton]]=Search
+				:
+			<!-- Code for search goes here in place of this gif -->
+			<!-- the BitTest function from Access is a boolean AND
+					of the two fields (as long integers), however, because
+					of the lack of a bit-wise logical in the Access Jet Engine
+					we must do 21 separate bit tests such as --
+								((8 \2^2) mod 2)= 1) or ((4 \2) mod 2)=1)
+				  Note-- the final OR 1=0) will always be false -->
+				<!-- for search we need Recipient's Needs, Organization, Site, Zipcode, CoordAlpha
+					CoordNum -->
+				<!-- there is an Access Query called [Speaks same language] -->
+				<!-- if Searched on Provider, Needs is FALSE, else if Recipient Needs is TRUE  -->
+				[[SET:VAR:Organization=[[DBASE:SELECT:[Site Table] INNER JOIN [Member Table]
+					ON [Site Table].SiteID=[Member Table].Site
+					:
+						MemID=[[GETDATA:Recipient]]
+					:
+					{Organization}]]]]
+				[[SET:VAR:Site=[[DBASE:SELECT:[Member Table] INNER JOIN [Site Table]
+					ON [Member Table].Site=[Site Table].SiteID
+					:
+						MemID=[[GETDATA:Recipient]]
+					:{SiteID}]]]]
+				[[SET:VAR:Zipcode=[[DBASE:SELECT:[Member Table]
+					:
+						MemID=[[GETDATA:Recipient]]
+					:{Zipcode}]]]]
+				[[SET:VAR:CoordAlfa=[[DBASE:SELECT:[Member Table]
+					:
+						MemID=[[GETDATA:Recipient]]
+					:{CoordAlfa}]]]]
+				[[SET:VAR:CoordNum=[[DBASE:SELECT:[Member Table]
+					:
+						MemID=[[GETDATA:Recipient]]
+					:{CoordNum}]]]]
+				[[EVAL:IF:[[GETDATA:SameLanguageCheck]]=on
+					:
+						<!-- nesting of INNER JOINS requires correct # ('s before [Member Table] -->
+						[[SET:VAR:Parentheses=(]]
+						[[SET:VAR:LangJoin= INNER JOIN [Speaks same language] ON [Member Table].MemID \= [Speaks same language].ProID) ]]
+						[[SET:VAR:LangCmd= AND [Speaks same language].RecID\=[[GETDATA:Recipient]] ]]
+					:
+				]]
+				[[EVAL:IF:[[GETDATA:SameOrganizationCheck]]=on
+					:
+						[[SET:VAR:Parentheses=([[GETDATA::VAR=Parentheses]]]]
+						[[SET:VAR:OrgJoin=  INNER JOIN [Site Table] ON
+						 [Member Table].Site \= [Site Table].SiteID) ]]
+						[[SET:VAR:OrgCmd= AND ([Site Table].Organization\=[[GETDATA::VAR=Organization]])]]
+					:
+				]]
+				[[EVAL:IF:[[EVAL:BOOL:
+					[[EVAL:BOOL:[[GETDATA:MustBeMaleCheck]]=on]] ||
+	  			[[EVAL:BOOL:[[GETDATA:MustBeFemaleCheck]]=on]]
+		 			 				]]
+					:
+						[[SET:VAR:Parentheses=([[GETDATA::VAR=Parentheses]]]]
+						[[SET:VAR:GenderJoin= INNER JOIN [Mem Attribute Table] AS [Gender]
+						 ON [Member Table].MemID \= [Gender].Member) ]]
+						<!-- we do the test on male/female below -->
+					:
+				]]
+				<!-- have a variable AND which is really ' AND ' -->
+				<!-- each ANDed criteria, absent if test is TRUE -->
+				[[SET:VAR:AND= AND ]]
+				[[DBASE:SELECT:([[GETDATA::VAR=Parentheses]][Member Table]
+						INNER JOIN [Mem Service Table] ON [Member Table].MemID =
+							[Mem Service Table].Member)
+						[[GETDATA::VAR=LangJoin]]
+						[[GETDATA::VAR=OrgJoin]]
+						[[GETDATA::VAR=GenderJoin]]
+					:
+						[Mem Service Table].Service=[[GETDATA:Service]]
+						AND [Mem Service Table].Needs=[[GETDATA::VAR=Needs]]
+						[[GETDATA::VAR=LangCmd]]
+						[[GETDATA::VAR=OrgCmd]]
+						[[EVAL:IF:[[GETDATA:MustBeFemaleCheck:LENGTH]]=0
+							:
+							:[[GETDATA::VAR=AND]][Gender].Attribute=5
+						]]
+						[[EVAL:IF:[[GETDATA:MustBeMaleCheck:LENGTH]]=0
+							:
+							:[[GETDATA::VAR=AND]][Gender].Attribute=6
+						]]
+						[[EVAL:IF:[[GETDATA:MustHaveCarCheck:LENGTH]]=0
+							:
+							:[[GETDATA::VAR=AND]][Member Table].HasCar=-1
+						]]
+						[[EVAL:IF:[[GETDATA:SmokeTolerantCheck:LENGTH]]=0
+							:
+							:[[GETDATA::VAR=AND]][Member Table].SmokeTolerant=-1
+						]]
+						[[EVAL:IF:[[GETDATA:SmokerCheck:LENGTH]]=0
+							:
+							:[[GETDATA::VAR=AND]][Member Table].HasCar=0
+						]]
+						[[EVAL:IF:[[GETDATA:SameZipCodeCheck:LENGTH]]=0
+							:
+							:[[GETDATA::VAR=AND]][Member Table].ZipCode=[[GETDATA::VAR=ZipCode]]
+						]]
+						[[EVAL:IF:[[GETDATA:SameSiteCheck:LENGTH]]=0
+							:
+							:[[GETDATA::VAR=AND]][Member Table].Site=[[GETDATA::VAR=Organization]]
+						]]
+						[[EVAL:IF:[[GETDATA:SameCoordinatesCheck:LENGTH]]=0
+							:
+							:
+								[[GETDATA::VAR=AND]][Member Table].CoordAlfa=[[GETDATA::VAR=CoordAlfa]]
+								[[GETDATA::VAR=AND]][Member Table].CoordNum=[[GETDATA::VAR=CoordNum]]
+						]]
+						[[EVAL:IF:[[GETDATA:SameSiteCheck:LENGTH]]=0
+							:
+							:
+								[[GETDATA::VAR=AND]][Member Table].Nickname='%ORG%'
+						]]
+						[[EVAL:IF:[[GETDATA::VAR=Availability]]=0
+							:
+							:
+								[[GETDATA::VAR=AND]](
+								[[SET:VAR:I=20]]
+								[[EVAL:WHILE:[[GETDATA::VAR=I]]>=0
+									:
+										[[EVAL:IF:[[GETDATA::VAR=[[GETDATA::VAR=I]]Check]]=CHECKED
+											:			
+												(([Member Table].Availability \ 2^[[GETDATA::VAR=I]]
+														mod 2)=1) OR
+											:
+										]]
+									[[SET:VAR:I=[[GETDATA::VAR=I|DECR]]]]
+								]]
+								((1)=0) )
+						]]
+					:
+<!--webbot bot="HTMLMarkup" endspan -->
+						<tr bgcolor="B0CCFF" width="400">
+							<td bgcolor="#F4FCFF">
+								<font size="-1">
+									{[Member Table].FirstName} {[Member Table].LastName}
+								</font>
+							</td>
+							<td bgcolor="#F4FCFF">
+								<font size="-1">
+									{[Member Table].Street}
+								</font>
+							</td>
+							<td bgcolor="#F4FCFF">
+								<font size="-1">
+									{[Member Table].City}
+								</font>
+							</td>
+							<td bgcolor="#F4FCFF">
+								<font size="-1">
+						       	<a href="/cgi-bin/virtuflex.exe?template=/td/match.htm&amp;Service=[[GETDATA:Service]]&amp;Provider={MemID}&amp;Recipient=[[GETDATA:Recipient]]&amp;Availability=[[GETDATA::VAR=Availability]]&amp;SameLanguageCheck=[[GETDATA:SameLanguageCheck]]&amp;SameZipCodeCheck=[[GETDATA:SameZipCodeCheck]]&amp;SameOrganizationCheck=[[GETDATA:SameOrganizationCheck]]&amp;SameSiteCheck[[GETDATA:SameSiteCheck]]&amp;SameCoordinatesCheck=[[GETDATA:SameCoordinatesCheck]]&amp;SmokeTolerantCheck=[[GETDATA:SmokeTolerantCheck]]&amp;NonSmokerCheck=[[GETDATA:NonSmokerCheck]]&amp;MustBeMaleCheck=[[GETDATA:MustBeMaleCheck]]&amp;MustBeFemaleCheck=[[GETDATA:MustBeFemaleCheck]]&amp;HasCarCheck=[[GETDATA:HasCarCheck]]&amp;MustBeOrganizationCheck=[[GETDATA:MustBeOrganizationCheck]]&amp;Find=yes&amp;Once=OK">Select</a>
+								</font>
+							</td>
+						</tr>
+<!--webbot bot="HTMLMarkup" startspan -->
+				]] <!-- end DBASE -->
+<!--webbot bot="HTMLMarkup" endspan -->
+				<tr>
+					<td colspan="4">
+						<img src="/td/blank.gif" ALT height="180" width="400">
+					</td>
+				</tr>
+<!--webbot bot="HTMLMarkup" startspan -->
+			]]<!-- end Search -->
+<!--webbot bot="HTMLMarkup" endspan -->
+		</table>
+	</td>
+	<td valign="top">
+		<table bgcolor="#F4FCFF">
+			<tr>
+			<td>
+			<font size="-1">
+			<input type="checkbox" [[GETDATA:SameZipCodeCheck:CONVERT=on=CHECKED]] name="SameZipCodeCheck">
+			Same Zip Code
+			<br>
+			<input type="checkbox" [[GETDATA:SameOrganizationCheck:CONVERT=on=CHECKED]] name="SameOrganizationCheck">
+			Same Organization
+			<br>
+			<input type="checkbox" [[GETDATA:SameSiteCheck:CONVERT=on=CHECKED]] name="SameSiteCheck">
+			Same Site
+			<br>
+			<input type="checkbox" [[GETDATA:SameCoordinatesCheck:CONVERT=on=CHECKED]] name="SameCoordinatesCheck">
+			Same Coordinates
+			<br>
+			<!-- we need this to appear checked so we treat differently than others -->
+			<input type="checkbox" [[GETDATA::VAR=SameLanguageCheck]] name="SameLanguageCheck">
+	    	Same Language
+			<br>
+			<input type="checkbox" [[GETDATA:SmokeTolerantCheck:CONVERT=on=CHECKED]] name="SmokeTolerantCheck">
+			Smoke Tolerant
+			<br>
+			<input type="checkbox" [[GETDATA:NonSmokerCheck:CONVERT=on=CHECKED]] name="NonSmokerCheck">
+			Non-Smoker
+			<br>
+			<input type="checkbox" [[GETDATA:MustBeMaleCheck:CONVERT=on=CHECKED]] name="MustBeMaleCheck">
+			must be Male
+			<br>
+			<input type="checkbox" [[GETDATA:MustBeFemaleCheck:CONVERT=on=CHECKED]] name="MustBeFemaleCheck">
+			must be Female
+			<br>
+			<input type="checkbox" [[GETDATA:HasCarCheck:CONVERT=on=CHECKED]] name="HasCarCheck">
+			Has Car
+			<br>
+			<input type="checkbox" [[GETDATA:MustBeOrganizationCheck:CONVERT=on=CHECKED]] name="MustBeOrganizationCheck">
+			must be Organization
+			</font>
+		</td>
+	</tr>
+</table>
+	</td>
+	</tr>
+</table>
+<p><a href="OneAssin.htm"></a></p>
+<p><a href="ProMFind.htm"></a></p>
+<p><a href="RecMFind.htm"></a></p>
+<p><a href="ServFind.htm"></a></p>
+<p><a href="MatchErr.htm"></a></p>
+
+</form>
+
+</BODY>
+</html>

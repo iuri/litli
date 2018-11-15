@@ -1,0 +1,381 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN//3.2">
+<!-- NOTE: CHANGES to Database on this page -->
+<HTML>
+<HEAD>
+	<TITLE>Webbed-Time Dollar Internals</TITLE>
+</HEAD>
+<BODY bgcolor="#FFFFFF" text="#000000">
+<table>
+<TD></TD>
+</table>
+<div align ="right">
+<FONT FACE="Garamond">
+<form>
+			<input type="hidden" name="template" value="/td/default.htm">
+			<input type="submit" name="LeaveButton" value="Back to Tour">
+</form>
+</div>
+<center><br>
+<p><br>
+<font size="+1">
+
+Introduction to the Database and Fields<br>
+used by Webbed-Time Dollars in Microsoft Access<br>
+and all the Downloads Required to Set up your Own Site<br>
+
+</font>
+</p>
+<font size="+3" color="blue">I</font><A HREF="mailto:BMSLIB@MIT.EDU" TITLE="Comments about SVEC site">f you download anything from here, please click here just to let us know so we can get a sense of interest in this page.</A>
+</center>
+<p>
+The fields used by Webbed-Time Dollars correspond to the fields used in <i>TimeKeeper</i> authored by Kent Gordon (see below).&nbsp;&nbsp;The Webbed version uses a connection tool between the web server and the Access tables called ODBC (Object Database Connection).
+</p>
+<p>
+For example, when a list of members is sent to your screen, a "query" is sent to ODBC which returns the list, and the list is then formatted by the server to provide the list in HTML (hypertext markup language -- the language your browser understands).  The part of the process that formats and controls the web page is called ASP (Active Server Page).  The ASP we are using is called VirtuFlex (by the ChannelWave Corporation of Cambridge, MA).  We are licensed to give anyone a copy of the
+
+<a href="VIRTFLEX.ZIP">VirtuFlex "plug-in" (VIRTFLEX.ZIP)</a> for NT server IIS (or similar NT server facility) for public community purposes.  There is also a 110 page <a href="virt_man.zip"> VirtuFlex Manual for NT (VIRTMAN.ZIP)</a> in Microsoft Word.  VirtuFlex is a neat ASP and you can mix VirtuFlex and VB Script under NT IIS 3 (or 4) on the same web page.
+</p>
+<p>Along the way we accumulated some working notes which when not interpreted by
+VirtuFlex look like <a href="/td/Template.htm">this</a> and when not interpreted
+by VirtuFlex look like <a href="virtuflex.exe?template=/td/template.htm">this</a>.&nbsp;
+This difference is that the items in the first file, surrounded by
+[[&nbsp;&nbsp; ]], appear as text in the first case and are interpreted by the
+VirtuFlex plug-in on this server in the second case.&nbsp; We include these
+notes to help you benefit from our observations and our mistakes.&nbsp; When you
+see items where the double brackets are separated by a space, as [ [, these are
+instances where the ASP would produce a fault; by putting a space between the
+brackets we keep the plug-in from trying to interpret this item.&nbsp; In that
+NT and the &quot;Jet&quot; ODBC drivers undergo constant change, some of the
+material relates to simply keeping up with those changes.
+</p>
+<p>&nbsp;Also notice, when you run the interpreted page, you get the VirtuFlex
+information about variables and any errors at the end of the page.&nbsp; If you
+go into the NT registry on the Server, under Software and VirtuFlex and set
+DebugLevel to 4 -- run REGEDT32), you will see any possible errors for all the
+pages.&nbsp; This is the mode we develop in.&nbsp; If the ODBC query to Access
+gives trouble, we will see the error message here in yellow, and we can cut and
+paste the query into an Access SQL query, and get more informative information
+about the problem.
+</p>
+<p>
+Every effort was made to keep a close correspondence between the "stand-alone" Microsoft Access-based application and the webbed version.&nbsp;&nbsp;This correspondence is both visual and structural.&nbsp;&nbsp;And, as a consequence, you may run either facility to view and make changes to the SAME database tables.&nbsp;
+Under an earlier version of NT we were able to run both Access97 and the web
+pages, without &quot;locking&quot; problems.&nbsp; Recent changes in the
+interface require that you close Access97 before results in the webbed version
+work again.
+</p>
+<p>
+The HTML/ASP code that runs this site is available <a href="TD.ZIP">TD.ZIP</a>.&nbsp;&nbsp;The pages represent over
+two person-year's effort and are 1/2 million characters in total.&nbsp; The
+graphics represent another
+</p>
+<p>
+To get going -- Download the VirtuFlex "plug-in" Install the plug-in Create a directory under C:\INETPUB\WWWROOT called TD and unzip <a href="TD.ZIP">TD.ZIP</a> into
+C:\INETPUB\WWWROOT\TD&nbsp;&nbsp;The starting web page is DEFAULT.HTM Download <a HREF="http://www.timedollar.org/timekeeper.htm">Timekeeper</a> for the Access database and the stand-alone Access program
+(or just download the database <a href="DB.ZIP">DB.ZIP</a>)&nbsp; The database files need to reside in C:\TIMED Test your site by clicking on all the active elements of the "Tour Page" graphic. If pages do not appear as they do at our site, please contact us about how to turn on
+debug messages
+</p>
+<p>
+Alternatively we will host some pages at this site.  Contact us and we will create a directory with a name corresponding to your community name and your own copy of the database.
+</p>
+<p>
+Another easy way to get a site up is to provide us with proof of ownership for
+NT Server, a hard drive with a 2 gigabtye partition, $25, and we will use Ghost
+to clone you a copy of our drive.&nbsp; When we last checked, the academic,
+nonprofit price for NT Server was $350.
+</p>
+The working database is called TDTBLS.MDB (Time Dollar Tables -- Microsoft Database)&nbsp;&nbsp;A demonstration version of the database (populated for illustration) is called TDDEMO.MDB which is currently the contents of this demonstration site.
+<p>
+Should you wish to use the Reporting facilities of TimeKeeper (when the database is on a distant server), the file TDTBLS.MDB can be
+FTP'd from the Server machine to any PC with TimeKeeper and an attached printer.&nbsp;&nbsp;TimeKeeper has extensive reporting
+capabilities that were not duplicated in Webbed-Time Dollars.  Should the user wish to incorporate tables from Access into, say, Microsoft Word, there are Access/Word facilities to do that.&nbsp;&nbsp;This is useful for telling others about your actual Webbed-Time Dollar Volunteer experiences.
+</p>
+<p>
+Another advantage to the user is that the database is accessible via a copy of Microsoft Access (currently the one shipped with Office97).&nbsp;&nbsp;The user can make changes or additions to the reporting facility.&nbsp;&nbsp;For example, one user wanted a list of volunteer transactions by the date performed (called Dateof) rather than the date of entry (called Entered).&nbsp;&nbsp;The user can locate the Transactions reporting
+section of TimeKeeper, change the word "Entered" to "Dateof" and the report will be as desired.
+</p>
+<p>About the HTML pages on the server and FrontPage2000 (FP)
+</p>
+<p>Our early experiences with FP were mixed.&nbsp; While it was fairly easy to
+work with VirtuFlex inside FP, FP aggressively would attack pages, ruin
+carefully indented, structured code and close tags before sections were
+completed.
+</p>
+<p>Our experience with FP2000 is better because one advertised feature of that
+release was to solve the problems we just described.&nbsp; And, to provide the
+pages to our most appreciated graphic designer, Mazen Beteddini from Mass
+College for the Arts in Boston, we moved the pages back into FrontPage
+2000.
+</p>
+<p>In FP, any VirtuFlex statements that we wished to remain hidden from the
+WYSIWYG page we placed as &quot;HTML Markup.&quot;&nbsp; This to FP simply
+places a &quot;startspan&quot; comment in front of code to remain hidden and an
+&quot;endspan&quot; comment at the end of the code.&nbsp; Since VirtuFlex mixes
+fieldnames with HTML tags, we could mostly let these fieldnames appear.&nbsp;
+The result is that simple changes to the pages can be done in FP without knowing
+about or disturbing the VirtuFlex components of each page.&nbsp; To make
+navigation between pages easier, we placed &quot;invisible&quot; hyperlinks that
+tell FP what page points to other pages.&nbsp; This was necessary because most
+of the pages are called by the VirtuFlex facility -- which FP could not read to
+decipher.&nbsp; You will find these links as empty &quot;anchor&quot; text at
+the bottom of each page.
+</p>
+</font>
+<p>One warning -- the colon has a special meaning to VirtuFlex, so any place in
+the text that you wish a colon -- use &amp;#58; instead.
+<FONT FACE="Garamond">
+&nbsp;
+</p>
+<em>About the Database and Tables</em>
+<p>
+A total of 19 tables are used in TDTBLS.MDB and it is difficult to comprehend the
+entirety of the volunteer database system.&nbsp;&nbsp;To help overcome that we provide the "<a href="/cgi-bin/virtuflex.exe?template=td\default.htm#map">visual map</a>" to run the site for illustration and we provide here an annotated summary of the fields used in TDTBLS.MDB
+</p>
+<p>
+By reading through the fieldnames, the scope of the tool will become clearer.&nbsp;&nbsp;The information in the right columns are notes about field type, length and use.&nbsp;&nbsp;Also there is frequent use of "key field" linkages among the tables and notes indicate these linkages.&nbsp;&nbsp;The user may also go into Access, go into the "Query" tab, and click on Design.&nbsp;&nbsp;You can
+diagrammatically see the linkages in Access by observing the QBE (Query By Example) display above the list of fieldnames.&nbsp;&nbsp;Also, you can see the equivalent SQL query used in Access (which roughly corresponds to ones used in the webbed version) by doing a "right-click" in a blank area and choosing the "SQL View" which is in the first row of the pop-up window that appears.  (It's an informative way of learning SQL which drives most database queries today &shy;&shy; SQL stands for Structured Query Language and has changed little since the early 80's.)</p>
+<p>
+If you are not a &quot;Techie&quot; there will be field names that will not make sense (such as the first one -- AsSvUnitID).  These fields are typically the <i>glue</i> that ties the tables together and may be ignored.  In fact, all of the ones labeled AutoNumber may be ignored.
+</p>
+<p>
+The tables are presented in alphabetical order.  A brief description is presented, then the actual table name appears followed by the fields in the table with the notes.&nbsp;&nbsp(When you see "Pro" think Provider and "Rec" think Recipient.)
+</p>
+</font>
+<font face="courier">
+<b>
+THIS TABLE USED TO MATCH "VOLUNTEER SERVICE UNITS" TO AN ASSIGNMENT</b>
+<font&nbsp;face="Helvetica"><b>Asgn&nbsp;SvUnit&nbsp;Table</b><br>
+AsSvUnitID&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AutoNumber<br>
+Assignment&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Number&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Assign&nbsp;ID<br>
+SvUnit&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Number&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Unit&nbsp;ID</font><br>
+<br>
+<font face="courier">
+<b>
+THIS TRACKS EACH ASSIGNMENT BETWEEN A PROVIDER AND A RECIPIENT<br>
+<font&nbsp;face="Helvetica">Assignment&nbsp;Table</b></font>
+<b>
+<br>
+</b><font face="Courier">
+AssignID&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AutoNumber<br>
+Provider&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Number&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mem&nbsp;ID<br>
+Recipient&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Number&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<font face="Courier">Mem&nbsp;ID<br>
+Service&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Number&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Service&nbsp;ID<br>
+Entered&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Date/Time<br>
+Updated&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Date/Time<br>
+BeginDate&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Date/Time<br>
+EndDate&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Date/Time<br>
+ProAccDate&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Date/Time<br>
+RecAccDate&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Date/Time<br>
+ProAccInitials&nbsp;&nbsp;Text&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4<br>
+RecAccInitials&nbsp;&nbsp;Text&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4<br>
+TimeCritical&nbsp;&nbsp;&nbsp;&nbsp;Yes/No<br>
+Closed&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Yes/No<br>
+QcRating&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;long&nbsp;int<br>
+Credits&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Number&nbsp;&nbsp;Single<br>
+Comments&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Memo</font><br>
+<b><br>
+THIS HOLDS THE LIST OF POSSIBLE "ATTRIBUTES" ("speaks the French language," etc.) -- SEE the "MEM ATTRIBUTE TABLE"<br>
+<font face="Helvetica">Attributes List</font><br>
+</b><font face="Courier">
+AttrID&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AutoNumber<br>
+AttrName&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Text<br>
+AttrType&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Test<br>
+Mem&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Yes/No&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;of&nbsp;members<br>
+Org&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Yes/No&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;of&nbsp;organizations<br>
+Selected&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Yes/No<br>
+None&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Yes/No<br>
+All&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Yes/No<br>
+Any&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Yes/No</font><br>
+<b>
+<font face="courier">
+<br>
+</font>
+THIS TABLE ONLY USED IN PC VERSION OF TIMEKEEPER<br>
+<font face="Helvetica">Coord Alpha List</font><br>
+</b><font face="Courier">
+CoordAlpha&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Text</font><br>
+<b>
+<br>
+THIS TABLE ONLY USED IN PC VERSION OF TIMEKEEPER<br>
+<font face="Helvetica">Coord Num List</font><br>
+</b><font face="Courier">
+CoordNum&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Text</font><br>
+<b>
+<br>
+THIS TABLE ONLY USED IN PC VERSION OF TIMEKEEPER<br>
+<font face="Helvetica">Mem Address Table</font><br>
+</b><font face="Courier">
+MemID&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Number<br>
+Address&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Memo<br>
+Salutation&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Text<br>
+Fax&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Text<br>
+Pager&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Text<br>
+Order&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Text</font><br>
+<b>
+<br>
+THIS HOLDS "ATTRIBUTES" LINKED TO A MEMBERS (OR ORGANIZATION)<br>
+<font face="Helvetica">Mem Attribute Table</font><br>
+</b><font face="Courier">
+MemAttrID&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AutoNumber<br>
+Member&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Number&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mem&nbsp;ID<br>
+Attribute&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Number&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Attr&nbsp;ID&nbsp;</font><br>
+<b>
+<br>
+THIS HOLDS THE LINK BETWEEN THE "SERVICES" LISTED IN "SERVICES LIST" BELOW AND EACH MEMBER (OR ORGANIZATION)<br>
+<font face="Helvetica">Mem Service Table</font><br>
+</b><font face="Courier">
+
+MemServID&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AutoNumber<br>
+Member&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Number&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mem&nbsp;ID<br>
+Service&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Number&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Service&nbsp;ID<br>
+Needs&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Yes/No </font><br>
+<a name=member></a>
+<br>
+<b>
+THIS IS THE MASTER LIST OF MEMBERS AND ORGANIZATIONS<br>
+<font face="Helvetica">Member Table</font><br>
+</b><font face="Courier">
+MemID&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Autonumber<br>
+Identifier&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Text&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;12<br>
+LastName&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Text&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;30<br>
+FirstName&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Text&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;20&nbsp;&nbsp;null&nbsp;for&nbsp;an&nbsp;organization<br>
+Nickname&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Text&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;20&nbsp;&nbsp;%ORG%&nbsp;for&nbsp;an&nbsp;organization<br>
+Street&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Text&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;40<br>
+City&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Text&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;20<br>
+State&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Text&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2<br>
+Zipcode&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Text&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10<br>
+HomePhone&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Text&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;20<br>
+WorkPhone&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Text&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;20<br>
+Balance&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Number&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;single<br>
+Site&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Number&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;long&nbsp;int&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Site&nbsp;ID<br>
+Availability&nbsp;&nbsp;&nbsp;&nbsp;Number&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;long&nbsp;int&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;time&nbsp;map<br>
+Birthday&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Date/Time<br>
+UserNum&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Text&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;9&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SS#<br>
+DriversLicense&nbsp;&nbsp;Text&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;20<br>
+Insurance&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Text&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;50<br>
+CoordAlfa&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Text&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2<br>
+CoordNum&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Text&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2<br>
+HasCar&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Yes/No<br>
+SignedForms&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Yes/No<br>
+Inactive&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Yes/No<br>
+Smoker&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Yes/No<br>
+SmokeTolerant&nbsp;&nbsp;&nbsp;Yes/No<br>
+MemSince&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Date/Time<br>
+Entered&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Date/Time<br>
+Updated&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Date/Time<br>
+Comments&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Memo<br>
+Emergency&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Memo<br>
+Doctor&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Memo</font><br>
+<b>
+<br>
+THIS TABLE ONLY USED IN PC VERSION OF TIMEKEEPER<br>
+<font face="Helvetica">Program Information</font><br>
+</b><font face="Courier">
+ProgramVersion&nbsp;&nbsp;Number<br>
+DatabaseVersion&nbsp;Number</font><br>
+<b>
+<br>
+CONTAINS TEXT (None, Low, Average, High) CORRESPONDING TO 1,2,3,4<br>
+<font face="Helvetica">QC Rating List</font><br>
+</b><font face="Courier">
+QCtrlID&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AutoNumber<br>
+QCRating&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Text</font><br>
+<b>
+<br>
+TABLE CONTAINS THE LIST OF ALL SERVICES EITHER NEEDED OR PROVIDED BY EACH MEMBER<br>
+(Note: currently a Member cannot be both a Provider and a Recipient of the Same Service -- enter the Member twice in this case)<br>
+<font face="Helvetica">Services List</font><br>
+</b><font face="Courier">
+ServiceID&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AutoNumber<br>
+Service&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Text<br>
+ServiceType&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Text<br>
+Mem&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Yes/No&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;member<br>
+Org&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Yes/No&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;organization<br>
+Provides&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Yes/No<br>
+Needs&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Yes/No</font><br>
+<b>
+<br>
+CREDITS MAY BE PROVIDED WITHIN CERTAIN CATEGORIES OF SERVICE CALLED "SERVICE UNITS" -- THESE ARE "Coaching" "Leadership" etc.<br>
+<font face="Helvetica">ServiceUnit Table</font><br>
+</b><font face="courier">
+SvUnitID&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AutoNumber<br>
+DateOf&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Date/Time<br>
+Number&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Number<br>
+Provider&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Number&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mem&nbsp;ID<br>
+Recipient&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Number&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Unit&nbsp;ID<br>
+SvUnit&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Number&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Unit&nbsp;ID<br>
+<br>
+</font>
+<b>
+<a name="site"></a>
+THIS TABLE HOLDS THE SPECIFIC SITES INVOLVED IN THE COMMUNITY VOLUNTEER EFFORT<br>
+<font face="Helvetica">Site Table</font><br>
+</b><font face="Courier">
+SiteID&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AutoNumber<br>
+Identifier&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Text<br>
+Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Text<br>
+Street&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Text<br>
+City&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Text<br>
+State&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Text<br>
+Zipcode&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Text<br>
+Manager&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Number&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mem&nbsp;ID</font><br>
+<b>
+<br>
+HOLDS THE PROGRESSION OF SERVICE UNITS THAT WERE CREDITED BETWEEN A PROVIDER AND A RECIPIENT MEMBER (OR ORGANIZATION)<br>
+<font face="Helvetica">ServiceUnit Table</font><br>
+</b><font face="Courier">
+SvUnitID&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Long&nbsp;Integer<br>
+DateOf&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Date/Time<br>
+Number&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Number<br>
+Provider&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Number&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mem&nbsp;ID<br>
+Recipient&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Number&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mem&nbsp;ID<br>
+SvUnit&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Number&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Unit&nbsp;ID</font><br>
+<b>
+<br>
+<br>
+THIS TABLE HOLDS INFORMATION REQUIRED FOR THE OPERATION OF BOTH THE WEBBED VERSION AND THE PC VERSION.<br>
+(It is by the combination of the "SystemCode" (e.g. DEMO) and the "NextToAssign" number that the "Identifier" for Members, Organizations, and Sites are created (e.g. DEMO232456)<br>
+<font face="Helvetica">System Information</font><br>
+</b><font face="courier">
+SystemName&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Text<br>
+SystemCode&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Text<br>
+NextToAssign&nbsp;&nbsp;&nbsp;&nbsp;Number<br>
+ReportQuarter&nbsp;&nbsp;&nbsp;Date/Time<br>
+RptOrgName&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Text<br>
+RptOrgAddress&nbsp;&nbsp;&nbsp;Text<br>
+DatabaseVersion&nbsp;Number<br>
+<br></font>
+<b>
+THIS TABLE HOLDS EACH TRANSACTION ENTERED FOR AN EXISTING ASSIGNMENT
+(some communities do not use this table if there is not regular, on-going exchanges between the same two people over a period of time.)<br>
+<font face="Helvetica">Transaction Table</font><br>
+</b><font face="Courier">
+TransID&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AutoNumber<br>
+Entered&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Date/Time&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;date&nbsp;transaction&nbsp;entered<br>
+DateOf&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Date/Time&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;date&nbsp;service&nbsp;performed<br>
+Credits&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Number&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;time&nbsp;dollars<br>
+Provider&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Number&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mem&nbsp;ID<br>
+Recipient&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Number&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mem&nbsp;ID<br>
+Service&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Number&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Service&nbsp;ID<br>
+</font>
+<b>
+<br>
+THIS TABLE HOLDS THE CORRESPONDENCE BETWEEN A 'SERVICE UNIT" ID AND THE "SERVICE UNIT" NAME AND WHETHER THE CATEGORY IS ACTIVE.&nbsp;&nbsp;"UnitType" is currently NOT be used<br>
+<font face="Helvetica">UnitNames List</font><br>
+</b><font face="Courier">
+UnitID&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AutoNumber<br>
+UnitName&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Text<br>
+UnitType&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Text<br>
+Active&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Yes/No</font><br>
+<b>
+<br>
+THIS TABLE ONLY USED IN PC VERSION OF TIMEKEEPER<br>
+<font face="Helvetica">UnitNames List Temp</font><br>
+</b><font face="Courier">
+UnitID&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AutoNumber<br>
+Selected&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Yes/No<br>
+Credits&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Number</font>
+</BODY>
+</HTML>

@@ -1,0 +1,76 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN//3.2">
+
+<html>
+<head>
+	<title>Find Service</title>
+</head>
+<BODY bgcolor="#FFFFFF" text="#000000">
+<!--webbot bot="HTMLMarkup" startspan -->
+[[SET:DefaultDbase:c\:\timed\tddemo.mdb]]
+<!--webbot bot="HTMLMarkup" endspan -->
+<form action="/cgi-bin/virtuflex.exe" method="get">
+<input type="hidden" name="template" value="/td/transfer.htm">
+<center>
+<font="+1"><b>
+Selecting from Services</b>
+</font>
+</center>
+<table border="1" width="600" border="1" cellspacing="0" cellpadding="0">
+	<tr>
+		<td width="200" bgcolor="F4FCFF">
+			<center>
+			<font size="+2">
+			<b>
+			Service
+			</b>
+			</font>
+			</center>
+		</td>
+		<td width="285" bgcolor="E0E6E0">
+			<center>
+			<font size="+2">
+			<b>
+			Service Type
+			</b>
+			</font>
+			</center>
+		</td>
+		<td width="100">
+        <p align="center">
+			&nbsp;<font color="#CC0066">Click</font>
+		</td>
+	</tr>
+</table>
+
+<table border="0" width="600" border="0" cellspacing="0" cellpadding="0">
+<!--webbot bot="HTMLMarkup" startspan -->
+[[DBASE:SELECT:[Services List]:Service like '%'
+	ORDER BY Service
+	:
+	<!--webbot bot="HTMLMarkup" endspan -->
+	<tr>
+		<td bgcolor="#F4FCFF" width="198">
+			{Service}
+		</td>
+		<td bgcolor="#E0E6E0" width="282">
+			{ServiceType}
+		</td>
+		<td width="100">
+			<center>
+			<font size="+1">
+			<b>
+			<a href="/cgi-bin/virtuflex.exe?template=/td/transfer.htm&amp;Service={ServiceID}&amp;Provider=[[GETDATA:Provider]]&amp;Recipient=[[GETDATA:Recipient]]&amp;Credits=[[GETDATA:Credits]]&amp;TransferDateMMSelect=[[GETDATA:TransferDateMMSelect]]&amp;TransferDateYYSelect=[[GETDATA:TransferDateYYSelect]]&amp;TransferDateDDSelect=[[GETDATA:TransferDateDDSelect]]">Select</a>
+			</b>
+			</font>
+			</center>
+		</td>
+	</tr>
+<!--webbot bot="HTMLMarkup" startspan -->
+]]
+<!--webbot bot="HTMLMarkup" endspan -->
+</table>
+
+</form>
+
+</BODY>
+</html>

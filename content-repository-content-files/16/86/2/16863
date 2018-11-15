@@ -1,0 +1,20 @@
+<!--webbot bot="HTMLMarkup" startspan -->
+[[EVAL:IF:[[GETDATA:Tour]]=top
+	:
+<!--webbot bot="HTMLMarkup" endspan -->
+<table bgcolor="#F0FFFF" width="700">
+	<th align="center">
+		You have reached &quot;Match Provider Date Availability with Recipient's Date Requirement&quot; via the <font color="#0066FF">Tour</font><br>
+		To normally arrive here do&#58;<br>
+		<font color="#0066FF">
+			Home/Tour Page==&gt;Main Buttons==&gt;Match==&gt;scroll down to here<br>
+		</font>
+		<font color="#000000">
+			Please use the browser's 'Back' to return to the Tour<br>
+		</font>
+    </th>
+  </table>
+<!--webbot bot="HTMLMarkup" startspan -->
+	:
+]]
+<!--webbot bot="HTMLMarkup" endspan -->

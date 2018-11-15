@@ -1,0 +1,28 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>New Assignment Error</title>
+</head>
+
+<BODY bgcolor="#FFFFFF" text="#000000">
+[[EVAL:IF:[[GETDATA:OKChgErr]]=OK
+:<!-- wants to go back -->
+	[[GETDATA:XYZZY:CHECK=/td/OneAssin.htm]]
+:<!-- first time, show Error msg -->
+<p>One or more required fields <strong>require</strong> data.</p>
+
+<p>Kindly find a Provider, a Recipient <b>and</b> a Service</p>
+
+<p>Please click on<big><strong> OK </strong></big> to continue.&nbsp; The browser will have
+saved the information you've already entered.</p>
+<form action="/cgi-bin/virtuflex.exe">
+<input type="hidden" name="template" value="/td/assign.htm">
+<input type="hidden" name="Provider" value="[[GETDATA:Provider]]">
+<input type="hidden" name="Recipient" value="[[GETDATA:Recipient]]">
+<input type="hidden" name="Service" value="[[GETDATA:Service]]">
+<img src="/td/blank.gif" width="180" height="1" border="0">
+<input type="submit" name="OKChgErr" value="OK">
+]]<!-- end of OKChgErr button TRUE/FALSE -->
+</BODY>
+</html>

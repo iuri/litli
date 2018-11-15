@@ -1,0 +1,58 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN//3.2">
+<html>
+<head>
+	<title>Test return for null</title>
+</head>
+<BODY bgcolor="#FFFFFF" text="#000000">
+[[SET:DebugLevel:4]]
+<a HREF="virtuflex.exe?/td/TestDat1.htm">Push Me to run with VirtuFlex</a><br><br>
+<p>
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxyxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxyxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxyx
+x1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567
+</p>
+
+<!--webbot bot="HTMLMarkup" startspan -->
+
+
+[[SET:DefaultDbase:c\:\timed\tddemo.mdb]]
+
+[[SET:VAR:Record1=55]]
+Looking for Record [[GETDATA::VAR=Record1]]<br>
+
+[[EVAL:IF:[[DBASE:SELECT:[Transaction Table]:
+	TransID=[[GETDATA::VAR=Record1]]:{TransID|Length}]]=0
+	:
+	There is no Record [[GETDATA::VAR=Record1]]<br>
+	:
+	[[DBASE:SELECT:[Transaction Table]:
+		TransID=[[GETDATA::VAR=Record1]]:DateOf=x{DateOf}x]]
+]]
+<!--webbot bot="HTMLMarkup" -->
+<!-- got these returns on "C L/S" installation, 3/30/2000-->
+<!--x17740/21571/17747 0: 0: 0x--><!--59-->
+<!--x93/ 1/25964 0: 0: 0xx--><!--57-->
+<!-- then no & variables -->
+<!--x17740/21571/17747 2560:12092:17736x --><!--59-->
+<!--then again-->
+<!--x122/ 6/3152 0: 0: 0x --><!--59-->
+<!--x93/ 1/25964 0: 0: 0x--><!--54-->
+<!--x 1/ 1/2001 1: 1: 1x--><!--52-->
+<!-- the return of garbage for a null relates to the number of
+	characters in the template BEFORE the opening of the
+	database
+	If the number is between 505-601 we get garbage
+	Less or more, its OK  
+	AND -- it is also a function of the number of characters
+	that come AFTER the opening, up to the Select for the
+	field's value 
+	So, this file, as is, returns OK, unless we remove the 7
+	character from before the opening
+	Once we do that, then we must remove ALL the numeric
+	characters and it works again-->
+
+<!--webbot bot="HTMLMarkup" -->
+
+
+<!--webbot bot="HTMLMarkup" endspan -->
+
+

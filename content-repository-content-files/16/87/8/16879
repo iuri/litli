@@ -1,0 +1,16 @@
+<!-- SEPARATE TO AVOID ONEASSIN.HTM GOING OVER 32k -->
+<!--webbot bot="HTMLMarkup" startspan -->
+[[EVAL:IF:[[GETDATA:Tour]]=top-s
+	:
+<!--webbot bot="HTMLMarkup" endspan -->
+<table bgcolor="#F0FFFF" width="700">
+	<th align="center">
+You (as someone seeking services) have reached &quot;Look at Past Assignments&quot; via the <font color="#0066FF">Tour</font><br>
+To normally arrive here do&#58;<br>
+<font color="#0066FF">Home/Tour Page==&gt;Main Buttons==&gt;Assignments==&gt;Search, Scroll Down page==&gt;View<br></font>
+Please use the browser's 'Back' to return to the Tour<br>
+    </th></table>
+<!--webbot bot="HTMLMarkup" startspan -->
+	:
+]]
+<!--webbot bot="HTMLMarkup" endspan -->

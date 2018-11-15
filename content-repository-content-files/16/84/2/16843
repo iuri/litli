@@ -1,0 +1,394 @@
+<html>
+
+<head>
+<title>Display of One Site</title>
+</head>
+<BODY bgcolor="#FFFFFF" text="#000000">
+
+<!-- Come here with either SiteID, or NewButton=New			(&MemID is not used on this page)			Uses VirtuFlex SiteID, MemOrgID, Manager because of New -->
+<!--webbot bot="HTMLMarkup" startspan -->
+[[SET:DefaultDbase:c\:\timed\tddemo.mdb]]
+<!--If pushed Cancel button, force move back to sites.htm -->
+[[EVAL:IF:[[GETDATA:CancelButton]]=Cancel:
+	[[GETDATA:XYZZY:CHECK=/td/sites.htm]]
+	: <!-- no cancel -->
+]]
+<!-- if we ducked out below to select a new Organization or Manager
+     we must now capture it -->
+[[SET:VAR:MemOrgID=[[GETDATA:MemOrgID]]]]
+[[SET:VAR:Manager=[[GETDATA:Manager]]]]
+<!-- if New, this SET will be null (and replaced in New) -->
+[[SET:VAR:SiteID=[[GETDATA:SiteID]]]]
+<!-- unlike AttrChg.htm, ServChg.htm, AssiChg.htm, FindMan and FindOrg do NOT make
+			any database changes, but returns --
+				1.  NewMan == on OR NewOrg == on
+				2.  Selected New Manager (in Manager) OR New Organization (in MemOrgID)
+				-->
+[[EVAL:IF:[[GETDATA:NewOrg:LENGTH]]> 0
+	:
+			[[DBASE:SQL:Update [Site Table] SET
+				Organization=[[GETDATA::VAR=MemOrgID]]
+				where SiteID=[[GETDATA::VAR=SiteID]]
+			]]
+		: <!-- not inserting a New Organization, do nothing -->
+]]
+[[EVAL:IF:[[GETDATA:NewMan:LENGTH]]> 0
+	:
+			[[DBASE:SQL:Update [Site Table] SET
+				Manager=[[GETDATA::VAR=Manager]]
+				where SiteID=[[GETDATA::VAR=SiteID]]
+			]]
+		: <!-- not inserting a New Manager, do nothing -->
+]]
+<!-- check for either New or Updating -->
+[[EVAL:IF:[[EVAL:BOOL:
+	[[EVAL:BOOL:[[GETDATA:Once]]=Record
+	]] ||
+	[[EVAL:BOOL:[[GETDATA:NewButton]]=New
+	]]
+				  ]]
+		:<!-- New or Once  -->
+			[[EVAL:IF:[[GETDATA:NewButton]]=New
+				:<!-- if new, "starters" -->
+					<!-- must have NewButton=New, and SiteID
+							the Manager and Organization are entered here
+							and in "hidden" below -->
+<!--webbot bot="HTMLMarkup" endspan -->
+					<center>
+					<font size="+2">
+						<b>Enter Information about the New Site</b>
+					</font>
+					</center>
+<!--webbot bot="HTMLMarkup" startspan -->
+					<!-- remove any partial records -->
+					<!-- Had not noticed that SiteID 1 has Updated of null
+								and because of circular keying (see virtuflex.doc)
+								it refuses to delete that record -->
+					[[DBASE:DEL:[Site Table]:SiteID <> 1 and Updated is null]]
+					<!-- add the new record -->
+					[[SET:VAR:Identifier=[[DBASE:SELECT:[System Information]:
+						1=1:{MAX(SystemCode)}{MAX(NextToAssign)}]]]]
+					[[DBASE:ADD:[Site Table]:
+						{Identifier|[[GETDATA::VAR=Identifier]]}
+						{Entered|[[GETDATA::DATE=m/d/y]] [[GETDATA::TIME]]}
+					]]
+					[[SET:VAR:Identifier=[[EVAL:MATH:[[GETDATA::VAR=Identifier|SUBSTR=5=8]]+1]]]]
+					[[DBASE:SQL:Update [System Information] SET
+						NextToAssign=[[GETDATA::VAR=Identifier]]
+					]]
+					<!-- this was returning prior record (in OneOrg) unless I closed and reopen -->
+					[[SET:DefaultDbase:c\:\timed\tddemo.mdb]]
+					[[SET:VAR:SiteID=[[DBASE:SELECT:[Site Table]:
+						1=1:{MAX(SiteID)}]]]]
+					<!-- this is an empty Manager and Organization (see also "hidden" one below) -->
+					[[SET:VAR:Manager=2]]
+					[[SET:VAR:MemOrgID=1]]
+				: <!-- not New then must be Once, do update here -->
+					<!-- (1.)  If 'Once' is Record, then if (2.) all data is present, then update-->
+					<!-- "hidden" will have been passed to the page -->
+					[[EVAL:IF:[[EVAL:BOOL:
+
+							[[EVAL:BOOL:[[EVAL:BOOL:[[GETDATA:Name:LENGTH]] != 0]] &&
+								[[EVAL:BOOL:[[EVAL:BOOL:[[GETDATA:Street:LENGTH]] != 0]] &&
+
+											[[EVAL:BOOL:[[EVAL:BOOL:[[GETDATA:City:LENGTH]] != 0]] &&
+												[[EVAL:BOOL:[[EVAL:BOOL:[[GETDATA:State:LENGTH]] != 0]] &&
+														[[EVAL:BOOL:[[GETDATA:Zipcode:LENGTH]] != 0
+														]]
+												]]
+											]]
+
+								]]
+							]]
+
+									]]
+					: <!-- TRUE -- all data good -->
+						[[DBASE:SQL:Update [Site Table] SET
+							Name='[[GETDATA:Name]]',
+							Street='[[GETDATA:Street]]',
+							City='[[GETDATA:City]]',
+							State='[[GETDATA:State]]',
+							Zipcode='[[GETDATA:Zipcode]]',
+							Inactive=
+							[[EVAL:IF:[[GETDATA:Inactive]]=on
+								:
+								  -1
+								:
+								   0
+							]],
+							Manager=[[GETDATA::VAR=Manager]],
+							Organization=[[GETDATA::VAR=MemOrgID]],
+							Updated='[[GETDATA::DATE=m/d/y]] [[GETDATA::TIME]]'
+							where SiteID=[[GETDATA::VAR=SiteID]]
+						]] <!-- DBASE update -->
+					  <!-- double quote ok in SQL, but single quote(apostrophe) needs to be doubled-->
+					<!-- update database each time user submits current page (with data)-->
+						[[EVAL:IF:[[GETDATA:ChangeManager:LENGTH]]> 0
+							:
+								[[GETDATA:XYZZY:CHECK=/td/FindMan.htm]]
+							: <!-- not going to Change Manger, do nothing -->
+						]]
+						[[EVAL:IF:[[GETDATA:ChangeOrganization:LENGTH]]> 0
+							:
+								[[GETDATA:XYZZY:CHECK=/td/FindOrg.htm]]
+							: <!-- not going to Change Organization, do nothing -->
+						]]
+					:
+						<!-- missing data-->
+					[[GETDATA:XYZZY:CHECK=/td/OneErr.htm]]
+				]] <!-- end data check -->
+<!--webbot bot="HTMLMarkup" endspan -->
+				<font size="+1">
+				<center>
+				<b>
+				Updated Volunteer Site
+				</b>
+				</center>
+<!--webbot bot="HTMLMarkup" startspan -->
+			]] <!-- end not New, was Once -->
+		: <!-- not New or Once -->
+	<!-- no code at this indent level -->
+<!--webbot bot="HTMLMarkup" endspan -->
+	<font size="+1">
+	<center>
+	<b>
+	Volunteer Site
+	</b>
+	</center>
+	</font>
+<!--webbot bot="HTMLMarkup" startspan -->
+]] <!-- end New or Once -->
+<!--webbot bot="HTMLMarkup" endspan -->
+<div align="center"><center>
+<!--webbot bot="HTMLMarkup" startspan -->
+[[DBASE:SELECT:[Site Table]:SiteID=[[GETDATA::VAR=SiteID]]
+:
+<form action="/cgi-bin/virtuflex.exe" method="get">
+<input type="hidden" name="template" value="/td/onesite.htm">
+<!-- SiteID passed from sites, or created in New -->
+<input type="hidden" name="SiteID" value="[[GETDATA::VAR=SiteID]]">
+<!-- MemOrgID passed from sites, or created in New -->
+<input type="hidden" name="MemOrgID" value="[[GETDATA::VAR=MemOrgID]]">
+<input type="hidden" name="Manager" value="[[GETDATA::VAR=Manager]]">
+<!-- this duplicates except when Change Site is picked -->
+<input type="hidden" name="Once" value="Record">
+<input type="hidden" name="Label" value="Site">
+<!--webbot bot="HTMLMarkup" endspan -->
+<font size="+2">
+<b>Site Location, Organization and Manager</b>
+</font>
+<table bgcolor="#FFFFFF" border="0">
+	<tr>
+		<td bgcolor="#FFFFFF">
+<table width="533" height="124" cellpadding="0" cellspacing="5" bordercolor="#FFFFFF">
+  <tr>
+    <td align="right" width="159" bgcolor="#FFFFFF" bordercolorlight="#FFFFFF" bordercolordark="#FFFFFF">Name
+		</td>
+		<td align="left" width="270">
+			<input type="text" name="Name" size="24" value="{Name}">
+		</td>
+		<td valign="top" rowspan="4" align="center" bgcolor="#FFFFFF" width="74">
+			<input type="submit" value="Record" name="OKButton">
+			<input type="submit" value="Cancel" name="CancelButton">
+		</td>
+	</tr>
+	<tr>
+    <td align="right" width="159">Street
+		</td>
+		<td width="270">
+			<input type="text" name="Street" size="24" value="{Street}">
+		</td>
+	</tr>
+	<tr>
+    <td align="right" width="159">City
+		</td>
+		<td width="270">
+			<input type="text" name="City" size="24" value="{City}">
+			<img src="/td/blank.gif" ALT width="6" height="0">
+			State
+			<input type="text" name="State" size="2" value="{State}">
+		</td>
+	</tr>
+	<tr>
+    <td align="right" width="159">Zipcode
+		</td>
+		<td width="270">
+			<input type="text" name="Zipcode" size="24" value="{Zipcode}">
+		</td>
+	</tr>
+</table>
+<!--webbot bot="HTMLMarkup" startspan -->
+]]<!-- end DBASE -->
+<!--webbot bot="HTMLMarkup" endspan -->
+</td>
+</tr>
+</table>
+</center></div>
+<div align="center">
+  <table border="0" width="525" height="345">
+    <tr>
+      <td height="9" width="249">
+        <p align="center">
+				<font size="+1">
+                Organization
+              </font>
+       </td>
+		<td height="9" width="262">
+		<p align="center">
+				<font size="+1">
+		Manager</font>
+		</td>
+    </tr>
+    <tr>
+      <td height="9" align="center" width="249">
+				<font size="+1">
+                <input type="submit" value="Change" name="ChangeOrganization">               </font>
+       </td>
+		<td height="9" align="center" width="262">
+				<font size="+1">
+			<input type="submit" value="Change" name="ChangeManager"></font></td>
+    </tr>
+
+    <center>
+<tr>
+    <td bgcolor="#E0E6E0" width="249">
+    	<!-- Organization display -->
+			<!-- essentially copied from organiza.htm -- but organization info-->
+			<table border="0" cellpadding="0" cellspacing="0" width="225">
+				<tr>
+					<td width="136">
+					<!-- Organizations are "Members" -->
+<!--webbot bot="HTMLMarkup" startspan -->
+					[[DBASE:SELECT:[Member Table]:MemID=[[GETDATA::VAR=MemOrgID]]
+					and MemID <> 1
+					:
+<!--webbot bot="HTMLMarkup" endspan -->
+	  <font size="-2">{LastName}</font></td>
+		</tr>
+					<tr>
+		<td width="136"><font size="-2">{Street}</font></td>
+		<td width="65">&nbsp;</td>
+		</tr>
+		<tr>
+		 <td width="136"><font size="-2">{City} </font></td>
+		 <td width="65"><font size="-2">{State} &nbsp;{Zipcode}</font></td>
+		</tr>
+<!-- blank row -->
+		<tr>
+		  <td width="136">
+							&nbsp;
+						</td>
+		</tr>
+		<tr>
+						<td width="136">
+							<font size="-1">
+							Org ID-- </font><font size="-2">{Identifier}
+							</font>
+						</td>
+		</tr>
+		<tr>
+			<td>
+				&nbsp;
+			</td>
+		</tr>
+					<tr>
+						<td width="136">
+							<font size="-1">
+							Phones-- </font><font size="-2">{HomePhone}
+							
+							<img src="/td/blank.gif" ALT width="35" height="1">
+							{WorkPhone}
+							</font>
+						</td>
+					</tr>
+<!--webbot bot="HTMLMarkup" startspan -->
+					]] <!-- end DBASE -->
+<!--webbot bot="HTMLMarkup" endspan -->
+      </table>
+		</td>
+    <td bgcolor="#DDDDDD" width="262">
+			<!-- essentially copied from organiza.htm -- but organization info-->
+			<table bgcolor="#DDDDDD" border="0" cellpadding="0" cellspacing="0" width="199">
+				<tr>
+					<td width="138">
+<!--webbot bot="HTMLMarkup" startspan -->
+					[[DBASE:SELECT:[Member Table]:MemID=[[DBASE:SELECT:
+						[Site Table]:SiteID=[[GETDATA::VAR=SiteID]]
+						:{Manager}]]
+						and LastName <> 'null'
+					:
+<!--webbot bot="HTMLMarkup" endspan -->
+	  <font size="-2">{FirstName} {LastName}</font></td>
+		</tr>
+					<tr>
+		<td width="138"><font size="-2">{Street}</font></td>
+		<td width="57">&nbsp;</td>
+		</tr>
+		<tr>
+		 <td width="138"><font size="-2">{City} </font></td>
+		 <td width="57"><font size="-2">{State} &nbsp;{Zipcode}</font></td>
+		</tr>
+<!-- blank row -->
+		<tr>
+		  <td width="138">
+							&nbsp;
+						</td>
+		</tr>
+		<tr>
+						<td width="138">
+							<font size="-1">
+							Org ID-- </font><font size="-2">{Identifier}
+							</font>
+						</td>
+		</tr>
+		<tr>
+			<td width="138">
+				&nbsp;
+			</td>
+		</tr>
+					<tr>
+						<td width="138">
+							<font size="-1">
+							HomePhone </font><font size="-2">{HomePhone}
+							
+							WorkPhone {WorkPhone}
+							</font>
+						</td>
+					</tr>
+<!--webbot bot="HTMLMarkup" startspan -->
+					]] <!-- end DBASE -->
+<!--webbot bot="HTMLMarkup" endspan -->
+      </table>
+		</td>
+</tr>
+<tr>
+  <td height="19" width="249">
+				<font size="+1">
+		<img src="/td/blank.gif" ALT width="35" height="1">
+			<font size="-1">
+            Updated&nbsp;
+<!--webbot bot="HTMLMarkup" startspan -->
+			[[DBASE:SELECT:[Site Table]:SiteID=[[GETDATA::VAR=SiteID]]:
+			{Updated|SUBSTR=1=10|CONVERT= =0|CONVERT=00/00/0000=Never}&nbsp&nbsp{Updated|SUBSTR=12=10|CONVERT= =0|CONVERT=00\:00\:00=}
+<!--webbot bot="HTMLMarkup" endspan -->
+        </font></font>
+	</td>
+	<td width="262">
+			<img src="/td/blank.gif" ALT width="50" height="1"></font>
+  			<font size="-1">
+            <input type="checkbox" {Inactive|CONVERT="1=CHECKED|CONVERT=0=}" name="Inactive">Inactive		 
+			</font>
+	</td>
+</tr>
+</table>
+
+</center></div>
+<!--webbot bot="HTMLMarkup" startspan -->
+			]]
+<!--webbot bot="HTMLMarkup" endspan -->		 
+</form>
+<p><a href="OneEer.htm"></a></p>
+<p><a href="FindMan.htm"></a></p>
+<p><a href="FindOrg.htm"></a></p>
+</BODY>
+</html>

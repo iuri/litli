@@ -1,0 +1,121 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN//3.2">
+
+<html>
+<head>
+	<title>Provider Member</title>
+</head>
+<BODY bgcolor="#FFFFFF" text="#000000">
+<!--webbot bot="HTMLMarkup" startspan -->
+[[SET:DefaultDbase:c\:\timed\tddemo.mdb]]
+<!-- there's a choice, we either must pass all 21 boxes back, OR
+     we can pass Availability back, we do the second -->
+				<!-- if this was in BASIC it would look like --
+			DIM VAR(21)
+			X=0
+			VAR(0)=1
+			VAR(20)=1
+			FOR I=20 to 1 STEP -1
+			X=X+(2*VAR(I))^I
+			NEXT
+			X=X+VAR(0)
+			PRINT "Availability=";X
+			where X=1048575 when these 2 cells == 1,
+			Sunday morning, and Saturday evening -->
+			[[SET:VAR:I=20]]
+			[[SET:VAR:AVAILABILITY=0]]
+			[[EVAL:WHILE:[[GETDATA::VAR=I]] >0
+			: <!-- body of within loop -->
+				[[SET:VAR:Availability=[[EVAL:MATH:
+					[[GETDATA::VAR=Availability]] +
+					[[EVAL:MATH:
+						[[EVAL:MATH:
+							2*[[GETDATA:[[GETDATA::VAR=I]]Check:CONVERT=on=1|CONVERT=off=0]]
+						]]
+						^[[GETDATA::VAR=I]]
+					]]
+															]]]]
+				[[SET:VAR:I=[[GETDATA::VAR=I|DECR]]]]
+			]]<!-- end of update loop (EVAL WHILE) -->
+			[[SET:VAR:Availability=[[EVAL:MATH:[[GETDATA::VAR=AVAILABILITY]]+[[GETDATA:0Check:CONVERT=on=1|CONVERT=off=0]]]]]]
+
+						<!-- when VirtuFlex numbers exceed a million, they have
+			    a decimal and 6 trailing zeros, remove .000000 -->
+			[[SET:VAR:Availability=[[GETDATA::VAR=Availability|PREPEND=`|PARSE=`=.]]]]
+<!-- If they check off same Organization, then show only organizations -->
+<!--webbot bot="HTMLMarkup" endspan -->
+<center>
+<font size="+1">
+<b>
+<!--webbot bot="HTMLMarkup" startspan -->
+[[EVAL:IF:[[GETDATA:MustBeOrganizationCheck]]=on
+	:
+	<!--webbot bot="HTMLMarkup" endspan -->
+		Selecting from Organizations
+<!--webbot bot="HTMLMarkup" startspan -->
+		[[SET:VAR:IsOrganization=(Nickname \= '%ORG%')]]
+	:
+		Selecting from Individual Members
+		[[SET:VAR:IsOrganization=(Nickname <> '%ORG%') OR (Nickname IS NULL)]]
+]]
+<!--webbot bot="HTMLMarkup" endspan -->
+</b>
+</font>
+</center>
+<form action="/cgi-bin/virtuflex.exe" method="get">
+<input type="hidden" name="template" value="/td/match.htm">
+
+<table width="600" border="0" cellspacing="0" cellpadding="0">
+	<tr>
+		<td width="250" bgcolor="#F4FCFF">
+			<center>
+			<font size="+2">
+			<b>
+			First Name
+			</b>
+			</font>
+			</center>
+		</td>
+		<td width="250" bgcolor="#F5F5F5">
+			<center>
+			<font size="+2">
+			<b>
+			Last Name
+			</b>
+			</font>
+			</center>
+		</td>
+		<td width="100">
+            <p align="center"><font color="#CC0066">Click</font></p>
+		</td>
+	</tr>
+</table>
+
+<table width="600" border="0" cellpadding="0" cellspacing="0">
+<!--webbot bot="HTMLMarkup" startspan -->
+	[[DBASE:SELECT:[Member Table]:(MemID like '%') AND ([[GETDATA::VAR=IsOrganization]])
+	:
+<!--webbot bot="HTMLMarkup" endspan -->
+	<tr>
+		<td width="239" bgcolor="#F4FCFF">
+			{FirstName}
+		</td>
+		<td width="237" bgcolor="#F5F5F5">
+			{LastName}
+		</td>
+		<td width="97">
+			<center>
+			<font size="+1">
+			<b>
+			<a href="/cgi-bin/virtuflex.exe?template=/td/match.htm&amp;Provider={MemID}&amp;Recipient=[[GETDATA:Recipient]]&amp;Service=[[GETDATA:Service]]&amp;Availability=[[GETDATA::VAR=Availability]]&amp;SameLanguageCheck=[[GETDATA:SameLanguageCheck]]&amp;SameZipCodeCheck=[[GETDATA:SameZipCodeCheck]]&amp;SameOrganizationCheck=[[GETDATA:SameOrganizationCheck]]&amp;SameSiteCheck[[GETDATA:SameSiteCheck]]&amp;SameCoordinatesCheck=[[GETDATA:SameCoordinatesCheck]]&amp;SmokeTolerantCheck=[[GETDATA:SmokeTolerantCheck]]&amp;NonSmokerCheck=[[GETDATA:NonSmokerCheck]]&amp;MustBeMaleCheck=[[GETDATA:MustBeMaleCheck]]&amp;MustBeFemaleCheck=[[GETDATA:MustBeFemaleCheck]]&amp;HasCarCheck=[[GETDATA:HasCarCheck]]&amp;MustBeOrganizationCheck=[[GETDATA:MustBeOrganizationCheck]]&amp;Find=yes&amp;Once=OK">Select</a>
+			</b>
+			</font>
+			</center>
+		</td>
+	</tr>
+<!--webbot bot="HTMLMarkup" startspan -->
+	]]
+<!--webbot bot="HTMLMarkup" endspan -->
+</table>
+</form>
+</BODY>
+</html>

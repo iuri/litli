@@ -1,0 +1,876 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN//3.2">
+
+<html>
+<head>
+	<title>Assignments</title>
+</head>
+<BODY bgcolor="#FFFFFF" text="#000000">
+
+<!--webbot bot="HTMLMarkup" startspan -->
+[[EVAL:IF:[[GETDATA:Tour]]=top-f
+	:
+<!--webbot bot="HTMLMarkup" endspan -->
+<table bgcolor="#F0FFFF" width="700">
+	<th align="center">
+You (as a Facilitator) have reached &quot;Members Update an Assignment&quot; via the <font color="#0066FF">Tour</font><br>
+<font size="-2" color="#CC0066">This is the windoww as it appears prior to searching</font><br>
+To normally arrive here do&#58;<br>
+<font color="#0066FF">Home/Tour Page==&gt;Main Buttons==&gt;Assignment==&gt;<br></font>
+Please use the browser's 'Back' to return to the Tour<br>
+    </th></table>
+
+<!--webbot bot="HTMLMarkup" startspan -->
+	:
+]]
+[[EVAL:IF:[[GETDATA:Tour]]=top-v
+	:
+<!--webbot bot="HTMLMarkup" endspan -->
+<table bgcolor="#F0FFFF" width="700">
+	<th align="center">
+You (as a volunteer wishing to locate and update an assignment) have reached &quot;Members Update an Assignment&quot; via the <font color="#0066FF">Tour</font><br>
+<font size="-2" color="#CC0066">This is the windoww as it appears prior to searching</font><br>
+To normally arrive here do&#58;<br>
+<font color="#0066FF">Home/Tour Page==&gt;Main Buttons==&gt;Assignment==&gt;<br></font>
+Please use the browser's 'Back' to return to the Tour<br>
+    </th></table>
+
+<!--webbot bot="HTMLMarkup" startspan -->
+	:
+]]
+
+<!--webbot bot="HTMLMarkup" endspan -->
+
+<!--webbot bot="HTMLMarkup" startspan -->
+
+[[SET:DefaultDbase:c\:\timed\tddemo.mdb]]
+
+[[SET:VAR:Service=[[GETDATA:Service]]]]
+[[SET:VAR:Provider=[[GETDATA:Provider]]]]
+[[SET:VAR:Recipient=[[GETDATA:Recipient]]]]
+
+[[EVAL:IF:[[GETDATA:MembersButton]]=Members
+	:
+		[[GETDATA:XYZZY:CHECK=/td/members.htm]]
+	:       <!-- not going to members, do nothing -->
+]]
+
+[[EVAL:IF:[[GETDATA:HomeButton]]=Home
+	:
+		[[GETDATA:XYZZY:CHECK=/td/Main.htm]]
+	:
+]]
+
+[[EVAL:IF:[[GETDATA:AssiNewButton]]=New
+	:
+		[[GETDATA:XYZZY:CHECK=/td/OneAssin.htm]]
+	:
+]]
+
+[[EVAL:IF:[[GETDATA:ProvClear]]=Clear
+	:
+	[[SET:VAR:Provider=]]
+	:
+]]
+
+[[EVAL:IF:[[GETDATA:RecClear]]=Clear
+	:
+		[[SET:VAR:Recipient=]]
+	:
+]]
+
+[[EVAL:IF:[[GETDATA:ServClear]]=Clear
+	:
+		[[SET:VAR:Service=]]
+	:
+]]
+
+<!-- tried to reload the page using CHECK=assign.htm -- crashes -->
+[[EVAL:IF:[[GETDATA:ClearAll]]=ClearAll
+	:
+		[[SET:VAR:Service=]]
+		[[SET:VAR:Recipient=]]
+		[[SET:VAR:Provider=]]
+		[[SET:VAR:ClearDates=ClearDates]]
+	:
+		[[SET:VAR:ClearDates=]]
+]]
+
+[[EVAL:IF:[[GETDATA:ClearDates]]=ClearDates
+	:
+		[[SET:VAR:ClearDates=Clear]]
+	:
+		[[EVAL:IF:[[GETDATA:ClearAll]]=ClearAll
+		: <!-- don't clear if set above -->
+		:
+			[[SET:VAR:ClearDates=]]
+		]]
+]]
+[[EVAL:IF:[[GETDATA:ProvFindButton]]=Find
+	:
+		[[GETDATA:XYZZY:CHECK=/td/FindMPro.htm]]
+	:
+]]
+
+[[EVAL:IF:[[GETDATA:RecFindButton]]=Find
+	:
+		[[GETDATA:XYZZY:CHECK=/td/FindMRec.htm]]
+	:
+]]
+
+[[EVAL:IF:[[GETDATA:ServFindButton]]=Find
+	:
+		[[GETDATA:XYZZY:CHECK=/td/findserv.htm]]
+	:
+]]
+<!--webbot bot="HTMLMarkup" endspan -->
+<center>
+<font size="+2">
+<b>Search for an Existing Assignment or Create a New Assignment</b>
+</font>
+</center>
+<form action="/cgi-bin/virtuflex.exe">
+<input type="hidden" name="template" value="/td/assign.htm">
+<input type="hidden" name="TimeCriticalVar" value="[[GETDATA::VAR=TimeCriticalVar]]">
+<input type="hidden" name="ClosedVar" value="[[GETDATA::VAR=ClosedVar]]">
+<input type="hidden" name="Provider" value="[[GETDATA::VAR=Provider]]">
+<input type="hidden" name="Recipient" value="[[GETDATA::VAR=Recipient]]">
+<input type="hidden" name="Service" value="[[GETDATA::VAR=Service]]">
+<!-- see also hidden ones for checkboxes, must trail the box -->
+<!-- test stubs wxyz -->
+	<table border="0" cellspacing="0" cellpadding="0">
+		<tr>
+			<td width="213" bgcolor="#F5F5F5">
+				<b>Provider</b>
+				<font size="-1">
+				<input [[GETDATA:ProvAccCheck:CONVERT="o[[GETDATA:ClearAll]]n=CHECKED|CONVERT=oClearn=|CONVERT=off=]]" name="ProvAccCheck" type="checkbox">
+				<!-- this next one is very weird, if we sent the checkbox CHECKed		    then if the user leaves checked, then its assignment to the				 name overrides this hidden one passed along -->
+				<input type="hidden" name="ProvAccCheck" value="off">
+				Accepted
+				<input [[GETDATA:ProvNotCheck:CONVERT="o[[GETDATA:ClearAll]]n=CHECKED|CONVERT=oClearn=|CONVERT=off=]]" name="ProvNotCheck" type="checkbox">
+				<input type="hidden" name="ProvNotCheck" value="off">
+				</font>
+				<br>
+<!--webbot bot="HTMLMarkup" startspan -->
+				[[EVAL:IF:[[GETDATA::VAR=Provider|LENGTH]]>0
+					:
+<!--webbot bot="HTMLMarkup" endspan -->
+					<table border="0" cellpadding="0" cellspacing="0" bgcolor="#F4FCFF">
+						<tr>
+							<td>
+								<!--webbot bot="HTMLMarkup" startspan -->
+								[[DBASE:SELECT:[Member Table]:MemID=[[GETDATA::VAR=Provider]]
+								: <!-- Start Interlace for DBASE -->
+								<!--webbot bot="HTMLMarkup" endspan -->
+							</td>
+						</tr>
+						<tr>
+							<td width="140">
+								<font size="-3">{FirstName}</font>
+							</td>
+							<td>
+								<font size="-3">{LastName}</font>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<font size="-3">{Street}</font>
+							</td>
+							<td>
+								&nbsp;
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<font size="-3">{City} </font>
+							</td>
+							<td width="60">
+								<font size="-3">{State} &nbsp;{Zipcode}</font>
+							</td>
+						</tr>
+						<!-- blank row -->
+						<tr>
+							<td>
+								<font size="-2">Org ID--
+								<font size="-3">{Identifier}
+								</font>
+								</font>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<font size="-2">Home Phone--
+								<font size="-3">{HomePhone}
+								</font>
+								</font>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<font size="-2">Work Phone--
+								<font size="-3">{WorkPhone}
+								</font>
+								</font>
+							</td>
+						</tr>
+						<tr>
+							<td>
+<!--webbot bot="HTMLMarkup" startspan -->						       
+								]] <!-- end DBASE-->
+<!--webbot bot="HTMLMarkup" endspan -->
+							</td>
+						</tr>
+					</table>
+
+					<p>
+					: <!-- If eval if is false -->
+					<!-- not "View"ing -->
+					<!-- use transparent gif to force width -->
+					<table border="0" cellpadding="0" cellspacing="0" bgcolor="#F4FCFF" <tr>
+							<td>
+								<img src="/td/blank.gif" ALT width="180" height="100" border="0">
+							</td>
+						</tr>
+					</table>
+					<br>
+<!--webbot bot="HTMLMarkup" startspan -->
+				]]<!--End of eval if -->
+<!--webbot bot="HTMLMarkup" endspan -->
+				<br>
+				<input type="submit" name="ProvFindButton" value="Find">
+				<input type="submit" name="ProvClear" value="Clear">
+			</td>
+			<td width="213" bgcolor="#F5F5F5">
+				<b>Recipient</b>
+				<font size="-1">
+				<input [[GETDATA:RecAccCheck:CONVERT="o[[GETDATA:ClearAll]]n=CHECKED|CONVERT=oClearn=|CONVERT=off=]]" name="RecAccCheck" type="checkbox">
+				<input type="hidden" name="RecAccCheck" value="off">
+				Accepted
+				<input [[GETDATA:RecNotCheck:CONVERT="o[[GETDATA:ClearAll]]n=CHECKED|CONVERT=oClearn=|CONVERT=off=]]" name="RecNotCheck" type="checkbox">
+				<input type="hidden" name="RecNotCheck" value="off">
+				</font>
+				<br>
+<!--webbot bot="HTMLMarkup" startspan -->
+				[[EVAL:IF:[[GETDATA::VAR=Recipient|LENGTH]]>0
+					:
+<!--webbot bot="HTMLMarkup" endspan -->
+					<table border="0" cellpadding="0" cellspacing="0" bgcolor="#E0E6E0">
+						<tr>
+							<td>
+								<!--webbot bot="HTMLMarkup" startspan -->
+								<!-- Eli had passed back "Identifier" but that caused search to fail
+								     as Assignment Table is dependent on Mem ID -->
+								[[DBASE:SELECT:[Member Table]:MemID=[[GETDATA::VAR=Recipient]]
+								: <!-- Start Interlace for DBASE -->
+								<!--webbot bot="HTMLMarkup" endspan -->
+							</td>
+						</tr>
+						<tr>
+							<td width="140">
+								<font size="-3">{FirstName}</font>
+							</td>
+							<td>
+								<font size="-3">{LastName}</font>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<font size="-3">{Street}</font>
+							</td>
+							<td>
+								&nbsp;
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<font size="-3">{City} </font>
+							</td>
+							<td width="60">
+								<font size="-3">{State} &nbsp;{Zipcode}</font>
+							</td>
+						</tr>
+						<!-- blank row -->
+						<tr>
+							<td>
+								<font size="-2">Org ID--
+								<font size="-3">{Identifier}
+								</font>
+								</font>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<font size="-2">Home Phone--
+								<font size="-3">{HomePhone}
+								</font>
+								</font>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<font size="-2">Work Phone--
+								<font size="-3">{WorkPhone}
+								</font>
+								</font>
+							</td>
+						</tr>
+						<tr>
+							<td>
+<!--webbot bot="HTMLMarkup" startspan -->
+								]] <!-- end DBASE-->
+<!--webbot bot="HTMLMarkup" endspan -->							 
+							</td>
+						</tr>
+					</table>
+
+					<p>
+					: <!-- If eval if is false -->
+					<!-- not "View"ing -->
+					<!-- use transparent gif to force width -->
+					<table border="0" cellpadding="0" cellspacing="0" bgcolor="#E0E6E0" <tr>
+							<td>
+								<img src="/td/blank.gif" ALT width="180" height="100" border="0">
+							</td>
+						</tr>
+					</table>
+					<br>
+<!--webbot bot="HTMLMarkup" startspan endspan-- -->
+				]]<!--End of eval if -->
+<!--webbot bot="HTMLMarkup" endspan -->
+				<br>
+				<input type="submit" name="RecFindButton" value="Find">
+				<input type="submit" name="RecClear" value="Clear">
+			</td>
+			<td width="213" bgcolor="#F5F5F5">
+<div align="right" style="width: 193; height: 173">
+            <table border="0" width="100%" cellpadding="0" cellspacing="0" height="163">
+              
+              <tr>
+                <td width="45%" height="103">
+                  <p align="right">
+                </td>
+                <td width="55%" height="103">
+                  <p align="right">
+			<input type="submit" name="MembersButton" value="Members"><input type="submit" name="HomeButton" value="Home">
+                </td>
+              </tr>
+              <tr>
+                <td width="45%" height="37"><font size="+1"><b>
+			Service
+			</b>
+			</font>
+                </td>
+                <td width="55%" height="37"><input type="checkbox" [[GETDATA:TimeCriticalCheck:CONVERT=on=CHECKED]]  name="TimeCriticalCheck">
+			<font size="-1">
+            Time Critical
+			</font>
+                </td>
+              </tr>
+            </table>
+			</div>
+<!--webbot bot="HTMLMarkup" startspan -->			       
+		[[EVAL:IF:[[GETDATA::VAR=Service|LENGTH]]>0
+					:
+					[[DBASE:SELECT:[Services List]:ServiceID=[[GETDATA::VAR=Service]]
+					:<!-- DBASE:SELECT interlace field begin -->
+<!--webbot bot="HTMLMarkup" endspan -->				 
+					<table width="140" border="0" cellpadding="0" cellspacing="0" bgcolor="#F4FCFF">
+						<tr>
+							<td>
+							{Service}
+							</td>
+						</tr>
+					</table>
+<!--webbot bot="HTMLMarkup" startspan -->
+					]] <!-- End DBASE SELECT -->
+<!--webbot bot="HTMLMarkup" endspan -->				 
+					: <!-- Eval if false -->
+					<table width="170" bgcolor="F4FCFF" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td>
+							<img src="/td/blank.gif" ALT height="0" width="1" border="0">
+							</td>
+						</tr>
+					</table>
+<!--webbot bot="HTMLMarkup" startspan -->				       
+				]]
+<!--webbot bot="HTMLMarkup" endspan -->
+				<br>
+				<font size="-1">
+				<input type="checkbox" [[GETDATA:ClosedCheck:CONVERT="o[[GETDATA:ClearAll]]n=CHECKED|CONVERT=oClearn=|CONVERT=off=]]" name="ClosedCheck">
+				<input type="hidden" name="Closedcheck" value="off">
+				Closed
+				<input type="checkbox" [[GETDATA:NoCreditsCheck:CONVERT="o[[GETDATA:ClearAll]]n=CHECKED|CONVERT=oClearn=|CONVERT=off=]]" name="NoCreditsCheck">
+				<input type="hidden" name="NoCreditsCheck" value="off">
+				No Credits
+				</font>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<input type="submit" name="ServFindButton" value="Find">
+				<input type="submit" name="ServClear" value="Clear">
+			</td>
+		</tr>
+	</table>
+	<input type="submit" name="ClearAll" value="ClearAll">
+	<input type="submit" name="ClearDates" value="ClearDates">
+	<img src="/td/blank.gif" ALT height="1" width="13">
+	<font size="-1">
+	<b>Begin Date:</b>
+	</font>
+	<select name="BeginDateMMSelect">
+<!--webbot bot="HTMLMarkup" startspan -->
+		<option selected>[[EVAL:IF:[[GETDATA::VAR=ClearDates|LENGTH]]=0
+											:[[GETDATA:BeginDateMMSelect]]
+											:
+											]]
+<!--webbot bot="HTMLMarkup" endspan -->
+		<option>01
+		<option>02
+		<option>03
+		<option>04
+		<option>05
+		<option>06
+		<option>07
+		<option>08
+		<option>09
+		<option>10
+		<option>11
+		<option>12
+	</select>
+	<select name="BeginDateDDSelect">
+<!--webbot bot="HTMLMarkup" startspan -->
+		<option selected>[[EVAL:IF:[[GETDATA::VAR=ClearDates|LENGTH]]=0
+											:[[GETDATA:BeginDateDDSelect]]
+											:
+											]]
+<!--webbot bot="HTMLMarkup" endspan -->
+		<option>01
+		<option>02
+		<option>03
+		<option>04
+		<option>05
+		<option>06
+		<option>07
+		<option>08
+		<option>09
+		<option>10
+		<option>11
+		<option>12
+		<option>13
+		<option>14
+		<option>15
+		<option>16
+		<option>17
+		<option>18
+		<option>19
+		<option>20
+		<option>21
+		<option>22
+		<option>23
+		<option>24
+		<option>25
+		<option>26
+		<option>27
+		<option>28
+		<option>29
+		<option>30
+		<option>31
+	</select>
+	<select name="BeginDateYYSelect">
+<!--webbot bot="HTMLMarkup" startspan -->
+		<option selected>[[EVAL:IF:[[GETDATA::VAR=ClearDates|LENGTH]]=0
+											:[[GETDATA:BeginDateYYSelect]]
+											:
+											]]
+<!--webbot bot="HTMLMarkup" endspan -->
+		<option>1980
+		<option>1981
+		<option>1982
+		<option>1983
+		<option>1984
+		<option>1985
+		<option>1986
+		<option>1987
+		<option>1988
+		<option>1989
+		<option>1990
+		<option>1991
+		<option>1992
+		<option>1993
+		<option>1994
+		<option>1995
+		<option>1996
+		<option>1997
+		<option>1998
+		<option>1999
+		<option>2000
+		<option>2001
+		<option>2002
+		<option>2003
+		<option>2004
+		<option>2005
+		<option>2006
+		<option>2007
+		<option>2008
+		<option>2009
+		<option>2010
+	</select>
+	<img src="/td/blank.gif" ALT height="1" width="45">
+	<!-- Eli had a SHOW button here, but see View below -->
+	<input type="submit" name="AssiNewButton" value="New">
+	<img src="/td/blank.gif" ALT height="1" width="10">
+	<input type="submit" name="SearchButton" value="Search">
+	<font size="-1">
+	<br>
+	<img src="/td/blank.gif" ALT height="1" width="200">
+	(if year not entered above, earliest year)
+	<br>
+    <img src="/td/blank.gif" ALT height="1" width="188">
+	<font size="-1">
+	<b>End Date:</b>
+	</font>
+	<img src="/td/blank.gif" ALT height="1" width="9">
+	<select name="EndDateMMSelect">
+<!--webbot bot="HTMLMarkup" startspan -->
+		<option selected>[[EVAL:IF:[[GETDATA::VAR=ClearDates|LENGTH]]=0
+											:[[GETDATA:EndDateMMSelect]]
+											:
+											]]
+<!--webbot bot="HTMLMarkup" endspan -->
+		<option>01
+		<option>02
+		<option>03
+		<option>04
+		<option>05
+		<option>06
+		<option>07
+		<option>08
+		<option>09
+		<option>10
+		<option>11
+		<option>12
+	</select>
+	/
+	<select name="EndDateDDSelect">
+<!--webbot bot="HTMLMarkup" startspan -->
+		<option selected>[[EVAL:IF:[[GETDATA::VAR=ClearDates|LENGTH]]=0
+											:[[GETDATA:EndDateDDSelect]]
+											:
+											]]
+<!--webbot bot="HTMLMarkup" endspan -->
+		<option>01
+		<option>02
+		<option>03
+		<option>04
+		<option>05
+		<option>06
+		<option>07
+		<option>08
+		<option>09
+		<option>10
+		<option>11
+		<option>12
+		<option>13
+		<option>14
+		<option>15
+		<option>16
+		<option>17
+		<option>18
+		<option>19
+		<option>20
+		<option>21
+		<option>22
+		<option>23
+		<option>24
+		<option>25
+		<option>26
+		<option>27
+		<option>28
+		<option>29
+		<option>30
+		<option>31
+	</select>
+	/
+	<select name="EndDateYYSelect">
+<!--webbot bot="HTMLMarkup" startspan -->
+		<option selected>[[EVAL:IF:[[GETDATA::VAR=ClearDates|LENGTH]]=0
+											:[[GETDATA:EndDateYYSelect]]
+											:
+											]]
+<!--webbot bot="HTMLMarkup" endspan -->
+		<option>1980
+		<option>1981
+		<option>1982
+		<option>1983
+		<option>1984
+		<option>1985
+		<option>1986
+		<option>1987
+		<option>1988
+		<option>1989
+		<option>1990
+		<option>1991
+		<option>1992
+		<option>1993
+		<option>1994
+		<option>1995
+		<option>1996
+		<option>1997
+		<option>1998
+		<option>1999
+		<option>2000
+		<option>2001
+		<option>2002
+		<option>2003
+		<option>2004
+		<option>2005
+		<option>2006
+		<option>2007
+		<option>2008
+		<option>2009
+		<option>2010
+	</select>
+	<img src="/td/blank.gif" ALT width="25" height="1" border="0">
+	<font "size="-3">Selecting no criteria returns all
+	</font>
+
+	<img src="/td/blank.gif" ALT height="1" width="200">
+	(if year not entered above, current year)
+
+</form>
+
+<!-- Beginning VirtuFlex programming for buttons that do not need     To be in the pre page load position-->
+
+<!-- conversion of the select box date input fields to text dates		       in the format mm/dd/yy and converting checkbox values to			numbers	 NOTE: converting is not referring to use of the convert statement but	   to creating variables that hold the new values using the SET VAR		macro-->
+<!-- if this expression contains month/day/year then no post-processing
+      occurs below this -->
+<!--webbot bot="HTMLMarkup" startspan -->
+[[SET:VAR:BeginDate=[[GETDATA:BeginDateMMSelect]]/[[GETDATA:BeginDateDDSelect]]/[[GETDATA:BeginDateYYSelect]] 0\: 0\: 0]]
+
+<!-- If user didn't fill in a year, assume this year -->
+[[EVAL:IF:[[GETDATA:BeginDateYYSelect:LENGTH]]=0
+: <!-- no year but a month -->
+[[SET:VAR:BeginDate=[[GETDATA:BeginDateMMSelect]]/[[GETDATA:BeginDateDDSelect]]/[[DBASE:SELECT:[Assignment Table]:1=1:{MIN(BeginDate)|SUBSTR=7=4}]] 0\: 0\: 0]]
+:
+]]
+<!-- and if user only filled in a day, make it look like the 1st if no month     because this is screened on in search below -->
+[[EVAL:IF:[[GETDATA:BeginDateMMSelect:LENGTH]]=0
+		: <!-- no month -->
+	[[SET:VAR:BeginDate=[[GETDATA::VAR=BeginDate|Prepend=1]]]]
+	: <!-- otherwise it is fine -->
+]]
+<!-- and if user only filled in year, then set month to 1 -->
+	[[EVAL:IF:[[EVAL:BOOL:
+		[[EVAL:BOOL:[[GETDATA:BeginDateYYSelect:LENGTH]]!=0]] &&
+		[[EVAL:BOOL:[[GETDATA:BeginDateMMSelect:LENGTH]]=0]]
+						]]
+	: <!-- no month but a year -->
+	[[SET:VAR:BeginDate=1/1/[[GETDATA:BeginDateYYSelect]] 0\: 0\: 0]]
+	: <!-- otherwise it is fine -->
+]]
+<!-- Change // (no day) to the 1st
+     this will catch both case where person put in just month
+				 and just year, and if all we have is the day, then search
+						 test below detects that and ignores -->
+[[SET:VAR:BeginDate=[[GETDATA::VAR=BeginDate|CONVERT=//=/1/]]]]
+<!-- so with no month BeginDate will be  /1/ 0: 0: 0 -->
+[[EVAL:IF:[[GETDATA:SearchButton:Length]]=0
+: <!-- don't display first time -->
+:
+	Searched from [[GETDATA::VAR=BeginDate|CONVERT= 0\: 0\: 0=]] to&nbsp;
+]]
+[[SET:VAR:EndDate=[[GETDATA:EndDateMMSelect]]/[[GETDATA:EndDateDDSelect]]/[[GETDATA:EndDateYYSelect]] 0\: 0\: 0]]
+
+<!-- If user didn't fill in a year, assume this year -->
+[[EVAL:IF:[[GETDATA:EndDateYYSelect:LENGTH]]=0
+: <!-- no year  -->
+[[SET:VAR:EndDate=[[GETDATA:EndDateMMSelect]]/[[GETDATA:EndDateDDSelect]]/[[GETDATA::DATE=y]] 0\: 0\: 0]]
+:
+]]
+<!-- and if user only filled in a day, make it look like the 1st if no month
+     because this is screened on in search below -->
+<!-- so with no month EndDate will be  /1/ 0: 0: 0 -->
+[[EVAL:IF:[[GETDATA:EndDateMMSelect:LENGTH]]=0
+		: <!-- no month -->
+	[[SET:VAR:EndDate=[[GETDATA::VAR=EndDate|Prepend=1]]]]
+	: <!-- otherwise it is fine -->
+]]
+<!-- and if user only filled in year, then set month to 1 -->
+	[[EVAL:IF:[[EVAL:BOOL:
+		[[EVAL:BOOL:[[GETDATA:EndDateYYSelect:LENGTH]]!=0]] &&
+		[[EVAL:BOOL:[[GETDATA:EndDateMMSelect:LENGTH]]=0]]
+						]]
+	: <!-- no month but a year -->
+	[[SET:VAR:EndDate=1/1/[[GETDATA:EndDateYYSelect]] 0\: 0\: 0]]
+	: <!-- otherwise it is fine -->
+]]
+<!-- Change // (no day) to the 1st
+     this will catch both case where person put in just month
+				 and just year, and if all we have is the day, then search
+						 test below detects that and ignores -->
+[[SET:VAR:EndDate=[[GETDATA::VAR=EndDate|CONVERT=//=/1/]]]]
+<!-- finally -- if no day, no month, and no year for EndDate, then
+		set to 1/1 of next year -->
+[[EVAL:IF:[[EVAL:BOOL:
+	[[EVAL:BOOL:[[GETDATA:EndDateYYSelect:LENGTH]]=0]] &&
+	[[EVAL:BOOL:
+		[[EVAL:BOOL:[[GETDATA:EndDateMMSelect:LENGTH]]=0]] &&
+		[[EVAL:BOOL:[[GETDATA:EndDateDDSelect:LENGTH]]=0]]
+	]]
+						]]
+	:
+		[[SET:VAR:EndDate=[[GETDATA::DATE=y|INCR|POSTPEND= 0\: 0\: 0|PREPEND=1/1/]]]]
+	:
+]]
+[[EVAL:IF:[[GETDATA:SearchButton:Length]]=0
+: <!-- don't display first time -->
+:
+	[[GETDATA::VAR=EndDate|CONVERT= 0\: 0\: 0=]]
+]]
+
+[[EVAL:IF:[[GETDATA:ProvAccCheck]]=on
+	:
+	[[SET:VAR:ProvAccVar=-1]]
+	:
+	[[SET:VAR:ProvAccVar=0]]
+]]
+
+[[EVAL:IF:[[GETDATA:ProvNotCheck]]=on
+	:
+	[[SET:VAR:ProvNotVar=-1]]
+	:
+	[[SET:VAR:ProvNotVar=0]]
+]]
+
+[[EVAL:IF:[[GETDATA:RecAccCheck]]=on
+	:
+	[[SET:VAR:RecAccVar=-1]]
+	:
+	[[SET:VAR:RecAccVar=0]]
+]]
+
+[[EVAL:IF:[[GETDATA:RecNotCheck]]=on
+	:
+	[[SET:VAR:RecNotVar=-1]]
+	:
+	[[SET:VAR:RecNotVar=0]]
+]]
+
+[[EVAL:IF:[[GETDATA:TimeCriticalCheck]]=on
+	:
+	[[SET:VAR:TimeCriticalVar=-1]]
+	:
+	[[SET:VAR:TimeCriticalVar=0]]
+]]
+
+[[EVAL:IF:[[GETDATA:ClosedCheck]]=on
+	:
+	[[SET:VAR:ClosedVar=-1]]
+	:
+	[[SET:VAR:ClosedVar=0]]
+]]
+
+[[EVAL:IF:[[GETDATA:NoCreditsCheck]]=on
+	:
+	[[SET:VAR:CreditsVar=0]]
+	:
+	[[SET:VAR:CreditsVar=-1]]
+]]
+
+<!-- Check to see if a search should be made -->
+	<!Format of Date/Time from Access ' 1/ 1/1995  0\: 0\: 0' -->
+	<!Note: leading spaces for single digits
+	From Access Help: #1-Jan-94# -- example of literal values
+	TimeKeeper: if year missing, fills in current year, else
+	   and other error, error message
+Final design always provides a begin date and an end date -->
+<!-- for the 3 major criteria, provider, recipient and service,
+     we need the search to either be on that field (if present), or,
+		 accept all by omitting the test.  Either way we need
+		 the SQL JOIN to deal with extracting data from the other tables -->
+[[EVAL:IF:[[GETDATA:SearchButton]]=Search
+	:<!-- Eval if TRUE, searching time! -->
+		<!-- have a variable AND which is really ' AND ' -->
+		<!-- each ANDed criteria, absent if test is TRUE -->
+		[[SET:VAR:AND= AND ]]
+<!--webbot bot="HTMLMarkup" endspan -->
+		<font SIZE="+2">
+		<p>Provider<img src="/td/blank.gif" ALT width="30" height="1" border="0">
+		Recipient<img src="/td/blank.gif" ALT width="20" height="1" border="0">
+		ServiceID<img src="/td/blank.gif" ALT width="20" height="1" border="0">
+		Credits</p>
+		</font>
+		<table>
+			<tr>
+<!--webbot bot="HTMLMarkup" startspan -->
+			[[DBASE:SELECT:[Assignment Table],[Member Table] AS x,
+				[Member Table] AS y,[Services List] AS z
+			:Provider = x.MemID AND Recipient=y.MemID AND
+							[Assignment Table].Service=z.ServiceID
+
+				[[GETDATA::VAR=AND]]BeginDate>=#[[GETDATA::VAR=BeginDate]]#
+				[[GETDATA::VAR=AND]]EndDate<=#[[GETDATA::VAR=EndDate]]#
+				[[EVAL:IF:[[GETDATA::VAR=Recipient|LENGTH]]=0
+					:
+					:
+					[[GETDATA::VAR=AND]]Recipient=[[GETDATA::VAR=Recipient]]
+				]]
+				[[EVAL:IF:[[GETDATA::VAR=Provider|LENGTH]]=0
+					:
+					:
+					[[GETDATA::VAR=AND]]Provider=[[GETDATA::VAR=Provider]]
+				]]
+				[[EVAL:IF:[[GETDATA::VAR=Service|LENGTH]]=0
+					:
+					:
+						[[GETDATA::VAR=AND]][Assignment Table].Service=[[GETDATA::VAR=Service]]
+				]]
+				[[EVAL:IF:[[GETDATA::VAR=CreditsVar]]=-1
+					:
+					:
+						[[GETDATA::VAR=AND]]Credits=0
+				]]
+				[[EVAL:IF:[[GETDATA::VAR=TimeCriticalVar]]=0
+					:
+					:
+						[[GETDATA::VAR=AND]]TimeCritical=[[GETDATA::VAR=TimeCriticalVar]]
+				]]
+				AND Closed=[[GETDATA::VAR=ClosedVar]]
+				[[EVAL:IF:[[GETDATA::VAR=ProvAccVar]]=0
+					:
+					:
+					[[GETDATA::VAR=AND]](not isnull(ProAccDate)=[[GETDATA::VAR=ProvAccVar]]
+				]]
+				[[EVAL:IF:[[GETDATA::VAR=RecAccVar]]=0
+					:
+					:
+						[[GETDATA::VAR=AND]](not isnull(RecAccDate)=[[GETDATA::VAR=RecAccVar]]
+				]] ORDER BY AssignID :
+<!--webbot bot="HTMLMarkup" endspan -->
+					<font SIZE="-1">
+					<td>{x.FirstName} {x.LastName}&nbsp;&nbsp</td>
+					<td>{y.FirstName} {y.LastName}</td>
+					<td><img src="/td/blank.gif" ALT width="60" height="1" border="0">{z.ServiceID}</td>
+					<td><img src="/td/blank.gif" ALT width="80" height="1" border="0">{Credits}</td>
+					<td>
+						<img src="/td/blank.gif" ALT width="80" height="1" border="0">
+						<a href="/cgi-bin/virtuflex.exe?template=/td/OneAssin.htm&AssignID={AssignID}&Provider={Provider}&Recipient={Recipient}&Service={z.ServiceID}">View</a>
+					</td>
+					</font>
+				</tr>
+<!--webbot bot="HTMLMarkup" startspan -->
+		]] <!-- end of search -->
+<!--webbot bot="HTMLMarkup" endspan -->
+		</table>
+<!--webbot bot="HTMLMarkup" startspan -->
+: <!-- Eval if FALSE, nothing doing! -->
+]]
+<!--webbot bot="HTMLMarkup" endspan -->
+<p><a href="OneAssin.htm"></a></p>
+<p><a href="FindMPro.htm"></a></p>
+<p><a href="FindMRec.htm"></a></p>
+<p><a href="findserv.htm"></a></p>
+</BODY>
+<!--webbot bot="HTMLMarkup" startspan --><!--webbot bot="HTMLMarkup" endspan -->

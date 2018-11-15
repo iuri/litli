@@ -1,0 +1,24 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage 3.0">
+<title></title>
+</head>
+<!-- CAREFUL -- EDITS TO THIS FILE ONLY APPEAR UNDER   1-4-ALL WHEN YOU HAVE MOVED FROM ITS TEMP FILE TO THIS FILE -->
+<BODY bgcolor="#FFFFFF" text="#000000">
+<font size="1" color="#000000">
+
+<a HREF="http://111.111.111.111/cgi-bin/virtuflex.exe?/td/testquer.htm">Push Me</a>
+
+<p><!--webbot bot="HTMLMarkup" startspan -->
+[[SET:DefaultDbase:c\:\timed\tddemo.mdb]]
+[[DBASE:SELECT:[Assignment Table]:
+AssignID=75:
+Begindate=x{BeginDate}x
+]]
+<!--webbot bot="HTMLMarkup" endspan --></p>
+</font>
+</BODY>
+</html>

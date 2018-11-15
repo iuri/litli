@@ -1,0 +1,348 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<title>Sites</title>
+</head>
+
+<BODY bgcolor="#FFFFFF" text="#000000">
+<!--webbot bot="HTMLMarkup" startspan -->
+<!--If pushed Home button, force move to default page -->
+
+[[SET:DefaultDbase:c\:\timed\tddemo.mdb]]
+
+[[EVAL:IF:[[GETDATA:HomeButton]]=Home
+	:
+	[[GETDATA:XYZZY:CHECK=/td/Main.htm]]
+	:
+]]
+[[EVAL:IF:[[GETDATA:HelpButton]]=Help
+	:
+	[[GETDATA:XYZZY:CHECK=/td/SiteHlp.htm]]
+	:
+]]
+[[EVAL:IF:[[GETDATA:NewButton]]=New
+	:
+	[[GETDATA:XYZZY:CHECK=/td/onesite.htm]]
+	:
+]]
+[[EVAL:IF:[[GETDATA:ShowButton]]=Show
+	: <!-- eval if true -->
+		[[GETDATA:XYZZY:CHECK=/td/onesite.htm]]
+	: <!-- eval if false -->
+]] <!-- end eval if -->
+<!-- if New, this SET will be null -->
+[[SET:VAR:SiteID=[[GETDATA:SiteID]]]]
+<!-- unlike AttrChg.htm, ServChg.htm, AssiChg.htm, FindSite does NOT make
+			any database changes, but returns --
+				1.  NewSite == on
+				2.  Selected site number in SiteID
+				-->
+[[EVAL:IF:[[GETDATA:NewSite:LENGTH]]> 0
+	:
+			[[DBASE:SQL:Update [Site Table] SET
+				Site=[[GETDATA:SiteID]]
+				where MemID=[[GETDATA:MemOrgID]]
+			]]
+		: <!-- not going to Find a Site, do nothing -->
+]]
+
+<!--webbot bot="HTMLMarkup" endspan -->
+
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="100%">
+      <p align="center"><img border="0" src="/td/images/search_volunteers.gif" width="300" height="50"></td>
+  </tr>
+</table>
+<form action="/cgi-bin/virtuflex.exe" method="get">
+<input type="hidden" name="template" value="/td/sites.htm">
+<input type="hidden" name="MemOrgID" value="[[GETDATA:MemOrgID]]">
+<input type="hidden" name="Manager" value="[[GETDATA:Manager]]">
+<input type="hidden" name="SiteID" value="[[GETDATA:SiteID]]">
+<input type="hidden" name="Once" value="OK">
+<input type="hidden" name="Label" value="Site">
+	<table border="0" cellpadding="0" cellspacing="0">
+		<tr>
+			<td bgcolor="#F5F5F5">
+			<!-- essentially copied from organiza.htm -- but organization info-->
+				<table height="187">
+<!--webbot bot="HTMLMarkup" startspan -->
+					[[EVAL:IF:[[GETDATA:SiteID]] > 0
+					:
+<!--webbot bot="HTMLMarkup" endspan -->
+						<tr>
+							<!-- Organizations are "Members" -->
+<!--webbot bot="HTMLMarkup" startspan -->
+							[[SET:VAR:HomePhone=[[DBASE:SELECT:[Member Table]:
+								MemID=[[DBASE:SELECT:[Site Table]:SiteID=[[GETDATA:SiteID]]:{Organization}]]:{HomePhone}]]]]
+								[[DBASE:SELECT:[Site Table]:SiteID=[[GETDATA:SiteID]]
+								:
+<!--webbot bot="HTMLMarkup" endspan -->
+					<td width="140" bordercolordark="#000000" bordercolorlight="#000000" height="15"><font size="-3" color="#000000">{Name}</font></td>
+				</tr>
+				<tr>
+					<td bordercolorlight="#000000" height="22"><font size="-3" color="#000000">{Street}</font></td>
+					<td bordercolorlight="#000000" height="22">&nbsp;</td>
+				</tr>
+				<tr>
+					<td bordercolorlight="#000000" height="30"><font size="-3" color="#000000">{City} </font></td>
+					<td width="60" bordercolorlight="#000000" height="30"><font size="-3" color="#000000">{State} &nbsp;{Zipcode}</font></td>
+					</tr>
+				<!-- blank row -->
+				<tr>
+					<td bordercolorlight="#000000" height="22">
+								&nbsp;
+					</td>
+		 		</tr>
+				<tr>
+					<td bordercolorlight="#000000" height="15">
+                 	<font color="#000000">
+					<font size="-2">
+						Organization-- </font><font size="-3">{Name}
+					</font>
+                 </font>
+					</td>
+				</tr>
+		 		<tr>
+					<td bordercolorlight="#000000" height="15">
+                 <font color="#000000">
+					<font size="-2">
+						Site ID-- </font><font size="-3">{Identifier}
+					</font>
+                 </font>
+					</td>
+				</tr>
+				<tr>
+					<td bordercolorlight="#000000" height="12">
+                 <font color="#000000">
+					<font size="-2">
+						Site Phone-- </font><font size="-3">[[GETDATA::VAR=HomePhone]]
+					</font></font>
+					</td>
+				</tr>
+<!--webbot bot="HTMLMarkup" startspan -->
+					]] <!-- end DBASE -->
+				:
+<!--webbot bot="HTMLMarkup" endspan -->
+				<tr>
+       			<td width="115">
+       				&nbsp;
+					</td>
+					<td width="115">
+       				&nbsp;
+					</td>
+				</tr>
+<!--webbot bot="HTMLMarkup" startspan -->
+			]] <!-- EVAL IF -- Site to show ? -->
+<!--webbot bot="HTMLMarkup" endspan -->
+			</table><!-- end of site table -->
+		</td> <!-- end of Site Table as table data -->
+		<td bgcolor="#FFFFFF">
+                <table border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td colspan="2" align="center"><span style="background-color: #800000">
+                    <input type="submit" name="HelpButton" value="Help" style="position: relative; width: 77; height: 26">
+                      </span></td>
+                  </tr>
+                  <tr>
+                    <td colspan="2" align="center">
+				<input type="submit" name="HomeButton" value="Home" style="position: relative; width: 78; height: 26"></td>
+                  </tr>
+                  <tr>
+                  <td colspan="2" align="center">
+<!--webbot bot="HTMLMarkup" startspan endspan-- -->
+                  [[EVAL:IF:[[GETDATA:MemOrgID:Length]] >0
+				:
+<!--webbot bot="HTMLMarkup" endspan -->
+					 <input type="submit" name="ShowButton" value="Show" style="position\: relative; width\: 78; height\: 26">
+<!--webbot bot="HTMLMarkup" startspan -->
+				:
+<!--webbot bot="HTMLMarkup" endspan -->
+					<img src="/td/blank.gif" ALT="" width="16" height="1" border="0">
+<!--webbot bot="HTMLMarkup" startspan -->
+				]]
+<!--webbot bot="HTMLMarkup" endspan -->
+                  </tr>
+                  <tr>
+                    <td colspan="2" align="center"><input type="submit" name="NewButton" value="New" style="position: relative; width: 78; height: 26"></td>
+                  </tr>
+                  <tr>
+                    <td colspan="2" align="center" bgcolor="#C0C0C0"><input type="submit" name="SearchButton" value="Search"></td>
+                  </tr>
+                  <tr>
+                    <td align="center">
+                      <p align="right"><font size="2">Inactive</font></td>
+                    <td align="center"><input type="checkbox" name="Inactive1" value="ON" style="float: left"></td>
+                    <input type="hidden" name="Inactive" value="off">
+                  </tr>
+                  <tr>
+                    <td colspan="2" align="center"><input type="reset" name="OkayButton" value="OK" style="position: relative; width: 78; height: 27">
+                    </td>
+                  </tr>
+                </table>
+		</td>
+	</tr>
+</table>
+<table>
+			<td>
+			</td>
+        <table border="0" width="578" height="58" cellspacing="0" cellpadding="0">
+          <tr>
+            <td width="187" height="10">
+              <p align="center"><img border="0" src="/td/images/site_name.gif" width="94" height="35">
+	<strong>
+    <font size="3">&nbsp;</font>
+	</strong>
+            </td>
+            <td width="186" height="10">
+              <p align="center"><img border="0" src="/td/images/organization_name.gif" width="165" height="35">
+	<strong>
+    <font size="3">&nbsp;</font>
+	</strong>
+            </td>
+            <td width="199" height="10">
+              <p align="center"><img border="0" src="/td/images/site_id.gif" width="69" height="35"><img src="/td/blank.gif" ALT="" width="29" height="1" border="0">
+</td>
+          </tr>
+          <tr>
+            <td width="187" height="25">
+              <p align="center"><font size="2">
+	<input type="text" size="20" name="Name" value="[[GETDATA:Name]]" style="font-size: 10pt"></font>&nbsp;</td>
+            <td width="186" height="25">
+              <p align="center">
+	<input type="text" size="20" name="Organization" value="[[GETDATA:Organization]]" style="font-size: 10pt">
+              &nbsp;</td>
+            <td width="199" height="25">
+              <p align="center">
+	<!-- what Kent calls SiteID is really the Site's Identifier --><input type="text" size="20" name="SiteID1" value="[[GETDATA:Identifer]]" style="font-size: 10pt">
+            </td>
+          </tr>
+          <tr>
+            <td width="187" height="5"></td>
+            <td width="186" height="5"></td>
+            <td width="199" height="5"></td>
+          </tr>
+        </table>
+        <table border="0" width="103%" cellspacing="0" cellpadding="0">
+          <tr>
+            <td width="550">
+	<font size="1">
+	<center>
+	Due to multiple search boxes, you must press "<b>Search</b>" rather than the "Enter" key
+	Type enough of the name or id to find the person
+	Leaving all three boxes empty results in a complete list
+	</center>
+	</font>
+            </td>
+          </tr>
+        </table>
+</form>
+<table>
+<!--webbot bot="HTMLMarkup" startspan -->
+	[[EVAL:IF:[[GETDATA:Once:Length]] >0
+	:
+<!--webbot bot="HTMLMarkup" endspan -->
+		<tr>
+		<th colspan="3">
+				Clicking View (after a Search) will show detail in the upper left
+                grey box
+				For more information or to edit the information press "<b>Show</b>"
+		</th>
+		</tr>
+<!--webbot bot="HTMLMarkup" startspan -->
+	:
+	]]
+	[[EVAL:IF:[[GETDATA:SearchButton:LENGTH]]>0
+		: <!-- Search button pressed -->
+			[[EVAL:IF:[[GETDATA:Name:LENGTH]]>0
+				: <!-- Search by Site name -->
+					[[DBASE:SELECT:[Site Table],[Member Table]:[Site Table].Organization=[Member Table].MemID
+						and [Site Table].Inactive=[[GETDATA:Inactive:CONVERT=on=1|CONVERT=off=0]]
+						and [Site Table].Name like '%[[GETDATA:Name]]%'
+					: <!--Begin DBASE SELECT Interlace-->
+<!--webbot bot="HTMLMarkup" endspan -->
+					<tr>
+						<td>
+							{[Site Table].Name}
+						</td>
+						<td>
+							{[Member Table].LastName}
+						</td>
+						<td>
+							{[Member Table].Identifier}
+						</td>
+						<td>
+							<a href=/cgi-bin/virtuflex.exe?template=/td/sites.htm&Label=Site&Name=[[GETDATA:Name]]&Identifier=[[GETDATA:Identifer]]&Organization=[[GETDATA:Organization]]&MemOrgID={MemID}&Manager={Manager}&SiteID={SiteID}>View</a>
+						</td>
+					</tr>
+<!--webbot bot="HTMLMarkup" startspan -->
+				]] <!-- End interlace -->
+ : <!-- No Site name -->
+ [[EVAL:IF:[[GETDATA:Organization:LENGTH]]>0
+			: <!-- Organization name search -->
+					<!-- FOR TESTING enter DC for Site Name-->
+				[[DBASE:SELECT:[Site Table],[Member Table]:
+					[Site Table].Organization=[Member Table].MemID
+					and [Site Table].Inactive=[[GETDATA:Inactive:CONVERT=on=1|CONVERT=off=0]]
+					and [Member Table].LastName like '%[[GETDATA:Organization]]%'
+						: <!-- DBASE select interlace begin -->
+					<tr>
+						<td>
+									{[Site Table].Name}
+						</td>
+						<td>
+									{[Member Table].LastName}
+						</td>
+						<td>
+									{[Member Table].Identifier}
+						</td>
+						<td>
+									<a href=/cgi-bin/virtuflex.exe?template=/td/sites.htm&Label=Site&Organization=[[GETDATA:Organization]]&MemOrgID={MemID}&Manager={Manager}&SiteID={SiteID}>View</a>
+						</td>
+					</tr>
+					]] <!-- end DBASE -->
+			: <!-- if not Organization -->
+				<!-- "Site ID" is actually the organization's Identifier -->
+						<!-- FOR TESTING enter time for Organization Name-->
+				[[DBASE:SELECT:[Site Table],[Member Table]:
+					[Site Table].Inactive=[[GETDATA:Inactive:CONVERT=on=1|CONVERT=off=0]]
+					and [Site Table].Organization=[Member Table].MemID
+					and
+						[[EVAL:IF:[[GETDATA:Identifier:LENGTH]]>0
+							:
+								[Site Table].Identifier like '%[[GETDATA:SiteID]]%'
+							:
+								[Site Table].Identifier like '%'
+						]]
+					: <!-- begin dbase select interlace -->
+						<tr>
+							<td>
+								{[Site Table].Name}
+							</td>
+							<td>
+								{[Member Table].LastName}
+							</td>
+							<td>
+								{[Member Table].Identifier}
+							</td>
+							<td>
+								<a href=/cgi-bin/virtuflex.exe?template=/td/sites.htm*Label=Site&MemOrgID={MemID}&Manager={Manager}&SiteID={SiteID}>View</a>
+							</td>
+						</tr>
+					]] <!-- End DBASE select interlace -->
+				]] <!-- end test by Organization -->
+			]]<!-- end test by Name -->
+]] <!-- End test of Search-->
+<!--webbot bot="HTMLMarkup" sendspan -->
+
+
+<p><a href="onesite.htm"></a></p>
+<p><a href="SiteHlp.htm"></a></p>
+</BODY>
+</html>
+
+<!--webbot bot="HTMLMarkup" endspan -->
+<!--webbot BOT="HTMLMarkup" startspan --><!--webbot bot="HTMLMarkup" endspan -->

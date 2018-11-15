@@ -1,0 +1,237 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN//3.2">
+<!-- NOTE: CHANGES to Database on this page -->
+<html>
+<head>
+	<title>Changing Attributes</title>
+</head>
+<BODY bgcolor="#FFFFFF" text="#000000">
+<!--webbot bot="HTMLMarkup" startspan -->
+[[EVAL:IF:[[GETDATA:Tour]]=top-f
+	:
+<!--webbot bot="HTMLMarkup" endspan -->
+<table bgcolor="#F0FFFF" width="700">
+	<th align="center">
+You (as a Facilitator) have reached &quot;Enter Volunteer Attributes&quot; via the <font color="#0066FF">Tour</font><br>
+<font size="-2" color="#CC0066">Notice the check marks</font><br>
+To normally arrive here do&#58;<br>
+<font color="#0066FF">Home/Tour Page==&gt;Main Buttons==&gt;Members==&gt;Enter criteria/Search==&gt;Scroll Down Page==&gt;Select==&gt;Show==&gt;Jump to Member Attributes==&gt;Change Attributes
+here<br></font>
+Please use the browser's 'Back' to return to the Tour<br>
+    </th></table>
+<!--webbot bot="HTMLMarkup" startspan -->
+	:
+]]
+[[EVAL:IF:[[GETDATA:Tour]]=top-v
+	:
+<!--webbot bot="HTMLMarkup" endspan -->
+<table bgcolor="#F0FFFF" width="700">
+	<th align="center">
+You (as a volunteer) have reached &quot;Enter Volunteer Attributes&quot; via the <font color="#0066FF">Tour</font><br>
+<font size="-2" color="#CC0066">Notice the check marks</font><br>
+To normally arrive here do&#58;<br>
+<font color="#0066FF">Home/Tour Page==&gt;Main Buttons==&gt;Members==&gt;Enter criteria/Search==&gt;Scroll Down Page==&gt;Select==&gt;Show==&gt;Jump to Member Attributes==&gt;Change Attributes
+here<br></font>
+Please use the browser's 'Back' to return to the Tour<br>
+    </th></table>
+<!--webbot bot="HTMLMarkup" startspan -->
+	:
+]]
+
+<!--webbot bot="HTMLMarkup" endspan -->
+
+<table>
+<td>
+</td>
+</table>
+<!--webbot bot="HTMLMarkup" startspan -->
+<!-- use of Label lets us call from either --
+		1.  OneMembr.htm
+		2.  oneorg.htm
+			-->
+[[SET:DefaultDbase:c\:\timed\tddemo.mdb]]
+<!-- permit up to 100 attributes -->
+[[SET:MaxLoop:100]]
+<!-- MemID or MemOrgID must be valid HTML variable -->
+[[EVAL:IF:[[GETDATA:Label]] = Member
+		:		       
+			[[SET:VAR:MemID=[[GETDATA:MemID]]]]
+		:
+			[[SET:VAR:MemID=[[GETDATA:MemOrgID]]]]
+]]
+<!-- first time here, show first Type, then show any changed Type -->
+[[EVAL:IF:[[GETDATA:NewType:LENGTH]]>0
+		:
+			[[SET:VAR:Type=[[GETDATA:NewType]]]]
+		:
+			[[SET:VAR:Type=[[DBASE:SELECT:[Attributes List]:1=1:{FIRST(AttrType)}]]]]
+	]]
+<!-- we must set N for all the attributes since
+		the subtypes are not in order and we must test for any -->
+[[SET:VAR:N=[[DBASE:SELECT:[Attributes List]:
+	1=1:{COUNT(AttrID)}]]]]
+[[EVAL:IF:[[EVAL:BOOL:
+	[[EVAL:BOOL:[[GETDATA:ChgButton]]=Record
+	]] ||
+	 [[EVAL:BOOL:[[GETDATA:DoneButton]]=Done
+	]]
+				  ]]
+	: <!-- true -- record in both cases -->
+		<!-- delete all Mem Attribute Table references for this Type -->
+		<!-- we passed the Type below, could also use the one from above -->
+		[[DBASE:DEL:[Mem Attribute Table]:Member=[[GETDATA::VAR=MemID]]
+			AND Attribute=ANY(SELECT AttrID FROM [Attributes List]
+			WHERE AttrType='[[GETDATA:Type]]')]]
+		<!-- now insert or reinsert -->
+		<!-- Attribute 1 is null, but not making special here -->
+		[[SET:VAR:CNT=1]]
+		<!-- may NOT place the condition of this test on its own line -->
+		[[EVAL:WHILE:[[GETDATA::VAR=CNT]]<=[[GETDATA::VAR=N]]:
+			[[EVAL:IF:[[GETDATA:ChgUnit[[GETDATA::VAR=CNT]]]]=on
+				:<!-- true -- update Mem Attribute Table -->
+				[[DBASE:ADD:[Mem Attribute Table]:
+						{Member|[[GETDATA::VAR=MemID]]}
+			{Attribute|[[GETDATA::VAR=CNT]]}
+					]]
+				:<!-- false -- either not set or variable not there -->
+			]]<!-- end of test for a ChgUnit# -->
+			[[SET:VAR:CNT=[[GETDATA::VAR=CNT|INCR]]]]
+		]]<!-- end of update loop -->
+		<!-- if it was DoneButton, then leave -->
+		[[EVAL:IF:[[GETDATA:DoneButton]]=Done
+			: <!-- true, go back to One Member or One Organization -->
+				[[EVAL:IF:[[GETDATA:Label]]=Member
+					:
+						[[GETDATA:XYZZY:CHECK=/td/OneMembr.htm]]
+					:
+						[[GETDATA:XYZZY:CHECK=/td/oneorg.htm]]
+				]]
+			: <!-- false, drop through -->
+		]]
+	: <!-- ChgButton and DoneButton false -->
+		<!-- either first time, or switch of Type -- fall through -->
+	]]<!-- end ChgButton and DoneButton False -->
+<!--webbot bot="HTMLMarkup" endspan --><center><font size="+2"><b>Change Attributes</b>
+<font size="+0">
+for&nbsp;
+<!--webbot bot="HTMLMarkup" startspan -->
+[[EVAL:IF:[[GETDATA:Label]]=Organization
+	:
+<!--webbot bot="HTMLMarkup" endspan -->
+		the&nbsp;
+<!--webbot bot="HTMLMarkup" startspan -->
+		[[DBASE:SELECT:[Member Table]:MemID=[[GETDATA::VAR=MemID]]:{LastName}]]&nbsp;
+<!--webbot bot="HTMLMarkup" endspan -->	 
+		Organization
+<!--webbot bot="HTMLMarkup" startspan -->	       
+	:
+<!--webbot bot="HTMLMarkup" endspan --> 
+		Member&nbsp;
+<!--webbot bot="HTMLMarkup" startspan -->
+		[[DBASE:SELECT:[Member Table]:MemID=[[GETDATA::VAR=MemID]]:
+<!--webbot bot="HTMLMarkup" endspan -->
+		{FirstName} {LastName}
+<!--webbot bot="HTMLMarkup" startspan -->	       
+	]]
+]]
+<!--webbot bot="HTMLMarkup" endspan -->
+</center>
+</font>
+	<form>
+	<form action="/cgi-bin/virtuflex.exe" method="get">
+	<input type="hidden" name="template" value="/td/AttrChg.htm">
+	<!-- since these values do not "come off the page" they must		be passed the first time -->
+<!--webbot bot="HTMLMarkup" startspan -->
+	[[EVAL:IF:[[GETDATA:Label]] = Member
+		:		       
+			<input type="hidden" name="MemID" value="[[GETDATA::VAR=MemID]]">
+		:
+			<input type="hidden" name="MemOrgID" value="[[GETDATA::VAR=MemID]]">
+	]]
+<!--webbot bot="HTMLMarkup" endspan -->
+	<input type="hidden" name="SiteID" value="[[GETDATA:SiteID]]">
+	<input type="hidden" name="Type" value="[[GETDATA::VAR=Type|SPACECONV]]">
+	<input type="hidden" name="Label" value="[[GETDATA:Label]]">
+	<img src="/td/blank.gif" width="480" height="1" border="0">
+	<input type="submit" name="DoneButton" value="Done">
+	Current Type of Attributes Displayed
+	<b>
+  &nbsp;&nbsp;&nbsp; [[GETDATA::VAR=Type]]
+	</b>
+
+	<table>
+		<tr valign="top">
+			<td valign="top">
+				<table bgcolor="white" WIDTH="300">
+					<th WIDTH="300">
+						<tr WIDTH="300">Select (or de-Select)</tr>
+						<tr WIDTH="300">any specific [[GETDATA::VAR=Type]]
+							<img src="/td/blank.gif" width="80" height="1" border="0">
+							<input type="submit" name="ChgButton" value="Record">
+						</tr>
+<!--webbot bot="HTMLMarkup" startspan -->
+	[[DBASE:SELECT:[Attributes List] LEFT JOIN [Mem Attribute Table]
+		ON [Attributes List].AttrID = [Mem Attribute Table].Attribute
+	:[Mem Attribute Table].Member=[[GETDATA::VAR=MemID]]
+		AND Attribute=ANY(SELECT AttrID FROM [Attributes List]
+		WHERE AttrType='[[GETDATA::VAR=Type]]')
+		GROUP BY [Attributes List].AttrName
+
+		UNION SELECT null,MAX(AttrID),[Attributes List].AttrName
+		FROM [Attributes List] LEFT JOIN [Mem Attribute Table] ON [Attributes List].AttrID = [Mem Attribute Table].Attribute
+		WHERE AttrName <> 'null' and AttrType = '[[GETDATA::VAR=Type]]'
+		and AttrName <> ALL
+	  (SELECT [Attributes List].AttrName
+		FROM [Attributes List] LEFT JOIN [Mem Attribute Table] ON [Attributes List].AttrID = [Mem Attribute Table].Attribute
+		WHERE Member=[[GETDATA::VAR=MemID]]
+		AND Attribute=ANY(SELECT AttrID FROM [Attributes List]
+		WHERE AttrType='[[GETDATA::VAR=Type]]')
+		GROUP BY [Attributes List].AttrName)
+		GROUP BY [Attributes List].AttrName
+		ORDER BY [Attributes List].AttrName:
+<!--webbot bot="HTMLMarkup" endspan -->
+					<tr>
+			<td>
+			<input type="checkbox" {Count(Member)|CONVERT=1=CHECKED} name="ChgUnit{MAX(AttrID)}" size="10"> {[Attributes List].AttrName}
+			
+			</td>
+			</tr>
+<!--webbot bot="HTMLMarkup" startspan -->
+	]]<!-- end DBASE -->
+<!--webbot bot="HTMLMarkup" endspan -->
+	</table>
+	<td valign="top">
+		<table>
+								<th>
+						<tr>To Change to Another Category of Attribute Types</tr>
+						<tr>click on the <i>Change Type</i></tr>
+						<tr>(any changes made to the left are <b>canceled</b>)</tr>
+<!--webbot bot="HTMLMarkup" startspan -->
+			[[DBASE:SELECT:[Attributes List]:1=1 GROUP BY AttrType:
+<!--webbot bot="HTMLMarkup" endspan -->
+		<tr>
+		<td>
+		{AttrType}
+		</td>
+		<td>
+		<!-- must keep MemID and MemOrgID different -->
+<!--webbot bot="HTMLMarkup" startspan -->
+		[[EVAL:IF:[[GETDATA:Label]] = Member
+			:
+				<a href="/cgi-bin/virtuflex.exe?template=/td/AttrChg.htm&Label=[[GETDATA:Label]]&MemID=[[GETDATA::VAR=MemID]]&SiteID=[[GETDATA:SiteID]]&NewType={AttrType|SPACECONV}"><i>Change to this Type</i></a>
+			:
+<!--webbot bot="HTMLMarkup" endspan -->
+				<a href="/cgi-bin/virtuflex.exe?template=/td/AttrChg.htm&amp;Label=[[GETDATA:Label]]&amp;MemOrgID=[[GETDATA::VAR=MemID]]&amp;SiteID=[[GETDATA:SiteID]]&amp;NewType={AttrType|SPACECONV}"><i>Change to this Type</i></a>
+<!--webbot bot="HTMLMarkup" startspan -->			       
+		]]
+<!--webbot bot="HTMLMarkup" endspan -->
+				</tr>
+<!--webbot bot="HTMLMarkup" startspan -->
+			]]
+<!--webbot bot="HTMLMarkup" endspan -->
+		</table>
+	</td>
+</tr>
+</table>
+</form>
+</BODY>
+</html>

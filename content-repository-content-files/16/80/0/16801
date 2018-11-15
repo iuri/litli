@@ -1,0 +1,292 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<!-- WATCH: we can go between Members.htm and Organiza.htm -- and html			variables will tag along (thus MemID vs. MemOrgID) -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<title>Organizations</title>
+</head>
+<BODY bgcolor="#FFFFFF" text="#000000">
+<!--webbot bot="HTMLMarkup" startspan -->
+[[SET:DefaultDbase:c\:\timed\tddemo.mdb]]
+
+<!--If pushed Home button, force move to default page -->
+[[EVAL:IF:[[GETDATA:HomeButton]]=Home
+	:
+	[[GETDATA:XYZZY:CHECK=/td/Main.htm]]
+	: <!-- not going home, do nothing -->
+]]
+
+[[EVAL:IF:[[GETDATA:MembersButton]]=Members
+	:
+	[[GETDATA:XYZZY:CHECK=/td/members.htm]]
+	:
+]]
+[[EVAL:IF:[[GETDATA:HelpButton]]=Help
+	:
+	[[GETDATA:XYZZY:CHECK=/td/OrgHlp.htm]]
+	:
+]]
+[[EVAL:IF:[[GETDATA:NewButton]]=New
+	:
+	[[GETDATA:XYZZY:CHECK=/td/oneorg.htm]]
+	:
+]]
+
+
+[[EVAL:IF:[[GETDATA:ShowButton]]=Show
+	: <!-- eval if true -->
+		[[GETDATA:XYZZY:CHECK=/td/oneorg.htm]]
+	: <!-- eval if false -->
+]] <!-- end eval if -->
+<!--webbot bot="HTMLMarkup" endspan -->
+<!--       |          \ /           `       -->
+<!-- structure form is broken here, this form works on a long -->
+<!-- section of the document starting here -->
+<center>
+<font size="+2">
+<b>Search for a Volunteer Organization</b>
+</font>
+</center>
+<form action="/cgi-bin/virtuflex.exe" method="get">
+	<input type="hidden" name="template" value="/td/organiza.htm">
+	<input type="hidden" name="MemOrgID" value="[[GETDATA:MemOrgID]]">
+	<input type="hidden" name="SiteID" value="[[GETDATA:SiteID]]">
+	<input type="hidden" name="Once" value="OK">
+	<input type="hidden" name="Label" value="Organization">
+	<!--If pushed Show button, force move to "One Organization" page -->
+	<!-- WARNING: THIS DOES NOT PREVIEW CORRECTLY; MUST COME FROM DEFAULT.HTM-->
+	<table border="0" cellpadding="0" cellspacing="0">
+		<tr>
+			<td width="200" bgcolor="#F5F5F5" border="1">
+				<!--webbot bot="HTMLMarkup" startspan -->
+				<!--If selected "View" in display, id will be assigned-->
+				[[EVAL:IF:[[GETDATA:MemOrgID:LENGTH]]>0
+					: <!-- Eval if true -->
+<!--webbot bot="HTMLMarkup" endspan -->
+					<table bgcolor="#F5F5F5" border="0" cellpadding="0" cellspacing="0">
+								<!-- Organizations are "Members" -->
+<!--webbot bot="HTMLMarkup" startspan -->
+								[[DBASE:SELECT:[Member Table]:MemID=[[GETDATA:MemOrgID]]:
+<!--webbot bot="HTMLMarkup" endspan -->
+							<!-- Begin Dbase select interlace -->
+						<tr>
+							<td width="140">
+								<font size="-3">
+								{LastName}
+								</font>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<font size="-3">
+								{Street}
+								</font>
+							</td>
+							<td>
+								&nbsp;
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<font size="-3">
+								{City}
+								</font>
+							</td>
+							<td width="60">
+								<font size="-3">
+								{State} &nbsp;{Zipcode}
+								</font>
+							</td>
+						</tr>
+						<!-- blank row -->
+						<tr>
+							<td>
+								<font size="-2">
+								Org ID--
+								<font size="-3">
+								{Identifier}
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<font size="-2">
+								Home Phone--
+								<font size="-3">
+								{HomePhone}
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<font size="-2">
+								Work Phone--
+								<font size="-3">
+								{WorkPhone}
+							</td>
+						</tr>
+<!--webbot bot="HTMLMarkup" startspan -->
+		    ]] <!-- end DBASE SELECT interlace-->
+<!--webbot bot="HTMLMarkup" endspan -->		  
+					</table>
+<!--webbot bot="HTMLMarkup" startspan -->
+					: <!-- Eval if false,  not "View"ing -->
+					<!-- use transparent gif to force width -->
+					<img src="/td/blank.gif" ALT="" width="200" height="1">
+					<br>
+				]]
+<!--webbot bot="HTMLMarkup" endspan -->
+			</td>
+			<td width="400">
+                <table border="0" width="90%" cellspacing="1" cellpadding="2">
+                  <tr>
+                    <td width="33%">
+				<input type="submit" name="MembersButton" value="Members" style="position: relative; width: 110; height: 25">
+                    </td>
+                    <td width="26%">
+				<input type="submit" name="HelpButton" value="Help" style="position: relative; width: 61; height: 25">
+                    </td>
+                    <td width="41%"><input type="submit" name="HomeButton" value="Home" style="position: relative; width: 61; height: 25">
+                    </td>
+                  </tr>
+                  <tr>
+                    <td width="33%">			 
+					<input type="submit" name="ShowButton" value="Show" style="position: relative; width: 110; height: 25">
+                    </td>
+                    <td width="26%">
+				<input type="submit" name="NewButton" value="New" style="position: relative; width: 61; height: 25">
+                    </td>
+                    <td width="41%">
+				<input type="submit" name="SearchButton" value="Search" style="position: relative; width: 61; height: 25">
+                    </td>
+                  </tr>
+                  <tr>
+                    <td width="33%" align="right">
+				<input type="checkbox" name="InactiveCheck" value="YES"><img src="/td/blank.gif" ALT width="5" height="1">
+                      &nbsp;</td>
+                    <td width="26%"><font size="2">
+				Inactive&nbsp;
+				</font>
+                    </td>
+                    <td width="41%">
+				<input type="reset" name="ResetButton" value="OK" style="position: relative; width: 61; height: 25">
+                    </td>
+                  </tr>
+                </table>
+                &nbsp;&nbsp;&nbsp;
+				<br>
+				<!-- id "View"ing we now activate the "Show" button for more detail -->
+<!--webbot bot="HTMLMarkup" startspan -->			       
+		[[EVAL:IF:[[GETDATA:MemOrgID:Length]] >0
+				:
+<!--webbot bot="HTMLMarkup" endspan -->&nbsp; <!--webbot bot="HTMLMarkup" startspan -->       
+				:		       
+					<img src="/td/blank.gif" ALT="" width="16" height="1" border="0">
+		]]
+<!--webbot bot="HTMLMarkup" endspan -->	      
+                &nbsp;&nbsp;<p>&nbsp;&nbsp;&nbsp;
+				</p>
+				<p>
+				<strong>
+				Organization
+                </strong>
+				<img src="/td/blank.gif" ALT width="80" height="1">
+                <strong>Organization ID
+				</strong>
+				</p>
+				<p>
+				<input type="text" size="20" name="organ">
+				<input type="text" size="20" name="organid">
+				</p>
+				<p>
+				<font size="1">
+				<center>
+				Due to multiple search boxes, you must press &quot;<b>Search</b>&quot; rather than the &quot;Enter&quot; key
+				Enter enough of the name or id to uniquely define the organization<br>
+				or enter the specific identifier number in the Organization ID box<br>
+				Leaving the two boxes empty results in a complete list
+				</center>
+				</p>
+				</font>
+			</td>
+		</tr>
+	</table>
+</form>
+<p>
+<!-- Nickname like '%%ORG%%' and LastName like '%[[GETDATA:organ]]%':<br>{LastName}&nbsp&nbsp&nbsp&nbsp{Identifier} -->
+<table width="600">
+<!--webbot bot="HTMLMarkup" startspan -->       
+	[[EVAL:IF:[[GETDATA:Once:Length]] >0
+	:
+<!--webbot bot="HTMLMarkup" endspan --> 
+		<tr>
+		<th colspan="3">
+				Clicking View (after a Search) will show detail in the upper left grey box
+				For more information or to edit the information press &quot;<b>Show</b>&quot;
+		</th>
+		</tr>
+<!--webbot bot="HTMLMarkup" startspan -->		       
+	:
+	]]
+	[[EVAL:IF:[[GETDATA:InactiveCheck]]=YES
+		: <!-- eval if true -->
+		[[SET:VAR:active=-1]]
+		: <!-- eval if false -->
+		[[SET:VAR:active=0]]
+	]]
+	[[EVAL:IF:[[GETDATA:organid:LENGTH]]>0 && [[GETDATA:SearchButton:LENGTH]]>0
+		: <!-- eval if true -->
+		[[DBASE:SELECT:[Member Table]:(Inactive=[[GETDATA::VAR=active]])
+			and (NickName like '%%ORG%%') and (Identifier like '[[GETDATA:organid]]%')
+		: <!-- Begin dbase select interlace field -->
+<!--webbot bot="HTMLMarkup" endspan -->
+		<tr>
+			<td>
+				{LastName}
+			</td>
+			<td>
+				{Identifier}
+			</td>
+			 <td>
+				<a href="/cgi-bin/virtuflex.exe?template=/td/organiza.htm&amp;Label=Organization&amp;organ=[[GETDATA:organ]]&amp;organid=[[GETDATA:organid]]&amp;MemOrgID={MemID}&amp;SiteID={Site}">View</a>
+			</td>
+		</tr>
+<!--webbot bot="HTMLMarkup" startspan -->	       
+		]] <!-- End dbase select interlace field -->
+		: <!-- eval if false -->
+		[[EVAL:IF:[[GETDATA:SearchButton:LENGTH]]>0
+			:
+			[[DBASE:SELECT:[Member Table]:
+				(Inactive=[[GETDATA::VAR=active]]) and (NickName like '%%ORG%%')
+				and
+				[[EVAL:IF:[[GETDATA:organ:LENGTH]]>0
+				:
+					(LastName like '[[GETDATA:organ]]%')
+				:
+					(LastName like '%')
+				]]
+			: <!-- begin dbase select interlace field -->
+			<tr>
+			<td>
+					{LastName}
+				</td>
+				<td>
+				</td>
+				<td>
+					{Identifier}
+				</td>
+				<td>
+					<a href=/cgi-bin/virtuflex.exe?template=/td/organiza.htm&Label=Organization&organ=[[GETDATA:organ]]&organid=[[GETDATA:organid]]&MemOrgID={MemID}&SiteID={Site}>View</a>
+				</td>
+			</tr>
+			]] <!-- End dbase select interlace field -->
+			:<!-- eval if false nothing done -->
+		]] <!-- end inner eval if -->
+	]] <!-- end over-all eval if -->
+	</p>
+<!--webbot bot="HTMLMarkup" endspan -->
+</table>
+
+<p><a href="oneorg.htm"></a></p>
+
+</BODY>
+</html>

@@ -1,0 +1,2540 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+  
+    <meta name="generator" content="OpenACS version 5.1.5">
+    <title>Forum Development: Business Plan</title>
+    
+      <link rel="stylesheet" type="text/css" href="ctn-business-plan-circa-2009_files/acs-developer-support.css" media="all">
+    
+      <link rel="stylesheet" type="text/css" href="ctn-business-plan-circa-2009_files/lists.css" media="all">
+    
+      <link rel="stylesheet" type="text/css" href="ctn-business-plan-circa-2009_files/forms.css" media="all">
+    
+      <link rel="stylesheet" type="text/css" href="ctn-business-plan-circa-2009_files/default-master.css" media="all">
+    
+      <link rel="stylesheet" type="text/css" href="ctn-business-plan-circa-2009_files/dotlrn-toolbar.css" media="all">
+    
+
+    <script type="text/javascript" src="ctn-business-plan-circa-2009_files/core.js" language="javascript"></script>
+
+    
+    <link rel="stylesheet" type="text/css" href="ctn-business-plan-circa-2009_files/site-master.css" media="all">
+    
+    
+    <!--<link rel="stylesheet" type="text/css" href="/resources/acs-subsite/group-master.css" media="all">-->
+<script type="text/javascript" src="ctn-business-plan-circa-2009_files/dom-drag.js"></script> 
+  
+  
+  </head><body onload="">
+
+    <textarea id="holdtext" style="display: none;" rows="1" cols="1"></textarea>
+    
+
+
+<!-- Header -->
+
+<div id="site-header">
+
+<script type="text/javascript" src="ctn-business-plan-circa-2009_files/dom-drag.js"></script>
+  <div class="system-name">
+    <a href="http://caltek.net/">CTN</a>
+  </div>
+<link rel="shortcut icon" href="http://caltek.net/files/view/media/jpg/caltek.ico">
+  <div class="action-list permanent-navigation">
+    <ul>
+      
+        <span id="oacs-admin-url"><li><a href="http://206.192.23.201/acs-admin/" title="Site-wide administration">Control Panel</a></li></span>
+      
+        <li><a href="http://206.192.23.201/pvt/home" title="Change password, email, portrait">Your Account</a></li>
+      
+        <li><a href="http://206.192.23.201/register/logout" title="Logout from CTN">Logout</a></li>
+      
+        <li><a href="http://206.192.23.201/register/logout" title="Logout from CTN">Logout</a></li>
+      
+    </ul>
+  </div>
+
+  <div class="action-list users-online">
+    <ul>
+      <li><a href="http://206.192.23.201/shared/whos-online">1 Member  online</a></li>
+    </ul>
+  </div>
+
+  <div class="user-greeting">
+    
+      Welcome, Kenneth Wyrick
+    
+  </div>
+
+</div>
+
+
+
+<div id="context-bar">
+  
+      <div id="breadcrumbs">
+        <ul>
+          
+              <li><a href="http://206.192.23.201/">CalTek.Net</a> »</li>
+            
+              <li><a href="http://206.192.23.201/forums/">Forums</a> »</li>
+            
+              <li><a href="http://206.192.23.201/forums/forum-view?forum_id=9973">Development</a> »</li>
+            
+              <li>One Thread</li>
+            
+        </ul>
+      </div>
+    
+  <div id="navlinks"></div>
+  <div style="clear: both;"></div>
+</div>
+
+
+
+<div id="subsite-name">
+  <a href="http://206.192.23.201/" class="subsite-name">CalTek.Net</a>
+</div>
+
+<!-- Top level navigation -->
+
+<div id="navbar-div">
+  <div id="navbar-container">
+    <div id="navbar"> 
+      
+          <div class="tab">
+            
+              <a href="http://206.192.23.201/members/" title="">Members</a>
+            
+          </div>
+        
+          <div class="tab">
+            
+              <a href="http://206.192.23.201/Organization/" title="">Organization</a>
+            
+          </div>
+        
+          <div class="tab">
+            
+              <a href="http://206.192.23.201/blog/" title="">blog</a>
+            
+          </div>
+        
+          <div class="tab">
+            
+              <a href="http://206.192.23.201/bt/" title="">BugT</a>
+            
+          </div>
+        
+          <div class="tab">
+            
+              <a href="http://206.192.23.201/cal/" title="">Calendar</a>
+            
+          </div>
+        
+          <div class="tab">
+            
+              <a href="http://206.192.23.201/dotlrn/" title="">dotLRN</a>
+            
+          </div>
+        
+          <div class="tab">
+            
+              <a href="http://206.192.23.201/eda-photo/" title="">Photo Album</a>
+            
+          </div>
+        
+          <div class="tab">
+            
+              <a href="http://206.192.23.201/files/" title="">File Storage</a>
+            
+          </div>
+        
+          <div class="tab">
+            
+              <a href="http://206.192.23.201/fm/" title="">File Manager</a>
+            
+          </div>
+        
+          <div class="tab" id="navbar-here">
+            
+              <a href="http://206.192.23.201/forums/" title="">Forums</a>
+            
+          </div>
+        
+          <div class="tab">
+            
+              <a href="http://206.192.23.201/homw/" title="">Home</a>
+            
+          </div>
+        
+          <div class="tab">
+            
+              <a href="http://206.192.23.201/lorsm/" title="">LORS Management</a>
+            
+          </div>
+        
+          <div class="tab">
+            
+              <a href="http://206.192.23.201/mail/" title="">WebMail</a>
+            
+          </div>
+        
+          <div class="tab">
+            
+              <a href="http://206.192.23.201/ml/" title="">Mailing List</a>
+            
+          </div>
+        
+          <div class="tab">
+            
+              <a href="http://206.192.23.201/news/" title="">News</a>
+            
+          </div>
+        
+          <div class="tab">
+            
+              <a href="http://206.192.23.201/notifications/" title="">Notifications</a>
+            
+          </div>
+        
+          <div class="tab">
+            
+              <a href="http://206.192.23.201/pm/" title="">Project Manager</a>
+            
+          </div>
+        
+          <div class="tab">
+            
+              <a href="http://206.192.23.201/simulation/" title="">Simulation</a>
+            
+          </div>
+        
+          <div class="tab">
+            
+              <a href="http://206.192.23.201/survey/" title="">Survey</a>
+            
+          </div>
+        
+          <div class="tab">
+            
+              <a href="http://206.192.23.201/tv/" title="">TV Shows</a>
+            
+          </div>
+        
+          <div class="tab">
+            
+              <a href="http://206.192.23.201/wel/" title="">Welcome TOC</a>
+            
+          </div>
+        
+          <div class="tab">
+            
+              <a href="http://206.192.23.201/wiki/" title="">Wiki</a>
+            
+          </div>
+        
+          <div class="tab">
+            
+              <a href="http://206.192.23.201/wp/" title="">Presentations</a>
+            
+          </div>
+        
+          <div class="tab">
+            
+              <a href="http://206.192.23.201/admin/configure" title="">Administration</a>
+            
+          </div>
+        
+    </div>
+  </div>
+</div>
+<div id="navbar-body">
+
+<!-- Second level navigation -->
+
+  
+
+<!-- Page Title -->
+
+    
+      <h1 class="page-title">Forum Development: Business Plan</h1>
+    
+
+<!-- Body -->
+
+    
+
+<br>
+
+<center>
+
+<table width="95%">
+  <tbody><tr style="white-space: normal;">
+    <td align="left">
+      <ul class="action-links">
+        <li><a href="http://206.192.23.201/forums/forum-view?forum%5fid=9973">Back to Development</a></li>
+      </ul>
+    </td>
+    <td>
+       &nbsp;
+    </td>
+  </tr>
+  <tr style="white-space: normal;">
+    <td align="left">
+      You may <a href="http://206.192.23.201/notifications/request-new?pretty%5fname=Business+Plan&amp;return%5furl=%2fforums%2fmessage%2dview%3fmessage%5fid%3d123866&amp;type%5fid=1060&amp;object%5fid=123866&amp;user%5fid=462">request notification</a> for Business Plan.
+    </td>
+    <td align="right">
+      <form name="search" method="post" action="search"><input name="form:mode" value="edit" type="hidden">
+<input name="form:id" value="search" type="hidden">
+<input name="forum_id" value="9973" type="hidden">
+        Search:&nbsp;<input name="search_text" type="text"></form>
+    </td>
+  </tr>
+</tbody></table>
+
+<br>
+
+
+<table width="95%" bgcolor="#dddddd">
+
+<tbody><tr style="color: black; background-color: rgb(238, 238, 238);">
+  
+    <td style="padding-left: 1em;" align="left">
+      <strong>
+        
+          <a name="123866"></a><a href="http://206.192.23.201/forums/message-view?message%5fid=123866#123866" title="Direct link to this post">1</a>:
+          <a href="http://206.192.23.201/forums/message-view?message_id=123866" title="Link to this post on a separate page">Business Plan</a>
+        
+      </strong>  
+    </td>
+  
+  <td align="left">
+    
+  </td> 
+  <td align="left">07/19/08 11:52 AM</td>
+
+  
+  
+    <td style="padding-right: 1em; padding-left: 1em;" align="right">
+      <div style="white-space: nowrap; font-size: x-small;">
+        [
+	
+	  <a href="http://206.192.23.201/forums/message-post?parent_id=123866">Reply</a> |
+        
+	<a href="http://206.192.23.201/forums/message-email?message_id=123866">Forward</a>  
+        ]
+        
+          <br>
+          [ <a href="http://206.192.23.201/forums/moderate/message-edit?message_id=123866">Edit</a>
+          | <a href="http://206.192.23.201/forums/moderate/message-delete?message_id=123866">Delete</a>
+	  
+	  | <a href="http://206.192.23.201/forums/moderate/thread-move?message_id=123866">Move thread to other forum</a> 
+	  | <a href="http://206.192.23.201/forums/moderate/thread-move-thread?message_id=123866">Move thread to other thread</a> 
+	  
+          ]
+        
+      </div>
+    </td>
+
+  
+
+</tr>
+
+<tr style="color: black; background-color: rgb(238, 238, 238);">
+  
+    <td colspan="4" style="padding: 1em;" align="left">
+  
+
+    <div align="left">
+      
+working with information<br>
+      <p style="color: rgb(153, 153, 153);">
+        Posted by <a href="http://206.192.23.201/forums/user-history?user_id=462">Kenneth Wyrick</a>
+      </p>
+    </div>
+  </td>
+</tr>
+
+
+</tbody></table>
+
+
+  <table width="95%">
+  
+    <tbody><tr style="padding-top: 1em;">
+      <td align="left">
+        <table width="99%" align="right" bgcolor="#dddddd">
+    
+<tbody><tr style="color: black; background-color: rgb(217, 228, 249);">
+  
+    <td style="padding-left: 1em;" align="left">
+      <strong>
+        
+          <a name="123868"></a><a href="http://206.192.23.201/forums/message-view?message%5fid=123866#123868" title="Direct link to this post">2</a>:
+          <a href="http://206.192.23.201/forums/message-view?message_id=123868" title="Link to this post on a separate page">Mission</a>
+        
+      </strong>  
+    </td>
+  
+  <td align="left">
+    
+      In response to <a href="http://206.192.23.201/forums/message-view?message%5fid=123866#123866">1</a>
+    
+  </td> 
+  <td align="left">07/19/08 11:53 AM</td>
+
+  
+  
+    <td style="padding-right: 1em; padding-left: 1em;" align="right">
+      <div style="white-space: nowrap; font-size: x-small;">
+        [
+	
+	  <a href="http://206.192.23.201/forums/message-post?parent_id=123868">Reply</a> |
+        
+	<a href="http://206.192.23.201/forums/message-email?message_id=123868">Forward</a>  
+        ]
+        
+          <br>
+          [ <a href="http://206.192.23.201/forums/moderate/message-edit?message_id=123868">Edit</a>
+          | <a href="http://206.192.23.201/forums/moderate/message-delete?message_id=123868">Delete</a>
+	  
+	      | <a href="http://206.192.23.201/forums/moderate/message-move?message_id=123868">Move to other thread</a> 
+	  
+          ]
+        
+      </div>
+    </td>
+
+  
+
+</tr>
+
+<tr style="color: black; background-color: rgb(217, 228, 249);">
+  
+    <td colspan="4" style="padding: 1em;" align="left">
+  
+
+    <div align="left">
+      <font face="Times New Roman, serif">CalTek.Net (CTN), a project of The Livingston Institute, 501(c) 3,
+provides resources and services to enhance the technological
+efficiencies within and between Community Technology Center Network
+affiliates located in California to increase their organizational
+capacity to support their community information infrastructures,
+universal access, collaborative sharing of resources, and utilization
+of technology to empower the underserved communities that they serve.</font>
+
+      <p style="color: rgb(153, 153, 153);">
+        Posted by <a href="http://206.192.23.201/forums/user-history?user_id=462">Kenneth Wyrick</a>
+      </p>
+    </div>
+  </td>
+</tr>
+
+
+        </tbody></table>
+      </td>
+    </tr>
+    
+    <tr style="padding-top: 1em;">
+      <td align="left">
+        <table width="99%" align="right" bgcolor="#dddddd">
+    
+<tbody><tr style="color: black; background-color: rgb(238, 238, 238);">
+  
+    <td style="padding-left: 1em;" align="left">
+      <strong>
+        
+          <a name="123870"></a><a href="http://206.192.23.201/forums/message-view?message%5fid=123866#123870" title="Direct link to this post">3</a>:
+          <a href="http://206.192.23.201/forums/message-view?message_id=123870" title="Link to this post on a separate page">History</a>
+        
+      </strong>  
+    </td>
+  
+  <td align="left">
+    
+      In response to <a href="http://206.192.23.201/forums/message-view?message%5fid=123866#123866">1</a>
+    
+  </td> 
+  <td align="left">07/19/08 11:53 AM</td>
+
+  
+  
+    <td style="padding-right: 1em; padding-left: 1em;" align="right">
+      <div style="white-space: nowrap; font-size: x-small;">
+        [
+	
+	  <a href="http://206.192.23.201/forums/message-post?parent_id=123870">Reply</a> |
+        
+	<a href="http://206.192.23.201/forums/message-email?message_id=123870">Forward</a>  
+        ]
+        
+          <br>
+          [ <a href="http://206.192.23.201/forums/moderate/message-edit?message_id=123870">Edit</a>
+          | <a href="http://206.192.23.201/forums/moderate/message-delete?message_id=123870">Delete</a>
+	  
+	      | <a href="http://206.192.23.201/forums/moderate/message-move?message_id=123870">Move to other thread</a> 
+	  
+          ]
+        
+      </div>
+    </td>
+
+  
+
+</tr>
+
+<tr style="color: black; background-color: rgb(238, 238, 238);">
+  
+    <td colspan="4" style="padding: 1em;" align="left">
+  
+
+    <div align="left">
+      
+<h3 class="western" style="margin-top: 0in; margin-bottom: 0in; line-height: 200%;">
+<font size="3"><u>History:</u><span style=""> </span></font>
+</h3>
+<h3 class="western" style="margin-top: 0in; margin-bottom: 0in; line-height: 200%;">
+<font size="3">CalTek.Net (CTN) created 1998, as a project of <a href="http://commons.org/">The
+Commons Inc.</a>, to develop a </font>
+</h3>
+<h3 class="western" style="margin-top: 0in; margin-bottom: 0in; line-height: 200%;">
+<span style=""><font size="3">statewide <a href="http://ctcnet.org/">Community
+Technology Center Network</a> support program. Caltek.net as a project of
+The Commons, a 501(c) 3, promoted and documented the use of mass
+consensus building "best practices" and the building of
+"magnet" content using new technologies, including the
+Internet.</font></span></h3>
+<h3 class="western" style="margin-top: 0in; margin-bottom: 0in; line-height: 200%;">
+ 
+</h3>
+<h3 class="western" style="margin-top: 0in; margin-bottom: 0in; line-height: 200%;">
+<span style=""><font size="3">CTN, 2002, became a
+project of Community Partners, 501 (c) 3, in Los Angeles, CA. a
+nonprofit incubator. Community Partners supports project leaders in
+translating their ideas for community change into action providing
+them with the skills and practices that will strengthen their chances
+of independent success in the future. </font></span>
+</h3>
+<h3 class="western" style="margin-top: 0in; margin-bottom: 0in; line-height: 200%;">
+<font size="3">CTN continues to develop a statewide regional support
+network for Community Technology Center Network (CTCNet) affiliates. 
+CTCNet is a US-based network of more than 1000 organizations united
+in their missions to improve the digital divide in educational,
+economic, cultural, and political life of the communities they serve.</font></h3>
+<h3 class="western" style="margin-top: 0in; margin-bottom: 0in; line-height: 200%;">
+</h3>
+<h3 class="western" style="margin-top: 0in; margin-bottom: 0in; line-height: 200%;">
+<span style=""><font size="3">CTN, a CTCNet member,
+works regionally to increase California membership, provide
+networking, capacity building program development, training, and
+partnership opportunities to organizations committed to creating a
+society with </font></span><strong><font size="3">equal opportunity</font></strong><span style=""><font size="3">
+to access computers and network technology for life-long learning,
+for personal and community empowerment. CTN has cultivated
+relationships and collaborations with existing networked
+organizations to share collective resources to reduce the barriers
+and increase access to technology for the community and the residents
+they serve.</font></span></h3>
+      <p style="color: rgb(153, 153, 153);">
+        Posted by <a href="http://206.192.23.201/forums/user-history?user_id=462">Kenneth Wyrick</a>
+      </p>
+    </div>
+  </td>
+</tr>
+
+
+        </tbody></table>
+      </td>
+    </tr>
+    
+    <tr style="padding-top: 1em;">
+      <td align="left">
+        <table width="99%" align="right" bgcolor="#dddddd">
+    
+<tbody><tr style="color: black; background-color: rgb(217, 228, 249);">
+  
+    <td style="padding-left: 1em;" align="left">
+      <strong>
+        
+          <a name="123872"></a><a href="http://206.192.23.201/forums/message-view?message%5fid=123866#123872" title="Direct link to this post">4</a>:
+          <a href="http://206.192.23.201/forums/message-view?message_id=123872" title="Link to this post on a separate page">Programs</a>
+        
+      </strong>  
+    </td>
+  
+  <td align="left">
+    
+      In response to <a href="http://206.192.23.201/forums/message-view?message%5fid=123866#123866">1</a>
+    
+  </td> 
+  <td align="left">07/19/08 11:55 AM</td>
+
+  
+  
+    <td style="padding-right: 1em; padding-left: 1em;" align="right">
+      <div style="white-space: nowrap; font-size: x-small;">
+        [
+	
+	  <a href="http://206.192.23.201/forums/message-post?parent_id=123872">Reply</a> |
+        
+	<a href="http://206.192.23.201/forums/message-email?message_id=123872">Forward</a>  
+        ]
+        
+          <br>
+          [ <a href="http://206.192.23.201/forums/moderate/message-edit?message_id=123872">Edit</a>
+          | <a href="http://206.192.23.201/forums/moderate/message-delete?message_id=123872">Delete</a>
+	  
+	      | <a href="http://206.192.23.201/forums/moderate/message-move?message_id=123872">Move to other thread</a> 
+	  
+          ]
+        
+      </div>
+    </td>
+
+  
+
+</tr>
+
+<tr style="color: black; background-color: rgb(217, 228, 249);">
+  
+    <td colspan="4" style="padding: 1em;" align="left">
+  
+
+    <div align="left">
+      
+Train the Trainer<br>Open Source Software Alternatives<br>Arts &amp; Teknowledgy<br>Learning Management Systems<br><br>
+      <p style="color: rgb(153, 153, 153);">
+        Posted by <a href="http://206.192.23.201/forums/user-history?user_id=462">Kenneth Wyrick</a>
+      </p>
+    </div>
+  </td>
+</tr>
+
+
+        </tbody></table>
+      </td>
+    </tr>
+    
+    <tr style="padding-top: 1em;">
+      <td align="left">
+        <table width="98%" align="right" bgcolor="#dddddd">
+    
+<tbody><tr style="color: black; background-color: rgb(238, 238, 238);">
+  
+    <td style="padding-left: 1em;" align="left">
+      <strong>
+        
+          <a name="123874"></a><a href="http://206.192.23.201/forums/message-view?message%5fid=123866#123874" title="Direct link to this post">5</a>:
+          <a href="http://206.192.23.201/forums/message-view?message_id=123874" title="Link to this post on a separate page">Train the Trainer</a>
+        
+      </strong>  
+    </td>
+  
+  <td align="left">
+    
+      In response to <a href="http://206.192.23.201/forums/message-view?message%5fid=123866#123872">4</a>
+    
+  </td> 
+  <td align="left">07/19/08 11:56 AM</td>
+
+  
+  
+    <td style="padding-right: 1em; padding-left: 1em;" align="right">
+      <div style="white-space: nowrap; font-size: x-small;">
+        [
+	
+	  <a href="http://206.192.23.201/forums/message-post?parent_id=123874">Reply</a> |
+        
+	<a href="http://206.192.23.201/forums/message-email?message_id=123874">Forward</a>  
+        ]
+        
+          <br>
+          [ <a href="http://206.192.23.201/forums/moderate/message-edit?message_id=123874">Edit</a>
+          | <a href="http://206.192.23.201/forums/moderate/message-delete?message_id=123874">Delete</a>
+	  
+	      | <a href="http://206.192.23.201/forums/moderate/message-move?message_id=123874">Move to other thread</a> 
+	  
+          ]
+        
+      </div>
+    </td>
+
+  
+
+</tr>
+
+<tr style="color: black; background-color: rgb(238, 238, 238);">
+  
+    <td colspan="4" style="padding: 1em;" align="left">
+  
+
+    <div align="left">
+      <font size="3">Educates agency staff in the concept of a statewide
+computer reuse program to share, and promote benchmarks and standards
+for recycling in conjunction with existing regional programs. </font><h3 style="margin-top: 0in; margin-bottom: 0in; line-height: 200%;" class="western">
+</h3>
+<h3 style="margin-top: 0in; margin-bottom: 0in; line-height: 200%;" class="western">
+<font size="3">Provide the tools to represent the human framework for
+the community organization. </font>
+</h3>
+<h3 style="margin-top: 0in; margin-bottom: 0in; line-height: 200%;" class="western">
+<font size="3">Institute technology based learn and earn computer
+program specific to the communities they serve, including training of
+agency staff for intergration of refurbishing and earned donated
+computer into their existing programs. </font>
+</h3>
+<h3 style="margin-top: 0in; margin-bottom: 0in; line-height: 200%;" class="western">
+<font size="3">In 2000, CalTekNet implemented Train the Trainers at the
+Jordan High School Parent Center, Watts, Ca. The student body is
+76.5% Hispanics, 23% African Americans, and 5% other. Located in a
+high crime area and statistically 99% of the students qualify for
+free/reduced lunch based on the income level of their families. </font>
+</h3>
+<h3 style="margin-top: 0in; margin-bottom: 0in; line-height: 200%;" class="western">
+<font size="3">CTN worked with parents to recruit, organize and
+implement the Jordan HS Parent Center “Learn and Earn”
+Program. Parents learn about computers, their usage, Internet, and
+basic office skills while earning a donated computer for their homes.
+Many parents have continued on to higher skill classes or obtained
+better employment because of learned skills. The Jordan HS Parent
+Center program has expanded to include five feeder schools. Staff for
+new centers come from the parent groups prior graduating classes.
+Several of the parent trainers are now funded by "Healthy
+Start". </font>
+</h3>
+
+      <p style="color: rgb(153, 153, 153);">
+        Posted by <a href="http://206.192.23.201/forums/user-history?user_id=462">Kenneth Wyrick</a>
+      </p>
+    </div>
+  </td>
+</tr>
+
+
+        </tbody></table>
+      </td>
+    </tr>
+    
+    <tr style="padding-top: 1em;">
+      <td align="left">
+        <table width="98%" align="right" bgcolor="#dddddd">
+    
+<tbody><tr style="color: black; background-color: rgb(217, 228, 249);">
+  
+    <td style="padding-left: 1em;" align="left">
+      <strong>
+        
+          <a name="123876"></a><a href="http://206.192.23.201/forums/message-view?message%5fid=123866#123876" title="Direct link to this post">6</a>:
+          <a href="http://206.192.23.201/forums/message-view?message_id=123876" title="Link to this post on a separate page">Open Source Alternatives</a>
+        
+      </strong>  
+    </td>
+  
+  <td align="left">
+    
+      In response to <a href="http://206.192.23.201/forums/message-view?message%5fid=123866#123872">4</a>
+    
+  </td> 
+  <td align="left">07/19/08 11:56 AM</td>
+
+  
+  
+    <td style="padding-right: 1em; padding-left: 1em;" align="right">
+      <div style="white-space: nowrap; font-size: x-small;">
+        [
+	
+	  <a href="http://206.192.23.201/forums/message-post?parent_id=123876">Reply</a> |
+        
+	<a href="http://206.192.23.201/forums/message-email?message_id=123876">Forward</a>  
+        ]
+        
+          <br>
+          [ <a href="http://206.192.23.201/forums/moderate/message-edit?message_id=123876">Edit</a>
+          | <a href="http://206.192.23.201/forums/moderate/message-delete?message_id=123876">Delete</a>
+	  
+	      | <a href="http://206.192.23.201/forums/moderate/message-move?message_id=123876">Move to other thread</a> 
+	  
+          ]
+        
+      </div>
+    </td>
+
+  
+
+</tr>
+
+<tr style="color: black; background-color: rgb(217, 228, 249);">
+  
+    <td colspan="4" style="padding: 1em;" align="left">
+  
+
+    <div align="left">
+      
+<h3 style="margin-top: 0in; margin-bottom: 0in; line-height: 200%;" class="western">
+<font size="3">In collaboration with open source development networks
+CTN hosts open source, applications training workshops. The training
+is open to individuals and organizations interested in building a
+community network with the ability to provide free legal software to
+participants. Participants gain skills in customizing the web
+applications to create relevant content areas for their targeted
+community. By introducing and linking participants to the open source
+development community, on going training and support is available for
+continued development of skills and a network infrastructure. </font>
+</h3>
+<h3 style="margin-top: 0in; margin-bottom: 0in; line-height: 200%;" class="western">
+<font size="3">CTN helped start and hosted both monthly meetings and
+weekly classes 2004-6 (2yrs) of the LAMPSIG Group, (Linux Apache
+MySQL Php); an all volunteer special interest group (sig) that
+provides free community based open source training &amp; development
+through weekly training classes and a monthly general workshop. </font>
+</h3>
+<h3 style="margin-top: 0in; margin-bottom: 0in; line-height: 200%;" class="western">
+</h3>
+<h3 style="margin-top: 0in; margin-bottom: 0in; line-height: 200%;" class="western">
+<font size="3">A computer technology teacher at University H.S. has
+been able to develop a website portal for tracking his student’s
+progress and gain skills to teach to his students. </font>
+</h3>
+<p style="margin-bottom: 0in; line-height: 200%;" class="western">
+<br>
+</p>
+<h3 style="margin-top: 0in; margin-bottom: 0in; line-height: 200%;" class="western">
+<font size="3">Roosevelt High School’s Technology Administrator,
+in collaboration with CalTekNet and the OpenAcs Development Network
+has developed a community infrastructure for teachers, students, and
+supporting organizations, rrider.org. Roosevelt has 5300 students on
+three tracks in13 small learning communities; the infrastructure
+allows collaboration of staff on curriculum developemnt in one
+structured, secure, scalable site. </font>
+</h3>
+
+      <p style="color: rgb(153, 153, 153);">
+        Posted by <a href="http://206.192.23.201/forums/user-history?user_id=462">Kenneth Wyrick</a>
+      </p>
+    </div>
+  </td>
+</tr>
+
+
+        </tbody></table>
+      </td>
+    </tr>
+    
+    <tr style="padding-top: 1em;">
+      <td align="left">
+        <table width="98%" align="right" bgcolor="#dddddd">
+    
+<tbody><tr style="color: black; background-color: rgb(238, 238, 238);">
+  
+    <td style="padding-left: 1em;" align="left">
+      <strong>
+        
+          <a name="123878"></a><a href="http://206.192.23.201/forums/message-view?message%5fid=123866#123878" title="Direct link to this post">7</a>:
+          <a href="http://206.192.23.201/forums/message-view?message_id=123878" title="Link to this post on a separate page">Arts &amp; Teknowledgy</a>
+        
+      </strong>  
+    </td>
+  
+  <td align="left">
+    
+      In response to <a href="http://206.192.23.201/forums/message-view?message%5fid=123866#123872">4</a>
+    
+  </td> 
+  <td align="left">07/19/08 11:57 AM</td>
+
+  
+  
+    <td style="padding-right: 1em; padding-left: 1em;" align="right">
+      <div style="white-space: nowrap; font-size: x-small;">
+        [
+	
+	  <a href="http://206.192.23.201/forums/message-post?parent_id=123878">Reply</a> |
+        
+	<a href="http://206.192.23.201/forums/message-email?message_id=123878">Forward</a>  
+        ]
+        
+          <br>
+          [ <a href="http://206.192.23.201/forums/moderate/message-edit?message_id=123878">Edit</a>
+          | <a href="http://206.192.23.201/forums/moderate/message-delete?message_id=123878">Delete</a>
+	  
+	      | <a href="http://206.192.23.201/forums/moderate/message-move?message_id=123878">Move to other thread</a> 
+	  
+          ]
+        
+      </div>
+    </td>
+
+  
+
+</tr>
+
+<tr style="color: black; background-color: rgb(238, 238, 238);">
+  
+    <td colspan="4" style="padding: 1em;" align="left">
+  
+
+    <div align="left">
+      <h3 style="margin-top: 0in; margin-bottom: 0in; line-height: 200%;" class="western"><font size="3"><u><br></u>  </font>
+</h3>
+<h3 style="margin-top: 0in; margin-bottom: 0in; line-height: 200%;" class="western">
+<font size="3">Works with various artists, educators, and computer
+programmers in the aggregation of presentations and magnet content
+for specific programs and general educational benefits. CTN works
+with USC's Cultural Events Guild and other organizations to provide
+technology training to collaborating artists to integrate their art
+into creative educational programs for the Los Angeles Community. </font>
+</h3>
+
+      <p style="color: rgb(153, 153, 153);">
+        Posted by <a href="http://206.192.23.201/forums/user-history?user_id=462">Kenneth Wyrick</a>
+      </p>
+    </div>
+  </td>
+</tr>
+
+
+        </tbody></table>
+      </td>
+    </tr>
+    
+    <tr style="padding-top: 1em;">
+      <td align="left">
+        <table width="98%" align="right" bgcolor="#dddddd">
+    
+<tbody><tr style="color: black; background-color: rgb(217, 228, 249);">
+  
+    <td style="padding-left: 1em;" align="left">
+      <strong>
+        
+          <a name="123880"></a><a href="http://206.192.23.201/forums/message-view?message%5fid=123866#123880" title="Direct link to this post">8</a>:
+          <a href="http://206.192.23.201/forums/message-view?message_id=123880" title="Link to this post on a separate page">Learning Management Systems</a>
+        
+      </strong>  
+    </td>
+  
+  <td align="left">
+    
+      In response to <a href="http://206.192.23.201/forums/message-view?message%5fid=123866#123872">4</a>
+    
+  </td> 
+  <td align="left">07/19/08 11:58 AM</td>
+
+  
+  
+    <td style="padding-right: 1em; padding-left: 1em;" align="right">
+      <div style="white-space: nowrap; font-size: x-small;">
+        [
+	
+	  <a href="http://206.192.23.201/forums/message-post?parent_id=123880">Reply</a> |
+        
+	<a href="http://206.192.23.201/forums/message-email?message_id=123880">Forward</a>  
+        ]
+        
+          <br>
+          [ <a href="http://206.192.23.201/forums/moderate/message-edit?message_id=123880">Edit</a>
+          | <a href="http://206.192.23.201/forums/moderate/message-delete?message_id=123880">Delete</a>
+	  
+	      | <a href="http://206.192.23.201/forums/moderate/message-move?message_id=123880">Move to other thread</a> 
+	  
+          ]
+        
+      </div>
+    </td>
+
+  
+
+</tr>
+
+<tr style="color: black; background-color: rgb(217, 228, 249);">
+  
+    <td colspan="4" style="padding: 1em;" align="left">
+  
+
+    <div align="left">
+      
+<h3 class="western" style="margin-top: 0in; margin-bottom: 0in; line-height: 200%;">
+<font size="3">CalTekNet in collaboration with EPIE Institute on
+eLearning Space, a web based portal that provides access for students
+and parents to on-line learning that improves school learning and
+adult job skills and additional on-line learning portals development
+with the .LRN (Dot Learn) Consortium members. Developed at MIT, .LRN
+is the world's most widely adopted enterprise-class open-source
+software for supporting learning and research., Jordan H.S. Parent
+Centers and Roosevelt H.S., on  rrider.net  are already using the
+.lrn system to develop curriculum for on-line learning and access.</font></h3>
+      <p style="color: rgb(153, 153, 153);">
+        Posted by <a href="http://206.192.23.201/forums/user-history?user_id=462">Kenneth Wyrick</a>
+      </p>
+    </div>
+  </td>
+</tr>
+
+
+        </tbody></table>
+      </td>
+    </tr>
+    
+    <tr style="padding-top: 1em;">
+      <td align="left">
+        <table width="99%" align="right" bgcolor="#dddddd">
+    
+<tbody><tr style="color: black; background-color: rgb(238, 238, 238);">
+  
+    <td style="padding-left: 1em;" align="left">
+      <strong>
+        
+          <a name="123882"></a><a href="http://206.192.23.201/forums/message-view?message%5fid=123866#123882" title="Direct link to this post">9</a>:
+          <a href="http://206.192.23.201/forums/message-view?message_id=123882" title="Link to this post on a separate page">Technology Vision</a>
+        
+      </strong>  
+    </td>
+  
+  <td align="left">
+    
+      In response to <a href="http://206.192.23.201/forums/message-view?message%5fid=123866#123866">1</a>
+    
+  </td> 
+  <td align="left">07/19/08 11:59 AM</td>
+
+  
+  
+    <td style="padding-right: 1em; padding-left: 1em;" align="right">
+      <div style="white-space: nowrap; font-size: x-small;">
+        [
+	
+	  <a href="http://206.192.23.201/forums/message-post?parent_id=123882">Reply</a> |
+        
+	<a href="http://206.192.23.201/forums/message-email?message_id=123882">Forward</a>  
+        ]
+        
+          <br>
+          [ <a href="http://206.192.23.201/forums/moderate/message-edit?message_id=123882">Edit</a>
+          | <a href="http://206.192.23.201/forums/moderate/message-delete?message_id=123882">Delete</a>
+	  
+	      | <a href="http://206.192.23.201/forums/moderate/message-move?message_id=123882">Move to other thread</a> 
+	  
+          ]
+        
+      </div>
+    </td>
+
+  
+
+</tr>
+
+<tr style="color: black; background-color: rgb(238, 238, 238);">
+  
+    <td colspan="4" style="padding: 1em;" align="left">
+  
+
+    <div align="left">
+      <font face="Times New Roman, serif">Communities that the CTCNet affiliates serve are economically
+disadvantaged and are being left behind, in this increasingly
+technologically dominated society due to lack of access and training
+in technology. CTN envisions a society in which all are equitably
+empowered with tools to catalyze, assemble, and produce value added
+tools for community assessment, technology integration, content
+creation, and have available open source resource training in the
+context of bridging the digital and informational divides.</font>
+
+      <p style="color: rgb(153, 153, 153);">
+        Posted by <a href="http://206.192.23.201/forums/user-history?user_id=462">Kenneth Wyrick</a>
+      </p>
+    </div>
+  </td>
+</tr>
+
+
+        </tbody></table>
+      </td>
+    </tr>
+    
+    <tr style="padding-top: 1em;">
+      <td align="left">
+        <table width="99%" align="right" bgcolor="#dddddd">
+    
+<tbody><tr style="color: black; background-color: rgb(217, 228, 249);">
+  
+    <td style="padding-left: 1em;" align="left">
+      <strong>
+        
+          <a name="123884"></a><a href="http://206.192.23.201/forums/message-view?message%5fid=123866#123884" title="Direct link to this post">10</a>:
+          <a href="http://206.192.23.201/forums/message-view?message_id=123884" title="Link to this post on a separate page">Current use of Technology</a>
+        
+      </strong>  
+    </td>
+  
+  <td align="left">
+    
+      In response to <a href="http://206.192.23.201/forums/message-view?message%5fid=123866#123866">1</a>
+    
+  </td> 
+  <td align="left">07/19/08 11:59 AM</td>
+
+  
+  
+    <td style="padding-right: 1em; padding-left: 1em;" align="right">
+      <div style="white-space: nowrap; font-size: x-small;">
+        [
+	
+	  <a href="http://206.192.23.201/forums/message-post?parent_id=123884">Reply</a> |
+        
+	<a href="http://206.192.23.201/forums/message-email?message_id=123884">Forward</a>  
+        ]
+        
+          <br>
+          [ <a href="http://206.192.23.201/forums/moderate/message-edit?message_id=123884">Edit</a>
+          | <a href="http://206.192.23.201/forums/moderate/message-delete?message_id=123884">Delete</a>
+	  
+	      | <a href="http://206.192.23.201/forums/moderate/message-move?message_id=123884">Move to other thread</a> 
+	  
+          ]
+        
+      </div>
+    </td>
+
+  
+
+</tr>
+
+<tr style="color: black; background-color: rgb(217, 228, 249);">
+  
+    <td colspan="4" style="padding: 1em;" align="left">
+  
+
+    <div align="left">
+      <font face="Times New Roman, serif">CTN is presently running 2 instances of the Open Architecture
+Community System ( <a href="http://openacs.org/">http://openacs.org</a>
+), a toolkit for building scalable, community-oriented web
+applications, including a database publishing toolkit, with various
+packages including the <font color="#000080"><a href="http://dotlrn.org/"><span style="text-decoration: none;">dotlrn</span></a></font>
+for distance learning, on one virtual server. Without additional
+equipment, CTN is limited in its capacity to develop and expand the
+use of these tools and its ability to involve of additional CTCNet
+affiliates. CTN uses open source servers, desktop distributions, and
+various browser based applications and services using applications CD
+for use with MS Windows (<font color="#000080"><u><a href="http://theopencd.org/">theopencd.org</a></u></font>),
+the K-12 Linux Terminal Server Project (k-12LTSP.org) for classrooms,
+Creative Prodikeys, dual computer piano keyboard with built-in music
+lessons, recording and midi output capabilities.</font>
+
+      <p style="color: rgb(153, 153, 153);">
+        Posted by <a href="http://206.192.23.201/forums/user-history?user_id=462">Kenneth Wyrick</a>
+      </p>
+    </div>
+  </td>
+</tr>
+
+
+        </tbody></table>
+      </td>
+    </tr>
+    
+    <tr style="padding-top: 1em;">
+      <td align="left">
+        <table width="99%" align="right" bgcolor="#dddddd">
+    
+<tbody><tr style="color: black; background-color: rgb(238, 238, 238);">
+  
+    <td style="padding-left: 1em;" align="left">
+      <strong>
+        
+          <a name="123886"></a><a href="http://206.192.23.201/forums/message-view?message%5fid=123866#123886" title="Direct link to this post">11</a>:
+          <a href="http://206.192.23.201/forums/message-view?message_id=123886" title="Link to this post on a separate page">Executive Summary</a>
+        
+      </strong>  
+    </td>
+  
+  <td align="left">
+    
+      In response to <a href="http://206.192.23.201/forums/message-view?message%5fid=123866#123866">1</a>
+    
+  </td> 
+  <td align="left">07/19/08 12:00 PM</td>
+
+  
+  
+    <td style="padding-right: 1em; padding-left: 1em;" align="right">
+      <div style="white-space: nowrap; font-size: x-small;">
+        [
+	
+	  <a href="http://206.192.23.201/forums/message-post?parent_id=123886">Reply</a> |
+        
+	<a href="http://206.192.23.201/forums/message-email?message_id=123886">Forward</a>  
+        ]
+        
+          <br>
+          [ <a href="http://206.192.23.201/forums/moderate/message-edit?message_id=123886">Edit</a>
+          | <a href="http://206.192.23.201/forums/moderate/message-delete?message_id=123886">Delete</a>
+	  
+	      | <a href="http://206.192.23.201/forums/moderate/message-move?message_id=123886">Move to other thread</a> 
+	  
+          ]
+        
+      </div>
+    </td>
+
+  
+
+</tr>
+
+<tr style="color: black; background-color: rgb(238, 238, 238);">
+  
+    <td colspan="4" style="padding: 1em;" align="left">
+  
+
+    <div align="left">
+      
+<font face="Times New Roman, serif">CalTekNet’s  project targets the CTCNet community via CTN’s
+teknowledgy.org running on the OpenACS toolkit and includes the
+following capabilities:<br>(1.) Networking and Online Communities:<i> </i>IT
+tools to facilitate coordination of activities, improve communication
+and build and strengthen relationships.<br>(2.) Interactive Database
+Development system:  A back-end databases system, which allows users
+to create individual online experiences by accessing information
+customized to their needs. <br>(3.) Community Mapping: Geographic
+Information Systems (GIS) a computer system that assembles stores,
+manipulates, and displays geographically referenced information.
+<br><br>Hardware consists of purchasing a server, and community presentation
+equipment. CTN will train10-25 people to configure, maintain and
+package the services and applications outlined in the CTN TekPlan to
+construct a value added, scaleable community ICT system with
+California CTCNet affiliates as the core users. <br><br>A programmer will
+oversee the setup of webmail, accounting, and GIS
+applications/services. Staff and volunteers will learn to use the
+OpenACS, in multiple training sessions dealing with "out-of-the-box"
+features of the OACS, maintenance of  webmail, accounting, and GIS
+systems. <br><br>These systems will facilitate outreach and education needed
+to enable community based nonprofits to learn about and integrate the
+benefits of information technologies to serve their communities.</font>
+      <p style="color: rgb(153, 153, 153);">
+        Posted by <a href="http://206.192.23.201/forums/user-history?user_id=462">Kenneth Wyrick</a>
+      </p>
+    </div>
+  </td>
+</tr>
+
+
+        </tbody></table>
+      </td>
+    </tr>
+    
+    <tr style="padding-top: 1em;">
+      <td align="left">
+        <table width="99%" align="right" bgcolor="#dddddd">
+    
+<tbody><tr style="color: black; background-color: rgb(217, 228, 249);">
+  
+    <td style="padding-left: 1em;" align="left">
+      <strong>
+        
+          <a name="123888"></a><a href="http://206.192.23.201/forums/message-view?message%5fid=123866#123888" title="Direct link to this post">12</a>:
+          <a href="http://206.192.23.201/forums/message-view?message_id=123888" title="Link to this post on a separate page">Technology project details</a>
+        
+      </strong>  
+    </td>
+  
+  <td align="left">
+    
+      In response to <a href="http://206.192.23.201/forums/message-view?message%5fid=123866#123866">1</a>
+    
+  </td> 
+  <td align="left">07/19/08 12:01 PM</td>
+
+  
+  
+    <td style="padding-right: 1em; padding-left: 1em;" align="right">
+      <div style="white-space: nowrap; font-size: x-small;">
+        [
+	
+	  <a href="http://206.192.23.201/forums/message-post?parent_id=123888">Reply</a> |
+        
+	<a href="http://206.192.23.201/forums/message-email?message_id=123888">Forward</a>  
+        ]
+        
+          <br>
+          [ <a href="http://206.192.23.201/forums/moderate/message-edit?message_id=123888">Edit</a>
+          | <a href="http://206.192.23.201/forums/moderate/message-delete?message_id=123888">Delete</a>
+	  
+	      | <a href="http://206.192.23.201/forums/moderate/message-move?message_id=123888">Move to other thread</a> 
+	  
+          ]
+        
+      </div>
+    </td>
+
+  
+
+</tr>
+
+<tr style="color: black; background-color: rgb(217, 228, 249);">
+  
+    <td colspan="4" style="padding: 1em;" align="left">
+  
+
+    <div align="left">
+      
+<font face="Times New Roman, serif"><b>The Technology
+project</b> involves hardware, professional staff training, and 
+professional application development: <br></font><font face="Times New Roman, serif">Acquiring
+the training and
+necessary hardware to enable application development to happen in
+house will strengthened CTN staff and participants. CTN can
+further develop a collaborative repository of training materials and be
+able to manage large quantities of magnet content and custom
+applications for usage in Internet2 demonstration(s).</font><font face="Times New Roman, serif"><br></font>
+      <p style="color: rgb(153, 153, 153);">
+        Posted by <a href="http://206.192.23.201/forums/user-history?user_id=462">Kenneth Wyrick</a>
+      </p>
+    </div>
+  </td>
+</tr>
+
+
+        </tbody></table>
+      </td>
+    </tr>
+    
+    <tr style="padding-top: 1em;">
+      <td align="left">
+        <table width="98%" align="right" bgcolor="#dddddd">
+    
+<tbody><tr style="color: black; background-color: rgb(238, 238, 238);">
+  
+    <td style="padding-left: 1em;" align="left">
+      <strong>
+        
+          <a name="123890"></a><a href="http://206.192.23.201/forums/message-view?message%5fid=123866#123890" title="Direct link to this post">13</a>:
+          <a href="http://206.192.23.201/forums/message-view?message_id=123890" title="Link to this post on a separate page">(1.) Data Communication - $4000</a>
+        
+      </strong>  
+    </td>
+  
+  <td align="left">
+    
+      In response to <a href="http://206.192.23.201/forums/message-view?message%5fid=123866#123888">12</a>
+    
+  </td> 
+  <td align="left">07/19/08 12:03 PM</td>
+
+  
+  
+    <td style="padding-right: 1em; padding-left: 1em;" align="right">
+      <div style="white-space: nowrap; font-size: x-small;">
+        [
+	
+	  <a href="http://206.192.23.201/forums/message-post?parent_id=123890">Reply</a> |
+        
+	<a href="http://206.192.23.201/forums/message-email?message_id=123890">Forward</a>  
+        ]
+        
+          <br>
+          [ <a href="http://206.192.23.201/forums/moderate/message-edit?message_id=123890">Edit</a>
+          | <a href="http://206.192.23.201/forums/moderate/message-delete?message_id=123890">Delete</a>
+	  
+	      | <a href="http://206.192.23.201/forums/moderate/message-move?message_id=123890">Move to other thread</a> 
+	  
+          ]
+        
+      </div>
+    </td>
+
+  
+
+</tr>
+
+<tr style="color: black; background-color: rgb(238, 238, 238);">
+  
+    <td colspan="4" style="padding: 1em;" align="left">
+  
+
+    <div align="left">
+      
+<font face="Times New Roman, serif">(a.) Co-Located computer server  <br>(b.) Vservers hosting the
+OpenACS;  <br>(c.) Internet2 video conference and application
+demonstration event(s).</font>
+      <p style="color: rgb(153, 153, 153);">
+        Posted by <a href="http://206.192.23.201/forums/user-history?user_id=462">Kenneth Wyrick</a>
+      </p>
+    </div>
+  </td>
+</tr>
+
+
+        </tbody></table>
+      </td>
+    </tr>
+    
+    <tr style="padding-top: 1em;">
+      <td align="left">
+        <table width="98%" align="right" bgcolor="#dddddd">
+    
+<tbody><tr style="color: black; background-color: rgb(217, 228, 249);">
+  
+    <td style="padding-left: 1em;" align="left">
+      <strong>
+        
+          <a name="123892"></a><a href="http://206.192.23.201/forums/message-view?message%5fid=123866#123892" title="Direct link to this post">14</a>:
+          <a href="http://206.192.23.201/forums/message-view?message_id=123892" title="Link to this post on a separate page">Hardware $5000</a>
+        
+      </strong>  
+    </td>
+  
+  <td align="left">
+    
+      In response to <a href="http://206.192.23.201/forums/message-view?message%5fid=123866#123888">12</a>
+    
+  </td> 
+  <td align="left">07/19/08 12:04 PM</td>
+
+  
+  
+    <td style="padding-right: 1em; padding-left: 1em;" align="right">
+      <div style="white-space: nowrap; font-size: x-small;">
+        [
+	
+	  <a href="http://206.192.23.201/forums/message-post?parent_id=123892">Reply</a> |
+        
+	<a href="http://206.192.23.201/forums/message-email?message_id=123892">Forward</a>  
+        ]
+        
+          <br>
+          [ <a href="http://206.192.23.201/forums/moderate/message-edit?message_id=123892">Edit</a>
+          | <a href="http://206.192.23.201/forums/moderate/message-delete?message_id=123892">Delete</a>
+	  
+	      | <a href="http://206.192.23.201/forums/moderate/message-move?message_id=123892">Move to other thread</a> 
+	  
+          ]
+        
+      </div>
+    </td>
+
+  
+
+</tr>
+
+<tr style="color: black; background-color: rgb(217, 228, 249);">
+  
+    <td colspan="4" style="padding: 1em;" align="left">
+  
+
+    <div align="left">
+      <font face="Times New Roman, serif"><b><u></u></b>(a). Rack mount server for co-location running the OpenACS; 
+<br>(b.)  Wireless gear - Two Access Points, antennas and power supply; 
+<br>(c.) Laptop– server grade laptop for Intranet and high demand
+presentations;  <br>(d.) Projector-  for meetings and training sessions;<br>(e.)  Color Laser Printer– for production of brochures,
+materials, and  referral information.</font>
+
+      <p style="color: rgb(153, 153, 153);">
+        Posted by <a href="http://206.192.23.201/forums/user-history?user_id=462">Kenneth Wyrick</a>
+      </p>
+    </div>
+  </td>
+</tr>
+
+
+        </tbody></table>
+      </td>
+    </tr>
+    
+    <tr style="padding-top: 1em;">
+      <td align="left">
+        <table width="98%" align="right" bgcolor="#dddddd">
+    
+<tbody><tr style="color: black; background-color: rgb(238, 238, 238);">
+  
+    <td style="padding-left: 1em;" align="left">
+      <strong>
+        
+          <a name="123895"></a><a href="http://206.192.23.201/forums/message-view?message%5fid=123866#123895" title="Direct link to this post">15</a>:
+          <a href="http://206.192.23.201/forums/message-view?message_id=123895" title="Link to this post on a separate page"> Staff Training $5000</a>
+        
+      </strong>  
+    </td>
+  
+  <td align="left">
+    
+      In response to <a href="http://206.192.23.201/forums/message-view?message%5fid=123866#123888">12</a>
+    
+  </td> 
+  <td align="left">07/19/08 12:07 PM</td>
+
+  
+  
+    <td style="padding-right: 1em; padding-left: 1em;" align="right">
+      <div style="white-space: nowrap; font-size: x-small;">
+        [
+	
+	  <a href="http://206.192.23.201/forums/message-post?parent_id=123895">Reply</a> |
+        
+	<a href="http://206.192.23.201/forums/message-email?message_id=123895">Forward</a>  
+        ]
+        
+          <br>
+          [ <a href="http://206.192.23.201/forums/moderate/message-edit?message_id=123895">Edit</a>
+          | <a href="http://206.192.23.201/forums/moderate/message-delete?message_id=123895">Delete</a>
+	  
+	      | <a href="http://206.192.23.201/forums/moderate/message-move?message_id=123895">Move to other thread</a> 
+	  
+          ]
+        
+      </div>
+    </td>
+
+  
+
+</tr>
+
+<tr style="color: black; background-color: rgb(238, 238, 238);">
+  
+    <td colspan="4" style="padding: 1em;" align="left">
+  
+
+    <div align="left">
+      
+<font face="Times New Roman, serif"> (a.). Intermediate &amp; Advanced Open Source Technical
+training </font><font face="Times New Roman, serif">for CTN staff &amp; volunteers, including the LAMPSIG &amp; Linux
+User Groups. The community style training for CTN staff and
+associates is required for the full utilization of the
+</font><font color="#000080"><u><a href="http://openacs.org/"><font face="Times New Roman, serif">http://openacs.org</font></a></u></font><font face="Times New Roman, serif">
+in a production situation.</font>
+      <p style="color: rgb(153, 153, 153);">
+        Posted by <a href="http://206.192.23.201/forums/user-history?user_id=462">Kenneth Wyrick</a>
+      </p>
+    </div>
+  </td>
+</tr>
+
+
+        </tbody></table>
+      </td>
+    </tr>
+    
+    <tr style="padding-top: 1em;">
+      <td align="left">
+        <table width="98%" align="right" bgcolor="#dddddd">
+    
+<tbody><tr style="color: black; background-color: rgb(217, 228, 249);">
+  
+    <td style="padding-left: 1em;" align="left">
+      <strong>
+        
+          <a name="123897"></a><a href="http://206.192.23.201/forums/message-view?message%5fid=123866#123897" title="Direct link to this post">16</a>:
+          <a href="http://206.192.23.201/forums/message-view?message_id=123897" title="Link to this post on a separate page">Application Development $3000</a>
+        
+      </strong>  
+    </td>
+  
+  <td align="left">
+    
+      In response to <a href="http://206.192.23.201/forums/message-view?message%5fid=123866#123888">12</a>
+    
+  </td> 
+  <td align="left">07/19/08 12:07 PM</td>
+
+  
+  
+    <td style="padding-right: 1em; padding-left: 1em;" align="right">
+      <div style="white-space: nowrap; font-size: x-small;">
+        [
+	
+	  <a href="http://206.192.23.201/forums/message-post?parent_id=123897">Reply</a> |
+        
+	<a href="http://206.192.23.201/forums/message-email?message_id=123897">Forward</a>  
+        ]
+        
+          <br>
+          [ <a href="http://206.192.23.201/forums/moderate/message-edit?message_id=123897">Edit</a>
+          | <a href="http://206.192.23.201/forums/moderate/message-delete?message_id=123897">Delete</a>
+	  
+	      | <a href="http://206.192.23.201/forums/moderate/message-move?message_id=123897">Move to other thread</a> 
+	  
+          ]
+        
+      </div>
+    </td>
+
+  
+
+</tr>
+
+<tr style="color: black; background-color: rgb(217, 228, 249);">
+  
+    <td colspan="4" style="padding: 1em;" align="left">
+  
+
+    <div align="left">
+      <font face="Times New Roman, serif"><b><u></u></b> (a.) Hire 1-2 professional OpenACS
+programmers to work with staff before and during staff training
+classes. Responsible to deliver webmail, accounting, and GIS
+application services, integrated into the OpenACS on
+teknowledgy.org</font>
+
+      <p style="color: rgb(153, 153, 153);">
+        Posted by <a href="http://206.192.23.201/forums/user-history?user_id=462">Kenneth Wyrick</a>
+      </p>
+    </div>
+  </td>
+</tr>
+
+
+        </tbody></table>
+      </td>
+    </tr>
+    
+    <tr style="padding-top: 1em;">
+      <td align="left">
+        <table width="98%" align="right" bgcolor="#dddddd">
+    
+<tbody><tr style="color: black; background-color: rgb(238, 238, 238);">
+  
+    <td style="padding-left: 1em;" align="left">
+      <strong>
+        
+          <a name="123899"></a><a href="http://206.192.23.201/forums/message-view?message%5fid=123866#123899" title="Direct link to this post">17</a>:
+          <a href="http://206.192.23.201/forums/message-view?message_id=123899" title="Link to this post on a separate page">Personnel: $23,000/1000hrs</a>
+        
+      </strong>  
+    </td>
+  
+  <td align="left">
+    
+      In response to <a href="http://206.192.23.201/forums/message-view?message%5fid=123866#123888">12</a>
+    
+  </td> 
+  <td align="left">07/19/08 12:09 PM</td>
+
+  
+  
+    <td style="padding-right: 1em; padding-left: 1em;" align="right">
+      <div style="white-space: nowrap; font-size: x-small;">
+        [
+	
+	  <a href="http://206.192.23.201/forums/message-post?parent_id=123899">Reply</a> |
+        
+	<a href="http://206.192.23.201/forums/message-email?message_id=123899">Forward</a>  
+        ]
+        
+          <br>
+          [ <a href="http://206.192.23.201/forums/moderate/message-edit?message_id=123899">Edit</a>
+          | <a href="http://206.192.23.201/forums/moderate/message-delete?message_id=123899">Delete</a>
+	  
+	      | <a href="http://206.192.23.201/forums/moderate/message-move?message_id=123899">Move to other thread</a> 
+	  
+          ]
+        
+      </div>
+    </td>
+
+  
+
+</tr>
+
+<tr style="color: black; background-color: rgb(238, 238, 238);">
+  
+    <td colspan="4" style="padding: 1em;" align="left">
+  
+
+    <div align="left">
+      <font face="Times New Roman, serif"><b><u></u></b>Plus Administrative overhead - Fiscal Agent -
+$1,980 (9% of the amount)</font>
+
+      <p style="color: rgb(153, 153, 153);">
+        Posted by <a href="http://206.192.23.201/forums/user-history?user_id=462">Kenneth Wyrick</a>
+      </p>
+    </div>
+  </td>
+</tr>
+
+
+        </tbody></table>
+      </td>
+    </tr>
+    
+    <tr style="padding-top: 1em;">
+      <td align="left">
+        <table width="99%" align="right" bgcolor="#dddddd">
+    
+<tbody><tr style="color: black; background-color: rgb(217, 228, 249);">
+  
+    <td style="padding-left: 1em;" align="left">
+      <strong>
+        
+          <a name="123901"></a><a href="http://206.192.23.201/forums/message-view?message%5fid=123866#123901" title="Direct link to this post">18</a>:
+          <a href="http://206.192.23.201/forums/message-view?message_id=123901" title="Link to this post on a separate page">Specific Needs within the communities that CTCNet affiliates serve</a>
+        
+      </strong>  
+    </td>
+  
+  <td align="left">
+    
+      In response to <a href="http://206.192.23.201/forums/message-view?message%5fid=123866#123866">1</a>
+    
+  </td> 
+  <td align="left">07/19/08 12:13 PM</td>
+
+  
+  
+    <td style="padding-right: 1em; padding-left: 1em;" align="right">
+      <div style="white-space: nowrap; font-size: x-small;">
+        [
+	
+	  <a href="http://206.192.23.201/forums/message-post?parent_id=123901">Reply</a> |
+        
+	<a href="http://206.192.23.201/forums/message-email?message_id=123901">Forward</a>  
+        ]
+        
+          <br>
+          [ <a href="http://206.192.23.201/forums/moderate/message-edit?message_id=123901">Edit</a>
+          | <a href="http://206.192.23.201/forums/moderate/message-delete?message_id=123901">Delete</a>
+	  
+	      | <a href="http://206.192.23.201/forums/moderate/message-move?message_id=123901">Move to other thread</a> 
+	  
+          ]
+        
+      </div>
+    </td>
+
+  
+
+</tr>
+
+<tr style="color: black; background-color: rgb(217, 228, 249);">
+  
+    <td colspan="4" style="padding: 1em;" align="left">
+  
+
+    <div align="left">
+      <font face="Times New Roman, serif"><b><u></u></b>4 of them<br></font>
+
+      <p style="color: rgb(153, 153, 153);">
+        Posted by <a href="http://206.192.23.201/forums/user-history?user_id=462">Kenneth Wyrick</a>
+      </p>
+    </div>
+  </td>
+</tr>
+
+
+        </tbody></table>
+      </td>
+    </tr>
+    
+    <tr style="padding-top: 1em;">
+      <td align="left">
+        <table width="98%" align="right" bgcolor="#dddddd">
+    
+<tbody><tr style="color: black; background-color: rgb(238, 238, 238);">
+  
+    <td style="padding-left: 1em;" align="left">
+      <strong>
+        
+          <a name="123903"></a><a href="http://206.192.23.201/forums/message-view?message%5fid=123866#123903" title="Direct link to this post">19</a>:
+          <a href="http://206.192.23.201/forums/message-view?message_id=123903" title="Link to this post on a separate page">Access</a>
+        
+      </strong>  
+    </td>
+  
+  <td align="left">
+    
+      In response to <a href="http://206.192.23.201/forums/message-view?message%5fid=123866#123901">18</a>
+    
+  </td> 
+  <td align="left">07/19/08 12:14 PM</td>
+
+  
+  
+    <td style="padding-right: 1em; padding-left: 1em;" align="right">
+      <div style="white-space: nowrap; font-size: x-small;">
+        [
+	
+	  <a href="http://206.192.23.201/forums/message-post?parent_id=123903">Reply</a> |
+        
+	<a href="http://206.192.23.201/forums/message-email?message_id=123903">Forward</a>  
+        ]
+        
+          <br>
+          [ <a href="http://206.192.23.201/forums/moderate/message-edit?message_id=123903">Edit</a>
+          | <a href="http://206.192.23.201/forums/moderate/message-delete?message_id=123903">Delete</a>
+	  
+	      | <a href="http://206.192.23.201/forums/moderate/message-move?message_id=123903">Move to other thread</a> 
+	  
+          ]
+        
+      </div>
+    </td>
+
+  
+
+</tr>
+
+<tr style="color: black; background-color: rgb(238, 238, 238);">
+  
+    <td colspan="4" style="padding: 1em;" align="left">
+  
+
+    <div align="left">
+      <font face="Times New Roman, serif"> The
+ability to readily access  computers and the Internet, access should
+be available through public access sites  as well as in the home.
+Electronic mail is quickly becoming as essential to full
+participation in society a telephone. <br></font>
+
+      <p style="color: rgb(153, 153, 153);">
+        Posted by <a href="http://206.192.23.201/forums/user-history?user_id=462">Kenneth Wyrick</a>
+      </p>
+    </div>
+  </td>
+</tr>
+
+
+        </tbody></table>
+      </td>
+    </tr>
+    
+    <tr style="padding-top: 1em;">
+      <td align="left">
+        <table width="98%" align="right" bgcolor="#dddddd">
+    
+<tbody><tr style="color: black; background-color: rgb(217, 228, 249);">
+  
+    <td style="padding-left: 1em;" align="left">
+      <strong>
+        
+          <a name="123905"></a><a href="http://206.192.23.201/forums/message-view?message%5fid=123866#123905" title="Direct link to this post">20</a>:
+          <a href="http://206.192.23.201/forums/message-view?message_id=123905" title="Link to this post on a separate page">Training and Individual/Community Support</a>
+        
+      </strong>  
+    </td>
+  
+  <td align="left">
+    
+      In response to <a href="http://206.192.23.201/forums/message-view?message%5fid=123866#123901">18</a>
+    
+  </td> 
+  <td align="left">07/19/08 12:14 PM</td>
+
+  
+  
+    <td style="padding-right: 1em; padding-left: 1em;" align="right">
+      <div style="white-space: nowrap; font-size: x-small;">
+        [
+	
+	  <a href="http://206.192.23.201/forums/message-post?parent_id=123905">Reply</a> |
+        
+	<a href="http://206.192.23.201/forums/message-email?message_id=123905">Forward</a>  
+        ]
+        
+          <br>
+          [ <a href="http://206.192.23.201/forums/moderate/message-edit?message_id=123905">Edit</a>
+          | <a href="http://206.192.23.201/forums/moderate/message-delete?message_id=123905">Delete</a>
+	  
+	      | <a href="http://206.192.23.201/forums/moderate/message-move?message_id=123905">Move to other thread</a> 
+	  
+          ]
+        
+      </div>
+    </td>
+
+  
+
+</tr>
+
+<tr style="color: black; background-color: rgb(217, 228, 249);">
+  
+    <td colspan="4" style="padding: 1em;" align="left">
+  
+
+    <div align="left">
+      <font face="Times New Roman, serif">
+The ability to use a computer and the
+Internet to serve ones individual (technological fluency) and
+collective (community building) purposes. Technological fluency
+involves knowing basic techniques, and how to produce significance
+content. Community building strengthens the capacity of residents,
+associations, and organizations to work, individually and
+collectively, to foster and sustain positive neighborhood change. New
+technologies can, and should, support these ends. <br></font>
+
+      <p style="color: rgb(153, 153, 153);">
+        Posted by <a href="http://206.192.23.201/forums/user-history?user_id=462">Kenneth Wyrick</a>
+      </p>
+    </div>
+  </td>
+</tr>
+
+
+        </tbody></table>
+      </td>
+    </tr>
+    
+    <tr style="padding-top: 1em;">
+      <td align="left">
+        <table width="98%" align="right" bgcolor="#dddddd">
+    
+<tbody><tr style="color: black; background-color: rgb(238, 238, 238);">
+  
+    <td style="padding-left: 1em;" align="left">
+      <strong>
+        
+          <a name="123907"></a><a href="http://206.192.23.201/forums/message-view?message%5fid=123866#123907" title="Direct link to this post">21</a>:
+          <a href="http://206.192.23.201/forums/message-view?message_id=123907" title="Link to this post on a separate page">Content and Information</a>
+        
+      </strong>  
+    </td>
+  
+  <td align="left">
+    
+      In response to <a href="http://206.192.23.201/forums/message-view?message%5fid=123866#123901">18</a>
+    
+  </td> 
+  <td align="left">07/19/08 12:15 PM</td>
+
+  
+  
+    <td style="padding-right: 1em; padding-left: 1em;" align="right">
+      <div style="white-space: nowrap; font-size: x-small;">
+        [
+	
+	  <a href="http://206.192.23.201/forums/message-post?parent_id=123907">Reply</a> |
+        
+	<a href="http://206.192.23.201/forums/message-email?message_id=123907">Forward</a>  
+        ]
+        
+          <br>
+          [ <a href="http://206.192.23.201/forums/moderate/message-edit?message_id=123907">Edit</a>
+          | <a href="http://206.192.23.201/forums/moderate/message-delete?message_id=123907">Delete</a>
+	  
+	      | <a href="http://206.192.23.201/forums/moderate/message-move?message_id=123907">Move to other thread</a> 
+	  
+          ]
+        
+      </div>
+    </td>
+
+  
+
+</tr>
+
+<tr style="color: black; background-color: rgb(238, 238, 238);">
+  
+    <td colspan="4" style="padding: 1em;" align="left">
+  
+
+    <div align="left">
+      <font face="Times New Roman, serif">The ability to contribute to the national information
+infrastructure, in effect communities could have their own printing
+presses in the form of computers connected to the Internet. No longer
+is it their role simply to consume, the consumer becomes creator. <br></font>
+
+      <p style="color: rgb(153, 153, 153);">
+        Posted by <a href="http://206.192.23.201/forums/user-history?user_id=462">Kenneth Wyrick</a>
+      </p>
+    </div>
+  </td>
+</tr>
+
+
+        </tbody></table>
+      </td>
+    </tr>
+    
+    <tr style="padding-top: 1em;">
+      <td align="left">
+        <table width="98%" align="right" bgcolor="#dddddd">
+    
+<tbody><tr style="color: black; background-color: rgb(217, 228, 249);">
+  
+    <td style="padding-left: 1em;" align="left">
+      <strong>
+        
+          <a name="123909"></a><a href="http://206.192.23.201/forums/message-view?message%5fid=123866#123909" title="Direct link to this post">22</a>:
+          <a href="http://206.192.23.201/forums/message-view?message_id=123909" title="Link to this post on a separate page">Motivation</a>
+        
+      </strong>  
+    </td>
+  
+  <td align="left">
+    
+      In response to <a href="http://206.192.23.201/forums/message-view?message%5fid=123866#123901">18</a>
+    
+  </td> 
+  <td align="left">07/19/08 12:15 PM</td>
+
+  
+  
+    <td style="padding-right: 1em; padding-left: 1em;" align="right">
+      <div style="white-space: nowrap; font-size: x-small;">
+        [
+	
+	  <a href="http://206.192.23.201/forums/message-post?parent_id=123909">Reply</a> |
+        
+	<a href="http://206.192.23.201/forums/message-email?message_id=123909">Forward</a>  
+        ]
+        
+          <br>
+          [ <a href="http://206.192.23.201/forums/moderate/message-edit?message_id=123909">Edit</a>
+          | <a href="http://206.192.23.201/forums/moderate/message-delete?message_id=123909">Delete</a>
+	  
+	      | <a href="http://206.192.23.201/forums/moderate/message-move?message_id=123909">Move to other thread</a> 
+	  
+          ]
+        
+      </div>
+    </td>
+
+  
+
+</tr>
+
+<tr style="color: black; background-color: rgb(217, 228, 249);">
+  
+    <td colspan="4" style="padding: 1em;" align="left">
+  
+
+    <div align="left">
+      
+<font face="Times New Roman, serif">Underserved communities have the intellectual capacity to master
+these technologies, and they would overcome the existing barriers to
+use, if they were motivated to do so. Motivation is a critical link
+to ensure fairness and equality. Technology needs to be relevant to
+their lives and training needs to be within their own communities.
+People who are economically disadvantaged will fall further behind if
+denied access to computer-related technologies and the information it
+can provide.</font>
+      <p style="color: rgb(153, 153, 153);">
+        Posted by <a href="http://206.192.23.201/forums/user-history?user_id=462">Kenneth Wyrick</a>
+      </p>
+    </div>
+  </td>
+</tr>
+
+
+        </tbody></table>
+      </td>
+    </tr>
+    
+    <tr style="padding-top: 1em;">
+      <td align="left">
+        <table width="99%" align="right" bgcolor="#dddddd">
+    
+<tbody><tr style="color: black; background-color: rgb(238, 238, 238);">
+  
+    <td style="padding-left: 1em;" align="left">
+      <strong>
+        
+          <a name="123911"></a><a href="http://206.192.23.201/forums/message-view?message%5fid=123866#123911" title="Direct link to this post">23</a>:
+          <a href="http://206.192.23.201/forums/message-view?message_id=123911" title="Link to this post on a separate page">Implementation Plan - Key Activities – Responsible Party – Est. Timeline </a>
+        
+      </strong>  
+    </td>
+  
+  <td align="left">
+    
+      In response to <a href="http://206.192.23.201/forums/message-view?message%5fid=123866#123866">1</a>
+    
+  </td> 
+  <td align="left">07/19/08 12:16 PM</td>
+
+  
+  
+    <td style="padding-right: 1em; padding-left: 1em;" align="right">
+      <div style="white-space: nowrap; font-size: x-small;">
+        [
+	
+	  <a href="http://206.192.23.201/forums/message-post?parent_id=123911">Reply</a> |
+        
+	<a href="http://206.192.23.201/forums/message-email?message_id=123911">Forward</a>  
+        ]
+        
+          <br>
+          [ <a href="http://206.192.23.201/forums/moderate/message-edit?message_id=123911">Edit</a>
+          | <a href="http://206.192.23.201/forums/moderate/message-delete?message_id=123911">Delete</a>
+	  
+	      | <a href="http://206.192.23.201/forums/moderate/message-move?message_id=123911">Move to other thread</a> 
+	  
+          ]
+        
+      </div>
+    </td>
+
+  
+
+</tr>
+
+<tr style="color: black; background-color: rgb(238, 238, 238);">
+  
+    <td colspan="4" style="padding: 1em;" align="left">
+  
+
+    <div align="left">
+      
+<p class="western" style="margin-bottom: 0in; line-height: 200%;"><font face="Times New Roman, serif">A. Purchase Hardware: CaltekNet    November- December<br></font></p>
+<p class="western" style="margin-bottom: 0in; line-height: 200%;"><font face="Times New Roman, serif">B.
+Update existing OACS instances and add one or two new virtual servers.&nbsp; Zill.net&nbsp;  calpop.com Dec.-Feb.<br></font></p>
+<p class="western" style="margin-bottom: 0in; line-height: 200%;"><font face="Times New Roman, serif">C.
+5-10 2hr virtual training sessions specific to nix* based OACS with
+/INTRANET and /dotLRN packages. Including: Installation, configuration,
+implementation and roll-out with real world production, outreach and
+documentation materials December-March</font></p>
+<p class="western" style="margin-bottom: 0in; line-height: 200%;"><font face="Times New Roman, serif">D.
+Application Packages on Teknowledgy.org  1) /dotLRN   2) /INTRANET    3) Simulations     January – June<br></font></p>
+<p class="western" style="margin-bottom: 0in; line-height: 200%;"><font face="Times New Roman, serif">E.
+Plan and acquire high speed Internet Access to host an Internet2.org
+video conferencing event – CTN - April or May<br></font></p>
+      <p style="color: rgb(153, 153, 153);">
+        Posted by <a href="http://206.192.23.201/forums/user-history?user_id=462">Kenneth Wyrick</a>
+      </p>
+    </div>
+  </td>
+</tr>
+
+
+        </tbody></table>
+      </td>
+    </tr>
+    
+    <tr style="padding-top: 1em;">
+      <td align="left">
+        <table width="99%" align="right" bgcolor="#dddddd">
+    
+<tbody><tr style="color: black; background-color: rgb(217, 228, 249);">
+  
+    <td style="padding-left: 1em;" align="left">
+      <strong>
+        
+          <a name="123913"></a><a href="http://206.192.23.201/forums/message-view?message%5fid=123866#123913" title="Direct link to this post">24</a>:
+          <a href="http://206.192.23.201/forums/message-view?message_id=123913" title="Link to this post on a separate page">Background on the Budget Items</a>
+        
+      </strong>  
+    </td>
+  
+  <td align="left">
+    
+      In response to <a href="http://206.192.23.201/forums/message-view?message%5fid=123866#123866">1</a>
+    
+  </td> 
+  <td align="left">07/19/08 12:19 PM</td>
+
+  
+  
+    <td style="padding-right: 1em; padding-left: 1em;" align="right">
+      <div style="white-space: nowrap; font-size: x-small;">
+        [
+	
+	  <a href="http://206.192.23.201/forums/message-post?parent_id=123913">Reply</a> |
+        
+	<a href="http://206.192.23.201/forums/message-email?message_id=123913">Forward</a>  
+        ]
+        
+          <br>
+          [ <a href="http://206.192.23.201/forums/moderate/message-edit?message_id=123913">Edit</a>
+          | <a href="http://206.192.23.201/forums/moderate/message-delete?message_id=123913">Delete</a>
+	  
+	      | <a href="http://206.192.23.201/forums/moderate/message-move?message_id=123913">Move to other thread</a> 
+	  
+          ]
+        
+      </div>
+    </td>
+
+  
+
+</tr>
+
+<tr style="color: black; background-color: rgb(217, 228, 249);">
+  
+    <td colspan="4" style="padding: 1em;" align="left">
+  
+
+    <div align="left">
+      
+<ul><li><p style="margin-bottom: 0in; line-height: 200%;" class="western">
+	<font face="Times New Roman, serif">Hardware: (1.) Rank mount server
+	for co-location – $1000; (2.) Wireless Hotspot gear - $500; 3
+	antennas, wifi gigabit routers, and access point; (3.) Laptop
+	Computer- $1500  portable server and desktop; (4.) Projector -
+	$1000-small, portable, with pc and mac connections; (5.) Color Laser
+	Printer-$1000-11"x14" minimum print size. Hardware to
+	build the foundation of the infrastructure and training sessions for
+	CTCNet affiliates and their participants. </font>
+	</p>
+	</li><li><p style="margin-bottom: 0in; line-height: 200%;" class="western">
+	<font face="Times New Roman, serif">Update the existing OACS
+	services </font><font color="#000080"><u><a href="http://teknowledgy.org/"><font face="Times New Roman, serif">http://teknowledgy.org</font></a></u></font><font face="Times New Roman, serif">,
+	add two new virtual servers for development, testing, and production
+	of additional community sites.</font></p>
+	</li><li><p style="margin-bottom: 0in; line-height: 200%;" class="western">
+	<font face="Times New Roman, serif">Five Day Boot Camp  practical
+	classroom based training in  EMacs editor, Tcl, GUI programming
+	language, PostgreSQL (RDBM), and AolServer (web server), that
+	directly relates to fully utilizing the OACS, Web Publishing
+	Toolkit. </font>
+	</p>
+	</li><li><p style="margin-bottom: 0in; line-height: 200%;" class="western">
+	<font face="Times New Roman, serif">Application Programming to
+	extend the Teknowledgy.org community system by integrating the
+	SQL-Ledger.org (accounting) and FreeGIS.org (geographical
+	information system) into the OpenACS.</font></p>
+	</li><li><p style="margin-bottom: 0in; line-height: 200%;" class="western">
+	<font face="Times New Roman, serif">Acquire high speed Internet
+	Access to host an Internet2.org video conferencing event (already
+	approved, by Internet2) at Roosevelt High School, in Boyle Heights,
+	as part of the presentation of the Gigabit or Bust Guide, a
+	Technology Self-Assessment for communities. </font>
+	</p>
+</li></ul><p style="margin-left: -0.01in; line-height: 200%;" class="western">
+</p>
+      <p style="color: rgb(153, 153, 153);">
+        Posted by <a href="http://206.192.23.201/forums/user-history?user_id=462">Kenneth Wyrick</a>
+      </p>
+    </div>
+  </td>
+</tr>
+
+
+        </tbody></table>
+      </td>
+    </tr>
+    
+    <tr style="padding-top: 1em;">
+      <td align="left">
+        <table width="99%" align="right" bgcolor="#dddddd">
+    
+<tbody><tr style="color: black; background-color: rgb(238, 238, 238);">
+  
+    <td style="padding-left: 1em;" align="left">
+      <strong>
+        
+          <a name="123915"></a><a href="http://206.192.23.201/forums/message-view?message%5fid=123866#123915" title="Direct link to this post">25</a>:
+          <a href="http://206.192.23.201/forums/message-view?message_id=123915" title="Link to this post on a separate page">Funding Sources</a>
+        
+      </strong>  
+    </td>
+  
+  <td align="left">
+    
+      In response to <a href="http://206.192.23.201/forums/message-view?message%5fid=123866#123866">1</a>
+    
+  </td> 
+  <td align="left">07/19/08 12:20 PM</td>
+
+  
+  
+    <td style="padding-right: 1em; padding-left: 1em;" align="right">
+      <div style="white-space: nowrap; font-size: x-small;">
+        [
+	
+	  <a href="http://206.192.23.201/forums/message-post?parent_id=123915">Reply</a> |
+        
+	<a href="http://206.192.23.201/forums/message-email?message_id=123915">Forward</a>  
+        ]
+        
+          <br>
+          [ <a href="http://206.192.23.201/forums/moderate/message-edit?message_id=123915">Edit</a>
+          | <a href="http://206.192.23.201/forums/moderate/message-delete?message_id=123915">Delete</a>
+	  
+	      | <a href="http://206.192.23.201/forums/moderate/message-move?message_id=123915">Move to other thread</a> 
+	  
+          ]
+        
+      </div>
+    </td>
+
+  
+
+</tr>
+
+<tr style="color: black; background-color: rgb(238, 238, 238);">
+  
+    <td colspan="4" style="padding: 1em;" align="left">
+  
+
+    <div align="left">
+      <p style="margin-left: -0.01in; line-height: 200%;" class="western"><font face="Courier New, monospace"><font size="2"><font size="3"><font face="Times New Roman, serif">Compassion
+Capital Fund: Collaborative grant proposal submitted with Educate the
+Children and the Second Samoan Church Center</font></font></font></font></p><br>
+      <p style="color: rgb(153, 153, 153);">
+        Posted by <a href="http://206.192.23.201/forums/user-history?user_id=462">Kenneth Wyrick</a>
+      </p>
+    </div>
+  </td>
+</tr>
+
+
+        </tbody></table>
+      </td>
+    </tr>
+    
+    <tr style="padding-top: 1em;">
+      <td align="left">
+        <table width="99%" align="right" bgcolor="#dddddd">
+    
+<tbody><tr style="color: black; background-color: rgb(217, 228, 249);">
+  
+    <td style="padding-left: 1em;" align="left">
+      <strong>
+        
+          <a name="123917"></a><a href="http://206.192.23.201/forums/message-view?message%5fid=123866#123917" title="Direct link to this post">26</a>:
+          <a href="http://206.192.23.201/forums/message-view?message_id=123917" title="Link to this post on a separate page">Sustainability Plans</a>
+        
+      </strong>  
+    </td>
+  
+  <td align="left">
+    
+      In response to <a href="http://206.192.23.201/forums/message-view?message%5fid=123866#123866">1</a>
+    
+  </td> 
+  <td align="left">07/19/08 12:21 PM</td>
+
+  
+  
+    <td style="padding-right: 1em; padding-left: 1em;" align="right">
+      <div style="white-space: nowrap; font-size: x-small;">
+        [
+	
+	  <a href="http://206.192.23.201/forums/message-post?parent_id=123917">Reply</a> |
+        
+	<a href="http://206.192.23.201/forums/message-email?message_id=123917">Forward</a>  
+        ]
+        
+          <br>
+          [ <a href="http://206.192.23.201/forums/moderate/message-edit?message_id=123917">Edit</a>
+          | <a href="http://206.192.23.201/forums/moderate/message-delete?message_id=123917">Delete</a>
+	  
+	      | <a href="http://206.192.23.201/forums/moderate/message-move?message_id=123917">Move to other thread</a> 
+	  
+          ]
+        
+      </div>
+    </td>
+
+  
+
+</tr>
+
+<tr style="color: black; background-color: rgb(217, 228, 249);">
+  
+    <td colspan="4" style="padding: 1em;" align="left">
+  
+
+    <div align="left">
+      <p style="margin-left: -0.01in; line-height: 200%;" class="western"><font face="Times New Roman, serif">By creating supplies of donated equipment and
+open source applications and software for CTCNet affiliates these
+organizations can use funds for customized training and capacity
+building workshops instead. For organizations that would prefer
+having a team build their community sites or develop their technology
+plans there would be a low fee. Organizations that require assistance
+on establishing programs offered by CTCNet will charge training fees
+based on their operating budget and needs. Conferences hosting
+network groups will eventually be a source of financial support.</font></p>
+      <p style="color: rgb(153, 153, 153);">
+        Posted by <a href="http://206.192.23.201/forums/user-history?user_id=462">Kenneth Wyrick</a>
+      </p>
+    </div>
+  </td>
+</tr>
+
+
+        </tbody></table>
+      </td>
+    </tr>
+    
+    <tr style="padding-top: 1em;">
+      <td align="left">
+        <table width="99%" align="right" bgcolor="#dddddd">
+    
+<tbody><tr style="color: black; background-color: rgb(238, 238, 238);">
+  
+    <td style="padding-left: 1em;" align="left">
+      <strong>
+        
+          <a name="123919"></a><a href="http://206.192.23.201/forums/message-view?message%5fid=123866#123919" title="Direct link to this post">27</a>:
+          <a href="http://206.192.23.201/forums/message-view?message_id=123919" title="Link to this post on a separate page">Project Outcomes</a>
+        
+      </strong>  
+    </td>
+  
+  <td align="left">
+    
+      In response to <a href="http://206.192.23.201/forums/message-view?message%5fid=123866#123866">1</a>
+    
+  </td> 
+  <td align="left">07/19/08 12:23 PM</td>
+
+  
+  
+    <td style="padding-right: 1em; padding-left: 1em;" align="right">
+      <div style="white-space: nowrap; font-size: x-small;">
+        [
+	
+	  <a href="http://206.192.23.201/forums/message-post?parent_id=123919">Reply</a> |
+        
+	<a href="http://206.192.23.201/forums/message-email?message_id=123919">Forward</a>  
+        ]
+        
+          <br>
+          [ <a href="http://206.192.23.201/forums/moderate/message-edit?message_id=123919">Edit</a>
+          | <a href="http://206.192.23.201/forums/moderate/message-delete?message_id=123919">Delete</a>
+	  
+	      | <a href="http://206.192.23.201/forums/moderate/message-move?message_id=123919">Move to other thread</a> 
+	  
+          ]
+        
+      </div>
+    </td>
+
+  
+
+</tr>
+
+<tr style="color: black; background-color: rgb(238, 238, 238);">
+  
+    <td colspan="4" style="padding: 1em;" align="left">
+  
+
+    <div align="left">
+      <p style="margin-left: -0.01in; line-height: 200%;" class="western"><font face="Times New Roman, serif">(1.) At the end of the NGender OpenACS training,
+participants will be able to:</font></p><p style="margin-left: 0.4034in; line-height: 200%;" class="western"><font face="Times New Roman, serif">(a.) develop non-trivial OpenACS-based
+websites </font><font face="Times New Roman, serif"><br>(b.) have basic foundation of OpenACS-related technologies.
+The technologies include: Tcl, (X)HTML and CSS, SQL and PostgreSQL
+extensions, AOLserver and OpenACS toolkit. </font><br></p><p style="margin-left: -0.01in; line-height: 200%;" class="western"><font face="Times New Roman, serif">(2.) CTN will have access
+to trained staff, community programmers, and documentation specific
+to the utilization of the OpenACS. <br></font></p><p style="margin-left: -0.01in; line-height: 200%;" class="western"><font face="Times New Roman, serif">(3.) CTN will offer
+teknowledgy.org to CTCNet affiliates as an </font><font face="Times New Roman, serif">application
+platform designed for high traffic community websites that provides
+functionality for discussions, content management, personalization
+and other mechanisms for users to communicate.</font></p>
+      <p style="color: rgb(153, 153, 153);">
+        Posted by <a href="http://206.192.23.201/forums/user-history?user_id=462">Kenneth Wyrick</a>
+      </p>
+    </div>
+  </td>
+</tr>
+
+
+        </tbody></table>
+      </td>
+    </tr>
+    
+    <tr style="padding-top: 1em;">
+      <td align="left">
+        <table width="99%" align="right" bgcolor="#dddddd">
+    
+<tbody><tr style="color: black; background-color: rgb(217, 228, 249);">
+  
+    <td style="padding-left: 1em;" align="left">
+      <strong>
+        
+          <a name="123921"></a><a href="http://206.192.23.201/forums/message-view?message%5fid=123866#123921" title="Direct link to this post">28</a>:
+          <a href="http://206.192.23.201/forums/message-view?message_id=123921" title="Link to this post on a separate page">Project Communication</a>
+        
+      </strong>  
+    </td>
+  
+  <td align="left">
+    
+      In response to <a href="http://206.192.23.201/forums/message-view?message%5fid=123866#123866">1</a>
+    
+  </td> 
+  <td align="left">07/19/08 12:24 PM</td>
+
+  
+  
+    <td style="padding-right: 1em; padding-left: 1em;" align="right">
+      <div style="white-space: nowrap; font-size: x-small;">
+        [
+	
+	  <a href="http://206.192.23.201/forums/message-post?parent_id=123921">Reply</a> |
+        
+	<a href="http://206.192.23.201/forums/message-email?message_id=123921">Forward</a>  
+        ]
+        
+          <br>
+          [ <a href="http://206.192.23.201/forums/moderate/message-edit?message_id=123921">Edit</a>
+          | <a href="http://206.192.23.201/forums/moderate/message-delete?message_id=123921">Delete</a>
+	  
+	      | <a href="http://206.192.23.201/forums/moderate/message-move?message_id=123921">Move to other thread</a> 
+	  
+          ]
+        
+      </div>
+    </td>
+
+  
+
+</tr>
+
+<tr style="color: black; background-color: rgb(217, 228, 249);">
+  
+    <td colspan="4" style="padding: 1em;" align="left">
+  
+
+    <div align="left">
+      <font face="Times New Roman, serif">CalTekNet as a member of CTCNet has directly access to 250 affiliates
+located in California and sits on various state and community
+committees working to bring technology to their various communities.
+Using the various community sites in existence CTN would post
+bulletins and updates on the web plus link to various collative
+groups we are working with including SBC. Production of press
+releases and marketing materials about the project and on going
+status updates will be used at the various conferences and community
+meeting CTN attends. Will place the SBC logo as a sponsor on staff
+business card, and stationary for the granted period. Produce a
+publication about this project, which will include information about
+the SBC Foundation and its contributions to CTN.</font>
+
+      <p style="color: rgb(153, 153, 153);">
+        Posted by <a href="http://206.192.23.201/forums/user-history?user_id=462">Kenneth Wyrick</a>
+      </p>
+    </div>
+  </td>
+</tr>
+
+
+        </tbody></table>
+      </td>
+    </tr>
+    
+  
+  </tbody></table>
+
+
+</center>
+
+
+  <blockquote>
+    
+      <a href="http://206.192.23.201/forums/message-post?parent%5fid=123866"><b>Reply to first post on this page</b></a>
+    
+  </blockquote>
+
+
+<blockquote>
+  <a href="http://206.192.23.201/forums/forum-view?forum%5fid=9973">Back</a> to Development
+</blockquote>
+
+    <div style="clear: both;"></div>
+
+  
+</div>
+
+
+ 
+
+
+<div id="site-footer">
+  <div class="action-list">
+    <ul>
+      
+        <li><a href="http://206.192.23.201/acs-lang/?package%5fid=1795">Change language</a></li>
+      
+    </ul>
+  </div>
+</div>
+
+
+  </body></html>

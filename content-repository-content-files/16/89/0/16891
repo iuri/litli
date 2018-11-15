@@ -1,0 +1,109 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<title>The LINCT - Time Dollar Community Service Exchange Choices</title>
+</head>
+<BODY bgcolor="#FFFFFF" text="#000000"  bgcolor="#FFFFFF" text="#000000">
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="100%">
+      <p align="center"><img border="0" src="/td/images/Main_pageheader.gif" width="660" height="55"></td>
+  </tr>
+  <tr>
+    <td width="100%" align="center">
+      <p align="center"><font face="Helvetica" size="1" color="#000000">Created
+      through the partnership of LINCT Coalition and the Corporation for Public
+      Broadcasting</font></td>
+  </tr>
+</table>
+<p align="center"><center>
+<font size="2">
+<font face="arial black" color="green">&nbsp;<br>
+</font>
+</font></center>
+<table border="0" cellspacing="0" cellpadding="2" width="609">
+  <tr>
+    <td align="center" width="2"></td>
+    <td align="center" width="2"></td>
+    <td align="center" width="149"></td>
+    <form action="/cgi-bin/virtuflex.exe">
+	<input type="hidden" name="template" value="td/default.htm">
+    <td align="center" width="140"><input type="submit" name="B8" value="Quick Tour" style="position: relative; float: left; width: 140"></td>
+    </form>
+    <td align="center" width="140" rowspan="3"><img border="0" src="/td/images/pulling_together.gif" width="134" height="131"></td>
+    <form action="/cgi-bin/virtuflex.exe">
+	<input type="hidden" name="template" value="td/match.htm">
+    <td align="center" width="140"><input type="submit" name="B11" value="Match Provider" style="position: relative; width: 140; float: left"></td>
+    </form>
+  </tr>
+  <tr>
+    <td align="center" width="2"></td>
+    <td align="center" width="2"></td>
+    <td align="center" width="149"></td>
+    <form action="/cgi-bin/virtuflex.exe">
+	<input type="hidden" name="template" value="td/sites.htm">
+    <td align="center" width="140"><input type="submit" name="B10" value="Sites" style="position: relative; float: left; width: 140; background-position: right bottom"></a></td>
+	</form>
+    <form action="/cgi-bin/virtuflex.exe">
+	<input type="hidden" name="template" value="td/transfer.htm">
+    <td align="center" width="140"><input type="submit" name="B14" value="Make Transfer" style="position: relative; float: left; width: 140"></td>
+    </form>
+  </tr>
+  <tr>
+    <td align="center" width="2"></td>
+    <td align="center" width="2"></td>
+    <td align="center" width="149"></td>
+    <form action="/cgi-bin/virtuflex.exe">
+	<input type="hidden" name="template" value="td/organiza.htm">
+    <td align="center" width="140"><input type="submit" name="B8" value="Organizations" style="float: left; position: relative; width: 140">
+    </form>
+    </td>
+    <form action="/cgi-bin/virtuflex.exe">
+	<input type="hidden" name="template" value="td/assign.htm">
+    <td align="center" width="140"><input type="submit" name="B13" value="Assignments" style="position: relative; float: left; width: 140"></td>
+    </form>
+  </tr>
+  <tr>
+    <td align="center" width="2"></td>
+    <td align="center" width="2"></td>
+    <td align="center" width="149"></td>
+    <td align="center" width="140"></td>
+    <form action="/cgi-bin/virtuflex.exe">
+	 <input type="hidden" name="template" value="td/members.htm">
+    <td align="center" width="140"><input type="submit" name="B12" value="Members" style="float: left; position: relative; width: 140"></a></td>
+    </form>
+    <td align="center" width="140"></td>
+  </tr>
+  <tr>
+    <td align="center" width="2"></td>
+    <td align="center" width="2"></td>
+    <td align="center" width="149"></td>
+    <td colspan="3" align="center" width="432">
+      <p align="center"><font size="+3" color="blue">P</font><A HREF="mailto:BMSLIB@MIT.EDU" TITLE="Comments about SVEC site">lease give us your comments and suggestions</A>
+    </td>
+  </tr>
+</table>
+<center>
+<div align="left" style="width: 582; height: 296">
+<!-- typical screen is 640 x 350 pixels -->
+</div>
+
+<p><a href="organiza.htm"></a></p>
+
+<p><a href="members.htm"></a></p>
+
+<p><a href="sites.htm"></a></p>
+
+<p><a href="match.htm"></a></p>
+
+<p><a href="transfer.htm"></a></p>
+
+
+</center>
+
+
+</BODY>
+</html>

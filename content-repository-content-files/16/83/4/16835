@@ -1,0 +1,101 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN//3.2">
+<html>
+<head>
+	<title>Changing Service Unit Categories</title>
+</head>
+<BODY bgcolor="#FFFFFF" text="#000000">
+<!--webbot bot="HTMLMarkup" startspan -->
+<!-- AssignID must be valid HTML variable -->
+[[SET:DefaultDbase:c\:\timed\tddemo.mdb]]
+[[SET:VAR:N=[[DBASE:SELECT:[UnitNames List]:1=1:{COUNT(UnitID)}]]]]
+[[EVAL:IF:[[GETDATA:OKButtonChg]]=OK
+: <!-- true -->
+	<!-- delete all Asgn SvUnit Table references for this Assignment -->
+	[[DBASE:DEL:[Asgn SvUnit Table]:Assignment=[[GETDATA:AssignID]]]]
+	<!-- now insert or reinsert -->
+	<!-- Caution -- this assumes the one inactive is first -->
+	[[SET:VAR:CNT=2]]
+	<!-- may NOT place the condition of this test on its own line -->
+	[[EVAL:WHILE:[[GETDATA::VAR=CNT]]<=[[GETDATA::VAR=N]]:
+		[[EVAL:IF:[[GETDATA:ChgUnit[[GETDATA::VAR=CNT]]]]=off
+			:<!-- true, do nothing -->
+			:<!-- update Asgn SvUnit Table -->
+			<!-- this "INSERT" will cause an ODBC error if
+			   I've installed FP2000, and does not occur before
+			   that -- see notes in template.vfx -->
+			[[DBASE:ADD:[Asgn SvUnit Table]:
+					{Assignment|[[GETDATA:AssignID]]}
+		{SvUnit|[[GETDATA::VAR=CNT]]}
+				]]
+		]]<!-- end of test for a ChgUnit# -->
+		[[SET:VAR:CNT=[[GETDATA::VAR=CNT|INCR]]]]
+	]]<!-- end of update loop -->
+	<!-- all done, just go back to OneAssign page ->
+	<!-- we've set Assign to HTML below and don't look new -->
+	[[GETDATA:XYZZY:CHECK=/td/OneAssin.htm]]
+	<!-- gone -->
+
+
+
+: <!-- OKButtonChg false -->
+<!--webbot bot="HTMLMarkup" endspan -->
+	<!-- all this to avoid Kent Gordon's intermediate table -->
+	<form>
+	<b>
+	<font size="+1">
+	To Change Service Unit Categories
+	</font>
+	</b>
+	<font size="-1">
+	These are useful categories for accumulating credits for the Member.  By checking off the category, it means you will then be able to apply a credit to the Member within that category for the &quot;Service&quot; they are providing.
+	
+	
+	
+	</font>
+	<table>
+		<tr>
+			<td width="185">
+			<td>
+	<form action="/cgi-bin/virtuflex.exe" method="get">
+	<input type="hidden" name="template" value="/td/AssiChg.htm">
+	<!-- since these values do not "come off the page" they must		be passed the first time -->
+	<input type="hidden" name="AssignID" value="[[GETDATA:AssignID]]">
+	<input type="hidden" name="Provider" value="[[GETDATA:Provider]]">
+	<input type="hidden" name="Recipient" value="[[GETDATA:Recipient]]">
+	<input type="hidden" name="Service" value="[[GETDATA:Service]]">
+	<input type="hidden" name="Label" value="[[GETDATA:Label]]">
+	<img src="/td/blank.gif" width="180" height="1" border="0">
+	<input type="submit" name="OKButtonChg" value="OK">
+	<br>
+<!--webbot bot="HTMLMarkup" startspan -->
+	[[DBASE:SELECT:[UnitNames List] LEFT JOIN [Asgn SvUnit Table]
+		ON [UnitNames List].UnitID = [Asgn SvUnit Table].SvUnit
+	:[Asgn SvUnit Table].Assignment=[[GETDATA:AssignID]]
+		GROUP BY [UnitNames List].UnitName
+
+		UNION SELECT null,MAX(UnitID),[UnitNames List].UnitName,MAX(UnitID)
+		FROM [UnitNames List] LEFT JOIN [Asgn SvUnit Table] ON [UnitNames List].UnitID = [Asgn SvUnit Table].SvUnit
+		WHERE UnitName <> 'null' and UnitName <> ALL
+	  (SELECT [UnitNames List].UnitName
+		FROM [UnitNames List] LEFT JOIN [Asgn SvUnit Table] ON [UnitNames List].UnitID = [Asgn SvUnit Table].SvUnit
+		WHERE Assignment=[[GETDATA:AssignID]]
+		GROUP BY [UnitNames List].UnitName)
+		GROUP BY [UnitNames List].UnitName
+		ORDER BY [UnitNames List].UnitName:
+			<input type="checkbox" {Count(Assignment)|CONVERT=1=CHECKED} name="ChgUnit{MAX(UnitID)}" size="10"> {[UnitNames List].UnitName}
+			<!-- this next one is very weird, if we sent the checkbox CHECKed
+		     then if the user leaves checked, then its assignment to the
+				 name overrides this hidden one passed along -->
+			<input type="hidden" name="ChgUnit{MAX(UnitID)}" value="off">
+			</br>
+	]]<!-- end DBASE -->
+<!--webbot bot="HTMLMarkup" endspan -->
+</form>
+	</td>
+	</tr>
+</table>
+<!--webbot bot="HTMLMarkup" startspan -->
+]]<!-- end OKButton False -->
+<!--webbot bot="HTMLMarkup" endspan -->
+</BODY>
+</html>

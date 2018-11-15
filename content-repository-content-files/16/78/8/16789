@@ -1,0 +1,311 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN//3.2">
+<!-- NOTE: CHANGES to Database on this page -->
+<html>
+<head>
+	<title>Change Services</title>
+</head>
+<BODY bgcolor="#FFFFFF" text="#000000">
+<center>
+<!--webbot bot="HTMLMarkup" startspan -->
+[[EVAL:IF:[[GETDATA:Tour]]=top-s
+	:
+<!--webbot bot="HTMLMarkup" endspan -->
+<table bgcolor="#F0FFFF">
+	<th align="center">
+You (as one seeking services) have reached &quot;Services Members Want to Do&quot; via the <font color="#0066FF">Tour</font><br>
+<font size="-2" color="#CC0066">Notice the "radio buttons"</font><br>
+To normally arrive here do&#58;<br>
+<font color="#0066FF">Home/Tour Page==&gt;Main Buttons==&gt;Members==&gt;Enter Criteria/Search==&gt;Scroll down, click View--&gt;Show==&gt;Jump to Attributes==&gt;Change Services<br></font>
+Please use the browser's 'Back' to return to the Tour<br>
+    </th></table>
+<!--webbot bot="HTMLMarkup" startspan -->
+	:
+]]
+<!--webbot bot="HTMLMarkup" endspan -->
+</center>
+<center>
+<!--webbot bot="HTMLMarkup" startspan -->
+[[EVAL:IF:[[GETDATA:Tour]]=top-f
+	:
+<!--webbot bot="HTMLMarkup" endspan -->
+<table bgcolor="#F0FFFF">
+	<th align="center">
+You (as a Facilitator) have reached &quot;Change Services that a Member Needs or can Provide&quot; via the <font color="#0066FF">Tour</font><br>
+<font size="-2" color="#CC0066">Notice the "radio buttons"</font><br>
+To normally arrive here do&#58;<br>
+<font color="#0066FF">Home/Tour Page==&gt;Main Buttons==&gt;Members==&gt;Enter Criteria/Search==&gt;Scroll down, click View--&gt;Show==&gt;Jump to Attributes==&gt;Change Services<br></font>
+Please use the browser's 'Back' to return to the Tour<br>
+    </th></table>
+<!--webbot bot="HTMLMarkup" startspan -->
+	:
+]]
+<!--webbot bot="HTMLMarkup" endspan -->
+</center>
+<!--webbot bot="HTMLMarkup" startspan -->
+[[EVAL:IF:[[GETDATA:Tour]]=top-v
+	:
+<!--webbot bot="HTMLMarkup" endspan -->
+<table bgcolor="#F0FFFF">
+	<th align="center">
+You (as a Volunteer) have reached &quot;enter Volunteer Services (you can provide)&quot; via the <font color="#0066FF">Tour</font><br>
+<font size="-2" color="#CC0066">Notice the "radio buttons"</font><br>
+To normally arrive here do&#58;<br>
+<font color="#0066FF">Home/Tour Page==&gt;Main Buttons==&gt;Members==&gt;Enter Criteria/Search==&gt;Scroll down, click View--&gt;Show==&gt;Jump to Attributes==&gt;Change Services<br></font>
+Please use the browser's 'Back' to return to the Tour<br>
+    </th></table>
+<!--webbot bot="HTMLMarkup" startspan -->
+	:
+]]
+</center>
+
+<center>
+[[SET:DefaultDbase:c\:\timed\tddemo.mdb]]
+<!-- use of Label lets us call from either --
+		1.  OneMembr.htm
+		2.  oneorg.htm
+			-->
+<!-- permit up to 1000 services -->
+[[SET:MaxLoop:1000]]
+[[SET:DefaultDbase:c\:\timed\tddemo.mdb]]
+<!-- MemID or MemOrgID must be valid HTML variable -->
+[[EVAL:IF:[[GETDATA:Label]]=Member
+		:
+			[[SET:VAR:MemID=[[GETDATA:MemID]]]]
+		:
+			[[SET:VAR:MemID=[[GETDATA:MemOrgID]]]]
+]]<!-- first time here, show first Type, then show any changed Type -->
+[[EVAL:IF:[[GETDATA:NewType:LENGTH]]>0
+		:
+			[[SET:VAR:Type=[[GETDATA:NewType]]]]
+		:
+			[[SET:VAR:Type=[[DBASE:SELECT:[Services List]:1=1:{FIRST(ServiceType)}]]]]
+	]]
+<!-- we must set N for all the attributes since
+		the subtypes are not in order and we must test for any -->
+[[SET:VAR:N=[[DBASE:SELECT:[Services List]:
+	1=1:{COUNT(ServiceID)}]]]]
+[[EVAL:IF:[[EVAL:BOOL:
+	[[EVAL:BOOL:[[GETDATA:ChgButton]]=Record
+	]] ||
+	 [[EVAL:BOOL:[[GETDATA:DoneButton]]=Done
+	]]
+				  ]]
+	: <!-- true -- record in both cases -->
+		<!-- delete all Mem Service Table references for this Type -->
+		<!-- we passed the Type below, could also use the one from above -->
+		[[DBASE:DEL:[Mem Service Table]:Member=[[GETDATA::VAR=MemID]]
+			AND Service=ANY(SELECT ServiceID FROM [Services List]
+			WHERE ServiceType='[[GETDATA:Type]]')]]
+		<!-- now insert or reinsert -->
+		<!-- Service 1 is null, but not making special here -->
+		<!-- Note -- ChgService comes back as
+					0 -- Recipient
+					1 -- Provider
+					2 -- None	 -->
+		[[SET:VAR:CNT=1]]
+		[[EVAL:WHILE:[[GETDATA::VAR=CNT]]<=[[GETDATA::VAR=N]]
+			:
+			<!-- curious -- Boolean of no variable is 0, so need length test -->
+			[[EVAL:IF:[[EVAL:BOOL:
+				[[EVAL:BOOL:[[GETDATA:ChgService[[GETDATA::VAR=CNT]]:LENGTH]]>0]] &&
+					[[EVAL:BOOL:
+						[[EVAL:BOOL:[[GETDATA:ChgService[[GETDATA::VAR=CNT]]]]=0]] ||
+					[[EVAL:BOOL:[[GETDATA:ChgService[[GETDATA::VAR=CNT]]]]=1]]
+					]]
+									]]
+			:<!-- true -- update Mem Service Table -->
+			[[DBASE:ADD:[Mem Service Table]:
+					{Member|[[GETDATA::VAR=MemID]]}
+		{Service|[[GETDATA::VAR=CNT]]}
+					{Needs|[[GETDATA:ChgService[[GETDATA::VAR=CNT]]]]}
+				]]
+			:<!-- false -- it's a 2 -->
+			]]<!-- end of test for a ChgService 0 or 1 -->
+			[[SET:VAR:CNT=[[GETDATA::VAR=CNT|INCR]]]]
+		]]<!-- end of update loop -->
+		<!-- if it was DoneButton, then leave -->
+		[[EVAL:IF:[[GETDATA:DoneButton]]=Done
+			: <!-- true, go back to One Member or One Organization -->
+				[[EVAL:IF:[[GETDATA:Label]]=Member
+					:
+						[[GETDATA:XYZZY:CHECK=/td/OneMembr.htm]]
+					:
+						[[GETDATA:XYZZY:CHECK=/td/oneorg.htm]]
+				]]
+			: <!-- false, drop through -->
+		]]
+	: <!-- ChgButton and DoneButton false -->
+		<!-- either first time, or switch of Type -- fall through -->
+	]]<!-- end ChgButton and DoneButton False -->
+<!--webbot bot="HTMLMarkup" endspan -->
+<center>
+<font size="+2">
+<b>Change Services</b>
+<font size="+0">
+for
+<!--webbot bot="HTMLMarkup" startspan -->
+[[EVAL:IF:[[GETDATA:Label]]=Organization
+	:
+		the [[DBASE:SELECT:[Member Table]:MemID=[[GETDATA::VAR=MemID]]:{LastName}]]
+		Organization
+	:
+<!--webbot bot="HTMLMarkup" endspan -->
+</font>
+</font>Member
+<font size="+2">
+<!--webbot bot="HTMLMarkup" startspan -->
+		[[DBASE:SELECT:[Member Table]:MemID=[[GETDATA::VAR=MemID]]:
+<!--webbot bot="HTMLMarkup" endspan -->
+</font>
+<font size="+2" color="#336699">{FirstName} {LastName}&nbsp;&nbsp;</font>
+<!--webbot bot="HTMLMarkup" startspan -->
+		]]
+]]
+<!--webbot bot="HTMLMarkup" endspan -->
+	<input type="hidden" name="template" value="/td/ServChg.htm">
+	<!-- since these values do not "come off the page" they must		be passed the first time -->
+	<!-- since these values do not "come off the page" they must		be passed the first time -->
+<!--webbot bot="HTMLMarkup" startspan -->
+<!--webbot bot="HTMLMarkup" endspan -->
+<form action="/cgi-bin/virtuflex.exe" method="get">
+<input type="hidden" name="template" value="/td/ServChg.htm">
+[[EVAL:IF:[[GETDATA:Label]]=Member
+	:
+		<input type="hidden" name="MemID" value="[[GETDATA::VAR=MemID]]">
+	:
+		<input type="hidden" name="MemOrgID" value="[[GETDATA::VAR=MemID]]">		    
+]]
+<input type="hidden" name="SiteID" value="[[GETDATA:SiteID]]">
+<input type="hidden" name="Type" value="[[GETDATA::VAR=Type|SPACECONV]]">
+<input type="submit" name="DoneButton" value="Done">
+<input type="hidden" name="Label" value="[[GETDATA:Label]]">
+<!--webbot bot="HTMLMarkup" startspan -->
+<!-- there was a Services list WITHOUT any TYPEs  -->
+[[EVAL:IF:[[GETDATA::VAR=Type|LENGTH]] = 0
+	: <!-- display nothing -->
+	:
+<!--webbot bot="HTMLMarkup" endspan -->
+<right>
+&nbsp;
+</center>
+<p>
+<center>
+ Current Type of Services Displayed <b>
+		  &nbsp;&nbsp;&nbsp; <font size="4">[[GETDATA::VAR=Type]]</font>
+			</b>
+</right>
+<!--webbot bot="HTMLMarkup" startspan -->
+	]]
+<!--webbot bot="HTMLMarkup" endspan -->
+</p>
+	<table>
+		<tr valign="top">
+			<td>
+				<table bgcolor="white" width="400">
+					<th>
+						<tr width="400">
+							<td>
+								<b>S</b>elect (or de-Select) any specific <b><font size="4">[[GETDATA::VAR=Type]]</font></b>
+							</td>
+						</tr>
+						<tr width="400">
+							<td>
+								<b>&nbsp;R&nbsp;&nbsp;&nbsp;P&nbsp;&nbsp;&nbsp;&nbsp;N</b>
+								&nbsp;(<b>R</b><font size="-3">ecipient / </font><b>P</b><font size="-3">rovider / </font><b>N</b><font size="-3">one</font>)
+								<img src="/td/blank.gif" width="100" height="1" border="0">
+								<input type="submit" name="ChgButton" value="Record">
+							</td>
+						</tr>
+<!--webbot bot="HTMLMarkup" startspan -->
+<!-- in Services List table, for Mem OR Org, Provides -- yes/no, Needs -- yes/no -->
+<!-- in Mem Service table, Needs -- yes/no -->
+<!-- the second select should only return records where member is NEITHER recipient nor provider of a service
+		i.e. all the other services which we label with 2 -->
+
+	[[DBASE:SELECT:[Services List] LEFT JOIN [Mem Service Table]
+		ON [Services List].ServiceID = [Mem Service Table].Service
+	:[Mem Service Table].Member=[[GETDATA::VAR=MemID]]
+		AND [Mem Service Table].Service=ANY(SELECT ServiceID FROM [Services List]
+		WHERE
+		[[EVAL:IF:[[GETDATA::VAR=Type|LENGTH]]=0
+			:
+				1=1)
+			:       
+				ServiceType='[[GETDATA::VAR=Type]]')
+		]]
+		GROUP BY [Services List].Service
+		UNION SELECT 2,MAX(ServiceID),2,MAX(ServiceID),2,MAX(ServiceID),[Services List].Service
+		FROM [Services List] LEFT JOIN [Mem Service Table] ON [Services List].ServiceID = [Mem Service Table].Service
+		WHERE [Services List].Service <> 'null' and 
+		[[EVAL:IF:[[GETDATA::VAR=Type|LENGTH]]=0
+			:
+				1=1
+			:       
+				ServiceType='[[GETDATA::VAR=Type]]'
+		]]
+		and [Services List].Service <> ALL
+	  (SELECT [Services List].Service
+		FROM [Services List] LEFT JOIN [Mem Service Table] ON [Services List].ServiceID = [Mem Service Table].Service
+		WHERE Member=[[GETDATA::VAR=MemID]]
+		AND [Mem Service Table].Service=ANY(SELECT ServiceID FROM [Services List]
+		WHERE
+		[[EVAL:IF:[[GETDATA::VAR=Type|LENGTH]]=0
+			:
+				1=1)
+			:       
+				ServiceType='[[GETDATA::VAR=Type]]')
+		]]
+		GROUP BY [Services List].Service)
+		GROUP BY [Services List].Service
+		ORDER BY [Services List].Service:
+<!--webbot bot="HTMLMarkup" endspan -->
+		<tr>
+			<td>
+			<input type="radio" {MAX([Mem Service Table].Needs)|CONVERT=0=CHECKED} name="ChgService{MAX(ServiceID)}" value="0">
+			<input type="radio" {MAX([Mem Service Table].Needs)|CONVERT=-1=CHECKED} name="ChgService{MAX(ServiceID)}" value="1">
+			<!-- notice- this employs the interleaving of 2 in the non-existing
+			  services by placing a 2 in the corresponding row in the UNION -->
+			<input type="radio" {MAX(Member)|CONVERT=2=CHECKED} name="ChgService{MAX(ServiceID)}" value="2">
+			 {[Services List].Service}
+			</td>
+		</tr>
+<!--webbot bot="HTMLMarkup" startspan -->
+	]]<!-- end DBASE -->
+<!--webbot bot="HTMLMarkup" endspan -->
+
+	</table>
+	<td>
+		<table width="120">
+								<tr><th colspan="2" align="center">
+						To Change to Another Category of Service Types click on the <i>Change Type</i> (any changes on this page are <b>canceled</b> if not already recorded)</tr>
+<!--webbot bot="HTMLMarkup" startspan -->					       
+			[[DBASE:SELECT:[Services List]:1=1 GROUP BY ServiceType:
+<!--webbot bot="HTMLMarkup" endspan -->
+		<tr>
+		<td>
+		{ServiceType}
+		</td>
+		<td>
+<!--webbot bot="HTMLMarkup" startspan -->	       
+		[[EVAL:IF:[[GETDATA:Label]] = Member
+			:
+				<a href="/cgi-bin/virtuflex.exe?template=/td/ServChg.htm&Label=Member&MemID=[[GETDATA::VAR=MemID]]&SiteID=[[GETDATA:SiteID]]&NewType={ServiceType|SPACECONV}"><i>Change to this Type</i></a>
+			:
+<!--webbot bot="HTMLMarkup" endspan -->
+				<a href="/cgi-bin/virtuflex.exe?template=/td/ServChg.htm&amp;Label=Organization&amp;MemOrgID=[[GETDATA::VAR=MemID]]&amp;SiteID=[[GETDATA:SiteID]]&amp;NewType={ServiceType|SPACECONV}"><i>Change to this Type</i></a>
+<!--webbot bot="HTMLMarkup" startspan -->			       
+		]]
+<!--webbot bot="HTMLMarkup" endspan -->
+		</td>
+		</tr>
+<!--webbot bot="HTMLMarkup" startspan -->
+			]]
+<!--webbot bot="HTMLMarkup" endspan -->
+		</table>
+	</td>
+</tr>
+</table>
+</center>
+</form>
+</BODY>
+</html>

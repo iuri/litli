@@ -1,0 +1,77 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN//3.2">
+
+<html>
+<head>
+	<title>Provider Member</title>
+</head>
+<BODY bgcolor="#FFFFFF" text="#000000">
+<!--webbot bot="HTMLMarkup" startspan -->
+[[SET:DefaultDbase:c\:\timed\tddemo.mdb]]
+<!--webbot bot="HTMLMarkup" endspan -->
+
+<form action="/cgi-bin/virtuflex.exe" method="get">
+<input type="hidden" name="template" value="/td/assign.htm">
+<center>
+<font="+1"><b>
+Select the Provider</b>
+</font>
+</center>
+
+<table width="600" border="0" cellspacing="0" cellpadding="0">
+	<tr>
+		<td width="250" bgcolor="#F4FCFF">
+			<center>
+			<font size="+2">
+			<b>
+			Last Name
+			</b>
+			</font>
+			</center>
+		</td>
+		<td width="250" bgcolor="#F5F5F5">
+			<center>
+			<font size="+2">
+			<b>
+			First Name
+			</b>
+			</font>
+			</center>
+		</td>
+		<td width="100">
+        <p align="center">
+			&nbsp;<font color="#CC0066">Click</font>
+		</td>
+	</tr>
+</table>
+
+<table width="600" border="0" cellpadding="0" cellspacing="0">
+<!--webbot bot="HTMLMarkup" startspan -->
+	[[DBASE:SELECT:[Member Table]:
+	(MemID like '%') AND ((Nickname <> '%ORG%') OR (Nickname IS NULL))
+	ORDER BY LastName,FirstName
+	:
+<!--webbot bot="HTMLMarkup" endspan -->
+	<tr>
+		<td width="238" bgcolor="#F4FCFF">
+			{LastName}
+		</td>
+		<td width="235" bgcolor="#F5F5F5">
+			{FirstName}
+		</td>
+		<td width="100">
+			<center>
+			<font size="+1">
+			<b>
+			<a href="/cgi-bin/virtuflex.exe?template=/td/assign.htm&amp;Provider={MemID}&amp;Recipient=[[GETDATA:Recipient]]&amp;Service=[[GETDATA:Service]]&amp;BeginDateMMSelect=[[GETDATA:BeginDateMMSelect]]&amp;BeginDateYYSelect=[[GETDATA:BeginDateYYSelect]]&amp;BeginDateDDSelect=[[GETDATA:BeginDateDDSelect]]&amp;EndDateMMSelect=[[GETDATA:EndDateMMSelect]]&amp;EndDateYYSelect=[[GETDATA:EndDateYYSelect]]&amp;EndDateDDSelect=[[GETDATA:EndDateDDSelect]]&amp;ProAccCheck=[[GETDATA:ProAccCheck]]&amp;ProNotCheck=[[GETDATA:ProNotCheck]]&amp;RecAccCheck=[[GETDATA:RecAccCheck]]&amp;RecNotCheck=[[GETDATA:RecNotCheck]]&amp;TimeCriticalCheck=[[GETDATA:TimeCriticalCheck]]&amp;ClosedCheck=[[GETDATA:ClosedCheck]]&amp;NoCreditsCheck=[[GETDATA:NoCreditsCheck]]">Select</a>
+			</b>
+			</font>
+			</center>
+		</td>
+	</tr>
+<!--webbot bot="HTMLMarkup" startspan -->
+	]]
+<!--webbot bot="HTMLMarkup" endspan -->
+</table>
+
+</BODY>
+</html>

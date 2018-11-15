@@ -1,0 +1,101 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN//3.2">
+<html>
+<head>
+	<title>Choose a Manager</title>
+</head>
+<BODY bgcolor="#FFFFFF" text="#000000">
+<!--webbot bot="HTMLMarkup" startspan -->
+[[EVAL:IF:[[GETDATA:FindCancel]]=Cancel
+	:
+	[[GETDATA:XYZZY:CHECK=/td/onesite.htm]]
+	:
+]]
+[[SET:DefaultDbase:c\:\timed\tddemo.mdb]]
+<!--webbot bot="HTMLMarkup" endspan -->
+<form action="/cgi-bin/virtuflex.exe" method="get">
+<!--webbot bot="HTMLMarkup" startspan -->
+[[EVAL:IF:[[GETDATA:Label]]=Site
+	:
+	<input type="hidden" name="template" value="/td/onesite.htm">
+	:
+	<input type="hidden" name="template" value="/td/oneorg.htm">
+]]
+<!--webbot bot="HTMLMarkup" endspan -->
+<input type="hidden" name="MemOrgID" value="[[GETDATA:MemOrgID]]">
+<input type="hidden" name="SiteID" value="[[GETDATA:SiteID]]">
+<input type="hidden" name="Manager" value="[[GETDATA:Manager]]">
+<input type="hidden" name="Label" value="[[GETDATA:Label]]">
+<table width="460">
+	<tr>
+		<td align="right">
+			<input type="submit" name="FindCancel" value="Cancel">
+		</td>
+	</tr>
+</table>
+</form>
+<center>
+<font size="+2">
+Select New Organization for Site <b>
+<!--webbot bot="HTMLMarkup" startspan -->
+[[DBASE:SELECT:[Site Table]:SiteID=[[GETDATA:SiteID]]:{Name}]]
+<!--webbot bot="HTMLMarkup" endspan -->
+</b>
+</font>
+</center>
+
+<table border="0" cellspacing="0" cellpadding="0" width="512">
+	<tr>
+		<td width="228" bgcolor="F4FCFF">
+			<center>
+			<font size="+1">
+			<b>
+			Organization Name
+			</b>
+			</font>
+			</center>
+		</td>
+		<td width="211" bgcolor="F4FCFF">
+			<center>
+			<font size="+1">
+			Organization ID
+			</font>
+			</center>
+		</td>
+		<td width="67">
+        <p align="center">
+			&nbsp;<font color="#CC0066">Click</font>
+		</td>
+	</tr>
+</table>
+
+<table border="2" cellpadding="0" cellspacing="0" width="514">
+<!--webbot bot="HTMLMarkup" startspan -->
+	[[DBASE:SELECT:[Member Table]:MemID > 2
+		AND Nickname = '%ORG%'
+		ORDER BY LastName
+		:
+<!--webbot bot="HTMLMarkup" endspan -->
+	<tr>
+		<td width="225" bgcolor="#F4FCFF">
+			{LastName}
+		</td>
+		<td width="211" bgcolor="#E0E6E0">
+			{Identifier}
+		</td>
+		<td width="68">
+			<center>
+			<font size="+1">
+			<b>
+			<!-- if someone made midstream changes to other info --				has already updated the database -->
+			<a href="/cgi-bin/virtuflex.exe?template=/td/onesite.htm&amp;NewOrg=on&amp;Label=Site&amp;MemOrgID={MemID}&amp;Manager=[[GETDATA:Manager]]&amp;SiteID=[[GETDATA:SiteID]]">Select</a>
+			</b>
+			</font>
+			</center>
+		</td>
+	</tr>
+<!--webbot bot="HTMLMarkup" startspan -->
+	]]
+<!--webbot bot="HTMLMarkup" endspan -->
+</table>
+</BODY>
+</html>

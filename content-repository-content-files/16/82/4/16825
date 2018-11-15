@@ -1,0 +1,49 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="1-4-All Editor">
+<title>Site Help</title>
+</head>
+<BODY bgcolor="#FFFFFF" text="#000000">
+<font size="+1">
+<b>
+<center>
+Information about Sites
+</center>
+</b>
+</font>
+<p>
+In Webbed-Time Dollars there are three organizing groups:
+</p>
+<li>Members</li>
+<li>Organizations</li>
+<li>Sites</li>
+</p>
+<p>
+Participating members can be designated as belonging to an organization.  Organizations can be designated as being responsible for a named sites.
+</p>
+<p>
+The information entered for members and organizations is very similar.  There are minor variations such as the absence of a "home telephone" number for an organization.
+</p>
+<p>
+Site information is reduced further to a name and address.  It could, for example, be a housing project.  And attached to the Site are two connections:
+</p>
+<li>An Organization</li>
+<li>A Manager</li>
+The Manager is a Member who is designated as responsible for a named Site.
+</p>
+<p>
+Also, the Site can be designated as Active or Inactive and information is held about when the Site was first entered and when the entry for the Site was last updated.
+</p>
+<p>
+The specific information that is stored for an Organization can be viewed <a href="/cgi-bin/virtuflex.exe?template=td\td-table.htm#site">here</a> (use your Back button in the browser to return here.)&nbsp;&nbsp;This is the same information that can be found by going to the "Quick Tour," Choosing "About Credits and LINCT," and Choosing "Technical Introduction."
+</p>
+<center>
+<b>
+Please press Back in your Browser to Continue
+</b>
+</center>
+</BODY>
+</html>

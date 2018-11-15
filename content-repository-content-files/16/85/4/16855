@@ -1,0 +1,21 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>This page is only to test the ODBC connection to the FoxPro
+database -- it is not required for Webbed-Time Dollars</title>
+</head>
+<!-- CAREFUL -- EDITS TO THIS FILE ONLY APPEAR UNDER   1-4-ALL WHEN YOU HAVE MOVED FROM ITS TEMP FILE TO THIS FILE -->
+<BODY bgcolor="#FFFFFF" text="#000000">
+<font size="1" color="#000000">
+<p><!--webbot bot="HTMLMarkup" startspan -->
+[[SET:DefaultDbase:c\:\foxpro\tenamrpt.dbf]]
+[[DBASE:SELECT:tenamrpt:
+Name_line like '%dog%':
+Title={Name_line}
+]]
+<!--webbot bot="HTMLMarkup" endspan --></p>
+</font>
+</BODY>
+</html>

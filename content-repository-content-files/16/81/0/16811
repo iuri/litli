@@ -1,0 +1,1192 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN//3.2">
+<!-- WARNING: text contains an 8 bit character -- Hex A0 -->
+<HTML>
+<HEAD>
+	<TITLE>One Assignment</TITLE>
+</HEAD>
+<BODY bgcolor="#FFFFFF">
+<!-- WARNING -- when any part of the display code is missing
+	brackets, the entire screen goes blank.  Only by carefully
+	systematically excising code, observing when the display
+	returns can you track down the missing brackets -->
+<!-- when we arrive here from assign.htm these 4 are passed
+	AssignID
+	Recipient
+	Provider
+	Service -->
+[[EVAL:IF:[[GETDATA:CancelButton]]=Cancel
+	:
+	[[GETDATA:XYZZY:CHECK=/td/assign.htm]]
+	:
+]]
+[[EVAL:IF:[[GETDATA:ChangeUnitButton]]=Change Unit Categories
+:
+	[[GETDATA:XYZZY:CHECK=/td/AssiChg.htm]]
+:
+]]
+
+[[SET:DefaultDbase:c\:\timed\tddemo.mdb]]
+<!--************************************ -->
+<!-- this sequence of steps mirrors that in onemember.htm -->
+<!-- (1.)  If 'Once' is OK, then update-->
+<!-- programmed to come here with &Once=OK to enter a New
+     assignment (when the AssiNewButton == New) -->
+[[EVAL:IF:[[EVAL:BOOL:
+		[[EVAL:BOOL:[[GETDATA:Once]]=OK]] ||
+	  [[EVAL:BOOL:[[GETDATA:AssiNewButton]]=New]]
+					]]
+: <!-- true, but doing no data checks (unlike onemember)-->
+	<!-- is this an update or a new assignment?
+	     if new, AssiNewButton == New -->
+	[[EVAL:IF:[[GETDATA:AssiNewButton]]=New
+	:<!-- if new, check variables and insert "starters" -->
+		[[EVAL:IF:[[EVAL:BOOL:
+			[[EVAL:BOOL:[[GETDATA:Provider:LENGTH]]=0]] ||
+			[[EVAL:BOOL:
+				[[EVAL:BOOL:[[GETDATA:Recipient:LENGTH]]=0]] ||
+			[[EVAL:BOOL:[[GETDATA:Service:LENGTH]]=0]]
+			]]
+						]]
+	:
+	[[GETDATA:XYZZY:CHECK=/td/AssiNewErr.htm]]
+	:<!-- the 3 variables have been assigned -->
+		]]
+		<font>
+		<center>
+		<b>
+		Please enter Information for the New Assignment</br>
+		</b>
+		<font size="-1">
+<!-- I clearly temporarily use 1/1/1900, and even enter it in the database
+   but then it comes back as ' 1/ 1/1900' and I then make it null if it is
+   not changed by the user -->
+<!-- and in OneOrg.htm I leave MemSince null during the SQL INSERT, but here I
+   actually insert the pseudo-null value of 1/1/1900 to be changed when
+   the page is done -->
+		Items with default dates of 1/1/1900 should be changed</br>
+		</center>
+		</font>
+		<!-- if new, give the database phony dates so user can change
+	     this keeps error checking down -->
+		[[SET:DefaultDbase:c\:\timed\tddemo.mdb]]
+		<!-- most curious, while update takes 1/1/1900, this format
+		   -- without the time -- turns it into 12/31/1899 -->
+		[[EVAL:IF:[[GETDATA::DATE=m]] = 12
+			:
+				[[SET:VAR:EndDate=1/[[GETDATA::DATE=d]]/[[EVAL:MATH:[[GETDATA::DATE=y]]+1]]]]
+			:
+				[[SET:VAR:EndDate=[[EVAL:MATH:[[GETDATA::DATE=m]]+1]]/[[GETDATA::DATE=d/y]]]]
+		]]
+		[[DBASE:ADD:[Assignment Table]:{Provider|[[GETDATA:Provider]]}
+			{Recipient|[[GETDATA:Recipient]]}{Service|[[GETDATA:Service]]}
+			{Entered|[[GETDATA::DATE=m/d/y]] [[GETDATA::TIME]]}
+			{Updated|[[GETDATA::DATE=m/d/y]] [[GETDATA::TIME]]}
+			{BeginDate|[[GETDATA::DATE=m/d/y 0\:0\:0]]}{EndDate|[[GETDATA::VAR=EndDate]]}
+			{ProAccDate|1/1/1900 0\:0\:0}{RecAccDate|1/1/1900 0\:0\:0}
+			{QcRating|1}{Credits|0}{Comments|Replace this with comments about the assignment.}
+		]]
+		<!-- now that it is added -- get the AssignID -->
+		<!-- note if New -- AssignID is a VirtuFlex variable
+		     but from then on it is an HTML variable -->
+		<!-- WARNING  Closing brackets to SET VAR may NOT be on own line -->
+		<!-- WARNING  and brackets must be with Interlace field, too -->
+		<!-- this was returning prior record unless I close and reopen -->
+		[[SET:DefaultDbase:c\:\timed\tddemo.mdb]]
+		[[SET:VAR:AssignID=[[DBASE:SELECT:[Assignment Table]:
+			1=1:{MAX(AssignID)}]]]]
+	: <!-- not New, do Update -->
+		<!-- AssignID will have been passed to the page -->
+		[[SET:VAR:AssignID=[[GETDATA:AssignID]]]]
+		<!-- Note: even if we are partially done and someone decides
+		  to change the Service Units -- we store whatever the screen
+			looks like in the Assignment Table, and will refresh screen
+			with that when we return from changing Service Units-->
+					<!-- deal with n many credits first -- tough problem --
+		     these have names from 1 to total number of Unit Names
+				 and are passed as Unit1, Unit2, Unit3, etc. -->
+		<!-- WARNING: this procedure used a temporary file in TimeKeeper
+		     which would need to be uniquely assigned to each simultaneous
+				 user -- instead -- we immitate the function of UnitNames
+				 List Temp by generating page variables when we first
+				 enter the page, i.e. Once is not OK -->
+		<!-- how many total Service "Unit Names" ? -->
+		[[SET:VAR:N=[[DBASE:SELECT:[UnitNames List]:1=1:{COUNT(UnitID)}
+								]]]]
+		[[SET:VAR:CNT=1]]
+		[[SET:VAR:Ucredits=0]]
+		<!-- may NOT place the condition of this test on its own line -->
+		[[EVAL:WHILE:[[GETDATA::VAR=CNT]]<=[[GETDATA::VAR=N]]
+		: <!-- body of within loop -->
+		<!-- WARNING: cannot break "statement" of EVAL BOOL if brackets -->
+			[[EVAL:IF:[[EVAL:BOOL:
+					[[EVAL:BOOL:[[GETDATA:Unit[[GETDATA::VAR=CNT]]:LENGTH
+											]]=0
+					]]
+				||
+				[[EVAL:BOOL:[[GETDATA:Unit[[GETDATA::VAR=CNT]]]]=0
+					]]
+								]]
+			: <! -- true -- do nothing -->
+
+			: <! -- false -- add the Unit credit -->
+				[[SET:VAR:Ucredits=[[EVAL:MATH:
+					[[GETDATA::VAR=UCredits]]+
+					[[GETDATA:Unit[[GETDATA::VAR=CNT]]]]]]]]
+				<!-- update ServiceUnit Table -->
+				[[SET:DefaultDbase:c\:\timed\tddemo.mdb]]
+			[[DBASE:ADD:[ServiceUnit Table]:
+					{DateOf|[[GETDATA::DATE=m/d/y]]}
+					{[Number]|[[GETDATA:Unit[[GETDATA::VAR=CNT]]]]}
+					{Provider|[[GETDATA:Provider]]}
+					{Recipient|[[GETDATA:Recipient]]}
+					{SvUnit|[[GETDATA::VAR=CNT]]}]]
+			]] <! -- end of test for Unit -->
+			[[SET:VAR:CNT=[[GETDATA::VAR=CNT|INCR]]]]
+		]]<!-- end of update loop (EVAL WHILE) -->
+		<!-- TimeKeeper keeps a table of these updates -->
+		<!-- get current credits for the total-->
+		[[SET:VAR:Credits=[[DBASE:SELECT:[Assignment Table]:
+			AssignID=[[GETDATA::VAR=AssignID]]:{Credits}
+											]]]]
+		<!-- 3 sources of credits -- those already stored, those
+		 accumulated in the loop above, and any entered on the Credits
+			line (note HTML Credits not same as VirtuFlex Credits) -->
+		<!-- Notice this bizarre problem if an added field is blank --
+		e.g. 37+2+  becomes 41 (the 2 is doubled by the plus sign)
+			so, we convert all spaces to null, then add a 0
+			(and PREPEND/POSTPEND doesn't work on a null field) -->
+		[[SET:VAR:AssignmentCredits=[[EVAL:MATH:[[GETDATA::VAR=Credits]]+
+			[[GETDATA::VAR=UCredits|CONVERT= =|PAD=-1=0]]+
+			[[GETDATA:Credits:CONVERT= =|PAD=-1=0]]))]]]]
+		[[SET:VAR:Credits=[[EVAL:MATH:
+			[[GETDATA::VAR=UCredits|CONVERT= =|PAD=-1=0]]+
+			[[GETDATA:Credits:CONVERT= =|PAD=-1=0]]))]]]]
+
+
+		<!-- ok, we have all update data now -->
+		<! -- may NOT comment inside the update -->
+		<!-- these cannot be on multiple lines or embeds CR's -->
+		<! -- the character between x and x is hex A0 (&nbsp;) --  x x
+		   which in extended ASCII is low case a, accent ague
+			 which for Virtuflex hasn't removed
+			 because they never expect &nbsp; instead of a space in
+			 a data value -- we CONVERT them back to spaces first -->
+		<!-- Date Time -- must be in single quotes, Date alone is OK -->
+		<!-- empty date in Update is just null -->
+		[[SET:VAR:BeginDate=[[GETDATA:OneBeginDateMMSelect]]/[[GETDATA:OneBeginDateDDSelect]]/[[GETDATA:OneBeginDateYYSelect]]]]
+		[[SET:VAR:EndDate=[[GETDATA:OneEndDateMMSelect]]/[[GETDATA:OneEndDateDDSelect]]/[[GETDATA:OneEndDateYYSelect]]]]
+		[[SET:VAR:ProAccDate=[[GETDATA:ProAccDateMMSelect]]/[[GETDATA:ProAccDateDDSelect]]/[[GETDATA:ProAccDateYYSelect]]]]
+		[[SET:VAR:RecAccDate=[[GETDATA:RecAccDateMMSelect]]/[[GETDATA:RecAccDateDDSelect]]/[[GETDATA:RecAccDateYYSelect]]]]
+		[[SET:DefaultDbase:c\:\timed\tddemo.mdb]]
+		[[DBASE:SQL:Update [Assignment Table] SET
+		Updated='[[GETDATA::DATE=m/d/y]] [[GETDATA::TIME]]',
+		BeginDate=[[GETDATA::VAR=BeginDate|CONVERT= = |CONVERT= 1/ 1/1900=null]],
+		EndDate=[[GETDATA::VAR=EndDate|CONVERT= = |CONVERT= 1/ 1/1900=null]],
+		ProAccDate=[[GETDATA::VAR=ProAccDate|CONVERT= = |CONVERT= 1/ 1/1900=null]],
+		RecAccDate=[[GETDATA::VAR=RecAccDate|CONVERT= = |CONVERT= 1/ 1/1900=null]],ProAccInitials=
+			[[EVAL:IF:[[GETDATA:ProvInitialsText:Length]]=0
+			:null
+			:'[[GETDATA:ProvInitialsText]]'
+		]],
+		RecAccInitials=
+			[[EVAL:IF:[[GETDATA:RecInitialsText:Length]]=0
+			:null
+			:'[[GETDATA:RecInitialsText]]'
+		]],
+		TimeCritical=
+			[[EVAL:IF:[[GETDATA:TimeCriticalCheck]]=on
+			: <!-- yes, on -->
+				-1
+			:
+				0
+			]],
+		QcRating=[[GETDATA:QcRating:CONVERT=none=1|CONVERT=Low=2|
+			CONVERT=Average=3|CONVERT=High=4
+						 ]],
+		Credits=[[GETDATA::VAR=AssignmentCredits]],
+		Comments=
+			[[EVAL:IF:[[GETDATA:Comments:LENGTH]] != 0
+	:'[[GETDATA:Comments:CONVERT='='']]'
+	:' '
+			]]
+	 where AssignID=[[GETDATA::VAR=AssignID]]
+		]]<!-- end DBASE Update -->
+	[[EVAL:IF:[[GETDATA::VAR=Credits]] > 0
+		:
+			<form>
+			<center>
+			<font size="+2">CONFIRM THE TRANSFER</br></font>
+			[[DBASE:SELECT:[Member Table]:MemID=[[GETDATA:Recipient]]
+				:
+				<font size="-1">
+				<img src="/td/blank.gif" ALT height="0" width="15">
+				Number of Credits currently held by </br>
+				<img src="/td/blank.gif" ALT height="0" width="15">
+				{FirstName} {LastName} giving the credit is
+				</font>
+				<font color="{Balance|TRUNC=1|CONVERT=-=red}">
+				&nbsp;{Balance}</br>
+				</font>
+			]] <!-- end DBASE -->
+			<img src="/td/blank.gif" ALT height="0" width="50">
+			<!-- WARN--excess text-->
+				<a href="/cgi-bin/virtuflex.exe?template=/td/TransFin.htm&Provider=[[GETDATA:Provider]]&Recipient=[[GETDATA:Recipient]]&Service=[[GETDATA:Service]]&Credits=[[GETDATA::VAR=Credits]]&ServiceDateMMSelect=[[GETDATA:ServiceDateMMSelect]]&ServiceDateYYSelect=[[GETDATA:ServiceDateYYSelect]]&ServiceDateDDSelect=[[GETDATA:ServiceDateDDSelect]]">Continue </a> <font color="red"><blink>(to make the transfer)</blink></font></br></br>
+					</center>
+					</form>
+		: <!-- credits zero -->
+	]] <!-- end test if Credits greater than zero -->
+	]] <!-- end new/update EVAL IF -->
+:<!-- end of Once = OK test -->
+	<!-- if not once = OK then just set the AssignID -->
+	[[SET:VAR:AssignID=[[GETDATA:AssignID]]]]
+]]
+
+<!--If pushed OK button, force move back to assign.htm -->
+<!-- removed for now -->
+
+<!-- Need these for test below -->
+<!-- Remember the dbase selects, like the other functions
+     are evaluated from the inside ==> out, so value
+		 required by an inner dbase select must be a variable -->
+<!-- Get these in one call for lower overhead -->
+<!-- this "double" insert of AssignID -- first if updated,
+			second if new -->
+[[SET:VAR:Stuff=[[DBASE:SELECT:[Assignment Table]
+	:AssignID=[[GETDATA::VAR=AssignID]]
+	:${Service}^{TimeCritical}+
+								]]]]
+<!-- these extract each token -->
+[[SET:VAR:ServiceID=[[GETDATA::VAR=Stuff|PARSE=$=^]]]]
+[[SET:VAR:TimeCritical=[[GETDATA::VAR=Stuff|PARSE=^=+]]]]
+
+<!-- need these for checkmarks, etc. -->
+[[SET:VAR:ProAccDateIsNotNull=[[DBASE:SELECT:[Assignment Table]
+	:AssignID=[[GETDATA::VAR=AssignID]]
+	AND ProAccDate is not null AND
+	ProAccDate <>  1/ 1/1900
+	:
+	{Count(AssignID)}]]]]
+[[SET:VAR:RecAccDateIsNotNull=[[DBASE:SELECT:[Assignment Table]
+	:AssignID=[[GETDATA::VAR=AssignID]]
+	AND RecAccDate is not null AND
+	RecAccDate <>  1/ 1/1900
+	:
+	{Count(AssignID)}]]]]
+<!-- However, if person only checked recipient and/or provider accepts
+     then fill in current date -->
+[[EVAL:IF:[[EVAL:BOOL:
+	[[EVAL:BOOL:[[GETDATA:ProAcceptsCheck=on]] &&
+	  [[EVAL:BOOL:[[GETDATA::VAR=ProAccDateIsNotNull = 0]]
+				]]
+	]]
+		]]
+: [[SET:VAR:RecAccDateIsNotNull=1]]
+	[[DBASE:SQL:Update [Assignment Table] SET
+		ProAccDate=[[GETDATA::DATE=m/d/y]] [[GETDATA::TIME]]
+		where AssignID=[[GETDATA::VAR=AssignID]]
+	]]
+: <!-- no check mark-->
+]]
+[[EVAL:IF:[[EVAL:BOOL:
+	[[EVAL:BOOL:[[GETDATA:RecAcceptsCheck=on]] &&
+	  [[EVAL:BOOL:[[GETDATA::VAR=RecAccDateIsNotNull = 0]]
+				]]
+	]]
+		]]
+: [[SET:VAR:RecAccDateIsNotNull=1]]
+	[[DBASE:SQL:Update [Assignment Table] SET
+		RecAccDate=[[GETDATA::DATE=m/d/y]] [[GETDATA::TIME]]
+		where AssignID=[[GETDATA::VAR=AssignID]]
+	]]
+: <!-- no check mark-->
+]]
+<center>
+<font size="+2">
+<b>Review (or Add to) an Existing</br>
+Assignment for a Service</b></br>
+</font>
+</center>
+<form action="/cgi-bin/virtuflex.exe" method="get">
+<input type="hidden" name="template" value="/td/OneAssin.htm">
+<!-- since these values do not "come off the page" they must
+		be passed the first time -->
+<!-- Notice how we move from VirtuFlex AssignID to HTML -->
+<input type="hidden" name="AssignID" value="[[GETDATA::VAR=AssignID]]">
+<input type="hidden" name="Provider" value="[[GETDATA:Provider]]">
+<input type="hidden" name="Recipient" value="[[GETDATA:Recipient]]">
+<input type="hidden" name="Service" value="[[GETDATA:Service]]">
+<table width="600" border="0">
+	<tr>
+		<td bgcolor="808000">
+			<table border="0" width="200">
+					<tr>
+						<td width="55">
+							<font size="+0">
+							<b>
+							Provider
+							</b>
+							</font>
+							<br>
+							<font size="-2">
+							<input type="checkbox" [[GETDATA::VAR=ProAccDateIsNotNull|CONVERT=1=CHECKED|CONVERT=0=]] name="ProAcceptsCheck">
+							Accepts
+							</font>
+						</td>
+			<! -- 1st one -->
+			[[DBASE:SELECT:[Assignment Table]
+			:AssignID=[[GETDATA::VAR=AssignID]]
+
+			:
+
+			<!-- we need at least one "Interlace" -->
+			{AssignID|TRUNC=0}
+						<td width="130">
+							<font size="-2">
+							Initials\:
+							<input type="text" name="ProInitialsText" size="5">
+							<br>
+							<!-- simply may not embed a colon, even with backslash
+							     inside a second expression -->
+							[[EVAL:IF:[[GETDATA::VAR=ProAccDateIsNotNull]]=1
+							:Date= {ProAccDate|TRUNC=11}
+							:No Date
+							]]
+							<br>
+							<select name="ProAccDateMMSelect">
+								<option selected>
+									[[EVAL:IF:[[GETDATA::VAR=ProAccDateIsNotNull]]=1
+									:{ProAccDate|SUBSTR=1=2|CONVERT= =&nbsp;}
+									:&nbsp;1
+									]]
+								<option>&nbsp;1
+								<option>&nbsp;2
+								<option>&nbsp;3
+								<option>&nbsp;4
+								<option>&nbsp;5
+								<option>&nbsp;6
+								<option>&nbsp;7
+								<option>&nbsp;8
+								<option>&nbsp;9
+								<option>10
+								<option>11
+								<option>12
+							</select>
+							<!-- xx -->
+							<select name="ProAccDateDDSelect">
+								<option selected>
+									[[EVAL:IF:[[GETDATA::VAR=ProAccDateIsNotNull]]=1
+									:{ProAccDate|SUBSTR=4=2|CONVERT= =&nbsp;}
+									:&nbsp;1
+									]]
+								<option>&nbsp;1
+								<option>&nbsp;2
+								<option>&nbsp;3
+								<option>&nbsp;4
+								<option>&nbsp;5
+								<option>&nbsp;6
+								<option>&nbsp;7
+								<option>&nbsp;8
+								<option>&nbsp;9
+								<option>10
+								<option>11
+								<option>12
+								<option>13
+								<option>14
+								<option>15
+								<option>16
+								<option>17
+								<option>18
+								<option>19
+								<option>20
+								<option>21
+								<option>22
+								<option>23
+								<option>24
+								<option>25
+								<option>26
+								<option>27
+								<option>28
+								<option>29
+								<option>30
+								<option>31
+							</select>
+							<select name="ProAccDateYYSelect">
+								<option selected>
+								[[EVAL:IF:[[GETDATA::VAR=ProAccDateIsNotNull]]=1
+								:{ProAccDate|SUBSTR=7=4}
+								:1900
+									]]
+								<option>1980
+								<option>1981
+								<option>1982
+								<option>1983
+								<option>1984
+								<option>1985
+								<option>1986
+								<option>1987
+								<option>1988
+								<option>1989
+								<option>1990
+								<option>1991
+								<option>1992
+								<option>1993
+								<option>1994
+								<option>1995
+								<option>1996
+								<option>1997
+								<option>1998
+								<option>1999
+								<option>2000
+								<option>2001
+								<option>2002
+								<option>2003
+								<option>2004
+								<option>2005
+								<option>2006
+								<option>2007
+								<option>2008
+								<option>2009
+								<option>2010
+							</select>
+							</font>
+						</td>
+						]]
+						<!-- end of 1st one, Assignment Table DBASE SELECT -->
+					</tr>
+				</table>
+
+			[[EVAL:IF:[[GETDATA:Provider:LENGTH]]>0
+			: <! -- yes, show it -->
+				<!--webbot BOT="HTMLMarkup" endspan -->
+				<table border="1" cellpadding="0" cellspacing="5" bgcolor="#008080">
+					<tr>
+						<td>
+							<!--webbot bot="HTMLMarkup" StartSpan -->
+							[[DBASE:SELECT:[Member Table]:MemID=
+								[[GETDATA:Provider]]
+								: <!-- Start Interlace for DBASE -->
+								<!--webbot BOT="HTMLMarkup" endspan -->
+						</td>
+					</tr>
+					<tr>
+						<td width="125">
+							<font size="-3">{FirstName}</font>
+						</td>
+						<td>
+							<font size="-3">{LastName}</font>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<font size="-3">{Street}</font>
+						</td>
+						<td>
+							&nbsp;
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<font size="-3">{City} </font>
+						</td>
+						<td width="55">
+							<font size="-3">{State} &nbsp;{Zipcode}</font>
+						</td>
+					</tr>
+					<!-- blank row -->
+					<tr>
+						<td>
+							<font size="-2">Org ID--
+							<font size="-3">{Identifier}
+							</font>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<font size="-2">Home Phone--
+							<font size="-3">{HomePhone}
+							</font>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<font size="-2">Work Phone--
+							<font size="-3">{WorkPhone}
+							</font>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							]] <!-- end Provider Member Table DBASE-->
+						</td>
+					</tr>
+				</table>
+				<p>
+			: <!-- If eval if is false, Provider not present -->
+				<!-- not "View"ing -->
+				<!-- use transparent gif to force width -->
+				<table border="1" cellpadding="0" cellspacing="5" bgcolor="#008080"
+					<tr>
+						<td>
+							<img src="/td/blank.gif" width="180" height="100" border="0">
+						</td>
+					</tr>
+			</table>
+			<br>
+		]]<!--End of Provider eval if -->
+		</td>
+		<td bgcolor="008080">
+			<table border="0" width="200">
+				<tr>
+					<td width="60">
+						<font size="+0">
+						<b>
+						Recipient
+						</b>
+						</font>
+						<br>
+						<font size="-2">
+						<!-- 2nd, part I one -- gone -->
+						<!-- trick to detect presence of a date -->
+						<input [[GETDATA::VAR=RecAccDateIsNotNull|CONVERT=1=CHECKED|CONVERT=0=]] type="checkbox" name="RecAcceptsCheck">
+						Accepts
+						</font>
+					</td>
+	  <!-- end of 2nd -- gone, part I -->
+					<td width="120">
+					<!-- 2nd, part II -->
+					[[DBASE:SELECT:[Assignment Table]
+						:AssignID=[[GETDATA::VAR=AssignID]]
+						:
+						<!-- we need at least one "Interlace" -->
+						{AssignID|TRUNC=0}
+						<font size="-2">
+						Initials
+						<input type="text" name="RecInitialsText" size="5">
+						</br>
+						<!- null RecAccDate was 26172/28271/2313 8308 26995 25978 -->
+						<!-- and should be ' 0/ 0/ 0 0 0 0' -->
+						<!-- solution -- get rid of all colons -->
+						[[EVAL:IF:[[GETDATA::VAR=RecAccDateIsNotNull]]=1
+						:Date= {RecAccDate|TRUNC=11}
+						:No Date
+						]]
+						</br>
+						<select name="RecAccDateMMSelect">
+							<option selected>
+							[[EVAL:IF:[[GETDATA::VAR=RecAccDateIsNotNull]]=1
+							:{RecAccDate|SUBSTR=1=2|CONVERT= =&nbsp;}
+							:&nbsp;1
+							]]
+							<option>&nbsp;1
+							<option>&nbsp;2
+							<option>&nbsp;3
+							<option>&nbsp;4
+							<option>&nbsp;5
+							<option>&nbsp;6
+							<option>&nbsp;7
+							<option>&nbsp;8
+							 <option>&nbsp;9
+							<option>10
+							<option>11
+							<option>12
+						</select>
+						<select name="RecAccDateDDSelect">
+							<option selected>
+								[[EVAL:IF:[[GETDATA::VAR=RecAccDateIsNotNull]]=1
+								:{RecAccDate|SUBSTR=4=2|CONVERT= =&nbsp;}
+								:&nbsp;1
+								]]
+							<option>&nbsp;1
+							<option>&nbsp;2
+							<option>&nbsp;3
+							<option>&nbsp;4
+							<option>&nbsp;5
+							<option>&nbsp;6
+							<option>&nbsp;7
+							<option>&nbsp;8
+							<option>&nbsp;9
+							<option>10
+							<option>11
+							<option>12
+							<option>13
+							<option>14
+							<option>15
+							<option>16
+							<option>17
+							<option>18
+							<option>19
+							<option>20
+							<option>21
+							<option>22
+							<option>23
+							<option>24
+							<option>25
+							<option>26
+							<option>27
+							<option>28
+							<option>29
+							<option>30
+							<option>31
+						</select>
+						<select name="RecAccDateYYSelect">
+							<option selected>
+								[[EVAL:IF:[[GETDATA::VAR=RecAccDateIsNotNull]]=1
+								:{RecAccDate|SUBSTR=7=4|CONVERT= =&nbsp;}
+								:1900
+								]]
+							<option>1980
+							<option>1981
+							<option>1982
+							<option>1983
+							<option>1984
+							<option>1985
+							<option>1986
+							<option>1987
+							<option>1988
+							<option>1989
+							<option>1990
+							<option>1991
+							<option>1992
+							<option>1993
+							<option>1994
+							<option>1995
+							<option>1996
+							<option>1997
+							<option>1998
+							<option>1999
+							<option>2000
+							<option>2001
+							<option>2002
+							<option>2003
+							<option>2004
+							<option>2005
+							<option>2006
+							<option>2007
+							<option>2008
+							<option>2009
+							<option>2010
+						</select>
+						]] <!-- end of 2nd, part II Assigment DBASE -->
+						</font>
+					</td>
+				</tr>
+			</table>
+			[[EVAL:IF:[[GETDATA:Recipient:LENGTH]]>0
+			:
+				<!--webbot BOT="HTMLMarkup" endspan -->
+				<table border="1" cellpadding="0" cellspacing="5" bgcolor="#808000">
+					<tr>
+						<td>
+							<!--webbot bot="HTMLMarkup" StartSpan -->
+							[[DBASE:SELECT:[Member Table]:MemID=
+								[[GETDATA:Recipient]]
+							: <!-- Start Interlace for DBASE -->
+							<!--webbot BOT="HTMLMarkup" endspan -->
+						</td>
+					</tr>
+					<tr>
+						<td width="125">
+							<font size="-3">{FirstName}</font>
+						</td>
+						<td>
+							<font size="-3">{LastName}</font>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<font size="-3">{Street}</font>
+						</td>
+						<td>
+							&nbsp;
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<font size="-3">{City} </font>
+						</td>
+						<td width="55">
+							<font size="-3">{State} &nbsp;{Zipcode}</font>
+						</td>
+					</tr>
+					<!-- blank row -->
+					<tr>
+						<td>
+							<font size="-2">Org ID--
+							<font size="-3">{Identifier}
+							</font>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<font size="-2">Home Phone--
+							<font size="-3">{HomePhone}
+							</font>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<font size="-2">Work Phone--
+							<font size="-3">{WorkPhone}
+							</font>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							]] <!-- end Recipient Member DBASE-->
+						</td>
+					</tr>
+				</table>
+				<p>
+			: <!-- If eval if is false -->
+				<!-- not "View"ing Recipient Member -->
+				<!-- use transparent gif to force width -->
+				<table border="1" cellpadding="0" cellspacing="5" bgcolor="#808000"
+					<tr>
+						<td>
+							<img src="/td/blank.gif" width="180" height="0" border="0">
+						</td>
+					</tr>
+				</table>
+				<br>
+			]]<!--End of Recipient Member eval if -->
+		</td>
+		<td bgcolor="008000">
+			<table border="0" width="200">
+			<tr>
+				<td bgcolor="008000">
+						<img src="/td/blank.gif" width="70" height="0" border="0">
+						<input type="submit" name="Once" value="OK">
+						<img src="/td/blank.gif" width="20" height="0" border="0">
+						<input type="submit" name="CancelButton" value="Cancel">
+						</br>
+						<img src="/td/blank.gif" height="0" width="80">
+						<input [[GETDATA::VAR=TimeCritical|convert=1=checked|convert=0=]] type="checkbox" name="TimeCriticalCheck">
+						<!-- if unchecked need this to know -->
+						<input type="hidden" name="TimeCritical" value="off">
+						<font size="-2">
+						Time
+						</br>
+						<img src="/td/blank.gif" height="0" width="105">
+						Critical
+						</font>
+						</br>
+						<font size=-6>
+						&nbsp;
+						</br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="808000">
+						<font size="+1">
+							<b>
+							Service
+							</b>
+						</font>
+					</td>
+				</tr>
+			</table>
+			[[EVAL:IF:[[GETDATA::VAR=ServiceID|LENGTH]]>0
+				:
+				[[DBASE:SELECT:[Services List]:ServiceID=
+					[[GETDATA::VAR=ServiceID]]
+				:<!-- DBASE SELECT interlace field begin -->
+				<table bgcolor="#808000" width="180" border="1" cellpadding="0" cellspacing="5" bgcolor="#808080">
+					<tr>
+						<td>
+						{Service}
+						</td>
+					</tr>
+				</table>
+				]] <!-- End Service DBASE SELECT -->
+				: <!-- Eval Service if false -->
+				<table width="190" bgcolor="#808000" cellpadding="0" cellspacing="5" border="1">
+					<tr>
+						<td>
+						<img src="/td/blank.gif" height="25" width="0" border="0">
+						</td>
+					</tr>
+				</table>
+			]]<!-- end of Service EVAL-->
+
+			<!-- 3rd one -->
+			[[SET:DefaultDbase:c\:\timed\tddemo.mdb]]
+			[[DBASE:SELECT:[Assignment Table]
+			:AssignID=[[GETDATA::VAR=AssignID]]
+			:
+				<table bgcolor="808000" width="200">
+					<tr>
+					<td width="20" bgcolor="808000">
+						<font size="-2">
+							Credits Accumulated
+							</font>
+					</td>
+					<td>
+						<font size="-2">
+						</br>
+							{Credits}
+						</font>
+					<td>
+				</tr>
+				<tr>
+					<td width="20">
+						<font size="-2">
+						Begin Date
+						</font>
+					</td>
+					<td width="150">
+						<select name="OneBeginDateMMSelect">
+							<option selected>{BeginDate|SUBSTR=1=2|CONVERT= =&nbsp;}
+							<option>&nbsp;1
+							<option>&nbsp;2
+							<option>&nbsp;3
+							<option>&nbsp;4
+							<option>&nbsp;5
+							<option>&nbsp;6
+							<option>&nbsp;7
+							<option>&nbsp;8
+							<option>&nbsp;9
+							<option>10
+							<option>11
+							<option>12
+						</select>
+						<select name="OneBeginDateDDSelect">
+							<option selected>{BeginDate|SUBSTR=4=2|CONVERT= =&nbsp;}
+							<option>&nbsp;1
+							<option>&nbsp;2
+							<option>&nbsp;3
+							<option>&nbsp;4
+							<option>&nbsp;5
+							<option>&nbsp;6
+							<option>&nbsp;7
+							<option>&nbsp;8
+							<option>&nbsp;9
+							<option>10
+							<option>11
+							<option>12
+							<option>13
+							<option>14
+							<option>15
+							<option>16
+							<option>17
+							<option>18
+							<option>19
+							<option>20
+							<option>21
+							<option>22
+							<option>23
+							<option>24
+							<option>25
+							<option>26
+							<option>27
+							<option>28
+							<option>29
+							<option>30
+							<option>31
+						</select>
+						<select name="OneBeginDateYYSelect">
+							<option selected>{BeginDate|SUBSTR=7=4}
+								<option>1980
+								<option>1981
+								<option>1982
+								<option>1983
+								<option>1984
+								<option>1985
+								<option>1986
+								<option>1987
+								<option>1988
+								<option>1989
+								<option>1990
+								<option>1991
+								<option>1992
+								<option>1993
+								<option>1994
+								<option>1995
+								<option>1996
+								<option>1997
+								<option>1998
+								<option>1999
+								<option>2000
+								<option>2001
+								<option>2002
+								<option>2003
+								<option>2004
+								<option>2005
+								<option>2006
+								<option>2007
+								<option>2008
+								<option>2009
+								<option>2010
+							</select>
+					</td>
+				</tr>
+				<tr>
+					<td width="80">
+						<font size="-2">
+						End Date
+						</font>
+					</td>
+					<td width="120">
+						<select name="OneEndDateMMSelect">
+							<option selected>{EndDate|SUBSTR=1=2|CONVERT= =&nbsp;}
+							<option>&nbsp;1
+							<option>&nbsp;2
+							<option>&nbsp;3
+							<option>&nbsp;4
+							<option>&nbsp;5
+							<option>&nbsp;6
+							<option>&nbsp;7
+							<option>&nbsp;8
+							<option>&nbsp;9
+							<option>10
+							<option>12
+						</select>
+						<select name="OneEndDateDDSelect">
+							<option selected>{EndDate|SUBSTR=4=2|CONVERT= =&nbsp;}
+							<option>&nbsp;1
+							<option>&nbsp;2
+							<option>&nbsp;3
+							<option>&nbsp;4
+							<option>&nbsp;5
+							<option>&nbsp;6
+							<option>&nbsp;7
+							<option>&nbsp;8
+							<option>&nbsp;9
+							<option>10
+							<option>11
+							<option>12
+							<option>13
+							<option>14
+							<option>15
+							<option>16
+							<option>17
+							<option>18
+							<option>19
+							<option>20
+							<option>21
+							<option>22
+							<option>23
+							<option>24
+							<option>25
+							<option>26
+							<option>27
+							<option>28
+							<option>29
+							<option>30
+							<option>31
+						</select>
+						<select name="OneEndDateYYSelect">
+							<option selected>{EndDate|SUBSTR=7=4}
+								<option>1980
+								<option>1981
+								<option>1982
+								<option>1983
+								<option>1984
+								<option>1985
+								<option>1986
+								<option>1987
+								<option>1988
+								<option>1989
+								<option>1990
+								<option>1991
+								<option>1992
+								<option>1993
+								<option>1994
+								<option>1995
+								<option>1996
+								<option>1997
+								<option>1998
+								<option>1999
+								<option>2000
+								<option>2001
+								<option>2002
+								<option>2003
+								<option>2004
+								<option>2005
+								<option>2006
+								<option>2007
+								<option>2008
+								<option>2009
+								<option>2010
+						</select>
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+<table width="600" border="0" cellspacing="0" cellpadding="0">
+	<tr>
+		<td width="400">
+			<font size="+1">
+			<b>
+			<A NAME="second"></A>
+			Comments
+			</b>
+			</font>
+			<img src="/td/blank.gif" height="0" width="181">
+			<font size="-2">
+			QcRating
+			</font>
+			<select name="QcRating">
+			  <option selected>{QcRating|CONVERT=1=none|CONVERT=2=Low|CONVERT=3=Average|CONVERT=4=High}
+				<option>none
+				<option>Low
+				<option>Average
+				<option>High
+			</select>
+		</td>
+		<td width="200">
+			<img src="/td/blank.gif" height="0" width="120">
+			<input type="submit" name="ChangeUnitButton" value="Change Unit Categories">
+		</td>
+	</tr>
+	<tr>
+		<td width="400">
+			<textarea name="Comments" cols="47" rows="7" wrap="virtual" value={Comments}>
+			</textarea>
+		</td>
+		<td width="200">
+			<table width="200">
+				<tr>
+					<td>
+						<table width="190" border="0" cellpadding="0" cellspacing="0" bgcolor="#808000">
+							<tr>
+								<td>
+									<font size=-6>&nbsp;</br>
+									</font>
+								</td>
+							</tr>
+						</table>
+						<font size="+0">
+						<B>Credits &nbsp; Service units</B></br>
+						</font>
+						[[DBASE:SELECT:[UnitNames List] LEFT JOIN [Asgn SvUnit Table]
+						ON [UnitNames List].UnitID = [Asgn SvUnit Table].SvUnit
+						:Assignment=[[GETDATA::VAR=AssignID]] AND UNITNAME <> 'null'
+						:
+						<!-- we create the input name by concatenating the UnitID -->
+						<!-- providing a "null" value keeps us from readding a left
+							over amount from prior OK or page Reload -->
+						<input type="text" name="Unit{UnitID}" Value="" size="4"> &nbsp; &nbsp; {UnitName}</br>
+						]]
+						<table width="190" border="0" cellpadding="0" cellspacing="0" bgcolor="#808000">
+							<tr>
+								<td>
+									<font size=-6>&nbsp;</br>
+									</font>
+								</td>
+							</tr>
+						</table>
+						</td>
+				</tr>
+			</table>
+				</font>
+			<font size="-2">
+			New Credits
+			<input type="text" name="Credits" Value="" size="10">
+			<br>
+			Date of Service
+			<select name="ServiceDateMMSelect">
+				<option selected>{Updated|SUBSTR=1=2|CONVERT= =&nbsp;}
+				<option>&nbsp;1
+				<option>&nbsp;2
+				<option>&nbsp;3
+				<option>&nbsp;4
+				<option>&nbsp;5
+				<option>&nbsp;6
+				<option>&nbsp;7
+				<option>&nbsp;8
+				<option>&nbsp;9
+				<option>10
+				<option>11
+				<option>12
+			</select>
+			<select name="ServiceDateDDSelect">
+				<option selected>{Updated|SUBSTR=4=2|CONVERT= =&nbsp;}
+				<option>&nbsp;1
+				<option>&nbsp;2
+				<option>&nbsp;3
+				<option>&nbsp;4
+				<option>&nbsp;5
+				<option>&nbsp;6
+				<option>&nbsp;7
+				<option>&nbsp;8
+				<option>&nbsp;9
+				<option>10
+				<option>11
+				<option>12
+				<option>13
+				<option>14
+				<option>15
+				<option>16
+				<option>17
+				<option>18
+				<option>19
+				<option>20
+				<option>21
+				<option>22
+				<option>23
+				<option>24
+				<option>25
+				<option>26
+				<option>27
+				<option>28
+				<option>29
+				<option>30
+				<option>31
+			</select>
+			<select name="ServiceDateYYSelect">
+				<option selected>{Updated|SUBSTR=7=4}
+				<option>1980
+				<option>1981
+				<option>1982
+				<option>1983
+				<option>1984
+				<option>1985
+				<option>1986
+				<option>1987
+				<option>1988
+				<option>1989
+				<option>1990
+				<option>1991
+				<option>1992
+				<option>1993
+				<option>1994
+				<option>1995
+				<option>1996
+				<option>1997
+				<option>1998
+				<option>1999
+				<option>2000
+				<option>2001
+				<option>2002
+				<option>2003
+				<option>2004
+				<option>2005
+				<option>2006
+				<option>2007
+				<option>2008
+				<option>2009
+				<option>2010
+			</select>
+			</font>
+			<br>
+			<center>
+			<input type="submit" name="Once" value="OK">
+			</center>
+			]]<!-- end 3rd DBASE SELECT on Assignment Table -->
+		</td>
+	</tr>
+		<td>
+		<b>
+</table>
+</form>
+</BODY>
+</HTML>

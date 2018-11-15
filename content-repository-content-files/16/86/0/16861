@@ -1,0 +1,692 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>One Organization</title>
+</head>
+<!-- Similar to Single Members but --	1.  No FirstName	2.  No Availability	3.  No DriversLicense	4.  None of the checkbox items like SmokeTolerant	5.  No Emergency	6.  No Doctor	Uses VirtuFlex MemOrgID and SiteID because of New  -->
+<BODY bgcolor="#FFFFFF" text="#000000">
+<!--webbot bot="HTMLMarkup" startspan -->
+[[SET:DefaultDbase:c\:\timed\tddemo.mdb]]
+
+
+[[EVAL:IF:[[GETDATA:Cancel]]=Cancel
+:
+	[[GETDATA:XYZZY:CHECK=/td/organiza.htm]]
+	: <!-- no cancel -->
+]]
+<!--If pushed Passbook button, display Passbook -->
+[[EVAL:IF:[[GETDATA:PassbookButton]]=Passbook
+:
+	[[GETDATA:XYZZY:CHECK=/td/mempass.htm]]
+: <!-- no Passbook -->
+]]
+<!--If pushed Cancel button, force move back to organiza.htm -->
+[[EVAL:IF:[[GETDATA:ChgAttributes:LENGTH]]> 0
+:
+	[[GETDATA:XYZZY:CHECK=/td/AttrChg.htm]]
+: <!-- not going to Change Attributes, do nothing -->
+]]
+[[EVAL:IF:[[GETDATA:ChgServices:LENGTH]]> 0
+:
+	[[GETDATA:XYZZY:CHECK=/td/ServChg.htm]]
+: <!-- not going to Change Services, do nothing -->
+]]
+<!-- id we ducked out below to select a new site
+     we must now capture it -->
+[[SET:VAR:MemOrgID=[[GETDATA:MemOrgID]]]]
+<!-- if New, this SET will be null (and replaced in New) -->
+[[SET:VAR:SiteID=[[GETDATA:SiteID]]]]
+<!-- unlike AttrChg.htm, ServChg.htm, AssiChg.htm, FindSite does NOT make
+			any database changes, but returns --
+				1.  NewSite == on
+				2.  Selected site number in SiteID
+				-->
+[[EVAL:IF:[[GETDATA:NewSite:LENGTH]]> 0
+	:
+			[[DBASE:SQL:Update [Member Table] SET
+				Site=[[GETDATA::VAR=SiteID]]
+				where MemID=[[GETDATA::VAR=MemOrgID]]
+			]]
+		: <!-- not inserting a new Site, do nothing -->
+]]
+<!-- check for either New or Updating -->
+[[EVAL:IF:[[EVAL:BOOL:
+	[[EVAL:BOOL:[[GETDATA:Once]]=Record
+	]] ||
+	[[EVAL:BOOL:[[GETDATA:NewButton]]=New
+	]]
+				  ]]
+		:<!-- New or Once  -->
+			[[EVAL:IF:[[GETDATA:NewButton]]=New
+				:<!-- if new, "starters" -->
+					<!-- must have NewButton=New, and MemOrgID, the New SiteID is
+								entered via the "hidden" form entry below  -->
+					<center>
+					<font size="+2">
+						<b>Enter Information about the New Organization</b></br>
+					</font>
+					</center>
+					<!-- remove any partial records -->
+					<!-- must explicitly specify Site because that field is
+						keyed (Site=1) and ODBC won't delete otherwise -->
+					[[DBASE:DEL:[Member Table]:SiteID=1 and Updated is null]]
+					<!-- add the new record -->
+					[[SET:VAR:Identifier=[[DBASE:SELECT:[System Information]:
+						1=1:{MAX(SystemCode)}{MAX(NextToAssign)}]]]]
+					<!-- MemSince and Updated will be null -->
+					[[DBASE:ADD:[Member Table]:
+						{Site|1}
+						{Nickname|%ORG%}
+						{Balance|0}
+						{Identifier|[[GETDATA::VAR=Identifier]]}
+						{Entered|[[GETDATA::DATE=m/d/y]] [[GETDATA::TIME]]}
+						{Comments|Replace this with comments about the Organization.}
+					]]
+					[[SET:VAR:Identifier=[[EVAL:MATH:[[GETDATA::VAR=Identifier|SUBSTR=5=8]]+1]]]]
+					[[DBASE:SQL:Update [System Information] SET
+						NextToAssign=[[GETDATA::VAR=Identifier]]
+					]]
+					<!-- this was returning prior record unless I close and reopen -->
+					[[SET:DefaultDbase:c\:\timed\tddemo.mdb]]
+					[[SET:VAR:MemOrgID=[[DBASE:SELECT:[Member Table]:
+						1=1:{MAX(MemID)}]]]]
+					<!-- this is an empty site ID (see also "hidden" one below) -->
+					[[SET:VAR:SiteID=1]]
+				: <!-- not New then must be Once, do update here -->
+					<!-- (1.)  If 'Once' is Record, then if (2.) all data is present, then update-->
+					<!-- AssignID will have been passed to the page -->
+					[[SET:VAR:MemOrgID=[[GETDATA:MemOrgID]]]]
+
+					[[EVAL:IF:[[EVAL:BOOL:
+
+							[[EVAL:BOOL:[[EVAL:BOOL:[[GETDATA:LastName:LENGTH]] != 0]] &&
+								[[EVAL:BOOL:[[EVAL:BOOL:[[GETDATA:Street:LENGTH]] != 0]] &&
+									[[EVAL:BOOL:[[EVAL:BOOL:[[GETDATA:HomePhone:LENGTH]] != 0]] &&
+
+											[[EVAL:BOOL:[[EVAL:BOOL:[[GETDATA:City:LENGTH]] != 0]] &&
+												[[EVAL:BOOL:[[EVAL:BOOL:[[GETDATA:State:LENGTH]] != 0]] &&
+													[[EVAL:BOOL:[[EVAL:BOOL:[[GETDATA:Zipcode:LENGTH]] != 0]] &&
+
+
+																[[EVAL:BOOL:[[EVAL:BOOL:[[GETDATA:CoordAlfa:LENGTH]] != 0]] &&
+																	[[EVAL:BOOL:[[GETDATA:CoordNum:LENGTH]] != 0]]
+																]]
+
+
+													]]
+												]]
+											]]
+
+									]]
+								]]
+							]]
+
+								]]
+					: <!-- TRUE -- all data good -->
+						[[SET:VAR:MemSince=[[GETDATA:MemSinceMMSelect]]/[[GETDATA:MemSinceDDSelect]]/[[GETDATA:MemSinceYYSelect]] 0\:0\:0]]
+						[[DBASE:SQL:Update [Member Table] SET
+							LastName='[[GETDATA:LastName]]',
+							HomePhone='[[GETDATA:HomePhone]]',
+							[[EVAL:IF:[[GETDATA:WorkPhone|LENGTH]] > 0
+								:
+									WorkPhone='[[GETDATA:WorkPhone]]',
+								:
+									WorkPhone=' ',
+							]]
+							Street='[[GETDATA:Street]]',
+							City='[[GETDATA:City]]',
+							State='[[GETDATA:State]]',
+							Zipcode='[[GETDATA:Zipcode]]',
+
+
+							CoordAlfa='[[GETDATA:CoordAlfa]]',
+							CoordNum='[[GETDATA:CoordNum]]',
+							Inactive=
+							[[EVAL:IF:[[GETDATA:Inactive]]=on
+								:
+								  -1
+								:
+								   0
+							]],
+							MemSince=[[GETDATA::VAR=MemSince|PREPEND='|CONVERT= = |POSTPEND='|CONVERT=' 1/ 1/1900 0\:0\:0'=null]],
+							Comments=
+							[[EVAL:IF:[[GETDATA:Comments:LENGTH]] != 0
+				:
+									'[[GETDATA:Comments:CONVERT='='']]'
+					:
+									' '
+							]],
+							Updated='[[GETDATA::DATE=m/d/y]] [[GETDATA::TIME]]'
+							where MemID=[[GETDATA::VAR=MemOrgID]]
+						]] <!-- DBASE update -->
+					  <!-- double quote ok in SQL, but single quote(apostrophe) needs to be doubled-->
+					<!-- update database each time user submits current page (with data)-->
+						[[EVAL:IF:[[GETDATA:ChgSite:LENGTH]]> 0
+							:
+								[[GETDATA:XYZZY:CHECK=/td/FindSite.htm]]
+							: <!-- not going to Find a Site, do nothing -->
+						]]
+					:
+						<!-- missing data-->
+					[[GETDATA:XYZZY:CHECK=/td/OneErr.htm]]
+				]] <!-- end data check -->
+				<font size=+1>
+				<center>
+				<b>
+				Updated Volunteer Organization
+				<img src="/td/blank.gif" alt="" width="50" height="1">
+				<font size="-1">
+				<A href="/cgi-bin/virtuflex.exe?template=/td/oneorg.htm&Label=Organization&MemOrgID=[[GETDATA:MemOrgID]]&SiteID=[[GETDATA::VAR=SiteID]]#third">Jump to Organization Attributes and Services</A></br>
+				</font>
+				</b>
+				</center>
+			]] <!-- end not New, was Once -->
+		: <!-- not New or Once -->
+	<!-- no code at this indent level -->
+<!--webbot bot="HTMLMarkup" endspan --><font size="+1"><center>
+	<b>
+	Volunteer Organization
+	</b>
+	</center>
+<!--webbot bot="HTMLMarkup" startspan -->
+]] <!-- end New or Once -->
+<!-- Eli made this qualifier 'Sender'
+      tried to send from members.htm, etc. -->
+[[SET:VAR:MemSinceIsNotNull=[[DBASE:SELECT:[Member Table]
+	:MemID=[[GETDATA::VAR=MemOrgID]]
+	AND MemSince is not null AND
+	MemSince <>  1/ 1/1900
+	:
+	{Count(MemID)}]]]]
+<!--webbot bot="HTMLMarkup" endspan -->
+<form action="/cgi-bin/virtuflex.exe" method="get">
+<input type="hidden" name="template" value="/td/oneorg.htm">
+<input type="hidden" name="MemOrgID" value="[[GETDATA::VAR=MemOrgID]]">
+<input type="hidden" name="Label" value="Organization">
+<!-- this duplicates except when Change Site is picked		remember, we first save results, then go to FindSite.htm  -->
+<input type="hidden" name="Once" value="Record">
+<!-- if New, then SiteID length is zero -->
+<!--webbot bot="HTMLMarkup" startspan -->
+<input type="hidden" name="SiteID" value=
+	[[EVAL:IF:[[GETDATA::VAR=SiteID|LENGTH]]>0
+		:
+			"[[GETDATA::VAR=SiteID]]">
+		:
+			"1">
+	]]
+[[DBASE:SELECT:[Member Table]:MemID=[[GETDATA::VAR=MemOrgID]]
+	:
+<!--webbot bot="HTMLMarkup" endspan -->
+    	<table bgcolor="#F5F5F5" border="0" cellpadding="0" cellspacing="0" width="751" height="40">
+    <tr>
+      <td width="90" border="0" height="40">
+            <p align="right"><font size="3">
+				Name
+			</font>
+		</td>
+		<center>
+      <td width="268" border="0" height="40">
+            <font size="3"><input type="text" name="Name" size="30" MAXLENGTH="30" value="{LastName}">
+			</font>
+		</td>
+      </center>
+      <td align="right">
+		<font size="-1"><b>
+			<a href="/cgi-bin/virtuflex.exe?template=/td/oneorg.htm&amp;Label=Organization&amp;MemOrgID=[[GETDATA:MemOrgID]]&amp;SiteID=[[GETDATA::VAR=SiteID]]#third">Jump to Organization Attributes and Services</a>
+		</font></b>
+		</td>
+	<tr>
+      <td width="90" border="0" height="40">
+			<p align="right"><font size="3">
+				WorkPhone
+			</p>
+			</font>
+		</td>
+		<center>
+      <td width="268" border="0" height="40">
+            <font size="3"><input type="text" name="WorkPhone" size="20" MAXLENGTH="20" value="{WorkPhone}">
+			</font>
+		</td>
+		<td border="0" height="40" width="393" align="right">
+			<font size="+2">
+				<input type="submit" name="Cancel" value="Cancel">
+				<input type="submit" name="Once" value="Record">
+			</font>
+		<tr>
+      <td width="90" border="0" height="40">
+			<p align="right"><font size="3">
+				Street&nbsp;
+			</p>
+			</font>
+		</td>
+		<center>
+      <td width="268" border="0" height="40">
+            <font size="3">&nbsp;<input type="text" name="Street" size="20" MAXLENGTH="40" value="{Street}">
+			</font>
+		</td>
+		<td width="393" border="0" height="40" align="center">
+            <font size="3&gt;
+				&lt;img src=" /td/blank.gif" alt width="20" height="1">
+				Identifier <input type="text" name="Identifier" size="12" value="{Identifier}">
+			</font>
+		</td>
+	<tr>
+		<td width="88">
+        &nbsp;
+		</td>
+		<td width="266">
+        &nbsp;
+		</td>
+		<td width="391">
+                    <p align="center">
+					Balance= {Balance}</p>
+		</td>
+
+       </center>
+    </center>
+		<tr>
+      		<td width="88">
+            <p align="right">
+			City
+      		</td>
+		<center>
+      		<td width="266">
+            <font size="3"><input type="text" name="City" size="20" MAXLENGTH="20" value="{City}">
+				State&nbsp;
+				<input type="text" name="State" size="2" MAXLENGTH="2" value="{State}">
+            </font>
+      		</td>
+            <td width="391" align="center">
+					Map Location Coordinates<br>
+				<select name="CoordAlfa" size="1">
+			 <option selected>{CoordAlfa}</option>
+						<option>NA</option>
+				<option>A</option>
+		  <option>B</option>
+		  <option>C</option>
+			  <option>D</option>
+				<option>E</option>
+			<option>F</option>
+			<option>G</option>
+				<option>H</option>
+			<option>I</option>
+			<option>J</option>
+			<option>K</option>
+			<option>L</option>
+			<option>M</option>
+			<option>N</option>
+			<option>O</option>
+		</select>
+					<select name="CoordNum" size="1">
+			<option selected>{CoordNum}</option>
+						<option>NA</option>
+				<option>1</option>
+			<option>2</option>
+			<option>3</option>
+			<option>4</option>
+			<option>5</option>
+		<option>6</option>
+			<option>7</option>
+			<option>8</option>
+			<option>9</option>
+			<option>10</option>
+			<option>11</option>
+			<option>12</option>
+			<option>13</option>
+			<option>14</option>
+			<option>15</option>
+			</select>
+			<center>
+            </center>
+		</tr>
+		<tr>
+		<td width="88">
+            <p align="right">
+            &nbsp;</p>
+		</td>
+      <td width="268" border="0" height="40">
+            <font size="3">
+                &nbsp;
+			</font>
+        </font>
+		</td>
+            <font size="+1">
+		<td width="391" align="center">
+			Inactive <input type="checkbox" {Inactive|CONVERT="1=CHECKED|CONVERT=0=}" name="Inactive">
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2" width="356">
+					<font size="5">
+						Comments
+					</font>
+		<td width="391">
+			<font size="5">
+						Site
+			</font>
+            <img src="/td/blank.gif" ALT width="30" height="0">
+						<input type="submit" name="ChgSite" value="Change Site">
+					</font>
+		</td>
+	</tr>
+		<td colspan="2" width="356">
+		<p>
+					<!-- LEAVE Comments on next line, CR problem -->
+					<!-- had VERY peculiar problem here -- page wouldn't receive							HTML variables, had something to do with contents during testing -->
+					<textarea rows="10" name="Comments" cols="41">{Comments}
+					</textarea>
+		</td>
+	
+		<!--webbot bot="HTMLMarkup" startspan -->
+			]]<!-- end DBASE -->
+<!--webbot bot="HTMLMarkup" endspan -->
+	<!-- essentially copied from organiza.htm -- but organization info-->
+        <td width="391">
+				<table bgcolor="#F4FCFF" cellspacing="0" cellpadding="0" border="0">
+<!--webbot bot="HTMLMarkup" startspan -->
+					[[SET:VAR:HomePhone=[[DBASE:SELECT:[Member Table]:
+						MemID=[[DBASE:SELECT:[Site Table]:SiteID=[[GETDATA::VAR=SiteID]]:{Organization}]]:{HomePhone}]]]]
+					[[DBASE:SELECT:[Site Table]:SiteID=[[GETDATA::VAR=SiteID]]
+					:
+<!--webbot bot="HTMLMarkup" endspan -->
+					<tr>
+			<td colspan="2">
+							<font size="-3">
+								{Name}
+							</font>
+						</td>
+	  </tr>
+		<tr>
+		<td>
+							<font size="-3">
+								{Street}
+							</font>
+						</td>
+			<td>
+							&nbsp;
+						</td>
+		</tr>
+		<tr>
+		<td>
+							<font size="-3">
+								{City}
+							</font>
+						</td>
+		<td width="60">
+							<font size="-3">
+								{State} &nbsp;{Zipcode}
+							</font>
+						</td>
+		</tr>
+					<!-- blank row -->
+		<tr>
+		<td>
+							&nbsp;
+						</td>
+		</tr>
+					<tr>
+						<td>
+							<font size="-2">
+								Organization--&nbsp;
+							</font>
+							<font size="-3">
+								{Name}
+							</font>
+						</td>
+					</tr>
+		<tr>
+						<td>
+							<font size="-2">
+								Site ID--&nbsp;
+							</font>
+							<font size="-3">
+								{Identifier}
+							</font>
+						</td>
+		</tr>
+            <font size="+1">
+					<tr>
+						<td>
+							Site Phone--&nbsp;
+							<font size="-3">
+								[[GETDATA::VAR=HomePhone]]
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2" bgcolor="#F5F5F5">
+							<input type="submit" name="PassbookButton" value="Passbook">
+                            </font>
+						</td>
+					</tr>
+
+<!--webbot bot="HTMLMarkup" startspan -->
+					]] <!-- end DBASE -->
+<!--webbot bot="HTMLMarkup" endspan -->
+		    </table>
+			<!-- level missing -->
+</table>
+<a NAME="third"></a>
+	<p>
+		<img src="/td/blank.gif" alt width="7" height="1">
+		<input type="submit" value="Change Attributes" name="ChgAttributes">
+		<img src="/td/blank.gif" alt width="70" height="1">
+		<input type="submit" value="Change Services" name="ChgServices">
+		<img src="/td/blank.gif" alt width="40" height="1">
+		<input type="submit" name="Cancel" value="Cancel">
+		<input type="submit" name="Once" value="Record">
+	</p>
+<div align="left">
+<table height="246" bgcolor="#F5F5F5" cellspacing="0" cellpadding="0" border="0">
+	<font size="-2">
+		<tr valign="top">
+			<td>
+				<table width="300" bgcolor="#F4FCFF" cellspacing="0" cellpadding="0" border="0">
+					<tr>
+						<td ALIGN="center" bgcolor="#F5F5F5">
+							Organization Attributes
+						</td>
+					</tr>
+					<tr>
+						<td ALIGN="center" bgcolor="#F5F5F5">
+                            &nbsp;
+						</td>
+					</tr>
+					<tr>
+						<td>
+<!--webbot bot="HTMLMarkup" startspan -->
+							[[DBASE:SELECT:[Attributes List] LEFT JOIN
+								[Mem Attribute Table]
+									ON [Mem Attribute Table].Attribute =
+									[Attributes List].AttrID:
+									Member=[[GETDATA::VAR=MemOrgID]]
+							:
+								<li>
+<!--webbot bot="HTMLMarkup" endspan -->
+								{[Attributes List].AttrName}
+<!--webbot bot="HTMLMarkup" startspan -->
+								</li>
+							]]
+<!--webbot bot="HTMLMarkup" endspan -->
+						</font>
+						</td>
+					</tr>						
+				</table>
+			</td>
+			<td>
+	    			<table width="300" bgcolor="#E0E6E0" cellspacing="0" cellpadding="0" border="0">
+	    				<tr>
+						<td align="center" bgcolor="#F5F5F5">
+							Organization Services
+						</td>
+					</tr>
+	    				<tr>
+						<td align="center" bgcolor="#F5F5F5">
+                            <font color="#008066">Provides</font>/<font color="#CC0066">Needs</font>
+						</td>
+					</tr>
+					<tr>
+						<td>
+<!--webbot bot="HTMLMarkup" startspan -->
+							[[DBASE:SELECT:[Services List] INNER JOIN
+								[Mem Service Table]
+									ON [Services List].ServiceID =
+									[Mem Service Table].Service:
+									Member=[[GETDATA::VAR=MemOrgID]]
+							:
+								<li>
+								<font color="{[Mem Service Table].Needs|CONVERT=0=#CC0066|CONVERT=1=#008066}"
+<!--webbot bot="HTMLMarkup" endspan -->
+								{[Services List].Service}
+<!--webbot bot="HTMLMarkup" startspan -->
+								</font>
+								</li>
+							]]
+<!--webbot bot="HTMLMarkup" endspan -->
+					</td>
+					</tr>
+				</table>
+		 	</td>
+		</tr>
+	<tr>
+		<td colspan="2" bgcolor="#FFFFFF">
+			
+    <!-- DBASE for MemSince and Updated -->
+<!--webbot bot="HTMLMarkup" startspan -->
+[[DBASE:SELECT:[Member Table]:MemID=[[GETDATA::VAR=MemOrgID]]
+:
+<!--webbot bot="HTMLMarkup" endspan -->
+<p>Member Since&nbsp;&nbsp;<select name="MemSinceMMSelect" size="1">
+<!--webbot bot="HTMLMarkup" startspan -->
+  <option selected> [[EVAL:IF:[[GETDATA::VAR=MemSinceIsNotNull]]=1:
+										{MemSince|SUBSTR=1=2|CONVERT= =&nbsp;} :
+										&nbsp;1
+										]]
+<!--webbot bot="HTMLMarkup" endspan -->
+								<option>&nbsp;1
+								<option>&nbsp;2
+								<option>&nbsp;3
+								<option>&nbsp;4
+								<option>&nbsp;5
+								<option>&nbsp;6
+								<option>&nbsp;7
+								<option>&nbsp;8
+								<option>&nbsp;9
+								<option>10
+								<option>11
+								<option>12
+</select>
+<select name="MemSinceDDSelect" size="1">
+<!--webbot bot="HTMLMarkup" startspan -->
+  <option selected> [[EVAL:IF:[[GETDATA::VAR=MemSinceIsNotNull]]=1 :
+		{MemSince|SUBSTR=4=2|CONVERT= =&nbsp;}:
+		&nbsp;1
+		]]
+<!--webbot bot="HTMLMarkup" endspan -->
+		<option>&nbsp;1
+								<option>&nbsp;2
+								<option>&nbsp;3
+								<option>&nbsp;4
+								<option>&nbsp;5
+								<option>&nbsp;6
+								<option>&nbsp;7
+								<option>&nbsp;8
+								<option>&nbsp;9
+								<option>10
+								<option>11
+								<option>12
+								<option>13
+								<option>14
+								<option>15
+								<option>16
+								<option>17
+								<option>18
+								<option>19
+								<option>20
+								<option>21
+								<option>22
+								<option>23
+								<option>24
+								<option>25
+								<option>26
+								<option>27
+								<option>28
+								<option>29
+								<option>30
+								<option>31
+</select><select name="MemSinceYYSelect" size="1">
+<!--webbot bot="HTMLMarkup" startspan -->
+  <option selected>[[EVAL:IF:[[GETDATA::VAR=MemSinceIsNotNull]]=1
+								:{MemSince|SUBSTR=7=4}
+								:1900
+									]]
+<!--webbot bot="HTMLMarkup" endspan -->
+
+								<option>1980
+								<option>1981
+								<option>1982
+								<option>1983
+								<option>1984
+								<option>1985
+								<option>1986
+								<option>1987
+								<option>1988
+								<option>1989
+								<option>1990
+								<option>1991
+								<option>1992
+								<option>1993
+								<option>1994
+								<option>1995
+								<option>1996
+								<option>1997
+								<option>1998
+								<option>1999
+								<option>2000
+								<option>2001
+								<option>2002
+								<option>2003
+								<option>2004
+								<option>2005
+								<option>2006
+								<option>2007
+								<option>2008
+								<option>2009
+								<option>2010
+
+</select>
+<!--webbot bot="HTMLMarkup" startspan -->
+	[[EVAL:IF:[[GETDATA::VAR=MemSinceIsNotNull]]=1
+							:{MemSince|TRUNC=11}
+								<img src="/td/blank.gif" alt="" width="35" height="1">
+							:
+<!--webbot bot="HTMLMarkup" endspan -->
+								<font size="-2">
+								(No Date)
+								</font>
+<!--webbot bot="HTMLMarkup" startspan -->
+							]]
+<!--webbot bot="HTMLMarkup" endspan -->
+<img src="/td/blank.gif" alt width="45" height="1">Updated&nbsp;
+<!--webbot bot="HTMLMarkup" startspan -->
+{Updated|SUBSTR=1=10|CONVERT= =0|CONVERT=00/00/0000=Never}&nbsp;&nbsp;{Updated|SUBSTR=12=10|CONVERT= =0|CONVERT=00\:00\:00=}
+<!--webbot bot="HTMLMarkup" endspan -->
+</p>
+</tr>
+</table>
+<!--webbot bot="HTMLMarkup" startspan -->
+]]
+<!--webbot bot="HTMLMarkup" endspan -->
+<!-- end of DBASE for MemSince and Updated -->
+</form>
+
+<p><a href="AttrChg.htm"></a></p>
+<p><a href="mempass.htm"></a></p>
+<p><a href="ServChg.htm"></a></p>
+<p><a href="OneEer.htm"></a></p>
+<p><a href="FindSite.htm"></a></p>
+
+</center>
+</div>
+</BODY>

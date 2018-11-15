@@ -1,0 +1,74 @@
+<!-- SEPARATE TO AVOID ONEASSIN.HTM GOING OVER 32k -->
+<!-- we put the tour in column 1 if -f, in column 2 if -v -->
+<!--webbot bot="HTMLMarkup" startspan -->
+<!-- either message will cause this to trigger-->
+[[EVAL:IF:[[GETDATA:Tour:substr=1=6]]=second
+	:
+<!--webbot bot="HTMLMarkup" endspan -->
+		<!-- tour table -->
+		<table align="left" bgcolor="#F0FFFF" width="700">
+<!--webbot bot="HTMLMarkup" startspan -->
+		[[EVAL:IF:[[GETDATA:Tour]]=second-f
+			:
+<!--webbot bot="HTMLMarkup" endspan -->
+			<th align="center" width="289">
+				<br>
+				You (as a Facilitator) have reached &quot;Record Comments About
+       		Assignments&quot; via the <font color="#0066FF">Tour</font><br>
+				To normally arrive here do&#58;<br>
+				<font color="#0066FF">Home/Tour Page==&gt;Main Buttons==&gt;Assignments==&gt;Criteria/Search==&gt;Scroll Down==&gt;View==&gt;Scroll Down to here<br>
+				</font>
+				<font color="000000">
+				Please use the browser's 'Back' to return to the Tour
+				</font>
+        	</th>
+<!--webbot bot="HTMLMarkup" startspan -->
+        	:
+        	<!-- if showing column, need an empty column 1
+        	<!-- Don't show these tags to FP --> 
+        	<th align="center" width="450">
+				<br>
+			</th>
+		]]
+<!--webbot bot="HTMLMarkup" endspan -->
+   			<th align="center" width="150">
+   	 			<br> <!-- common to either of second message -->
+<!--webbot bot="HTMLMarkup" startspan -->
+			[[EVAL:IF:[[GETDATA:Tour]]=second-v-r
+				:
+<!--webbot bot="HTMLMarkup" endspan -->
+				You (as a Recipient of a Service) have reached &quot;Recipient Give Credit&quot;
+				via the <font color="#0066FF">Tour</font><br>
+				To normally arrive here do&#58;<br>
+				<font color="#0066FF">Home/Tour Page==&gt;Main Buttons==&gt;Assignments==&gt;Criteria/Search==&gt;Scroll Down==&gt;View==&gt;Scroll Down to here<br>
+				</font>
+				<font color="000000">
+				Please use the browser's 'Back' to return to the Tour
+				</font>
+<!--webbot bot="HTMLMarkup" startspan -->
+        		:
+        	]]<!-- end of second message-->
+<!--webbot bot="HTMLMarkup" endspan --> 
+<!--webbot bot="HTMLMarkup" startspan -->
+			[[EVAL:IF:[[GETDATA:Tour]]=second-v-p
+				:
+<!--webbot bot="HTMLMarkup" endspan -->
+				You (as a Provider of a Service) have reached &quot;Provider Receive Credit&quot;
+				via the <font color="#0066FF">Tour</font><br>
+				To normally arrive here do&#58;<br>
+				<font color="#0066FF">Home/Tour Page==&gt;Main Buttons==&gt;Assignments==&gt;Criteria/Search==&gt;Scroll Down==&gt;View==&gt;Scroll Down to here<br>
+				</font>
+				<font color="000000">
+				Please use the browser's 'Back' to return to the Tour
+				</font>
+<!--webbot bot="HTMLMarkup" startspan -->
+        		:
+        	]]<!-- end of second message-->
+<!--webbot bot="HTMLMarkup" endspan -->   
+  
+			</th> <!-- end table heading either way-->
+		</table><!-- end of tour message(s) table -->
+ <!-- end the message data cell and row-->
+<!--webbot bot="HTMLMarkup" startspan -->
+	:
+]]<!--webbot bot="HTMLMarkup" endspan -->

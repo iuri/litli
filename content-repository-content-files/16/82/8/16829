@@ -1,0 +1,57 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>One Error</title>
+</head>
+
+<BODY bgcolor="#FFFFFF" text="#000000">
+<!-- this test lets us call from  --
+		1.  OneMembr.htm
+		2.  oneorg.htm
+		3.  onesite.htm
+			-->
+<!-- we created &Label just for these tests -->
+<p>One or more required fields <strong>require</strong> data.&nbsp&nbsp The
+Comments field may be left blank</p>
+<!-- this colon is OK -->
+<p>  These are required for the [[GETDATA:Label]]:</br></br>
+<ul><font size="-1">
+[[EVAL:IF:[[GETDATA:Label]]=Member
+:
+<li>FirstName
+<li>LastName
+:
+<li>[[GETDATA:Label]] Name
+]]
+<li>Street
+[[EVAL:IF:[[GETDATA:Label]]=Member
+	:
+		<li>HomePhone
+		<li>WorkPhone
+	:
+		[[EVAL:IF:[[GETDATA:Label]]=Organization
+			:
+				<li>At least one phone number
+			:
+		]]
+]]
+<li>City
+<li>State
+<li>Zipcode
+<li>Identifier (automatically supplied)
+[[EVAL:IF:[[GETDATA:Label]] != Site
+	:
+		<li>Balance (automatically supplied as 0)
+		<li>CoordAlfa (Letter coordinate from area's map)
+		<li>CoordNum (Number coordinate from area's map)
+	:
+]]
+</li></ul></font></p>
+
+<p>If you do not have the required data at this time please insert N/A for 'Not Available'
+
+<p>Please go<big> <strong>Back</strong></big> to continue.&nbsp; The browser will have
+saved the information you've already entered.</p>
+</BODY>
+</html>

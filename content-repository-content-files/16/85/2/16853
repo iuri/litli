@@ -1,0 +1,526 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN//3.2">
+<!-- TO DO -- leading space before a negative credit -->
+<html>
+<head>
+	<title>Make Transfer</title>
+</head>
+<BODY bgcolor="#FFFFFF" text="#000000">
+<!--webbot bot="HTMLMarkup" startspan -->
+[[EVAL:IF:[[GETDATA:Tour]]=top
+	:
+<!--webbot bot="HTMLMarkup" endspan -->
+<table bgcolor="#F0FFFF" width="700">
+	<th align="center">
+		You (as a Facilitator) have reached &quot;Transfer Credits&quot; via the <font color="#0066FF">Tour</font><br>
+		To normally arrive here do&#58;<br>
+		<font color="#0066FF">
+			Home/Tour Page==&gt;Main Buttons==&gt;Transfer==&gt;Find Recipient, Provider &amp; Service ==&gt;Transfer<br>
+			<font color="000000">To complete this ==&gt;</font><font color="CC0066">Jump to Finish==&gt;Click on 'Continue'<br>
+		</font>
+		<font color="#000000">
+			Please use the browser's 'Back' to return to the Tour<br>
+		</font>
+    </th>
+  </table>
+<!--webbot bot="HTMLMarkup" startspan -->
+	:
+]]
+<!--webbot bot="HTMLMarkup" endspan -->
+
+<!--webbot bot="HTMLMarkup" startspan -->
+
+[[EVAL:IF:
+	[[EVAL:BOOL:[[EVAL:BOOL:[[GETDATA:TransferButton:LENGTH]]>0]] &&
+		[[EVAL:BOOL:[[EVAL:BOOL:[[GETDATA:Credits:LENGTH]]=0]] ||
+			[[EVAL:BOOL:[[EVAL:BOOL:[[GETDATA:Recipient:LENGTH]]=0]] ||
+				[[EVAL:BOOL:[[EVAL:BOOL:[[GETDATA:Service:LENGTH]]=0]] ||
+					[[EVAL:BOOL:[[EVAL:BOOL:[[GETDATA:Provider:LENGTH]]=0]] ||
+						[[EVAL:BOOL:[[GETDATA:Credits:TRUNC=1]]=-]]
+					]]
+				]]
+		]]
+		]]
+	]]
+	:
+		[[GETDATA:XYZZY:CHECK=/td/TransErr.htm]]
+	:
+]]
+[[EVAL:IF:[[GETDATA:TransferButton:LENGTH]]>0
+	:
+		<img src="/td/blank.gif" ALT height="1" width="500">
+		<A href="#Second">Jump to finish</A>
+	:
+]]
+[[SET:DefaultDbase:c\:\timed\tddemo.mdb]]
+[[SET:VAR:Service=[[GETDATA:Service]]]]
+[[EVAL:IF:[[GETDATA:ClearButton]]=Clear
+	:
+	[[SET:VAR:ServiceID=]]
+	:
+]]
+
+[[EVAL:IF:[[GETDATA:HomeButton]]=Home
+	:
+	[[GETDATA:XYZZY:CHECK=/td/Main.htm]]
+	:
+]]
+
+[[EVAL:IF:[[GETDATA:FromFindButton]]=Find
+	:
+	[[GETDATA:XYZZY:CHECK=/td/FindMFro.htm]]
+	:
+]]
+
+[[EVAL:IF:[[GETDATA:ToFindButton]]=Find
+	:
+	[[GETDATA:XYZZY:CHECK=/td/FindMTo.htm]]
+	:
+]]
+
+[[EVAL:IF:[[GETDATA:ServFindButton]]=Find
+	:
+	[[GETDATA:XYZZY:CHECK=/td/FindTSer.htm]]
+	:
+]]
+<!--webbot bot="HTMLMarkup" endspan -->
+<table border="0" width="113%">
+  <tr>
+    <td width="24%"><center><font size="+2"><b><img border="0" src="/td/images/helpful_hands.gif" width="108" height="108"></b>
+</font>
+</center>
+    </td>
+    <td width="76%"><center><font size="+2"><b>Transfer Credit from Member to Member</b>
+</font>
+</center>
+    </td>
+  </tr>
+</table>
+<form action="/cgi-bin/virtuflex.exe" method="get">
+<input type="hidden" name="template" value="/td/transfer.htm">
+<input type="hidden" name="Provider" value="[[GETDATA:Provider]]">
+<input type="hidden" name="Recipient" value="[[GETDATA:Recipient]]">
+<input type="hidden" name="Service" value="[[GETDATA:Service]]">
+<input type="hidden" name="Tour" value="[[GETDATA:Tour]]">
+
+<!--webbot bot="HTMLMarkup" startspan -->
+[[EVAL:IF:[[GETDATA:ClearButton]]=Clear
+	:
+<!--webbot bot="HTMLMarkup" endspan -->
+	<input type="hidden" name="ClearButton" value="[[GETDATA:ClearButton]]">
+<!--webbot bot="HTMLMarkup" startspan -->
+	:
+]]
+<!--webbot bot="HTMLMarkup" endspan -->
+
+<table width="600" cellspacing="0" cellpadding="0">
+	<tr>
+		<td width="300">
+			<font size="+1">
+			<b>
+			Transfer From:
+			</b>
+			</font>
+		</td>
+		<td width="300">
+			<font size="+1">
+			<b>
+			Transfer To:
+			</b>
+			</font>
+			<img src="/td/blank.gif" ALT height="1" width="138">
+			<input type="submit" name="HomeButton" value="Home">
+		</td>
+	</tr>
+	<tr>
+		<td width="300" bgcolor="#F4FCFF">
+			<!-- From is the Recipient -->
+<!--webbot bot="HTMLMarkup" startspan -->
+	    [[EVAL:IF:[[GETDATA:Recipient:LENGTH]]>0
+				:
+<!--webbot bot="HTMLMarkup" endspan -->
+				<table border="0" cellpadding="0" cellspacing="0" bgcolor="#DDDDDD">
+<!--webbot bot="HTMLMarkup" startspan -->
+			    [[DBASE:SELECT:[Member Table]:MemID=[[GETDATA:Recipient]]
+							: <!-- Start Interlace for DBASE -->
+<!--webbot bot="HTMLMarkup" endspan -->
+					<tr>
+						<td>
+							<font size="-3">
+								{FirstName}
+							</font>
+						</td>
+						<td>
+							<font size="-3">
+								{LastName}
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<font size="-3">
+								{Street}
+							</font>
+						</td>
+						<td>
+							&nbsp;
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<font size="-3">
+								{City}&nbsp;
+							</font>
+						</td>
+						<td width="60">
+							<font size="-3">
+								{State} &nbsp;{Zipcode}
+							</font>
+						</td>
+					</tr>
+					<!-- blank row -->
+					<tr>
+						<td>
+                            &nbsp;
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<font size="-2">
+								Org ID--
+							</font>
+							<font size="-3">
+								{Identifier}
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td>
+                            &nbsp;
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<font size="-2">
+								Home Phone--
+							</font>
+							<font size="-3">
+								{HomePhone}
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<font size="-2">
+								Work Phone--
+							</font>
+							<font size="-3">
+								{WorkPhone}
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td>
+<!--webbot bot="HTMLMarkup" startspan -->
+							]] <!-- end DBASE-->
+<!--webbot bot="HTMLMarkup" endspan -->
+						</td>
+					</tr>
+				</table>
+				<p>
+				: <!-- If eval if is false -->
+				<!-- not "View"ing -->
+				<table width="180" height="151" border="0" cellpadding="0" cellspacing="0" bgcolor="#DDDDDD" <tr>
+						<td>
+							&nbsp;
+						</td>
+				</table>
+				<br>
+<!--webbot bot="HTMLMarkup" startspan -->
+			]]<!--End of eval if -->
+<!--webbot bot="HTMLMarkup" endspan -->
+			<input type="submit" name="FromFindButton" value="Find">
+		</td>
+		<td width="300" bgcolor="#E0E6E0">
+			<!-- To -- is the provider -->
+<!--webbot bot="HTMLMarkup" startspan -->
+	    [[EVAL:IF:[[GETDATA:Provider:LENGTH]]>0
+				:
+<!--webbot bot="HTMLMarkup" endspan -->
+				<table border="0" cellpadding="0" cellspacing="0" bgcolor="#DDDDDD">
+					<tr>
+<!--webbot bot="HTMLMarkup" startspan -->
+							[[DBASE:SELECT:[Member Table]:MemID=[[GETDATA:Provider]]
+							: <!-- Start Interlace for DBASE -->
+<!--webbot bot="HTMLMarkup" endspan -->						 
+						<td>
+							<font size="-3">{FirstName}</font>
+						</td>
+						<td>
+							<font size="-3">{LastName}</font>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<font size="-3">{Street}</font>
+						</td>
+						<td>
+							&nbsp;
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<font size="-3">{City} </font>
+						</td>
+						<td width="60">
+							<font size="-3">{State} &nbsp;{Zipcode}</font>
+						</td>
+					</tr>
+					<!-- blank row -->
+					<tr>
+						<td>
+                            &nbsp;
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<font size="-2">Org ID--
+							<font size="-3">{Identifier}
+							</font>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td>
+                            &nbsp;
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<font size="-2">Home Phone--
+							<font size="-3">{HomePhone}
+							</font>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<font size="-2">Work Phone--
+							<font size="-3">{WorkPhone}
+							</font>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td>
+<!--webbot bot="HTMLMarkup" startspan -->
+							]] <!-- end DBASE-->
+<!--webbot bot="HTMLMarkup" endspan -->
+						</td>
+					</tr>
+				</table>
+				<p>
+				: <!-- If eval if is false -->
+				<!-- not "View"ing -->
+				<table width="180" height="151" border="0" cellpadding="0" cellspacing="0" bgcolor="#DDDDDD" <tr>
+						<td>
+							&nbsp;
+						</td>
+				</table>
+				<br>
+<!--webbot bot="HTMLMarkup" startspan -->
+            ]]<!--End of eval if -->
+<!--webbot bot="HTMLMarkup" endspan -->
+			<input type="submit" name="ToFindButton" value="Find">
+		</td>
+	</tr>
+</table>
+<a NAME="Second"></a>
+
+<table width="600" cellpadding="0" cellspacing="0">
+	<tr>
+		<td width="300">
+			<font size="+1">
+			<b>
+			Service:
+			</b>
+			</font>
+		</td>
+		<td width="300">
+			<img src="/td/blank.gif" ALT width="100" height="1">
+		</td>
+	</tr>
+	<tr>
+		<td bgcolor="#DDDDDD" width="300">
+				<table bgcolor="#DDDDDD">
+					<tr height="20">
+						<td>
+							&nbsp;
+						</td>
+					</tr>
+					<tr width="50">
+						<td>
+							&nbsp;
+						</td>
+<!--webbot bot="HTMLMarkup" startspan -->
+	    [[EVAL:IF:[[GETDATA::VAR=Service|LENGTH]]>0
+				:
+				[[DBASE:SELECT:[Services List]:ServiceID=[[GETDATA::VAR=Service]]
+				:<!-- DBASE:SELECT interlace field begin -->
+<!--webbot bot="HTMLMarkup" endspan -->
+						<td>
+					<table width="170" border="0" cellpadding="0" cellspacing="0" bgcolor="#F4FCFF">
+						<td>
+						{Service}
+						</td>
+				</table>
+<!--webbot bot="HTMLMarkup" startspan -->
+				]] <!-- End DBASE SELECT -->
+<!--webbot bot="HTMLMarkup" endspan -->
+				: <!-- Eval if false -->
+				<td>
+				<table width="170" bgcolor="#F4FCFF" cellpadding="0" cellspacing="0" border="0" height="24">
+					<tr>
+						<td height="20">
+						<img src="/td/blank.gif" ALT height="25" width="1" border="0">
+						</td>
+					</tr>
+				</table>
+				</td>
+<!--webbot bot="HTMLMarkup" startspan -->
+			]]
+<!--webbot bot="HTMLMarkup" endspan -->
+		<tr>
+			<td>		 
+				<input type="submit" name="ServFindButton" value="Find">
+			</td>
+		</table>
+		</td>
+	
+		<td width="300">
+			Credits:
+
+			<input type="text" size="7" name="Credits" value="[[GETDATA:Credits]]">
+			<img src="/td/blank.gif" ALT height="1" width="100">
+			<input type="submit" name="TransferButton" value="Transfer">
+			<!-- cannot introduce # here, gets converted and not at end of variables -->
+			<!-- input type="hidden" name="dummy" value="#second"-->
+			<br>
+<!--webbot bot="HTMLMarkup" startspan -->
+	    [[EVAL:IF:[[GETDATA:TransferButton]]=Transfer
+				:
+				[[DBASE:SELECT:[Member Table]:MemID=[[GETDATA:Recipient]]
+				:
+<!--webbot bot="HTMLMarkup" endspan -->
+				<font size="-1">
+				<img src="/td/blank.gif" ALT height="1" width="15">
+				Number of Credits currently held by 
+				<img src="/td/blank.gif" ALT height="1" width="15">
+				{FirstName} {LastName} giving the credit is
+				</font>
+				<font color="{Balance|TRUNC=1|CONVERT=-=#CC0066}">
+				{Balance}
+				</font>
+				<img src="/td/blank.gif" ALT height="1" width="50">
+				<a href="/cgi-bin/virtuflex.exe?template=/td/TransFin.htm&amp;Tour=[[GETDATA:Tour]]&amp;Provider=[[GETDATA:Provider]]&amp;Recipient=[[GETDATA:Recipient]]&amp;Service=[[GETDATA:Service]]&amp;Credits=[[GETDATA:Credits]]&amp;ServiceDateMMSelect=[[GETDATA:ServiceDateMMSelect]]&amp;ServiceDateYYSelect=[[GETDATA:ServiceDateYYSelect]]&amp;ServiceDateDDSelect=[[GETDATA:ServiceDateDDSelect]]">Continue </a> <blink><font color="#CC0066">(to make the transfer)</font></blink>
+<!--webbot bot="HTMLMarkup" startspan -->			       
+				]]
+				:
+			]]
+<!--webbot bot="HTMLMarkup" endspan -->
+			<img src="/td/blank.gif" ALT height="1" width="15">
+			<font size="2">Date of Service</font>
+						<img src="/td/blank.gif" ALT height="1" width="10">
+						<select name="ServiceDateMMSelect">
+							<option selected>
+							<option>&nbsp;1
+							<option>&nbsp;2
+							<option>&nbsp;3
+							<option>&nbsp;4
+							<option>&nbsp;5
+							<option>&nbsp;6
+							<option>&nbsp;7
+							<option>&nbsp;8
+							<option>&nbsp;9
+							<option>10
+							<option>11
+							<option>12
+						</select>
+						<select name="ServiceDateDDSelect">
+							<option selected>
+							<option>&nbsp;1
+							<option>&nbsp;2
+							<option>&nbsp;3
+							<option>&nbsp;4
+							<option>&nbsp;5
+							<option>&nbsp;6
+							<option>&nbsp;7
+							<option>&nbsp;8
+							<option>&nbsp;9
+							<option>10
+							<option>11
+							<option>12
+							<option>13
+							<option>14
+							<option>15
+							<option>16
+							<option>17
+							<option>18
+							<option>19
+							<option>20
+							<option>21
+							<option>22
+							<option>23
+							<option>24
+							<option>25
+							<option>26
+							<option>27
+							<option>28
+							<option>29
+							<option>30
+							<option>31
+						</select>
+						<select name="ServiceDateYYSelect">
+							<option selected>
+							<option>1980
+							<option>1981
+							<option>1982
+							<option>1983
+							<option>1984
+							<option>1985
+							<option>1986
+							<option>1987
+							<option>1988
+							<option>1989
+							<option>1990
+							<option>1991
+							<option>1992
+							<option>1993
+							<option>1994
+							<option>1995
+							<option>1996
+							<option>1997
+							<option>1998
+							<option>1999
+							<option>2000
+							<option>2001
+							<option>2002
+							<option>2003
+							<option>2004
+							<option>2005
+							<option>2006
+							<option>2007
+							<option>2008
+							<option>2009
+							<option>2010
+						</select>
+		</td>
+	</tr>
+</table>
+</form>
+<p><a href="FindMFro.htm"></a></p>
+<p><a href="FindMTo.htm"></a></p>
+<p><a href="FindTSer.htm"></a></p>
+<p><a href="TransFin.htm"></a></p>
+<p><a href="TransErr.htm"></a></p>
+</BODY>
+</html>

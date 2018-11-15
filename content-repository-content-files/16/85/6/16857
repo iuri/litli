@@ -1,0 +1,130 @@
+<HTML>
+<!-- where the map brings both volunteers and facilitators to the same
+	location, I used -v for volunteer, -s -- seeking services, ervand -f for facilitator -->
+<HEAD>
+	<TITLE>LINCT - Time Dollar Tour Map Page</TITLE><TD></TD>
+</HEAD>
+<BODY bgcolor="#FFFFFF" text="#000000">
+<p align="center">
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN//3.2">
+<!-- NOTE: THE TOUR MAP ONLY WORKS WHEN THERE ARE AT LEAST ENOUGH ENTRIES
+				IN THE DATABASE SO THAT     ALL    THE VALUES MATCH UP    ------>
+<map name="FPLinct">
+<area href="http://www.linct.org" shape="rect" coords="0, 0, 120, 30">
+</map>
+<img border="0" src="/td/images/Main_pageheader.gif" width="660" height="55" usemap="#FPLinct">
+<table border="0" width="628" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="28" align="center"></td>
+    <td width="596" align="center"><b><center><font face="Helvetica" color="black" size="1">Created through the partnership of LINCT Coalition and the Corporation for Public Broadcasting</font>
+</center>
+      </b>
+    </td>
+  </tr>
+</table>
+<b>
+<div align="center">
+  <center>
+<table border="0" cellpadding="0" cellspacing="0">
+	<tr>
+	<td align="center">
+		</td>
+		<td align="center">
+		</td>
+		<td align="center">
+		</td>
+  </tr>
+	<tr>
+	<td align="center">
+			<form action="/cgi-bin/virtuflex.exe" method="get">
+			<input type="hidden" name="template" value="/td/about.htm">
+			<input type="submit" name="AboutButton" value="About Credits, LINCT and Software Download">
+			</form>
+		</td>
+		<td align="center">
+			<img src="/td/blank.gif" ALT width="10" height="1" border="0">
+		</td>
+		<td align="center">
+			<form action="/cgi-bin/virtuflex.exe" method="get">
+			<input type="hidden" name="template" value="/td/main.htm">
+			<input type="submit" name="HomeButton" value="Go Home">
+			</form>
+		</td>
+  </tr>
+</table>
+  </center>
+</div>
+<center>
+<font size="+2">
+Quick Tour</br></br>
+</font>
+Click on the part of the Volunteer Activity you wish to see</b>
+<font size="2">
+This tour uses various existing members chosen for illustration
+When you arrive at a page, <b>scroll about</b> to see where you are
+After you have "visited" about the member(s) -- click "<b>Back</b>" to return to the map.&nbsp;<br>
+(When using the actual program use of the OK, Cancel and Home buttons are preferred)
+<A NAME="map"></A>
+</font>
+<table border="0" width="100%" cellspacing="0" cellpadding="0" height="440">
+  <tr>
+    <td width="20%" height="120"><a href="/cgi-bin/virtuflex.exe?template=%2Ftd%2FServChg.htm&Tour=top-s&Tour=top&MemID=16&Label=Member"><img border="0" src="/td/images/to_do.gif" width="170" height="116"></a></td>
+    <td width="20%" height="120">
+      <p align="center"><a href="/cgi-bin/virtuflex.exe?template=%2Ftd%2Fmatch.htm&Tour=second-v&Recipient=14&Provider=&Service=5&Once=OK&SearchButton=Search&0Check=off&3Check=off&6Check=off&9Check=off&12Check=off&15Check=off&18Check=off&1Check=off&4Check=off&7Check=off&10Check=off&13Check=off&16Check=off&19Check=off&2Check=off&5Check=off&8Check=off&11Check=off&14Check=on&17Check=on&20Check=on&SameLanguageCheck=on&MustBeMaleCheck=on&HasCarCheck=on#second"><img border="0" src="/td/images/date.gif" width="148" height="118"></a></td>
+    <td width="20%" height="120"><map name="FPMap1">
+      <area href="/cgi-bin/virtuflex.exe?template=/td/OneMembr.htm&Tour=top-s&MemID=16&Label=Member&SiteID=3" shape="rect" coords="84, 6, 184, 19">
+      <area href="/cgi-bin/virtuflex.exe?template=td%2Fmembers.htm&Tour=top-s&B12=Members" shape="rect" coords="84, 22, 222, 33">
+      <area href="/cgi-bin/virtuflex.exe?template=/td/OneAssin.htm&Tour=top-s&AssignID=4&Provider=11&Recipient=13&Service=5" shape="rect" coords="83, 34, 235, 48">
+      <area href="/cgi-bin/virtuflex.exe?template=td%2Fassign.htm&Tour=top-v&B13=Assignments" shape="rect" coords="83, 48, 241, 62"></map><img border="0" src="/td/images/profile.gif" usemap="#FPMap1" width="242" height="66"></td>
+    <td width="20%" height="120"></td>
+    <td width="20%" height="120">
+      <hr>
+      <p>&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="20%" height="278"><map name="FPMap0">
+      <area href="/cgi-bin/virtuflex.exe?template=%2Ftd%2FAttrChg.htm&Tour=top-v&Label=Member&MemID=16" shape="rect" coords="77, 68, 223, 81">
+      <area href="/cgi-bin/virtuflex.exe?template=%2Ftd%2FServChg.htm&Tour=top-v&MemID=16&Label=Member" shape="rect" coords="78, 83, 219, 93"></map><img border="0" src="/td/images/volunteer.gif" usemap="#FPMap0" width="224" height="94">
+      <hr>
+      <p><map name="FPMap2">
+      <area href="/cgi-bin/virtuflex.exe?template=/td/OneAssin.htm&Tour=second-v-r&AssignID=4&Provider=11&Recipient=13&Service=5#second" shape="rect" coords="2, 91, 128, 106">
+      <area href="/cgi-bin/virtuflex.exe?template=/td/OneAssin.htm&Tour=second-v-p&AssignID=4&Provider=11&Recipient=13&Service=5#second" shape="rect" coords="2, 79, 130, 91"></map><img border="0" src="/td/images/thumbs.gif" usemap="#FPMap2" width="212" height="107"></td>
+    <td width="20%" height="278">&nbsp;
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <p><a href="/cgi-bin/virtuflex.exe?template=%2Ftd%2Fmatch.htm&Tour=third&Recipient=14&Provider=&Service=5&Once=OK&SearchButton=Search&0Check=off&3Check=off&6Check=off&9Check=off&12Check=off&15Check=off&18Check=off&1Check=off&4Check=off&7Check=off&10Check=off&13Check=off&16Check=off&19Check=off&2Check=off&5Check=off&8Check=off&11Check=off&14Check=off&17Check=off&20Check=off&SameLanguageCheck=on&MustBeMaleCheck=on&HasCarCheck=on#third"><img border="0" src="/td/images/match.gif" width="233" height="139"></a></td>
+    <td width="20%" bgcolor="#FFFFFF" height="278"><map name="FPMap3">
+      <area href="/cgi-bin/virtuflex.exe?template=%2Ftd%2FAttrChg.htm&Tour=top-f&Label=Member&MemID=16" shape="rect" coords="19, 135, 179, 149">
+      <area href="/cgi-bin/virtuflex.exe?template=%2Ftd%2FServChg.htm&Tour=top-f&MemID=16&Label=Member" shape="rect" coords="19, 148, 179, 163">
+      <area href="/cgi-bin/virtuflex.exe?template=%2Ftd%2FAssign.htm&Tour=top-f&MemID=16&Label=Member" shape="rect" coords="19, 163, 257, 176">
+      <area href="/cgi-bin/virtuflex.exe?template=%2Ftd%2FOneMembr.htm&Tour=second&MemID=11&Label=Member&SiteID=3#second" shape="rect" coords="19, 176, 217, 190">
+      <area href="/cgi-bin/virtuflex.exe?template=/td/OneAssin.htm&Tour=second-f&AssignID=4&Provider=11&Recipient=13&Service=5#second" shape="rect" coords="19, 190, 227, 203">
+      <area href="/cgi-bin/virtuflex.exe?template=%2Ftd%2Ftransfer.htm&Tour=top&Provider=15&Recipient=20&Service=6&Credits=3&TransferButton=Transfer" shape="rect" coords="19, 203, 127, 218">
+      <area href="/cgi-bin/virtuflex.exe?template=%2Ftd%2Fmatch.htm&Tour=third&Recipient=14&Provider=&Service=5&Once=OK&AssiNewButton=New&SearchButton=Search&0Check=off&3Check=off&6Check=off&9Check=off&12Check=off&15Check=off&18Check=off&1Check=off&4Check=off&7Check=off&10Check=off&13Check=off&16Check=off&19Check=off&2Check=off&5Check=off&8Check=off&11Check=off&14Check=off&17Check=off&20Check=off&SameLanguageCheck=on&MustBeMaleCheck=on&HasCarCheck=on#third" shape="rect" coords="19, 218, 225, 233">
+      <area href="/cgi-bin/virtuflex.exe?template=%2Ftd%2Fmatch.htm&Tour=second-f&Recipient=14&Provider=&Service=5&Once=OK&AssiNewButton=New&SearchButton=Search&0Check=off&3Check=off&6Check=off&9Check=off&12Check=off&15Check=off&18Check=off&1Check=off&4Check=on&4Check=off&7Check=on&7Check=off&10Check=on&10Check=off&13Check=on&13Check=off&16Check=on&16Check=off&19Check=off&2Check=off&5Check=on&5Check=off&8Check=on&8Check=off&11Check=on&11Check=off&14Check=on&14Check=off&17Check=on&17Check=off&20Check=off#second" shape="rect" coords="19, 234, 225, 245">
+      </map><img border="0" src="/td/images/facilitator.gif" usemap="#FPMap3" width="257" height="253"></td>
+    <td width="20%" height="278"></td>
+    <td width="20%" height="278"></td>
+  </tr>
+</table>
+		<P>
+</center>
+<font size="2">The pages here serve two groups:</font>
+<UL>
+	<LI><font size="2">The <b>Facilitators</b> -- people in the community who help match volunteer providers to volunteer recipients</font>
+	<LI><font size="2"><b>Community Members</b> -- people in the community interested in participating</font>
+</UL>
+<p>
+<font size="2">
+Currently the pages can be viewed and changed by anyone.  Soon, the <i>Community Members</i> will be able to change some information but not other.  The <i>Facilitators</i> will eventually determine the <b>transfer</b> of credits from one member to another.</font>
+<p>
+<center>
+<!-- TITLE field is recognized by very few browsers -->
+<font size="2">
+<font size="+3" color="blue">P</font><A HREF="mailto:BMSLIB@MIT.EDU" TITLE="Comments about SVEC site">lease give us your comments and suggestions</A>
+</font>
+</center>
+<p><a href="main.htm"></a></p>
+<p><a href="about.htm"></a></p>
+</BODY>
+</HTML>

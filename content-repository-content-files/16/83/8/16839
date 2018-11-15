@@ -1,0 +1,1153 @@
+<!--webbot bot="HTMLMarkup" startspan -->
+<p> To get started we need to tell NT's IIS via Virtuflex to
+display error messages at the bottom of the page, and what
+datbase we are reading from.
+</p>
+[[SET:DEBUGLEVEL:4]]<br>
+<!-- IT IS SOMETIMES NECESSARY TO REPEAT THIS SET, SO
+           IF YOU CCCCHHHAAANNNGGGEEE IT Here, CHANGE IT BELOW -->
+[[SET:DefaultDbase:c\:\timed\tddemo.mdb]]<br>
+
+
+[[GETDATA::TIME]]<br>
+
+This direct query fails with ODBC Returned error: '[Microsoft][ODBC Microsoft Access 97 Driver] Syntax error in FROM clause.'
+add brackets [ [DBASE:SQL:SELECT LastName FROM [Member Table] like 'Cahn'] ]
+<pre>
+[[DBASE:SELECT:[Member Table]:LastName like 'Cahn':<P>Last Name is {LastName}]]
+[ [DBASE:SELECT:[Member Table]:LastName like 'Cahn':<P>Last Name is [[ACTION:FILE:READ:blanks.]]{LastName|PAD=-10} end</P>
+] ]
+<!-- VirtuFlex 2.5 reads ONLY relative to \InetPub\wwwroot -->
+<p>
+ 1.  [[GETDATA::TIME]][[ACTION:FILE:READ:blanks.]][[GETDATA::TIME]]
+</p> 
+2.  [[GETDATA::TIME]][[GETDATA::TIME|PAD=-8= ]]
+    [[SET:VAR:space=&nbsp]]
+<p>
+ 3.  [[GETDATA::TIME]][[GETDATA::VAR=space|REPEAT=8]][[GETDATA::TIME]]
+</p>
+ 3a.  [[GETDATA::TIME]][[GETDATA::VAR=space|PAD=8= ]][[GETDATA::TIME]]
+<p>
+ 4.  [[GETDATA:Name:HOSTNAME|PAD=-8= ]]
+</p>
+ 5.  [[GETDATA::virtuflexpath]]<br>
+</p>
+<p>
+ 6.  <!-- [[GETDATA::virtuflexpath]]<br>--><br>
+</p>
+<p>
+ 7.  [ [ACTION:FILE:READ:config.sys] ]
+</p>
+<p>
+ 8.  [[GETDATA::TIME|PAD=[[EVAL:MATH:9-[[GETDATA::TIME|LENGTH]]]]= ]]<br>
+     Length of Time=[[GETDATA::TIME|LENGTH]]
+</p>
+<p>
+ 9.  [[SET:VAR:AND= AND ]]
+      This assigned VAR AND to ' AND '
+      so we can embed in SELECT statements
+<p>
+</p>
+10.  field1[[GETDATA::VAR=AND]]field2
+</p>
+<p>
+11.  This shows [ [GETDATA::VAR=AND] ] is evaluated inside the Select and the EVAL IF
+[[SET:VAR:field1=AssignID]][[SET:VAR:AND= AND ]]
+[[DBASE:SELECT:[Assignment Table]:
+	1=1
+	[[EVAL:IF:1=0
+		:
+		:[[GETDATA::VAR=AND]]AssignID<8
+		[[GETDATA::VAR=AND]][[GETDATA::VAR=field1]]>2
+	]]
+	:{BeginDate}<br>]]
+</p>
+<p>	
+12.  Embedded :'s and test  0\: 0\: 0 (0:0:0) zero time, zero hours, zero minutes, zero seconds
+Note: IF test with embedded :'s fails, so convert them first
+Note: Notice -- these behave as "functions" so use pipe not colon
+[[SET:VAR:EndDate=[[GETDATA:EndDateMMSelect]]/[[GETDATA:EndDateDDSelect]]/[[GETDATA:EndDateYYSelect]]0\: 0\: 0]]
+>[[GETDATA::VAR=EndDate]]<
+>[[GETDATA::VAR=EndDate|convert=\:=x]]<
+1=1[[EVAL:IF:[[GETDATA::VAR=EndDate|convert=\:=x]]=//0x 0x 0::FALSE<br>
+]]
+</p>
+<p>
+13.  Get last digits of year (good up to 2099)
+[[GETDATA::DATE=-y|PARSE=-19=|PARSE=-20=]]
+</p>
+<p>14.  A typical Eval BOOL pair (double)
+CAUTION: -- many times I've dropped the ] ] after the first
+inner test
+	[[EVAL:IF:[[EVAL:BOOL:
+		[[EVAL:BOOL:[[GETDATA:x:LENGTH]]=0]] &&
+	  	[[EVAL:BOOL:[[GETDATA:y:LENGTH]]=0]]
+		  ]]
+	:
+	TRUE
+	:
+	FALSE
+]]
+</p>
+
+<p>15a.  A typical Eval BOOL triplet<br>
+[[EVAL:IF:[[EVAL:BOOL:
+	[[EVAL:BOOL:[[GETDATA:x:LENGTH]]=0]] &&
+	[[EVAL:BOOL:
+		[[EVAL:BOOL:[[GETDATA:y:LENGTH]]=0]] &&
+	  	[[EVAL:BOOL:[[GETDATA:z:LENGTH]]=0]]
+	]]
+	  ]]
+	:
+	TRUE
+	:
+	FALSE
+]]</p>
+
+<p>15b.  And a "quad"
+[[EVAL:IF:
+	[[EVAL:BOOL:[[EVAL:BOOL:[[GETDATA:x]]=Search]] &&
+	  [[EVAL:BOOL:[[EVAL:BOOL:[[GETDATA:y:LENGTH]]=0]] ||
+			[[EVAL:BOOL:[[EVAL:BOOL:[[GETDATA:z:LENGTH]]=0]] &&
+				[[EVAL:BOOL:[[GETDATA:w:LENGTH]]=0]]
+	  	]]
+		]]
+	]]
+	:
+	TRUE
+	:
+	FALSE
+]]
+</p>
+<p>
+15.  Can convert accept a variable?  Yes!
+[[SET:VAR:x=x]]
+>[[GETDATA::VAR=EndDate|convert=\:=[[GETDATA::VAR=x]]]]<<br>
+</pre>
+</p>
+<p>
+16.  If box is marked CHECKED and unchecked does it send NO ? <br>
+     Yes if hidden but only if hidden past the checkbox because <br>
+     both are sent as if different variables -- then VirtuFlex reads
+     only the first one
+<form action="/cgi-bin/virtuflex.exe" method="get">
+<input type="hidden" name="template" value="template.vfx">
+<input type="checkbox" CHECKED name="InactiveCheck" value="YES">
+<font size="2">Inactive</font>
+<input type="submit" name="TestButton" value="TestButton"><br>
+<input type="hidden" name="InactiveCheck" value="NO">
+[[GETDATA:InactiveCheck]]
+</form>
+</p>
+<p>
+17.  What happens if nothing to CONVERT?  Stays as is<br>
+[[GETDATA::DATE|CONVERT=xyz=CHECKED]]<br>
+And embedded in convert -- as expected, yes<br>
+[[GETDATA::DATE|CONVERT=[[GETDATA::DATE]]=CHECKED]]<br>
+</p>
+<p>
+18.  Effect of SUBSTR past end -- as expected nothing<br>
+[[GETDATA::DATE|SUBSTR=9=20]]
+</p>
+<p>
+19.  Join to get two member names based on Provider
+and Recipient<br>
+</p>
+<p>
+CAUTION: If you include a JOIN for a field, but you don't
+test on that field, it multiplies the output by all possible
+values of that field
+</p>
+<p> Sample SQL join select<br>  
+SELECT x.MemID, y.MemID, x.LastName, y.Lastname, z.Service
+FROM [Assignment Table], [Member Table] AS x, [Member Table] AS y, [Services List] AS z
+WHERE 1=1 AND Provider = x.MemID AND 
+Recipient=y.MemID AND [Assignment Table].Service=z.ServiceID AND AssignID = 1;<br>
+Same sample using VirtuFlex<br>
+</p>
+<p>
+[[DBASE:SELECT:[Assignment Table],[Member Table] x, [Member Table] AS y:Provider = x.MemID AND 
+Recipient= y.MemID AND AssignID = 1:{x.MemID} {y.MemID} {x.LastName} {y.LastName}]]
+</p>
+
+<p>
+20.  Eli used this -- works? -- NO -- the values are NOT posted<br>
+Note: form of directory is different because we are one up <br>
+<form action="/cgi-bin/virtuflex.exe" method="get">
+  <input type="hidden" name="template" value="td\oneerror.htm">
+  <input type="hidden" name="MembersOkayButton" value="OK">
+  [ [GETDATA:XYZZY:CHECK=td\oneerror.htm] ]
+</form>
+</p>
+
+<p>21.  Can you AND inside an EVAL IF -- no -- must EVAL BOOL<br>
+[[EVAL:IF:[[GETDATA::VAR=AND]]=AND && [[GETDATA::VAR=AND]]=AND
+	:TRUE
+	:FALSE
+]]
+</p>
+
+<p>22.  Can a DBASE command be embedded in a DBASE command? -- yes<br>
+[[DBASE:SELECT:[Assignment Table]:AssignID=2:
+    Service ID is {Service}<br>
+       [[DBASE:SELECT:[Member Table]:MemID=10:
+             Lastname is {LastName}<br>
+       ]]
+    Provider number is {Provider}<br>
+]]
+</p>
+
+<p>23.  Can the interlace value be placed in a SET:VAR? - NO<br>
+What you can do, is redo the DBASE:SELECT and put a single value<br>
+return in a variable<br>
+Can the value be placed in a DBASE:SELECT -- NO<br>
+The ONLY way, other than pipe functions, is to redo the DBASE:SELECT<br>
+and tuck that in -- say -- an EVAL IF<br>
+
+[[SET:VAR:LastName=[[DBASE:SELECT:[Member Table]:MemID=10:{LastName}]]]]
+
+Outer Lastname is [[GETDATA::VAR=LastName]]<br>
+[[SET:VAR:LastName=[[DBASE:SELECT:[Member Table]:LastName LIKE
+'%[[DBASE:SELECT:[Member Table]:MemID=10:
+{LastName}]]%':{LastName}]]]]
+Inner Lastname is [[GETDATA::VAR=LastName]]<br>
+
+Note-- choice of delimiters is restricted by special characters + ~ <br>
+[[DBASE:SELECT:[Assignment Table]:AssignID=2:
+`{Provider}~{Recipient}${Service}^]]<br>
+[[SET:VAR:Stuff=[[DBASE:SELECT:[Assignment Table]:AssignID=2:
+`{Provider}*{Recipient}${Service}^{TimeCritical}+]]]]
+Result=[[GETDATA::VAR=Stuff]]<br>
+</p>
+<p>
+`{Provider}*{Recipient}${Service}^{TimeCritical}+]]]]
+Result=[[GETDATA::VAR=Stuff]]<br>
+</p>
+<p>
+23a.  There was this solution by Jason which eliminated the<br>
+redundancy -- the problem was having a label, or not, depending on <br>
+whether the field had information or was null<br>
+[[DBASE:SELECT:[Member Table]:MemID=10:
+{LastName|PREPEND=Last Name |POSTPEND=$|CONVERT=Last Name$=|CONVERT=$=}]]<br>
+</p>
+
+<p>23b.  Can we do the reverse ?  That is, put an interlace inside
+a piped function ? -- NO <br>
+[[DBASE:SELECT:[Member Table]:MemID=10:
+{LastName|CONVERT={LastName}=yes?}<br>
+{LastName|CONVERT=Bread for the City=yes?}]]<br>
+</p>
+<p>
+Produces this VirtuFlex error:
+DBASE(colon)SELECT(colon) Interlace Field missing
+[ [DBASE:SELECT:x.[Member Table]:MemID=10:
+Date Entered={Entered}<br>
+Length of Entered={Length(Entered)}<br>
+{LENGTH(Entered)|CONVERT=1=CHECKED}<br>
+] ]
+</p>
+
+<p>
+23d.  And we can pull out month, day, year<br>
+The first method would deal with variable field lengths<br>
+[[DBASE:SELECT:[Member Table]:MemID=10:
+Date Entered={Entered}<br>
+Month={Entered|PREPEND=`|PARSE=`=/|CONVERT= =0}<br>
+Month={Entered|SUBSTR=1=2|CONVERT= =0}<br>
+Day={Entered|PARSE=/=/}<br>
+Day={Entered|SUBSTR=4=2}<br>
+Year={Entered|SUBSTR=9=2}<br>
+]]
+</p>
+
+
+<p>
+24.  Kent Gordon's Query for Service Units Form<br>
+SELECT DISTINCTROW [Asgn SvUnit Table].Assignment, [UnitNames List].UnitName,
+[UnitNames List Temp].Credits FROM ([UnitNames List] INNER JOIN
+[UnitNames List Temp] ON [UnitNames List].UnitID =
+[UnitNames List Temp].UnitID) INNER JOIN [Asgn SvUnit Table]
+ON [UnitNames List].UnitID = [Asgn SvUnit Table].SvUnit;
+<br>
+Note: I can find no place for DISTINCTROW to be placed below<br>
+Not just before the '[Asgn SvUnit Table].Assignment' interlace
+element?<br>
+[[DBASE:SELECT:([UnitNames List] INNER JOIN [UnitNames List Temp]
+ 	ON [UnitNames List].UnitID = [UnitNames List Temp].UnitID)
+	INNER JOIN [Asgn SvUnit Table] ON [UnitNames List].UnitID =
+	[Asgn SvUnit Table].SvUnit
+	:[Asgn SvUnit Table].Assignment=4 
+	:{[Asgn SvUnit Table].Assignment} {[UnitNames List].UnitName}
+	 {[UnitNames List Temp].Credits}<br>
+]]
+</p>
+<p>
+25.  Kent Gordon's Clearing of the Unit Names List Temp table<br>
+UPDATE DISTINCTROW [UnitNames List Temp] SET [UnitNames List Temp].Selected = No, [UnitNames List Temp].Credits = Null;<br>
+</p>
+<p>
+26.  Put this in URL line -- &Age=21&Age=30 <br>
+NOTE: CANNOT RECYCLE PAGE <br>
+Result from GETDATA=[[GETDATA:Age]]<br>
+Result from MULTIPLE=[[GETDATA:Age:MULTIPLE= ]]<br>
+</p>
+
+<p>
+27.  Show that multiples are passed with same name<br>
+<form action="/cgi-bin/virtuflex.exe" method="get">
+<input type="hidden" name="template" value="template.vfx">
+<select name="test" multiple size=2>
+<option> Test1
+<option> Test2
+</select>
+<input type="submit" name="TestButton" value="TestButton"><br>
+</form>
+</p>
+
+<p>
+28.  Using EVAL WHILE<br>
+[[SET:VAR:CNT=1]][[SET:VAR:N=4]]
+[[EVAL:WHILE:[[GETDATA::VAR=CNT]]<=[[GETDATA::VAR=N]]:
+	Line [[GETDATA::VAR=CNT]]<br>
+	[[SET:VAR:CNT=[[GETDATA::VAR=CNT|INCR]]]]
+]]
+</p>
+
+<p>
+29.  Kent Gordon uses this to update Asgn SvUnit Table<br>
+<pre>
+PARAMETERS pAssignID Long;
+INSERT INTO [Asgn SvUnit Table] ( Assignment, SvUnit )
+SELECT DISTINCTROW [pAssignID] AS Expr1, [UnitNames List Temp].UnitID
+FROM [UnitNames List Temp]
+WHERE ((([UnitNames List Temp].Selected)=Yes));<br>
+<pre>
+And to clean up table when Assignment is deleted:<br>
+<pre>
+PARAMETERS pAssignID Long;
+DELETE DISTINCTROW [Asgn SvUnit Table].*, [Asgn SvUnit Table].Assignment
+FROM [Asgn SvUnit Table]
+WHERE ((([Asgn SvUnit Table].Assignment)=[pAssignID]));<br>
+</pre>
+And to mark Asgn SvUnits table<br>
+<p>
+PARAMETERS pAssignID Long;
+UPDATE DISTINCTROW [UnitNames List Temp] INNER JOIN [Asgn SvUnit Table]
+ON [UnitNames List Temp].UnitID = [Asgn SvUnit Table].SvUnit
+SET [UnitNames List Temp].Selected = Yes
+WHERE ((([Asgn SvUnit Table].Assignment)=[pAssignID]));<br>
+</p>
+And to clear the UnitNames List Temp table--<br>
+<p>
+DELETE DISTINCTROW [UnitNames List Temp].*
+FROM [UnitNames List Temp];<br>
+</p>
+<pre>
+And this Serv List IDs append--<br>
+INSERT INTO [Services List Temp] ( ServiceID )
+SELECT DISTINCTROW [Services List].ServiceID
+FROM [Services List] LEFT JOIN [Services List Temp] ON [Services List].ServiceID = [Services List Temp].ServiceID
+WHERE ((([Services List Temp].ServiceID) Is Null));<br>
+</pre>
+<p>
+And Service Unit replace provider -- why?<br>
+PARAMETERS pToMem Long, pFromMem Long;
+UPDATE DISTINCTROW [ServiceUnit Table] SET [ServiceUnit Table].Provider = [pToMem]
+WHERE ((([ServiceUnit Table].Provider)=[pFromMem]));<br>
+</p>
+<p>
+And Service Unit replace recipient -- why?<br>
+PARAMETERS pToMem Long, pFromMem Long;
+UPDATE DISTINCTROW [ServiceUnit Table] SET [ServiceUnit Table].Recipient = [pToMem]
+WHERE ((([ServiceUnit Table].Recipient)=[pFromMem]));<br>
+</p>
+<pre>
+UnitNm List IDs Append--<br>
+INSERT INTO [UnitNames List Temp] ( UnitID )
+SELECT DISTINCTROW [UnitNames List].UnitID
+FROM [UnitNames List] LEFT JOIN [UnitNames List Temp] ON [UnitNames List].UnitID = [UnitNames List Temp].UnitID
+WHERE ((([UnitNames List Temp].UnitID) Is Null));<br>
+]]
+</pre>
+<p>
+30.  What I don't find is where the ServiceUnit Table<br>
+is appended.  It would look like:<br>
+Note: missing pieces of date or out of range produce<br>
+   "Data type mismatch in criteria expression."<br>
+[[SET:DefaultDbase:c\:\timed\tddemo.mdb]]
+[ [DBASE:SQL:UPDATE [ServiceUnit Table] SET Provider=12 WHERE SvUnitID=1] ]
+[ [DBASE:ADD:[ServiceUnit Table]:{DateOf|1/1/99}
+  {[Number]|88}{Provider|22}{Recipient|33}{SvUnit|2}] ]<br>
+
+Once I got "number" in []'s then I get:<br>
+"Operation must use an updatable query"<br>
+Answer is to close and reopen the ODBC connection<br>
+Note: Autonumber works even via ODBC -- and it remembers<br>
+highest, even if that one is deleted<br>
+Note: # for integers NOT needed for Access<br>
+</p>
+<p>
+31.  [[GETDATA::DATE=m/d-y|CONVERT=-19=/|CONVERT=-20=/]]
+</p>
+
+<p>
+32.  This manages to give me a binary return value on <br>
+the entire list of Service Units <br>
+<pre>
+[[DBASE:SELECT [UnitNames List].UnitName, Count([Asgn SvUnit Table].Assignment) AS CountOfAssignment
+FROM [UnitNames List] LEFT JOIN [Asgn SvUnit Table] ON [UnitNames List].UnitID = [Asgn SvUnit Table].SvUnit
+WHERE Assignment=1
+
+UNION
+
+SELECT Count(Assignment), MAX(UnitID), [UnitNames List].UnitName, MAX(UnitID) FROM [UnitNames List] LEFT JOIN [Asgn SvUnit Table] ON [UnitNames List].UnitID = [Asgn SvUnit Table].SvUnit
+WHERE [Asgn SvUnit Table].Assignment=2 GROUP BY [UnitNames List].UnitName UNION SELECT null,MAX(UnitID),[UnitNames List].UnitName,MAX(UnitID) FROM [UnitNames List] LEFT JOIN [Asgn SvUnit Table] ON [UnitNames List].UnitID = [Asgn SvUnit Table].SvUnit
+WHERE UnitName <> 'null' and UnitName <> ALL (SELECT [UnitNames List].UnitName FROM [UnitNames List] LEFT JOIN [Asgn SvUnit Table] ON
+[UnitNames List].UnitID = [Asgn SvUnit Table].SvUnit WHERE Assignment=2 GROUP BY [UnitNames List].UnitName) GROUP BY [UnitNames List].UnitName ORDER BY [UnitNames List].UnitName;<br>
+
+SELECT:[UnitNames List] LEFT JOIN [Asgn SvUnit Table] ON [UnitNames List].UnitID = [Asgn SvUnit Table].SvUnit
+:[Asgn SvUnit Table].Assignment=1
+GROUP BY [UnitNames List].UnitName
+UNION SELECT null,MAX(UnitID),[UnitNames List].UnitName,MAX(UnitID)
+FROM [UnitNames List] LEFT JOIN [Asgn SvUnit Table] ON [UnitNames List].UnitID = [Asgn SvUnit Table].SvUnit
+WHERE UnitName <> 'null' and UnitName <> ALL
+  (SELECT [UnitNames List].UnitName
+  FROM [UnitNames List] LEFT JOIN [Asgn SvUnit Table] ON   [UnitNames List].UnitID = [Asgn SvUnit Table].SvUnit
+  WHERE Assignment=1
+GROUP BY [UnitNames List].UnitName)
+GROUP BY [UnitNames List].UnitName
+ORDER BY [UnitNames List].UnitName
+{Count(Assignment)|CONVERT=1=CHECKED} name="ChgUnit{MAX(UnitID)} {[UnitNames List].UnitName}
+ChgUnit{MAX(UnitID)}
+]]
+</pre>
+<p>
+33.  This line as comment gave trouble at end of a DBASE SELECT<br>
+] ] <!-- end of [Assignment Table] DBASE:SELECT -->
+</p>
+<p>
+34.  Note: best way to find:<br>
+  "Poorly Formed Eval If Macro [THEN CASE NOT TERMINATED]" 
+  Is to selectively ^X pieces of EVAL IF's  one at a time until the
+  message goes away
+</p>
+<p>
+35.  Remember on XYZZY CHECK -- HTML that are active travel to the new page <br>
+</p>
+<p>
+36.  Access97 ODBC bug?  When ProAccDate had 8/2/98, and RecAccDate
+  was empty, {RecAccDate} returned 26172/28271/2313 8308:26995:25978
+  Placing a valid date there returned OK, but a null returned, again
+  the same value -- but rewriting the ProAccDate made everything OK,
+  except, when ProAccDate was null, the second interlace return of that
+  <br> value (at Recipient) now returned another odd result for
+  ProAccDate=8306/30309/25956 27745:26912:8294  - yet -- the first
+  ODBC return was fine showing it as ' 0/ 0/ 0 0: 0: 0'
+</p>
+On 3/30/2000 I encountered the same problem with the installation
+without FP2000, but the same test program -- testdate.htm --
+runs fine on the installation with FP2000
+	
+</p>
+<p>
+37.  Remember, it is not that ViruFlex runs a query inside a query, but
+  the inner query gets run first, and appears to be plain text by the <br>
+  time the outside query gets run.  It works from the inside out.
+</p>
+<p>
+38.  Acceptable form of DATETIME (in Access)--
+	<!-- #1/1/2001# or #1/1/2001 0: 0: 0# -->
+	or
+	<!-- Updated = '8/4/1998 15:08:16' -->
+
+<p>
+39.  This is how to get a CHECK when the check should be on for an <br>
+item that would be multi-valued and thus hard to CONVERT <br>
+
+<pre>
+<form>
+[[DBASE:SELECT:[Assignment Table]
+:AssignID=4 AND ProAccDate is not null
+:<input type="checkbox" {Count(ProAccDate)|CONVERT=1=CHECKED|CONVERT=0=} name="ProvAcceptsCheck">
+Accepts
+]]
+</form>
+</p>
+</pre>
+
+<p>
+<pre>
+40.  Was getting spurious output from date fields after 
+  a series of SELECTs -- especially null appeared as, e.g.
+  '26172/28271/2313 8308:26995:25978' instead of
+  '' 0/ 0/ 0 0: 0: 0' 
+  I thought it was like the problem of database not updateable
+  -- the solution (to that) is simply to reopen the ODBC database
+  [[SET:DefaultDbase:c\:\timed\tddemo.mdb]] 
+
+3/31/2000 -- finally got to the bottom of this spurious output
+for null date fields.  See TestDat1.htm.  The problem is a bug
+in Virtuflex and has to do with the physical distance in
+characters preceeding the 'opening' macro AND the number of
+characters after the 'opening' to the Select statement.  There
+is a "hole" in between too few characters and too many characters
+that creates the problem.
+
+Note: I wouldn't have known this except for null entries 
+But: Needed to pull bad ones by using -- 
+ {RecAccDate|TRUNC=0}{RecAccDate|TRUNC=0} 
+NO: not reliable -- so just do an is null test 
+Ah:  I had embedded colons such as Date:, Initials:
+OK?
+YES! -- and I found that while \: works within one level of
+VirtuFlex, it cannot be used in a second level of nesting
+(3/2000 -- and you don't need it outside of Virtuflex)
+</pre>
+</p>
+<p>
+
+<pre>
+41.  Add a new record to Assignment<br>
+A null date is passed unsuccessfully as -- # 0/ 0/ 0<br>
+And trying  # 0/ 0/ 0 0\: 0\: 0 -- says<br>
+"Syntax error (missing operator) in query expression <br>
+'0/ 0/ 0 0: 0: 0'.'
+BUT -- as said on news groups produces --
+"Numeric value out of range (null)"
+What works is the #null here (but only in ADD -- SQL INSERT) or
+just plain null in the SELECT
+[ [DBASE:ADD:[Assignment Table]:{Provider|10}
+{Recipient|10}{Service|10}
+{Entered|[[GETDATA::DATE=m/d/y]] [[GETDATA::TIME]]}
+{BeginDate|#null}{EndDate|# 0/ 0/ 0 0\: 0\: 0}
+] ]
+See VIR_ER28.DOC for a lengthy discussion about these matters.
+And, I ran into a problem with TRANSFIN (below) where I had
+NOT combined dates and converted as in others (as below)
+
+And get this: I tried just 1/1/1900 and it got 12/30/1899
+so finally put {BeginDate|1/1/1900 0\:0\:0}
+AMD ABSOLUTELY DOES NOT WANT # in this expression
+
+While in a SELECT we want, e.g.,
+	ProAccDate <> # 1/ 1/1900
+
+And in UPDATE -- taking care of null -- notice --
+wants ` ` with date, but not with null
+MemSince=[[GETDATA::VAR=MemSince|PREPEND='|CONVERT= = |POSTPEND='|CONVERT=' 1/ 1/1900 0\:0\:0'=null]],
+
+{ProAccDate|1/1/50}{RecAccDate|1/1/50}
+{QcRating|1}{Credits|0}{Comments| }
+] ]
+[[DBASE:SQL:Update [Assignment Table] set
+Entered=null where AssignID=30]]
+
+[[DBASE:SELECT:[Assignment Table]
+:AssignID=4 AND ProAccDate is null
+:
+Count={Count(AssignID)}
+]]
+</p>
+</pre>
+
+<p>42.  Errant CR,LF in a SET -- if brackets have CR,LF <br>
+<pre>
+[[SET:VAR:CNT=1]]
+CNT=[[GETDATA::VAR=CNT]]x <br>
+[[SET:VAR:CNT=[[GETDATA::VAR=CNT]]
+]]
+CNT=[[GETDATA::VAR=CNT]]x <br>
+</pre>
+</p>
+<p>
+43a.  Errant CR,LF in an EVAL BOOL -- should be 0 <br>
+It is testing 1,CR,LF with 0  because of brackets <br>
+<pre>
+Bool=[[EVAL:BOOL:[[1
+		 ]]=0
+]]
+</pre>
+<p>
+43b.  But without brackets, OK, it is 0 <br>
+
+<pre>
+Bool=[[EVAL:BOOL:1
+		 =0
+]]
+</pre>
+</p>
+<p>
+44.  What about trying -- returns nothing<br>
+Bool=[[EVAL:BOOL
+	:1=0]]x <br>
+</p>
+<p>
+45.  What about trying -- returns nothing<br>
+Bool=[[EVAL:
+	BOOL:1=0]]x <br>
+</p>
+<p>
+46.  What about trying -- returns nothing<br>
+Actually produces an error:<br>
+Unknown macro type: "EVAL "(template:c:\InetPub\wwwroot\blanks.)
+Bool=[ [EVAL
+	:BOOL:1=0] ]x <br>
+
+So -- it is the presence of CR,LF ] ] that if it
+is a quantity, contains the CR,LF <br>
+</p>
+<p>47.  "Hidden" HTML space in returned variables <br>
+
+	&OneBeginDateMMSelect=%A01 (space, one)<br>
+
+	This line contains the hex A0 character &nbsp == <br>
+
+	Unless you view this file with an editor/lister that
+	shows 8 bit (extended ASCII) characters it will simply
+	look like there is nothing beyond the '==' -- but if you
+	copy the character beyond and paste it into, say,
+	a VirtuFlex CONVERT, it will behave correctly
+	(Of course VirtuFlex should have detected this character
+	when back inside a variable, and converted it for us.) 
+
+	For example in an SQL Update:<br>
+
+	BeginDate=[[GETDATA::VAR=BeginDate|
+		CONVERT= = |CONVERT= 1/ 1/1900=null]] 
+	The first "space" is really a hex A0, the second is
+	a real space, a hex 20
+</p>
+<p>48.  And, if you do EVAL MATH on empty field (or blank field)<br>
+	Such as -- [[SET:VAR:Test=[[EVAL:MATH:(37+(2+)]]]] <br>
+	The result is doubling of 2 == 41 instead of 39 <br>
+	So, first remove blanks, and then replace empty with 0 <br>
+
+	OOps -- PREPEND and POSTPEND do nothing if string is null <br>
+	[[GETDATA::VAR=UCredits|CONVERT= =|PAD=-1=0]]
+</p>
+
+<p>49.  Reminder how important it is to cut and paste an ODBC 	SQL query problem into an Access Test Query box to find 
+	offending token 
+	BUT be sure to remove extra spaces in
+	table names WITH spaces</p>
+
+
+<p>50.  VirtuFlex claims their SET variables are only
+	within scope of current page -- but I set
+	AssignID on OneAssin.htm, and went using
+	CHECK to AssiChg.htm, and it was still
+	set (do they consider moving via CHECK
+	the same page?)
+</p>
+
+<p>51.  ODBC Returned error: '[Microsoft][ODBC Microsoft Access 97 Driver] Couldn't delete from specified tables
+
+	Same "horseshit" -- must close and reopen
+	the ODBC connection
+</p>
+
+<p>52.  Again, no colons in comments
+</p>
+
+<p>
+53.  This was odd, as the result of the 2 AssignID's
+	concatenating -- I got
+	&AssignID=74%0D%0D%0A%09%09%09%09%09%09%09%09%09%09%09+
+	Which suggests the VirtuFlex AssignID was:
+		%0D%0D%0A%09%09%09%09%09%09%09%09%09%09%09+
+	AND, when this was then put in a query, it returned those
+	bizarrely wrong date fields (in Services on OneAssin.htm)
+	REASON:  I had gotten the value from a DBASE
+Interlace, and put AssignID}
+		] ]
+	The carriage return and tabs were embedded
+</p>
+
+<p>
+54.  Using FrontPage98 is very useful to mock up a
+page -- BUT -- be very careful about using it's editor
+to open other existing pages -- it will quickly reformat
+the entire page, making it useless at times.
+</p>
+<p>
+55.  Parse ?  Always returns string to the right
+<pre>
+[[SET:VAR:X=1.000]]
+[[GETDATA::VAR=X]]<br>
+[[GETDATA::VAR=X|PARSE=.=]]
+[[GETDATA::VAR=X|PARSE==.]]
+</pre>
+</p>
+<p>
+57.  EVAL MATH below zero ?? -- true bug -- never!
+This should be -1=[[EVAL:MATH:1-2]]  <== 0 <br>
+And this should be -3=[[EVAL:MATH:-1-2]]  <== 0<br>
+
+And if we DECR 0 ?? -- yes, OK<br>
+[[SET:VAR:X=0]]
+0 Decremented=[[GETDATA::VAR=X|DECR]] <== -1<br>
+[[SET:VAR:X=[[GETDATA::VAR=X|DECR]]]]
+-1 Decremented=[[GETDATA::VAR=X|DECR]] <== -2<br>
+And EVAL MATH of -1 ?? =[[EVAL:MATH:[[GETDATA::VAR=X]]]]<br>
+So -- for simple subraction use a loop on the
+amount and use DECR !!<br>
+What about testing decimals ? <== yes -- fine<br>
+[[EVAL:IF:3.601 < 3.6
+  :TRUE
+  :FALSE
+]]<br>
+What about negative comparisons ? <== yes -fine<br>
+<pre>
+[[EVAL:IF:10.75 < 20
+  :TRUE
+  :FALSE
+]]
+</pre>
+</p>
+<p>
+56.  EVAL MATH over 1 million<br>
+When VirtuFlex numbers exceed a million, they have
+  a decimal and 6 trailing zeros, remove .000000<br>
+
+[[SET:VAR:Availability=[[GETDATA::VAR=Availability|PREPEND=`|PARSE=`=.]]]]
+</p>
+
+<p>
+
+58.   CR -- break problem<br>
+WARNING  Closing brackets to SET VAR may NOT be on own line<br>
+WARNING  and brackets must be with Interlace field, too<br>
+DBASE queries without SET can have comments inside, but not DBASE
+	UPDATE or SET VARs<br>
+</p>
+
+<p>
+59.  Can we put an equal sign in a variable?  Yes<br>
+[[SET:VAR:X=x\=x]]<br>
+Equal sign --[[GETDATA::VAR=X]]<br>
+Note: Symptom of not "quoting" is you will find
+some global variables stuck in the VirtuFlex
+registry variables area
+</p>
+
+<p>
+60.  Got absolutely no VirtuFlex
+display appears on the page despite a debug level of 4<br>
+Problem was a missing set of brackets on GETDATA
+<pre>
+[ [SET:VAR:Needs=[ [DBASE:SELECT:[Member Table] INNER Join [Service Table]
+:MemID=[ [GETDATA:ProMemID 
+AND ServiceID=[ [GETDATA:ServiceID] ]
+:{Needs|CONVERT=-1=x|CONVERT=0=-1|CONVERT=x=0}] ] ] ]
+</pre>
+</p>
+<p>
+61.  Got situation where IIS did not recognize VirtuFlex
+as an executable.  It would open a window for saving
+the file.<br>
+Occurred after editing the Registry, trying to fix
+the problem of 80040154, Class not registered.  After
+going back to earlier registry file and reloading NT Option pack
+and SP4, I now was getting 80040154 on trying to run
+anything ASP.  Then, I went back to earlier SOFTWARE.
+file, about to overlay the registry from the school, and oddly, VirtuFlex was now recognized again.  But, I
+had to redo the fix for 62(below) again.<br>
+The Class not registered with the FoxPro ODBC was a
+matter of applying Service Pack 2.0 of the MDAC, see
+my Usenet posting.
+</p>
+<p>
+62.  Got ODBC cannot open Registry file DriverID
+problem is the missing DriverID and UID (see VIR10207.doc)
+</p>
+
+<p>
+63.  Got Unable to set variable(template:c:\InetPub\wwwroot\\td/assign.htm)<br>
+
+This occurred soon after I inadvertently added some
+global variables because I hadn't "quoted" the equal
+sign.<br>
+
+I found both variables and these weird global variables
+in the "hive" and removed them all.<br>
+
+Thought I was running of Registry room, hard to find,
+go into Control Panel, System, Memory, then can up.<br>
+
+Then thought it has to do with installation and
+permissions, so unzipped vfx25.zip, and re-ran
+install.<br>
+
+Seemed fine, debuglevel went back to 1, reset to 4
+but no change in ability to SET variables<br>
+
+Finally, I tried to "restore" the VirtuFlex "hive"
+but it said it couldn't do that.  (I had a copy
+from the school machine.)<br>
+
+I then acted as though I were the program, and added
+a variable by giving it a key of 011, and then a
+value.  I then deleted it.<br>
+
+I then reloaded the VirtuFlex page, and the inability
+to set variables disappeared ! ! !
+</p>
+
+<p>
+65.  This crashes VirtuFlex:
+	[ [GETDATA:Record] ]:LENGTH] ]
+</p>
+
+66.  This produces a check querystring for = signs
+[ [GETDATA:[ [GETDATA:ChgService[ [GETDATA::VAR=CNT] ] ] ]:LENGTH] ]</b>
+It should NOT have the SECOND GETDATA<br>
+
+</p>
+<p>
+67.  See VirtBug.htm -- I have hit a VirtuFlex
+limit for parsing brackets correctly -- see
+<!-- ADDING THIS MUCH TEXT CAUSES VIRTUFLEX TO INCORRECTLY PARSE--><br>
+</p>
+<p>
+68.  Original serial number was 878725497
+it is preceded by VFX-201-
+When I reinstalled, it assigned
+	903542420
+and the license number 1730538 didn't work.
+But, changing the Registry ID to the former
+number, and then entering the license number
+using the VirtuFlex Administration program -- WORKED!
+</p>
+<p>
+69.  Started getting null returns for Inactive
+Edgar's Inactive=[ [DBASE:SELECT:[Member Table]:MemID=11:{Inactive}] ]<br>
+Problem was using the slightly earlier version of 2.5 -- see #70
+</p>
+<p>
+70.  When reinstalling, not only do you install
+with the 2.0, and then apply the 2.5, but that produces
+a 9/18/97 which is superceded by the 10/31/97<br>
+
+The bugs you found in the 9/18/97 were related
+to CONVERT with the same value for beginning to end
+and the return of a Yes/No value (in Inactive) produced
+random crashes depending on where you asked for
+it in the Interlace.  If it didn't crash, the Yes/No returned
+as null.
+</p>
+<p>
+71.  Kent's Passport report query:
+<pre>
+SELECT ALL [Transaction Table].DateOf,[Transaction Table].Service, IIf([Transaction Table].[Credits]<0,Null,[Transaction Table].[Credits]) AS Credit, IIf([Transaction Table].[Credits]<0,-[Transaction Table].[Credits],Null) AS Debit, Yes AS PR, [Transaction Table].Provider AS MemID, [Transaction Table].Recipient AS OtherID,[Transaction Table].TransID
+FROM [Transaction Table]
+WHERE (([Transaction Table].Entered Between RptFirstDate() And RptLastDate()));
+UNION SELECT ALL [Transaction Table].DateOf,[Transaction Table].Service, IIf([Transaction Table].[Credits]<0,-[Transaction Table].[Credits],Null) AS Credit, IIf([Transaction Table].[Credits]<0,Null,[Transaction Table].[Credits]) AS Debit, No AS PR, [Transaction Table].Recipient AS MemID, [Transaction Table].Provider AS OtherID,[Transaction Table].TransID
+FROM [Transaction Table]
+WHERE (([Transaction Table].Entered Between RptFirstDate() And RptLastDate()));
+</pre>
+</p>
+<p>
+72.  We duplicate this by a very clever approach --<br>
+  a.  we "pretend" to do the query, with the fields being asked for<br>
+  b.  In this first query we ask for the Credit twice<br>
+  c.  We then duplicate the query twice in two
+success UNIONs, where we use the null to
+mean which UNION it came from (we can't tag it in
+the first SELECT)<br>
+  d.  Then we can just print the two successive
+"Credits" -- which at this point are two different
+variables due to the UNION.  (It appears as though
+we are printing the same variable.)
+</p>
+<p>
+73.  Remember -- the reason you put --
+<input type="checkbox" name="Inactive">
+<input type="hidden" name="Inactive" value="off"><br>
+Is so a VirtuFlex CONVERT will decipher both conditions --<br>
+e.g. ...CONVERT=on=1|CONVERT=off=0] ]
+</p>
+<p>
+74.  ODBC Returned error: '[Microsoft][ODBC Microsoft Access 97 Driver] The record cannot be deleted or changed because table 'Member Table' includes related records.<br>
+
+I fixed this in OneOrganiz and OneMember by explicitly
+referring to Site=1<br>
+
+But, in OneSite, I have explicitly referred to both
+to Manager and Organization, but I am getting that
+Member Table includes related records -- which
+must be the Site key again.  How do I delete.  I tried
+to specify two tables but it then said to specify
+the table.<br>
+
+Problem is that Kent has set up some kind of 
+circularity between [Site Table] and [Member Table]
+with the presence of Organization in [Site Table]
+pointing to [Member Table].MemID and [Member Table].Site
+pointing to the last site table entry 
+[Site Table].SiteID<br>
+
+Does not seem possible to delete such a circularly
+defined record.  (The OneMembers delete works because
+while [Member Table].Site is assigned, the corresponding
+record in [Site Table] does not point back to it.<br>
+
+The solution appears to be to update the record with
+the Organization starter (of 1) (Manager is 2)<br>
+
+No, simpler -- the use of where updated is null, ALSO
+tried to remove record 1, which was circularly linked --
+so I say WHERE UPDATED IS NULL AND SITEID <> 1<br>
+
+I am still not able to remove the last record in
+Member Table which is linked to the first record
+in Site Table -- strange!<br>
+</p>
+<p>
+75.  Tried just moving TD database from \NTIMED to
+TIMED -- but -- the directory information is IN the
+database, so must create a new one by same name in
+\TIMED, and then IMPORT.<br>
+
+Also -- 
+<li>  TDDEMO.MDB -- demo database</li>
+<li>  TDDTBL.MDB -- working database</li>
+<li>  TDTBLS.MDB -- clean, empty tables</li>
+</p>
+<p>
+So, create TDDTBL.MDB from TDDEMO.MDB, then
+overwrite Tables from TDTBLS.MDB -- BUT FIRST --
+delete all existing TABLES, or it will rename
+as it imports
+</p>
+
+But these tables were missing:<br>
+3 temp tables -- must be generated ??
+Program Information -- must be custom for site
+</p>
+<p>
+76.  Very odd, I imported the code back to \TIMED,
+and though it runs in \NTIMED as Office97 Access code,
+now it wants this updated\:<br>
+	In Forms\:Load, in System Services --
+  changed OpenQueryDef to QueryDefs
+(the first one is "obsolete.") 
+</p>
+
+<p>
+
+77.  And this, Recipient=19 disappeared when I
+reloaded from the original TimeKeeper disks
+</p>
+<p>
+78. WARNING: cannot break "statement" of EVAL BOOL if brackets i.e. no CRs inside
+</p>
+<p>
+79.  LEAVE Comments on next line, CR problem<br>
+had VERY peculiar problem here -- page wouldn't receive
+HTML variables, had something to do with contents during testing<br>
+<textarea rows="10" name="Comments" cols="50">{Comments}
+</textarea>
+</p>
+<p>
+80.  COMMENTS in OneAssin.ful, 29.578K! -- I had to
+delete extensive comments in OneAssin.htm because of 32K
+limit
+</p>
+<p>
+81.  May NOT place the condition of this test on its own line <br>
+[ [EVAL:WHILE:[ [GETDATA::VAR=CNT] ]<=[ [GETDATA::VAR=N] ]
+\: <!-- body of within loop -->
+</p>
+<p>WARNING: cannot break "statement" of EVAL BOOL if brackets<br>
+[ [EVAL:IF:[ [EVAL:BOOL:		[ [EVAL:BOOL:[ [GETDATA:Unit[ [GETDATA::VAR=CNT] ]:LENGTH] ]=0
+] ] 
+</p>
+<p>
+82.  May NOT comment inside the update <br>
+ these cannot be on multiple lines or embeds CR's<br>
+the character between x and x is hex A0 (&nbsp) --  x x
+which in extended ASCII is low case a, accent ague
+which for Virtuflex hasn't removed
+because they never expect &nbsp instead of a space in
+a data value -- we CONVERT them back to spaces first<br>
+Date Time -- must be in single quotes, Date alone is OK<br>
+ empty date in Update is just null<br>
+Currently an error here as is (3/2000)<br>
+<pre>
+[ [DBASE:SQL:Update [Assignment Table] SET
+		Updated='[[GETDATA::DATE=m/d/y]] [[GETDATA::TIME]]',
+		BeginDate=[[GETDATA::VAR=BeginDate|CONVERT= = |CONVERT= 1/ 1/1900=null]],
+		EndDate=[[GETDATA::VAR=EndDate|CONVERT= = |CONVERT= 1/ 1/1900=null]],
+		ProAccDate=[[GETDATA::VAR=ProAccDate|CONVERT= = |CONVERT= 1/ 1/1900=null]]
+] ]
+</pre>
+<p>
+83.  In comments -- double quote ok in SQL, but single quote(apostrophe) needs to be doubled
+</p>
+<p>
+84.  may not comment in the middle of a SQL statement
+</p>
+<p>
+85.  In OHEMEMBR.HTM -- removed html markup tag at the
+code for displaying the Site table.  FP2000 then rewrote
+the entire area, making numerous changes to endings of tables,
+rows, paragraphs, causing Netscape to display nothing past
+the "tour" box.
+</p>
+<p>
+
+Probably means there is lack of pairing, and FP's choices
+are not helpful.
+</p>
+<p>
+I needed to incrementally change the page until I got this
+error, as, when it occurred, there was NO undo for it !!
+</p>
+<p>
+So, still too aggressive -- the undo should undo EVERYTHING
+original file is in 02270357.zip
+</p>
+<p>
+Yes -- both an "open" table tag at the beginning AND
+</p>
+if &lt;li&gt; tag is exposed -- FP2000 insists on rewriting the
+code to end the tabling prematurely !!!  Must be a "true'
+FP bug.
+</p>
+<p>
+86.  What -- after time away - forgot FIRST \: past the the EVAL test<br>
+<form>
+<pre>
+ [[EVAL:IF:[[GETDATA:MemID:Length]] >0:
+true
+<input type="submit" name="ShowButton" value="Show">
+
+:
+false
+<input type="submit" name="test" value="test">
+<input type="submit" name="ShowButton" value="xxxxx">
+]]
+</form>
+</pre>
+</p>
+<p>
+87.  Microsoft Access can't append all the records in the
+append query.<br>
+
+Microsoft Access set 0 field(s) to Null due to a type conversion failure,
+and it didn't add 1 record(s) to the table due to key violations, o
+record(s) due to lock violations, and 0 record(s) due to validation rule violations.<br>
+Do you want to run the action query anyway?<br>
+To ignore the error(s) and run the query, click Yes.<br>
+For an explanation of the causes of the violations, click
+help.<br>
+
+Error with Query: INSERT INTO [Asgn SvUnit Table] (Assignment,
+SvUnit) VALUES ('4', '4'), details
+below(template:c:\InetPub\wwwroot\/td/AssiChg.htm)<br>
+
+ODBC Returned error: '[Microsoft][ODBC Microsoft Access Driver] You cannot add or change a
+record because a related record is required in table 'Assignment
+Table'.'(template:c:\InetPub\wwwroot\/td/AssiChg.htm)
+</p>
+<p>
+************you have a note about other FP2000 incompatibilities
+    VIR11109.DOC  *********************
+And in VIR11109.DOC I finally found I entered this same info and said:
+</p>
+<p>
+Yes -- Assignment is linked to the key field AssignID
+in [Assignment Table]<br>
+
+My guess is that adding FrontPage2000 updated the
+DAO / ODBC driver (3.5) -- producing BOTH the new Querydef and
+the key problem.  I see no reason this insert isn't valid in my case.
+(ODBC drivers)<br>
+
+Checking my ZIP file ODBC1196.ZIP (which is a zip of DATAACC.EXE)
+I find I was already at version 3.5  So there is yet another
+change that affected Access97 (and, when I replaced the later
+ODBCJT32.DLL and ODBCTI32.DLL, V. 4.0.3711.083 of 8/99, with
+3.51.1713.00 of 5/14/98, there was no change in this error message)<br>
+
+And this is the actual DAO message: You can't add or change a record
+because a related record is required in table <name>. (Error 3201)<br>
+
+The record cannot be deleted or changed because table <name> includes
+related records. (Error 3200)<br>
+
+And in the jeterr35.hlp it says: You tried to perform an operation
+that would have violated referential integrity rules for related
+tables. For example, this error occurs if you try to change or insert
+a record in the "many" table in a one-to-many relationship, and that
+record doesn't have a related record in the table on the "one" side.
+If you want to add or change the record, first add a record to the
+"one" table that contains the same value for the matching field.<br>
+
+I remember discussing this with Maglio!<br>
+
+And this upon transfer of credit:<br>
+<pre>
+INSERT INTO [Transaction Table] (Provider, Recipient, Service, Entered, DateOf, Credits) VALUES ('33', '20', '13', '3/28/2000 14:50:43', '// 0:0:0', '2') <br>
+ODBC Returned error: '[Microsoft][ODBC Microsoft Access 97 Driver] Data type mismatch in criteria expression.' (template:c:\InetPub\wwwroot\\td/TransFin.htm)
+</pre>
+This was a plain error in programming this, I thought I was trying
+to insert a null by appending the 0:0:0 -- but I was really
+trying to get the day correct (see above).  And I usually
+convert '// 0:0:0' to #null, but neglected to here!  So duplicated
+code from oneorg.htm<br>
+
+Running the query inside Access, it considers this a "type conversion failure"
+(just like with % in like).<br>
+
+SO I PRESUME THIS STILL WORKS ON THE C/LS INSTALLATION ?
+</p>
+
+<p>
+88.  In addition, loading FP2000 appears to have added some kind of locking
+problem between running Access and running ODBC<br>
+
+This locking problem did NOT occur during earlier development!!!!!!<br>
+
+Error with Query: SELECT Service, TimeCritical FROM [Assignment Table] WHERE AssignID=4 ,
+details below(template:c:\InetPub\wwwroot\\td/test/o.htm)<br>
+
+ODBC Returned error: '[Microsoft][ODBC Microsoft Access Driver] Could not use '(unknown)'; file
+already in use.'(template:c:\InetPub\wwwroot\\td/test/o.htm)
+</p>
+<p>
+89.  Also Access, now, no longer accepts like '%xxx%' -- it
+wants '*xxx*' format -- they use % for formatting
+</p>
+<p>
+90.  VERY curious.  I tried to do a site search -- but [SITE TABLE]
+had almost no assigned Organizations and so no hits
+<p>
+91.  Also curious.  In OneSite.htm, I had a button with the
+name of 'Cancel' -- caused VFX exceptions in this
+</p>
+<p>
+<pre>
+[[EVAL:IF:[[GETDATA:CancelButton]]=Cancel:
+	[[GETDATA:XYZZY:CHECK=/td/sites.htm]]
+	: <!-- no cancel -->
+]]
+</pre>
+</p>
+<p>  This produced Null items; reason was, I had not switched
+to \timed consistently throughout the program !<br>
+aaaa[[DBASE:SELECT:[Services List] INNER JOIN [Mem Service Table] ON [Services List].ServiceID = [Mem Service Table].Service:[Mem Service Table].Member=4:{[Services List].Service}]]bbbb
+</p>
+<p>
+92.  You get these funny characters in an SQL INSERT --<br>
+Error with Query: INSERT INTO [Transaction Table] (Provider, Recipient, Service, Entered, DateOf}=¥Å// 0:0:0¥Å, {Credits) VALUES ('15', '20', '6', '3/29/2000 17:32:45', '3')<br>
+IF you haven't correctly translated '// 0:0:0' in the CONVERT and
+now you have double 's
+</p>
+<p>
+93.  FP2000 still very pesky about converting checkboxes and
+radio boxes by trying to put " marks around part of the
+Virtuflex code that sets CHECKED<br>
+ {MAX(Member)|CONVERT=2=CHECKED} becomes <br>
+  {MAX(Member)|CONVERT=2"=CHECKED"} -- as if it finds a value
+</P>

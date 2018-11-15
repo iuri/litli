@@ -1,0 +1,77 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN//3.2">
+
+<html>
+<head>
+	<title>Find Service</title>
+</head>
+<BODY bgcolor="#FFFFFF" text="#000000">
+<!--webbot bot="HTMLMarkup" startspan -->
+[[SET:DefaultDbase:c\:\timed\tddemo.mdb]]
+<!--webbot bot="HTMLMarkup" endspan -->
+
+<form action="/cgi-bin/virtuflex.exe" method="get">
+<input type="hidden" name="template" value="/td/assign.htm">
+<center>
+<font="+1"><b>
+Selecting from Services</b>
+</font>
+</center>
+<table width="600" border="0" cellspacing="0" cellpadding="0">
+	<tr>
+		<td width="200" bgcolor="F4FCFF">
+			<center>
+			<font size="+2">
+			<b>
+			Service
+			</b>
+			</font>
+			</center>
+		</td>
+		<td width="300" bgcolor="#F5F5F5">
+			<center>
+			<font size="+2">
+			<b>
+			Service Type
+			</b>
+			</font>
+			</center>
+		</td>
+		<td width="100">
+        <p align="center">
+			&nbsp;<font color="#CC0066">Click</font>
+		</td>
+	</tr>
+</table>
+
+<table width="600" border="0" cellspacing="0" cellpadding="0">
+<!--webbot bot="HTMLMarkup" startspan -->
+[[DBASE:SELECT:[Services List]:Service like '%'
+	ORDER BY Service
+	:
+<!--webbot bot="HTMLMarkup" endspan -->
+	<tr>
+		<td bgcolor="#F4FCFF" width="200">
+			{Service}
+		</td>
+		<td bgcolor="#F5F5F5" width="280">
+			{ServiceType}
+		</td>
+		<td width="100">
+			<center>
+			<font size="+1">
+			<b>
+			<a href="/cgi-bin/virtuflex.exe?template=/td/assign.htm&amp;Service={ServiceID}&amp;Provider=[[GETDATA:Provider]]&amp;Recipient=[[GETDATA:Recipient]]&amp;BeginDateMMSelect=[[GETDATA:BeginDateMMSelect]]&amp;BeginDateYYSelect=[[GETDATA:BeginDateYYSelect]]&amp;BeginDateDDSelect=[[GETDATA:BeginDateDDSelect]]&amp;EndDateMMSelect=[[GETDATA:EndDateMMSelect]]&amp;EndDateYYSelect=[[GETDATA:EndDateYYSelect]]&amp;EndDateDDSelect=[[GETDATA:EndDateDDSelect]]&amp;ProAccCheck=[[GETDATA:ProAccCheck]]&amp;ProNotCheck=[[GETDATA:ProNotCheck]]&amp;RecAccCheck=[[GETDATA:RecAccCheck]]&amp;RecNotCheck=[[GETDATA:RecNotCheck]]&amp;TimeCriticalCheck=[[GETDATA:TimeCriticalCheck]]&amp;ClosedCheck=[[GETDATA:ClosedCheck]]&amp;NoCreditsCheck=[[GETDATA:NoCreditsCheck]]">Select</a>
+			</b>
+			</font>
+			</center>
+		</td>
+	</tr>
+<!--webbot bot="HTMLMarkup" startspan -->
+]]
+<!--webbot bot="HTMLMarkup" endspan -->
+</table>
+
+</form>
+
+</BODY>
+</html>

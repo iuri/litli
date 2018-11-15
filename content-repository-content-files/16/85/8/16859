@@ -1,0 +1,36 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<title></title>
+</head>
+<!-- CAREFUL -- EDITS TO THIS FILE ONLY APPEAR UNDER   1-4-ALL WHEN YOU HAVE MOVED FROM ITS TEMP FILE TO THIS FILE -->
+<BODY bgcolor="#FFFFFF" text="#000000">
+<font size="3" color="#000000">
+
+<a HREF="virtuflex.exe?/td/TestDat2.htm">Push Me to run with VirtuFlex</a><br><br>
+This SQL Select should return x 0/ 0/ 0 0: 0: 0x<br>
+It requires that AssignID is pointing to a record in [Assignment Table] where BeginDate is null and the record exists<br>
+<p>
+<!--webbot bot="HTMLMarkup" startspan -->
+[[SET:DebugLevel:4]]
+[[SET:DefaultDbase:c\:\timed\tddemo.mdb]]
+[[SET:VAR:Record=75]]
+Looking for Record [[GETDATA::VAR=Record]]<br>
+[[EVAL:IF:[[DBASE:SELECT:[Assignment Table]:
+	AssignID=[[GETDATA::VAR=Record]]:{AssignID|Length}]]=0
+	:
+	There is no Record [[GETDATA::VAR=Record]]<br>
+	:
+	BeginDate=[[DBASE:SELECT:[Assignment Table]:
+		AssignID=75:
+		Begindate=x{BeginDate}x
+	]]
+]]
+<!--webbot bot="HTMLMarkup" endspan -->
+</p>
+</font>
+</BODY>
+</html>

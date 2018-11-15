@@ -1,0 +1,16 @@
+<p>
+This collection of files may be viewed and edited
+with FrontPage2000.
+</p>
+<p>
+"Invisible" hyperlinks have been added to each page so
+that you may ask FP2000 to display how the pages
+relate to each other.  This was done by putting href
+anchors at the bottom of each page, with no text.<br>
+
+By doing so FP2000 believes these are the links between
+the pages, even though the true links are executed by
+Virtuflex and the "hidden template=" lines on each page.
+
+Dr. W. Curtiss Priest
+April, 2000
