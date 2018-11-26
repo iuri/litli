@@ -6,7 +6,7 @@ ad_page_contract {
     @author Michael Bryzek (mbryzek@arsdigita.com)
 
     @creation-date 2000-12-05
-    @cvs-id $Id: one.tcl,v 1.8.2.3 2016/06/13 11:18:09 gustafn Exp $
+    @cvs-id $Id: one.tcl,v 1.8.2.4 2017/10/07 10:58:52 gustafn Exp $
 } {
     group_id:integer,notnull
 } -properties {
@@ -42,7 +42,7 @@ set return_url_enc [ad_urlencode $return_url]
 # Select out the group name and the group's object type. Note we can
 # use 1row because the validate filter above will catch missing groups
 
-db_1row group_info {
+db_1row group_info_pretty {
     select g.group_name, g.join_policy,
            o.object_type as group_type,
            t.pretty_name as group_type_pretty_name

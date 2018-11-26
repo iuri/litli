@@ -4,7 +4,7 @@
 -- Copyright (C) 1999-2000 ArsDigita Corporation
 -- Author: Karl Goldstein (karlg@arsdigita.com)
 
--- $Id: content-item.sql,v 1.72.2.10 2017/04/21 14:53:07 gustafn Exp $
+-- $Id: content-item.sql,v 1.72.2.11 2017/09/04 06:25:54 gustafn Exp $
 
 -- This is free software distributed under the terms of the GNU Public
 -- License.  Full text of the license is available from the GNU Project:
@@ -477,7 +477,7 @@ BEGIN
 	new__description,
         now(),               -- publish_date
 	new__mime_type,
-        new_nls_language,
+        new__nls_language,
 	null,                -- data/text
 	v_item_id,
         null,                -- revision_id

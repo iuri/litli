@@ -7,7 +7,7 @@ ad_library {
     @author Jon Salz (jsalz@arsdigita.com)
     @author Richard Li (richardl@arsdigita.com)
     @author Archit Shah (ashah@arsdigita.com)
-    @cvs-id $Id: security-procs.tcl,v 1.78.2.62 2017/06/28 21:13:23 gustafn Exp $
+    @cvs-id $Id: security-procs.tcl,v 1.78.2.63 2018/09/12 08:30:37 gustafn Exp $
 }
 
 namespace eval security {
@@ -1690,10 +1690,17 @@ ad_proc -private security::get_secure_location {} {
         #
         set secure_location $current_location
     } elseif {[util::split_location $current_location proto hostname port]} {
+        #
+        # Do not return a location with a port, when SuppressHttpPort
+        # is set.
+        #
+        set suppress_http_port [parameter::get -parameter SuppressHttpPort \
+                                    -package_id [apm_package_id_from_key acs-tcl] \
+                                    -default 0]
         set secure_location [util::join_location \
                                  -proto https \
                                  -hostname $hostname \
-                                 -port [security::get_https_port]]
+                                 -port [expr {$suppress_http_port ? "" : [security::get_https_port]}]]
     } else {
         error "invalid location $current_location"
     }

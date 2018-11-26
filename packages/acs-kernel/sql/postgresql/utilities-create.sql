@@ -5,7 +5,7 @@
 --
 -- @author Jon Salz (jsalz@mit.edu)
 -- @creation-date 12 Aug 2000
--- @cvs-id $Id: utilities-create.sql,v 1.8.2.2 2016/12/21 00:14:56 antoniop Exp $
+-- @cvs-id $Id: utilities-create.sql,v 1.8.2.3 2017/10/05 10:25:28 antoniop Exp $
 --
 
 
@@ -289,13 +289,11 @@ select define_function_args('util__get_primary_keys','table');
 --
 -- procedure util__get_primary_keys/1
 --
-CREATE OR REPLACE FUNCTION util__get_primary_keys(
-   p_table text
-) RETURNS SETOF pg_attribute.attname%TYPE AS $$
+CREATE OR REPLACE FUNCTION util__get_primary_keys(text) RETURNS SETOF pg_attribute.attname%TYPE AS $$
   SELECT a.attname
     FROM pg_index i
     JOIN pg_attribute a ON a.attrelid = i.indrelid
                        AND a.attnum = ANY(i.indkey)
-  WHERE i.indrelid = p_table::regclass
+  WHERE i.indrelid = $1::regclass
     AND i.indisprimary;
 $$ LANGUAGE sql;

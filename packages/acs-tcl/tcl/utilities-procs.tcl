@@ -5,7 +5,7 @@ ad_library {
 
     @author Various (acs@arsdigita.com)
     @creation-date 13 April 2000
-    @cvs-id $Id: utilities-procs.tcl,v 1.140.2.83 2017/07/28 09:52:36 gustafn Exp $
+    @cvs-id $Id: utilities-procs.tcl,v 1.140.2.84 2018/09/14 11:56:34 gustafn Exp $
 }
 
 namespace eval util {}
@@ -2676,7 +2676,7 @@ ad_proc util::join_location {{-proto ""} {-hostname} {-port ""}} {
     return $result
 }
 
-ad_proc -public util::configured_location {} {
+ad_proc -public util::configured_location {{-suppress_port:boolean}} {
 
     Return the configured location as configured for the current
     network driver. While [util_current_location] honors the virtual
@@ -2695,7 +2695,7 @@ ad_proc -public util::configured_location {} {
     return [util::join_location \
                 -proto    [dict get $driver_info proto] \
                 -hostname [dict get $driver_info hostname] \
-                -port     [dict get $driver_info port]]
+                -port     [expr {$suppress_port_p ? "" : [dict get $driver_info port]}]]
 }
 
 ad_proc -public util_current_location {} {
@@ -2750,19 +2750,11 @@ ad_proc -public util_current_location {} {
         set port  $default_port($proto)
     }
 
-    ns_log Notice "BEHIND PROXY [ad_conn behind_proxy_p]"
-       
     if { [ad_conn behind_proxy_p] } {
         #
         # We are running behind a proxy
         #
-        ###### Iuri sampaio (iuri@iurix.com)
-        ###### creation-date 2018-09-15
-        ###### paliative fix to proxy mode
-        ns_log Notice "BEHIND SECURE PROXY [ad_conn behind_secure_proxy_p]"
-        #set behind_secure_proxy_p [ad_conn behind_secure_proxy_p]
-        set behind_secure_proxy_p 1
-        if {$behind_secure_proxy_p eq 1} {
+        if {[ad_conn behind_secure_proxy_p]} {
             #
             # We know, the request was an https request
             #
