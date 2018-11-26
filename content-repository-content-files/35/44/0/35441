@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<!-- saved from url=(0045)https://polrn.iurix.com/dotlrn/admin/club-new -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		
+<!--[if lt IE 7.]>
+<script defer type='text/javascript' src='/intranet/js/pngfix.js'></script>
+<![endif]-->
+<meta name="generator" lang="en" content="OpenACS version 5.9.0">
+<link rel="stylesheet" href="./iuri-polrn-club-new-error-message_files/acs-developer-support.css" type="text/css" media="all">
+<link rel="stylesheet" href="./iuri-polrn-club-new-error-message_files/forms.css" type="text/css" media="screen">
+<link rel="stylesheet" href="./iuri-polrn-club-new-error-message_files/lists.css" type="text/css" media="screen">
+<link rel="stylesheet" href="./iuri-polrn-club-new-error-message_files/default-master.css" type="text/css" media="all">
+<link rel="stylesheet" href="./iuri-polrn-club-new-error-message_files/print.css" type="text/css" media="print">
+<link rel="stylesheet" href="./iuri-polrn-club-new-error-message_files/mktree.css" type="text/css" media="screen">
+<link rel="stylesheet" href="./iuri-polrn-club-new-error-message_files/sm-core-css.css" type="text/css" media="screen">
+<link rel="stylesheet" href="./iuri-polrn-club-new-error-message_files/sm-simple.css" type="text/css" media="screen">
+<link rel="stylesheet" href="./iuri-polrn-club-new-error-message_files/style.saltnpepper.css" type="text/css" media="screen">
+<link rel="stylesheet" href="./iuri-polrn-club-new-error-message_files/calendar.css" type="text/css" media="screen">
+<script type="text/javascript" src="./iuri-polrn-club-new-error-message_files/jquery.min.js"></script>
+<script type="text/javascript" src="./iuri-polrn-club-new-error-message_files/mktree.js"></script>
+<script type="text/javascript" src="./iuri-polrn-club-new-error-message_files/rounded_corners.inc.js"></script>
+<script type="text/javascript" src="./iuri-polrn-club-new-error-message_files/diagram.js"></script><script language="JavaScript" src="./iuri-polrn-club-new-error-message_files/diagram_dom.js"></script>
+<script type="text/javascript" src="./iuri-polrn-club-new-error-message_files/showhide.js"></script>
+<script type="text/javascript" src="./iuri-polrn-club-new-error-message_files/core.js"></script>
+<script type="text/javascript" src="./iuri-polrn-club-new-error-message_files/jquery.smartmenus.min.js"></script>
+<script type="text/javascript" src="./iuri-polrn-club-new-error-message_files/style.saltnpepper.js"></script>
+
+		<title></title>
+		</head>
+		
+		
+  <body><table width="100%" id="developer-toolbar">
+    <tbody><tr align="center">
+      <td>
+        <a href="https://polrn.iurix.com/ds/" title="127.0.1.1:8000">Developer&nbsp;Support</a>
+      </td>
+
+      <td class="actions">
+        <ul>
+          
+            <li><a href="https://polrn.iurix.com/ds/set?field=user&amp;return_url=/dotlrn/admin/club-new?form:mode%3dedit%26form:id%3dadd_club%26__confirmed_p%3d0%26__refreshing_p%3d0%26__submit_button_name%3d%26__submit_button_value%3d%26pretty_name%3dCalTekNet%26description%3d%26active_start_date.format%3dMONTH%2bDD%2bYYYY%26active_start_date.month%3d%26active_start_date.day%3d%26active_start_date.year%3d%26active_end_date.format%3dMONTH%2bDD%2bYYYY%26active_end_date.month%3d%26active_end_date.day%3d%26active_end_date.year%3d%26join_policy%3dopen%26referer%3dclubs%26formbutton:ok%3d%2b%2b%2b%2b%2b%2b%2bOK%2b%2b%2b%2b%2b%2b%2b&amp;enabled_p=1" class="off" title="Toggle user switching">USR</a></li>
+          
+            <li><a href="https://polrn.iurix.com/ds/set?field=db&amp;return_url=/dotlrn/admin/club-new?form:mode%3dedit%26form:id%3dadd_club%26__confirmed_p%3d0%26__refreshing_p%3d0%26__submit_button_name%3d%26__submit_button_value%3d%26pretty_name%3dCalTekNet%26description%3d%26active_start_date.format%3dMONTH%2bDD%2bYYYY%26active_start_date.month%3d%26active_start_date.day%3d%26active_start_date.year%3d%26active_end_date.format%3dMONTH%2bDD%2bYYYY%26active_end_date.month%3d%26active_end_date.day%3d%26active_end_date.year%3d%26join_policy%3dopen%26referer%3dclubs%26formbutton:ok%3d%2b%2b%2b%2b%2b%2b%2bOK%2b%2b%2b%2b%2b%2b%2b&amp;enabled_p=1" class="off" title="Toggle DB data collection">DB</a></li>
+          
+            <li><a href="https://polrn.iurix.com/ds/set?field=prof&amp;return_url=/dotlrn/admin/club-new?form:mode%3dedit%26form:id%3dadd_club%26__confirmed_p%3d0%26__refreshing_p%3d0%26__submit_button_name%3d%26__submit_button_value%3d%26pretty_name%3dCalTekNet%26description%3d%26active_start_date.format%3dMONTH%2bDD%2bYYYY%26active_start_date.month%3d%26active_start_date.day%3d%26active_start_date.year%3d%26active_end_date.format%3dMONTH%2bDD%2bYYYY%26active_end_date.month%3d%26active_end_date.day%3d%26active_end_date.year%3d%26join_policy%3dopen%26referer%3dclubs%26formbutton:ok%3d%2b%2b%2b%2b%2b%2b%2bOK%2b%2b%2b%2b%2b%2b%2b&amp;enabled_p=1" class="off" title="Toggle template profiling">PRO</a></li>
+          
+            <li><a href="https://polrn.iurix.com/ds/set?field=frag&amp;return_url=/dotlrn/admin/club-new?form:mode%3dedit%26form:id%3dadd_club%26__confirmed_p%3d0%26__refreshing_p%3d0%26__submit_button_name%3d%26__submit_button_value%3d%26pretty_name%3dCalTekNet%26description%3d%26active_start_date.format%3dMONTH%2bDD%2bYYYY%26active_start_date.month%3d%26active_start_date.day%3d%26active_start_date.year%3d%26active_end_date.format%3dMONTH%2bDD%2bYYYY%26active_end_date.month%3d%26active_end_date.day%3d%26active_end_date.year%3d%26join_policy%3dopen%26referer%3dclubs%26formbutton:ok%3d%2b%2b%2b%2b%2b%2b%2bOK%2b%2b%2b%2b%2b%2b%2b&amp;enabled_p=1" class="off" title="Toggle caching page fragments">FRG</a></li>
+          
+            <li><a href="https://polrn.iurix.com/acs-lang/admin/translator-mode-toggle?return_url=/dotlrn/admin/club-new?form:mode%3dedit%26form:id%3dadd_club%26__confirmed_p%3d0%26__refreshing_p%3d0%26__submit_button_name%3d%26__submit_button_value%3d%26pretty_name%3dCalTekNet%26description%3d%26active_start_date.format%3dMONTH%2bDD%2bYYYY%26active_start_date.month%3d%26active_start_date.day%3d%26active_start_date.year%3d%26active_end_date.format%3dMONTH%2bDD%2bYYYY%26active_end_date.month%3d%26active_end_date.day%3d%26active_end_date.year%3d%26join_policy%3dopen%26referer%3dclubs%26formbutton:ok%3d%2b%2b%2b%2b%2b%2b%2bOK%2b%2b%2b%2b%2b%2b%2b" class="off" title="Toggle translation mode">TRN</a></li>
+          
+            <li><a href="javascript:void(d=document);void(el=d.getElementsByTagName(&#39;span&#39;));for(i=0;i&lt;el.length;i++){if(el[i].className==&#39;developer-support-adp-file-on&#39;){void(el[i].className=&#39;developer-support-adp-file-off&#39;)}else{if(el[i].className==&#39;developer-support-adp-file-off&#39;){void(el[i].className=&#39;developer-support-adp-file-on&#39;)}}};void(el=d.getElementsByTagName(&#39;div&#39;));for(i=0;i&lt;el.length;i++){if(el[i].className==&#39;developer-support-adp-box-on&#39;){void(el[i].className=&#39;developer-support-adp-box-off&#39;)}else{if(el[i].className==&#39;developer-support-adp-box-off&#39;){void(el[i].className=&#39;developer-support-adp-box-on&#39;)}};if(el[i].className==&#39;developer-support-adp-output-on&#39;){void(el[i].className=&#39;developer-support-adp-output-off&#39;)}else{if(el[i].className==&#39;developer-support-adp-output-off&#39;){void(el[i].className=&#39;developer-support-adp-output-on&#39;)}};}" class="off" title="Toggle ADP reveal">ADP</a></li>
+          
+            <li><a href="javascript:void(d=document);void(el=d.getElementsByTagName(&#39;div&#39;));for(i=0;i&lt;el.length;i++){if(el[i].className==&#39;developer-support-footer&#39;){void(el[i].className=&#39;developer-support-footer-off&#39;)}else{if(el[i].className==&#39;developer-support-footer-off&#39;){void(el[i].className=&#39;developer-support-footer&#39;)}}};" class="off" title="Toggle Footer display">FOT</a></li>
+          
+        </ul>
+      </td>
+
+      <td align="center" class="actions">
+        <ul>
+          <li><a href="https://polrn.iurix.com/ds/request-info?request=179" title="View request information">-1,541,319,953,379,492 ms</a>
+          <span>|</span></li>
+          <li><a href="https://polrn.iurix.com/ds/shell" title="Execute commands and see the result">Shell</a>
+          <span>|</span></li>
+          <li><a href="https://polrn.iurix.com/acs-admin/apm/" title="Modify/reload packages">APM</a>
+          <span>|</span></li>
+          <li><a href="https://polrn.iurix.com/admin/site-map/?root_id=60594" title="Configure current package via Site Map">Site&nbsp;Map</a>
+          <span>|</span></li>
+          <li><a href="https://polrn.iurix.com/acs-admin/apm/?reload_links_p=1" title="Scan for changed library files">Changed</a>
+          <span>|</span></li>
+          <li><a href="https://polrn.iurix.com/acs-admin/cache/flush-cache?suffix=util_memoize&amp;return_url=/dotlrn/admin/club-new?form:mode%3dedit%26form:id%3dadd_club%26__confirmed_p%3d0%26__refreshing_p%3d0%26__submit_button_name%3d%26__submit_button_value%3d%26pretty_name%3dCalTekNet%26description%3d%26active_start_date.format%3dMONTH%2bDD%2bYYYY%26active_start_date.month%3d%26active_start_date.day%3d%26active_start_date.year%3d%26active_end_date.format%3dMONTH%2bDD%2bYYYY%26active_end_date.month%3d%26active_end_date.day%3d%26active_end_date.year%3d%26join_policy%3dopen%26referer%3dclubs%26formbutton:ok%3d%2b%2b%2b%2b%2b%2b%2bOK%2b%2b%2b%2b%2b%2b%2b" title="Flush entire util_memoize cache">Flush</a>
+          <span>|</span></li>
+          <li><a href="https://polrn.iurix.com/dotlrn/admin/club-new" title="Automated Testing Home">Test</a>
+          <span>|</span></li>
+          <li><a href="https://polrn.iurix.com/acs-admin/users/" title="Add/edit/become users">Users</a>
+          <span>|</span></li>
+          <li><a href="https://polrn.iurix.com/acs-lang/admin/" title="Add/edit message keys">I18n</a>
+          <span>|</span></li>
+          <li><a href="https://polrn.iurix.com/doc/" title="View system documentation">Docs</a>
+          <span>|</span></li>
+          <li><a href="https://polrn.iurix.com/api-doc/" title="View/search OpenACS Tcl API documentation">API&nbsp;doc</a></li>
+          <span>|</span>
+           <li><a href="https://polrn.iurix.com/xotcl/" title="XoTcl Documentation Browser">XoTcl</a></li>
+          <span>|</span>
+           <li><a href="https://polrn.iurix.com/request-monitor/" title="View requests in the request monitor">Requests</a></li>
+	  
+        </ul>
+      </td>
+
+      <td align="right" id="developer-search">
+        <form action="https://polrn.iurix.com/api-doc/proc-search">
+	  <div><input type="hidden" name="search_type" value="All+matches">
+          <input type="hidden" name="name_weight" value="5">
+          <input type="hidden" name="param_weight" value="3">
+          <input type="hidden" name="doc_weight" value="2">
+          <input name="query_string" onfocus="if(this.value==&#39;Search API&#39;)this.value=&#39;&#39;;" onblur="if(this.value==&#39;&#39;)this.value=&#39;Search API&#39;;" value="Search API">
+          <input type="submit" value="Go" class="form-button40"></div>
+        </form>
+      </td>
+    </tr>
+  </tbody></table>
+
+		<div id="monitor_frame">
+    	
+	      <div id="header_class">
+	      <div id="header_logo">
+		 
+<a href="https://tutortronics.net/"><img id="intranetlogo" src="./iuri-polrn-club-new-error-message_files/logo.png" alt="logo" border="0"></a>
+
+	      </div>
+	      <div id="header_plugin_left">
+		 
+	      </div>
+	      <div id="header_plugin_right">
+		 
+	      </div>
+	      <div class="header_line">
+			<table cellpadding="0" cellspacing="0" border="0">
+			<tbody><tr>
+			<td><span id="general_messages_icon"><span id="general_messages_icon_span"></span></span>&nbsp;</td>
+			<td><span class="header_buttons"><span class="header_welcome"><a href="https://polrn.iurix.com/intranet/users/view?user_id=50950">Welcome Kenneth Wyrick</a></span> |&nbsp;<a href="https://polrn.iurix.com/intranet/whos-online">1 user online</a>
+ |&nbsp;<a href="https://polrn.iurix.com/intranet/report-bug-on-page?page_url=/dotlrn/admin/club-new?form:mode%3dedit%26form:id%3dadd_club%26__confirmed_p%3d0%26__refreshing_p%3d0%26__submit_button_name%3d%26__submit_button_value%3d%26pretty_name%3dCalTekNet%26description%3d%26active_start_date.format%3dMONTH%2bDD%2bYYYY%26active_start_date.month%3d%26active_start_date.day%3d%26active_start_date.year%3d%26active_end_date.format%3dMONTH%2bDD%2bYYYY%26active_end_date.month%3d%26active_end_date.day%3d%26active_end_date.year%3d%26join_policy%3dopen%26referer%3dclubs%26formbutton:ok%3d%2b%2b%2b%2b%2b%2b%2bOK%2b%2b%2b%2b%2b%2b%2b">Report a bug on this page</a> |<span class="header_logout">&nbsp;<a class="nobr" href="https://polrn.iurix.com/register/logout">Log Out</a>
+</span></span></td>
+			</tr>
+			<tr>
+			<td colspan="2"><div id="main_search">
+	      <form action="https://polrn.iurix.com/intranet/search/go-search" method="post" name="surx">
+		<input class="surx" name="query_string" size="40" value="Search" onclick="javascript:this.value = &#39;&#39;">
+		<input type="hidden" name="target" value="content">
+		<input alt="Go" type="submit" value="Go" name="image" class="form-button40">
+	      </form>
+	</div></td>
+			</tr>
+			</tbody></table>
+	      </div>
+	      <div id="header_skin_select">
+		 
+	      </div>   
+	   </div>
+    	 
+	    <div id="main">
+	       <div id="navbar_main_wrapper">
+		  <ul id="navbar_main" class="sm" data-smartmenus-id="15428628171072244"><li class="unselected"><a class="has-submenu" href="https://polrn.iurix.com/intranet-idea-management/"><span class="sub-arrow">+</span><span>Ideas</span></a>
+<ul>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-idea-management/index?perspective=Top"><span>Top</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-idea-management/index?perspective=Hot"><span>Hot</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-idea-management/index?perspective=New"><span>New</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-idea-management/index?perspective=Accepted"><span>Accepted</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-idea-management/index?perspective=Done"><span>Done</span></a></li>
+
+</ul>
+
+
+</li><li class="unselected"><a href="https://polrn.iurix.com/xowiki/"><span>XoWiki</span></a></li>
+
+<li class="unselected"><a class="has-submenu" href="https://polrn.iurix.com/intranet/"><span class="sub-arrow">+</span><span>Home</span></a>
+<ul>
+<li class="unselected"><a href="http://caltek.iurix.com/"><span>LRN</span></a></li>
+<li class="unselected"><a href="http://caltek.net/"><span>Caltek.net</span></a></li>
+
+</ul>
+
+
+</li><li class="unselected"><a class="has-submenu" href="https://polrn.iurix.com/intranet/projects/index"><span class="sub-arrow">+</span><span>Projects</span></a>
+<ul>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet/projects/new"><span>New Project</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet/projects/index?filter_advanced_p=1"><span>Projects List</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet/projects/index?view_name=project_costs"><span>Projects List Profit &amp; Loss</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-milestone/"><span>Milestones List</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-portfolio-management/programs-list"><span>Programs List</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet/projects/dashboard"><span>Projects Dashboard</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-simple-survey/reporting/traffic-light-report"><span>RAG Traffic Light Report</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-reporting-openoffice/project-phases-risks.odp"><span>Project Phases &amp; Risks (ODP)</span></a></li>
+<li class="unselected divider"><hr></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet/projects/new"><span>Add New Project</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet/projects/new-from-template"><span>Add New Project from Template</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-csv-import/index?object_type=im_project&amp;return_url=/dotlrn/admin/club-new"><span>Import Projects from CSV</span></a></li>
+<li class="unselected">
+		<div class="sm-po-sub-menu-item">
+			<div class="sm-po-sub-menu-item-name"><a href="https://polrn.iurix.com/intranet-dw-light/projects.csv?return_url=/dotlrn/admin/club-new">Export Projects to CSV</a></div>
+			<div class="sm-po-sub-menu-item-wrench"><img src="./iuri-polrn-club-new-error-message_files/wrench.png" alt="" onclick="location.href=&#39;/intranet/admin/menus/index?menu_id=13886&#39;;"></div>
+		</div>
+		</li>
+
+</ul>
+
+
+</li><li class="unselected"><a class="has-submenu" href="https://polrn.iurix.com/intranet-resource-management/index"><span class="sub-arrow">+</span><span>Resource Management</span></a>
+<ul>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-portfolio-planner/index"><span>Portfolio Planner</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-resource-management/resources-planning"><span>Resource Assignments</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-ganttproject/gantt-resources-cube?config=resource_planning_report"><span>Resource Planning Report</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-timesheet2/absences/capacity-planning"><span>Capacity Planning</span></a></li>
+
+</ul>
+
+
+</li><li class="unselected"><a class="has-submenu" href="https://polrn.iurix.com/intranet-timesheet2/hours/index"><span class="sub-arrow">+</span><span>Timesheet</span></a>
+<ul>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-timesheet2/hours/new?show_week_p=0"><span>New Hours</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-reporting/timesheet-customer-project?preconf=my_hours"><span>Timesheet List</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-timesheet2/hours/dashboard"><span>Timesheet Dashboard</span></a></li>
+<li class="unselected divider"><hr></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-dw-light/timesheet.csv?return_url=/dotlrn/admin/club-new"><span>Export Hours to CSV</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-csv-import/index?object_type=im_hour&amp;return_url=/dotlrn/admin/club-new"><span>Import Hours from CSV</span></a></li>
+
+</ul>
+
+
+</li><li class="unselected"><a class="has-submenu" href="https://polrn.iurix.com/intranet-timesheet2/absences/index"><span class="sub-arrow">+</span><span>Absences</span></a>
+<ul>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-timesheet2/absences/new?absence_type_id=5000"><span>New Vacation Absence</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-timesheet2/absences/new?absence_type_id=5001"><span>New Personal Absence</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-timesheet2/absences/new?absence_type_id=5002"><span>New Sick Leave</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-timesheet2/absences/new?absence_type_id=5003"><span>New Travel Absence</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-timesheet2/absences/new?absence_type_id=5004"><span>New Bank Holiday</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-timesheet2/absences/index"><span>Absences List</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-timesheet2/absences/dashboard"><span>Absences Dashboard</span></a></li>
+<li class="unselected divider"><hr></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-dw-light/absence.csv?return_url=/dotlrn/admin/club-new"><span>Export Absences to CSV</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-csv-import/index?object_type=im_user_absence&amp;return_url=/dotlrn/admin/club-new"><span>Import Absences from CSV</span></a></li>
+
+</ul>
+
+
+</li><li class="unselected"><a class="has-submenu" href="https://polrn.iurix.com/intranet-cost/index"><span class="sub-arrow">+</span><span>Finance</span></a>
+<ul>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-invoices/list?cost_type_id=3700"><span>Finance List</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-invoices/dashboard"><span>Finance Dashboard</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-cost/list"><span>Finance List Complete</span></a></li>
+<li class="unselected"><a class="has-submenu" href="https://polrn.iurix.com/intranet-invoices/list?cost_type_id=3708"><span class="sub-arrow">+</span><span>Customers</span></a>
+<ul>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-invoices/new?cost_type_id=3700"><span>New Customer Invoice from Scratch</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-invoices/new-copy?target_cost_type_id=3700&amp;source_cost_type_id=3700"><span>New Customer Invoice from Invoice</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-invoices/new-copy?target_cost_type_id=3724&amp;source_cost_type_id=3702"><span>New Delivery Note from Quote</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-invoices/new-copy?target_cost_type_id=3700&amp;source_cost_type_id=3702"><span>New Customer Invoice from Quote</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-invoices/new?cost_type_id=3724"><span>New Delivery Note from Scratch</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-invoices/new?cost_type_id=3702"><span>New Quote from Scratch</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-timesheet2-invoices/invoices/new?target_cost_type_id=3702"><span>New Quote from Timesheet Tasks</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-timesheet2-invoices/invoices/new?target_cost_type_id=3700"><span>New Customer Invoice from Timesheet Tasks</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-invoices/new-copy?target_cost_type_id=3702&amp;source_cost_type_id=3702"><span>New Quote from Quote</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-invoices/new-copy?target_cost_type_id=3700&amp;source_cost_type_id=3724"><span>New Customer Invoice from Delivery Note</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-dw-light/invoices.csv?cost_type_id=3708"><span>Export Customer Invoices CSV</span></a></li>
+
+</ul>
+</li>
+<li class="unselected"><a class="has-submenu" href="https://polrn.iurix.com/intranet-invoices/list?cost_type_id=3710"><span class="sub-arrow">+</span><span>Providers</span></a>
+<ul>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-invoices/new?cost_type_id=3704"><span>New Provider Bill from Scratch</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-invoices/new-copy?target_cost_type_id=3704&amp;source_cost_type_id=3706"><span>New Provider Bill from Purchase Order</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-invoices/new?cost_type_id=3706"><span>New Purchase Order from Scratch</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-dw-light/invoices.csv?cost_type_id=3710"><span>Export Provider Invoices CSV</span></a></li>
+
+</ul>
+</li>
+<li class="unselected divider"><hr></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-dw-light/invoices.csv?return_url=/dotlrn/admin/club-new"><span>Export Financial Items to CSV</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-csv-import/index?object_type=im_invoice&amp;return_url=/dotlrn/admin/club-new"><span>Import Financial Items from CSV</span></a></li>
+<li class="unselected">
+		<div class="sm-po-sub-menu-item">
+			<div class="sm-po-sub-menu-item-name"><a href="https://polrn.iurix.com/intranet-exchange-rate/index?return_url=/dotlrn/admin/club-new">Exchange Rates</a></div>
+			<div class="sm-po-sub-menu-item-wrench"><img src="./iuri-polrn-club-new-error-message_files/wrench.png" alt="" onclick="location.href=&#39;/intranet/admin/menus/index?menu_id=19341&#39;;"></div>
+		</div>
+		</li>
+
+</ul>
+
+
+</li><li class="unselected"><a class="has-submenu" href="https://polrn.iurix.com/intranet-expenses/"><span class="sub-arrow">+</span><span>Expenses</span></a>
+<ul>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-expenses/new"><span>New Expense Item</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-expenses/new-multiple"><span>New Multiple Expense Item</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-expenses/index"><span>Expenses List</span></a></li>
+
+</ul>
+
+
+</li><li class="unselected"><a href="https://polrn.iurix.com/intranet-workflow/"><span>Workflow</span></a></li>
+
+<li class="unselected"><a class="has-submenu" href="https://polrn.iurix.com/intranet-crm-opportunities/"><span class="sub-arrow">+</span><span>CRM</span></a>
+<ul>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-crm-opportunities/new"><span>New Opportunity</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-crm-opportunities/opportunities"><span>Opportunities List</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-crm-opportunities/"><span>Opportunities Dashboard</span></a></li>
+
+</ul>
+
+
+</li><li class="unselected"><a class="has-submenu" href="https://polrn.iurix.com/intranet-reporting/"><span class="sub-arrow">+</span><span>Reporting</span></a>
+<ul>
+<li class="unselected"><a class="has-submenu" href="https://polrn.iurix.com/intranet-reporting/"><span class="sub-arrow">+</span><span>Finance</span></a>
+<ul>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-reporting-finance/finance-monthly-summary"><span>Finance - Monthly Summary</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-reporting-finance/finance-documents-projects"><span>Finance - Financial Documents And Their Projects</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-reporting-finance/finance-payment-balance"><span>Finance - Payment Balance</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-reporting-finance/finance-projects-documents"><span>Finance - Projects And Their Documents</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-reporting-finance/finance-income-statement"><span>Finance - Income Statement</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-reporting-finance/finance-expenses"><span>Finance - Expenses</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-reporting/budget-main-projects?"><span>Finance - Budged Check for Main Projects</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-reporting-finance/finance-costs-monthly?"><span>Finance - Provider Costs Per Month</span></a></li>
+
+</ul>
+</li>
+<li class="unselected"><a class="has-submenu" href="https://polrn.iurix.com/intranet-reporting/"><span class="sub-arrow">+</span><span>Timesheet</span></a>
+<ul>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-reporting/view?report_id=60032"><span>Email Follow up</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-reporting/timesheet-monthly-hours-absences.tcl"><span>Timesheet - Monthly View including Absences</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-reporting/timesheet-finance?"><span>Timesheet - Project Hierarchy &amp; Finance</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-reporting/timesheet-productivity?"><span>Timesheet - Productivity</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-timesheet2/weekly_report?"><span>Timesheet - Weekly Report</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-reporting/timesheet-customer-project?"><span>Timesheet - Customers &amp; Projects</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-timesheet2-workflow/reports/unsubmitted-hours?"><span>Timesheet Workflow - Unsubmitted Hours</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-timesheet2-workflow/reports/unsubmitted-hours.tcl?"><span>Timesheet Workflow - Unconfirmed Hours</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-reporting/timesheet-days-per-project-and-month?"><span>Timesheet - Days per Month</span></a></li>
+
+</ul>
+</li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-reporting/"><span>Sales</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-reporting/"><span>Forum</span></a></li>
+<li class="unselected"><a class="has-submenu" href="https://polrn.iurix.com/intranet-reporting/"><span class="sub-arrow">+</span><span>REST System Reports</span></a>
+<ul>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-reporting/view?report_id=30504"><span>REST My Timesheet Project</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-reporting/view?report_id=30510"><span>REST Object Permissions</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-reporting/view?report_id=36528"><span>REST Main Project Tasks with Hours</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-reporting/view?report_id=32106"><span>REST My Timesheet Projects and Hours</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-reporting/view?report_id=30506"><span>REST My Hours</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-reporting/view?report_id=36530"><span>REST Main Projects with Hours</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-reporting/view?report_id=30508"><span>REST Category Type</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-reporting/view?report_id=30512"><span>REST Group Memberships</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-reporting/view?report_id=36567"><span>REST Intra-Project Task Dependencies</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-reporting/view?report_id=36600"><span>REST Inter Project Task Dependencies</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-reporting/view?report_id=36598"><span>REST Portfolio Planner Projects Update Cases</span></a></li>
+
+</ul>
+</li>
+<li class="unselected"><a class="has-submenu" href="https://polrn.iurix.com/intranet-reporting/"><span class="sub-arrow">+</span><span>Project Management</span></a>
+<ul>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-resource-management/resources-planning-planned-hours"><span>Resource Planning - Based on Planned Hours</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-resource-management/resources-planning"><span>Resource Planning - Main Report</span></a></li>
+
+</ul>
+</li>
+<li class="unselected"><a class="has-submenu" href="https://polrn.iurix.com/intranet-reporting/"><span class="sub-arrow">+</span><span>Other</span></a>
+<ul>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-reporting/view?report_id=27832"><span>Groups</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-reporting/view?report_id=27836"><span>Recent Registrations</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-reporting/projects-main?"><span>Project Main List</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-reporting/user-contacts"><span>Users &amp; Contact Information</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-reporting/project-tasks.tcl"><span>Show all project tasks</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-riskmanagement/project-risks-report"><span>Project Risks</span></a></li>
+
+</ul>
+</li>
+<li class="unselected"><a class="has-submenu" href="https://polrn.iurix.com/intranet-reporting-tutorial/"><span class="sub-arrow">+</span><span>Reporting Tutorial</span></a>
+<ul>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-reporting-tutorial/projects-01-commented"><span>Project Report 01</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-reporting-tutorial/projects-02"><span>Project Report 02</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-reporting-tutorial/projects-03"><span>Project Report 03</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-reporting-tutorial/projects-04"><span>Project Report 04</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-reporting-tutorial/projects-05"><span>Project Report 05</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-reporting-tutorial/forum-adhoc-01"><span>Forum AdHoc Report 01</span></a></li>
+
+</ul>
+</li>
+<li class="unselected"><a class="has-submenu" href="https://polrn.iurix.com/intranet-simple-survey/index?"><span class="sub-arrow">+</span><span>Simple Surveys</span></a>
+<ul>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-simple-survey/reporting/survsimp-results"><span>Simple Survery - Results</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-reporting/survsimp-main?"><span>Simple Survey - Main List</span></a></li>
+
+</ul>
+</li>
+<li class="unselected"><a class="has-submenu" href="https://polrn.iurix.com/intranet-reporting/"><span class="sub-arrow">+</span><span>Program and Portfolio</span></a>
+<ul>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-reporting/program-eva?"><span>Earned Value Analysis</span></a></li>
+
+</ul>
+</li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-reporting-indicators/index?"><span>Indicators</span></a></li>
+<li class="unselected"><a class="has-submenu" href="https://polrn.iurix.com/intranet-reporting/"><span class="sub-arrow">+</span><span>CSV Export</span></a>
+<ul>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-reporting/view?report_id=48057"><span>Export Persons</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-reporting/view?report_id=48059"><span>Export Companies</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-reporting/view?report_id=48061"><span>Export Projects</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-reporting/view?report_id=48063"><span>Export Tasks</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-reporting/view?report_id=48065"><span>Export Project-Task Relationships</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-reporting/view?report_id=48067"><span>Export Finance Documents</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-reporting/view?report_id=48069"><span>Export Invoice Items</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-reporting/view?report_id=48071"><span>Export Expense Bundles</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-reporting/view?report_id=48073"><span>Export Expense Items</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-reporting/view?report_id=48075"><span>Export Hours</span></a></li>
+
+</ul>
+</li>
+
+</ul>
+
+
+</li><li class="unselected"><a class="has-submenu" href="https://polrn.iurix.com/intranet/master-data"><span class="sub-arrow">+</span><span>Master Data</span></a>
+<ul>
+<li class="unselected"><a class="has-submenu" href="https://polrn.iurix.com/intranet/users/"><span class="sub-arrow">+</span><span>Users</span></a>
+<ul>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet/users/new"><span>New User</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet/users/biz-card-add"><span>New User + Company</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet/users/index?filter_advanced_p=1"><span>Users List</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet/users/dashboard"><span>Users Dashboard</span></a></li>
+
+</ul>
+</li>
+<li class="unselected"><a class="has-submenu" href="https://polrn.iurix.com/intranet/companies/"><span class="sub-arrow">+</span><span>Companies</span></a>
+<ul>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet/companies/new"><span>New Company</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet/users/biz-card-add"><span>New Company + Contact</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet/companies/index?filter_advanced_p=1"><span>Companies List</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet/companies/dashboard"><span>Companies Dashboard</span></a></li>
+
+</ul>
+</li>
+<li class="unselected"><a class="has-submenu" href="https://polrn.iurix.com/intranet/offices/index"><span class="sub-arrow">+</span><span>Offices</span></a>
+<ul>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet/offices/new"><span>New Office</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet/offices/index"><span>Offices List</span></a></li>
+
+</ul>
+</li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-cost/cost-centers/index"><span>Cost Centers</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-material/"><span>Materials</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-exchange-rate/index"><span>Exchange Rates</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-simple-survey/admin/index"><span>Simple Surveys</span></a></li>
+
+</ul>
+
+
+</li><li class="unselected"><a class="has-submenu" href="https://polrn.iurix.com/intranet/admin/"><span class="sub-arrow">+</span><span>Admin</span></a>
+<ul>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet/admin/"><span>Admin Home</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/api-doc/"><span>API Doc</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet/admin/backup/"><span>Backup</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet/admin/flush_cache"><span>Cache Flush</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/acs-admin/cache/"><span>Cache Status</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet/admin/categories/"><span>Categories</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet/admin/consistency-check"><span>Consistency Checker</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/acs-admin/developer"><span>Developer Home</span></a></li>
+<li class="unselected"><a class="has-submenu" href="https://polrn.iurix.com/intranet-dynfield/"><span class="sub-arrow">+</span><span>DynField</span></a>
+<ul>
+<li class="unselected"><a class="has-submenu" href="https://polrn.iurix.com/intranet-dynfield/object-types"><span class="sub-arrow">+</span><span>Object Types</span></a>
+<ul>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-dynfield/object-type?object_type=im_user_absence"><span>Absences</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-dynfield/object-type?object_type=im_company"><span>Company</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-dynfield/object-type?object_type=im_conf_item"><span>Conf Item</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-dynfield/object-type?object_type=im_expense"><span>Expense</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-dynfield/object-type?object_type=im_expense_bundle"><span>Expense Bundle</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-dynfield/object-type?object_type=im_invoice"><span>Financial Document</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-dynfield/object-type?object_type=im_material"><span>Material</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-dynfield/object-type?object_type=im_note"><span>Note</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-dynfield/object-type?object_type=im_office"><span>Office</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-dynfield/object-type?object_type=person"><span>Person</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-dynfield/object-type?object_type=im_project"><span>Project</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-dynfield/object-type?object_type=im_risk"><span>Risk</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-dynfield/object-type?object_type=im_ticket"><span>Ticket</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-dynfield/object-type?object_type=im_timesheet_task"><span>Gantt Task</span></a></li>
+
+</ul>
+</li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-dynfield/permissions"><span>Permissions</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-dynfield/widgets"><span>Widgets</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-dynfield/widget-examples"><span>Widget Examples</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/doc/intranet-dynfield/"><span>Documentation</span></a></li>
+
+</ul>
+</li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet/admin/views/"><span>DynView</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/ds/shell"><span>Interactive Shell</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet/admin/templates/"><span>Invoice Templates</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/acs-admin/auth/"><span>LDAP</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/acs-lang/admin/"><span>Localization Home
+</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet/admin/menus/"><span>Menus</span></a></li>
+<li class="unselected"><a class="has-submenu" href="https://polrn.iurix.com/intranet/admin/object-type-admin"><span class="sub-arrow">+</span><span>Object Type Admin</span></a>
+<ul>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet/admin/object-type-admin?object_type=im_ticket"><span>Admin Tickets</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-timesheet2/hours/admin"><span>Admin Timesheet</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet/admin/object-type-admin?object_type=im_ticket"><span>Helpdesk Admin</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-crm-opportunities/admin"><span>CRM Admin</span></a></li>
+<li class="unselected"><a class="has-submenu" href="https://polrn.iurix.com/intranet/admin/object-type-admin?object_type=im_conf_item"><span class="sub-arrow">+</span><span>Admin Conf Items</span></a>
+<ul>
+
+</ul>
+</li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet/admin/object-type-admin?object_type=im_expense_item"><span>Expenses Admin</span></a></li>
+<li class="unselected"><a class="has-submenu" href="https://polrn.iurix.com/intranet/admin/object-type-admin?object_type=im_cost"><span class="sub-arrow">+</span><span>Admin Finance</span></a>
+<ul>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-exchange-rate/index"><span>Exchange Rates</span></a></li>
+
+</ul>
+</li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-timesheet2/absences/admin"><span>Admin Absences</span></a></li>
+
+</ul>
+</li>
+<li class="unselected"><a href="https://polrn.iurix.com/acs-admin/apm/"><span>Package Manager</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet/admin/parameters/"><span>Parameters</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet/admin/components/"><span>Portlets</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet/admin/profiles/"><span>Privileges</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/request-monitor/index"><span>Request Monitor</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-rest/"><span>REST API</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/acs-admin/server-restart"><span>Restart Server</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-rule-engine/"><span>Rule Engine</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/ds/"><span>SQL Profiling</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-sql-selectors/"><span>SQL Selectors</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/admin/site-map/"><span>Site Map</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-security-update-client/retreive-update-list"><span>Software Updates</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet-sysconfig/"><span>SysConfig</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet/admin/user_exits"><span>User Exits</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/intranet/admin/user_matrix/"><span>User Sub-Administration</span></a></li>
+<li class="unselected"><a href="https://polrn.iurix.com/acs-workflow/admin/"><span>Workflow</span></a></li>
+
+</ul>
+
+
+</li><li class="unselected"><a href="https://polrn.iurix.com/intranet/users/view?user_id=50950" class="has-submenu"><span class="sub-arrow">+</span>
+		<span>My Settings</span></a>
+		<ul><li class="unselected"><a href="https://polrn.iurix.com/intranet/users/view?user_id=50950">My Account</a></li>
+    	    
+
+<li class="sm-submenu-item"><a href="https://polrn.iurix.com/intranet/users/password-update?user_id=50950">Change Password</a></li>
+
+<li class="unselected"><a href="https://polrn.iurix.com/intranet/admin/menus/index?return_url=/dotlrn/admin/club-new&amp;top_menu_depth=1&amp;top_menu_id=476"><span><img src="./iuri-polrn-club-new-error-message_files/wrench.png" border="0" title="Click here to administrate the navigation bar" alt="Click here to administrate the navigation bar"></span></a></li>
+
+</ul></li></ul>
+	       </div>
+	       <div id="main_header">
+                  <div id="main_maintenance_bar"></div>
+	       </div>
+	    </div>
+    
+	<div class="fullwidth-list-no-side-bar" id="fullwidth-list">
+		<div class="developer-support-adp-box-off"><span class="developer-support-adp-file-off"><a href="https://polrn.iurix.com/api-doc/content-page-view?source_p=1&amp;path=/packages/intranet-core/www/master.adp" style="text-decoration: None;"> / web / projop / packages / intranet-core / www / master</a></span><div class="developer-support-adp-output-off">
+<p>
+  There was a server error processing your request. We apologize.
+</p>
+
+<br>
+
+ <a href="https://polrn.iurix.com/dotlrn/admin/club-new">Take me back where I was (before the error)</a>
+
+ 
+ <pre>Selection did not return a value, and no default was provided
+    while executing
+"db_string select_node_id {}"
+    (procedure "get_type_node_id" line 2)
+    invoked from within
+"get_type_node_id $community_type"
+    ("uplevel" body line 34)
+    invoked from within
+"uplevel 1 $transaction_code"
+    (procedure "::nsf::procs::db_transaction" line 38)
+    invoked from within
+"db_transaction {
+            set user_id [ad_conn user_id]
+            set community_id [package_instantiate_object -extra_vars $extra_vars $object_ty..."
+    (procedure "::nsf::procs::dotlrn_community::new" line 25)
+    invoked from within
+"dotlrn_community::new  -community_type $community_type  -object_type [community_type]  -pretty_name $pretty_name  -description $description  -parent_c..."
+    (procedure "::nsf::procs::dotlrn_club::new" line 9)
+    invoked from within
+"dotlrn_club::new  -description $description  -pretty_name $pretty_name  -join_policy $join_policy"
+    ("uplevel" body line 3)
+    invoked from within
+"uplevel #$level $on_submit"
+    (procedure "ad_form" line 706)
+    invoked from within
+"ad_form -name add_club -form {
+    
+    {pretty_name:text(text)
+	{label "Name"}
+	{html {size 60 maxlength 100}}
+	{help_text "[_ dotlrn.Name_h..."
+    ("uplevel" body line 36)
+    invoked from within
+"uplevel {
+    #
+#  Copyright (C) 2001, 2002 MIT
+#
+#  This file is part of dotLRN.
+#
+#  dotLRN is free software; you can redistribute it and/or modify ..."
+    (procedure "code::tcl::/web/projop//packages/dotlrn/www/admin/club-new" line 2)
+    invoked from within
+"code::tcl::$__adp_stub"
+    ("uplevel" body line 12)
+    invoked from within
+"uplevel {
+
+        if { [file exists $__adp_stub.tcl] } {
+
+            # ensure that data source preparation procedure exists and is up-to-date
+      ..."
+    (procedure "adp_prepare" line 2)
+    invoked from within
+"adp_prepare"
+    invoked from within
+"template::adp_parse $themed_template {}"
+    (procedure "adp_parse_ad_conn_file" line 14)
+    invoked from within
+"$handler"
+    ("uplevel" body line 2)
+    invoked from within
+"uplevel $code"
+    invoked from within
+"ad_try {
+                $handler
+            } ad_script_abort val {
+                # do nothing
+            }"
+    invoked from within
+"rp_serve_concrete_file [ad_conn file]"
+    (procedure "::nsf::procs::rp_serve_abstract_file" line 60)
+    invoked from within
+"rp_serve_abstract_file "$root/$extra_url""
+    ("uplevel" body line 2)
+    invoked from within
+"uplevel $code"
+    invoked from within
+"ad_try {
+                rp_serve_abstract_file "$root/$extra_url"
+                set ::tcl_url2file([ad_conn url]) [ad_conn file]
+                se..."</pre>
+</div></div><!-- END
+/web/projop/packages/intranet-core/www/master (lvl 4)-->
+	</div>
+
+    </div> <!-- monitor_frame -->
+    <div class="footer_hack">&nbsp;</div>	
+    <div id="footer" style="visibility: visible">
+       Comments? Contact: 
+       <a href="mailto:iuri@iurix.com">
+	  iuri@iurix.com</a>.
+    </div>
+  
+  
+
+</body></html>

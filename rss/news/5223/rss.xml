@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+<channel>
+<title>Livingston Institute Teletest Learning Inc News</title>
+<link>http://litli.net/dotlrn/clubs/projectopen/news/</link>
+<description>Livingston Institute Teletest Learning Inc News</description>
+<generator>OpenACS 5.0</generator>
+<lastBuildDate>Sun, 04 Nov 2018 18:04:28 GMT</lastBuildDate>
+<image>
+<title>Livingston Institute Teletest Learning Inc News</title>
+<url>http://litli.net/rss-support/images/openacs_logo_rss.gif</url>
+<link>http://litli.net/dotlrn/clubs/projectopen/news/</link>
+<width>126</width>
+<height>48</height>
+</image>
+<item>
+<title>Tutorial Uploaded to ERP Installs Course on WECANF.net/learn Moodle Instance</title>
+<link>http://litli.net/dotlrn/clubs/projectopen/news/item?item_id=32469</link>
+<guid isPermaLink="true">http://litli.net/dotlrn/clubs/projectopen/news/item?item_id=32469</guid>
+<description>&lt;a href=&#34;http://www.wecanf.net/learn/course/view.php?id=23&#34; title=&#34;tutorial on moodle&#34;&gt;http://www.wecanf.net/learn/course/view.php?id=23 &lt;/a&gt;</description>
+<pubDate>Sun, 04 Nov 2018 18:04:28 GMT</pubDate>
+</item>
+</channel>
+</rss>
+

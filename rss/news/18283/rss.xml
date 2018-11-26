@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+<channel>
+<title>Livingston Institute Teletest Learning Inc News</title>
+<link>http://litli.net/dotlrn/clubs/nonprofit/learningtree/news/</link>
+<description>Livingston Institute Teletest Learning Inc News</description>
+<generator>OpenACS 5.0</generator>
+<lastBuildDate>Sat, 13 Oct 2018 17:43:59 GMT</lastBuildDate>
+<image>
+<title>Livingston Institute Teletest Learning Inc News</title>
+<url>http://litli.net/rss-support/images/openacs_logo_rss.gif</url>
+<link>http://litli.net/dotlrn/clubs/nonprofit/learningtree/news/</link>
+<width>126</width>
+<height>48</height>
+</image>
+<item>
+<title>Josh Santos, Areas To Document and Learn from/with</title>
+<link>http://litli.net/dotlrn/clubs/nonprofit/learningtree/news/item?item_id=28311</link>
+<guid isPermaLink="true">http://litli.net/dotlrn/clubs/nonprofit/learningtree/news/item?item_id=28311</guid>
+<description>&lt;p&gt;&lt;ul&gt;
+&lt;li&gt;Python
+    &lt;br&gt;
+&lt;/li&gt;&lt;li&gt;API Integration
+    &lt;br&gt;
+&lt;/li&gt;&lt;li&gt;Ansible/DevOps 
+    &lt;br&gt;
+&lt;/li&gt;
+&lt;/ul&gt;&lt;/p&gt;&lt;p&gt;Developed EZC (EZ-Config) system for managing CDN node NGINX configuration 
+&lt;/p&gt;&lt;p&gt;Developed a tool for inventory of technical assets such as laptops, servers, etc.
+&lt;/p&gt;</description>
+<pubDate>Sat, 13 Oct 2018 17:43:59 GMT</pubDate>
+</item>
+</channel>
+</rss>
+
