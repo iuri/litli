@@ -5,7 +5,7 @@
 <link>http://litli.net/dotlrn/classes/music/music.band/band/news/</link>
 <description>Livingston Institute Teletest Learning Inc News</description>
 <generator>OpenACS 5.0</generator>
-<lastBuildDate>Fri, 16 Nov 2018 11:50:07 GMT</lastBuildDate>
+<lastBuildDate>Fri, 28 Dec 2018 12:59:53 GMT</lastBuildDate>
 <image>
 <title>Livingston Institute Teletest Learning Inc News</title>
 <url>http://litli.net/rss-support/images/openacs_logo_rss.gif</url>
@@ -13,6 +13,20 @@
 <width>126</width>
 <height>48</height>
 </image>
+<item>
+<title>link to ip address instead of litli.net</title>
+<link>http://litli.net/dotlrn/classes/music/music.band/band/news/item?item_id=36169</link>
+<guid isPermaLink="true">http://litli.net/dotlrn/classes/music/music.band/band/news/item?item_id=36169</guid>
+<description>http://64.137.236.32:8443/dotlrn/classes/music/music.band/band/one-community?page_num=0</description>
+<pubDate>Fri, 28 Dec 2018 12:59:53 GMT</pubDate>
+</item>
+<item>
+<title>checking in</title>
+<link>http://litli.net/dotlrn/classes/music/music.band/band/news/item?item_id=36160</link>
+<guid isPermaLink="true">http://litli.net/dotlrn/classes/music/music.band/band/news/item?item_id=36160</guid>
+<description>hope you are doing great. let me know if you get this. 323.268.0395</description>
+<pubDate>Fri, 28 Dec 2018 12:44:57 GMT</pubDate>
+</item>
 <item>
 <title>NOVEMBER 2018 November 25 @ 12:00 pm - 8:00 pm Leimert Park Art Walk</title>
 <link>http://litli.net/dotlrn/classes/music/music.band/band/news/item?item_id=33432</link>
