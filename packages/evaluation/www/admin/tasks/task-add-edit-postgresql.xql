@@ -107,7 +107,7 @@
     	and dotlrn_communities_all.community_type = dotlrn_classes.class_key
     	and dotlrn_member_rels_approved.user_id = :user_id
     	and acs_permission__permission_p(dotlrn_communities_all.community_id, :user_id, 'admin') = true
-	and dotlrn_communities_all.community_id <> [dotlrn_community::get_community_id]
+	and dotlrn_communities_all.community_id <> :community_id
 	
       </querytext>
 </fullquery>

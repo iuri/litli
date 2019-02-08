@@ -27,6 +27,21 @@ set package_id [ad_conn package_id]
 set user_id [ad_conn user_id]
 
 set community_id [dotlrn_community::get_community_id]
+
+# Amended by Iuri Sampaio in 2019-02-08
+# Tweak evaluation package to find commmunity the community from url
+## BEGIN
+if {$community_id eq ""} {
+    set url [lindex [split [ad_conn url] "\/"] 1]
+    
+    set community_id [db_string select_community_id {
+        SELECT community_id FROM dotlrn_communities_all WHERE community_key = :url
+    } -default ""]
+}
+## END 
+
+
+
 set new_p [ad_form_new_p -key task_id] 
 set simple_p [parameter::get -parameter SimpleVersion ]
 
@@ -35,6 +50,7 @@ set more_communities_option 0
 if { $new_p && $community_id ne "" && [db_string get_user_comunities { *SQL* }] } {
     set more_communities_option 1
 }
+
 
 db_1row get_grade_info { *SQL* }
 if { $new_p } {
@@ -501,11 +517,19 @@ ad_form -extend -name task -form {
 	# since there is no service contract defined
 	
 	set desc_url "<a href=\"$return_url\">[_ evaluation.lt_Click_here_to_go_to_t]</a>"
-	
+
+        ns_log Notice "COMMUNITYID $community_id"
 	set url [dotlrn_community::get_community_url $community_id]
 	
+        ns_log Notice "URL $url"
+
 	array set community_info [site_node::get -url "${url}calendar"]
+        ns_log Notice "[parray community_info]"
+        
 	set community_package_id $community_info(package_id)
+
+        ns_log Notice "COMMUNITY PKGID $community_package_id"
+        
 	set calendar_id [db_string get_cal_id { *SQL* }]
 	
 	if { ![db_0or1row calendar_mappings { *SQL* }] } {
