@@ -5,7 +5,7 @@
 <link>http://litli.net/dotlrn/clubs/nonprofit/learningtree/news/</link>
 <description>Livingston Institute Teletest Learning Inc News</description>
 <generator>OpenACS 5.0</generator>
-<lastBuildDate>Sat, 13 Oct 2018 17:43:59 GMT</lastBuildDate>
+<lastBuildDate>Sat, 13 Oct 2018 21:43:59 GMT</lastBuildDate>
 <image>
 <title>Livingston Institute Teletest Learning Inc News</title>
 <url>http://litli.net/rss-support/images/openacs_logo_rss.gif</url>
@@ -28,7 +28,7 @@
 &lt;/ul&gt;&lt;/p&gt;&lt;p&gt;Developed EZC (EZ-Config) system for managing CDN node NGINX configuration 
 &lt;/p&gt;&lt;p&gt;Developed a tool for inventory of technical assets such as laptops, servers, etc.
 &lt;/p&gt;</description>
-<pubDate>Sat, 13 Oct 2018 17:43:59 GMT</pubDate>
+<pubDate>Sat, 13 Oct 2018 21:43:59 GMT</pubDate>
 </item>
 </channel>
 </rss>
