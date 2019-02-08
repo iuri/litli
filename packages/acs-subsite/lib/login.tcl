@@ -157,7 +157,7 @@ ad_form -extend -name login -form {
     }
 }
 
-set options_list [list [list [_ acs-subsite.Remember_my_login] "t"]]
+set options_list [list [list [_ acs-subsite.Remember_my_login] "f"]]
 if { $allow_persistent_login_p } {
     ad_form -extend -name login -form {
         {persistent_p:text(checkbox),optional
