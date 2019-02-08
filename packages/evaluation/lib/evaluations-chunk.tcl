@@ -3,9 +3,14 @@ ad_page_contract {
     evaluations chunk to be displayed in the index page
     
 }
+ns_log Notice "Running TCL script /lib/evaluation-chunk"
 
 set package_id [ad_conn package_id]
+
 set evaluation_id [evaluation_evaluations_portlet::get_package_id_from_key -package_key "evaluation"]
+
+ns_log Notice "EVALUATIONID $evaluation_id"
+
 set user_id [ad_conn user_id]
 set admin_p [permission::permission_p -party_id $user_id -object_id $package_id -privilege admin]
 set simple_p  [parameter::get -parameter "SimpleVersion" -package_id $evaluation_id]
@@ -22,6 +27,9 @@ set grade_plural_name [string toupper $grade_plural_name]
 
 set submitted_label "<div style='text-align:center'>[_ evaluation-portlet.lt_smallTotal_points_in__1]</div>"
 
+ns_log Notice "ADMINP $admin_p"
+
+ns_log Notice "SIMPLEP $simple_p"
 if { $admin_p } {
     if { $simple_p } {
         set bottom_line "[_ evaluation-portlet.lt_smallWeight_used_in_g]"
@@ -33,6 +41,7 @@ if { $admin_p } {
     set bottom_line ""
 }
 
+ns_log Notice "FLAG 1"
 
 if { $simple_p } {
     set class "pbs_list"
@@ -40,6 +49,8 @@ if { $simple_p } {
 } else {
     set grade_of_label ""
 }
+
+
 set elements [list task_name \
                   [list label "[_ evaluation-portlet.Name_]" \
                        link_url_col task_url \
