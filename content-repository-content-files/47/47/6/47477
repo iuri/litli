@@ -1,0 +1,5 @@
+uid,role,description,controller,function,table,uacl,oacl
+ANONYMOUS,Anonymous,Unauthenticated users,org,sites_for_org,,READ,
+ANONYMOUS,Anonymous,Unauthenticated users,,,org_organisation,READ,
+MAP_ADMIN,MapAdmin,MapAdmin - allowed access to edit the MapService Catalogue,gis,,,CREATE|READ|UPDATE|DELETE|REVIEW|APPROVE,
+MAP_ADMIN,MapAdmin,MapAdmin - allowed access to edit the MapService Catalogue,gis,location,,CREATE|READ|UPDATE|DELETE|REVIEW|APPROVE,
