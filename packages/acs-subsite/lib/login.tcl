@@ -15,6 +15,8 @@ ad_include_contract {
     {email ""}
 }
 
+ns_log Notice "HOST $host_node_id"
+
 # Redirect to HTTPS if so configured
 if { [security::RestrictLoginToSSLP] } {
     security::require_secure_conn
@@ -94,6 +96,8 @@ if { $authority_id eq [auth::get_register_authority] || [auth::UseEmailForLoginP
     set register_url [export_vars -no_empty -base $register_url { username email}]
 }
 
+
+
 set login_button [list [list [_ acs-subsite.Log_In] ok]]
 ad_form \
     -name login \
@@ -166,6 +170,7 @@ if { $allow_persistent_login_p } {
         }
     }
 }
+ns_log Notice "FLAG 1"
 
 ad_form -extend -name login -on_request {
     # Populate fields from local vars
@@ -184,6 +189,8 @@ ad_form -extend -name login -on_request {
 
 } -on_submit {
 
+    ns_log Notice "ON SUBMIT"
+    
     # Check timestamp
     set token [sec_get_token $token_id]
     set computed_hash [ns_sha1 "$time$token_id$token"]
@@ -213,7 +220,8 @@ ad_form -extend -name login -on_request {
     }
     set first_names [ns_queryget first_names ""]
     set last_name [ns_queryget last_name ""]
-    
+
+    ns_log Notice "HOSYT NODE $host_node_id"
     array set auth_info [auth::authenticate \
                              -return_url $return_url \
                              -authority_id $authority_id \
