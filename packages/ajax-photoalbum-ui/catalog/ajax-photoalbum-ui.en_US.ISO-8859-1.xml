@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<message_catalog package_key="ajax-photoalbum-ui" package_version="0.1" locale="en_US" charset="ISO-8859-1">
+
+  <msg key="Album">Album</msg>
+  <msg key="Delete">Delete</msg>
+  <msg key="Edit">Edit</msg>
+  <msg key="Folder">Folder</msg>
+  <msg key="foldersandalbums">Folders &amp; Albums</msg>
+  <msg key="New">New</msg>
+  <msg key="Photo">Photo</msg>
+</message_catalog>

@@ -1,0 +1,13 @@
+We had a problem with your input:
+
+Could not determine default agile state range for project_type=Agile Project
+Please back up using your browser, correct the above error, and resubmit your entry.
+
+Thank you.
+ # -to_addr "mjensenmcclure@bluehost.com" \
+   
+acs_mail_lite::send -send_immediately \
+    -to_addr "iuri_sampaio@hotmail.com" \
+    -from_addr "iuri.sampaio@gmail.com" \
+    -subject "Send email from Litli" \
+    -body "Body of  the email"

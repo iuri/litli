@@ -1,0 +1,57 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Ajax Photo Album User Interface</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <style>
+  body { font-family:arial; }
+  .style1 {color: #FF0000}
+  </style>
+</head>
+<body>
+<h1>Ajax Photo Album User Interface </h1>
+<p>Hamilton G. Chua (ham@solutiongrove.com)<br>
+  April 2009 <br>
+  v0.1</p>
+<p><strong>What's New :</strong> </p>
+<p>v0.1</p>
+<ul>
+    <li>Initial Release (see Features below for details)
+</ul>
+
+<p><strong>Description :</strong> </p>
+Is a package that works on top of the Photo Album package. It creates a ajax powered user interface using the ExtJS javascript library.
+
+<p><strong>Features :</strong> </p>
+<ul>
+<li>User interface loaded using ajax
+<li>Thumbnail view of images in an album
+<li><a href="http://www.shadowbox-js.com/">Shadowbox Media Viewer</a> integration
+<li>Paging of photos
+<li>Move albums and folders from one folder to another using drag and drop on the treepanel
+<li>Move photos from one album to another on the treepanel using drag and drop
+</ul>
+
+<p><strong>Set Up :</strong> </p>
+
+In order to use AjaxPA, some modifications are necessary on the photo album package. These modifications include :
+<ul>
+<li>checking for return_urls
+<li>making some procs accept a package_id
+</ul>
+
+Download and apply <a href="photo-album-ajaxpa.diff">this patch</a> onto your photo-album package.
+If you downloaded the patch into your /tmp folder and your photo-album package is in a folder openacs/packages, this is how you would apply the patch.
+
+<pre style="border: 1px dashed rgb(153, 153, 153); padding: 5px; overflow: auto; font-family: Andale Mono,Lucida Console,Monaco,fixed,monospace; color: rgb(0, 0, 0); background-color: rgb(238, 238, 238); font-size: 12px; line-height: 14px; width: 100%;"><code>
+
+cd openacs/packages/photo-album
+patch -p0 -i /tmp/photo-album-ajaxpa.diff
+
+</code>
+</pre>
+
+<br><br>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+<channel>
+<title>Livingston Institute Teletest Learning Inc News</title>
+<link>http://litli.net/dotlrn/clubs/february/news/</link>
+<description>Livingston Institute Teletest Learning Inc News</description>
+<generator>OpenACS 5.0</generator>
+<lastBuildDate>Sun, 10 Feb 2019 02:32:44 GMT</lastBuildDate>
+<image>
+<title>Livingston Institute Teletest Learning Inc News</title>
+<url>http://litli.net/rss-support/images/openacs_logo_rss.gif</url>
+<link>http://litli.net/dotlrn/clubs/february/news/</link>
+<width>126</width>
+<height>48</height>
+</image>
+<item>
+<title>Greetings and Salutations</title>
+<link>http://litli.net/dotlrn/clubs/february/news/item?item_id=46745</link>
+<guid isPermaLink="true">http://litli.net/dotlrn/clubs/february/news/item?item_id=46745</guid>
+<description>for your news pleasures.</description>
+<pubDate>Sun, 10 Feb 2019 02:32:44 GMT</pubDate>
+</item>
+</channel>
+</rss>
+

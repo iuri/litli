@@ -16,6 +16,13 @@ ad_include_contract {
 }
 
 ns_log Notice "HOST $host_node_id"
+if {$host_node_id eq ""} {
+
+    array set node_arr [site_node::get -url [ad_conn url]]
+    ns_log Notice "$node_arr(node_id)"
+
+}
+
 
 # Redirect to HTTPS if so configured
 if { [security::RestrictLoginToSSLP] } {
@@ -173,8 +180,10 @@ if { $allow_persistent_login_p } {
 ns_log Notice "FLAG 1"
 
 ad_form -extend -name login -on_request {
-    # Populate fields from local vars
 
+    ns_log Notice "FLAG ON_REQUEST"
+    
+    # Populate fields from local vars
     set persistent_p [ad_decode $default_persistent_login_p 1 "t" ""]
 
     # One common problem with login is that people can hit the back button
@@ -189,7 +198,7 @@ ad_form -extend -name login -on_request {
 
 } -on_submit {
 
-    ns_log Notice "ON SUBMIT"
+    ns_log Notice "FLAG ON SUBMIT"
     
     # Check timestamp
     set token [sec_get_token $token_id]
@@ -221,7 +230,9 @@ ad_form -extend -name login -on_request {
     set first_names [ns_queryget first_names ""]
     set last_name [ns_queryget last_name ""]
 
-    ns_log Notice "HOSYT NODE $host_node_id"
+    ns_log Notice "HOST NODE $node_arr(node_id)"
+    
+    
     array set auth_info [auth::authenticate \
                              -return_url $return_url \
                              -authority_id $authority_id \
@@ -230,7 +241,7 @@ ad_form -extend -name login -on_request {
                              -last_name $last_name \
                              -username [string trim $username] \
                              -password $password \
-                             -host_node_id $host_node_id \
+                             -host_node_id $node_arr(node_id) \
                              -persistent=[expr {$allow_persistent_login_p && [template::util::is_true $persistent_p]}]]
     
     # Handle authentication problems
@@ -314,7 +325,8 @@ ad_form -extend -name login -on_request {
         }
     }
 } -after_submit {
-
+    ns_log notice "FLAG AFTER SUBMIT"
+    
     # We're logged in
 
     # Handle account_message

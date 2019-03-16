@@ -1,0 +1,76 @@
+# ajax-photoalbum-ui-service/www/batchdownload/index.vuh
+
+ad_page_contract {
+
+    Batch download a set of photos.
+    - receives a list of photo ids
+    - copies them into a temporary folder
+    - zips the folder
+    - offers it up for download
+
+} {
+    photo_ids
+}
+
+set user_id [ad_conn user_id]
+set photo_id_list [split $photo_ids ","]
+
+set package_id [ad_conn package_id]
+set package_path "[acs_root_dir]/[pkg_home photo-album]"
+
+# create a name for the temporary directory
+# - use the user's name and current datetime
+set path_to_download "[ns_tmpnam]"
+
+# create the temporary directory to hold the files
+file mkdir $path_to_download
+
+# loop thru photo_id_list
+# - get a reference to the image on the cr
+# - copy to the 
+foreach photo_id $photo_id_list {
+
+    photo_album::photo::get -photo_id $photo_id -array photo_arr
+
+    set revision_id $photo_arr(viewer_live_revision)
+
+    if { [db_0or1row "get_revision_info" {
+        select i.storage_type, i.storage_area_key, r.mime_type, i.item_id,
+                r.content_length
+        from cr_items i, cr_revisions r
+        where r.revision_id = :revision_id and i.item_id = r.item_id
+    }] } {
+        set path [cr_fs_path $storage_area_key]
+        set filename [db_string write_file_content {
+            select :path || content
+            from cr_revisions
+            where revision_id = :revision_id
+        }]
+        file copy -force $filename $path_to_download/$photo_arr(viewer_name)
+	if { ![db_resultrows] } {
+            set album_id $photo_arr(album_id)
+	}	
+    }
+
+}
+
+
+# create the zip file
+set outpath [ns_tmpnam]
+file mkdir $outpath
+set outfile [file join ${outpath} "photos.zip"]
+
+set cmd "zip -q -1 -r $outfile *.*"
+
+set status [catch {exec bash -c "cd $path_to_download; $cmd; cd -"} result]
+
+# return the archive to the connection.
+ns_set put [ad_conn outputheaders] Content-Disposition "attachment;filename=\"photos.zip\""
+ns_set put [ad_conn outputheaders] Content-Type "application/zip"
+ns_set put [ad_conn outputheaders] Content-Size "[file size $outfile]"
+ns_returnfile 200 application/octet-stream $outfile
+
+file delete -force $path_to_download
+file delete -force $outpath
+
+

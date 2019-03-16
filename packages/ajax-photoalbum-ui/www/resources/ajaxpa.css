@@ -1,0 +1,113 @@
+.x-tree-node img.folder, .x-tree-node-collapsed img.folder{
+    background: url(/resources/ajaxhelper/ext2/resources/images/default/tree/folder.gif)
+}
+.x-tree-node-expanded img.folder {
+    background: url(/resources/ajaxhelper/ext2/resources/images/default/tree/folder-open.gif)
+}
+.x-tree-node img.album, .x-tree-node-collapsed img.album {
+    background: transparent url(/resources/ajaxhelper/icons/folder_picture.png) no-repeat;
+}
+.x-tree-node-expanded img.album {
+    background: transparent url(/resources/ajaxhelper/icons/folder_picture.png) no-repeat;
+}
+
+/*
+ * FileUploadField component styles
+ */
+.x-form-file-wrap {
+    position: relative;
+    height: 22px;
+}
+.x-form-file-wrap .x-form-file {
+    position: absolute;
+    right: 0;
+    -moz-opacity: 0;
+    filter:alpha(opacity: 0);
+    opacity: 0;
+    z-index: 2;
+    height: 22px;
+}
+.x-form-file-wrap .x-form-file-btn {
+    position: absolute;
+    right: 0;
+    z-index: 1;
+}
+.x-form-file-wrap .x-form-file-text {
+    position: absolute;
+    left: 0;
+    z-index: 3;
+    color: #777;
+}
+
+
+#pa-thumbsview .x-panel-body {
+    background:white none repeat scroll 0%;
+    font-family:Arial,Helvetica,sans-serif;
+    font-size:11px;
+    font-size-adjust:none;
+    font-stretch:normal;
+    font-style:normal;
+    font-variant:normal;
+    font-weight:normal;
+    line-height:normal;
+}
+#pa-thumbsview .thumb {
+    background:#DDDDDD none repeat scroll 0%;
+    padding:3px;
+    margin-bottom:2px;
+}
+#pa-thumbsview .thumb-wrap {
+    float:left;
+    margin:4px 0 0 4px;
+    padding:5px;
+}
+#pa-thumbsview .thumb-wrap span {
+    display:block;
+    overflow:hidden;
+}
+#pa-thumbsview .x-view-over {
+    background:#EFEFEF url(/resources/ajaxhelper/ext2/resources/images/default/grid/row-over.gif) repeat-x scroll left top;
+    border:1px solid #DDDDDD;
+    padding:4px;
+}
+#pa-thumbsview .x-view-selected {
+    background:#EFF5FB no-repeat scroll right bottom;
+    border:1px solid #99BBE8;
+    padding:4px;
+}
+#pa-thumbsview .x-view-selected .thumb {
+    background:transparent none repeat scroll 0%;
+}
+#pa-thumbsview .loading-indicator {
+    background-image:url(../../resources/images/default/grid/loading.gif);
+    background-position:left center;
+    background-repeat:no-repeat;
+    font-size:11px;
+    margin:10px;
+    padding-left:20px;
+}
+.largetext {
+    padding:20px 10px 10px 10px;
+    text-align:center;
+    color:#cccccc;
+    font-size:24px;
+    font-weight:bold;
+}
+.img_caption {
+    width:80px;
+    padding-left:3px;
+    float:left;
+}
+.img_tools img {
+    cursor:pointer;
+}
+.upload-icon {
+    background: url(/resources/ajaxhelper/icons/image_add.png) no-repeat 0 0 !important;
+}
+.x-dd-drag-proxy .multi-proxy .thumb {
+    height: 20px;
+    width: 30px;
+    margin:1px;
+    float:left;
+    overflow:auto;
+}

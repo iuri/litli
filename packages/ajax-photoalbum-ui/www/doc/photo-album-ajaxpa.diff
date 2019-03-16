@@ -1,0 +1,485 @@
+Index: photo-album.info
+===================================================================
+--- photo-album.info	(revision 92)
++++ photo-album.info	(working copy)
+@@ -14,14 +14,14 @@
+         <summary>Organization, editing and display of user uploaded photos.</summary>
+         <release-date>2006-02-18</release-date>
+         <vendor url="http://openacs.org">OpenACS</vendor>
+-        <description format="text/html">A photo album application that provides photo display and grouping
+-functionality using the ACS Content Repository.
+-&lt;p&gt;
+-Allows users to upload photos, store and edit attributes, and group
+-photos into albums and folders.  Supports permissioning, exif data, and user clipboards.
+-&lt;p&gt;
+-Requires installation of ImageMagick and jhead on host machine.  See design doc
+-for details.
++        <description format="text/html">A photo album application that provides photo display and grouping
++functionality using the ACS Content Repository.
++&lt;p&gt;
++Allows users to upload photos, store and edit attributes, and group
++photos into albums and folders.  Supports permissioning, exif data, and user clipboards.
++&lt;p&gt;
++Requires installation of ImageMagick and jhead on host machine.  See design doc
++for details.
+ </description>
+         <maturity>1</maturity>
+ 
+@@ -48,6 +48,7 @@
+             <parameter datatype="number"  min_n_values="1"  max_n_values="1"  name="ThumbnailSize"  default="150x150" description="Max Dimension for thumbnail image"/>
+             <parameter datatype="number"  min_n_values="1"  max_n_values="1"  name="ThumbnailsPerPage"  default="12" description="Number of thumbnail images to be displayed per album page"/>
+             <parameter datatype="number"  min_n_values="1"  max_n_values="1"  name="ViewerSize"  default="700x500" description="Max Dimension for viewer image"/>
++            <parameter datatype="number"  min_n_values="1"  max_n_values="1"  name="UseAjaxPa"  default="0" description="Set to 1 if you want to use ajax-photoalbum-ui with this instance of photo-album."/>
+         </parameters>
+ 
+     </version>
+Index: tcl/photo-album-procs.tcl
+===================================================================
+--- tcl/photo-album-procs.tcl	(revision 92)
++++ tcl/photo-album-procs.tcl	(working copy)
+@@ -347,6 +347,7 @@
+ }
+ 
+ ad_proc -public pa_make_new_image {
++    {-package_id {}}
+     base_image
+     new_image
+     geometry
+@@ -370,8 +371,9 @@
+     if {[regexp {^[0-9]+$} $geometry]} { 
+         set geometry ${geometry}x${geometry}
+     }
++    if { ![exists_and_not_null package_id] } { set package_id [ad_conn package_id] }
+     ns_log debug "pa_make_new_image: Start convert, making $new_image geometry $geometry"
+-    exec [ad_parameter ImageMagickPath]/convert -geometry $geometry -interlace None -sharpen 1x2 $base_image $new_image
++    exec [parameter::get -parameter ImageMagickPath -package_id $package_id]/convert -geometry $geometry -interlace None -sharpen 1x2 $base_image $new_image
+     if {[catch {exec jhead -dt $new_image} errmsg]} { 
+         ns_log Warning "pa_make_new_image: jhead failed with error - $errmsg"
+     }
+@@ -705,15 +707,17 @@
+ }      
+ 
+ ad_proc -public  pa_file_info {
++    {-package_id {}}
+     file 
+ } {
+     return the image information from a given file
+ } { 
+     set info [list]
++    if { ![exists_and_not_null package_id] } { set package_id [ad_conn package_id] }
+     if { [catch {set size [file size $file]} errMsg] } { 
+         return -code error $errMsg
+     } 
+-    if { [ catch {set out [exec [ad_parameter ImageMagickPath]/identify -format "%w %h %m %k %q %#" $file]} errMsg]} { 
++    if { [ catch {set out [exec [parameter::get -parameter ImageMagickPath -package_id $package_id]/identify -format "%w %h %m %k %q %#" $file]} errMsg]} { 
+         return -code error $errMsg
+     }            
+     
+@@ -826,7 +830,7 @@
+             set client_filename $upload_name
+         }
+ 
+-        if {[catch {set base_info [pa_file_info $image_file]} errMsg]} {
++        if {[catch {set base_info [pa_file_info -package_id $package_id $image_file]} errMsg]} {
+             ns_log Warning "pa_load_images: error parsing file data $image_file Error: $errMsg"
+             error "pa_load_images: error parsing file data $image_file Error: $errMsg"
+             continue
+@@ -840,7 +844,7 @@
+             set new_image [file join $tmp_path "tmp-[file rootname [file tail $image_file]]"]
+             if {![empty_string_p $base_colors] && $base_colors < 257} { 
+                 # convert it to a png
+-                if {[catch {exec [ad_parameter ImageMagickPath]/convert $image_file PNG:$new_image.png} errMsg]} { 
++                if {[catch {exec [parameter::get -parameter ImageMagickPath -package_id $package_id]/convert $image_file PNG:$new_image.png} errMsg]} { 
+                     ns_log Warning "pa_load_images: Failed convert to PNG for $image_file (magicktype $base_type)" 
+                 }
+                 if { $remove } { 
+@@ -850,7 +854,7 @@
+                 set remove 1
+             } elseif {![empty_string_p $base_colors] && $base_colors > 256} { 
+                 # convert it to a jpg
+-                if {[catch {exec [ad_parameter ImageMagickPath]/convert $image_file JPG:$new_image.jpg} errMsg]} { 
++                if {[catch {exec [parameter::get -parameter ImageMagickPath -package_id $package_id]/convert $image_file JPG:$new_image.jpg} errMsg]} { 
+                     ns_log Warning "pa_load_images: failed convert to JPG for $image_file (magicktype $base_type)" 
+                 }
+                 if { $remove } { 
+@@ -863,7 +867,7 @@
+             }
+ 
+             # get info again
+-            foreach {base_bytes base_width base_height base_type base_mime base_colors base_quantum base_sha256} [pa_file_info $image_file] { break }
++            foreach {base_bytes base_width base_height base_type base_mime base_colors base_quantum base_sha256} [pa_file_info -package_id $package_id $image_file] { break }
+         }
+         
+         if {[string equal $base_mime image/jpeg]} { 
+@@ -898,16 +902,16 @@
+         set viewer_size [parameter::get -parameter ViewerSize -package_id $package_id]
+         set viewer_filename [pa_make_file_name -ext $BaseExt $viewer_rev_id]
+         set full_viewer_filename [file join ${tmp_path} ${viewer_filename}]
+-        pa_make_new_image $image_file ${full_viewer_filename} $viewer_size
+-        foreach {viewer_bytes viewer_width viewer_height viewer_type viewer_mime viewer_colors viewer_quantum viewer_sha256} [pa_file_info $full_viewer_filename] {}
++        pa_make_new_image -package_id $package_id $image_file ${full_viewer_filename} $viewer_size
++        foreach {viewer_bytes viewer_width viewer_height viewer_type viewer_mime viewer_colors viewer_quantum viewer_sha256} [pa_file_info -package_id $package_id $full_viewer_filename] {}
+ 
+         # Handle thumb file 
+         #
+         set thumb_size [parameter::get -parameter ThumbnailSize -package_id $package_id]
+         set thumb_filename [pa_make_file_name -ext $BaseExt $thumb_rev_id]
+         set full_thumb_filename [file join $tmp_path $thumb_filename]
+-        pa_make_new_image ${full_viewer_filename} ${full_thumb_filename} $thumb_size
+-        foreach {thumb_bytes thumb_width thumb_height thumb_type thumb_mime thumb_colors thumb_quantum thumb_sha256} [pa_file_info $full_thumb_filename] {}
++        pa_make_new_image -package_id $package_id ${full_viewer_filename} ${full_thumb_filename} $thumb_size
++        foreach {thumb_bytes thumb_width thumb_height thumb_type thumb_mime thumb_colors thumb_quantum thumb_sha256} [pa_file_info -package_id $package_id $full_thumb_filename] {}
+ 
+         # copy the tmp file to the cr's file-system
+         set thumb_filename_relative [cr_create_content_file -move $thumb_item_id $thumb_rev_id ${full_thumb_filename}]
+Index: www/index.tcl
+===================================================================
+--- www/index.tcl	(revision 92)
++++ www/index.tcl	(working copy)
+@@ -33,6 +33,12 @@
+ # check for read permission on folder
+ ad_require_permission $folder_id read
+ 
++# HAM : AjaxPA
++# - we need to pass package_id to ajaxpa-include
++# - turn ajaxpa on/off with a parameter, default to 1 for now
++set package_id [ad_conn package_id]
++set use_ajaxpa_p [parameter::get -parameter UseAjaxPa -default 1]
++
+ set user_id [ad_conn user_id]
+ set context [pa_context_bar_list $folder_id]
+ 
+@@ -40,7 +46,7 @@
+ db_1row get_folder_info {}
+ 
+ set root_folder_id [pa_get_root_folder]
+-set parameter_url_vars [export_url_vars package_id=[ad_conn package_id] return_url=[ad_conn url]]
++set parameter_url_vars [export_url_vars package_id=$package_id return_url=[ad_conn url]]
+ 
+ # to move an album need write on album and write on parent folder
+ set move_p [expr $write_p && !($folder_id == $root_folder_id) && $parent_folder_write_p]
+Index: www/folder-delete.tcl
+===================================================================
+--- www/folder-delete.tcl	(revision 92)
++++ www/folder-delete.tcl	(working copy)
+@@ -11,6 +11,7 @@
+ } {
+     folder_id:integer,notnull
+     {confirmed_p "f"}
++    return_url:optional
+ } -validate {
+     valid_folder -requires {folder_id:integer} {
+ 	if [string equal [pa_is_folder_p $folder_id] "f"] {
+@@ -50,7 +51,14 @@
+         content_folder.del(:folder_id);
+     end;"
+ 
+-    ad_returnredirect "?folder_id=$parent_folder_id"
++    # HAM : added return_url
++    if { ![exists_and_not_null return_url] } {
++        #redirect back to index page with parent_id
++        ad_returnredirect "?folder_id=$parent_folder_id"
++    } else {
++        ad_returnredirect $return_url
++    }
++
+     ad_script_abort
+ } else {
+     # they still need to confirm
+Index: www/photo-edit.tcl
+===================================================================
+--- www/photo-edit.tcl	(revision 92)
++++ www/photo-edit.tcl	(working copy)
+@@ -11,6 +11,7 @@
+     {hide:integer 0}
+     {photo_id:integer 0}
+     d:array,integer,optional
++    return_url:optional
+ } -properties {
+     path:onevalue
+     height:onevalue
+@@ -122,7 +123,13 @@
+ 	ad_script_abort
+     }
+     
+-    ad_returnredirect "photo?photo_id=$photo_id"
++    # HAM : added return_url
++    if { ![exists_and_not_null return_url] } {
++        ad_returnredirect "photo?photo_id=$photo_id"
++    } else {
++        ad_returnredirect $return_url
++    }
++
+     ad_script_abort
+ }
+ 
+Index: www/album-edit.tcl
+===================================================================
+--- www/album-edit.tcl	(revision 92)
++++ www/album-edit.tcl	(working copy)
+@@ -9,6 +9,7 @@
+     @cvs-id $Id: photo-album-ajaxpa.diff,v 1.3 2018/05/09 15:33:29 hectorr Exp $
+ } {
+     album_id:integer,notnull
++    return_url:optional
+ } -validate {
+     valid_album -requires {album_id:integer} {
+ 	if [string equal [pa_is_album_p $album_id] "f"] {
+@@ -90,7 +91,13 @@
+ 	
+ 	ad_script_abort
+     }
+-    ad_returnredirect "album?album_id=$album_id"
++    
++    # HAM : added return_url
++    if { ![exists_and_not_null return_url] } {
++        ad_returnredirect "album?album_id=$album_id"
++    } else {
++        ad_returnredirect $return_url
++    }
+     ad_script_abort
+ }
+ 
+Index: www/album-add.tcl
+===================================================================
+--- www/album-add.tcl	(revision 92)
++++ www/album-add.tcl	(working copy)
+@@ -9,6 +9,7 @@
+     @cvs-id $Id: photo-album-ajaxpa.diff,v 1.3 2018/05/09 15:33:29 hectorr Exp $
+ } {
+     parent_id:integer,notnull
++    return_url:optional
+ } -validate {
+     valid_parent_folder -requires {parent_id:integer} {
+ 	if [string equal [pa_is_folder_p $parent_id] "f"] {
+@@ -86,8 +87,13 @@
+     }
+     #redirect back to index page with parent_id
+     
+-    ad_returnredirect "?folder_id=$parent_id"
+-    
++    # HAM : added return_url
++    if { ![exists_and_not_null return_url] } {
++        #redirect back to index page with parent_id
++        ad_returnredirect "?folder_id=$parent_id"
++    } else {
++        ad_returnredirect $return_url
++    }
+     ad_script_abort
+ }
+ 
+Index: www/folder-edit.tcl
+===================================================================
+--- www/folder-edit.tcl	(revision 92)
++++ www/folder-edit.tcl	(working copy)
+@@ -9,6 +9,7 @@
+     @cvs-id $Id: photo-album-ajaxpa.diff,v 1.3 2018/05/09 15:33:29 hectorr Exp $
+ } {
+     folder_id:integer,notnull
++    return_url:optional
+ } -validate {
+     valid_folder -requires {folder_id:integer} {
+ 	if [string equal [pa_is_folder_p $folder_id] "f"] {
+@@ -70,7 +71,13 @@
+     }
+     #redirect back to index page with parent_id
+ 
+-    ad_returnredirect "?folder_id=$folder_id"
++    # HAM : added return_url
++    if { ![exists_and_not_null return_url] } {
++        #redirect back to index page with parent_id
++        ad_returnredirect "?folder_id=$parent_id"
++    } else {
++        ad_returnredirect $return_url
++    }
+ 
+     ad_script_abort
+ }
+Index: www/album-delete.tcl
+===================================================================
+--- www/album-delete.tcl	(revision 92)
++++ www/album-delete.tcl	(working copy)
+@@ -10,6 +10,7 @@
+ } {
+     album_id:integer,notnull
+     {confirmed_p "f"}
++    return_url:optional
+ } -validate {
+     valid_album -requires {album_id:integer} {
+ 	if [string equal [pa_is_album_p $album_id] "f"] {
+@@ -44,7 +45,13 @@
+ 
+     pa_flush_photo_in_album_cache $album_id
+ 
+-    ad_returnredirect "?folder_id=$parent_folder_id"
++    # HAM : added return_url
++    if { ![exists_and_not_null return_url] } {
++        #redirect back to index page with parent_id
++        ad_returnredirect "?folder_id=$parent_folder_id"
++    } else {
++        ad_returnredirect $return_url
++    }
+     ad_script_abort
+ 
+ } else {
+Index: www/index.adp
+===================================================================
+--- www/index.adp	(revision 92)
++++ www/index.adp	(working copy)
+@@ -2,6 +2,11 @@
+ <property name="title">@folder_name;noquote@</property>
+ <property name="context">@context;noquote@</property>
+ 
++<if @use_ajaxpa_p@ eq 1>
++<include src="/packages/ajax-photoalbum-ui/lib/ajaxpa-include" package_id="@package_id@" layoutdiv="pacontainer">
++</if>
++
++<div id="pacontainer">
+ <if @folder_description@ not nil>
+ <p>@folder_description;noquote@</p>
+ </if>
+@@ -63,4 +68,4 @@
+       <a href="http://shutterfly.com">#photo-album.shutterflycom#</a> #photo-album.lt_for______printing_fro# <a href="clipboards">#photo-album.clipboard#</a> #photo-album.screen#
+     </p>
+ </if>
+-
++</div>
+Index: www/photo-delete.tcl
+===================================================================
+--- www/photo-delete.tcl	(revision 92)
++++ www/photo-delete.tcl	(working copy)
+@@ -13,6 +13,7 @@
+ } {
+     photo_id:integer,notnull
+     {confirmed_p "f"}
++    return_url:optional
+ } -validate {
+     valid_photo -requires {photo_id:integer} {
+ 	if [string equal [pa_is_photo_p $photo_id] "f"] {
+@@ -44,7 +45,12 @@
+ 
+     pa_flush_photo_in_album_cache $album_id
+     
+-    ad_returnredirect "album?album_id=$album_id"
++    # HAM : added return_url
++    if { ![exists_and_not_null return_url] } {
++        ad_returnredirect "album?album_id=$album_id"
++    } else {
++        ad_returnredirect $return_url
++    }
+     ad_script_abort
+ 
+ } else {
+Index: www/folder-add.tcl
+===================================================================
+--- www/folder-add.tcl	(revision 92)
++++ www/folder-add.tcl	(working copy)
+@@ -9,6 +9,7 @@
+     @cvs-id $Id: photo-album-ajaxpa.diff,v 1.3 2018/05/09 15:33:29 hectorr Exp $
+ } {
+     parent_id:integer,notnull
++    return_url:optional
+ } -validate {
+     valid_parent -requires {parent_id:integer} {
+ 	if [string equal [pa_is_folder_p $parent_id] "f"] {
+@@ -104,7 +105,12 @@
+ 	ad_script_abort
+     }
+ 
+-    #redirect back to index page with parent_id
+-    ad_returnredirect "?folder_id=$parent_id"
++    # HAM : added return_url
++    if { ![exists_and_not_null return_url] } {
++        #redirect back to index page with parent_id
++        ad_returnredirect "?folder_id=$parent_id"
++    } else {
++        ad_returnredirect $return_url
++    }
+     ad_script_abort
+ }
+Index: www/photos-add-2.tcl
+===================================================================
+--- www/photos-add-2.tcl	(revision 92)
++++ www/photos-add-2.tcl	(working copy)
+@@ -11,6 +11,7 @@
+     {upload_file:optional,trim ""}
+     upload_file.tmpfile:optional,tmpfile
+     album_id:integer,notnull
++    return_url:optional
+ } -validate {
+     valid_album -requires {album_id:integer} {
+ 	if [string equal [pa_is_album_p $album_id] "f"] {
+@@ -37,18 +38,24 @@
+      [ catch {set tmp_dir [pa_expand_archive $upload_file ${upload_file.tmpfile} pa-$album_id] } errMsg] } { 
+     ad_return_complaint 1 "Unable to expand your archive file"
+     ad_script_abort
+-} 
++}
+ 
++if { ![exists_and_not_null return_url] } {
+ ReturnHeaders text/html
+ ns_write "<html><head><title>Upload Log</title></head><body><h1>Upload Log</h1><hr>\n"
++}
+ 
+ if {![empty_string_p $upload_file]} { 
+-    ns_write "starting to load images from file $upload_file<br>\n"
++    if { ![exists_and_not_null return_url] } {
++        ns_write "starting to load images from file $upload_file<br>\n"
++    }
+     ns_log Debug "made directory $tmp_dir to extract from ${upload_file.tmpfile} ($upload_file)\n"
+     set allfiles [pa_walk $tmp_dir]
+     set remove 1
+ } else { 
+-    ns_write "starting to load images from directory [parameter::get -parameter FullTempPhotoDir -package_id [ad_conn package_id]]<br>\n"
++    if { ![exists_and_not_null return_url] } {
++        ns_write "starting to load images from directory [parameter::get -parameter FullTempPhotoDir -package_id [ad_conn package_id]]<br>\n"
++    }
+     set allfiles [pa_walk [parameter::get -parameter FullTempPhotoDir -package_id [ad_conn package_id]]]
+     set remove 0
+ }     
+@@ -58,10 +65,19 @@
+ pa_flush_photo_in_album_cache $album_id 
+ 
+ set page [pa_page_of_photo_in_album [lindex $new_photo_ids 0] $album_id]
++
++if { ![exists_and_not_null return_url] } {
+ ns_write "<a href=\"album?album_id=$album_id&page=$page\">View the images</a>"
+ ns_write "</body></html>"
++}
+ 
+ # Now that we are done working on the upload we delete the tmp file
+ if [info exists tmp_dir] { 
+     file delete -force $tmp_dir
+ }
++
++# HAM : added return_url
++if { [exists_and_not_null return_url] } {
++    ad_returnredirect $return_url
++    ad_script_abort
++}
+Index: www/photo-add-2.tcl
+===================================================================
+--- www/photo-add-2.tcl	(revision 92)
++++ www/photo-add-2.tcl	(working copy)
+@@ -15,6 +15,7 @@
+     {description [db_null]}
+     {caption [db_null]}
+     {story [db_null]}
++    return_url:optional
+ } -validate {
+     valid_album -requires {album_id:integer} {
+ 	if [string equal [pa_is_album_p $album_id] "f"] {
+@@ -70,4 +71,12 @@
+ # page used as part of redirect so user returns to the album page containing the newly uploaded photo
+ set page [pa_page_of_photo_in_album [lindex $new_photo_ids 0] $album_id]
+ 
+-ad_returnredirect "album?album_id=$album_id&page=$page"
++
++# HAM : added return_url
++if { ![exists_and_not_null return_url] } {
++    ad_returnredirect "album?album_id=$album_id&page=$page"
++} else {
++    ad_returnredirect $return_url
++}
++
++

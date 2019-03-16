@@ -1,0 +1,26 @@
+# /packages/photo-album/www/images/index.vuh
+# @author Tom Baginski, bags@arsdigita.com
+# #cvs-id $Id: index.vuh,v 1.1 2009/04/11 15:56:13 hamiltonc Exp $
+#
+# serves images
+#
+# expecting a image_id as path_info
+
+# wtem@olywa.net, 2001-09-24
+# fully reworked
+
+regexp {^([0-9]+)} [ad_conn path_info] match image_id
+
+if {[string equal [ad_parameter CheckPermissionOnImageServeP] "t"]} {
+    ad_require_permission $image_id "read"
+}
+
+ns_set put [ad_conn outputheaders] Content-Disposition attachment
+
+if {[catch {cr_write_content -revision_id $image_id} errMsg]} {
+    if {[string equal $::errorCode NOT_FOUND]} {
+        ns_returnnotfound
+        ad_script_abort
+    }
+    error $errMsg $::errorInfo $::errorCode
+}
